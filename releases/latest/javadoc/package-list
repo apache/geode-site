@@ -19,6 +19,7 @@ org.apache.geode.cache.util
 org.apache.geode.cache.wan
 org.apache.geode.compression
 org.apache.geode.distributed
+org.apache.geode.examples.security
 org.apache.geode.i18n
 org.apache.geode.lang
 org.apache.geode.management
@@ -37,4 +38,3 @@ org.apache.geode.pdx
 org.apache.geode.ra
 org.apache.geode.redis
 org.apache.geode.security
-org.apache.geode.security.templates
