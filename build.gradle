@@ -1,0 +1,65 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+plugins {
+  id "org.nosphere.apache.rat" version "0.3.0"
+}
+
+apply plugin: "org.nosphere.apache.rat"
+
+rat {
+  xmlOutput = false
+  htmlOutput = false
+  plainOutput = true
+
+  excludes = [
+    // git
+    '.git/**',
+    '**/.gitignore',
+    '**/.gitkeep',
+
+    // gradle
+    '**/.gradle/**',
+    'gradle/wrapper/gradle-wrapper.properties',
+    'caches/**',
+    'daemon/**',
+    'native/**',
+    'wrapper/**',
+    'build/**',
+
+    // geode-site: Adding exceptions to MIT/BSD licensed files
+    'website/content/js/head.js',
+    'website/content/js/html5shiv.js',
+    'website/content/js/jquery-1.10.1.min.js',
+    'website/content/js/jquery.icheck.js',
+    'website/content/js/respond.min.js',
+    'website/content/css/bootflat-extensions.css',
+    'website/content/css/bootflat-square.css',
+    'website/content/css/bootflat.css',
+    'website/content/css/font-awesome.min.css',
+    'website/lib/pandoc.template',
+    'website/content/font/**',
+    'website/content/fonts/**',
+    'website/content/stylesheets/**',
+
+    // compiled logs and locks
+    'website/utilities/markers.txt',
+    'website/tmp/**',
+    'website/layouts/**',
+    'content/**'
+  ]
+}
