@@ -19,7 +19,7 @@
   specific language governing permissions and limitations
   under the License. -->
     <meta charset="utf-8">
-    <title>Apache Geode — Performance is key. Consistency is a must.</title>
+    <title>Apache Geode — Releases</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <meta name="keywords" content="Apache Geode, Geode, GemFire, In-memory, IMDB, IMDG, cache">
@@ -64,7 +64,7 @@
 </head>
 <body>
 
-    <header class="navbar navbar-inverse navbar-fixed-top bf-docs-nav " role="banner">
+    <header class="navbar navbar-inverse navbar-fixed-top bf-docs-nav secondary" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bf-navbar-collapse">
@@ -87,7 +87,7 @@
                 <li><a href="/community/#mailing-lists"><span class="fa fa-envelope"></span></a></li>
                 <li><a href="https://twitter.com/apachegeode" target="_blank"><span class="fa fa-twitter"></span></a></li>
                 <li><a href="https://cwiki.apache.org/confluence/display/geode/" target="_blank"><span class="fa fa-pencil-square-o"></span></a></li>
-                <li class=""><a href="/releases/"><span class="fa fa-arrow-circle-o-down"></span></a></li>
+                <li class="active"><a href="/releases/"><span class="fa fa-arrow-circle-o-down"></span></a></li>
             </ul>
         </nav>
     </div>
@@ -111,161 +111,175 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License. -->
 
-<section class="bf-masthead" id="content" role="main">
-    <div class="bf-masthead-bg">
-        <div class="container">
-            <img class="logo-title img-responsive hidden-xs" src="img/apache_geode_logo.png" />
-            <div class="text-container">
-                <h2 class="tagline"><em>Performance</em> is key. <em>Consistency</em> is a must.</h2>
-                <p class="description">Providing low latency, high concurrency data management solutions since 2002.<br/>
-                  <br/>Build high-speed, data-intensive applications that elastically meet performance requirements at any scale.<br/>
-                  Take advantage of Apache Geode's unique technology that blends advanced techniques for data replication, partitioning and distributed processing.
-
-                  <br/><br/>
-                  Apache Geode provides a database-like consistency model, reliable transaction processing and a shared-nothing architecture to maintain very low latency performance with high concurrency processing.<br/>
-            </div>
-
-            <div class="btn-wrapper">
-              <p><a href="/releases/" class="btn btn-inverse btn-lg">Download Geode</a> &nbsp;</p> 
-              <!-- Place this tag where you want the button to render. -->
-              <a class="github-button" href="https://github.com/apache/geode" data-icon="octicon-star" data-style="mega" data-count-href="/apache/geode/stargazers" data-count-api="/repos/apache/geode#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star apache/geode on GitHub">Star</a>
-              <a class="github-button" href="https://github.com/apache/geode/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/apache/geode/network" data-count-api="/repos/apache/geode#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork apache/geode on GitHub">Fork</a>
-              <a class="github-button" href="https://github.com/apache/geode" data-icon="octicon-eye" data-style="mega" data-count-href="/apache/geode/watchers" data-count-api="/repos/apache/geode#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch apache/geode on GitHub">Watch</a>
-
-
-            </div>
-        </div>
-    </div>
+<section class="bf-releases">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-md-12" id="events">
+    	    	<h2><span class="icon-releases"></span></h2>
+			</div>
+		</div>
+	</div>
 </section>
 
-<section class="bf-features">
+<section class="bf-releases">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-sitemap"></i></div>
-                <h3>Replication and Partitioning</h3>
-                <p>Data can easily be partitioned (sharded) or replicated between nodes allowing performance to scale as needed. Durability is ensured through redundant in-memory copies and disk-based persistence.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-hdd-o"></i></div>
-                <h3>Persistence</h3>
-                <p>Super fast write-ahead-logging (WAL) persistence with a shared-nothing architecture that is optimized for fast parallel recovery of nodes or an entire cluster.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="bf-icon-wrap"><i aria-hidden="true" class="fa fa-rocket"></i></div>
-                <h3>Performance</h3>
-                <p>Linear-scaling low latency for transactions, reads, writes and query processing of indexed or unindexed data.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="bf-icon-wrap" style="font-size:40px; vertical-align: 15px;"><i aria-hidden="true" class="fa fa-fast-forward"></i><i aria-hidden="true" class="fa fa-dashboard"></i></div>
-                <h3>In-Memory Storage</h3>
-                <p>Blazing fast in-memory storage optimized for large heaps, with the option of using off-heap storage, compression and features such as disk-overflow, eviction and expiration of data.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="bf-icon-wrap"><span style="font-size:60px" aria-hidden="true" class="fa fa-cogs"></span></div>
-                <h3>Functions</h3>
-                <p>Distributed location-aware user functions can be deployed and executed by the same nodes storing relevant sharded data for fast parallel processing. Failed operations can be retried on replicant nodes.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-credit-card"></i></div>
-                <h3>Transactions</h3>
-                <p>ACID distributed transactions support efficient and safe coordinated operations on colocated data. Transactions can be initiated or suspended by either a client or a server.</p>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-              <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-table"></i></div>
-              <h3>OQL and Indexes</h3>
-              <p>Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins.<br/>
-              Multiple kinds of indexes can be defined and consistently maintained across the cluster.</p>
-          </div>
-          <div class="col-md-4">
-              <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-bolt"></i></div>
-              <h3>Events</h3>
-              <p>Clients can be notified about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</p>
-          </div>
-          <div class="col-md-4">
-              <div class="bf-icon-wrap"><i style="font-size:65px; vertical-align: -5px;" aria-hidden="true" class="fa fa-cloud"></i></div>
-              <h3>Clustering</h3>
-              <p>Highly scalable, robust advanced clustering technology with failure detection, dynamic scaling, and network-partition detection algorithms.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-              <div class="bf-icon-wrap" style="font-size:30px; vertical-align: 15px;" aria-hidden="true"><i class="fa fa-cloud"></i><i style="font-size:15px; vertical-align: 15px;" class="fa fa-exchange fa-8x"></i><i class="fa fa-cloud"></i></div>
-              <h3>Multi-Cluster</h3>
-              <p>Geode clusters can be replicated over WAN in various topologies: active-active, active-passive, ring, hub-spoke, star, etc.</p>
-          </div>
-          <div class="col-md-4">
-              <div class="bf-icon-wrap" style="font-size:30px; vertical-align: -5px;" aria-hidden="true"><i class="fa fa-bullhorn"></i><i class="fa fa-laptop"></i></div>
-              <h3>Continuous Query</h3>
-              <p>Clients can stay up to date by registering OQL queries with the Geode servers, making event-driven applications possible.</p>
-          </div>
-          <div class="col-md-4">
-              <div class="bf-icon-wrap" style="font-size:30px; vertical-align: -5px;" aria-hidden="true"><i class="fa fa-desktop"></i><i class="fa fa-laptop"></i></div>
-              <h3>Clients</h3>
-              <p>Clients are available for Java. (C++, C# .NET and Node.js coming soon.) A REST API is available for all other languages.</p>
-          </div>
-        </div>
       <div class="row">
-          <div class="col-md-4">
-              <div></div>
-          </div>
-          <div class="col-md-4">
-              <div class="bf-icon-wrap" style="font-size:65px; vertical-align: -5px;" aria-hidden="true"><i class="fa fa-plug"></i></div>
-              <h3>Adapters</h3>
-              <p>Geode can be used as a drop-in replacement for Redis and memcached, allowing users of these caches to use Geode's server-side features like multi-cluster replication.</p>
-          </div>
-          <div class="col-md-4">
-              <div></div>
-          </div>
+    		<div class="col-md-9">
+    			<p>
+				Releases of Geode are made available to the general public at no charge, under the <a href="http://apache.org/licenses/">Apache License</a>, in both binary and source distributions.
+				  </p>
+      <!-- RELEASES -->
+      <div class="container">
+        <!-- START OF 1.1 -->
+        <h3><span class="icon-flag-checkered"> 1.1.0</span></h3>
+        <!-- BINARY -->
+        <ul>
+            <span class="icon-cloud-download"> <strong>Binaries </strong>
+              [ <a href="http://apache.org/dyn/closer.cgi/geode/1.1.0/apache-geode-1.1.0.zip">ZIP</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-1.1.0.zip.sha256">SHA-256</a>,
+              <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-1.1.0.zip.asc">PGP</a> ] -
+              [<a href="http://apache.org/dyn/closer.cgi/geode/1.1.0/apache-geode-1.1.0.tar.gz">TAR.GZ</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-1.1.0.tar.gz.sha256">SHA-256</a>,
+              <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-1.1.0.tar.gz.asc">PGP</a> ]
+              </span>
+
+              <blockquote>Binary downloads are provided for the convenience of our users and are not official Apache Geode releases. </blockquote>
+            </li>
+        </ul>
+        <!-- SOURCE -->
+        <ul>
+            <span class="icon-cloud-download"> <strong>Source</strong>
+               [ <a href="http://apache.org/dyn/closer.cgi/geode/1.1.0/apache-geode-src-1.1.0.zip">ZIP</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-src-1.1.0.zip.sha256">SHA-256</a>,
+               <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-src-1.1.0.zip.asc">PGP</a>
+                ] -
+               [<a href="http://apache.org/dyn/closer.cgi/geode/1.1.0/apache-geode-src-1.1.0.tar.gz">TAR.GZ</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-src-1.1.0.tar.gz.sha256">SHA-256</a>,
+               <a href="https://dist.apache.org/repos/dist/release/geode/1.1.0/apache-geode-src-1.1.0.tar.gz.asc">PGP</a>
+               ]
+             </span>
+            </li>
+        </ul>
+
+        <!-- RELEASE NOTES -->
+        <ul>
+            <strong><a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes#ReleaseNotes-1.1.0">Release Notes</a></strong>
+        </ul>
+
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <h4><span class="icon-archive"> Dependency Managers</span></h4>
+          <ul>
+              <li> <strong>Gradle</strong>
+                <pre class="prettyprint">
+  dependencies {
+      compile 'org.apache.geode:geode-core:1.1.0'
+  }</pre>
+              </li>
+              <li> <strong>Maven</strong>
+                <pre class="prettyprint">
+  &lt;dependencies&gt;
+     &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+        &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+        &lt;version&gt;1.1.0&lt;/version&gt;
+     &lt;/dependency&gt;
+  &lt;/dependencies&gt;</pre>
+              </li>
+          </ul>
         </div>
+        <!-- END OF 1.1 -->
+        <!-- START OF 1.0 -->
+        <h3><span class="icon-flag-checkered"> 1.0.0-incubating</span></h3>
+        <!-- BINARY -->
+        <ul>
+            <span class="icon-cloud-download"> <strong>Binaries </strong>
+              [ <a href="http://apache.org/dyn/closer.cgi/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.zip">ZIP</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.zip.sha256">SHA-256</a>,
+              <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.zip.asc">PGP</a> ] -
+              [<a href="http://apache.org/dyn/closer.cgi/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.tar.gz">TAR.GZ</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.tar.gz.sha256">SHA-256</a>,
+              <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-1.0.0-incubating.tar.gz.asc">PGP</a> ]
+              </span>
 
-    </div>
+              <blockquote>Binary downloads are provided for the convenience of our users and are not official Apache Geode releases. </blockquote>
+            </li>
+        </ul>
+        <!-- SOURCE -->
+        <ul>
+            <span class="icon-cloud-download"> <strong>Source</strong>
+               [ <a href="http://apache.org/dyn/closer.cgi/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.zip">ZIP</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.zip.sha256">SHA-256</a>,
+               <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.zip.asc">PGP</a>
+                ] -
+               [<a href="http://apache.org/dyn/closer.cgi/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.tar.gz">TAR.GZ</a>, <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.tar.gz.sha256">SHA-256</a>,
+               <a href="https://dist.apache.org/repos/dist/release/geode/1.0.0-incubating/apache-geode-src-1.0.0-incubating.tar.gz.asc">PGP</a>
+               ]
+             </span>
+            </li>
+        </ul>
 
-    </div>
-</section>
+        <!-- RELEASE NOTES -->
+        <ul>
+            <strong><a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes#ReleaseNotes-1.0.0-incubating">Release Notes</a></strong>
+        </ul>
 
-<section class="bf-questions">
-    <div class="container">
-            <div class="col-md-12 text-center cta">
-                And much more... Interested? You can check our <a href="https://cwiki.apache.org/confluence/display/GEODE/Index#Index-Geodein5minutesGeodein5minutes" target="_blank" class="btn btn-inverse btn-lg">Geode in 5 minutes tutorial</a> <span class="avoidwrap">, ask a question on the <a href="/community/" class="btn btn-inverse btn-lg">Mailing lists</a> or <a href="http://stackoverflow.com/search?q=Apache%20Geode" class="btn btn-inverse btn-lg">StackOverflow</a></span>
-            </div>
-    </div>
-</section
-
-<section class="bf-news">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <h2>About the Project</h2>
-<p>Apache Geode is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</p>
-
-<p>Geode pools memory, CPU, network resources, and optionally local disk across multiple processes
-to manage application objects and behavior. It uses dynamic replication and data partitioning
-techniques to implement high availability, improved performance, scalability, and fault
-tolerance. In addition to being a distributed data container, Apache Geode is an in-memory data
-management system that provides reliable asynchronous event notifications and guaranteed message
-delivery.</p>
-
-<p>Apache Geode is a mature, robust technology originally developed by GemStone Systems.
-Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used
-in Wall Street trading platforms.
-Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.</p>
-            </div>
-            <!--
-            <div class="col-md-4 text-left">
-                <h2>Recent Releases</h2>
-
-
-            </div>
-            -->
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <h4><span class="icon-archive"> Dependency Managers</span></h4>
+          <ul>
+              <li> <strong>Gradle</strong>
+                <pre class="prettyprint">
+  dependencies {
+      compile 'org.apache.geode:geode-core:1.0.0-incubating'
+  }</pre>
+                <!-- ><script src="https://gist.github.com/markito/b7796cafef4bd273bd07.js"></script>-->
+              </li>
+              <li> <strong>Maven</strong>
+                <pre class="prettyprint">
+  &lt;dependencies&gt;
+     &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+        &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+        &lt;version&gt;1.0.0-incubating&lt;/version&gt;
+     &lt;/dependency&gt;
+  &lt;/dependencies&gt;</pre>
+              </li>
+          </ul>
         </div>
-
-    </div>
+        <!-- END OF 1.0 -->
+      </div>
+      <p>If you need access to older releases they can be found in the <a href="https://archive.apache.org/dist/incubator/geode/">release archives</a>.</p>
+      <!-- END OF RELEASE -->
+      <hr/>
+        <p>
+					Project releases are approved by vote of the Apache Geode Project Management Committee (PMC). Support for a release is provided by project volunteers on the project <a href="http://geode.apache.org/community/#mailing-lists">mailing lists</a>. Bugs found in a release may be discussed on the list and reported through the <a href="https://issues.apache.org/jira/browse/GEODE">issue tracker</a>. The user mailing list and issue tracker are the only support options hosted by the Apache Geode project.
+				</p>
+				<p>
+					<strong>Note</strong>: When downloading from a mirror, please be sure to verify that checksums and signatures are correct. To do so, use the checksum and signature files from the main Apache site at <a href="https://dist.apache.org/repos/dist/release/geode/">https://dist.apache.org/repos/dist/release/geode/</a>. Find here the KEYS file, which contains all OpenPGP keys we use to sign releases here: <a href="https://git-wip-us.apache.org/repos/asf?p=geode.git;a=blob;f=KEYS;h=9d13f70a9ce8f8d6a7c3feb1e194ccec123b5868;hb=c26334542fa9e90daff5f58467d6e174b3e0f3e2">KEYS</a>
+				</p>
+				<p>
+					The PGP signatures can be verified using PGP or GPG. First download the <a href="https://git-wip-us.apache.org/repos/asf?p=geode.git;a=blob;f=KEYS;h=9d13f70a9ce8f8d6a7c3feb1e194ccec123b5868;hb=c26334542fa9e90daff5f58467d6e174b3e0f3e2">KEYS</a> as well as the <em>asc signature</em> file for the particular distribution. Then verify the signatures using:
+				</p>
+				<p>
+       				% pgpk -a KEYS
+					</br></br>
+        			% pgpv ${filename}.tar.gz.asc
+        			</br></br>
+    				or
+    				</br></br>
+        			% pgp -ka KEYS
+        			</br></br>
+        			% pgp ${filename}.tar.gz.asc
+        			</br></br>
+    				or
+    				</br></br>
+        			% gpg --import KEYS
+        			</br></br>
+        			% gpg --verify ${filename}.tar.gz.asc
+        			</br></br>
+        		</p>
+    			<p>
+					Alternatively, you can verify the MD5 signature on the files. A Unix program called md5 or md5sum is included in many Unix distributions. It is also available as part of <a href="http://www.gnu.org/software/textutils/textutils.html">GNU Textutils</a>. Windows users can get binary md5 programs from <a href="http://www.fourmilab.ch/md5/">here</a>, <a href="http://www.pc-tools.net/win32/md5sums/">here</a>, or <a href="http://www.slavasoft.com/fsum/">here</a>.
+				<p>
+					If you want to build directly from source, instructions are within the User Documentation in the <a href="http://geode.apache.org/docs/guide/getting_started/installation/install_standalone.html">How to Install</a> subsection.
+				</p>
+			</div>
+		</div>
+	</div>
 </section>
 
 
@@ -355,3 +369,4 @@ Today Apache Geode technology is used by hundreds of enterprise customers for hi
 
 </body>
 </html>
+
