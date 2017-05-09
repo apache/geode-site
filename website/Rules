@@ -31,6 +31,7 @@
 #   because “*” matches zero or more characters.
 
 passthrough /\/(bootstrap|css|font|img|js|static|guide|fonts|images|javascripts|stylesheets|subnavs)\/.*/
+passthrough '/**/.htaccess'
 
 compile '/docs/**/*' do
   @docs = true
