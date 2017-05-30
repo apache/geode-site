@@ -30,7 +30,7 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-passthrough /\/(bootstrap|css|font|img|js|static|guide|fonts|images|javascripts|stylesheets|subnavs)\/.*/
+passthrough /\/(bootstrap|css|font|img|js|static|guide|fonts|images|javascripts|stylesheets|subnavs|schema)\/.*/
 passthrough '/**/.htaccess'
 
 compile '/docs/**/*' do
