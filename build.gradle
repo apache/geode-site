@@ -102,3 +102,7 @@ rat {
     'website/layouts/**',
   ]
 }
+
+task assemble {
+  description "Empty task for travis to call. Travis always invokes assemble"
+}
