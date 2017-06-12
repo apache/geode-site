@@ -27,8 +27,8 @@ Source files for the website are in `website/content`. Generated files for the w
 
 **NOTE:** To make changes to the [Apache Geode User Guide](http://geode.apache.org/docs/), which is published to the website:
 
-- Review [CONTRIBUTING](https://github.com/apache/geode/blob/develop/geode-docs/CONTRIBUTE.md) for information about contributing to the documentation source files.
-- Follow the [README](https://github.com/apache/geode/blob/develop/geode-book/README.md) for information about building a local version of the guide and adding it to the website.
+- Review [CONTRIBUTING](https://github.com/apache/geode/blob/develop/geode-docs/CONTRIBUTE.md) in the Geode repository for information about contributing to the documentation source files.
+- Follow the [README](https://github.com/apache/geode/blob/develop/geode-book/README.md) in the Geode repository's `geode-book` directory for information about building a local version of the guide and adding it to the website.
 
 The website is updated by a "sync" tool that monitors the __asf-site__ branch 
 of our Git repo, so after making changes you must place your updated source
@@ -50,7 +50,7 @@ an HTML, JS or CSS file.
 
 ### 2. Locally generate the site and test your changes
 
-To generate the site content, run the `nanoc` compiler:
+To generate the site content, navigate to the top level directory of the repo and use gradle to run the `nanoc` compiler:
 
     $ ./gradlew compile
 

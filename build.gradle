@@ -96,6 +96,9 @@ rat {
     'website/content/fonts/**',
     'website/content/stylesheets/**',
 
+    // graphics
+    'website/content/docs/guide/**/*.svg',
+
     // compiled logs and locks
     'website/utilities/markers.txt',
     'website/tmp/**',
