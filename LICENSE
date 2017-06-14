@@ -217,6 +217,8 @@ Apache Geode bundles the following files under the MIT license:
 
   - Bootflat v1.0.1 (http://bootflat.github.io/), Copyright (c) 2014
     bootflat
+  - Bootstrap v3.0.0 (http://getbootstrap.com/), Copyright (c) 2011-2016
+    Twitter, Inc.
   - Font Awesome v4.0.3 (code files) (http://fontawesome.io), Copyright (c)
     Dave Gandy
   - HeadJS v0.96 (http://headjs.com/), Copyright (c) 2013 Tero Piirainen
@@ -227,6 +229,8 @@ Apache Geode bundles the following files under the MIT license:
     Foy, http://damirfoy.com
   - jQuery JavaScript Library v1.10.1 (https://jquery.com), Copyright (c)
     jQuery Foundation and other contributors, http://jquery.org
+  - Normalize.css v2.1.0 (https://necolas.github.io/normalize.css/),
+    Copyright (c) Nicolas Gallagher and Jonathan Neal
   - Respond.js v1.1.0 (https://github.com/scottjehl/Respond), Copyright (c)
     2012 Scott Jehl
 
