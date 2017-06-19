@@ -8,6 +8,7 @@ org.apache.geode.cache.client
 org.apache.geode.cache.control
 org.apache.geode.cache.execute
 org.apache.geode.cache.lucene
+org.apache.geode.cache.lucene.management
 org.apache.geode.cache.operations
 org.apache.geode.cache.partition
 org.apache.geode.cache.persistence
