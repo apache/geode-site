@@ -33,34 +33,7 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<div class="header-dropdown">
-  <a class="header-dropdown-link" >
-    v1.2
-  </a>
-  <div class="header-dropdown-content">
-    <ul>
-        <li><a href="/index-11.html">v1.1</a></li>
-        <li><a href="/index-10.html">v1.0</a></li>
-    </ul>
-  </div>
-</div>
-
+    
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1653,8 +1626,14 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li>
+                    <li class="has_submenu">
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
+                        <ul>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1987,6 +1966,9 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3325,8 +3307,9 @@ See the Sun documentation for more information on topics such as JTA, <code>java
 <h1>How to Run JTA Transactions with Geode as a &ldquo;Last Resource&rdquo;</h1>
 
 <ol>
-<li> Locate the <code>$GEMFIRE/lib/gemfire-jca.rar</code> file in your Geode installation. </li>
-<li><p>Add your container-specific XML file to the <code>gemfire-jca.rar</code> file. 
+<li> Locate the version-specific <code>geode-jca</code> RAR file within 
+the <code>lib</code> directory of your Geode installation. </li>
+<li><p>Add your container-specific XML file to the <code>geode-jca</code> RAR file. 
 <ol>
 <li>Create a container-specific resource adapter XML file named &lt;container&gt;-ra.xml. For example, an XML file for a WebLogic resource adapter XML file might look something like this:</p>
 <pre class="highlight plaintext"><code>&lt;?xml version="1.0"?&gt;
@@ -3343,15 +3326,19 @@ See the Sun documentation for more information on topics such as JTA, <code>java
 <pre class="highlight plaintext"><code>META-INF/weblogic-ra.xml
 </code></pre>
 <p></li>
-<li>Navigate to the directory above the <code>META-INF</code> folder and execute the following command:</p>
-<pre class="highlight plaintext"><code>$ jar -uf &lt;GEMFIRE_INSTALL_DIR&gt;/lib/gemfire-jca.rar META-INF/weblogic-ra.xml
+<li>Navigate to the directory above the <code>META-INF</code> folder and execute the following command, with appropriate substitutions for 
+path and file names:</p>
+<pre class="highlight plaintext"><code>$ jar -uf /path/to/lib/geode-jca-X-X-X.rar META-INF/weblogic-ra.xml
 </code></pre>
 <p></li>
 </ol></p></li>
-<li><p>Make sure that <code>$GEMFIRE/lib/gemfire.jar</code> is accessible in the CLASSPATH of the JTA transaction coordinator container.</p></li>
-<li><p>Deploy <code>gemfire-jca.rar</code> file on the JTA transaction coordinator container . When deploying the file, you specify the JNDI name and so on. </p></li>
+<li><p>Make sure that the <code>geode-dependencies.jar</code> is accessible in 
+the CLASSPATH of the JTA transaction coordinator container.</p></li>
+<li><p>Deploy the version-specific <code>geode-jca</code> RAR file on 
+the JTA transaction coordinator container.
+When deploying the file, you specify the JNDI name and so on. </p></li>
 <li><p>Configure Geode for any necessary transactional behavior. Enable <code>copy-on-read</code> and specify a transaction listener, if you need one. See <a href="/docs/guide/12/developing/transactions/working_with_transactions.html#concept_vx2_gs4_5k">Setting Global Copy on Read</a> and <a href="/docs/guide/12/developing/transactions/working_with_transactions.html#concept_ocw_vf1_wk">Configuring Transaction Plug-In Event Handlers</a> for details.</p></li>
-<li><p>Get an initial context through <code>com.gemstone.cache.Cache.getJNDIContext</code>. For example:</p>
+<li><p>Get an initial context through <code>org.apache.geode.cache.GemFireCache.getJNDIContext</code>. For example:</p>
 <pre class="highlight plaintext"><code>Context ctx = cache.getJNDIContext();
 </code></pre>
 <p>This returns <code>javax.naming.Context</code> and gives you the JNDI associated with the cache. The context contains the <code>TransactionManager</code>, <code>UserTransaction</code>, and any configured JDBC resource manager.</p></li>
@@ -3408,7 +3395,7 @@ As of Geode 1.2, Geode&rsquo;s JTA transaction manager is deprecated.</p>
 <li> Configure Geode for any necessary transactional behavior. Enable <code>copy-on-read</code> for your cache and specify a transaction listener, if you need one. See <a href="/docs/guide/12/developing/transactions/working_with_transactions.html#concept_vx2_gs4_5k">Setting Global Copy on Read</a> and <a href="/docs/guide/12/developing/transactions/working_with_transactions.html#concept_ocw_vf1_wk">Configuring Transaction Plug-In Event Handlers</a> for details. </li>
 <li> Make sure that JTA transactions are not disabled in the <code>cache.xml</code> file or the application code. </li>
 <li> Initialize the Geode cache. </li>
-<li><p>Get an initial context through <code>org.apache.geode.cache.Cache.getJNDIContext</code>. For example: </p>
+<li><p>Get an initial context through <code>org.apache.geode.cache.GemFireCache.getJNDIContext</code>. For example: </p>
 <pre class="highlight plaintext"><code>Context ctx = cache.getJNDIContext();
 </code></pre>
 <p>This returns <code>javax.naming.Context</code> and gives you the JNDI associated with the cache. The context contains the <code>TransactionManager</code>, <code>UserTransaction</code>, and any configured JDBC resource manager.</p></li>

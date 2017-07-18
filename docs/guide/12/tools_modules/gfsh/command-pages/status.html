@@ -33,34 +33,7 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<div class="header-dropdown">
-  <a class="header-dropdown-link" >
-    v1.2
-  </a>
-  <div class="header-dropdown-content">
-    <ul>
-        <li><a href="/index-11.html">v1.1</a></li>
-        <li><a href="/index-10.html">v1.0</a></li>
-    </ul>
-  </div>
-</div>
-
+    
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1653,8 +1626,14 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li>
+                    <li class="has_submenu">
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
+                        <ul>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1987,6 +1966,9 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3414,11 +3396,10 @@ Member                 | Error
 <li>  not responding</li>
 </ul>
 
-<p><strong>Availability:</strong> Online or offline. If you want to obtain the status of a locator while you are offline, use the <code>--dir</code> or the <code>--pid</code> parameter.</p>
+<p><strong>Availability:</strong> Online or offline. If you want to obtain the status of a locator while you are offline, use the <code>--dir</code> option.</p>
 
 <p><strong>Syntax:</strong></p>
-<pre class="highlight plaintext"><code>status locator [--name=value] [--host=value] [--port=value]
-[--pid=value] [--dir=value]
+<pre class="highlight plaintext"><code>status locator [--name=value] [--host=value] [--port=value] [--dir=value]
 </code></pre>
 <p><a id="topic_E96D0EFA513C4CD79B833FCCDD69C832__table_s44_w3f_2w"></a></p>
 
@@ -3445,11 +3426,6 @@ Member                 | Error
 <td>10334</td>
 </tr>
 <tr>
-<td><span class="keyword parmname">--pid</span></td>
-<td>Process ID (PID) of the running locator.</td>
-<td> </td>
-</tr>
-<tr>
 <td><span class="keyword parmname">--dir</span></td>
 <td>Directory in which the locator was started.</td>
 <td>current directory</td>
@@ -3462,28 +3438,14 @@ Member                 | Error
 <pre class="highlight plaintext"><code>status locator
 status locator --name=locator1
 </code></pre>
-<p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;status locator --name=locator1
-Locator in /home/user/gemfire/locator1 on ubuntu.local[10334] as locator1 is currently online.
-Process ID: 2401
-Uptime: 12 minutes 3 seconds
-GemFire Version: 8.0.0
-Java Version: 1.7.0_65
-Log File: /home/user/gemfire/locator1/locator1.log
-JVM Arguments: -Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
--Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-Class-Path: /home/user/Pivotal_GemFire_800_b48319_Linux/lib/locator-dependencies.jar:/usr/local/java/lib/tools.jar
-
-Cluster configuration service is up and running.
-</code></pre>
 <h2><a id="topic_E5DB49044978404D9D6B1971BF5D400D" class="no-quick-link"></a>status server</h2>
 
 <p>Display the status of the specified Geode cache server.</p>
 
-<p><strong>Availability:</strong> Online or offline. If you want to obtain the status of a server while you are offline, use the <code>--dir</code> or the <code>--pid</code> parameter.</p>
+<p><strong>Availability:</strong> Online or offline. If you want to obtain the status of a server while you are offline, use the <code>--dir</code> option.</p>
 
 <p><strong>Syntax:</strong></p>
-<pre class="highlight plaintext"><code>status server [--name=value] [--pid=value] [--dir=value]
+<pre class="highlight plaintext"><code>status server [--name=value] [--dir=value]
 </code></pre>
 <p><a id="topic_E5DB49044978404D9D6B1971BF5D400D__table_zvn_z3f_2w"></a></p>
 
@@ -3500,11 +3462,6 @@ Cluster configuration service is up and running.
 <td> </td>
 </tr>
 <tr>
-<td><span class="keyword parmname">--pid</span></td>
-<td>Process ID (PID) of the running Geode Cache Server.</td>
-<td> </td>
-</tr>
-<tr>
 <td><span class="keyword parmname">--dir </span></td>
 <td>Directory in which the Geode Cache Server was started.</td>
 <td>current directory</td>
@@ -3516,19 +3473,6 @@ Cluster configuration service is up and running.
 <p><strong>Example Commands:</strong></p>
 <pre class="highlight plaintext"><code>status server
 status server --name=server1
-</code></pre>
-<p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;status server --name=server1
-Server in /home/user/gemfire/server1 on ubuntu.local[40404] as server1 is currently online.
-Process ID: 2726
-Uptime: 1 minute 3 seconds
-GemFire Version: 8.0.0
-Java Version: 1.7.0_65
-Log File: /home/user/gemfire/server1/server1.log
-JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.use-cluster-configuration=true
- -XX:OnOutOfMemoryError="kill -9 %p" -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
--Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-Class-Path: /home/user/Pivotal_GemFire_800_b48319_Linux/lib/server-dependencies.jar:/usr/local/java/lib/tools.jar
 </code></pre>
         
 

@@ -33,34 +33,7 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<div class="header-dropdown">
-  <a class="header-dropdown-link" >
-    v1.2
-  </a>
-  <div class="header-dropdown-content">
-    <ul>
-        <li><a href="/index-11.html">v1.1</a></li>
-        <li><a href="/index-10.html">v1.0</a></li>
-    </ul>
-  </div>
-</div>
-
+    
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1653,8 +1626,14 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li>
+                    <li class="has_submenu">
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
+                        <ul>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1987,6 +1966,9 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3243,7 +3225,7 @@ The Geode server is used primarily for hosting long-lived data regions and for r
 <p>The <code>gfsh</code> utility uses a working directory for its configuration files and log files. These are the defaults and configuration options:</p>
 
 <ul>
-<li>  When you start a standalone server using <code>gfsh</code>, <code>gfsh</code> will automatically load the required JAR files <code>$GEMFIRE/lib/server-dependencies.jar</code> and <code>$JAVA_HOME/lib/tools.jar</code> into the CLASSPATH of the JVM process. If you start a standalone server using the ServerLauncher API, you must specify <code>$GEMFIRE/lib/server-dependencies.jar</code> inside your command to launch the process. For more information on CLASSPATH settings in Geode, see <a href="/docs/guide/12/getting_started/setup_classpath.html">Setting Up the CLASSPATH</a>.</li>
+<li>  When you start a standalone server using <code>gfsh</code>, <code>gfsh</code> will automatically load the required JAR file <code>$GEMFIRE/lib/server-dependencies.jar</code> into the CLASSPATH of the JVM process. If you start a standalone server using the ServerLauncher API, you must specify <code>$GEMFIRE/lib/server-dependencies.jar</code> inside your command to launch the process. For more information on CLASSPATH settings in Geode, see <a href="/docs/guide/12/getting_started/setup_classpath.html">Setting Up the CLASSPATH</a>.</li>
 <li>  Servers are configured like any other Geode process, with <code>gemfire.properties</code> and shared cluster configuration files. It is not programmable except through application plug-ins. Typically, you provide the <code>gemfire.properties</code> file and the <code>gfsecurity.properties</code> file (if you are using a separate, restricted access security settings file). You can also specify a <code>cache.xml</code> file in the cache server’s working directory.</li>
 <li><p>By default, a new server started with <code>gfsh</code> receives its initial cache configuration from the cluster configuration service, assuming the locator is running the cluster configuration service. If you specify a group when starting the server, the server also receives configurations that apply to a group. The shared configuration consists of <code>cache.xml</code> files, <code>gemfire.properties</code> files, and deployed jar files. You can disable use of the cluster configuration service by specifying <code>--use-cluster-configuration=false</code> when starting the server using <code>gfsh</code>.</p>
 

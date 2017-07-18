@@ -33,34 +33,7 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    <!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<div class="header-dropdown">
-  <a class="header-dropdown-link" >
-    v1.2
-  </a>
-  <div class="header-dropdown-content">
-    <ul>
-        <li><a href="/index-11.html">v1.1</a></li>
-        <li><a href="/index-10.html">v1.0</a></li>
-    </ul>
-  </div>
-</div>
-
+    
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1653,8 +1626,14 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li>
+                    <li class="has_submenu">
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
+                        <ul>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
+                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1987,6 +1966,9 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3267,8 +3249,6 @@ limitations under the License.
 <p><strong>Syntax:</strong></p>
 <pre class="highlight plaintext"><code>start gateway-receiver [--group=value(,value)*] [--member=value]
 </code></pre>
-<p><a id="topic_67738A5B68E84DEE95D1C92DAB2E26E5__table_eyh_3vg_2w"></a></p>
-
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3321,8 +3301,6 @@ pc13(2266)&lt;v22&gt;:4522 | OK     | GatewayReceiver is started on member pc13(
 <p><strong>Syntax:</strong></p>
 <pre class="highlight plaintext"><code>start gateway-sender --id=value [--group=value(,value)*] [--member=value]
 </code></pre>
-<p><a id="topic_AB8BA3F42B9645A8BE9BD97CE2F839A8__table_gxc_lvg_2w"></a></p>
-
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3384,8 +3362,6 @@ pc13(30633)&lt;v20&gt;:22567 | OK    | GatewaySender ln is started on member pc1
 <pre class="highlight plaintext"><code>start jconsole [--interval=&lt;seconds&gt;] [--notile] [--version]
 [--J&lt;jconsole JVM options&gt;]
 </code></pre>
-<p><a id="topic_D00507416F3944DFAB48D2FA2B9E4A31__table_uck_4vg_2w"></a></p>
-
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3461,8 +3437,6 @@ JDK installation or the JDK bin directory is in the system PATH.
 <p><strong>Syntax:</strong></p>
 <pre class="highlight plaintext"><code>start jvisualvm [--J=value(,value)*]
 </code></pre>
-<p><a id="topic_5B5BF8BEE905463D8B7762B89E2D65E7__table_ssp_svg_2w"></a></p>
-
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3505,10 +3479,7 @@ JDK installation or the JDK bin directory is in the system PATH.
  [--http-service-port=value] [--http-service-bind-address=value] 
  [--J=value(,value)*]
 </code></pre>
-<p><a id="topic_591260CF25D64562A0EDD7260D2AC6D4__table_hly_vvg_2w"></a></p>
-
 <table>
-<caption><span class="tablecap">Table 5. Parameters</span></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -3654,25 +3625,6 @@ See <a href="../../../configuring/cluster_config/gfsh_persist.html">Overview of 
 <p><strong>Example Commands:</strong></p>
 <pre class="highlight plaintext"><code>start locator --name=locator1
 </code></pre>
-<p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;start locator --name=locator3
-Starting a GemFire Locator in /home/user/locator3...
-................................
-Locator in /home/user/locator3 on ubuntu.local[10334] as locator3 is currently online.
-Process ID: 1898
-Uptime: 19 seconds
-GemFire Version: 8.0.0
-Java Version: 1.7.0_65
-Log File: /home/user/locator3/locator3.log
-JVM Arguments: -Dgemfire.default.locators=192.0.2.3[40402]
--Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
--Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
--Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-Class-Path: /home/user/Pivotal_GemFire_800_b48258_Linux/lib/locator-dependencies.jar:
-/usr/local/java/lib/tools.jar
-
-Cluster configuration service is up and running.
-</code></pre>
 <h2><a id="topic_E906BA7D9E7F4C5890FEFA7ECD40DD77" class="no-quick-link"></a>start pulse</h2>
 
 <p>Launch the Geode Pulse monitoring dashboard tool in the user&rsquo;s default system browser and navigates the user to the landing page (login page).</p>
@@ -3684,8 +3636,6 @@ Cluster configuration service is up and running.
 <p><strong>Syntax:</strong></p>
 <pre class="highlight plaintext"><code>start pulse [--url=value]
 </code></pre>
-<p><a id="topic_E906BA7D9E7F4C5890FEFA7ECD40DD77__table_cv3_w54_k4eee"></a></p>
-
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3740,7 +3690,6 @@ start pulse --url=http://gemfire.example.com:7070/pulse
 <p><a id="topic_3764EE2DB18B4AE4A625E0354471738A__table_at5_bwg_2w"></a></p>
 
 <table>
-<caption><span class="tablecap">Table 7. Parameters</span></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -4015,24 +3964,11 @@ the cluster.
 </tbody>
 </table>
 
+<p><span class="tablecap">Table 7. Start Server Parameters</span></p>
+
 <h3><a id="topic_3764EE2DB18B4AE4A625E0354471738A__section_A50120613D3C4A848463236C4EFF18C7" class="no-quick-link"></a>Examples</h3>
 <pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1
 gfsh&gt;start server --name=server2 --server-port=40405
-</code></pre>
-<p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1 --server-port=40406
-Starting a GemFire Server in /home/user/server1...
-....................................................
-Server in /home/user/server1 on ubuntu.local[40406] as server1 is currently online.
-Process ID: 32209
-Uptime: 47 seconds
-GemFire Version: 8.0.0
-Java Version: 1.7.0_65
-Log File: /home/user/server1/server1.log
-JVM Arguments: -Dgemfire.default.locators=192.0.2.4[40402] -Dgemfire.use-cluster-configuration=true
--XX:OnOutOfMemoryError="kill -9 %p" -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
--Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-Class-Path: /home/user/Pivotal_GemFire_800_b48258_Linux/lib/server-dependencies.jar:/usr/local/java/lib/tools.jar
 </code></pre>
         
 
