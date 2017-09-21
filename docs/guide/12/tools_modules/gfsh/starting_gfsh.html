@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3211,6 +3229,8 @@ limitations under the License.
 -->
 
 <p>Before you start gfsh, confirm that you have set JAVA_HOME and that your PATH variable includes the gfsh executable.</p>
+
+<p>To manage servers and locators properly, <code>gfsh</code> requires the <code>tools.jar</code> file (provided with the JDK) exist in the CLASSPATH.</p>
 
 <p><strong>Note:</strong>
 On Windows, you must have the JAVA_HOME environment variable set properly to use start, stop and status commands for both locators and servers.</p>

@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3218,6 +3236,9 @@ limitations under the License.
 
 <p>These dependency JAR files are packaged in your Apache Geode installation in the <code>$GEMFIRE/lib</code> (or on Windows, the <code>%GEODE_HOME%\lib</code>) directory.</p>
 
+<p><strong>Note:</strong>
+The <code>gfsh</code> command-line utility also searches for <code>tools.jar</code> (included with JDK) and adds it to gfsh&rsquo;s CLASSPATH. If you do not have a JDK installed, gfsh uses file-based communication instead for the <code>status</code> and <code>stop</code> commands. If using a JRE instead of JDK, gfsh must have read-write permissions in the working directory of the server and locator processes.</p>
+
 <h2><a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_02EEF9A519094EAD9D6B5C8E896EBA27" class="no-quick-link"></a>Machine Hostname</h2>
 
 <p>On some operating systems, you may need to ensure that the hostname of your machine is configured in your system hosts file. For example, on Mac OSX you may need to map your machine&rsquo;s hostname to your IP address in the <code>/etc/hosts</code> file in order for <code>gfsh</code> and Pulse to operate correctly.</p>
@@ -3237,11 +3258,12 @@ limitations under the License.
 
 <h2><a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C69A2711A7664A9091A5E634221053CB" class="no-quick-link"></a>Configuring gfsh Environment Variables</h2>
 
-<p>In addition, you can set several gfsh-specific preset SHELL variables by using the <code>set variable</code> command. For example, you can set <code>gfsh</code> to run in quiet mode. Not all <code>gfsh</code> variables are modifiable; user-configurable variables include:</p>
+<p>In addition, you can set gfsh-specific preset SHELL variables by using the <code>set variable</code> command. For example, you can set <code>gfsh</code> to run in quiet mode.
+Not all <code>gfsh</code> variables are modifiable.
+User-configurable variables include:</p>
 
 <ul>
 <li>  APP_FETCH_SIZE</li>
-<li>  APP_COLLECTION_LIMIT</li>
 <li>  APP_QUIET_EXECUTION</li>
 </ul>
 

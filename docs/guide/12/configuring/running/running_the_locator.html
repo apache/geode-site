@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3229,7 +3247,7 @@ You can run locators as peer locators, server locators, or both:</p>
 <p>Locator configuration and log files have the following properties:</p>
 
 <ul>
-<li>  When you start a standalone locator using <code>gfsh</code>, <code>gfsh</code> will automatically load the required JAR file (<code>$GEMFIRE/lib/locator-dependencies.jar</code>) into the CLASSPATH of the JVM process. If you start a standalone locator using the <code>LocatorLauncher</code> API, you must specify <code>$GEMFIRE/lib/locator-dependencies.jar</code> inside the command used to launch the locator process. For more information on CLASSPATH settings in Geode, see <a href="/docs/guide/12/getting_started/setup_classpath.html">CLASSPATH Settings for Geode Processes</a>. You can modify the CLASSPATH by specifying the <code>--classpath</code> parameter.</li>
+<li>  When you start a standalone locator using <code>gfsh</code>, <code>gfsh</code> will automatically load the required JAR files (<code>$GEMFIRE/lib/locator-dependencies.jar</code>) into the CLASSPATH of the JVM process. If you start a standalone locator using the <code>LocatorLauncher</code> API, you must specify <code>$GEMFIRE/lib/locator-dependencies.jar</code> inside the command used to launch the locator process. For more information on CLASSPATH settings in Geode, see <a href="/docs/guide/12/getting_started/setup_classpath.html">CLASSPATH Settings for Geode Processes</a>. You can modify the CLASSPATH by specifying the <code>--classpath</code> parameter.</li>
 <li><p>Locators are members of the distributed system just like any other member. In terms of <code>mcast-port</code> and <code>locators</code> configuration, a locator should be configured in the same manner as a server. Therefore, if there are two other locators in the distributed system, each locator should reference the other locators (just like a server member would). For example:</p>
 <pre class="highlight plaintext"><code>gfsh&gt; start locator --name=locator1 --port=9009 --mcast-port=0 \
 --locators='host1[9001],host2[9003]'
@@ -3378,7 +3396,7 @@ Java Version: 1.7.0_65
 Log File: /home/user/locator1/locator1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
  -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-Class-Path: /home/user/Pivotal_GemFire_800_b48319_Linux/lib/locator-dependencies.jar
+Class-Path: /home/user/Pivotal_GemFire_800_b48319_Linux/lib/locator-dependencies.jar:/usr/local/java/lib/tools.jar
 
 Cluster configuration service is up and running.
 </code></pre>

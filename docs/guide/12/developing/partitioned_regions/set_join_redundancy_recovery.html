@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3210,49 +3228,34 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>This section covers configuring whether and how redundancy is
-recovered in a partitioned region, after a member joins.</p>
+<p>Configure whether and how redundancy is recovered in a partition region after a member joins.</p>
 
 <p><a id="set_join_redundancy_recovery__section_D6FB0D69CC454B53B9CF1E656A44465C"></a>
 Use the partition attribute <code>startup-recovery-delay</code> to specify member join redundancy recovery.</p>
 
 <table><thead>
 <tr>
-<th>value of <code>startup-recovery-delay</code></th>
+<th>startup-recovery-delay partition attribute</th>
 <th>Effect following a member join</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>-1</td>
-<td>No automatic recovery of redundancy after a new member comes online. With this value and the default <code>recovery-delay</code> setting, redundancy recovery is only achieved by a rebalance operation.</td>
+<td>No automatic recovery of redundancy after a new member comes online. If you use this and the default <code>recovery-delay</code> setting, you can only recover redundancy by kicking off rebalancing through a cacheserver or API call.</td>
 </tr>
 <tr>
-<td>long &gt;= 0</td>
-<td>Number of milliseconds to wait after a member joins before recovering redundancy. The default is 0 (zero), which causes immediate redundancy recovery whenever a member that hosts the partitioned region joins.</td>
+<td>long greater than or equal to <strong>0</strong></td>
+<td>Number of milliseconds to wait after a member joins before before recovering redundancy. The default is 0 (zero), which causes immediate redundancy recovery whenever a new partitioned region host joins.</td>
 </tr>
 </tbody></table>
 
-<p>Setting <code>startup-recovery-delay</code> to a value higher than the 
-default of 0 allows multiple new members to join before 
-redundancy recovery begins.
-With the multiple members present during recovery,
-the system will spread redundancy recovery among them.
-With no delay, if multiple members are started in close succession,
-the system may choose only the first member started for most or all
-of the redundancy recovery.</p>
+<p>Setting this to a value higher than the default of 0 allows multiple new members to join before redundancy recovery kicks in. With the multiple members present during recovery, the system will spread redundancy recovery among them. With no delay, if multiple members are started in close succession, the system may choose only the first member started for most or all of the redundancy recovery.</p>
 
 <p><strong>Note:</strong>
-Satisfying redundancy is not the same as adding capacity.
-If redundancy is satisfied, new members do not take buckets
-until the invocation of a rebalance operation.</p>
+Satisfying redundancy is not the same as adding capacity. If redundancy is satisfied, new members do not take buckets until you invoke a rebalance.</p>
 
-<p>The parallel recovery implementation recovers quickly.
-For this reason,
-it is even more important to configure <code>startup-recovery-delay</code>
-to an appropriate value when restarting multiple members
-at the same time.
-Set <code>startup-recovery-delay</code> to a value that ensures all members
-are up and available <em>before</em> redundancy recovery kicks in.</p>
+<p><strong>Note:</strong>
+With parallel recovery introduced in version 8.2, redundancy may be recovered more quickly than in previous versions. For this reason, it is even more important to configure <code>startup-recovery-delay</code> to an appropriate value if you intend to restart multiple members at once. Set <code>startup-recovery-delay</code> to a value that ensures all members are up and available <em>before</em> redundancy recovery kicks in.</p>
 
 <p>Set join redundancy recovery using one of the following:</p>
 

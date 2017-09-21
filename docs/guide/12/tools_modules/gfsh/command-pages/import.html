@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3230,7 +3248,7 @@ limitations under the License.
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
 <p><strong>Syntax:</strong></p>
-<pre class="highlight plaintext"><code> import data --region=value --file=value --member=value [--invoke-callbacks=value]
+<pre class="highlight plaintext"><code> import data --region=value --file=value --member=value
 </code></pre>
 <p><a id="topic_jw2_2ld_2l__table_lzg_3fg_2w"></a></p>
 
@@ -3238,28 +3256,19 @@ limitations under the License.
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Default Value</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><span class="keyword parmname">--region</span></td>
 <td><em>Required.</em> Region into which data will be imported.</td>
-<td></td>
 </tr>
 <tr>
 <td><span class="keyword parmname">--file </span></td>
 <td><em>Required.</em> File from which the imported data will be read. The file must have an extension of &ldquo;.gfd&rdquo; and must be on the file system of the member (or accessible to that member via NFS) that is being targeted for the import.</td>
-<td></td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;member</span></td>
-<td><em>Required.</em> Name/ID of a member that hosts the region. The data will be imported from the specified file on the host where the member is running.</td>
-<td></td>
-</tr>
-<tr>
-<td><span class="keyword parmname">&#8209;&#8209;invoke-callbacks</span></td>
-<td>Boolean value that, when true, invokes callbacks during the data import.</td>
-<td>false</td>
+<td><em>Required.</em> Name/Id of a member which hosts the region. The data will be imported from the specified file on the host where the member is running.</td>
 </tr>
 </tbody></table>
 

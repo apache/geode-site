@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3210,10 +3228,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>The Apache Geode Developer REST interface runs as an embedded HTTP or HTTPS service (Jetty server) within one
-or more Geode servers.</p>
-
-<h1>REST API Libraries</h1>
+<p>The Apache Geode developer REST interface runs as an embedded HTTP or HTTPS service (Jetty server) within a Geode data node.</p>
 
 <p>All Geode REST interface classes and required JAR files are distributed as a WAR file with the Geode product distribution. You can find the file in the following location:</p>
 
@@ -3223,26 +3238,21 @@ or more Geode servers.</p>
 
 <p>where <em>install-dir</em> is the server installation directory and <em>n.n.n</em> is a version number.</p>
 
-<h1><a id="setup_config_enabling_rest" class="no-quick-link"></a>Enabling the REST API</h1>
+<p>To enable the developer REST API service in Apache Geode, set the <code>start-dev-rest-api</code> Geode property to <code>true</code> when starting a data node using either <code>gfsh</code> or the ServerLauncher API. Setting this property to true on a data node will start up an embedded Jetty server and deploy the REST developer API WAR file.</p>
 
-<p>The REST API service for application development runs only on servers; you cannot run the service on a locator.</p>
+<p><strong>Note:</strong>
+The REST API service for application development runs only on servers; you cannot use locators to host the developer Geode REST API services.</p>
 
-<p>To enable the Developer REST API service on a given server, use the <code>gfsh start server</code> command with the <code>--start-rest-api</code> option,
-or set the <code>start-dev-rest-api</code> property to <code>true</code> for the server via the ServerLauncher API.
-This starts an embedded Jetty server and deploys the Developer REST API WAR file on that server.</p>
+<p>You can have multiple REST enabled data nodes in a single distributed system. Each data node should
+have a separate host name and unique end point. To ensure that the data node is reachable on a
+machine with multiple NIC addresses, you can use <code>http-service-bind-address</code> to bind an address to
+the REST API service (as well as the other embedded web services such as Pulse).</p>
 
-<h2>Enabling the REST API on Multiple Servers</h2>
-
-<p>You can configure multiple REST-enabled servers in a single distributed system. Each server should
-have a separate host name and unique end point. To ensure that the server is reachable on a
-machine with multiple NIC addresses, use <code>http-service-bind-address</code> to bind an address to
-the REST API service (as well as the other embedded web services, such as Pulse).</p>
-
-<p>You can configure the Developer REST API service to run over HTTPS by enabling SSL for the <code>http</code>
-component in <code>gemfire.properties</code> or <code>gfsecurity.properties</code>, or on server startup.  See
-<a href="/docs/guide/12/managing/security/ssl_overview.html">SSL</a> for details on configuring SSL parameters.  These SSL
-parameters apply to all HTTP services hosted on the configured server, which can include the
-following:</p>
+<p>You can also configure the Developer REST API service to run over
+HTTPS by enabling ssl for the <code>http</code> component in <code>gemfire.properties</code>
+or <code>gfsecurity.properties</code> or on server startup:
+See <a href="/docs/guide/12/managing/security/ssl_overview.html">SSL</a> for details on configuring SSL parameters.
+These SSL parameters apply to all HTTP services hosted on the configured server, which can include the following:</p>
 
 <ul>
 <li>  Developer REST API service</li>
@@ -3250,24 +3260,17 @@ following:</p>
 <li>  Pulse monitoring tool</li>
 </ul>
 
-<h1><a id="setup_config_starting_rest" class="no-quick-link"></a> Starting the REST API Service</h1>
-
-<p>To start a REST API service-enabled Geode deployment, configure PDX serialization for your
-cluster, then start the service on one or more server nodes.</p>
-
-<h2>Configure PDX for your cluster</h2>
-
-<p>You must configure PDX if either or both of the following conditions apply: </p>
-
-<ul>
-<li>  Application peer member caches will access REST-accessible regions (resources) with <code>Region.get(key)</code>.</li>
-<li>  Your deployment has persistent regions that must be available as resources to the REST API.<br></li>
-</ul>
-
-<p>To configure PDX in your cluster, perform the following steps:</p>
+<p>The following procedure starts up a REST API service-enabled Geode deployment:</p>
 
 <ol>
-<li><p>Start a locator running the <a href="/docs/guide/12/configuring/cluster_config/gfsh_persist.html">cluster configuration service</a> (enabled by default). For example: </p>
+<li><p>Configure PDX for your cluster. You must configure PDX if either or both of the following conditions apply: </p>
+
+<ul>
+<li>  Application peer member caches will access REST-accessible Regions (resources) with the <code>Region.get(key)</code>.</li>
+<li><p>Your deployment has persistent regions that must be available as resources to the REST API.  To configure PDX in your cluster, perform the following steps:</p>
+
+<ol>
+<li><p>Start up a locator running the <a href="/docs/guide/12/configuring/cluster_config/gfsh_persist.html">cluster configuration service</a> (enabled by default). For example: </p>
 <pre class="highlight plaintext"><code>gfsh&gt;start locator --name=locator1
 </code></pre></li>
 <li><p>If your deployment has application peer member caches (for example, Java clients) that must also access REST-accessible Regions (resources), use the following gfsh command:</p>
@@ -3281,41 +3284,35 @@ You do not need to configure <code>--read-serialized=true</code> if no applicati
 <p>This command sets <code>pdx</code> <code>persistent</code> equal to true and sets the disk-store-name to DEFAULT. If desired, specify an existing disk store name as the value for <code>--disk-store</code>.</p></li>
 <li><p>If both of the above cases apply to your deployment, then configure PDX with the following single command:</p>
 <pre class="highlight plaintext"><code>gfsh&gt;configure pdx --read-serialized=true --disk-store
-</code></pre>
-<p>After you have configured PDX for your caches, then proceed with starting your REST-enabled servers and other servers.</p></li>
-</ol>
+</code></pre></li>
+</ol></li>
+</ul>
 
-<h2>Start the REST API Service on One or More Servers</h2>
-
-<p>As described above, you can start the REST API service on a server by using <code>gfsh start server --start-rest-api</code>,
-or by setting the Geode property <code>start-dev-rest-api</code> to <code>true</code>. 
-If you wish to start the service on multiple servers, use <code>http-service-bind-address</code> and <code>http-service-port</code> to
+<p>After you have configured PDX for your caches, then proceed with starting up your REST-enabled servers and other data nodes.</p></li>
+<li><p>Start a server node with the Geode property <code>start-dev-rest-api</code> set to <code>true</code>. 
+Optionally, you can also configure a <code>http-service-bind-address</code> and <code>http-service-port</code> to
 identify the cache server and specific port that will host REST services. If you do not specify
-the <code>http-service-port</code>, the default port is 7070, which may collide with other locators and servers.
-If you do not specify <code>http-service-bind-address</code>, the HTTP service will bind to all local addresses by default.</p>
-
-<p><strong>Note:</strong> If your application will be running in a VM (as when running in the cloud, for example),
-it is good practice to specify <code>http-service-bind-address</code> and <code>http-service-port</code> so they will be
-publicly visible. The default values may not be visible outside the VM in which the application is
-running.</p>
+the <code>http-service-port</code>, the default port is 7070. If you do not specify
+<code>http-service-bind-address</code>, the HTTP service will bind to all local addresses by default.
+<strong>Note:</strong> If your application will be running in a VM (as when running in the cloud, for example), it&rsquo;s good practice to specify <code>http-service-bind-address</code> and <code>http-service-port</code>
+so they will be publicly visible. The default values may not be visible outside the VM in which the application is running.</p>
 
 <p>For example:</p>
 <pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1 --start-rest-api=true \
 --http-service-port=8080 --http-service-bind-address=localhost
 </code></pre>
-<p>Any server that hosts data, even a server acting as a JMX manager, can start the Developer REST API service. For example, to start the service on a server that is also a JMX manager, you would run:</p>
+<p>Any server that hosts data, even a server acting as a JMX manager, can start the developer REST API service. For example, to start the service on a server that is also a JMX manager, you would run:</p>
 <pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1  --start-rest-api=true \
 --http-service-port=8080 --http-service-bind-address=localhost \
 --J=-Dgemfire.jmx-manager=true --J=-Dgemfire.jmx-manager-start=true
 </code></pre>
-<p>Note that when started as a JMX Manager, the server will also host the Pulse web application in the same HTTP service.</p>
-
-<p>You may need to specify a CLASSPATH to load any functions that need to be made available to your REST services. For example:</p>
+<p>Note that when started as a JMX Manager, the server will also host the Pulse web application in the same HTTP service.</p></li>
+<li><p>You may also need to specify a CLASSPATH to load any functions that need to be made available to your REST services. For example:</p>
 <pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1 --start-rest-api=true \
 --http-service-port=8080 --http-service-bind-address=localhost \
 --classpath=/myapps/testfunctions.jar
-</code></pre>
-<p>You can specify these properties either upon server startup or in the server’s gemfire.properties configuration file. For example:</p>
+</code></pre></li>
+<li><p>You can also specify these properties either upon server startup or in the server’s gemfire.properties configuration file.</p>
 <pre class="highlight plaintext"><code>gfsh&gt;start server --name=serverX --server-port=40405 --cache-xml-file=cache-config.xml \
 --properties-file=gemfire.properties --classpath=/myapps/testfunctions.jar
 </code></pre>
@@ -3323,84 +3320,52 @@ running.</p>
 <pre class="highlight plaintext"><code>http-service-port=8080
 http-service-bind-address=localhost
 start-dev-rest-api=true
-</code></pre>
-<h2>Verify That The Service is Running</h2>
-
-<p>Verify that the Geode REST API service is up and running. To validate this, you can perform the following checks:</p>
+</code></pre></li>
+<li><p>Verify that the Geode REST API service is up and running. To validate this, you can perform the following checks:</p>
 
 <ol>
 <li><p>Test the list resources endpoint (this step assumes that you have regions defined on your cluster):</p>
-<pre class="highlight plaintext"><code>curl -i http://localhost:8080/geode/v1
+<pre class="highlight plaintext"><code>curl -i http://localhost:8080/gemfire-api/v1
 </code></pre></li>
 <li><p>Examine the server logs for the following messages:</p>
-<pre class="highlight plaintext"><code>[info 2017/06/13 13:48:14.090 PDT gfsec-server1 &lt;main&gt; tid=0x1] Initializing Spring FrameworkServlet 'geode-mgmt'
-[info 2017/06/13 13:48:14.091 PDT gfsec-server1 &lt;main&gt; tid=0x1] FrameworkServlet 'geode-mgmt': initialization started
+<pre class="highlight plaintext"><code>[info 2014/06/12 14:56:52.431 PDT rest-test &lt;localhost-startStop-1&gt; tid=0x4d] 
+(tid=11 msgId=8) Initializing Spring FrameworkServlet 'gemfire-api'[info 2014/06/12 
+14:56:52.432 PDT rest-test &lt;localhost-startStop-1&gt; tid=0x4d] (tid=11 msgId=9) 
+FrameworkServlet 'gemfire-api': initialization started
 </code></pre></li>
 <li><p>Open a browser and enter the following URL to browse the Swagger-enabled REST APIs:</p>
-<pre class="highlight plaintext"><code>http://&lt;http-service-bind-address&gt;:&lt;http-service-port&gt;/geode/docs/index.html
+<pre class="highlight plaintext"><code>http://&lt;http-service-bind-address&gt;:&lt;http-service-port&gt;/gemfire-api/docs/index.html
 </code></pre>
-<p>where <em>http-service-bind-address</em> is the address and <em>http-service-port</em> is the port number that you specified when starting the Development REST API service on the server. For example, based on the server started in an earlier example, you would enter:</p>
-<pre class="highlight plaintext"><code>http://localhost:8080/geode/docs/index.html
-</code></pre></li>
+<p>where <em>http-service-bind-address</em> is the address and <em>http-service-port</em> is the port number that you specified when starting the Development REST API service on the server. For example, based on the server started in step 2, you would enter:</p>
+<pre class="highlight plaintext"><code>http://localhost:8080/gemfire-api/docs/index.html
+</code></pre>
+<p>If you did not specify these properties upon server startup or in <code>gemfire.properties</code>, then use the default of localhost and port 7070. See <a href="/docs/guide/12/rest_apps/using_swagger.html#concept_rlr_y3c_54">Using the Swagger UI to Browse REST APIs</a> for more information.</p></li>
+</ol></li>
 </ol>
 
-<p>If you did not specify these properties upon server startup or in <code>gemfire.properties</code>, then use the
-default of localhost and port 7070. See <a href="/docs/guide/12/rest_apps/using_swagger.html#concept_rlr_y3c_54">Using the Swagger UI to Browse REST
-APIs</a> for more information.</p>
+<h2>Programmatic Startup</h2>
 
-<h1><a id="setup_config_implementing_auth" class="no-quick-link"></a>Implementing Authentication</h1>
+<p>You can also start up and configure Geode REST services programmatically. For example:</p>
+<pre class="highlight plaintext"><code>    import org.apache.geode.distributed.ServerLauncher;
 
-<p>To turn on integrated security, start your servers and locators with the security-manager property
-set in your gemfire.properties file or on the gfsh command-line.
-The following example uses the sample implementation that is included in the Geode source,
-<code>org.apache.geode.examples.security.ExampleSecurityManager</code>.</p>
+     public class MyEmbeddedRestServer {
 
-<p>This implementation requires a JSON security configuration file which defines the allowed users and their corresponding
-permissions. (See the javadocs for <code>ExampleSecurityManager</code> for details on how to compose the JSON file.)
-Place a copy of the JSON security configuration file in the execution directory of each security-enabled member, then
-specify <code>--classpath=.</code> in the start command for each of those members.</p>
+     public static void main(String[] args){
+         ServerLauncher serverLauncher  = new ServerLauncher.Builder()
+           .set("start-dev-rest-api", "true")
+           .set("http-service-port", "8080")
+           .set("http-service-bind-address", "localhost")
+           .setPdxReadSerialized(true)
+           .build();
 
-<p>To start a server using a username and password that are defined in that server&rsquo;s security configuration, include the
-<code>--user=username</code> and <code>--password=password</code> options in the server&rsquo;s start command:</p>
+          serverLauncher.start();  
 
-<p>For example, suppose the JSON config file defines user &ldquo;super-user&rdquo; with password &ldquo;1234567&rdquo;:</p>
-<pre class="highlight plaintext"><code>gfsh&gt;start server --name=server1 --start-rest-api=true \
---http-service-port=8080 --http-service-bind-address=localhost \
---J=-Dgemfire.security-manager=org.apache.geode.examples.security.ExampleSecurityManager \
---classpath=. --user=super-user --password=1234567
-</code></pre>
-<p>To contact the server through the REST interface, you must provide the username and password. Various REST GUI interfaces
-provide different ways of accomplishing this. The <code>curl</code> command offers the <code>--user</code> (or <code>-u</code>) option for this purpose,
-where username and password are specified as a colon-separated pair:</p>
-<pre class="highlight plaintext"><code>curl -i --user super-user:1234567 http://localhost:8080/geode/v1
-</code></pre>
-<p>In a simple URL, such as in a browser address bar, the credentials can be given as a prefix to the host name
-in the form <code>username:password@</code>:</p>
-<pre class="highlight plaintext"><code>http://super-user:1234567@localhost:8080/geode/v1
-</code></pre>
-<h1><a id="setup_config_implementing_auth" class="no-quick-link"></a>Programmatic Startup</h1>
-
-<p>You can also start and configure Geode REST services programmatically. For example:</p>
-<pre class="highlight plaintext"><code>import org.apache.geode.distributed.ServerLauncher;
-
-public class MyEmbeddedRestServer {
-
-public static void main(String[] args){
-     ServerLauncher serverLauncher  = new ServerLauncher.Builder()
-       .set("start-dev-rest-api", "true")
-       .set("http-service-port", "8080")
-       .set("http-service-bind-address", "localhost")
-       .setPdxReadSerialized(true)
-       .build();
-
-      serverLauncher.start();  
-
-      System.out.println("REST server successfully started");
+          System.out.println("REST server successfully started");
+        }
     }
-}
 </code></pre>
-<p>You can then verify that the Developer REST API service has been started programmatically by visiting the following URL:</p>
-<pre class="highlight plaintext"><code>http://localhost:8080/geode/docs/index.html
+<p>You can then verify that the developer REST API service has been started programmatically by visiting the following URL:</p>
+<pre class="highlight plaintext"><code>http://localhost:8080/gemfire-api/docs/index.html
 </code></pre>
         
 

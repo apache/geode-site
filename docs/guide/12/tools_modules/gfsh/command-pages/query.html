@@ -33,7 +33,34 @@
     <h1 class="logo">
       <a href="/">Apache Geode Documentation</a>
     </h1>
-    
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="header-dropdown">
+  <a class="header-dropdown-link" >
+    v1.2
+  </a>
+  <div class="header-dropdown-content">
+    <ul>
+        <li><a href="/index-11.html">v1.1</a></li>
+        <li><a href="/index-10.html">v1.0</a></li>
+    </ul>
+  </div>
+</div>
+
     <div class="header-links js-bar-links">
       <div class="btn-menu" data-behavior="MenuMobile"></div>
       <div class="header-item"><a href="http://geode.apache.org/">Back to Geode Page</a></div>
@@ -1626,14 +1653,8 @@ limitations under the License.
                     <li>
                         <a href="/docs/guide/12/rest_apps/rest_prereqs.html">Prerequisites and Limitations for Writing REST Applications</a>
                     </li>
-                    <li class="has_submenu">
+                    <li>
                         <a href="/docs/guide/12/rest_apps/setup_config.html">Setup and Configuration</a>
-                        <ul>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_enabling_rest">Enabling the REST API</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_starting_rest">Starting the REST API Service</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Implementing Authentication</a></li>
-                        <li><a href="/docs/guide/12/rest_apps/setup_config.html#setup_config_implementing_auth">Programmatic Startup</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="/docs/guide/12/rest_apps/using_swagger.html">Using the Swagger UI to Browse REST APIs</a>
@@ -1966,9 +1987,6 @@ gfsh</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_E48C2DF809054C12A162026D8A2139BB">destroy function</a>
-                                            </li>
-                                            <li>
-                                                <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#destroy-gs">destroy gateway-sender</a>
                                             </li>
                                             <li>
                                                 <a href="/docs/guide/12/tools_modules/gfsh/command-pages/destroy.html#topic_D00219CCD6F64C1582A0802AC5CDF3F3">destroy index</a>
@@ -3212,7 +3230,13 @@ limitations under the License.
 
 <p>Run queries against Geode regions.</p>
 
-<p>Run the specified OQL query as a single quoted string and displays results in pages allows to move between pages. If limit is not set in the query, then a default limit of 1000 (derived from GFSH environment variable APP_FETCH_SIZE) will be applied. Page size is derived from GFSH environment variable APP_COLLECTION_LIMIT (default value=20).</p>
+<p>If a limit restricting the result size is not set in the query,
+then a default limit of the gfsh environment variable <code>APP_FETCH_SIZE</code>,
+as defined in
+<a href="/docs/guide/12/tools_modules/gfsh/useful_gfsh_shell_variables.html">Useful gfsh Shell Variables</a>,
+will be applied.</p>
+
+<p>Surround the OQL query with single quote marks.</p>
 
 <p><strong>Note:</strong>
 This command should not be executed from <code>gfsh</code> if the objects being queried contain cyclic references.</p>
@@ -3220,7 +3244,7 @@ This command should not be executed from <code>gfsh</code> if the objects being 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
 <p><strong>Syntax:</strong></p>
-<pre class="highlight plaintext"><code>query --query=value [--step-name=value] [--interactive=value]
+<pre class="highlight plaintext"><code>query --query=value [--step-name=value] [--file=path/to/results/file]
 </code></pre>
 <p><a id="concept_89A129F729DF4D3B9056C8D9016AA760__table_ocr_gcg_2w"></a></p>
 
@@ -3228,26 +3252,20 @@ This command should not be executed from <code>gfsh</code> if the objects being 
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Default Value</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><span class="keyword parmname">--query </span></td>
 <td><em>Required.</em> The OQL string.</td>
-<td> </td>
 </tr>
 <tr>
-<td><span class="keyword parmname">--interactive</span></td>
-<td>Specifies whether or not this query is interactive. If false, then all results will be displayed at once.</td>
-<td>true</td>
+<td><span class="keyword parmname">--file</span></td>
+<td>When specified, all query results are written to the specified file. An error is issued if the file already exists.</td>
 </tr>
 </tbody></table>
 
 <p><span class="tablecap">Table 1. Query Parameters</span></p>
 
-<p><strong>Example Commands:</strong></p>
-<pre class="highlight plaintext"><code>query --query=value [--step-name=value] [--interactive=value]
-</code></pre>
 <p><strong>Sample Output:</strong></p>
 <pre class="highlight plaintext"><code>gfsh&gt;query --query='SELECT * FROM /region2'
 
