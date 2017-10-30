@@ -20,6 +20,7 @@ org.apache.geode.cache.util
 org.apache.geode.cache.wan
 org.apache.geode.compression
 org.apache.geode.distributed
+org.apache.geode.examples
 org.apache.geode.examples.security
 org.apache.geode.i18n
 org.apache.geode.lang
@@ -28,10 +29,12 @@ org.apache.geode.management.cli
 org.apache.geode.management.membership
 org.apache.geode.memcached
 org.apache.geode.modules.gatewaydelta
+org.apache.geode.modules.session
 org.apache.geode.modules.session.bootstrap
 org.apache.geode.modules.session.catalina
 org.apache.geode.modules.session.catalina.callback
 org.apache.geode.modules.session.filter
+org.apache.geode.modules.session.functions
 org.apache.geode.modules.session.installer
 org.apache.geode.modules.session.installer.args
 org.apache.geode.modules.util
