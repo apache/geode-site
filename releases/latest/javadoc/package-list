@@ -19,9 +19,11 @@ org.apache.geode.cache.snapshot
 org.apache.geode.cache.util
 org.apache.geode.cache.wan
 org.apache.geode.compression
+org.apache.geode.connectors.jdbc
 org.apache.geode.distributed
 org.apache.geode.examples
 org.apache.geode.examples.security
+org.apache.geode.experimental.driver
 org.apache.geode.i18n
 org.apache.geode.lang
 org.apache.geode.management
