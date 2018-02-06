@@ -72,6 +72,8 @@ to checkout the __asf-site__ branch and copy the website files.  You will
 need to manually commit and push your changes on the __asf-site__ branch.
 
 The site should update in 5-10 minutes. If it does not, 
-[file a JIRA against the INFRA project](https://issues.apache.org/jira/browse/INFRA) 
-or ask for advice on the Infrastructure project's HipChat room
+
+- Push a new commit by adding or subtracting a blank line, or
+- [file a JIRA against the INFRA project](https://issues.apache.org/jira/browse/INFRA), or 
+- ask for advice on the Infrastructure project's HipChat room
 [#asfinfra](https://www.hipchat.com/g4P84gemn).
