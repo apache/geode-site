@@ -14,4 +14,4 @@
 # limitations under the License.
 
 RewriteEngine On
-RewriteRule ^guide/latest/(.*)$ /docs/guide/14/$1 [NC,L,PT]
+RewriteRule ^guide/latest/(.*)$ /docs/guide/12/$1 [NC,L,PT]
