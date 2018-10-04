@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License. -->
+    <meta charset="utf-8">
+    <title>Apache Geode — Releases</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="Apache Geode, Geode, GemFire, In-memory, IMDB, IMDG, cache">
+    <meta name="description" content="Apache Geode is a distributed, in-memory database with strong data consistency, built to support transactional applications with low latency and high concurrency needs." />
+    <meta property="og:title" content="Apache Geode" />
+    <meta property="og:description" content="Apache Geode is a distributed, in-memory database with strong data consistency, built to support transactional applications with low latency and high concurrency needs." />
+    <!-- Loading Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/ddl7izx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <!-- Place this tag right after the last button or just before your close body tag. -->
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+        <!-- Loading Bootstrap -->
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet" type='text/css'>
+    <link href="/css/bootflat.css" rel="stylesheet" type='text/css'>
+    <link href="/css/geode-site.css" rel="stylesheet" type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,400,500,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
+
+    
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <header class="navbar navbar-inverse navbar-fixed-top bf-docs-nav secondary" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bf-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <a href="/" class="navbar-brand">
+                <img id="home-logo" src="/img/apache_geode_logo_white_small.png" />
+            </a>
+        <nav class="collapse navbar-collapse bf-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="/community/"><span class="fa fa-users"></span></a></li>
+                <li class=""><a href="/docs/"><span class="fa fa-book"></span></a></li>
+                <li><a href="http://github.com/apache/geode" target="_blank"><span class="fa fa-github-square"></span></a></li>
+                <li><a href="https://issues.apache.org/jira/browse/GEODE/" target="_blank"><span class="fa fa-bug"></span></a></li>
+                <li><a href="http://stackoverflow.com/search?q=Apache%20Geode" target="_blank"><span class="fa fa-stack-overflow"></span></a></li>
+                <li><a href="/community/#mailing-lists"><span class="fa fa-envelope"></span></a></li>
+                <li><a href="https://twitter.com/apachegeode" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="https://cwiki.apache.org/confluence/display/geode/" target="_blank"><span class="fa fa-pencil-square-o"></span></a></li>
+                <li class="active"><a href="/releases/"><span class="fa fa-arrow-circle-o-down"></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. -->
+
+<section class="bf-tagline">
+    <div class="container">
+    	<div class="row">
+          <br />
+    	    	<h2>Apache Geode Releases</h2>
+    		<p>Releases of Geode are made available to the general public at no charge, under the <a target="_blank" href="http://apache.org/licenses/">Apache License</a>, in both binary and source distributions.  Binary downloads are provided for the convenience of our users and are not official Apache Geode releases.</p>
+		</div>
+	</div>
+</section>
+
+<section class="bf-releases">
+    <div class="container">
+      <div class="row">
+    		<div class="col-md-9">
+      <!-- RELEASES -->
+      <div class="container">
+
+        <!-- START OF 1.7.0-->
+        <h3>1.7.0</h3>
+        <!-- RELEASE NOTES -->
+        <strong><a target="_blank" href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">Release Notes</a></strong>
+        <p/>
+
+        <!-- BINARY -->
+        <span> <strong>Binaries </strong>
+          [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-1.7.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0.zip.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0.zip.asc">PGP</a> ] -
+          [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-1.7.0.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0.tgz.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0.tgz.asc">PGP</a> ]
+        </span><br/>
+        <!-- SOURCE -->
+        <span> <strong>Source</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-1.7.0-src.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0-src.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0-src.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-1.7.0-src.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0-src.tgz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-1.7.0-src.tgz.asc">PGP</a>
+           ]
+         </span><br/>
+        <!-- Examples -->
+        <span> <strong>Examples</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-examples-1.7.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-examples-1.7.0.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-examples-1.7.0.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.7.0/apache-geode-examples-1.7.0.tar.gz">TAR.GZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-examples-1.7.0.tar.gz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.7.0/apache-geode-examples-1.7.0.tar.gz.asc">PGP</a>
+           ]
+         </span><br/>
+
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <strong>Gradle</strong>
+<pre class="prettyprint">
+dependencies {
+  compile 'org.apache.geode:geode-core:1.7.0'
+}
+</pre>
+          <strong>Maven</strong>
+<pre class="prettyprint">
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+    &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+    &lt;version&gt;1.7.0&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</pre>
+        </div>
+        <!-- END OF 1.7.0 -->
+
+        <!-- START OF 1.6.0-->
+        <h3>1.6.0</h3>
+        <!-- RELEASE NOTES -->
+        <strong><a target="_blank" href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">Release Notes</a></strong>
+        <p/>
+
+        <!-- BINARY -->
+        <span> <strong>Binaries </strong>
+          [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-1.6.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0.zip.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0.zip.asc">PGP</a> ] -
+          [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-1.6.0.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0.tgz.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0.tgz.asc">PGP</a> ]
+        </span><br/>
+        <!-- SOURCE -->
+        <span> <strong>Source</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-1.6.0-src.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0-src.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0-src.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-1.6.0-src.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0-src.tgz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-1.6.0-src.tgz.asc">PGP</a>
+           ]
+         </span><br/>
+        <!-- Examples -->
+        <span> <strong>Examples</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-examples-1.6.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-examples-1.6.0.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-examples-1.6.0.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.6.0/apache-geode-examples-1.6.0.tar.gz">TAR.GZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-examples-1.6.0.tar.gz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.6.0/apache-geode-examples-1.6.0.tar.gz.asc">PGP</a>
+           ]
+         </span><br/>
+
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <strong>Gradle</strong>
+<pre class="prettyprint">
+dependencies {
+  compile 'org.apache.geode:geode-core:1.6.0'
+}
+</pre>
+          <strong>Maven</strong>
+<pre class="prettyprint">
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+    &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+    &lt;version&gt;1.6.0&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</pre>
+        </div>
+        <!-- END OF 1.6.0 -->
+
+        <!-- START OF 1.5.0-->
+        <h3>1.5.0</h3>
+        <!-- RELEASE NOTES -->
+        <strong><a target="_blank" href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">Release Notes</a></strong>
+        <p/>
+
+        <!-- BINARY -->
+        <span> <strong>Binaries </strong>
+          [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-1.5.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0.zip.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0.zip.asc">PGP</a> ] -
+          [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-1.5.0.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0.tgz.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0.tgz.asc">PGP</a> ]
+        </span><br/>
+        <!-- SOURCE -->
+        <span> <strong>Source</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-1.5.0-src.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0-src.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0-src.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-1.5.0-src.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0-src.tgz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-1.5.0-src.tgz.asc">PGP</a>
+           ]
+         </span><br/>
+        <!-- Examples -->
+        <span> <strong>Examples</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-examples-1.5.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-examples-1.5.0.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-examples-1.5.0.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.5.0/apache-geode-examples-1.5.0.tar.gz">TAR.GZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-examples-1.5.0.tar.gz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.5.0/apache-geode-examples-1.5.0.tar.gz.asc">PGP</a>
+           ]
+         </span><br/>
+
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <strong>Gradle</strong>
+<pre class="prettyprint">
+  dependencies {
+    compile 'org.apache.geode:geode-core:1.5.0'
+  }
+</pre>
+          <strong>Maven</strong>
+<pre class="prettyprint">
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+      &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+      &lt;version&gt;1.5.0&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+</pre>
+        </div>
+        <!-- END OF 1.5.0 -->
+
+        <!-- START OF 1.4.0-->
+        <h3>1.4.0</h3>
+        <!-- RELEASE NOTES -->
+        <strong><a target="_blank" href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">Release Notes</a></strong>
+        <p/>
+
+        <!-- BINARY -->
+        <span> <strong>Binaries </strong>
+          [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-1.4.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0.zip.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0.zip.asc">PGP</a> ] -
+          [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-1.4.0.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0.tgz.sha256">SHA-256</a>,
+          <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0.tgz.asc">PGP</a> ]
+        </span><br/>
+        <!-- SOURCE -->
+        <span> <strong>Source</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-1.4.0-src.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0-src.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0-src.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-1.4.0-src.tgz">TGZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0-src.tgz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-1.4.0-src.tgz.asc">PGP</a>
+           ]
+         </span><br/>
+        <!-- Examples -->
+        <span> <strong>Examples</strong>
+           [ <a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-examples-1.4.0.zip">ZIP</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-examples-1.4.0.zip.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-examples-1.4.0.zip.asc">PGP</a>
+            ] -
+           [<a target="_blank" href="http://apache.org/dyn/closer.cgi/geode/1.4.0/apache-geode-examples-1.4.0.tar.gz">TAR.GZ</a>, <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-examples-1.4.0.tar.gz.sha256">SHA-256</a>,
+           <a target="_blank" href="https://www.apache.org/dist/geode/1.4.0/apache-geode-examples-1.4.0.tar.gz.asc">PGP</a>
+           ]
+         </span><br/>
+
+        <!-- DEPENDENCY MANAGERS -->
+        <div class="container">
+          <strong>Gradle</strong>
+<pre class="prettyprint">
+  dependencies {
+    compile 'org.apache.geode:geode-core:1.4.0'
+  }
+</pre>
+          <strong>Maven</strong>
+<pre class="prettyprint">
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+      &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+      &lt;version&gt;1.4.0&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+</pre>
+        </div>
+        <!-- END OF 1.4.0 -->
+
+      </div>
+      <p>If you need access to older releases they can be found in the <a target="_blank" href="https://archive.apache.org/dist/geode/">release archives</a>.</p>
+      <!-- END OF RELEASE -->
+      <hr/>
+        <p>
+					Project releases are approved by vote of the Apache Geode Project Management Committee (PMC). Support for a release is provided by project volunteers on the project <a href="http://geode.apache.org/community/#mailing-lists">mailing lists</a>. Bugs found in a release may be discussed on the list and reported through the <a href="https://issues.apache.org/jira/browse/GEODE">issue tracker</a>. The user mailing list and issue tracker are the only support options hosted by the Apache Geode project.
+				</p>
+				<p>
+					<strong>Note</strong>: When downloading from a mirror, please be sure to verify that checksums and signatures are correct. To do so, use the checksum and signature files from the main Apache site at <a href="https://www.apache.org/dist/geode/">https://www.apache.org/dist/geode/</a>. Find here the KEYS file, which contains all OpenPGP keys we use to sign releases here: <a href="https://www.apache.org/dist/geode/KEYS">KEYS</a>
+				</p>
+				<p>
+					The PGP signatures can be verified using PGP or GPG. First download the <a href="https://www.apache.org/dist/geode/KEYS">KEYS</a> as well as the <em>asc signature</em> file for the particular distribution. Then verify the signatures using:
+				</p>
+				<p>
+       				% pgpk -a KEYS
+					</br></br>
+        			% pgpv ${filename}.tar.gz.asc
+        			</br></br>
+    				or
+    				</br></br>
+        			% pgp -ka KEYS
+        			</br></br>
+        			% pgp ${filename}.tar.gz.asc
+        			</br></br>
+    				or
+    				</br></br>
+        			% gpg --import KEYS
+        			</br></br>
+        			% gpg --verify ${filename}.tar.gz.asc
+        			</br></br>
+        		</p>
+    			<p>
+					Alternatively, you can verify the MD5 signature on the files. A Unix program called md5 or md5sum is included in many Unix distributions. It is also available as part of <a href="http://www.gnu.org/software/textutils/textutils.html">GNU Textutils</a>. Windows users can get binary md5 programs from <a href="http://www.fourmilab.ch/md5/">here</a>, <a href="http://www.pc-tools.net/win32/md5sums/">here</a>, or <a href="http://www.slavasoft.com/fsum/">here</a>.
+				<p>
+					If you want to build directly from source, instructions are within the User Documentation in the <a href="http://geode.apache.org/docs/guide/getting_started/installation/install_standalone.html">How to Install</a> subsection.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<footer class="bf-footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="nav nav-list">
+                    <li class="nav-header"><a href="/">Home</a></li>
+                    <li class="nav-header"><a href="/community/">Community</a></li>
+                        <li><a href="/community/#events">Events</a></li>
+                        <li><a href="/community/#mailing-lists">Mailing Lists</a></li>
+                        <li><a href="/community/#deployments">Deployments</a></li>
+                        <!-- <li><a href="/community/#committers">Commiters</a></li> -->
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav nav-list">
+                    <li class="nav-header"><a href="http://github.com/apache/geode" target="_blank">Code</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Project+Proposals+and+Specifications" target="_blank">Specifications</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Geode+Internal+Architecture" target="_blank">Internal Architecture</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Writing+tests" target="_blank">Writing Tests</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Criteria+for+Code+Submissions" target="_blank">Code Submissions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Resources</li>
+                    <li><a href="http://github.com/apache/geode" target="_blank">GitHub Code</a></li>
+                    <li><a href="/docs/">Docs</a></li>
+                    <li><a href="https://issues.apache.org/jira/browse/GEODE" target="_blank">JIRA Bug Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/search?q=Apache%20Geode" target="_blank">StackOverflow</a></li>
+                    <li><a href="/community/#live">Live Chat</a></li>
+                    <li><a href="https://twitter.com/apachegeode" target="_blank">Twitter</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Index#Index-Geodein5minutesGeodein5minutes" target="_blank">Geode in 5 minutes</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/How+to+Contribute" target="_blank">How to Contribute</a></li>
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Application+Development" target="_blank">Application Development</a></li>
+
+                    <li><a href="https://cwiki.apache.org/confluence/display/GEODE/Technology+FAQ" target="_blank">FAQ</a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Apache</li>
+                    <li><a href="http://www.apache.org/events/" target="_blank">Events</a></li>
+                    <li><a href="http://www.apache.org/licenses/" target="_blank">License</a></li>
+                    <li><a href="http://www.apache.org/foundation/sponsorship.html" target="_blank">Sponsorship</a></li>
+                    <li><a href="http://www.apache.org/foundation/thanks.html" target="_blank">Thanks</a></li>
+                    <li><a href="http://www.apache.org/security/">Security</a></li>
+                    <li><a href="http://www.apache.org/" target="_blank">Apache Foundation</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+              <a class="twitter-timeline" href="https://twitter.com/search?q=%23ApacheGeode%20OR%20Apache%20Geode" data-widget-id="665030887004725248">Tweets about #ApacheGeode OR Apache Geode</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        <!--
+            <div class="col-md-4">
+                <div class="input-group form-search">
+                    <input type="text" class="form-control search-query">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary" data-type="last">Search</button>
+                    </span>
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+          <center>
+            <div id="copyright">
+                <a href="http://www.apache.org" target="_blank"><img src="/img/asf_logo.png" height="125"></a><br/><br/>
+                <p>Copyright © 2016 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.<br>
+                Apache, Apache Geode, and the Apache feather logos are trademarks of The Apache Software Foundation.</p>
+                <p>Site designed & assembled with love by <a href="https://github.com/ryuneeee">@ryuneeee</a> + <a href="https://github.com/realbeast">@realbeast</a> + <a href="https://twitter.com/timanglade">@timanglade</a> + <a href="https://twitter.com/snoopdave">@snoopdave</a> for Apache Usergrid.</p>
+                <p>Modified for Apache Geode by <a href="https://twitter.com/william_markito">@william_markito</a>.</p>
+            </div>
+          </center>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/head.js"></script>
+<script type="text/javascript">
+    head.js("/js/jquery-1.10.1.min.js", "/js/bootstrap.min.js", "/js/usergrid-site.js");
+</script>
+
+
+
+</body>
+</html>
+
