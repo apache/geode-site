@@ -140,13 +140,14 @@ The new javadocs _replace_ those currently within the directory.
 Commit and push the __asf-site__ branch. Apache detects the update and publishes it. The site should update in 5-10 minutes.
 
 ## Troubleshooting
-If the site does not update in 5-10 minutes, __push a new commit by adding or subtracting a blank line in the top-level `index.html` file.__ This usually does the trick.
+
+- If the site does not update in 5-10 minutes, __push a new commit by adding or subtracting a blank line in the top-level `index.html` file.__ This usually does the trick.
+
+- Check your commit of the __asf-site__ branch. The site's deployable files are at the top level, rooted at {geode-site}/index.html. Make sure that directories such as `{geode-site}/docs` and `{geode-site}/releases` contain the latest versions of `index.html` and the docs.
 
 For further assistance, you can
+
 - [file a JIRA against the INFRA project](https://issues.apache.org/jira/browse/INFRA), or 
+
 - ask for advice on the Infrastructure project's HipChat room [#asfinfra](https://www.hipchat.com/g4P84gemn).
-
-
-
-
 
