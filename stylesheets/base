@@ -819,7 +819,7 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
 ```html_example
 <header class="header">
   <h1 class="logo">
-    Pivotal Cloud Foundry Documentation
+    Geode Documentation
   </h1>
   <div class="header-links js-bar-links">
     <div class="btn-menu" data-behavior="MenuMobile"></div>
@@ -1010,7 +1010,7 @@ category: basics
 ---
 ```html_example
 <h1 class="title-flashy">
-  <span class="title-deemph">Pivotal</span> Documentation
+  <span class="title-deemph">Geode</span> Documentation
 </h1>
 ```
 */
@@ -1049,7 +1049,7 @@ category: basics
 ---
 ```html_example
 <h2 class="title-intro">
-  Everything you need to know about Pivotal Software.
+  Everything you need to know about Geode Software.
 </h2>
 ```
 */
