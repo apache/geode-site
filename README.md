@@ -94,6 +94,12 @@ You should still be on the __master__ branch.
   - Checks out the __asf-site__ branch, and
   - Copies the website files to their deployment directories.
 
+**HEADS-UP**
+The `gradlew publish` command *does not* update the `css` and `stylesheets` directories. If you made format changes there, you must manually merge the new versions of those files from the __master__ branch.
+
+  - While still on the __master__ branch, save those files to a location outside the geode-site repo.
+  - After running the `gradlew publish` command, copy the new versions to the appropriate directories in the __asf-site__ branch.
+
 
 ### 2. Add a new user guide
 
