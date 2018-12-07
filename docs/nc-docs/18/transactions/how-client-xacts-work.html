@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      How Client Transactions Work |
+    Geode Native Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_18 docs_geode-native_18_transactions docs_geode-native_18_transactions_how-client-xacts-work has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/18/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/18/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/18/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/18/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/18/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/18/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li class="has_submenu">
+          <a href="/docs/geode-native/18/configuring/system-level-configuration.html">System Level Configuration</a>
+          <ul>
+	    <li>
+	      <a href="/docs/geode-native/18/configuring/sysprops.html">System Properties</a>
+	    </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/18/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/18/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/18/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/18/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/18/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/18/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/18/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/18/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/18/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/18/transactions/transactions.html">Transactions</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    How Client Transactions Work
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>The syntax for writing client transactions is the same as with server or peer transactions, but when a client performs a transaction, the transaction is delegated to a server that brokers the transaction.</p>
+
+<h2 id="role-of-server-delegates-in-transactions"><a id="how-native-client-xacts-work__section_C804F1FE5BDF49CEA037AA589BBF284E" class="no-quick-link"></a>Role of Server Delegates in Transactions</h2>
+
+<p>The client can run transactions on the Java cache server, using a server delegate to actually run the transaction code.</p>
+
+<p>For information on transaction requirements and activities on the
+server side, see the server documentation at
+<a href="geodeman/developing/transactions/chapter_overview.html">Transactions</a>.</p>
+
+<p><strong>Note:</strong>
+The client cache blocks until the transaction is successfully committed.
+However, the block is removed if the transaction is suspended.</p>
+
+<p>Depending on where the data resides, the server transaction delegate may or not be the same member that hosts the transaction. This is the same as for transactions run by the servers, but for server-run transactions, there is no delegate. There is just the member that is directly running its own transaction code.</p>
+
+<p>In this figure, the application code on the client makes changes to data entries Y and Z within a transaction. The server delegate that performs the transaction, M1, does not host the primary copy of the data being modified. The transaction takes place on server M2, where the data resides.</p>
+
+<p><a id="how-native-client-xacts-work__fig_7E408D84E18C452683077528756E31C3"></a>
+<span class="figtitleprefix">Figure: </span>Transaction Run From a Client</p>
+
+<p><img src="../common/images/xact-run-from-client.gif" id="how-native-client-xacts-work__image_E9ED33166A994014942ABAD9E6F61755" class="image" /></p>
+
+<p>To maintain cache consistency, the local client cache is not accessible during a transaction as it may reflect information inconsistent with the transaction in progress. When the transaction completes, the local cache is accessible again.</p>
+
+<p>In addition to the failure conditions common to all transactions, client transactions can also fail if the transaction delegate fails. If the delegate performing the transaction fails, the transaction code throws a <code>TransactionException</code>.</p>
+
+<h2 id="client-transaction-apis"><a id="how-native-client-xacts-work__section_434BA87403C1449FADC3E7796E30F3C7" class="no-quick-link"></a>Client Transaction APIs</h2>
+
+<p>The API for distributed transactions has the familiar relational database methods, <code>begin</code>, <code>commit</code>, and <code>rollback</code>. There are also APIs available to suspend and resume transactions.</p>
+
+<p>The .NET classes for executing transactions are:</p>
+
+<ul>
+<li>  Apache.Geode.Client.CacheTransactionManager</li>
+<li>  Apache.Geode.Client.TransactionId</li>
+</ul>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2018 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>
