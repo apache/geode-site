@@ -32,6 +32,7 @@ org.apache.geode.codeAnalysis.decode
 org.apache.geode.codeAnalysis.decode.cp
 org.apache.geode.compression
 org.apache.geode.connectors.jdbc
+org.apache.geode.datasource
 org.apache.geode.distributed
 org.apache.geode.examples
 org.apache.geode.examples.security
@@ -39,8 +40,10 @@ org.apache.geode.experimental.driver
 org.apache.geode.i18n
 org.apache.geode.lang
 org.apache.geode.management
+org.apache.geode.management.bean.stats
 org.apache.geode.management.cli
 org.apache.geode.management.membership
+org.apache.geode.management.model
 org.apache.geode.memcached
 org.apache.geode.modules.gatewaydelta
 org.apache.geode.modules.session
@@ -65,4 +68,5 @@ org.apache.geode.session.tests
 org.apache.geode.tools.pulse.tests
 org.apache.geode.tools.pulse.tests.rules
 org.apache.geode.tools.pulse.tests.ui
+org.apache.geode.util
 org.apache.geode.util.test
