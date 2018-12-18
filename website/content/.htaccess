@@ -14,4 +14,5 @@
 # limitations under the License.
 
 RewriteEngine On
-RewriteRule ^guide/latest/(.*)$ /docs/guide/12/$1 [NC,L,PT]
+RewriteCond %{HTTPS} !=on
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
