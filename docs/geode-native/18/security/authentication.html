@@ -153,6 +153,10 @@ limitations under the License.
     </li>
 
     <li>
+      <a href="/docs/geode-native/18/function-execution/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
       <a href="/docs/geode-native/18/transactions/transactions.html">Transactions</a>
     </li>
   </ul>
@@ -230,18 +234,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>A client is authenticated when it connects with valid credentials to a Geode cache server that is configured with the client <code>Authenticator</code> callback.
+<p>A client is authenticated when it connects with valid credentials to a Geode cache server that is configured with the client authentication callback.
 For details on the server&rsquo;s role in authentication and what it expects from the client, see <a href="geodeman/managing/security/implementing_authentication.html">Implementing Authentication</a> in the <em>Geode User Guide</em>.</p>
-
-<p>Examples of various implementations can be found in the Native Client source distribution&rsquo;s <code>../templates/security</code> directory.</p>
 
 <p>In your application, authentication credentials must be set when creating the cache. In practice,
 this means setting the authentication credentials when you create the CacheFactory.</p>
 
 <h3 id=".net-authentication-example">.NET Authentication Example</h3>
 
-<p>The following excerpt is taken from the .NET example provided with your Native Client distribution in the <code>../examples/dotnet/AuthInitialize</code> directory.
-In this C# authentication example, credentials are implemented in the GetCredentials member function of the ExampleAuthInitialize class, which implements the IAuthInitialize interface.</p>
+<p>The following excerpt is taken from the .NET example provided with your Native Client distribution in the <code>../examples/dotnet/AuthInitialize</code> directory.</p>
+
+<p>In this C# authentication example, the <code>CacheFactory</code> creation process sets the authentication callback:</p>
+<pre class="highlight csharp"><code>  <span class="kt">var</span> <span class="n">cacheFactory</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">SetAuthInitialize</span><span class="p">(</span><span class="k">new</span> <span class="nf">ExampleAuthInitialize</span><span class="p">());</span>
+</code></pre>
+
+<p>Credentials are implemented in the <code>GetCredentials</code> member function of the <code>ExampleAuthInitialize</code> class, which implements the <code>IAuthInitialize</code> interface:</p>
 <pre class="highlight csharp"><code>  <span class="k">class</span> <span class="nc">ExampleAuthInitialize</span> <span class="p">:</span> <span class="n">IAuthInitialize</span>
   <span class="p">{</span>
     <span class="k">public</span> <span class="nf">ExampleAuthInitialize</span><span class="p">()</span>
@@ -272,7 +281,14 @@ In this C# authentication example, credentials are implemented in the GetCredent
 
 <h3 id="c++-authentication-example">C++ Authentication Example</h3>
 
-<p>In this C++ authentication example, credentials are implemented in the getCredentials member function of the AuthInitialize abstract class.</p>
+<p>In this C++ authentication example, the <code>CacheFactory</code> creation process sets the authentication callback:</p>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cacheFactory</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="n">authInitialize</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">UserPasswordAuthInit</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="n">cacheFactory</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>
+  <span class="n">cacheFactory</span><span class="p">.</span><span class="n">setAuthInitialize</span><span class="p">(</span><span class="n">authInitialize</span><span class="p">);</span>
+</code></pre>
+
+<p>Credentials are implemented in the <code>getCredentials</code> member function of the <code>AuthInitialize</code> abstract class.</p>
 <pre class="highlight cpp"><code><span class="k">class</span> <span class="nc">UserPasswordAuthInit</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AuthInitialize</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="n">UserPasswordAuthInit</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
@@ -334,7 +350,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2018 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2019 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

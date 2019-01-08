@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
   <!-- Use title if it's in the page YAML frontmatter -->
   <title>
-      How Client Load Balancing Works |
+      Function Execution |
     Geode Native Docs
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
   
 </head>
 
-<body class="docs docs_geode-native docs_geode-native_18 docs_geode-native_18_connection-pools docs_geode-native_18_connection-pools_client-load-balancing has-subnav">
+<body class="docs docs_geode-native docs_geode-native_18 docs_geode-native_18_function-execution docs_geode-native_18_function-execution_function-execution has-subnav">
 
 <div class="viewport">
   <div class='wrap'>
@@ -208,7 +208,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
   <h1 class="title-container" >
-    How Client Load Balancing Works
+    Function Execution
   </h1>
 
           <div id="js-quick-links" >
@@ -234,21 +234,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>In a distributed system, servers can be added or removed and their capacity to service new client connections may vary. The server connectivity options are specified in the connection pool configuration.</p>
-
-<p>The connection pool API supports connecting to servers through server locators or directly connecting to servers.</p>
-
-<ul>
-<li><p><strong><a href="/docs/geode-native/18/connection-pools/about-server-locators.html">Server Locators</a></strong></p>
-
-<p>Server locators continuously monitor server availability and server load information. The client is configured with a list of server locators and consults a server locator to request a connection to a server in the distributed system.</p></li>
-<li><p><strong><a href="/docs/geode-native/18/connection-pools/about-connection-pools.html">Connection Pools</a></strong></p>
-
-<p>Clients contain connection pools. Each region is associated with a connection pool using a region attribute, and operations on the region use connections from the respective pools.</p></li>
-<li><p><strong><a href="/docs/geode-native/18/connection-pools/discovering-locators-dynamically.html">Discovering Locators Dynamically</a></strong></p>
-
-<p>A background thread periodically queries the locator for any other locators joining the distributed system.</p></li>
-</ul>
+<p>A function is a body of code that resides on a server and that an application can invoke from a client or from another server without the need to send the function code itself.</p>
 
         
 
