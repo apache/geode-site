@@ -1,4 +1,4 @@
 var a00245 =
 [
-    [ "StructSet", "a00858.html", "a00858" ]
+    [ "Struct", "a00857.html", "a00857" ]
 ];

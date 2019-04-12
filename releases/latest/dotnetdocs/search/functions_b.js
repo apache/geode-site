@@ -6,7 +6,6 @@ var searchData=
   ['loadmethod',['LoadMethod',['../a01146.html#a657a1cc7b7ff5e1b16e1a92c7510f43d',1,'Apache::Geode::Client::Utils']]],
   ['loadmethodfrom',['LoadMethodFrom',['../a01146.html#a19473d9cf42aae27b0d7383eb3bc55d4',1,'Apache::Geode::Client::Utils']]],
   ['logcatch',['LogCatch',['../a01038.html#aa3a91c0a9563685d9bbc4173cd3b5a5b',1,'Apache::Geode::Client::Log']]],
-  ['logfilename',['LogFileName',['../a01038.html#adb9c86d293a7dd1f70b32f5dd8ff5223',1,'Apache::Geode::Client::Log']]],
   ['logsettings',['LogSettings',['../a01126.html#adacb1b5d6f8b58653847a003ea6da6d9',1,'Apache::Geode::Client::SystemProperties']]],
   ['logthrow',['LogThrow',['../a01038.html#a3995ff49ecc0917ffa46c96aade96928',1,'Apache::Geode::Client::Log']]]
 ];

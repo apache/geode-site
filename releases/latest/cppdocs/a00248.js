@@ -1,4 +1,4 @@
 var a00248 =
 [
-    [ "SystemProperties", "a00862.html", "a00862" ]
+    [ "StructSet", "a00861.html", "a00861" ]
 ];

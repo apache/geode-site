@@ -20,7 +20,7 @@ var searchData=
   ['log_2ehpp',['Log.hpp',['../a00269.html',1,'']]],
   ['logcatch',['LogCatch',['../a01038.html#aa3a91c0a9563685d9bbc4173cd3b5a5b',1,'Apache::Geode::Client::Log']]],
   ['logdiskspacelimit',['LogDiskSpaceLimit',['../a01126.html#af1e05180cf0f3eeba2e9737789e784cb',1,'Apache::Geode::Client::SystemProperties']]],
-  ['logfilename',['LogFileName',['../a01126.html#a7cadf52efb25f0203e49e645ea6faa83',1,'Apache::Geode::Client::SystemProperties::LogFileName()'],['../a01038.html#adb9c86d293a7dd1f70b32f5dd8ff5223',1,'Apache::Geode::Client::Log::LogFileName()']]],
+  ['logfilename',['LogFileName',['../a01126.html#a7cadf52efb25f0203e49e645ea6faa83',1,'Apache::Geode::Client::SystemProperties']]],
   ['logfilesizelimit',['LogFileSizeLimit',['../a01126.html#a411d9ecfb39f641002b0bba4538bd00d',1,'Apache::Geode::Client::SystemProperties']]],
   ['loglevel',['LogLevel',['../a00382.html#adbfce8e56c7ef4e4511637b4539dbcfa',1,'Apache::Geode::Client']]],
   ['logsettings',['LogSettings',['../a01126.html#adacb1b5d6f8b58653847a003ea6da6d9',1,'Apache::Geode::Client::SystemProperties']]],

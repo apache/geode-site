@@ -13,7 +13,6 @@ var a01038 =
     [ "Init", "a01038.html#a2a74daa4af448a3bdb25e926906638a3", null ],
     [ "Level", "a01038.html#a84e24098ea4721556f6b1e10cdfff582", null ],
     [ "LogCatch", "a01038.html#aa3a91c0a9563685d9bbc4173cd3b5a5b", null ],
-    [ "LogFileName", "a01038.html#adb9c86d293a7dd1f70b32f5dd8ff5223", null ],
     [ "LogThrow", "a01038.html#a3995ff49ecc0917ffa46c96aade96928", null ],
     [ "SetLevel", "a01038.html#a12fd409f455c92c520d4f90f3e669fe2", null ],
     [ "Warning", "a01038.html#a48ca0a2dd20c1150ed0b4dc5259c30db", null ],

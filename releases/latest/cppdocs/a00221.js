@@ -1,4 +1,4 @@
 var a00221 =
 [
-    [ "RegionService", "a00834.html", "a00834" ]
+    [ "RegionFactory", "a00833.html", "a00833" ]
 ];
