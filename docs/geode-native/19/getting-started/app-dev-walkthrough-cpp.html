@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      C++ Application Development Walkthrough |
+    Geode Native Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_19 docs_geode-native_19_getting-started docs_geode-native_19_getting-started_app-dev-walkthrough-cpp has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/19/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/19/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/19/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/19/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/19/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/19/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/19/configuring/sysprops.html">System Properties</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    C++ Application Development Walkthrough
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#prerequisites_cpp">Prerequisites</a></li>
+<li><a href="#setting_up_dirs_cpp">Setting up Directories and Sources</a></li>
+<li><a href="#configuring_cmake_cpp">Configuring CMake</a></li>
+<li><a href="#building_the_app_cpp">Building the App</a></li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <p>This section describes how to set up a native client development environment using C++ and CMake.</p>
+
+<h2 id="prerequisites"><a id="prerequisites_cpp"></a>Prerequisites</h2>
+
+<p>This walkthrough assumes that certain components are in place:</p>
+
+<ul>
+<li>The <strong>Geode Native Client libraries</strong>. Install the Native Client as described in
+<a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html">Getting Started with the Native Client</a>. Follow the ease-of-use
+recommendations by installing the Native Client in a well-known location and renaming it.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>System</th>
+<th>Native Client Library Well-Known Location</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Linux</td>
+<td>/usr/local/nativeclient</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>C:\Program Files\nativeclient</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p>The <strong>CMake</strong> tool suite. Download and install CMake, following the instructions on <a href="https://cmake.org">cmake.org</a>.</p></li>
+<li><p><strong>Geode</strong>: Install and configure Geode. See the <a href="http://geode.apache.org/docs/"><em>Geode User&rsquo;s Guide</em></a> for instructions and system requirements.</p></li>
+</ul>
+
+<p>To develop a Native Client application using C++ and CMake:</p>
+
+<ul>
+<li>Create a project directory structure</li>
+<li>Populate the project directories with C++ source code</li>
+<li>Configure the CMake build environment</li>
+<li>Run CMake to build your application</li>
+<li>Run your application</li>
+</ul>
+
+<h2 id="setting-up-directories-and-sources"><a id="setting_up_dirs_cpp"></a>Setting up Directories and Sources</h2>
+
+<ol>
+<li><p>Create a project directory structure. In this example, the project is called MyProject. The
+directory structure provides a place for your application source files and a <code>cmake</code> modules
+directory for project-specific CMake files:</p>
+<pre class="highlight plaintext"><code>MyProject/
+  cmake/
+    FindGeodeNative.cmake
+  CMakeLists.txt
+  main.cpp
+</code></pre></li>
+<li><p>Change directory to MyProject and create your application sources. In this example, we have one
+source file, <code>main.cpp</code>.</p></li>
+</ol>
+
+<h2 id="configuring-cmake"><a id="configuring_cmake_cpp"></a>Configuring CMake</h2>
+
+<ol>
+<li><p>Copy the <code>FindGeodeNative.cmake</code> script from one of the Native Client examples to the <code>cmake</code> subdirectory.</p></li>
+<li><p>Create CMakeLists.txt. Copy the file from an example, if you like, as a starting point. The CMakeLists.txt file
+should contain the following CMake instructions:</p></li>
+</ol>
+
+<ul>
+<li><p>CMake minimum version</p>
+<pre class="highlight plaintext"><code>cmake_minimum_required(VERSION 3.10)
+</code></pre></li>
+<li><p>Your project name and language</p>
+<pre class="highlight plaintext"><code>project(MyProject LANGUAGES CXX)
+</code></pre></li>
+<li><p>Minimum language version. For the Native Client, the minimum C++ version is 11.</p>
+<pre class="highlight plaintext"><code>set(CMAKE_CXX_STANDARD 11)
+</code></pre></li>
+<li><p>Path to the CMake modules directory where the <code>FindGeodeNative.cmake</code> script is located and an instruction
+telling CMake to use it:</p>
+<pre class="highlight plaintext"><code>set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+find_package(GeodeNative REQUIRED COMPONENTS cpp)
+</code></pre></li>
+<li><p>The compilation target and the source(s) to be compiled</p>
+<pre class="highlight plaintext"><code>add_executable(MyProject main.cpp)
+
+target_link_libraries(MyProject
+  PUBLIC
+    GeodeNative::cpp)
+</code></pre></li>
+</ul>
+
+<p>Combined, the above elements comprise the following CMakeLists.txt:</p>
+<pre class="highlight plaintext"><code># CMakeLists.txt for C++ Native Client App
+cmake_minimum_required(VERSION 3.10)
+
+project(MyProject LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+
+find_package(GeodeNative REQUIRED COMPONENTS cpp)
+
+add_executable(MyProject main.cpp)
+
+target_link_libraries(MyProject
+  PUBLIC
+    GeodeNative::cpp)
+</code></pre>
+
+<h2 id="building-the-app"><a id="building_the_app_cpp"></a>Building the App</h2>
+
+<ol>
+<li><p>Create a build directory and set it as your current directory:</p>
+<pre class="highlight plaintext"><code>$ mkdir build
+$ cd build
+</code></pre></li>
+<li><p>Run CMake twice, once to configure the build, then again to perform the build, generating the executable application.</p>
+<pre class="highlight plaintext"><code>$ cmake ..
+$ cmake --build .
+</code></pre></li>
+</ol>
+
+<p>This creates the executable application in your build directory.</p>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2019 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

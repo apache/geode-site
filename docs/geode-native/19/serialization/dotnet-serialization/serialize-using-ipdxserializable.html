@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Serialize Using the IPdxSerializable Interface |
+    Geode Native Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_19 docs_geode-native_19_serialization docs_geode-native_19_serialization_dotnet-serialization docs_geode-native_19_serialization_dotnet-serialization_serialize-using-ipdxserializable has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/19/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/19/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/19/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/19/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/19/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/19/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/19/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/19/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/19/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/19/configuring/sysprops.html">System Properties</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Serialize Using the IPdxSerializable Interface
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>Use this procedure to program your domain object for PDX serialization using the <code>IPdxSerializable</code> Interface. When you write objects using PDX serialization, they are distributed to the server tier in PDX serialized form. When you run queries against the objects on the servers, only the fields you specify are deserialized.</p>
+
+<p><strong>Procedure</strong></p>
+
+<ol>
+<li><p>In your domain class, implement <code>Apache.Geode.Client.IPdxSerializable</code>. Example:</p>
+<pre class="highlight plaintext"><code>using Apache.Geode.Client;
+       ...
+       public class PortfolioPdx : IPdxSerializable
+</code></pre></li>
+<li><p>If your domain class does not have a zero-arg constructor, create one for it.</p>
+
+<p>If you also use PDX serialization in Java for the object, serialize the object in the same way for each language. Serialize the same fields in the same order and mark the same identify fields.</p></li>
+<li><p>Program the <code>IPdxSerializable ToData</code> function to serialize your object as required by your application.</p>
+
+<ol>
+<li> Write your domain class&rsquo;s standard .NET data fields using the <code>IPdxWriter</code> write methods. Geode automatically provides <code>IPdxWriter</code> to the <code>ToData</code> function for <code>IPdxSerializable</code> objects.</li>
+<li><p>Call the <code>ToData markIdentifyField</code> function for each field Geode should use to identify your object. This is used to compare objects for operations like <code>DISTINCT</code> queries. The <code>markIdentifyField</code> call must come after the associated field write methods.</p>
+
+<p>Example:</p>
+<pre class="highlight plaintext"><code>// object fields
+private int m_id;
+private string m_pkid;
+private PositionPdx m_position1;
+private PositionPdx m_position2;
+private Hashtable m_positions;
+private string m_type;
+private string m_status;
+private string[] m_names;
+private byte[] m_newVal;
+private DateTime m_creationDate;
+private byte[] m_arrayZeroSize;
+private byte[] m_arrayNull;
+// ToData
+public void ToData(IPdxWriter writer)
+{
+   writer.WriteInt("id", m_id)
+   //identity field
+      .MarkIdentityField("id")
+      .WriteString("pkid", m_pkid)
+      .WriteObject("position1", m_position1)
+      .WriteObject("position2", m_position2)
+.WriteObject("positions", m_positions)
+.WriteString("type", m_type)
+.WriteString("status", m_status)
+.WriteStringArray("names", m_names)
+.WriteByteArray("newVal", m_newVal)
+.WriteDate("creationDate", m_creationDate)
+.WriteByteArray("arrayNull", m_arrayNull)
+.WriteByteArray("arrayZeroSize", m_arrayZeroSize);
+}
+</code></pre></li>
+</ol></li>
+<li><p>Program <code>IPdxSerializable FromData</code> to read your data fields from the serialized form into the object&rsquo;s fields using the <code>IPdxReader</code> read methods. Geode automatically provides <code>IPdxReader</code> to the <code>FromData</code> function for <code>IPdxSerializable</code> objects.</p>
+
+<p>Use the same names as you did in <code>ToData</code> and call the read operations in the same order as you called the write operations in your <code>ToData</code> implementation.</p>
+
+<p>Example:</p>
+<pre class="highlight plaintext"><code>public void FromData(IPdxReader reader)
+   {
+      m_id = reader.ReadInt("id");
+
+      bool isIdentity = reader.IsIdentityField("id");
+
+      if (isIdentity == false)
+         throw new IllegalStateException("Portfolio id is identity field");
+
+      bool isId = reader.HasField("id");
+
+      if (isId == false)
+         throw new IllegalStateException("Portfolio id field not found");
+
+      bool isNotId = reader.HasField("ID");
+
+      if (isNotId == true)
+         throw new IllegalStateException("Portfolio isNotId field found");
+
+      m_pkid = reader.ReadString("pkid");
+      m_position1 = (PositionPdx)reader.ReadObject("position1");
+      m_position2 = (PositionPdx)reader.ReadObject("position2");
+      m_positions = (Hashtable)reader.ReadObject("positions");
+      m_type = reader.ReadString("type");
+      m_status = reader.ReadString("status");
+      m_names = reader.ReadStringArray("names");
+      m_newVal = reader.ReadByteArray("newVal");
+      m_creationDate = reader.ReadDate("creationDate");
+      m_arrayNull = reader.ReadByteArray("arrayNull");
+      m_arrayZeroSize = reader.ReadByteArray("arrayZeroSize");
+}
+</code></pre></li>
+<li><p>Optionally, program your domain object&rsquo;s equals and hashcode methods.</p></li>
+</ol>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2019 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>
