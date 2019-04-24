@@ -50,6 +50,11 @@ When the site's updated framework has been fleshed-out with external content, th
 
 To generate the site locally, you need to install java and docker. 
 
+Other support tools you may need include:
+
+- pandoc
+- nanoc
+
 ## Update the website framework
 
 On the __master__ branch, update the website's framework pages. For a general release, this would likely include:
@@ -71,6 +76,9 @@ You should still be on the __master__ branch.
     ```
     $ ./gradlew compile
     ```
+
+  You may need to suppress rat checking: add `-x rat` to the end of the `.gradlew` command.
+
 2. View the generated site by running:
 
     ```
@@ -78,6 +86,8 @@ You should still be on the __master__ branch.
     ```
     
   and point your browser at `http://localhost:3000` to view the result. 
+
+  You may need to suppress rat checking: add `-x rat` to the end of the `.gradlew` command.
 
 3. To make further changes, stop the build (Ctrl-C), edit files, recompile, and view again.
 
