@@ -18,5 +18,8 @@ RewriteCond %{HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 RedirectMatch 301 /serverman/(.*) https://geode.apache.org/docs/guide/19/$1
 RedirectMatch 301 /geodeman/(.*) https://geode.apache.org/docs/guide/19/$1
-RedirectMatch 301 /dotnetdocs/(.*) https://geode.apache.org/releases/latest/dotnetdocs/$1
-RedirectMatch 301 /cppdocs/(.*) https://geode.apache.org/releases/latest/cppdocs/$1
+#
+# Comment-out to see if it alleviates the "too many redirects" error
+#
+# RedirectMatch 301 /dotnetdocs/(.*) https://geode.apache.org/releases/latest/dotnetdocs/$1
+# RedirectMatch 301 /cppdocs/(.*) https://geode.apache.org/releases/latest/cppdocs/$1
