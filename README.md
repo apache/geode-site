@@ -120,12 +120,12 @@ The `gradlew publish` command *does not* update the `css` and `stylesheets` dire
   1. On the __asf-site__ branch, create a destination directory for the User Guide. The naming convention is:
 
         ```
-        {geode-site}/website/content/docs/guide/XY
+        {geode-site}/docs/guide/XY
         ```
   where `XY` is the product version of your documentation (e.g., `{geode-site}/website/content/docs/guide/17` if you are publishing the documentation for Apache Geode 1.7). So, if your current working directory is the top level of `{geode-site}`, you would create the destination directory with the following command:
 
         ```
-        $ mkdir -p {geode-site}/website/content/docs/guide/XY
+        $ mkdir -p {geode-site}/docs/guide/XY
         ```
 
   1. Navigate to the User Guide you have built in the Geode repository: `{geode-project-dir}/geode-book/final_app/public/docs/guide/XY`.
@@ -141,7 +141,7 @@ The `gradlew publish` command *does not* update the `css` and `stylesheets` dire
   - Navigate to the target directory and un-tar the userguide archive:
 
         ```
-        $ cd {geode-site}/website/content/docs/guide/XY
+        $ cd {geode-site}/docs/guide/XY
         $ tar xvf ~/Desktop/new-guide-content.tar
         ```
 
@@ -160,6 +160,8 @@ Commit and push the __asf-site__ branch. Apache detects the update and publishes
 - If the site does not update in 5-10 minutes, __push a new commit by adding or subtracting a blank line in the top-level `index.html` file.__ This usually does the trick.
 
 - Check your commit of the __asf-site__ branch. The site's deployable files are at the top level, rooted at {geode-site}/index.html. Make sure that directories such as `{geode-site}/docs` and `{geode-site}/releases` contain the latest versions of `index.html` and the docs.
+
+- DO NOT commit the {geode-site}/build directory. This is the place where files compiled on the __master__ branch are placed, then retrieved after the switch to the __asf-site__ branch. It must be freshly generated with each iteration, not saved to the repo.
 
 For further assistance, you can
 
