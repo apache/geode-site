@@ -1,9 +1,8 @@
 var a00834 =
 [
-    [ "close", "a00834.html#ad491b3447896e480666fdae6d9c96ab9", null ],
-    [ "createPdxInstanceFactory", "a00834.html#a0dcd1860f71f30172e4303f5d8439c4c", null ],
-    [ "getQueryService", "a00834.html#a750c5523f7f9b2aab4b91993466164c9", null ],
-    [ "getRegion", "a00834.html#a50370f5b4d144c8742baceb0eaa4cfe3", null ],
-    [ "isClosed", "a00834.html#a0a9bb57c509648270a50abc5afea1dae", null ],
-    [ "rootRegions", "a00834.html#acd245c4e15d2025a78c7fa7e8652529a", null ]
+    [ "ResultCollector", "a00834.html#a3f2a157b14b8c21f586c2325776e6e03", null ],
+    [ "addResult", "a00834.html#adfb3fb793a4dd7fcec334a083b4f6967", null ],
+    [ "clearResults", "a00834.html#a8454297e6d0407859a1d57a6f95a5d4a", null ],
+    [ "endResults", "a00834.html#a599979d80e433a8e26fb25c29a43e0b3", null ],
+    [ "getResult", "a00834.html#a9eb6f392dcc27a6053db46bb26508b15", null ]
 ];

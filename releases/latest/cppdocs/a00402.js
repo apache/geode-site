@@ -1,8 +1,7 @@
 var a00402 =
 [
-    [ "CqAttributesFactory", "a00402.html#aa5ba8470b259765e8f5bbfd1f64f7cd6", null ],
-    [ "CqAttributesFactory", "a00402.html#a9108307e4e33bdb7e353a325b77191fd", null ],
-    [ "addCqListener", "a00402.html#a562ab918c5d3db98b7cda4c87a9489ad", null ],
-    [ "create", "a00402.html#ac11c0044b36095f6a49872b88562d2e7", null ],
-    [ "initCqListeners", "a00402.html#ab7df33509286049c113ad9230de90b14", null ]
+    [ "CqAttributesMutator", "a00402.html#a72d4e7051847e1ce8a6be721a8486749", null ],
+    [ "addCqListener", "a00402.html#ad37d6c71bbcb958a555d020ae8b54ef5", null ],
+    [ "removeCqListener", "a00402.html#ad35c6776954b51e7c2ecf1e40ab57019", null ],
+    [ "setCqListeners", "a00402.html#aa5248cb8d75b7538027dd625eb489aa2", null ]
 ];

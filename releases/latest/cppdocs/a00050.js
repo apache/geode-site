@@ -1,4 +1,4 @@
 var a00050 =
 [
-    [ "CacheAttributes", "a00373.html", "a00373" ]
+    [ "CacheFactory", "a00370.html", "a00370" ]
 ];

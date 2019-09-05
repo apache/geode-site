@@ -1,7 +1,8 @@
 var a00430 =
 [
-    [ "numDeletes", "a00430.html#a57f77354f49ddbef336663fcf0893cb8", null ],
-    [ "numEvents", "a00430.html#ae46ab6d7264608ac130f979f1b6cd1ee", null ],
-    [ "numInserts", "a00430.html#a5ca83f224a3aade7c6232fbc1fe26824", null ],
-    [ "numUpdates", "a00430.html#aedfb1a9fd9a4f25f7e2d5baa5c500b70", null ]
+    [ "close", "a00430.html#a9b19ef4cf7945657df11c9378a4662f5", null ],
+    [ "onCqConnected", "a00430.html#a3aca7cb9d67edd17df327cb0e47a8863", null ],
+    [ "onCqDisconnected", "a00430.html#ab08c99cbdfdafbc846097b27e12562ae", null ],
+    [ "onError", "a00430.html#a4050fa02b1386d48a6f9877464a892bc", null ],
+    [ "onEvent", "a00430.html#a5ba90775e233d64d2c20e190862f0bc9", null ]
 ];

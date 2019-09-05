@@ -1,7 +1,18 @@
 var a00454 =
 [
-    [ "clone", "a00454.html#a1e7f453bd111f2d0dc24d97e47cd7810", null ],
-    [ "fromDelta", "a00454.html#a722438e8f9011c8943b400d726d784f3", null ],
-    [ "hasDelta", "a00454.html#aee49a30db31321cde7673481ff2f3fe5", null ],
-    [ "toDelta", "a00454.html#afa848968dd5ee554afaa0eb33537a7fb", null ]
+    [ "EntryEvent", "a00454.html#a085e358151c3a68d00f7f15c4498b4f3", null ],
+    [ "~EntryEvent", "a00454.html#a791b14dccf58a12e967b8dacba965190", null ],
+    [ "EntryEvent", "a00454.html#ac66f3ccec7d25e8985560fb1a0dc752c", null ],
+    [ "getCallbackArgument", "a00454.html#a3a24cb900d2af911a6fca0635d6f1357", null ],
+    [ "getKey", "a00454.html#a9f748727850f1b9ab21fb400cd981bd6", null ],
+    [ "getNewValue", "a00454.html#adc198458ebe1e327cfe8cbf66b66c8f0", null ],
+    [ "getOldValue", "a00454.html#afe723855cbf895aaf80afc4d3778270a", null ],
+    [ "getRegion", "a00454.html#adda3af52689eba611f04eeeb770ef28f", null ],
+    [ "remoteOrigin", "a00454.html#a0d7f1d807ee544c154215fae796b1f18", null ],
+    [ "m_callbackArgument", "a00454.html#ac07eafc27c72feeec52610f82416c545", null ],
+    [ "m_key", "a00454.html#a86522f7447c92f499abf003c25955bea", null ],
+    [ "m_newValue", "a00454.html#a6ac2f8f08d8a38573d31f3f6b1fea548", null ],
+    [ "m_oldValue", "a00454.html#a4ea6586b3422d80b7bd94a0fc6a0a856", null ],
+    [ "m_region", "a00454.html#afad418fec0935a39b5e391797bfad928", null ],
+    [ "m_remoteOrigin", "a00454.html#a19f9c9961f8a943779d89faa909323f8", null ]
 ];

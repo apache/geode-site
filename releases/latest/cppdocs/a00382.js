@@ -1,5 +1,5 @@
 var a00382 =
 [
-    [ "close", "a00382.html#a78128df22aca9cee08dc684fe98f5327", null ],
-    [ "load", "a00382.html#aa79596f50779a0532a13638c2a85c90e", null ]
+    [ "getLastAccessedTime", "a00382.html#a9b0fc218ad21944661f8174a3ff9167f", null ],
+    [ "getLastModifiedTime", "a00382.html#af895fb77a5b22a015860ca9220f90124", null ]
 ];

@@ -1,14 +1,9 @@
 var a00390 =
 [
-    [ "begin", "a00390.html#a0981149d55ba268e0599daa32cb373fa", null ],
-    [ "commit", "a00390.html#abf655e511f2fae3bdc6746e2cfa941aa", null ],
-    [ "exists", "a00390.html#a262cbb8bb675167abcb99289b8f27529", null ],
-    [ "exists", "a00390.html#aa5fec7a72fd3778176bc110d3e05f86e", null ],
-    [ "getTransactionId", "a00390.html#aaac9612c9c13933ca31f81ac8a6ca431", null ],
-    [ "isSuspended", "a00390.html#a77a2e4d0bd8a240700f087ed4156cff0", null ],
-    [ "resume", "a00390.html#aadf2e9d5586ff6d59a43876c3aef30ac", null ],
-    [ "rollback", "a00390.html#af52d5c2e1b776ecabde5f3d60f474a49", null ],
-    [ "suspend", "a00390.html#a89106519ecfbb7cf0aacf42c2580c446", null ],
-    [ "tryResume", "a00390.html#ad5b2cdfb8f1cd389690cbd466a1f01c7", null ],
-    [ "tryResume", "a00390.html#acbb0a029a4bea5d215b0c3ff588429b7", null ]
+    [ "beforeCreate", "a00390.html#ab319be76cbfd4c23fc03b58c23b4dff8", null ],
+    [ "beforeDestroy", "a00390.html#a81ec54ad91d600062a7020d6639dede8", null ],
+    [ "beforeRegionClear", "a00390.html#a1fc3cd668ae9cca65d92b6f9db0848d9", null ],
+    [ "beforeRegionDestroy", "a00390.html#aebf73c3f4b8e1b3f1fa3f5f1641aa9ea", null ],
+    [ "beforeUpdate", "a00390.html#a3e63f635ea85878b0ab6d2906aec73a5", null ],
+    [ "close", "a00390.html#a9c11fba4eb45ae2a6c6d54c49bcfcc25", null ]
 ];

@@ -1,8 +1,13 @@
 var a00802 =
 [
-    [ "compile", "a00802.html#a3204746b2ccad832e96c211b1bb9497a", null ],
-    [ "execute", "a00802.html#a303f46d2be832f73fbb90096305192a1", null ],
-    [ "execute", "a00802.html#a50c63cf9268acbc5e5406349de7c16c9", null ],
-    [ "getQueryString", "a00802.html#a340733f198ec219a743368c07bc32e7d", null ],
-    [ "isCompiled", "a00802.html#ae398308c9952ac883cc05e31efd60451", null ]
+    [ "closeCqs", "a00802.html#ab03a9f051d462060c4299624975e03ca", null ],
+    [ "executeCqs", "a00802.html#a4b676cdbdce07fca000789df6e5ea724", null ],
+    [ "getAllDurableCqsFromServer", "a00802.html#a3d882aaad5517a88b7568d6d5708d7d5", null ],
+    [ "getCq", "a00802.html#ad754c5568f06499f7ce52fa25373bef1", null ],
+    [ "getCqs", "a00802.html#aa809b95267fe2346ca05da62ab10d3d4", null ],
+    [ "getCqServiceStatistics", "a00802.html#a9750b7d30a2d73ddc53d8a23d72a0cc6", null ],
+    [ "newCq", "a00802.html#ad2715272fc10d26223d2dee60f2d78d4", null ],
+    [ "newCq", "a00802.html#acd2763e85abcd5035fc534af9f0b0d0a", null ],
+    [ "newQuery", "a00802.html#ab4039c6723b533a165d1af714314c32e", null ],
+    [ "stopCqs", "a00802.html#ab07dc8ad779710ab9713b06bf7aee1fa", null ]
 ];

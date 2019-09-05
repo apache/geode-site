@@ -1,7 +1,9 @@
 var a00406 =
 [
-    [ "CqAttributesMutator", "a00406.html#a72d4e7051847e1ce8a6be721a8486749", null ],
-    [ "addCqListener", "a00406.html#ad37d6c71bbcb958a555d020ae8b54ef5", null ],
-    [ "removeCqListener", "a00406.html#ad35c6776954b51e7c2ecf1e40ab57019", null ],
-    [ "setCqListeners", "a00406.html#aa5248cb8d75b7538027dd625eb489aa2", null ]
+    [ "getBaseOperation", "a00406.html#afb1f2ffeba76d70b8197c9d389ed137e", null ],
+    [ "getCq", "a00406.html#a83804f7cc751c6a6535a70e4fd5bfda8", null ],
+    [ "getDeltaValue", "a00406.html#acb738a3e119d98d5e674cc6de573370c", null ],
+    [ "getKey", "a00406.html#add734d004ac1561d12f3222c70c1c058", null ],
+    [ "getNewValue", "a00406.html#a23d98d6438e368f0a986c6494253fb11", null ],
+    [ "getQueryOperation", "a00406.html#a0684ef99d984bf1cf57fdd5be35a959c", null ]
 ];
