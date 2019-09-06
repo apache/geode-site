@@ -29,7 +29,7 @@ function setHeaderForScroll(scrollTop) {
         blue = Math.floor(166 - (166-94) * percent);
         blur = Math.floor(2 * percent);
     } else {
-        opacity = 0;
+        opacity = 1;      // set to 0 to hide logo
         red = 36;
         green = 129;
         blue = 166;
