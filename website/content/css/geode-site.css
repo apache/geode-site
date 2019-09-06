@@ -1345,7 +1345,7 @@ h2.icns-tools:before{
 /* Tablets and up */
 @media screen and (min-width: 768px) {
   header.secondary #home-logo { opacity: 1; }
-  #home-logo { opacity: 0; height: 40px;}
+  #home-logo { opacity: 1; height: 40px;}
   .bf-header {
     font-size: 21px;
     text-align: left;
