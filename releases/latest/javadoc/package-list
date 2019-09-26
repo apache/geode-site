@@ -31,9 +31,13 @@ org.apache.geode.i18n
 org.apache.geode.lang
 org.apache.geode.management
 org.apache.geode.management.api
+org.apache.geode.management.builder
 org.apache.geode.management.cli
 org.apache.geode.management.client
+org.apache.geode.management.configuration
 org.apache.geode.management.membership
+org.apache.geode.management.operation
+org.apache.geode.management.runtime
 org.apache.geode.memcached
 org.apache.geode.metrics
 org.apache.geode.modules.gatewaydelta

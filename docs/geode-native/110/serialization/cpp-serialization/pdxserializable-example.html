@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      PdxSerializable Example |
+    Geode Native Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_110 docs_geode-native_110_serialization docs_geode-native_110_serialization_cpp-serialization docs_geode-native_110_serialization_cpp-serialization_pdxserializable-example has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/110/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/110/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/110/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/110/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/110/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/110/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/110/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/110/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/110/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/110/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/110/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/110/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/110/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/110/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/110/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/110/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/110/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/110/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    PdxSerializable Example
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2 id="order.cpp:">Order.cpp:</h2>
+
+<p>Front matter:</p>
+<pre class="highlight plaintext"><code>#include "Order.hpp"
+</code></pre>
+
+<p><code>PdxReader</code> &amp; <code>PdxWriter</code> are used for <code>fromData()</code> &amp; <code>toData()</code>:</p>
+<pre class="highlight plaintext"><code>#include &lt;geode/PdxReader.hpp&gt;
+#include &lt;geode/PdxWriter.hpp&gt;
+
+namespace customserializable {
+</code></pre>
+
+<ul>
+<li>Must provide <code>fromData()</code> and <code>toData()</code>.</li>
+<li><p>Specify the keys in the same order in <code>fromData()</code> and <code>toData()</code>. Use <code>PdxReader</code> and <code>PdxWriter</code>:</p>
+<pre class="highlight plaintext"><code>void Order::fromData(PdxReader&amp; pdxReader) {
+  order_id_ = static_cast&lt;uint32_t&gt;(pdxReader.readLong(ORDER_ID_KEY_));
+  name_ = pdxReader.readString(NAME_KEY_);
+  quantity_ = static_cast&lt;uint16_t&gt;(pdxReader.readInt(QUANTITY_KEY_));
+}
+
+void Order::toData(PdxWriter&amp; pdxWriter) const {
+  pdxWriter.writeLong(ORDER_ID_KEY_, order_id_);
+  pdxWriter.markIdentityField(ORDER_ID_KEY_);
+
+  pdxWriter.writeString(NAME_KEY_, name_);
+  pdxWriter.markIdentityField(NAME_KEY_);
+
+  pdxWriter.writeInt(QUANTITY_KEY_, quantity_);
+  pdxWriter.markIdentityField(QUANTITY_KEY_);
+}
+</code></pre></li>
+</ul>
+
+<p>Optionally override and add detailed methods as needed. In this example, we override <code>toString()</code> and implement <code>size()</code> and <code>classname()</code>.</p>
+<pre class="highlight plaintext"><code>std::string Order::toString() const {
+  return "OrderID: " + std::to_string(order_id_) + " Product Name: " + name_ +
+     " Quantity: " + std::to_string(quantity_);
+}
+
+
+size_t Order::objectSize() const {
+  auto objectSize = sizeof(Order);
+  objectSize += name_.capacity();
+  return objectSize;
+}
+
+
+const std::string&amp; Order::getClassName() const {
+  static const std::string CLASS_NAME = "com.example.Order";
+  return CLASS_NAME;
+}
+</code></pre>
+
+<p>Provide a constructor in a parameter-less wrapper that can be called to create a prototypical instance (called <code>createDeserializable()</code> here).</p>
+<pre class="highlight plaintext"><code>std::shared_ptr&lt;PdxSerializable&gt; Order::createDeserializable() {
+  return std::make_shared&lt;Order&gt;(0, "", 0);
+}
+
+const std::string Order::ORDER_ID_KEY_ = "order_id";
+const std::string Order::NAME_KEY_ = "name";
+const std::string Order::QUANTITY_KEY_ = "quantity";
+
+}  // namespace customserializable
+</code></pre>
+
+<h2 id="main.cpp">main.cpp</h2>
+
+<p>Front matter. You will need <code>TypeRegistry</code> to register your PdxSerializable class. Bring in the customary includes for I/O and cache, pool, and region creation.</p>
+<pre class="highlight plaintext"><code>#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+
+#include &lt;geode/CacheFactory.hpp&gt;
+#include &lt;geode/PoolManager.hpp&gt;
+#include &lt;geode/RegionFactory.hpp&gt;
+#include &lt;geode/RegionShortcut.hpp&gt;
+#include &lt;geode/TypeRegistry.hpp&gt;
+
+#include "Order.hpp"
+
+using namespace apache::geode::client;
+using namespace customserializable;
+
+
+int main(int argc, char** argv) {
+  auto cacheFactory = CacheFactory();
+  cacheFactory.set("log-level", "none");
+  auto cache = cacheFactory.create();
+
+  auto poolFactory = cache.getPoolManager().createFactory();
+  poolFactory.addLocator("localhost", 10334);
+  auto pool = poolFactory.create("pool");
+
+  auto regionFactory = cache.createRegionFactory(RegionShortcut::PROXY);
+  auto region = regionFactory.setPoolName("pool").create("custom_orders");
+
+
+  cache.getTypeRegistry().registerPdxType(Order::createDeserializable);
+
+
+  std::cout &lt;&lt; "Create orders" &lt;&lt; std::endl;
+  auto order1 = std::make_shared&lt;Order&gt;(1, "product x", 23);
+  auto order2 = std::make_shared&lt;Order&gt;(2, "product y", 37);
+
+  std::cout &lt;&lt; "Storing orders in the region" &lt;&lt; std::endl;
+  region-&gt;put("Customer1", order1);
+  region-&gt;put("Customer2", order2);
+
+  std::cout &lt;&lt; "Getting the orders from the region" &lt;&lt; std::endl;
+
+  if (auto order1retrieved =
+      std::dynamic_pointer_cast&lt;Order&gt;(region-&gt;get("Customer1"))) {
+std::cout &lt;&lt; "OrderID: " &lt;&lt; order1retrieved-&gt;getOrderId() &lt;&lt; std::endl;
+std::cout &lt;&lt; "Product Name: " &lt;&lt; order1retrieved-&gt;getName() &lt;&lt; std::endl;
+std::cout &lt;&lt; "Quantity: " &lt;&lt; order1retrieved-&gt;getQuantity() &lt;&lt; std::endl;
+  } else {
+std::cout &lt;&lt; "Order 1 not found." &lt;&lt; std::endl;
+  }
+
+  if (auto order2retrieved = region-&gt;get("Customer2")) {
+std::cout &lt;&lt; order2retrieved-&gt;toString() &lt;&lt; std::endl;
+  } else {
+std::cout &lt;&lt; "Order 2 not found." &lt;&lt; std::endl;
+  }
+
+
+  cache.close();
+}
+</code></pre>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2019 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>
