@@ -1,0 +1,8 @@
+# Staging and publishing spec
+# For info, see https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories
+staging:
+  profile: ~
+  whoami: asf-staging
+
+publish:
+  whoami: asf-site
