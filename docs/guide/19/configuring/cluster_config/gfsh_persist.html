@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2644,10 +2652,14 @@ command after starting up a locator.</p>
 <li>  <code>create disk-store</code></li>
 <li>  <code>destroy disk-store</code></li>
 <li>  <code>create async-event-queue</code></li>
+<li>  <code>alter async-event-queue</code></li>
+<li>  <code>destroy async-event-queue</code></li>
 <li>  <code>deploy jar</code></li>
 <li>  <code>undeploy jar</code></li>
 <li>  <code>create gateway-sender</code></li>
+<li>  <code>destroy gateway-sender</code></li>
 <li>  <code>create gateway-receiver</code></li>
+<li>  <code>destroy gateway-receiver</code></li>
 </ul>
 
 <p><strong>*</strong> Note that the <code>configure pdx</code> command must be executed <em>before</em> starting your data members. This command does not affect any currently running members in the system. Data members (with cluster configuration enabled) that are started after running this command will pick up the new PDX configuration.</p>
@@ -2681,7 +2693,6 @@ The <code>configure pdx</code> command always specifies the <code>org.apache.geo
 <li><p><code>transaction-writer</code></p></li>
 </ul></li>
 <li><p>Adding or removing a <code>TransactionListener</code></p></li>
-<li><p>Deleting an <code>AsyncEventQueue</code></p></li>
 <li><p>Configuring a <code>GatewayConflictResolver</code></p></li>
 <li><p>You cannot specify parameters and values for Java classes for the following:</p>
 

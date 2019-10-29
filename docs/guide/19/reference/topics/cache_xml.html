@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -3146,6 +3154,11 @@ You cannot use this element to dynamically create <em>partitioned</em> regions.<
 <td>key</td>
 </tr>
 <tr class="even">
+<td>pause-event-processing</td>
+<td>When true, event dispatching from the queue to the listener(s) will be paused when the AsyncEventQueue is started.</td>
+<td>false</td>
+</tr>
+<tr class="odd">
 <td>persistent</td>
 <td>Boolean value that determines whether Geode persists this queue.</td>
 <td>False</td>

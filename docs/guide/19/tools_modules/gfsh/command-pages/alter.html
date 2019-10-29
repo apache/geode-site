@@ -45,7 +45,6 @@
     </div>
   </header>
 
-
     <div class="container">
 
       <!--googleoff: index-->
@@ -1961,9 +1960,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2612,7 +2619,7 @@ settings to take effect on that server.</p>
 
 <p><strong>Syntax:</strong></p>
 <pre class="highlight plaintext"><code>alter async-event-queue --id=value [--batch-size=value] [--batch-time-interval=value]
-    [--max-queue-memory=value] [--if-exists(=value)]
+    [--max-queue-memory=value] [--if-exists(=value)] [--pause-event-processing(=value)]
 </code></pre>
 
 <p>The required option, <code>--id</code>, identifies the async event queue to be altered.</p>
@@ -2644,6 +2651,10 @@ settings to take effect on that server.</p>
 <tr>
 <td>&#8209;&#8209;if&#8209;exists</td>
 <td>If the specified async event queue does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label &ldquo;Skipping: &rdquo;. Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.</td>
+</tr>
+<tr>
+<td>&#8209;&#8209;pause&#8209;event&#8209;processing</td>
+<td>Specifies whether event dispatching from the queue to the listener(s) will be paused when the AsyncEventQueue is started. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.</td>
 </tr>
 </tbody></table>
 

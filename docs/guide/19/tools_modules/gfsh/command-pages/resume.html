@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
   <!-- Use title if it's in the page YAML frontmatter -->
   <title>
-      resume gateway-sender |
+      resume |
     Geode Docs
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2558,7 +2566,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
   <h1 class="title-container" >
-    resume gateway-sender
+    resume
   </h1>
 
           <div id="js-quick-links" >
@@ -2584,9 +2592,59 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>Resume any gateway senders that you have paused.</p>
+<p><a id="topic_resume_command"></a></p>
 
-<p>Resume the gateway sender on a member or members.</p>
+<p>Modify an existing Geode resource.</p>
+
+<ul>
+<li><p><strong><a href="#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a></strong></p>
+
+<p>Resume dispatching of events from the queue to the listener(s) for a specified asynchronous event queue which is currently in a paused state.</p></li>
+<li><p><strong><a href="#topic_resume_gateway_sender">resume gateway-sender</a></strong></p>
+
+<p>Resume specified gateway sender that is currently in a paused state.</p></li>
+</ul>
+
+<h2 id="resume-async-event-queue-dispatcher"><a id="topic_resume_async_event_queue_dispatcher" class="no-quick-link"></a>resume async-event-queue-dispatcher</h2>
+
+<p>Resume dispatching of events on a specified asynchronous event queue which is currently in a paused state.</p>
+
+<p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
+
+<p><strong>Syntax:</strong></p>
+<pre class="highlight plaintext"><code>resume async-event-queue-dispatcher --id=value [--groups=value(,value)*]
+[--members=value(,value)*]
+</code></pre>
+
+<p><a id="concept_resume_async_event_queue_dispatcher__table_rwp_vbg_2w"></a></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="keyword parmname">--id</span></td>
+<td><em>Required.</em> ID of the Asynchronous Event Queue.</td>
+</tr>
+<tr>
+<td><span class="keyword parmname">--groups</span></td>
+<td>Group(s) of members on which to resume event dispatching for this queue.</td>
+</tr>
+<tr>
+<td><span class="keyword parmname">--members</span></td>
+<td>Name/Id of the member(s) on which to resume event dispatching for this queue.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Example Commands:</strong></p>
+<pre class="highlight plaintext"><code>resume async-event-queue-dispatcher --id=AEQ1 --groups=Group1
+</code></pre>
+
+<h2 id="resume-gateway-sender"><a id="topic_resume_gateway_sender" class="no-quick-link"></a>resume gateway-sender</h2>
+
+<p>Resume a gateway sender which is currently in a paused sate.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
@@ -2616,8 +2674,6 @@ limitations under the License.
 <td>Name/Id of the member(s) on which to resume the Gateway Sender.</td>
 </tr>
 </tbody></table>
-
-<p><span class="tablecap">Table 1. Resume Gateway-Sender Parameters</span></p>
 
 <p><strong>Example Commands:</strong></p>
 <pre class="highlight plaintext"><code>resume gateway-sender --id=sender1-LN --groups=LN-Group1

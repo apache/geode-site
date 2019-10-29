@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2616,7 +2624,7 @@ Locator in /Users/username/apache-geode/locator1 on 192.0.2.0[10334] as locator1
 is currently online.
 Process ID: 27144
 Uptime: 5 seconds
-Geode Version: 1.9
+Geode Version: 1.9.2
 Java Version: 1.8.0_121
 Log File: /Users/username/apache-geode/locator1/locator1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true 

@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2769,6 +2777,10 @@ a Client-Server interaction.</p>
 </tr>
 </thead><tbody>
 <tr>
+<td>alter async-event-queue</td>
+<td>CLUSTER:MANAGE:DEPLOY</td>
+</tr>
+<tr>
 <td>alter disk-store</td>
 <td>CLUSTER:MANAGE:DISK</td>
 </tr>
@@ -2883,6 +2895,10 @@ a Client-Server interaction.</p>
 <tr>
 <td>describe region</td>
 <td>CLUSTER:READ</td>
+</tr>
+<tr>
+<td>destroy async-event-queue</td>
+<td>CLUSTER:MANAGE</td>
 </tr>
 <tr>
 <td>destroy disk-store</td>
@@ -3031,6 +3047,10 @@ a Client-Server interaction.</p>
 <tr>
 <td>remove</td>
 <td>DATA:WRITE:RegionName or DATA:WRITE:RegionName:Key</td>
+</tr>
+<tr>
+<td>resume async-event-queue-dispatcher</td>
+<td>CLUSTER:MANAGE</td>
 </tr>
 <tr>
 <td>resume gateway-sender</td>

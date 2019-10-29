@@ -45,7 +45,6 @@
     </div>
   </header>
 
-
     <div class="container">
 
       <!--googleoff: index-->
@@ -1961,9 +1960,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2631,8 +2638,9 @@ limitations under the License.
     [--disk-synchronous(=value)?] [--max-queue-memory=value]
     [--dispatcher-threads=value] [--order-policy=value]
     [--gateway-event-filter=value(,value)*]
-    [--gateway-event-substitution-filter=value] 
-    [--listener-param=value(,value)*]
+    [--gateway-event-substitution-filter=value]
+    [--listener-param=value(,value)*] [--forward-expiration-destroy(=value)?]
+    [--pause-event-processing(=value)?]
 </code></pre>
 
 <p><strong>Parameters, create async-event-queue:</strong>
@@ -2735,6 +2743,11 @@ limitations under the License.
 <tr class="odd">
 <td><span class="keyword parmname">&ndash;forward-expiration-destroy</span></td>
 <td>Enables forwarding of expiration destroy operations to AsyncEventListener instances. If specified without a value, this parameter is set to “false”.</td>
+<td>false</td>
+</tr>
+<tr class="even">
+<td><span class="keyword parmname">&ndash;pause-event-processing</span></td>
+<td>Specifies whether event dispatching from the queue to the listener(s) will be paused when the AsyncEventQueue is started. If specified without a value, this parameter is set to &ldquo;true&rdquo;.</td>
 <td>false</td>
 </tr>
 </tbody>

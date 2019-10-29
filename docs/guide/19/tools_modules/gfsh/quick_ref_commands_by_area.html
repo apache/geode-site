@@ -1961,9 +1961,17 @@ gfsh</a>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/remove.html">remove</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume gateway-sender</a>
-                                    </li>
+                                    <li class="has_submenu">
+                                        <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html">resume</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a>
+                                            </li>
+                                            <li>
+                                                <a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_gateway_sender">resume gateway-sender</a>
+                                            </li>
+                                        </ul>
+                                        </li>
                                     <li>
                                         <a href="/docs/guide/19/tools_modules/gfsh/command-pages/revoke.html">revoke missing-disk-store</a>
                                     </li>
@@ -2938,6 +2946,11 @@ limitations under the License.
 </tr>
 </thead><tbody>
 <tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/alter.html#topic_alter_async_event_queue">alter async-event-queue</a></td>
+<td>Alter attributes of a specified asynchronous event queue.</td>
+<td>online</td>
+</tr>
+<tr>
 <td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/create.html#topic_ryz_pb1_dk">create async-event-queue</a></td>
 <td>Creates an asynchronous event queue.</td>
 <td>online</td>
@@ -2950,6 +2963,11 @@ limitations under the License.
 <tr>
 <td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/create.html#topic_hg2_bjz_ck">create gateway-sender</a></td>
 <td>Creates a gateway sender on one or more members.</td>
+<td>online</td>
+</tr>
+<tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/destroy.html#topic_destroy-async-event-queue">destroy async-event-queue</a></td>
+<td>Destroys an asynchronous event queue on one or more members.</td>
 <td>online</td>
 </tr>
 <tr>
@@ -2978,8 +2996,13 @@ limitations under the License.
 <td>online</td>
 </tr>
 <tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a></td>
+<td>Resumes dispatching of events on a specified asynchronous event queue which is currently in a paused state.</td>
+<td>online</td>
+</tr>
+<tr>
 <td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#concept_8B0532D13CF34E0CB04ACC3F14F1E4A2">resume gateway-sender</a></td>
-<td>Resume any gateway senders that you have paused.</td>
+<td>Resumes specified gateway sender that is currently in a paused state.</td>
 <td>online</td>
 </tr>
 <tr>
@@ -3026,13 +3049,28 @@ limitations under the License.
 </tr>
 </thead><tbody>
 <tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/alter.html#topic_alter_async_event_queue">alter async-event-queue</a></td>
+<td>Alter attributes of a specified asynchronous event queue.</td>
+<td>online</td>
+</tr>
+<tr>
 <td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/create.html#topic_ryz_pb1_dk">create async-event-queue</a></td>
 <td>Creates an asynchronous event queue.</td>
 <td>online</td>
 </tr>
 <tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/destroy.html#topic_destroy-async-event-queue">destroy async-event-queue</a></td>
+<td>Destroys an asynchronous event queue on one or more members.</td>
+<td>online</td>
+</tr>
+<tr>
 <td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/list.html#topic_j22_kzk_2l">list async-event-queues</a></td>
 <td>Display a list of async event queues for all members.</td>
+<td>online</td>
+</tr>
+<tr>
+<td><a href="/docs/guide/19/tools_modules/gfsh/command-pages/resume.html#topic_resume_async_event_queue_dispatcher">resume async-event-queue-dispatcher</a></td>
+<td>Resumes dispatching of events on a specified asynchronous event queue which is currently in a paused state.</td>
 <td>online</td>
 </tr>
 </tbody></table>
