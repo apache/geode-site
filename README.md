@@ -26,11 +26,11 @@ This repository contains the source files for the [Apache Geode website](https:/
 
 The repository contains two branches:
 
-- The __master__ branch contains the site's framework, comprised of the top-level landing page and the next level of pages, such as Docs, Community, and Releases, and the tools needed to compile the deployable site. 
+- The __master__ branch contains the site's HTML framework, comprised of the top-level landing page and the next level of pages, such as Docs, Community, and Releases, and the tools needed to compile the deployable site. 
 
-  Most content resides under the `website/content` directory. These sources are compiled into a deployable site by gradle scripts using a tool called [Pandoc](http://johnmacfarlane.net/pandoc).
+  Content resides under the `website/content` directory. These sources are compiled into a deployable site by gradle scripts using a tool called [Pandoc](http://johnmacfarlane.net/pandoc).
 
-- The __asf-site__ branch contains a copy of the deployable site built from the __master__ branch, fleshed-out with __externally-generated__ content such as the User Guide and the Javadocs, which you build separately then add manually before publishing the completed site. 
+- The __asf-site__ branch contains a copy of the deployable site built from the __master__ branch, fleshed-out with __externally-generated__ content, which includes all non-HTML content such as the User Guide and the Javadocs, which you build separately then add manually before publishing the completed site. Stylesheets also reside on the __asf-site__ branch.
 
   To deploy the Apache Geode website, you push the __asf-site__ branch to the upstream Apache repository. An Apache "sync" tool monitors the __asf-site__ branch 
 of the repository and publishes your update to the
@@ -64,7 +64,7 @@ On the __master__ branch, update the website's framework pages. For a general re
   - {geode-site}/website/content/docs/index.html
   - {geode-site}/website/content/releases/index.html
   - If you need to change the layout or styling of the site, then you will probably need to change
-an HTML, JS or CSS file.
+an HTML, JS or CSS file on the __asf-site__ branch.
 
 
 ## Locally generate the site framework and review your changes
