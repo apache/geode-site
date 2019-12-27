@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('a00414.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
+<p>A <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
  <a href="a00414.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a772a8afcb3fbfb9dc0f54e7dce22cf1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the CQ and stop execution.  <a href="#a772a8afcb3fbfb9dc0f54e7dce22cf1f">More...</a><br /></td></tr>
 <tr class="separator:a772a8afcb3fbfb9dc0f54e7dce22cf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8bb589c8d2656211b6c9185ac68ba82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ab8bb589c8d2656211b6c9185ac68ba82">execute</a> ()=0</td></tr>
-<tr class="memdesc:ab8bb589c8d2656211b6c9185ac68ba82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the OQL <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results.  <a href="#ab8bb589c8d2656211b6c9185ac68ba82">More...</a><br /></td></tr>
+<tr class="memdesc:ab8bb589c8d2656211b6c9185ac68ba82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the OQL <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results.  <a href="#ab8bb589c8d2656211b6c9185ac68ba82">More...</a><br /></td></tr>
 <tr class="separator:ab8bb589c8d2656211b6c9185ac68ba82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6322798f05d74adf846b4f6ce0cbe0"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00418.html">CqResults</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a8d6322798f05d74adf846b4f6ce0cbe0">executeWithInitialResults</a> (std::chrono::milliseconds timeout=DEFAULT_QUERY_RESPONSE_TIMEOUT)=0</td></tr>
 <tr class="memdesc:a8d6322798f05d74adf846b4f6ce0cbe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start executing the CQ or if this CQ is stopped earlier, resumes execution of the CQ.  <a href="#a8d6322798f05d74adf846b4f6ce0cbe0">More...</a><br /></td></tr>
@@ -116,14 +116,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad69ad2cc9a8266320c80a49dde3eee8e"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ad69ad2cc9a8266320c80a49dde3eee8e">getName</a> () const =0</td></tr>
 <tr class="memdesc:ad69ad2cc9a8266320c80a49dde3eee8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the CQ.  <a href="#ad69ad2cc9a8266320c80a49dde3eee8e">More...</a><br /></td></tr>
 <tr class="separator:ad69ad2cc9a8266320c80a49dde3eee8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1347d588c1167bc3fac7e17a2e4b18f5"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00798.html">Query</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a1347d588c1167bc3fac7e17a2e4b18f5">getQuery</a> () const =0</td></tr>
+<tr class="memitem:a1347d588c1167bc3fac7e17a2e4b18f5"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00806.html">Query</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a1347d588c1167bc3fac7e17a2e4b18f5">getQuery</a> () const =0</td></tr>
 <tr class="memdesc:a1347d588c1167bc3fac7e17a2e4b18f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get teh query object generated for this CQs query.  <a href="#a1347d588c1167bc3fac7e17a2e4b18f5">More...</a><br /></td></tr>
 <tr class="separator:a1347d588c1167bc3fac7e17a2e4b18f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8fcacf17371d5dc81a60fcd72e1db16"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#af8fcacf17371d5dc81a60fcd72e1db16">getQueryString</a> () const =0</td></tr>
-<tr class="memdesc:af8fcacf17371d5dc81a60fcd72e1db16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query string provided when a new <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a>.  <a href="#af8fcacf17371d5dc81a60fcd72e1db16">More...</a><br /></td></tr>
+<tr class="memdesc:af8fcacf17371d5dc81a60fcd72e1db16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query string provided when a new <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a>.  <a href="#af8fcacf17371d5dc81a60fcd72e1db16">More...</a><br /></td></tr>
 <tr class="separator:af8fcacf17371d5dc81a60fcd72e1db16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a624bb1628a93946cda0ba78ca050a9c4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00878.html">CqState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a624bb1628a93946cda0ba78ca050a9c4">getState</a> ()=0</td></tr>
-<tr class="memdesc:a624bb1628a93946cda0ba78ca050a9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the CQ in <a class="el" href="a00878.html" title="This interface gives information on the state of a CqQuery.">CqState</a> object form.  <a href="#a624bb1628a93946cda0ba78ca050a9c4">More...</a><br /></td></tr>
+<tr class="memitem:a624bb1628a93946cda0ba78ca050a9c4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00886.html">CqState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a624bb1628a93946cda0ba78ca050a9c4">getState</a> ()=0</td></tr>
+<tr class="memdesc:a624bb1628a93946cda0ba78ca050a9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the CQ in <a class="el" href="a00886.html" title="This interface gives information on the state of a CqQuery.">CqState</a> object form.  <a href="#a624bb1628a93946cda0ba78ca050a9c4">More...</a><br /></td></tr>
 <tr class="separator:a624bb1628a93946cda0ba78ca050a9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06777e0ab5180083134a804a2b966d90"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00426.html">CqStatistics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a06777e0ab5180083134a804a2b966d90">getStatistics</a> () const =0</td></tr>
 <tr class="memdesc:a06777e0ab5180083134a804a2b966d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the statistics information of this CQ.  <a href="#a06777e0ab5180083134a804a2b966d90">More...</a><br /></td></tr>
@@ -145,8 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aec3c3b4d31da5e430e80ca86c3e526f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
-<p>This can be executed to return <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can be either a <a class="el" href="a00838.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>, or it can be just registered on the java server without returning results immediately rather only the incremental results.</p>
+<div class="textblock"><p>A <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
+<p>This can be executed to return <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can be either a <a class="el" href="a00846.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>, or it can be just registered on the java server without returning results immediately rather only the incremental results.</p>
 <p>This class is intentionally not thread-safe. So multiple threads should not operate on the same <code><a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a></code> object concurrently rather should have their own <code><a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a></code> objects. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a772a8afcb3fbfb9dc0f54e7dce22cf1f"></a>
@@ -175,8 +175,8 @@ Public Member Functions</h2></td></tr>
 <p>Close the CQ and stop execution. </p>
 <p>Releases the resources associated with this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>. </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>Further calls on this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> instance except for <a class="el" href="a00414.html#a624bb1628a93946cda0ba78ca050a9c4" title="Get the state of the CQ in CqState object form.">getState()</a> or <a class="el" href="a00414.html#ad69ad2cc9a8266320c80a49dde3eee8e" title="Get the name of the CQ.">getName()</a>. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00654.html" title="Thrown during continuous query execution time.">CqException</a></td><td>- if failure during cleanup of CQ resources. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00662.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>Further calls on this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> instance except for <a class="el" href="a00414.html#a624bb1628a93946cda0ba78ca050a9c4" title="Get the state of the CQ in CqState object form.">getState()</a> or <a class="el" href="a00414.html#ad69ad2cc9a8266320c80a49dde3eee8e" title="Get the name of the CQ.">getName()</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a></td><td>- if failure during cleanup of CQ resources. </td></tr>
   </table>
   </dd>
 </dl>
@@ -206,14 +206,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Executes the OQL <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results. </p>
+<p>Executes the OQL <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">RegionNotFoundException</td><td>if the specified region in the query string is not found. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is closed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00654.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if some query error occurred at the server. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if some error occurred. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00570.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if no java cache server is available. For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00570.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00678.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00662.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is closed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if some query error occurred at the server. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if some error occurred. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00574.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if no java cache server is available. For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00574.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00682.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,7 +245,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Start executing the CQ or if this CQ is stopped earlier, resumes execution of the CQ. </p>
-<p>Get the resultset associated with CQ query. The CQ is executed on primary and redundant servers, if CQ execution fails on all the server then a <a class="el" href="a00654.html" title="Thrown during continuous query execution time.">CqException</a> is thrown.</p>
+<p>Get the resultset associated with CQ query. The CQ is executed on primary and redundant servers, if CQ execution fails on all the server then a <a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a> is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeout</td><td>The time to wait for query response, optional.</td></tr>
@@ -254,11 +254,11 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If timeout exceeds 2147483647ms. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is closed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If timeout exceeds 2147483647ms. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00662.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is closed. </td></tr>
     <tr><td class="paramname">RegionNotFoundException</td><td>if the specified region in the query string is not found. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is in the RUNNING state already. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00654.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if failed to execute and get initial results. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is in the RUNNING state already. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if failed to execute and get initial results. </td></tr>
   </table>
   </dd>
 </dl>
@@ -360,7 +360,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00798.html">Query</a>&gt; apache::geode::client::CqQuery::getQuery </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00806.html">Query</a>&gt; apache::geode::client::CqQuery::getQuery </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -374,7 +374,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get teh query object generated for this CQs query. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> object fort he query string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> object fort he query string </dd></dl>
 
 </div>
 </div>
@@ -401,7 +401,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the query string provided when a new <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a>. </p>
+<p>Get the query string provided when a new <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The query string. </dd></dl>
 
 </div>
@@ -416,7 +416,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00878.html">CqState</a> apache::geode::client::CqQuery::getState </td>
+          <td class="memname">virtual <a class="el" href="a00886.html">CqState</a> apache::geode::client::CqQuery::getState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -429,9 +429,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the state of the CQ in <a class="el" href="a00878.html" title="This interface gives information on the state of a CqQuery.">CqState</a> object form. </p>
-<p><a class="el" href="a00878.html" title="This interface gives information on the state of a CqQuery.">CqState</a> supports methods like <a class="el" href="a00414.html#a03df6fa98290cfa8bf80937d187b90d6" title="This allows to check if the CQ is closed.">isClosed()</a>, <a class="el" href="a00414.html#a62d53f5b8b9baa4f334e7d246c7613e6" title="This allows to check if the CQ is in running or active.">isRunning()</a>, <a class="el" href="a00414.html#a2de7b1d1912509cae1b48e4f4ecb60ab" title="This allows to check if the CQ is in stopped.">isStopped()</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00878.html" title="This interface gives information on the state of a CqQuery.">CqState</a> </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00878.html" title="This interface gives information on the state of a CqQuery.">CqState</a> state object of the CQ. </dd></dl>
+<p>Get the state of the CQ in <a class="el" href="a00886.html" title="This interface gives information on the state of a CqQuery.">CqState</a> object form. </p>
+<p><a class="el" href="a00886.html" title="This interface gives information on the state of a CqQuery.">CqState</a> supports methods like <a class="el" href="a00414.html#a03df6fa98290cfa8bf80937d187b90d6" title="This allows to check if the CQ is closed.">isClosed()</a>, <a class="el" href="a00414.html#a62d53f5b8b9baa4f334e7d246c7613e6" title="This allows to check if the CQ is in running or active.">isRunning()</a>, <a class="el" href="a00414.html#a2de7b1d1912509cae1b48e4f4ecb60ab" title="This allows to check if the CQ is in stopped.">isStopped()</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00886.html" title="This interface gives information on the state of a CqQuery.">CqState</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00886.html" title="This interface gives information on the state of a CqQuery.">CqState</a> state object of the CQ. </dd></dl>
 
 </div>
 </div>
@@ -602,8 +602,8 @@ Public Member Functions</h2></td></tr>
 <p>Stops this <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> without releasing resources. </p>
 <p>Puts the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> into the STOPPED state. Can be resumed by calling execute or executeWithInitialResults. </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is in the STOPPED state already. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if the CQ is CLOSED. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is in the STOPPED state already. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00662.html" title="Thrown if the Cq on which the operaion performed is closed.">CqClosedException</a></td><td>if the CQ is CLOSED. </td></tr>
   </table>
   </dd>
 </dl>

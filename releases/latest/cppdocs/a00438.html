@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('a00438.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Provide operations for writing primitive data values, byte arrays, strings, <code><a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> objects to a byte stream.  
+<p>Provide operations for writing primitive data values, byte arrays, strings, <code><a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> objects to a byte stream.  
  <a href="a00438.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -184,7 +184,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad41c4a2ecad093aa06aead762105bc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5ccdc412d23aa886c4f2e7fd3596382"><td class="memTemplParams" colspan="2">template&lt;class PTR &gt; </td></tr>
 <tr class="memitem:ab5ccdc412d23aa886c4f2e7fd3596382"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00438.html#ab5ccdc412d23aa886c4f2e7fd3596382">writeObject</a> (const std::shared_ptr&lt; PTR &gt; &amp;objptr, bool isDelta=false)</td></tr>
-<tr class="memdesc:ab5ccdc412d23aa886c4f2e7fd3596382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <code><a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to the <code><a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a></code>.  <a href="#ab5ccdc412d23aa886c4f2e7fd3596382">More...</a><br /></td></tr>
+<tr class="memdesc:ab5ccdc412d23aa886c4f2e7fd3596382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <code><a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to the <code><a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a></code>.  <a href="#ab5ccdc412d23aa886c4f2e7fd3596382">More...</a><br /></td></tr>
 <tr class="separator:ab5ccdc412d23aa886c4f2e7fd3596382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac09763165d0c7803e46424c40428b925"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00438.html#ac09763165d0c7803e46424c40428b925">~DataOutput</a> () noexcept</td></tr>
 <tr class="memdesc:ac09763165d0c7803e46424c40428b925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct a <a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a>, including releasing the created buffer.  <a href="#ac09763165d0c7803e46424c40428b925">More...</a><br /></td></tr>
@@ -192,12 +192,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa433d0035254611b5f3bf9d38a869f33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00438.html#aa433d0035254611b5f3bf9d38a869f33">DataOutput</a> (const CacheImpl *cache, <a class="el" href="a00778.html">Pool</a> *pool)</td></tr>
+<tr class="memitem:aa433d0035254611b5f3bf9d38a869f33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00438.html#aa433d0035254611b5f3bf9d38a869f33">DataOutput</a> (const CacheImpl *cache, <a class="el" href="a00786.html">Pool</a> *pool)</td></tr>
 <tr class="memdesc:aa433d0035254611b5f3bf9d38a869f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a>.  <a href="#aa433d0035254611b5f3bf9d38a869f33">More...</a><br /></td></tr>
 <tr class="separator:aa433d0035254611b5f3bf9d38a869f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provide operations for writing primitive data values, byte arrays, strings, <code><a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> objects to a byte stream. </p>
+<div class="textblock"><p>Provide operations for writing primitive data values, byte arrays, strings, <code><a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> objects to a byte stream. </p>
 <p>This class is intentionally not thread safe. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac09763165d0c7803e46424c40428b925"></a>
@@ -245,7 +245,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00778.html">Pool</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00786.html">Pool</a> *&#160;</td>
           <td class="paramname"><em>pool</em>&#160;</td>
         </tr>
         <tr>
@@ -1250,10 +1250,10 @@ template&lt;class PTR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Write a <code><a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to the <code><a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a></code>. </p>
+<p>Write a <code><a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to the <code><a class="el" href="a00438.html" title="Provide operations for writing primitive data values, byte arrays, strings, Serializable objects to a...">DataOutput</a></code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objptr</td><td>smart pointer to the <code><a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to be written </td></tr>
+    <tr><td class="paramname">objptr</td><td>smart pointer to the <code><a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a></code> object to be written </td></tr>
   </table>
   </dd>
 </dl>

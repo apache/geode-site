@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::FixedPartitionResolver Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::Execution Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -89,154 +89,237 @@ $(document).ready(function(){initNavTree('a00726.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::FixedPartitionResolver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::Execution Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementers of interface <code><a class="el" href="a00726.html" title="Implementers of interface FixedPartitionResolver helps to achieve explicit mapping of a &quot;user defined...">FixedPartitionResolver</a></code> helps to achieve explicit mapping of a "user defined" partition to a data member node.  
+<p>gathers results from function execution  
  <a href="a00726.html#details">More...</a></p>
-
-<p>Inherits <a class="el" href="a00738.html">apache::geode::client::PartitionResolver</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00738.html#a68793ed428ca0d18ed5aad5bb8e00bf3">getName</a> ()</td></tr>
-<tr class="memdesc:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the <a class="el" href="a00738.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a>.  <a href="#a68793ed428ca0d18ed5aad5bb8e00bf3">More...</a><br /></td></tr>
-<tr class="separator:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16b169d39ebfd1254b98e4c05945707c"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a16b169d39ebfd1254b98e4c05945707c">getPartitionName</a> (const <a class="el" href="a00454.html">EntryEvent</a> &amp;opDetails)=0</td></tr>
-<tr class="memdesc:a16b169d39ebfd1254b98e4c05945707c"><td class="mdescLeft">&#160;</td><td class="mdescRight">public methods  <a href="#a16b169d39ebfd1254b98e4c05945707c">More...</a><br /></td></tr>
-<tr class="separator:a16b169d39ebfd1254b98e4c05945707c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6492385156922aca28af866905e5f554"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00738.html#a6492385156922aca28af866905e5f554">getRoutingObject</a> (const <a class="el" href="a00454.html">EntryEvent</a> &amp;opDetails)=0</td></tr>
-<tr class="separator:a6492385156922aca28af866905e5f554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa918a5e193745950e12ca4feb9c5d776"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#aa918a5e193745950e12ca4feb9c5d776">execute</a> (const std::string &amp;func, std::chrono::milliseconds timeout=DEFAULT_QUERY_RESPONSE_TIMEOUT)</td></tr>
+<tr class="memdesc:aa918a5e193745950e12ca4feb9c5d776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the function using its name.  <a href="#aa918a5e193745950e12ca4feb9c5d776">More...</a><br /></td></tr>
+<tr class="separator:aa918a5e193745950e12ca4feb9c5d776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a242a1fd7edad1b11e4298abe6bd3a599"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a242a1fd7edad1b11e4298abe6bd3a599">execute</a> (const std::shared_ptr&lt; <a class="el" href="a00290.html">CacheableVector</a> &gt; &amp;routingObj, const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;args, const std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt; &amp;rs, const std::string &amp;func, std::chrono::milliseconds timeout)</td></tr>
+<tr class="memdesc:a242a1fd7edad1b11e4298abe6bd3a599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the function using its name.  <a href="#a242a1fd7edad1b11e4298abe6bd3a599">More...</a><br /></td></tr>
+<tr class="separator:a242a1fd7edad1b11e4298abe6bd3a599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9ebcd10caff19754531539e2a8a7a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00726.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a3c9ebcd10caff19754531539e2a8a7a8">withArgs</a> (std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; args)</td></tr>
+<tr class="memdesc:a3c9ebcd10caff19754531539e2a8a7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the user data passed to the function when it is executed.  <a href="#a3c9ebcd10caff19754531539e2a8a7a8">More...</a><br /></td></tr>
+<tr class="separator:a3c9ebcd10caff19754531539e2a8a7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a48ac4169d9d125b19d8d9abbffd91f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00726.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a7a48ac4169d9d125b19d8d9abbffd91f">withCollector</a> (std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt; rs)</td></tr>
+<tr class="memdesc:a7a48ac4169d9d125b19d8d9abbffd91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the <a class="el" href="a00842.html">ResultCollector</a> that will receive the results after the function has been executed.  <a href="#a7a48ac4169d9d125b19d8d9abbffd91f">More...</a><br /></td></tr>
+<tr class="separator:a7a48ac4169d9d125b19d8d9abbffd91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acedb102777277fb9f82e47a4da449a25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00726.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#acedb102777277fb9f82e47a4da449a25">withFilter</a> (std::shared_ptr&lt; <a class="el" href="a00290.html">CacheableVector</a> &gt; routingObj)</td></tr>
+<tr class="memdesc:acedb102777277fb9f82e47a4da449a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a data filter of routing objects for selecting the Geode members to execute the function.  <a href="#acedb102777277fb9f82e47a4da449a25">More...</a><br /></td></tr>
+<tr class="separator:acedb102777277fb9f82e47a4da449a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementers of interface <code><a class="el" href="a00726.html" title="Implementers of interface FixedPartitionResolver helps to achieve explicit mapping of a &quot;user defined...">FixedPartitionResolver</a></code> helps to achieve explicit mapping of a "user defined" partition to a data member node. </p>
-<p>Geode uses the partition name returned by <a class="el" href="">std::shared_ptr&lt;CacheableHashSet&gt;)</a> to determine on which member the data is being managed. Say, for example, you want to partition all Trades according to quarters. You can implement <a class="el" href="a00726.html" title="Implementers of interface FixedPartitionResolver helps to achieve explicit mapping of a &quot;user defined...">FixedPartitionResolver</a> to get the name of the quarter based on the date given as part of <a class="el" href="a00454.html">EntryEvent</a>. </p>
-<p>public class QuarterPartitionResolver implements <a class="el" href="a00726.html" title="Implementers of interface FixedPartitionResolver helps to achieve explicit mapping of a &quot;user defined...">FixedPartitionResolver</a>{<br />
- &amp;nbsp &amp;nbsp public const char* getPartitionName(<a class="el" href="a00454.html" title="Represents an entry event affecting an entry, including its identity and the the circumstances of the...">EntryEvent</a> event, std::shared_ptr&lt;CacheableHashSet&gt; allAvailablePartitions) {<br />
- &amp;nbsp &amp;nbsp Date date = sdf.parse((String)opDetails.getKey());<br />
- &amp;nbsp &amp;nbsp Calendar cal = Calendar.getInstance();<br />
- &amp;nbsp &amp;nbsp cal.setTime(date);<br />
- &amp;nbsp &amp;nbsp int month = cal.get(Calendar.MONTH);<br />
- &amp;nbsp &amp;nbsp if (month == 0 || month == 1 || month == 2) {<br />
- &amp;nbsp &amp;nbsp &amp;nbsp return "Quarter1";<br />
- &amp;nbsp &amp;nbsp }<br />
- &amp;nbsp &amp;nbsp else if (month == 3 || month == 4 || month == 5) {<br />
- &amp;nbsp &amp;nbsp &amp;nbsp return "Quarter2";<br />
- &amp;nbsp &amp;nbsp }<br />
- &amp;nbsp &amp;nbsp else if (month == 6 || month == 7 || month == 8) {<br />
- &amp;nbsp &amp;nbsp &amp;nbsp return "Quarter3";<br />
- &amp;nbsp &amp;nbsp }<br />
- &amp;nbsp &amp;nbsp else if (month == 9 || month == 10 || month == 11) {<br />
- &amp;nbsp &amp;nbsp &amp;nbsp return "Quarter4";<br />
- &amp;nbsp &amp;nbsp }<br />
- &amp;nbsp &amp;nbsp else {<br />
- &amp;nbsp &amp;nbsp &amp;nbsp return "Invalid Quarter";<br />
- &amp;nbsp &amp;nbsp }<br />
- &amp;nbsp }<br />
-</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00738.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> </dd></dl>
+<div class="textblock"><p>gathers results from function execution </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00738.html" title="entry point for function execution">FunctionService</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a68793ed428ca0d18ed5aad5bb8e00bf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68793ed428ca0d18ed5aad5bb8e00bf3">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="aa918a5e193745950e12ca4feb9c5d776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa918a5e193745950e12ca4feb9c5d776">&#9670;&nbsp;</a></span>execute() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::PartitionResolver::getName </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00842.html">ResultCollector</a>&gt; apache::geode::client::Execution::execute </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the name of the <a class="el" href="a00738.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>String name </dd></dl>
-
-</div>
-</div>
-<a id="a16b169d39ebfd1254b98e4c05945707c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16b169d39ebfd1254b98e4c05945707c">&#9670;&nbsp;</a></span>getPartitionName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::FixedPartitionResolver::getPartitionName </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00454.html">EntryEvent</a> &amp;&#160;</td>
-          <td class="paramname"><em>opDetails</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::chrono::milliseconds&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>DEFAULT_QUERY_RESPONSE_TIMEOUT</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>public methods </p>
-<p>This method is used to get the name of the partition for the given entry operation.</p>
+<p>Executes the function using its name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">opDetails</td><td>the details of the entry event e.g. <a class="el" href="">Region#get(Object)</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>partition-name associated with node which allows mapping of given data to user defined partition </dd></dl>
-
-</div>
-</div>
-<a id="a6492385156922aca28af866905e5f554"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6492385156922aca28af866905e5f554">&#9670;&nbsp;</a></span>getRoutingObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00338.html">CacheableKey</a>&gt; apache::geode::client::PartitionResolver::getRoutingObject </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00454.html">EntryEvent</a> &amp;&#160;</td>
-          <td class="paramname"><em>opDetails</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">opDetails</td><td>the detail of the entry event </td></tr>
+    <tr><td class="paramname">func</td><td>the name of the function to be executed </td></tr>
+    <tr><td class="paramname">timeout</td><td>value to wait for the operation to finish before timing out. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">RuntimeException</td><td>- any exception thrown will terminate the operation and the exception will be passed to the calling thread. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00462.html" title="A description of an exception that occurred during a cache operation.">Exception</a></td><td>if there is an error during function execution </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>object associated with entry event which allows the Partitioned <a class="el" href="a00806.html" title="This class manages subregions and cached data.">Region</a> to store associated data together </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>either a default result collector or one specified by {<a class="el" href="">} </a></dd></dl>
+
+</div>
+</div>
+<a id="a242a1fd7edad1b11e4298abe6bd3a599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a242a1fd7edad1b11e4298abe6bd3a599">&#9670;&nbsp;</a></span>execute() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00842.html">ResultCollector</a>&gt; apache::geode::client::Execution::execute </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00290.html">CacheableVector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>routingObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::milliseconds&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the function using its name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">routingObj</td><td>Set defining the data filter to be used for executing the function </td></tr>
+    <tr><td class="paramname">args</td><td>user data passed to the function execution </td></tr>
+    <tr><td class="paramname">rs</td><td>* Specifies the <a class="el" href="a00842.html">ResultCollector</a> that will receive the results after the function has been executed. </td></tr>
+    <tr><td class="paramname">func</td><td>the name of the function to be executed </td></tr>
+    <tr><td class="paramname">timeout</td><td>value to wait for the operation to finish before timing out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00462.html" title="A description of an exception that occurred during a cache operation.">Exception</a></td><td>if there is an error during function execution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>either a default result collector or one specified by {<a class="el" href="">} </a></dd></dl>
+
+</div>
+</div>
+<a id="a3c9ebcd10caff19754531539e2a8a7a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9ebcd10caff19754531539e2a8a7a8">&#9670;&nbsp;</a></span>withArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00726.html">Execution</a> apache::geode::client::Execution::withArgs </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specifies the user data passed to the function when it is executed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>user data passed to the function execution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an <a class="el" href="a00726.html" title="gathers results from function execution">Execution</a> with args </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the input parameter is nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a48ac4169d9d125b19d8d9abbffd91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a48ac4169d9d125b19d8d9abbffd91f">&#9670;&nbsp;</a></span>withCollector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00726.html">Execution</a> apache::geode::client::Execution::withCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00842.html">ResultCollector</a> &gt;&#160;</td>
+          <td class="paramname"><em>rs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specifies the <a class="el" href="a00842.html">ResultCollector</a> that will receive the results after the function has been executed. </p>
+<dl class="section return"><dt>Returns</dt><dd>an <a class="el" href="a00726.html" title="gathers results from function execution">Execution</a> with a collector </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <a class="el" href="a00842.html">ResultCollector</a> is nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00842.html" title="Defines the interface for a container that gathers results from function execution.">ResultCollector</a> </dd></dl>
+
+</div>
+</div>
+<a id="acedb102777277fb9f82e47a4da449a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acedb102777277fb9f82e47a4da449a25">&#9670;&nbsp;</a></span>withFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00726.html">Execution</a> apache::geode::client::Execution::withFilter </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00290.html">CacheableVector</a> &gt;&#160;</td>
+          <td class="paramname"><em>routingObj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specifies a data filter of routing objects for selecting the Geode members to execute the function. </p>
+<p>If the filter set is empty the function is executed on all members that have the FunctionService::onRegion(Region).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">routingObj</td><td>Set defining the data filter to be used for executing the function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an <a class="el" href="a00726.html" title="gathers results from function execution">Execution</a> with the filter </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if filter passed is nullptr. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00534.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if not called after FunctionService::onRegion(Region). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

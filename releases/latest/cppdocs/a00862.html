@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::TransactionId Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::StructSet Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -86,19 +86,281 @@ $(document).ready(function(){initNavTree('a00862.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::TransactionId Class Reference</div>  </div>
+<div class="title">apache::geode::client::StructSet Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="a00862.html" title="The TransactionId interface is a &quot;marker&quot; interface that represents a unique Geode transaction.">TransactionId</a> interface is a "marker" interface that represents a unique Geode transaction.  
+<p>A <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> may be obtained after executing a <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> which is obtained from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
  <a href="a00862.html#details">More...</a></p>
+
+<p>Inherits <a class="el" href="a00418.html">apache::geode::client::CqResults</a>.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a51a183166096893fcb16b569327c60b3"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &gt;::<a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a></td></tr>
+<tr class="memdesc:a51a183166096893fcb16b569327c60b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface of an iterator for <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a51a183166096893fcb16b569327c60b3">More...</a><br /></td></tr>
+<tr class="separator:a51a183166096893fcb16b569327c60b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a47897882766667431cdf1eebc1eb00b3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00850.html#a47897882766667431cdf1eebc1eb00b3">begin</a> ()=0</td></tr>
+<tr class="memdesc:a47897882766667431cdf1eebc1eb00b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator pointing to the start of <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a47897882766667431cdf1eebc1eb00b3">More...</a><br /></td></tr>
+<tr class="separator:a47897882766667431cdf1eebc1eb00b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626bd746b3e1919281221eb9a5f1d105"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00850.html#a626bd746b3e1919281221eb9a5f1d105">end</a> ()=0</td></tr>
+<tr class="memdesc:a626bd746b3e1919281221eb9a5f1d105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator pointing to the end of <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a626bd746b3e1919281221eb9a5f1d105">More...</a><br /></td></tr>
+<tr class="separator:a626bd746b3e1919281221eb9a5f1d105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe371295250b6402bd3b5164e105a460"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00862.html#afe371295250b6402bd3b5164e105a460">getFieldIndex</a> (const std::string &amp;fieldname)=0</td></tr>
+<tr class="memdesc:afe371295250b6402bd3b5164e105a460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index number of the specified field name in the <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>.  <a href="#afe371295250b6402bd3b5164e105a460">More...</a><br /></td></tr>
+<tr class="separator:afe371295250b6402bd3b5164e105a460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db3b5afe6124adc13bda7ea24617e35"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00862.html#a4db3b5afe6124adc13bda7ea24617e35">getFieldName</a> (int32_t index)=0</td></tr>
+<tr class="memdesc:a4db3b5afe6124adc13bda7ea24617e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field name of the <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> from the specified index number.  <a href="#a4db3b5afe6124adc13bda7ea24617e35">More...</a><br /></td></tr>
+<tr class="separator:a4db3b5afe6124adc13bda7ea24617e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267694c8d139ff91b578548c907dd083"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00850.html#a267694c8d139ff91b578548c907dd083">operator[]</a> (size_t index) const =0</td></tr>
+<tr class="memdesc:a267694c8d139ff91b578548c907dd083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index operator to directly access an item in the <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>.  <a href="#a267694c8d139ff91b578548c907dd083">More...</a><br /></td></tr>
+<tr class="separator:a267694c8d139ff91b578548c907dd083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dff8beca5db847869d66d81ea7b85d4"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00850.html#a8dff8beca5db847869d66d81ea7b85d4">size</a> () const =0</td></tr>
+<tr class="memdesc:a8dff8beca5db847869d66d81ea7b85d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>.  <a href="#a8dff8beca5db847869d66d81ea7b85d4">More...</a><br /></td></tr>
+<tr class="separator:a8dff8beca5db847869d66d81ea7b85d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="a00862.html" title="The TransactionId interface is a &quot;marker&quot; interface that represents a unique Geode transaction.">TransactionId</a> interface is a "marker" interface that represents a unique Geode transaction. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00286.html#a0a658b2846b5f8e5605a43bc8dbe158e" title="Get the CacheTransactionManager instance for this Cache.">Cache::getCacheTransactionManager</a> </dd>
-<dd>
-<a class="el" href="a00386.html#aaac9612c9c13933ca31f81ac8a6ca431" title="Returns the transaction identifier for the current thread.">CacheTransactionManager::getTransactionId</a> </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>A <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> may be obtained after executing a <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> which is obtained from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
+<p>It is the parent of a <a class="el" href="a00858.html" title="A Struct has a StructSet as its parent.">Struct</a> which contains the field values. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a51a183166096893fcb16b569327c60b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a183166096893fcb16b569327c60b3">&#9670;&nbsp;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; &gt;::<a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a> <a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">apache::geode::client::SelectResults::iterator</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interface of an iterator for <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a47897882766667431cdf1eebc1eb00b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47897882766667431cdf1eebc1eb00b3">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a> apache::geode::client::SelectResults::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an iterator pointing to the start of <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
+
+</div>
+</div>
+<a id="a626bd746b3e1919281221eb9a5f1d105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626bd746b3e1919281221eb9a5f1d105">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00850.html#a51a183166096893fcb16b569327c60b3">iterator</a> apache::geode::client::SelectResults::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an iterator pointing to the end of <code><a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
+
+</div>
+</div>
+<a id="afe371295250b6402bd3b5164e105a460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe371295250b6402bd3b5164e105a460">&#9670;&nbsp;</a></span>getFieldIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int32_t apache::geode::client::StructSet::getFieldIndex </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index number of the specified field name in the <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldname</td><td>the field name for which the index is required. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index number of the specified field name. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the field name is not found. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4db3b5afe6124adc13bda7ea24617e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db3b5afe6124adc13bda7ea24617e35">&#9670;&nbsp;</a></span>getFieldName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::string&amp; apache::geode::client::StructSet::getFieldName </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the field name of the <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> from the specified index number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index number of the field name to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the field name from the specified index number or nullptr if not found. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>if index is not found </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a267694c8d139ff91b578548c907dd083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267694c8d139ff91b578548c907dd083">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::SelectResults::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index operator to directly access an item in the <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index number of the required item. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the index is out of bounds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A smart pointer to the item indexed. </dd></dl>
+
+</div>
+</div>
+<a id="a8dff8beca5db847869d66d81ea7b85d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dff8beca5db847869d66d81ea7b85d4">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t apache::geode::client::SelectResults::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the size of the <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of items in the <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

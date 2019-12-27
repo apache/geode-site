@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::Exception Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::EntryEvent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -87,64 +87,124 @@ $(document).ready(function(){initNavTree('a00458.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::Exception Class Reference</div>  </div>
+<div class="title">apache::geode::client::EntryEvent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A description of an exception that occurred during a cache operation.  
+<p>Represents an entry event affecting an entry, including its identity and the the circumstances of the event.  
  <a href="a00458.html#details">More...</a></p>
-
-<p>Inherits exception.</p>
-
-<p>Inherited by <a class="el" href="a00682.html">apache::geode::client::AllConnectionsInUseException</a>, <a class="el" href="a00518.html">apache::geode::client::AlreadyConnectedException</a>, <a class="el" href="a00462.html">apache::geode::client::AssertionException</a>, <a class="el" href="a00638.html">apache::geode::client::AuthenticationFailedException</a>, <a class="el" href="a00642.html">apache::geode::client::AuthenticationRequiredException</a>, <a class="el" href="a00590.html">apache::geode::client::BufferSizeExceededException</a>, <a class="el" href="a00494.html">apache::geode::client::CacheClosedException</a>, <a class="el" href="a00474.html">apache::geode::client::CacheExistsException</a>, <a class="el" href="a00650.html">apache::geode::client::CacheListenerException</a>, <a class="el" href="a00502.html">apache::geode::client::CacheLoaderException</a>, <a class="el" href="a00574.html">apache::geode::client::CacheProxyException</a>, <a class="el" href="a00618.html">apache::geode::client::CacheServerException</a>, <a class="el" href="a00486.html">apache::geode::client::CacheWriterException</a>, <a class="el" href="a00478.html">apache::geode::client::CacheXmlException</a>, <a class="el" href="a00546.html">apache::geode::client::ClassCastException</a>, <a class="el" href="a00702.html">apache::geode::client::CommitConflictException</a>, <a class="el" href="a00538.html">apache::geode::client::ConcurrentModificationException</a>, <a class="el" href="a00658.html">apache::geode::client::CqClosedException</a>, <a class="el" href="a00654.html">apache::geode::client::CqException</a>, <a class="el" href="a00666.html">apache::geode::client::CqExistsException</a>, <a class="el" href="a00670.html">apache::geode::client::CqInvalidException</a>, <a class="el" href="a00662.html">apache::geode::client::CqQueryException</a>, <a class="el" href="a00606.html">apache::geode::client::DiskCorruptException</a>, <a class="el" href="a00602.html">apache::geode::client::DiskFailureException</a>, <a class="el" href="a00646.html">apache::geode::client::DuplicateDurableClientException</a>, <a class="el" href="a00510.html">apache::geode::client::EntryDestroyedException</a>, <a class="el" href="a00566.html">apache::geode::client::EntryExistsException</a>, <a class="el" href="a00550.html">apache::geode::client::EntryNotFoundException</a>, <a class="el" href="a00598.html">apache::geode::client::FatalInternalException</a>, <a class="el" href="a00522.html">apache::geode::client::FileNotFoundException</a>, <a class="el" href="a00674.html">apache::geode::client::FunctionExecutionException</a>, <a class="el" href="a00558.html">apache::geode::client::GeodeConfigException</a>, <a class="el" href="a00554.html">apache::geode::client::GeodeIOException</a>, <a class="el" href="a00466.html">apache::geode::client::IllegalArgumentException</a>, <a class="el" href="a00470.html">apache::geode::client::IllegalStateException</a>, <a class="el" href="a00610.html">apache::geode::client::InitFailedException</a>, <a class="el" href="a00526.html">apache::geode::client::InterruptedException</a>, <a class="el" href="a00686.html">apache::geode::client::InvalidDeltaException</a>, <a class="el" href="a00690.html">apache::geode::client::KeyNotFoundException</a>, <a class="el" href="a00498.html">apache::geode::client::LeaseExpiredException</a>, <a class="el" href="a00630.html">apache::geode::client::MessageException</a>, <a class="el" href="a00678.html">apache::geode::client::NoAvailableLocatorsException</a>, <a class="el" href="a00514.html">apache::geode::client::NoSystemException</a>, <a class="el" href="a00634.html">apache::geode::client::NotAuthorizedException</a>, <a class="el" href="a00570.html">apache::geode::client::NotConnectedException</a>, <a class="el" href="a00582.html">apache::geode::client::NotOwnerException</a>, <a class="el" href="a00562.html">apache::geode::client::NullPointerException</a>, <a class="el" href="a00578.html">apache::geode::client::OutOfMemoryException</a>, <a class="el" href="a00622.html">apache::geode::client::OutOfRangeException</a>, <a class="el" href="a00714.html">apache::geode::client::PutAllPartialResultException</a>, <a class="el" href="a00626.html">apache::geode::client::QueryException</a>, <a class="el" href="a00594.html">apache::geode::client::RegionCreationFailedException</a>, <a class="el" href="a00506.html">apache::geode::client::RegionDestroyedException</a>, <a class="el" href="a00490.html">apache::geode::client::RegionExistsException</a>, <a class="el" href="a00698.html">apache::geode::client::RollbackException</a>, <a class="el" href="a00614.html">apache::geode::client::ShutdownFailedException</a>, <a class="el" href="a00534.html">apache::geode::client::StatisticsDisabledException</a>, <a class="el" href="a00482.html">apache::geode::client::TimeoutException</a>, <a class="el" href="a00706.html">apache::geode::client::TransactionDataNodeHasDepartedException</a>, <a class="el" href="a00710.html">apache::geode::client::TransactionDataRebalancedException</a>, <a class="el" href="a00694.html">apache::geode::client::TransactionException</a>, <a class="el" href="a00542.html">apache::geode::client::UnknownException</a>, <a class="el" href="a00530.html">apache::geode::client::UnsupportedOperationException</a>, and <a class="el" href="a00586.html">apache::geode::client::WrongRegionScopeException</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a4a13dbe4fe4936a0f92451738bab6f74">getMessage</a> () const noexcept</td></tr>
-<tr class="memdesc:a4a13dbe4fe4936a0f92451738bab6f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a message with details regarding this exception.  <a href="#a4a13dbe4fe4936a0f92451738bab6f74">More...</a><br /></td></tr>
-<tr class="separator:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d3b82e6a264c3b6a78e9ddde7a1db6"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a92d3b82e6a264c3b6a78e9ddde7a1db6">getName</a> () const</td></tr>
-<tr class="memdesc:a92d3b82e6a264c3b6a78e9ddde7a1db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this exception type.  <a href="#a92d3b82e6a264c3b6a78e9ddde7a1db6">More...</a><br /></td></tr>
-<tr class="separator:a92d3b82e6a264c3b6a78e9ddde7a1db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#ae92dba8992cbda0cd2aaa1d6fa05b54f">getStackTrace</a> () const</td></tr>
-<tr class="memdesc:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a stacktrace string from the location the exception was created.  <a href="#ae92dba8992cbda0cd2aaa1d6fa05b54f">More...</a><br /></td></tr>
-<tr class="separator:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085e358151c3a68d00f7f15c4498b4f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a085e358151c3a68d00f7f15c4498b4f3">EntryEvent</a> (const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;region, const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;oldValue, const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;newValue, const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt; &amp;aCallbackArgument, const bool <a class="el" href="a00458.html#a0d7f1d807ee544c154215fae796b1f18">remoteOrigin</a>)</td></tr>
+<tr class="memdesc:a085e358151c3a68d00f7f15c4498b4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, given all values.  <a href="#a085e358151c3a68d00f7f15c4498b4f3">More...</a><br /></td></tr>
+<tr class="separator:a085e358151c3a68d00f7f15c4498b4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66f3ccec7d25e8985560fb1a0dc752c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#ac66f3ccec7d25e8985560fb1a0dc752c">EntryEvent</a> ()</td></tr>
+<tr class="memdesc:ac66f3ccec7d25e8985560fb1a0dc752c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ac66f3ccec7d25e8985560fb1a0dc752c">More...</a><br /></td></tr>
+<tr class="separator:ac66f3ccec7d25e8985560fb1a0dc752c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a24cb900d2af911a6fca0635d6f1357"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a3a24cb900d2af911a6fca0635d6f1357">getCallbackArgument</a> () const</td></tr>
+<tr class="memdesc:a3a24cb900d2af911a6fca0635d6f1357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the callbackArgument passed to the method that generated this event.  <a href="#a3a24cb900d2af911a6fca0635d6f1357">More...</a><br /></td></tr>
+<tr class="separator:a3a24cb900d2af911a6fca0635d6f1357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f748727850f1b9ab21fb400cd981bd6"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a9f748727850f1b9ab21fb400cd981bd6">getKey</a> () const</td></tr>
+<tr class="separator:a9f748727850f1b9ab21fb400cd981bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc198458ebe1e327cfe8cbf66b66c8f0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#adc198458ebe1e327cfe8cbf66b66c8f0">getNewValue</a> () const</td></tr>
+<tr class="memdesc:adc198458ebe1e327cfe8cbf66b66c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the event is a destroy or invalidate operation, then the new value will be nullptr.  <a href="#adc198458ebe1e327cfe8cbf66b66c8f0">More...</a><br /></td></tr>
+<tr class="separator:adc198458ebe1e327cfe8cbf66b66c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe723855cbf895aaf80afc4d3778270a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#afe723855cbf895aaf80afc4d3778270a">getOldValue</a> () const</td></tr>
+<tr class="memdesc:afe723855cbf895aaf80afc4d3778270a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the prior state of the entry was invalid, or non-existent/destroyed, then the old value will be nullptr.  <a href="#afe723855cbf895aaf80afc4d3778270a">More...</a><br /></td></tr>
+<tr class="separator:afe723855cbf895aaf80afc4d3778270a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda3af52689eba611f04eeeb770ef28f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#adda3af52689eba611f04eeeb770ef28f">getRegion</a> () const</td></tr>
+<tr class="separator:adda3af52689eba611f04eeeb770ef28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7f1d807ee544c154215fae796b1f18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a0d7f1d807ee544c154215fae796b1f18">remoteOrigin</a> () const</td></tr>
+<tr class="memdesc:a0d7f1d807ee544c154215fae796b1f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the event originated in a remote process, returns true.  <a href="#a0d7f1d807ee544c154215fae796b1f18">More...</a><br /></td></tr>
+<tr class="separator:a0d7f1d807ee544c154215fae796b1f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791b14dccf58a12e967b8dacba965190"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a791b14dccf58a12e967b8dacba965190">~EntryEvent</a> ()</td></tr>
+<tr class="memdesc:a791b14dccf58a12e967b8dacba965190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a791b14dccf58a12e967b8dacba965190">More...</a><br /></td></tr>
+<tr class="separator:a791b14dccf58a12e967b8dacba965190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac07eafc27c72feeec52610f82416c545"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#ac07eafc27c72feeec52610f82416c545">m_callbackArgument</a></td></tr>
+<tr class="memdesc:ac07eafc27c72feeec52610f82416c545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback argument for this event, if any.  <a href="#ac07eafc27c72feeec52610f82416c545">More...</a><br /></td></tr>
+<tr class="separator:ac07eafc27c72feeec52610f82416c545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86522f7447c92f499abf003c25955bea"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a86522f7447c92f499abf003c25955bea">m_key</a></td></tr>
+<tr class="memdesc:a86522f7447c92f499abf003c25955bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cacheable key.  <a href="#a86522f7447c92f499abf003c25955bea">More...</a><br /></td></tr>
+<tr class="separator:a86522f7447c92f499abf003c25955bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac2f8f08d8a38573d31f3f6b1fea548"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a6ac2f8f08d8a38573d31f3f6b1fea548">m_newValue</a></td></tr>
+<tr class="memdesc:a6ac2f8f08d8a38573d31f3f6b1fea548"><td class="mdescLeft">&#160;</td><td class="mdescRight">New value.  <a href="#a6ac2f8f08d8a38573d31f3f6b1fea548">More...</a><br /></td></tr>
+<tr class="separator:a6ac2f8f08d8a38573d31f3f6b1fea548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea6586b3422d80b7bd94a0fc6a0a856"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a4ea6586b3422d80b7bd94a0fc6a0a856">m_oldValue</a></td></tr>
+<tr class="memdesc:a4ea6586b3422d80b7bd94a0fc6a0a856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old value.  <a href="#a4ea6586b3422d80b7bd94a0fc6a0a856">More...</a><br /></td></tr>
+<tr class="separator:a4ea6586b3422d80b7bd94a0fc6a0a856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad418fec0935a39b5e391797bfad928"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#afad418fec0935a39b5e391797bfad928">m_region</a></td></tr>
+<tr class="memdesc:afad418fec0935a39b5e391797bfad928"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a>.  <a href="#afad418fec0935a39b5e391797bfad928">More...</a><br /></td></tr>
+<tr class="separator:afad418fec0935a39b5e391797bfad928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f9c9961f8a943779d89faa909323f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a19f9c9961f8a943779d89faa909323f8">m_remoteOrigin</a></td></tr>
+<tr class="memdesc:a19f9c9961f8a943779d89faa909323f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if from a remote (non-local) process.  <a href="#a19f9c9961f8a943779d89faa909323f8">More...</a><br /></td></tr>
+<tr class="separator:a19f9c9961f8a943779d89faa909323f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A description of an exception that occurred during a cache operation. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4a13dbe4fe4936a0f92451738bab6f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a13dbe4fe4936a0f92451738bab6f74">&#9670;&nbsp;</a></span>getMessage()</h2>
+<div class="textblock"><p>Represents an entry event affecting an entry, including its identity and the the circumstances of the event. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a085e358151c3a68d00f7f15c4498b4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085e358151c3a68d00f7f15c4498b4f3">&#9670;&nbsp;</a></span>EntryEvent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::Exception::getMessage </td>
+          <td class="memname">apache::geode::client::EntryEvent::EntryEvent </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>newValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aCallbackArgument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>remoteOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get a message with details regarding this exception. </p>
-<p>" </p>
+<p>Constructor, given all values. </p>
 
 </div>
 </div>
-<a id="a92d3b82e6a264c3b6a78e9ddde7a1db6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92d3b82e6a264c3b6a78e9ddde7a1db6">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="a791b14dccf58a12e967b8dacba965190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791b14dccf58a12e967b8dacba965190">&#9670;&nbsp;</a></span>~EntryEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,10 +213,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::string apache::geode::client::Exception::getName </td>
+          <td class="memname">virtual apache::geode::client::EntryEvent::~EntryEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -166,14 +226,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return the name of this exception type. </p>
-
-<p>Reimplemented in <a class="el" href="a00714.html#a208ca493199e7cfbb09a9aa6e5a15483">apache::geode::client::PutAllPartialResultException</a>, <a class="el" href="a00710.html#ada9693822c43dc91045ea8b273319efc">apache::geode::client::TransactionDataRebalancedException</a>, <a class="el" href="a00706.html#ad0d0ab12722dd310d115a76b413a7f8a">apache::geode::client::TransactionDataNodeHasDepartedException</a>, <a class="el" href="a00702.html#a8644d8a44b7e8a79a3792d78ea222798">apache::geode::client::CommitConflictException</a>, <a class="el" href="a00698.html#aded89f529855b1e9867ca325c9ddb952">apache::geode::client::RollbackException</a>, <a class="el" href="a00694.html#a97ba0a8609802e99f9042ee751ad7c57">apache::geode::client::TransactionException</a>, <a class="el" href="a00690.html#a4eb455bb6e469b8610509aaf9879f75f">apache::geode::client::KeyNotFoundException</a>, <a class="el" href="a00686.html#a1874b70ae0a9d32cde678911b68dbbf6">apache::geode::client::InvalidDeltaException</a>, <a class="el" href="a00682.html#a98ddc78e5fdb2710005e49020f7e916d">apache::geode::client::AllConnectionsInUseException</a>, <a class="el" href="a00678.html#a5fa5ef91c0cc513d009f15397e49323c">apache::geode::client::NoAvailableLocatorsException</a>, <a class="el" href="a00674.html#a9779c2f4c8ab949e3af44e7940a3f156">apache::geode::client::FunctionExecutionException</a>, <a class="el" href="a00670.html#acdcef801cf030f6f22d673f80a85048e">apache::geode::client::CqInvalidException</a>, <a class="el" href="a00666.html#aa4ccdc16fdf23bd90df467b7ec113ff8">apache::geode::client::CqExistsException</a>, <a class="el" href="a00662.html#a76d9c54f4c2fb68a4aa6f3ab03c314fc">apache::geode::client::CqQueryException</a>, <a class="el" href="a00658.html#a57acbfb81cf6fef4060261a121e4a54f">apache::geode::client::CqClosedException</a>, <a class="el" href="a00654.html#a04b034ea90fabf136d57d92ade6d6f55">apache::geode::client::CqException</a>, <a class="el" href="a00650.html#af85efa846ae4c05e266f6cda3b485fab">apache::geode::client::CacheListenerException</a>, <a class="el" href="a00646.html#a5be1288cbabd34f60d9531b336c67e94">apache::geode::client::DuplicateDurableClientException</a>, <a class="el" href="a00642.html#a02aaed56e5599563f6e3b1fcd3de5e6f">apache::geode::client::AuthenticationRequiredException</a>, <a class="el" href="a00638.html#a4dbae0a48336c1d139056052c5d7cb99">apache::geode::client::AuthenticationFailedException</a>, <a class="el" href="a00634.html#abae42cf264d9a0b8db4eeea22fbfb5e1">apache::geode::client::NotAuthorizedException</a>, <a class="el" href="a00630.html#a271ca77b74ae7f70ca93def593c5181a">apache::geode::client::MessageException</a>, <a class="el" href="a00626.html#a2e470fca4b0ff6c5ecb4d7efab3be8ed">apache::geode::client::QueryException</a>, <a class="el" href="a00622.html#a6a51a717f50f17922e76e8ad3d224eba">apache::geode::client::OutOfRangeException</a>, <a class="el" href="a00618.html#aa1461d8f31a08ed08f5b8d92136e775f">apache::geode::client::CacheServerException</a>, <a class="el" href="a00614.html#a3486f73b6f1b681271d772c51acb41c5">apache::geode::client::ShutdownFailedException</a>, <a class="el" href="a00610.html#aab71bf0ace925514faad55b933f40a03">apache::geode::client::InitFailedException</a>, <a class="el" href="a00606.html#a23a43368a56e8429032f8261148b14c4">apache::geode::client::DiskCorruptException</a>, <a class="el" href="a00602.html#a4ca0927990acb0066c958fa8086f4951">apache::geode::client::DiskFailureException</a>, <a class="el" href="a00598.html#a004e996da10fac128c0a163ca36b18f3">apache::geode::client::FatalInternalException</a>, <a class="el" href="a00594.html#a64cfa2368296220824171115ab8f5651">apache::geode::client::RegionCreationFailedException</a>, <a class="el" href="a00590.html#a7b980f34bfed2616bed646664aae665f">apache::geode::client::BufferSizeExceededException</a>, <a class="el" href="a00586.html#ad34e3ac89363db701209a52157d7f391">apache::geode::client::WrongRegionScopeException</a>, <a class="el" href="a00582.html#a3a9d8a4d8d5876c38f061bfbc63b7aa8">apache::geode::client::NotOwnerException</a>, <a class="el" href="a00578.html#a51c3ef9c134a4b915fe89efc6326f663">apache::geode::client::OutOfMemoryException</a>, <a class="el" href="a00574.html#a7b3125dfd954586e02c7e62b339631ff">apache::geode::client::CacheProxyException</a>, <a class="el" href="a00570.html#abc975a69e2866bbd3ef47ed122e022cc">apache::geode::client::NotConnectedException</a>, <a class="el" href="a00566.html#a2034e1d99710fd630ad0495741060bf9">apache::geode::client::EntryExistsException</a>, <a class="el" href="a00562.html#ac07b932a2f7eec7f7500f49cea1a08c2">apache::geode::client::NullPointerException</a>, <a class="el" href="a00558.html#a457512538aa928391ac35ba2b040dd81">apache::geode::client::GeodeConfigException</a>, <a class="el" href="a00554.html#a5112ecbf31ee9f24892a7e81affea33e">apache::geode::client::GeodeIOException</a>, <a class="el" href="a00550.html#a1114ebb8dc6913474d008f3abe7f112e">apache::geode::client::EntryNotFoundException</a>, <a class="el" href="a00546.html#a715872e7334457cdaae705691236b439">apache::geode::client::ClassCastException</a>, <a class="el" href="a00542.html#ad91d974187735b7b965944c16d5cab40">apache::geode::client::UnknownException</a>, <a class="el" href="a00538.html#a4c54a92a4e0ce80792fc8acb6fb3c1d8">apache::geode::client::ConcurrentModificationException</a>, <a class="el" href="a00534.html#abbce9e3917cf089419d9b4c3703f9404">apache::geode::client::StatisticsDisabledException</a>, <a class="el" href="a00530.html#a121ed4416281d30bb0f08d6460c0b9ec">apache::geode::client::UnsupportedOperationException</a>, <a class="el" href="a00526.html#a4b038930b3dcdc9d3325a9557932642e">apache::geode::client::InterruptedException</a>, <a class="el" href="a00522.html#a445cca4a1d75b674aac725ed666e1d93">apache::geode::client::FileNotFoundException</a>, <a class="el" href="a00518.html#a451784ad6e73381e8d78042b1020a302">apache::geode::client::AlreadyConnectedException</a>, <a class="el" href="a00514.html#a4bbb2aa02e652a484a526520d607de68">apache::geode::client::NoSystemException</a>, <a class="el" href="a00510.html#a2a094d3ce2a253779866fe52b42e4d76">apache::geode::client::EntryDestroyedException</a>, <a class="el" href="a00506.html#a7a61509d2e7276582a1b1e8326f1e081">apache::geode::client::RegionDestroyedException</a>, <a class="el" href="a00502.html#a448f7065b5e6498ac6f5ca93fa56876d">apache::geode::client::CacheLoaderException</a>, <a class="el" href="a00498.html#af1339acbd86129e7d4b19c161bc0ab65">apache::geode::client::LeaseExpiredException</a>, <a class="el" href="a00494.html#a545e400bed20d30714e92a8244e6a5a1">apache::geode::client::CacheClosedException</a>, <a class="el" href="a00490.html#a5186a439415da383d2cbf8a75ec0e85a">apache::geode::client::RegionExistsException</a>, <a class="el" href="a00486.html#a825f8f00d4848e995a449ef10382585b">apache::geode::client::CacheWriterException</a>, <a class="el" href="a00482.html#adfef198bf3da7180630b45404eedd68a">apache::geode::client::TimeoutException</a>, <a class="el" href="a00478.html#a3601214e8e71ad15e04950c7315cd38a">apache::geode::client::CacheXmlException</a>, <a class="el" href="a00474.html#acb397b8776fdfcece098f5236c84926d">apache::geode::client::CacheExistsException</a>, <a class="el" href="a00470.html#a0bc0ab493bb296ea89e3044816aa2ef6">apache::geode::client::IllegalStateException</a>, <a class="el" href="a00466.html#aed72876e1f30ca127ce38c3f5730c78d">apache::geode::client::IllegalArgumentException</a>, and <a class="el" href="a00462.html#a3a0ee55b71babdf900851391d8a5190c">apache::geode::client::AssertionException</a>.</p>
+<p>Destructor. </p>
 
 </div>
 </div>
-<a id="ae92dba8992cbda0cd2aaa1d6fa05b54f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae92dba8992cbda0cd2aaa1d6fa05b54f">&#9670;&nbsp;</a></span>getStackTrace()</h2>
+<a id="ac66f3ccec7d25e8985560fb1a0dc752c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66f3ccec7d25e8985560fb1a0dc752c">&#9670;&nbsp;</a></span>EntryEvent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">apache::geode::client::EntryEvent::EntryEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a24cb900d2af911a6fca0635d6f1357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a24cb900d2af911a6fca0635d6f1357">&#9670;&nbsp;</a></span>getCallbackArgument()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +260,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::string apache::geode::client::Exception::getStackTrace </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::EntryEvent::getCallbackArgument </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -190,12 +268,293 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get a stacktrace string from the location the exception was created. </p>
+<p>Returns the callbackArgument passed to the method that generated this event. </p>
+<p>See the <a class="el" href="a00814.html">Region</a> interface methods that take a callbackArgument parameter. </p>
+
+</div>
+</div>
+<a id="a9f748727850f1b9ab21fb400cd981bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f748727850f1b9ab21fb400cd981bd6">&#9670;&nbsp;</a></span>getKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00338.html">CacheableKey</a>&gt; apache::geode::client::EntryEvent::getKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the key this event describes. </dd></dl>
+
+</div>
+</div>
+<a id="adc198458ebe1e327cfe8cbf66b66c8f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc198458ebe1e327cfe8cbf66b66c8f0">&#9670;&nbsp;</a></span>getNewValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; apache::geode::client::EntryEvent::getNewValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the event is a destroy or invalidate operation, then the new value will be nullptr. </p>
+<dl class="section return"><dt>Returns</dt><dd>the updated value from this event </dd></dl>
+
+</div>
+</div>
+<a id="afe723855cbf895aaf80afc4d3778270a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe723855cbf895aaf80afc4d3778270a">&#9670;&nbsp;</a></span>getOldValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; apache::geode::client::EntryEvent::getOldValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the prior state of the entry was invalid, or non-existent/destroyed, then the old value will be nullptr. </p>
+<dl class="section return"><dt>Returns</dt><dd>the old value in the cache. </dd></dl>
+
+</div>
+</div>
+<a id="adda3af52689eba611f04eeeb770ef28f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda3af52689eba611f04eeeb770ef28f">&#9670;&nbsp;</a></span>getRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00814.html">Region</a>&gt; apache::geode::client::EntryEvent::getRegion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the region this event occurred in. </dd></dl>
+
+</div>
+</div>
+<a id="a0d7f1d807ee544c154215fae796b1f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7f1d807ee544c154215fae796b1f18">&#9670;&nbsp;</a></span>remoteOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool apache::geode::client::EntryEvent::remoteOrigin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the event originated in a remote process, returns true. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ac07eafc27c72feeec52610f82416c545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac07eafc27c72feeec52610f82416c545">&#9670;&nbsp;</a></span>m_callbackArgument</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::EntryEvent::m_callbackArgument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback argument for this event, if any. </p>
+
+</div>
+</div>
+<a id="a86522f7447c92f499abf003c25955bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86522f7447c92f499abf003c25955bea">&#9670;&nbsp;</a></span>m_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00338.html">CacheableKey</a>&gt; apache::geode::client::EntryEvent::m_key</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cacheable key. </p>
+
+</div>
+</div>
+<a id="a6ac2f8f08d8a38573d31f3f6b1fea548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac2f8f08d8a38573d31f3f6b1fea548">&#9670;&nbsp;</a></span>m_newValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; apache::geode::client::EntryEvent::m_newValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>New value. </p>
+
+</div>
+</div>
+<a id="a4ea6586b3422d80b7bd94a0fc6a0a856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea6586b3422d80b7bd94a0fc6a0a856">&#9670;&nbsp;</a></span>m_oldValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; apache::geode::client::EntryEvent::m_oldValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Old value. </p>
+
+</div>
+</div>
+<a id="afad418fec0935a39b5e391797bfad928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad418fec0935a39b5e391797bfad928">&#9670;&nbsp;</a></span>m_region</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00814.html">Region</a>&gt; apache::geode::client::EntryEvent::m_region</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a>. </p>
+
+</div>
+</div>
+<a id="a19f9c9961f8a943779d89faa909323f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f9c9961f8a943779d89faa909323f8">&#9670;&nbsp;</a></span>m_remoteOrigin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool apache::geode::client::EntryEvent::m_remoteOrigin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if from a remote (non-local) process. </p>
 
 </div>
 </div>

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -104,31 +104,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf655e511f2fae3bdc6746e2cfa941aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#abf655e511f2fae3bdc6746e2cfa941aa">commit</a> ()=0</td></tr>
 <tr class="memdesc:abf655e511f2fae3bdc6746e2cfa941aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the transaction associated with the current thread.  <a href="#abf655e511f2fae3bdc6746e2cfa941aa">More...</a><br /></td></tr>
 <tr class="separator:abf655e511f2fae3bdc6746e2cfa941aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a262cbb8bb675167abcb99289b8f27529"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a262cbb8bb675167abcb99289b8f27529">exists</a> (<a class="el" href="a00862.html">TransactionId</a> &amp;transactionId)=0</td></tr>
+<tr class="memitem:a262cbb8bb675167abcb99289b8f27529"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a262cbb8bb675167abcb99289b8f27529">exists</a> (<a class="el" href="a00870.html">TransactionId</a> &amp;transactionId)=0</td></tr>
 <tr class="memdesc:a262cbb8bb675167abcb99289b8f27529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports the existence of a transaction for the given transactionId.  <a href="#a262cbb8bb675167abcb99289b8f27529">More...</a><br /></td></tr>
 <tr class="separator:a262cbb8bb675167abcb99289b8f27529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5fec7a72fd3778176bc110d3e05f86e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aa5fec7a72fd3778176bc110d3e05f86e">exists</a> ()=0</td></tr>
 <tr class="memdesc:aa5fec7a72fd3778176bc110d3e05f86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports the existence of a Transaction for this thread.  <a href="#aa5fec7a72fd3778176bc110d3e05f86e">More...</a><br /></td></tr>
 <tr class="separator:aa5fec7a72fd3778176bc110d3e05f86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaac9612c9c13933ca31f81ac8a6ca431"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aaac9612c9c13933ca31f81ac8a6ca431">getTransactionId</a> ()=0</td></tr>
+<tr class="memitem:aaac9612c9c13933ca31f81ac8a6ca431"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aaac9612c9c13933ca31f81ac8a6ca431">getTransactionId</a> ()=0</td></tr>
 <tr class="memdesc:aaac9612c9c13933ca31f81ac8a6ca431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the transaction identifier for the current thread.  <a href="#aaac9612c9c13933ca31f81ac8a6ca431">More...</a><br /></td></tr>
 <tr class="separator:aaac9612c9c13933ca31f81ac8a6ca431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77a2e4d0bd8a240700f087ed4156cff0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a77a2e4d0bd8a240700f087ed4156cff0">isSuspended</a> (<a class="el" href="a00862.html">TransactionId</a> &amp;transactionId)=0</td></tr>
+<tr class="memitem:a77a2e4d0bd8a240700f087ed4156cff0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a77a2e4d0bd8a240700f087ed4156cff0">isSuspended</a> (<a class="el" href="a00870.html">TransactionId</a> &amp;transactionId)=0</td></tr>
 <tr class="memdesc:a77a2e4d0bd8a240700f087ed4156cff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method can be used to determine if a transaction with the given transaction identifier is currently suspended locally.  <a href="#a77a2e4d0bd8a240700f087ed4156cff0">More...</a><br /></td></tr>
 <tr class="separator:a77a2e4d0bd8a240700f087ed4156cff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf2e9d5586ff6d59a43876c3aef30ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aadf2e9d5586ff6d59a43876c3aef30ac">resume</a> (<a class="el" href="a00862.html">TransactionId</a> &amp;transactionId)=0</td></tr>
+<tr class="memitem:ad7d47e1b7e4b130af348bd265e33ceee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#ad7d47e1b7e4b130af348bd265e33ceee">prepare</a> ()=0</td></tr>
+<tr class="memdesc:ad7d47e1b7e4b130af348bd265e33ceee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs prepare during 2 phase commit completion, for the transaction associated with the current thread.  <a href="#ad7d47e1b7e4b130af348bd265e33ceee">More...</a><br /></td></tr>
+<tr class="separator:ad7d47e1b7e4b130af348bd265e33ceee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf2e9d5586ff6d59a43876c3aef30ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#aadf2e9d5586ff6d59a43876c3aef30ac">resume</a> (<a class="el" href="a00870.html">TransactionId</a> &amp;transactionId)=0</td></tr>
 <tr class="memdesc:aadf2e9d5586ff6d59a43876c3aef30ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">On the current thread, resumes a transaction that was previously suspended using <a class="el" href="a00386.html#a89106519ecfbb7cf0aacf42c2580c446">suspend()</a>.  <a href="#aadf2e9d5586ff6d59a43876c3aef30ac">More...</a><br /></td></tr>
 <tr class="separator:aadf2e9d5586ff6d59a43876c3aef30ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af52d5c2e1b776ecabde5f3d60f474a49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#af52d5c2e1b776ecabde5f3d60f474a49">rollback</a> ()=0</td></tr>
 <tr class="memdesc:af52d5c2e1b776ecabde5f3d60f474a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roll back the transaction associated with the current thread.  <a href="#af52d5c2e1b776ecabde5f3d60f474a49">More...</a><br /></td></tr>
 <tr class="separator:af52d5c2e1b776ecabde5f3d60f474a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89106519ecfbb7cf0aacf42c2580c446"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a89106519ecfbb7cf0aacf42c2580c446">suspend</a> ()=0</td></tr>
+<tr class="memitem:a89106519ecfbb7cf0aacf42c2580c446"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#a89106519ecfbb7cf0aacf42c2580c446">suspend</a> ()=0</td></tr>
 <tr class="memdesc:a89106519ecfbb7cf0aacf42c2580c446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends the transaction on the current thread.  <a href="#a89106519ecfbb7cf0aacf42c2580c446">More...</a><br /></td></tr>
 <tr class="separator:a89106519ecfbb7cf0aacf42c2580c446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b2cdfb8f1cd389690cbd466a1f01c7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#ad5b2cdfb8f1cd389690cbd466a1f01c7">tryResume</a> (<a class="el" href="a00862.html">TransactionId</a> &amp;transactionId)=0</td></tr>
+<tr class="memitem:ad5b2cdfb8f1cd389690cbd466a1f01c7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#ad5b2cdfb8f1cd389690cbd466a1f01c7">tryResume</a> (<a class="el" href="a00870.html">TransactionId</a> &amp;transactionId)=0</td></tr>
 <tr class="memdesc:ad5b2cdfb8f1cd389690cbd466a1f01c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">On the current thread, resumes a transaction that was previously suspended using <a class="el" href="a00386.html#a89106519ecfbb7cf0aacf42c2580c446">suspend()</a>.  <a href="#ad5b2cdfb8f1cd389690cbd466a1f01c7">More...</a><br /></td></tr>
 <tr class="separator:ad5b2cdfb8f1cd389690cbd466a1f01c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb0a029a4bea5d215b0c3ff588429b7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#acbb0a029a4bea5d215b0c3ff588429b7">tryResume</a> (<a class="el" href="a00862.html">TransactionId</a> &amp;transactionId, std::chrono::milliseconds waitTime)=0</td></tr>
+<tr class="memitem:acbb0a029a4bea5d215b0c3ff588429b7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00386.html#acbb0a029a4bea5d215b0c3ff588429b7">tryResume</a> (<a class="el" href="a00870.html">TransactionId</a> &amp;transactionId, std::chrono::milliseconds waitTime)=0</td></tr>
 <tr class="memdesc:acbb0a029a4bea5d215b0c3ff588429b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">On the current thread, resumes a transaction that was previously suspended using <a class="el" href="a00386.html#a89106519ecfbb7cf0aacf42c2580c446">suspend()</a>, or waits for the specified timeout interval if the transaction has not been suspended.  <a href="#acbb0a029a4bea5d215b0c3ff588429b7">More...</a><br /></td></tr>
 <tr class="separator:acbb0a029a4bea5d215b0c3ff588429b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -161,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <p>Creates a new transaction and associates it with the current thread. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is already associated with a transaction</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is already associated with a transaction</td></tr>
   </table>
   </dd>
 </dl>
@@ -193,7 +196,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Commit the transaction associated with the current thread. </p>
-<p>If the commit operation fails due to a conflict it will destroy the transaction state and throw a {<a class="el" href="a00702.html">}. If the commit operation succeeds, it returns after the transaction state has been merged with committed state. When this method completes, the thread is no longer associated with a transaction.  IllegalStateException if the thread is not associated with a transaction  CommitConflictException if the commit operation fails due to a write conflict.  TransactionDataNodeHasDepartedException if the node hosting the transaction data has departed. This is only relevant for transaction that involve PartitionedRegions.  TransactionDataNotColocatedException if at commit time, the data involved in the transaction has moved away from the transaction hosting node. This can only happen if rebalancing/recovery happens during a transaction that involves a PartitionedRegion.  TransactionInDoubtException when Geode cannot tell which nodes have applied the transaction and which have not. This only occurs if nodes fail mid-commit, and only then in very rare circumstances. </a></p>
+<p>If the commit operation fails due to a conflict it will destroy the transaction state and throw a {<a class="el" href="a00706.html">}. If the commit operation succeeds, it returns after the transaction state has been merged with committed state. When this method completes, the thread is no longer associated with a transaction.  IllegalStateException if the thread is not associated with a transaction  CommitConflictException if the commit operation fails due to a write conflict.  TransactionDataNodeHasDepartedException if the node hosting the transaction data has departed. This is only relevant for transaction that involve PartitionedRegions.  TransactionDataNotColocatedException if at commit time, the data involved in the transaction has moved away from the transaction hosting node. This can only happen if rebalancing/recovery happens during a transaction that involves a PartitionedRegion.  TransactionInDoubtException when Geode cannot tell which nodes have applied the transaction and which have not. This only occurs if nodes fail mid-commit, and only then in very rare circumstances. </a></p>
 
 </div>
 </div>
@@ -209,7 +212,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual bool apache::geode::client::CacheTransactionManager::exists </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td>
           <td class="paramname"><em>transactionId</em></td><td>)</td>
           <td></td>
         </tr>
@@ -274,7 +277,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00862.html">TransactionId</a>&amp; apache::geode::client::CacheTransactionManager::getTransactionId </td>
+          <td class="memname">virtual <a class="el" href="a00870.html">TransactionId</a>&amp; apache::geode::client::CacheTransactionManager::getTransactionId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -305,7 +308,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual bool apache::geode::client::CacheTransactionManager::isSuspended </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td>
           <td class="paramname"><em>transactionId</em></td><td>)</td>
           <td></td>
         </tr>
@@ -331,6 +334,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7d47e1b7e4b130af348bd265e33ceee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d47e1b7e4b130af348bd265e33ceee">&#9670;&nbsp;</a></span>prepare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void apache::geode::client::CacheTransactionManager::prepare </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs prepare during 2 phase commit completion, for the transaction associated with the current thread. </p>
+<p>Locks of the entries modified in the current transaction on the server side. If the prepare operation fails due to a conflict it will destroy the transaction state and throw a <a class="el" href="a00706.html">CommitConflictException</a>. If the prepare operation succeeds, transaction state is set to prepared state. When this method completes, the thread is still associated with a transaction, and is waiting on commit or rollback operation.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is not associated with a transaction</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00706.html" title="Thrown when a commit fails due to a write conflict.">CommitConflictException</a></td><td>if the commit operation fails due to a write conflict.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00710.html" title="Thrown when the transactional data host has shutdown or no longer has the data being modified by the ...">TransactionDataNodeHasDepartedException</a></td><td>if the node hosting the transaction data has departed. This is only relevant for transaction that involve PartitionedRegions.</td></tr>
+    <tr><td class="paramname">TransactionDataNotColocatedException</td><td>if at commit time, the data involved in the transaction has moved away from the transaction hosting node. This can only happen if rebalancing/recovery happens during a transaction that involves a PartitionedRegion.</td></tr>
+    <tr><td class="paramname">TransactionInDoubtException</td><td>when Geode cannot tell which nodes have applied the transaction and which have not. This only occurs if nodes fail mid-commit, and only then in very rare circumstances. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aadf2e9d5586ff6d59a43876c3aef30ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadf2e9d5586ff6d59a43876c3aef30ac">&#9670;&nbsp;</a></span>resume()</h2>
 
@@ -343,7 +384,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void apache::geode::client::CacheTransactionManager::resume </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td>
           <td class="paramname"><em>transactionId</em></td><td>)</td>
           <td></td>
         </tr>
@@ -364,7 +405,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is associated with a transaction or if <a class="el" href="">isSuspended(TransactionId)</a> would return false for the given transactionId </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is associated with a transaction or if <a class="el" href="">isSuspended(TransactionId)</a> would return false for the given transactionId </td></tr>
   </table>
   </dd>
 </dl>
@@ -400,7 +441,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>3.6</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is not associated with a transaction </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the thread is not associated with a transaction </td></tr>
   </table>
   </dd>
 </dl>
@@ -417,7 +458,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00862.html">TransactionId</a>&amp; apache::geode::client::CacheTransactionManager::suspend </td>
+          <td class="memname">virtual <a class="el" href="a00870.html">TransactionId</a>&amp; apache::geode::client::CacheTransactionManager::suspend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -449,7 +490,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual bool apache::geode::client::CacheTransactionManager::tryResume </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td>
           <td class="paramname"><em>transactionId</em></td><td>)</td>
           <td></td>
         </tr>
@@ -490,7 +531,7 @@ if (isSuspended(txId)) {
         <tr>
           <td class="memname">virtual bool apache::geode::client::CacheTransactionManager::tryResume </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00862.html">TransactionId</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00870.html">TransactionId</a> &amp;&#160;</td>
           <td class="paramname"><em>transactionId</em>, </td>
         </tr>
         <tr>

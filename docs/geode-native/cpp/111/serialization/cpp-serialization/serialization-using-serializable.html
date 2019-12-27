@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Serializing Data with the DataSerializable Interface |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_111 docs_geode-native_cpp_111_serialization docs_geode-native_cpp_111_serialization_cpp-serialization docs_geode-native_cpp_111_serialization_cpp-serialization_serialization-using-serializable has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/111/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/111/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/111/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/111/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/111/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/111/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/111/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/111/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/111/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/111/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/111/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/111/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/111/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/111/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/111/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/111/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/111/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/111/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Serializing Data with the DataSerializable Interface
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>The C++ client API provides a <code>DataSerializable</code> interface that you can use for fast and compact
+data serialization. </p>
+
+<p>Geode Portable Data eXchange (PDX) serialization is the recommended option,
+but the <code>DataSerializable</code> interface can be a good option performance-wise if the size of your objects
+is small. </p>
+
+<p>This section discusses the Geode <code>DataSerializable</code> interface, and
+presents implementation examples.</p>
+
+<h2 id="how-serialization-works"><a id="concept_696AB5206C3E45898CC1A24CDD93D003__section_8143F965A8C6495E8AB104FD36DA366A" class="no-quick-link"></a>How Serialization Works</h2>
+
+<p>When your application puts an object into the cache for subsequent distribution, Geode serializes the data by taking these steps:</p>
+
+<ol>
+<li> Calls the appropriate <code>classId</code> function.</li>
+<li> Writes the full <code>typeId</code> using the <code>classId</code> for the instance.</li>
+<li> Invokes the instance’s <code>toData</code> function.</li>
+</ol>
+
+<p>When your application subsequently receives a byte array, Geode takes the following steps:</p>
+
+<ol>
+<li><p>Decodes the <code>typeId</code>, extracts the <code>classId</code> from the <code>typeId</code>, then creates an object of the designated type using the registered factory functions.</p></li>
+<li><p>Invokes the <code>fromData</code> function with input from the data stream.</p></li>
+<li><p>Decodes the data, then populates the data fields.</p></li>
+</ol>
+
+<h2 id="implementing-the-dataserializable-interface"><a id="concept_696AB5206C3E45898CC1A24CDD93D003__section_786CF85FD80E4FE391135460E04D46CC" class="no-quick-link"></a>Implementing the DataSerializable Interface</h2>
+
+<p>To store your own data types in the cache, you need to derive a new subclass from the <code>DataSerializable</code>
+interface. In practical terms, this means that you need to implement a small set of helper
+functions:</p>
+
+<ol>
+<li><p>Write a <code>toData</code> function that serializes your data.</p>
+<pre class="highlight plaintext"><code>void toData (DataOutput&amp; output)
+</code></pre>
+
+<p>The <code>toData</code> function is responsible for copying all of the object’s data fields to the object stream.
+The <code>DataOutput</code> class represents the output stream and provides methods for writing the primitives in a network byte order.</p></li>
+<li><p>Write a <code>fromData</code> function that consumes a data input stream and repopulates the object’s data fields.</p>
+<pre class="highlight plaintext"><code>void fromData (DataInput&amp; input)
+</code></pre>
+
+<p>The <code>DataInput</code> class represents the input stream and provides methods for reading input
+elements. The <code>fromData</code> function must read the elements of the input stream in the same order
+that they were written by <code>toData</code>.</p></li>
+</ol>
+
+<h2 id="example-1.-the-simple-class-bankaccount">Example 1. The Simple Class BankAccount</h2>
+
+<p>This example demonstrates a simple <code>BankAccount</code> class that encapsulates two <code>ints</code>, <code>ownerId</code> and <code>accountId</code>:</p>
+<pre class="highlight plaintext"><code>class BankAccount
+{
+   private:
+ 
+   int m_ownerId;
+   int m_accountId;
+ 
+   public:
+ 
+   BankAccount( int owner, int account ): m_ownerId( owner ),
+     m_accountId( account ) {}
+ 
+   int getOwner( )
+   {
+      return m_ownerId;
+   }
+ 
+   int getAccount( )
+   {
+      return m_accountId;
+   }
+ 
+};
+</code></pre>
+
+<p>To make <code>BankAccount</code> serializable, you would need to derive the class from <code>DataSerializable</code> and implement the following:</p>
+
+<ul>
+<li>  <code>toData</code> — a function to serialize the data.</li>
+<li>  <code>fromData</code> — a function to deserialize the data.</li>
+<li>  <code>getClassId</code> — a function to provide a unique integer for the class.</li>
+<li>  <code>TypeFactoryMethod</code> — a pointer to a function that returns a <code>DataSerializable*</code> to an uninitialized instance of the type.</li>
+</ul>
+
+<h2 id="example-2.-implementing-a-dataserializable-class">Example 2. Implementing a DataSerializable Class</h2>
+
+<p>This example shows a code sample that demonstrates how to implement a serializable class.</p>
+<pre class="highlight plaintext"><code>class BankAccount : public DataSerializable
+{
+   private:
+   int m_ownerId; 
+   int m_accountId;
+   public:
+   BankAccount( int owner, int account ) : m_ownerId( owner ),
+      m_accountId( account ) {}
+
+int getOwner( )
+{
+    return m_ownerId;
+}
+
+int getAccount( )
+{
+    return m_accountId;
+}
+
+// Add the following for the DataSerializable interface
+// Our TypeFactoryMethod
+static DataSerializable* createInstance( )
+{
+    return new BankAccount( 0, 0 );
+}
+
+int32_t getClassId( )
+{
+    return 10; // must be unique per class.
+}
+
+void toData( DataOutput&amp; output )
+{
+    output.writeInt( m_ownerId );
+    output.writeInt( m_accountId );
+}
+
+DataSerializable* fromData( DataInput&amp; input )
+{
+    input.readInt( &amp;m_ownerId );
+    input.readInt( &amp;m_accountId );
+    return this;
+}
+};
+</code></pre>
+
+<h2 id="registering-the-type"><a id="concept_696AB5206C3E45898CC1A24CDD93D003__section_108942E549CE4DE68FF3956712DEC7AF" class="no-quick-link"></a>Registering the Type</h2>
+
+<p>To be able to use the <code>BankAccount</code> type, you must register it with the type system so that when an
+incoming stream contains a <code>BankAccount</code>, it can be manufactured from the associated
+<code>TypeFactoryMethod</code>.</p>
+<pre class="highlight plaintext"><code>DataSerializable::registerType( BankAccount::createInstance );
+</code></pre>
+
+<p>Typically, you would register the type before calling the function <code>DistributedSystem::connect</code>.</p>
+
+<p><strong>Note:</strong>
+Type IDs must be unique to only one class.</p>
+
+<h2 id="custom-key-types"><a id="concept_696AB5206C3E45898CC1A24CDD93D003__section_311C3661023C46328B406F26F4F16808" class="no-quick-link"></a>Custom Key Types</h2>
+
+<p>If your application uses key types that are too complex to easily force into <code>CacheableString</code>, you
+can likely improve performance by deriving a new class from <code>CacheableKey</code>. If you have hybrid data
+types you can implement your own derivation of <code>CacheableKey</code> that encapsulates the data type.</p>
+
+<p>See below for information about implementing key types for a client that is used with a Java cache server.</p>
+
+<p>To extend a <code>DataSerializable</code> class to be a <code>CacheableKey</code>, you need to modify the class definition as follows:</p>
+
+<ul>
+<li><p>Change the class so that it derives from <code>CacheableKey</code> rather than <code>DataSerializable</code>.</p></li>
+<li><p>Implement <code>operator==</code> and <code>hashcode</code> functions.</p></li>
+</ul>
+
+<h2 id="example-3.-extending-a-dataserializable-class-to-be-a-cacheablekey">Example 3. Extending a DataSerializable Class To Be a CacheableKey</h2>
+
+<p>This example shows how to extend a serializable class to be a cacheable key.</p>
+<pre class="highlight plaintext"><code>class BankAccount
+: public CacheableKey
+{
+   private:
+   int m_ownerId;
+   int m_accountId;
+   public:
+   BankAccount( int owner, int account ) : m_ownerId( owner ),
+      m_accountId( account ) {}
+
+int getOwner( )
+{
+    return m_ownerId;
+}
+
+int getAccount( )
+{
+    return m_accountId;
+}
+
+// Our TypeFactoryMethod
+static DataSerializable* createInstance( )
+{
+    return new BankAccount( 0, 0 );
+}
+
+int32_t typeId( )
+{
+    return 1000; // must be unique per class.
+}
+
+void toData( DataOutput&amp; output )
+{
+    output.writeInt( m_ownerId );
+    output.writeInt( m_accountId );
+}
+
+DataSerializable* fromData( DataInput&amp; input )
+{
+    input.readInt( &amp;m_ownerId );
+    input.readInt( &amp;m_accountId );
+    return this;
+}
+
+// Add the following for the CacheableKey interface
+bool operator == ( const CacheableKey&amp; other ) const
+{
+    const BankAccount&amp; otherBA =
+    static_cast&lt;const BankAccount&amp;&gt;( other );
+    return (m_ownerId == otherBA.m_ownerId) &amp;&amp; (m_accountId == otherBA.m_accountId);
+}
+
+uint32_t hashcode( ) const
+{
+    return m_ownerId;
+}
+
+virtual int32_t classId( )const
+{
+    return 10; // must be unique per class.
+}
+ 
+virtual size_t objectSize() const
+{
+    return 10;
+} 
+};
+</code></pre>
+
+<h2 id="serialization-in-native-client-mode-with-a-java-server"><a id="concept_696AB5206C3E45898CC1A24CDD93D003__section_AFB685227E4048BF9FB4FD7C55AED274" class="no-quick-link"></a>Serialization in Native Client Mode with a Java Server</h2>
+
+<p>Primitive object types supported in all languages (<code>CacheableInt32</code>, <code>CacheableString</code>,
+<code>CacheableBytes</code>) function without requiring custom definitions with the Java cache server. For the
+keys, the Java cache server has to deserialize them and locate the hashcode to be able to insert the
+internal maps. Because of this, key types for C++ clients used with a Java server are required to be
+registered on the Java server, but the value types do not need to be registered. This needs to be
+done even if there are no Java clients.</p>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2019 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['query',['Query',['../a00798.html',1,'apache::geode::client']]],
-  ['queryexception',['QueryException',['../a00626.html',1,'apache::geode::client']]],
-  ['queryservice',['QueryService',['../a00802.html',1,'apache::geode::client']]]
+  ['query',['Query',['../a00806.html',1,'apache::geode::client']]],
+  ['queryexception',['QueryException',['../a00630.html',1,'apache::geode::client']]],
+  ['queryservice',['QueryService',['../a00810.html',1,'apache::geode::client']]]
 ];

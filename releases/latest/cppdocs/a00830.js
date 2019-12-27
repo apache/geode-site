@@ -1,9 +1,12 @@
 var a00830 =
 [
-    [ "close", "a00830.html#ad491b3447896e480666fdae6d9c96ab9", null ],
-    [ "createPdxInstanceFactory", "a00830.html#a0dcd1860f71f30172e4303f5d8439c4c", null ],
-    [ "getQueryService", "a00830.html#a750c5523f7f9b2aab4b91993466164c9", null ],
-    [ "getRegion", "a00830.html#a50370f5b4d144c8742baceb0eaa4cfe3", null ],
-    [ "isClosed", "a00830.html#a0a9bb57c509648270a50abc5afea1dae", null ],
-    [ "rootRegions", "a00830.html#acd245c4e15d2025a78c7fa7e8652529a", null ]
+    [ "RegionEvent", "a00830.html#a5c0c897a44b0e2ac7cc0423a44a4c5b6", null ],
+    [ "RegionEvent", "a00830.html#a1bc795bd1e331869043e63b149863b8b", null ],
+    [ "~RegionEvent", "a00830.html#aca4ae756385907979ba551bdbed4e722", null ],
+    [ "getCallbackArgument", "a00830.html#aa7ec00c4d5e3b4ee981c232e7a039c0a", null ],
+    [ "getRegion", "a00830.html#aa256dbff802f00ddac590484967459dc", null ],
+    [ "remoteOrigin", "a00830.html#a3b6b844c728868bc046c618d945d274f", null ],
+    [ "m_callbackArgument", "a00830.html#a5a7805bcc5b6140e0dbe4fc0ed338458", null ],
+    [ "m_region", "a00830.html#aa838739267f38bfd0a03238397f2c01e", null ],
+    [ "m_remoteOrigin", "a00830.html#a89634c5befdb4f9cff20c03ef9f25104", null ]
 ];

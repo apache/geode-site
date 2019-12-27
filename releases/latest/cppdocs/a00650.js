@@ -1,6 +1,6 @@
 var a00650 =
 [
     [ "getMessage", "a00650.html#a4a13dbe4fe4936a0f92451738bab6f74", null ],
-    [ "getName", "a00650.html#af85efa846ae4c05e266f6cda3b485fab", null ],
+    [ "getName", "a00650.html#a5be1288cbabd34f60d9531b336c67e94", null ],
     [ "getStackTrace", "a00650.html#ae92dba8992cbda0cd2aaa1d6fa05b54f", null ]
 ];

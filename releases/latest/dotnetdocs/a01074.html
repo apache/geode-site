@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -459,7 +459,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>By default SetPRSingleHopEnabled is true. </p>
-<p>The client is aware of location of partitions on servers hosting Using this information, the client routes the client cache operations directly to the server which is hosting the required partition for the cache operation. If SetPRSingleHopEnabled is false the client can do an extra hop on servers to go to the required partition for that cache operation. The SetPRSingleHopEnabled avoids extra hops only for following cache operations : put, get &amp; destroy operations. </p>
+<p>The client is aware of the locations of partitions on servers hosting partitioned regions. Using this information, the client routes the client cache operations directly to the server which is hosting the required partition for the cache operation. If SetPRSingleHopEnabled is false the client can do an extra hop on servers to go to the required partition for that cache operation. The SetPRSingleHopEnabled avoids extra hops only for following cache operations : put, get &amp; destroy operations. </p>
 
 </div>
 </div>
@@ -680,7 +680,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable ThreadLocalConnection. </p>
-<p>Sets the thread local connections policy for this pool. If true then any time a thread goes to use a connection from this pool it will check a thread local cache and see if it already has a connection in it. If so it will use it. If not it will get one from this pool and cache it in the thread local. This gets rid of thread contention for the connections but increases the number of connections the servers see. If false then connections are returned to the pool as soon as the operation being done with the connection completes. This allows connections to be shared amonst multiple threads keeping the number of connections down. </p>
+<p>Sets the thread local connections policy for this pool. If true then any time a thread goes to use a connection from this pool it will check a thread local cache and see if it already has a connection in it. If so it will use it. If not it will get one from this pool and cache it in the thread local. This gets rid of thread contention for the connections but increases the number of connections the servers see. If false then connections are returned to the pool as soon as the operation being done with the connection completes. This allows connections to be shared among multiple threads keeping the number of connections down. </p>
 
 </div>
 </div>

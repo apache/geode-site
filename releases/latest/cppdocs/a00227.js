@@ -1,4 +1,4 @@
 var a00227 =
 [
-    [ "ResultCollector", "a00834.html", "a00834" ]
+    [ "ResultCollector", "a00842.html", "a00842" ]
 ];

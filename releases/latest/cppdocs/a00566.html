@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::EntryExistsException Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::NullPointerException Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -89,29 +89,29 @@ $(document).ready(function(){initNavTree('a00566.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::EntryExistsException Class Reference</div>  </div>
+<div class="title">apache::geode::client::NullPointerException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Thrown when attempt is made to create an existing entry.  
+<p>Thrown when a null argument is provided to a method where it is expected to be non-null.  
  <a href="a00566.html#details">More...</a></p>
 
-<p>Inherits <a class="el" href="a00458.html">apache::geode::client::Exception</a>.</p>
+<p>Inherits <a class="el" href="a00462.html">apache::geode::client::Exception</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#a4a13dbe4fe4936a0f92451738bab6f74">getMessage</a> () const noexcept</td></tr>
+<tr class="memitem:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a4a13dbe4fe4936a0f92451738bab6f74">getMessage</a> () const noexcept</td></tr>
 <tr class="memdesc:a4a13dbe4fe4936a0f92451738bab6f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a message with details regarding this exception.  <a href="#a4a13dbe4fe4936a0f92451738bab6f74">More...</a><br /></td></tr>
 <tr class="separator:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2034e1d99710fd630ad0495741060bf9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00566.html#a2034e1d99710fd630ad0495741060bf9">getName</a> () const override</td></tr>
-<tr class="memdesc:a2034e1d99710fd630ad0495741060bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this exception type.  <a href="#a2034e1d99710fd630ad0495741060bf9">More...</a><br /></td></tr>
-<tr class="separator:a2034e1d99710fd630ad0495741060bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00458.html#ae92dba8992cbda0cd2aaa1d6fa05b54f">getStackTrace</a> () const</td></tr>
+<tr class="memitem:ac07b932a2f7eec7f7500f49cea1a08c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00566.html#ac07b932a2f7eec7f7500f49cea1a08c2">getName</a> () const override</td></tr>
+<tr class="memdesc:ac07b932a2f7eec7f7500f49cea1a08c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this exception type.  <a href="#ac07b932a2f7eec7f7500f49cea1a08c2">More...</a><br /></td></tr>
+<tr class="separator:ac07b932a2f7eec7f7500f49cea1a08c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ae92dba8992cbda0cd2aaa1d6fa05b54f">getStackTrace</a> () const</td></tr>
 <tr class="memdesc:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a stacktrace string from the location the exception was created.  <a href="#ae92dba8992cbda0cd2aaa1d6fa05b54f">More...</a><br /></td></tr>
 <tr class="separator:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thrown when attempt is made to create an existing entry. </p>
+<div class="textblock"><p>Thrown when a null argument is provided to a method where it is expected to be non-null. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4a13dbe4fe4936a0f92451738bab6f74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a13dbe4fe4936a0f92451738bab6f74">&#9670;&nbsp;</a></span>getMessage()</h2>
@@ -141,8 +141,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2034e1d99710fd630ad0495741060bf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2034e1d99710fd630ad0495741060bf9">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="ac07b932a2f7eec7f7500f49cea1a08c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac07b932a2f7eec7f7500f49cea1a08c2">&#9670;&nbsp;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string apache::geode::client::EntryExistsException::getName </td>
+          <td class="memname">std::string apache::geode::client::NullPointerException::getName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -166,7 +166,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the name of this exception type. </p>
 
-<p>Reimplemented from <a class="el" href="a00458.html#a92d3b82e6a264c3b6a78e9ddde7a1db6">apache::geode::client::Exception</a>.</p>
+<p>Reimplemented from <a class="el" href="a00462.html#a92d3b82e6a264c3b6a78e9ddde7a1db6">apache::geode::client::Exception</a>.</p>
 
 </div>
 </div>

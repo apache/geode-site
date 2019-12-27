@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::StructSet Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::Serializable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -87,103 +87,70 @@ $(document).ready(function(){initNavTree('a00854.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::StructSet Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::Serializable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> may be obtained after executing a <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> which is obtained from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
+<p>This base class is the superclass of all user objects in the cache that can be serialized.  
  <a href="a00854.html#details">More...</a></p>
 
-<p>Inherits <a class="el" href="a00418.html">apache::geode::client::CqResults</a>.</p>
+<p>Inherited by <a class="el" href="a00338.html">apache::geode::client::CacheableKey</a><code> [virtual]</code>, <a class="el" href="a00446.html">apache::geode::client::DataSerializable</a><code> [virtual]</code>, <a class="el" href="a00762.html">apache::geode::client::PdxSerializable</a><code> [virtual]</code>, and <a class="el" href="a00878.html">apache::geode::client::UserFunctionExecutionException</a>.</p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a51a183166096893fcb16b569327c60b3"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::shared_ptr&lt; <a class="el" href="a00846.html">Cacheable</a> &gt; &gt;::<a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a></td></tr>
-<tr class="memdesc:a51a183166096893fcb16b569327c60b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface of an iterator for <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a51a183166096893fcb16b569327c60b3">More...</a><br /></td></tr>
-<tr class="separator:a51a183166096893fcb16b569327c60b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47897882766667431cdf1eebc1eb00b3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a47897882766667431cdf1eebc1eb00b3">begin</a> ()=0</td></tr>
-<tr class="memdesc:a47897882766667431cdf1eebc1eb00b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator pointing to the start of <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a47897882766667431cdf1eebc1eb00b3">More...</a><br /></td></tr>
-<tr class="separator:a47897882766667431cdf1eebc1eb00b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a626bd746b3e1919281221eb9a5f1d105"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a626bd746b3e1919281221eb9a5f1d105">end</a> ()=0</td></tr>
-<tr class="memdesc:a626bd746b3e1919281221eb9a5f1d105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator pointing to the end of <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>.  <a href="#a626bd746b3e1919281221eb9a5f1d105">More...</a><br /></td></tr>
-<tr class="separator:a626bd746b3e1919281221eb9a5f1d105"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe371295250b6402bd3b5164e105a460"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00854.html#afe371295250b6402bd3b5164e105a460">getFieldIndex</a> (const std::string &amp;fieldname)=0</td></tr>
-<tr class="memdesc:afe371295250b6402bd3b5164e105a460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index number of the specified field name in the <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>.  <a href="#afe371295250b6402bd3b5164e105a460">More...</a><br /></td></tr>
-<tr class="separator:afe371295250b6402bd3b5164e105a460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4db3b5afe6124adc13bda7ea24617e35"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00854.html#a4db3b5afe6124adc13bda7ea24617e35">getFieldName</a> (int32_t index)=0</td></tr>
-<tr class="memdesc:a4db3b5afe6124adc13bda7ea24617e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field name of the <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> from the specified index number.  <a href="#a4db3b5afe6124adc13bda7ea24617e35">More...</a><br /></td></tr>
-<tr class="separator:a4db3b5afe6124adc13bda7ea24617e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267694c8d139ff91b578548c907dd083"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="a00846.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a267694c8d139ff91b578548c907dd083">operator[]</a> (size_t index) const =0</td></tr>
-<tr class="memdesc:a267694c8d139ff91b578548c907dd083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index operator to directly access an item in the <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>.  <a href="#a267694c8d139ff91b578548c907dd083">More...</a><br /></td></tr>
-<tr class="separator:a267694c8d139ff91b578548c907dd083"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dff8beca5db847869d66d81ea7b85d4"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a8dff8beca5db847869d66d81ea7b85d4">size</a> () const =0</td></tr>
-<tr class="memdesc:a8dff8beca5db847869d66d81ea7b85d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>.  <a href="#a8dff8beca5db847869d66d81ea7b85d4">More...</a><br /></td></tr>
-<tr class="separator:a8dff8beca5db847869d66d81ea7b85d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00854.html#aa1e74dde03eb0d3fb17752bfdcd347ef">objectSize</a> () const</td></tr>
+<tr class="memdesc:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the size in bytes of the instance being serialized.  <a href="#aa1e74dde03eb0d3fb17752bfdcd347ef">More...</a><br /></td></tr>
+<tr class="separator:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a8d506b1a6f8313302b5efd0990378"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00854.html#ac7a8d506b1a6f8313302b5efd0990378">toString</a> () const</td></tr>
+<tr class="memdesc:ac7a8d506b1a6f8313302b5efd0990378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display this object as 'string', which depends on the implementation in the subclasses.  <a href="#ac7a8d506b1a6f8313302b5efd0990378">More...</a><br /></td></tr>
+<tr class="separator:ac7a8d506b1a6f8313302b5efd0990378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac6b42b5b55a798df561f9031e2b4f602"><td class="memTemplParams" colspan="2">template&lt;class _T &gt; </td></tr>
+<tr class="memitem:ac6b42b5b55a798df561f9031e2b4f602"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00854.html#ac6b42b5b55a798df561f9031e2b4f602">create</a> (_T value)</td></tr>
+<tr class="memdesc:ac6b42b5b55a798df561f9031e2b4f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method that creates the <a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a> object that matches the type of value.  <a href="#ac6b42b5b55a798df561f9031e2b4f602">More...</a><br /></td></tr>
+<tr class="separator:ac6b42b5b55a798df561f9031e2b4f602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> may be obtained after executing a <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> which is obtained from a <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
-<p>It is the parent of a <a class="el" href="a00850.html" title="A Struct has a StructSet as its parent.">Struct</a> which contains the field values. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a51a183166096893fcb16b569327c60b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51a183166096893fcb16b569327c60b3">&#9670;&nbsp;</a></span>iterator</h2>
+<div class="textblock"><p>This base class is the superclass of all user objects in the cache that can be serialized. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac6b42b5b55a798df561f9031e2b4f602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6b42b5b55a798df561f9031e2b4f602">&#9670;&nbsp;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class _T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;std::shared_ptr&lt;<a class="el" href="a00846.html">Cacheable</a>&gt; &gt;::<a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a> <a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">apache::geode::client::SelectResults::iterator</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Interface of an iterator for <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a47897882766667431cdf1eebc1eb00b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47897882766667431cdf1eebc1eb00b3">&#9670;&nbsp;</a></span>begin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a> apache::geode::client::SelectResults::begin </td>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::Serializable::create </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">_T&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get an iterator pointing to the start of <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
+<p>Factory method that creates the <a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a> object that matches the type of value. </p>
+<p>For user defined derivations of <a class="el" href="a00854.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a>, the method <a class="el" href="a00854.html#ac6b42b5b55a798df561f9031e2b4f602" title="Factory method that creates the Serializable object that matches the type of value.">apache::geode::client::Serializable::create</a> may be overloaded. </p>
 
 </div>
 </div>
-<a id="a626bd746b3e1919281221eb9a5f1d105"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a626bd746b3e1919281221eb9a5f1d105">&#9670;&nbsp;</a></span>end()</h2>
+<a id="aa1e74dde03eb0d3fb17752bfdcd347ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e74dde03eb0d3fb17752bfdcd347ef">&#9670;&nbsp;</a></span>objectSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,157 +159,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00842.html#a51a183166096893fcb16b569327c60b3">iterator</a> apache::geode::client::SelectResults::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get an iterator pointing to the end of <code><a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a></code>. </p>
-
-</div>
-</div>
-<a id="afe371295250b6402bd3b5164e105a460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe371295250b6402bd3b5164e105a460">&#9670;&nbsp;</a></span>getFieldIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual int32_t apache::geode::client::StructSet::getFieldIndex </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>fieldname</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the index number of the specified field name in the <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fieldname</td><td>the field name for which the index is required. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the index number of the specified field name. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the field name is not found. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4db3b5afe6124adc13bda7ea24617e35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4db3b5afe6124adc13bda7ea24617e35">&#9670;&nbsp;</a></span>getFieldName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::StructSet::getFieldName </td>
-          <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the field name of the <a class="el" href="a00854.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a> from the specified index number. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>the index number of the field name to get. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the field name from the specified index number or nullptr if not found. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::out_of_range</td><td>if index is not found </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a267694c8d139ff91b578548c907dd083"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267694c8d139ff91b578548c907dd083">&#9670;&nbsp;</a></span>operator[]()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::shared_ptr&lt;<a class="el" href="a00846.html">Serializable</a>&gt; apache::geode::client::SelectResults::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Index operator to directly access an item in the <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>the index number of the required item. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the index is out of bounds. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A smart pointer to the item indexed. </dd></dl>
-
-</div>
-</div>
-<a id="a8dff8beca5db847869d66d81ea7b85d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dff8beca5db847869d66d81ea7b85d4">&#9670;&nbsp;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual size_t apache::geode::client::SelectResults::size </td>
+          <td class="memname">virtual size_t apache::geode::client::Serializable::objectSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -350,13 +167,45 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the size of the <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>the number of items in the <a class="el" href="a00842.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a>. </dd></dl>
+<p>return the size in bytes of the instance being serialized. </p>
+<p>This is used to determine whether the cache is using up more physical memory than it has been configured to use. The method can return zero if the user does not require the ability to control cache memory utilization. Note that you must implement this only if you use the HeapLRU feature. </p>
+
+<p>Reimplemented in <a class="el" href="a00750.html#a147bbc2fa40218981d1e4c9a0eaed512">apache::geode::client::PdxInstance</a>, <a class="el" href="a00358.html#afaac3e6c0601e799b224243dd293a50d">apache::geode::client::CacheableString</a>, <a class="el" href="a00330.html#a7eaa7d097c0761ea913ead9f3817ba6d">apache::geode::client::CacheableEnum</a>, and <a class="el" href="a00326.html#ae5c6cd45fdfc3c547899456cb6f4c129">apache::geode::client::CacheableDate</a>.</p>
+
+</div>
+</div>
+<a id="ac7a8d506b1a6f8313302b5efd0990378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a8d506b1a6f8313302b5efd0990378">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string apache::geode::client::Serializable::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Display this object as 'string', which depends on the implementation in the subclasses. </p>
+<p>The default implementation renders the classname. </p>
+
+<p>Reimplemented in <a class="el" href="a00750.html#a21a4f63885e135d281474d09f33023d8">apache::geode::client::PdxInstance</a>, <a class="el" href="a00358.html#a1c6d6fa313cc22a6b00e6e6d8b6399a1">apache::geode::client::CacheableString</a>, <a class="el" href="a00326.html#a07d857d6f3682e03ca05c92d42852a10">apache::geode::client::CacheableDate</a>, <a class="el" href="a00330.html#adeb7927b785a0b7c6e2e7206dcf63292">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00774.html#a59316ed8601f54dfc1a0d71795d09ac4">apache::geode::client::PdxWrapper</a>, <a class="el" href="a00878.html#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">apache::geode::client::UserFunctionExecutionException</a>, and <a class="el" href="a00762.html#a0bf1fbe334bc15e8869fbb33decfc8aa">apache::geode::client::PdxSerializable</a>.</p>
 
 </div>
 </div>

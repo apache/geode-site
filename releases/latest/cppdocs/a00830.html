@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::RegionService Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::RegionEvent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -87,155 +87,129 @@ $(document).ready(function(){initNavTree('a00830.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::RegionService Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::RegionEvent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="a00830.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a> provides access to existing <a class="el" href="a00806.html">regions</a> that exist in a <a class="el" href="a00734.html">Geode cache</a>.  
+<p>Declares region events.  
  <a href="a00830.html#details">More...</a></p>
-
-<p>Inherited by <a class="el" href="a00278.html">apache::geode::client::AuthenticatedView</a>, and <a class="el" href="a00734.html">apache::geode::client::GeodeCache</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad491b3447896e480666fdae6d9c96ab9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#ad491b3447896e480666fdae6d9c96ab9">close</a> ()=0</td></tr>
-<tr class="memdesc:ad491b3447896e480666fdae6d9c96ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this object cache and releases all the local resources.  <a href="#ad491b3447896e480666fdae6d9c96ab9">More...</a><br /></td></tr>
-<tr class="separator:ad491b3447896e480666fdae6d9c96ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dcd1860f71f30172e4303f5d8439c4c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00746.html">PdxInstanceFactory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a0dcd1860f71f30172e4303f5d8439c4c">createPdxInstanceFactory</a> (const std::string &amp;className) const =0</td></tr>
-<tr class="memdesc:a0dcd1860f71f30172e4303f5d8439c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a factory that can create a <a class="el" href="a00742.html">PdxInstance</a>.  <a href="#a0dcd1860f71f30172e4303f5d8439c4c">More...</a><br /></td></tr>
-<tr class="separator:a0dcd1860f71f30172e4303f5d8439c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750c5523f7f9b2aab4b91993466164c9"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00802.html">QueryService</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a750c5523f7f9b2aab4b91993466164c9">getQueryService</a> ()=0</td></tr>
-<tr class="memdesc:a750c5523f7f9b2aab4b91993466164c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> from which a new <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> can be obtained.  <a href="#a750c5523f7f9b2aab4b91993466164c9">More...</a><br /></td></tr>
-<tr class="separator:a750c5523f7f9b2aab4b91993466164c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50370f5b4d144c8742baceb0eaa4cfe3"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00806.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a50370f5b4d144c8742baceb0eaa4cfe3">getRegion</a> (const std::string &amp;name) const =0</td></tr>
-<tr class="memdesc:a50370f5b4d144c8742baceb0eaa4cfe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a region with the name.  <a href="#a50370f5b4d144c8742baceb0eaa4cfe3">More...</a><br /></td></tr>
-<tr class="separator:a50370f5b4d144c8742baceb0eaa4cfe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a9bb57c509648270a50abc5afea1dae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a0a9bb57c509648270a50abc5afea1dae">isClosed</a> () const =0</td></tr>
-<tr class="memdesc:a0a9bb57c509648270a50abc5afea1dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">public methods  <a href="#a0a9bb57c509648270a50abc5afea1dae">More...</a><br /></td></tr>
-<tr class="separator:a0a9bb57c509648270a50abc5afea1dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd245c4e15d2025a78c7fa7e8652529a"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::shared_ptr&lt; <a class="el" href="a00806.html">Region</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#acd245c4e15d2025a78c7fa7e8652529a">rootRegions</a> () const =0</td></tr>
-<tr class="memdesc:acd245c4e15d2025a78c7fa7e8652529a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a set of root regions in the cache.  <a href="#acd245c4e15d2025a78c7fa7e8652529a">More...</a><br /></td></tr>
-<tr class="separator:acd245c4e15d2025a78c7fa7e8652529a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ec00c4d5e3b4ee981c232e7a039c0a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#aa7ec00c4d5e3b4ee981c232e7a039c0a">getCallbackArgument</a> () const</td></tr>
+<tr class="memdesc:aa7ec00c4d5e3b4ee981c232e7a039c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the callbackArgument passed to the method that generated this event.  <a href="#aa7ec00c4d5e3b4ee981c232e7a039c0a">More...</a><br /></td></tr>
+<tr class="separator:aa7ec00c4d5e3b4ee981c232e7a039c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa256dbff802f00ddac590484967459dc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#aa256dbff802f00ddac590484967459dc">getRegion</a> () const</td></tr>
+<tr class="memdesc:aa256dbff802f00ddac590484967459dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the region this event occurred in.  <a href="#aa256dbff802f00ddac590484967459dc">More...</a><br /></td></tr>
+<tr class="separator:aa256dbff802f00ddac590484967459dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0c897a44b0e2ac7cc0423a44a4c5b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a5c0c897a44b0e2ac7cc0423a44a4c5b6">RegionEvent</a> ()</td></tr>
+<tr class="memdesc:a5c0c897a44b0e2ac7cc0423a44a4c5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5c0c897a44b0e2ac7cc0423a44a4c5b6">More...</a><br /></td></tr>
+<tr class="separator:a5c0c897a44b0e2ac7cc0423a44a4c5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc795bd1e331869043e63b149863b8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a1bc795bd1e331869043e63b149863b8b">RegionEvent</a> (const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;region, const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt; &amp;aCallbackArgument, const bool <a class="el" href="a00830.html#a3b6b844c728868bc046c618d945d274f">remoteOrigin</a>)</td></tr>
+<tr class="memdesc:a1bc795bd1e331869043e63b149863b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, given the values.  <a href="#a1bc795bd1e331869043e63b149863b8b">More...</a><br /></td></tr>
+<tr class="separator:a1bc795bd1e331869043e63b149863b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b6b844c728868bc046c618d945d274f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a3b6b844c728868bc046c618d945d274f">remoteOrigin</a> () const</td></tr>
+<tr class="memdesc:a3b6b844c728868bc046c618d945d274f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the event originated in a remote process, returns true.  <a href="#a3b6b844c728868bc046c618d945d274f">More...</a><br /></td></tr>
+<tr class="separator:a3b6b844c728868bc046c618d945d274f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4ae756385907979ba551bdbed4e722"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#aca4ae756385907979ba551bdbed4e722">~RegionEvent</a> ()</td></tr>
+<tr class="memdesc:aca4ae756385907979ba551bdbed4e722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#aca4ae756385907979ba551bdbed4e722">More...</a><br /></td></tr>
+<tr class="separator:aca4ae756385907979ba551bdbed4e722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a5a7805bcc5b6140e0dbe4fc0ed338458"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a5a7805bcc5b6140e0dbe4fc0ed338458">m_callbackArgument</a></td></tr>
+<tr class="memdesc:a5a7805bcc5b6140e0dbe4fc0ed338458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback argument for this event, if any.  <a href="#a5a7805bcc5b6140e0dbe4fc0ed338458">More...</a><br /></td></tr>
+<tr class="separator:a5a7805bcc5b6140e0dbe4fc0ed338458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa838739267f38bfd0a03238397f2c01e"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#aa838739267f38bfd0a03238397f2c01e">m_region</a></td></tr>
+<tr class="memdesc:aa838739267f38bfd0a03238397f2c01e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a> for this event.  <a href="#aa838739267f38bfd0a03238397f2c01e">More...</a><br /></td></tr>
+<tr class="separator:aa838739267f38bfd0a03238397f2c01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89634c5befdb4f9cff20c03ef9f25104"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00830.html#a89634c5befdb4f9cff20c03ef9f25104">m_remoteOrigin</a></td></tr>
+<tr class="memdesc:a89634c5befdb4f9cff20c03ef9f25104"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if from a remote process.  <a href="#a89634c5befdb4f9cff20c03ef9f25104">More...</a><br /></td></tr>
+<tr class="separator:a89634c5befdb4f9cff20c03ef9f25104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="a00830.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a> provides access to existing <a class="el" href="a00806.html">regions</a> that exist in a <a class="el" href="a00734.html">Geode cache</a>. </p>
-<p>Regions can be obtained using <a class="el" href="a00830.html#a50370f5b4d144c8742baceb0eaa4cfe3">getRegion</a> and queried using <a class="el" href="a00830.html#a750c5523f7f9b2aab4b91993466164c9">getQueryService</a>. The service should be <a class="el" href="a00830.html#ad491b3447896e480666fdae6d9c96ab9">closed</a> to free up resources once it is no longer needed. Once it <a class="el" href="a00830.html#a0a9bb57c509648270a50abc5afea1dae">is closed</a> any attempt to use it or any {<a class="el" href="a00806.html">regions} obtained from it will cause a  CacheClosedException} to be thrown. </a> Instances of the interface are created using one of the following methods: </p><ul>
-<li>
-<a class="el" href="a00370.html#a3ee44932abdc64988aa065e4b390e0ff">CacheFactory#create()</a> creates a client instance of {<a class="el" href="a00286.html">}. </a> <a class="el" href="">Cache#createAuthenticatedView(Properties)</a> creates a client multiuser authenticated cache view. </li>
-</ul>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad491b3447896e480666fdae6d9c96ab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad491b3447896e480666fdae6d9c96ab9">&#9670;&nbsp;</a></span>close()</h2>
+<div class="textblock"><p>Declares region events. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5c0c897a44b0e2ac7cc0423a44a4c5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0c897a44b0e2ac7cc0423a44a4c5b6">&#9670;&nbsp;</a></span>RegionEvent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void apache::geode::client::RegionService::close </td>
+          <td class="memname">apache::geode::client::RegionEvent::RegionEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Terminates this object cache and releases all the local resources. </p>
-<p>After this cache is closed, any further method call on this cache or any region object will throw <code><a class="el" href="a00494.html" title="Thrown when an operation is attempted on a closed cache.">CacheClosedException</a></code>, unless otherwise noted. If <a class="el" href="a00830.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a> is created from <a class="el" href="">Cache#createAuthenticatedView"</a>, then it clears user related security data. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">keepalive</td><td>whether to keep a durable CQ kept alive for this user. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00494.html" title="Thrown when an operation is attempted on a closed cache.">CacheClosedException</a>,if</td><td>the cache is already closed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="a00286.html#a709c65fc2cd45f67ce3d6603df9bc7f1">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#adb3ba6b5cacf6acbc6ba2d4bbcbdfcb3">apache::geode::client::AuthenticatedView</a>.</p>
+<p>Constructor. </p>
 
 </div>
 </div>
-<a id="a0dcd1860f71f30172e4303f5d8439c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dcd1860f71f30172e4303f5d8439c4c">&#9670;&nbsp;</a></span>createPdxInstanceFactory()</h2>
+<a id="a1bc795bd1e331869043e63b149863b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc795bd1e331869043e63b149863b8b">&#9670;&nbsp;</a></span>RegionEvent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00746.html">PdxInstanceFactory</a> apache::geode::client::RegionService::createPdxInstanceFactory </td>
+          <td class="memname">apache::geode::client::RegionEvent::RegionEvent </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>className</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Serializable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aCallbackArgument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>remoteOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns a factory that can create a <a class="el" href="a00742.html">PdxInstance</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">className</td><td>the fully qualified class name that the <a class="el" href="a00742.html" title="PdxInstance provides run time access to the fields of a PDX without deserializing the PDX.">PdxInstance</a> will become when it is fully deserialized. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the factory </dd></dl>
-
-<p>Implemented in <a class="el" href="a00286.html#acdb522f5ea28fbff56544a004be7946c">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#a5474bd404826e32971288a2f098272d2">apache::geode::client::AuthenticatedView</a>.</p>
+<p>Constructor, given the values. </p>
 
 </div>
 </div>
-<a id="a750c5523f7f9b2aab4b91993466164c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a750c5523f7f9b2aab4b91993466164c9">&#9670;&nbsp;</a></span>getQueryService()</h2>
+<a id="aca4ae756385907979ba551bdbed4e722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4ae756385907979ba551bdbed4e722">&#9670;&nbsp;</a></span>~RegionEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00802.html">QueryService</a>&gt; apache::geode::client::RegionService::getQueryService </td>
+          <td class="memname">apache::geode::client::RegionEvent::~RegionEvent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Gets the <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a> from which a new <a class="el" href="a00798.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> can be obtained. </p>
-<dl class="section return"><dt>Returns</dt><dd>A smart pointer to the <a class="el" href="a00802.html" title="QueryService is the class obtained from a Cache.">QueryService</a>. </dd></dl>
-
-<p>Implemented in <a class="el" href="a00286.html#a2e58689fed2e5a2a2c99085e8b3034db">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#afdde5da469a3313a2ed2dc8a6f7f9e71">apache::geode::client::AuthenticatedView</a>.</p>
+<p>Destructor. </p>
 
 </div>
 </div>
-<a id="a50370f5b4d144c8742baceb0eaa4cfe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50370f5b4d144c8742baceb0eaa4cfe3">&#9670;&nbsp;</a></span>getRegion()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa7ec00c4d5e3b4ee981c232e7a039c0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ec00c4d5e3b4ee981c232e7a039c0a">&#9670;&nbsp;</a></span>getCallbackArgument()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,44 +218,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00806.html">Region</a>&gt; apache::geode::client::RegionService::getRegion </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Look up a region with the name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>the region's name, such as <code>root</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>region, or nullptr if no such region exists. </dd></dl>
-
-<p>Implemented in <a class="el" href="a00286.html#af80a5d73de38233b22e409fe55c51a00">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#a7620efbbc3004681ec6622a5fa3c926c">apache::geode::client::AuthenticatedView</a>.</p>
-
-</div>
-</div>
-<a id="a0a9bb57c509648270a50abc5afea1dae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a9bb57c509648270a50abc5afea1dae">&#9670;&nbsp;</a></span>isClosed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool apache::geode::client::RegionService::isClosed </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::RegionEvent::getCallbackArgument </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -289,21 +226,18 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>public methods </p>
-<p>Indicates if this cache has been closed. After a new cache object is created, this method returns false; After the close is called on this cache object, this method returns true.</p>
-<dl class="section return"><dt>Returns</dt><dd>true, if this cache is closed; false, otherwise </dd></dl>
-
-<p>Implemented in <a class="el" href="a00286.html#a989d7fce829d1d12e7da49052445898d">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#ae11f988865fe1074f84b9932f0e7c78d">apache::geode::client::AuthenticatedView</a>.</p>
+<p>Returns the callbackArgument passed to the method that generated this event. </p>
+<p>See the <a class="el" href="a00814.html">Region</a> interface methods that take a callbackArgument parameter. </p>
 
 </div>
 </div>
-<a id="acd245c4e15d2025a78c7fa7e8652529a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd245c4e15d2025a78c7fa7e8652529a">&#9670;&nbsp;</a></span>rootRegions()</h2>
+<a id="aa256dbff802f00ddac590484967459dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa256dbff802f00ddac590484967459dc">&#9670;&nbsp;</a></span>getRegion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +246,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::vector&lt;std::shared_ptr&lt;<a class="el" href="a00806.html">Region</a>&gt; &gt; apache::geode::client::RegionService::rootRegions </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00814.html">Region</a>&gt; apache::geode::client::RegionEvent::getRegion </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -320,21 +254,112 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a set of root regions in the cache. </p>
-<p>This set is a snapshot and is not backed by the <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. The vector passed in is cleared and the regions are added to it.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">regions</td><td>the returned set of regions </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the region this event occurred in. </p>
 
-<p>Implemented in <a class="el" href="a00286.html#a7a2a54c73beae53d3d3fd9809432ee3b">apache::geode::client::Cache</a>, and <a class="el" href="a00278.html#ae96bdb4d42e7c2072ed667236cd0b35b">apache::geode::client::AuthenticatedView</a>.</p>
+</div>
+</div>
+<a id="a3b6b844c728868bc046c618d945d274f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6b844c728868bc046c618d945d274f">&#9670;&nbsp;</a></span>remoteOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool apache::geode::client::RegionEvent::remoteOrigin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the event originated in a remote process, returns true. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a5a7805bcc5b6140e0dbe4fc0ed338458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7805bcc5b6140e0dbe4fc0ed338458">&#9670;&nbsp;</a></span>m_callbackArgument</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt;<a class="el" href="a00854.html">Serializable</a>&gt; apache::geode::client::RegionEvent::m_callbackArgument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback argument for this event, if any. </p>
+
+</div>
+</div>
+<a id="aa838739267f38bfd0a03238397f2c01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa838739267f38bfd0a03238397f2c01e">&#9670;&nbsp;</a></span>m_region</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt;<a class="el" href="a00814.html">Region</a>&gt; apache::geode::client::RegionEvent::m_region</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a> for this event. </p>
+
+</div>
+</div>
+<a id="a89634c5befdb4f9cff20c03ef9f25104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89634c5befdb4f9cff20c03ef9f25104">&#9670;&nbsp;</a></span>m_remoteOrigin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool apache::geode::client::RegionEvent::m_remoteOrigin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if from a remote process. </p>
 
 </div>
 </div>

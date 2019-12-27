@@ -15,6 +15,7 @@ org.apache.geode.cache.operations
 org.apache.geode.cache.partition
 org.apache.geode.cache.persistence
 org.apache.geode.cache.query
+org.apache.geode.cache.query.security
 org.apache.geode.cache.query.types
 org.apache.geode.cache.server
 org.apache.geode.cache.snapshot

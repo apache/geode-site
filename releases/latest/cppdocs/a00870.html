@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::UserFunctionExecutionException Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::TransactionId Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -86,190 +86,19 @@ $(document).ready(function(){initNavTree('a00870.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::UserFunctionExecutionException Class Reference</div>  </div>
+<div class="title">apache::geode::client::TransactionId Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="a00870.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution.  
+<p>The <a class="el" href="a00870.html" title="The TransactionId interface is a &quot;marker&quot; interface that represents a unique Geode transaction.">TransactionId</a> interface is a "marker" interface that represents a unique Geode transaction.  
  <a href="a00870.html#details">More...</a></p>
-
-<p>Inherits <a class="el" href="a00846.html">apache::geode::client::Serializable</a>.</p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a3eb0ff21c99cb4d9e328574650940398"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00870.html#a3eb0ff21c99cb4d9e328574650940398">getMessage</a> () const</td></tr>
-<tr class="memdesc:a3eb0ff21c99cb4d9e328574650940398"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as std::string the <a class="el" href="a00458.html" title="A description of an exception that occurred during a cache operation.">Exception</a> message returned from geode sendException api.  <a href="#a3eb0ff21c99cb4d9e328574650940398">More...</a><br /></td></tr>
-<tr class="separator:a3eb0ff21c99cb4d9e328574650940398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa68d19a79f05cbb05184b601d08d116"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00870.html#aaa68d19a79f05cbb05184b601d08d116">getName</a> () const</td></tr>
-<tr class="memdesc:aaa68d19a79f05cbb05184b601d08d116"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as std::string the <a class="el" href="a00458.html" title="A description of an exception that occurred during a cache operation.">Exception</a> name returned from geode sendException api.  <a href="#aaa68d19a79f05cbb05184b601d08d116">More...</a><br /></td></tr>
-<tr class="separator:aaa68d19a79f05cbb05184b601d08d116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00846.html#aa1e74dde03eb0d3fb17752bfdcd347ef">objectSize</a> () const</td></tr>
-<tr class="memdesc:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the size in bytes of the instance being serialized.  <a href="#aa1e74dde03eb0d3fb17752bfdcd347ef">More...</a><br /></td></tr>
-<tr class="separator:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a928d2aa4a8a1f466f6f06ec7fa7d1f7d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00870.html#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">toString</a> () const override</td></tr>
-<tr class="memdesc:a928d2aa4a8a1f466f6f06ec7fa7d1f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display this object as 'string', which depends on the implementation in the subclasses.  <a href="#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">More...</a><br /></td></tr>
-<tr class="separator:a928d2aa4a8a1f466f6f06ec7fa7d1f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6b42b5b55a798df561f9031e2b4f602"><td class="memTemplParams" colspan="2">template&lt;class _T &gt; </td></tr>
-<tr class="memitem:ac6b42b5b55a798df561f9031e2b4f602"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00846.html">Serializable</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00846.html#ac6b42b5b55a798df561f9031e2b4f602">create</a> (_T value)</td></tr>
-<tr class="memdesc:ac6b42b5b55a798df561f9031e2b4f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method that creates the <a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a> object that matches the type of value.  <a href="#ac6b42b5b55a798df561f9031e2b4f602">More...</a><br /></td></tr>
-<tr class="separator:ac6b42b5b55a798df561f9031e2b4f602"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a00870.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac6b42b5b55a798df561f9031e2b4f602"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6b42b5b55a798df561f9031e2b4f602">&#9670;&nbsp;</a></span>create()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class _T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00846.html">Serializable</a>&gt; apache::geode::client::Serializable::create </td>
-          <td>(</td>
-          <td class="paramtype">_T&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Factory method that creates the <a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a> object that matches the type of value. </p>
-<p>For user defined derivations of <a class="el" href="a00846.html" title="This base class is the superclass of all user objects in the cache that can be serialized.">Serializable</a>, the method <a class="el" href="a00846.html#ac6b42b5b55a798df561f9031e2b4f602" title="Factory method that creates the Serializable object that matches the type of value.">apache::geode::client::Serializable::create</a> may be overloaded. </p>
-
-</div>
-</div>
-<a id="a3eb0ff21c99cb4d9e328574650940398"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3eb0ff21c99cb4d9e328574650940398">&#9670;&nbsp;</a></span>getMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::UserFunctionExecutionException::getMessage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>return as std::string the <a class="el" href="a00458.html" title="A description of an exception that occurred during a cache operation.">Exception</a> message returned from geode sendException api. </p>
-
-</div>
-</div>
-<a id="aaa68d19a79f05cbb05184b601d08d116"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa68d19a79f05cbb05184b601d08d116">&#9670;&nbsp;</a></span>getName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::UserFunctionExecutionException::getName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>return as std::string the <a class="el" href="a00458.html" title="A description of an exception that occurred during a cache operation.">Exception</a> name returned from geode sendException api. </p>
-
-</div>
-</div>
-<a id="aa1e74dde03eb0d3fb17752bfdcd347ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1e74dde03eb0d3fb17752bfdcd347ef">&#9670;&nbsp;</a></span>objectSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual size_t apache::geode::client::Serializable::objectSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>return the size in bytes of the instance being serialized. </p>
-<p>This is used to determine whether the cache is using up more physical memory than it has been configured to use. The method can return zero if the user does not require the ability to control cache memory utilization. Note that you must implement this only if you use the HeapLRU feature. </p>
-
-<p>Reimplemented in <a class="el" href="a00742.html#a147bbc2fa40218981d1e4c9a0eaed512">apache::geode::client::PdxInstance</a>, <a class="el" href="a00358.html#afaac3e6c0601e799b224243dd293a50d">apache::geode::client::CacheableString</a>, <a class="el" href="a00330.html#a7eaa7d097c0761ea913ead9f3817ba6d">apache::geode::client::CacheableEnum</a>, and <a class="el" href="a00326.html#ae5c6cd45fdfc3c547899456cb6f4c129">apache::geode::client::CacheableDate</a>.</p>
-
-</div>
-</div>
-<a id="a928d2aa4a8a1f466f6f06ec7fa7d1f7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">&#9670;&nbsp;</a></span>toString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string apache::geode::client::UserFunctionExecutionException::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Display this object as 'string', which depends on the implementation in the subclasses. </p>
-<p>The default implementation renders the classname. </p>
-
-<p>Reimplemented from <a class="el" href="a00846.html#ac7a8d506b1a6f8313302b5efd0990378">apache::geode::client::Serializable</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><p>The <a class="el" href="a00870.html" title="The TransactionId interface is a &quot;marker&quot; interface that represents a unique Geode transaction.">TransactionId</a> interface is a "marker" interface that represents a unique Geode transaction. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00286.html#a0a658b2846b5f8e5605a43bc8dbe158e" title="Get the CacheTransactionManager instance for this Cache.">Cache::getCacheTransactionManager</a> </dd>
+<dd>
+<a class="el" href="a00386.html#aaac9612c9c13933ca31f81ac8a6ca431" title="Returns the transaction identifier for the current thread.">CacheTransactionManager::getTransactionId</a> </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

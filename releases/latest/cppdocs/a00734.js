@@ -1,13 +1,6 @@
 var a00734 =
 [
-    [ "close", "a00734.html#ad491b3447896e480666fdae6d9c96ab9", null ],
-    [ "createPdxInstanceFactory", "a00734.html#a0dcd1860f71f30172e4303f5d8439c4c", null ],
-    [ "getName", "a00734.html#aa66e073929f5df451356253c9771ddd9", null ],
-    [ "getPdxIgnoreUnreadFields", "a00734.html#a13ae5a505b283e1f73b1be1a8677f722", null ],
-    [ "getPdxReadSerialized", "a00734.html#ae086ef606de28739132eaa0733fd310a", null ],
-    [ "getQueryService", "a00734.html#a750c5523f7f9b2aab4b91993466164c9", null ],
-    [ "getRegion", "a00734.html#a50370f5b4d144c8742baceb0eaa4cfe3", null ],
-    [ "initializeDeclarativeCache", "a00734.html#ad1dd178d54fe47897d3ea2f0694b4fbd", null ],
-    [ "isClosed", "a00734.html#a0a9bb57c509648270a50abc5afea1dae", null ],
-    [ "rootRegions", "a00734.html#acd245c4e15d2025a78c7fa7e8652529a", null ]
+    [ "getName", "a00734.html#a68793ed428ca0d18ed5aad5bb8e00bf3", null ],
+    [ "getPartitionName", "a00734.html#a16b169d39ebfd1254b98e4c05945707c", null ],
+    [ "getRoutingObject", "a00734.html#a6492385156922aca28af866905e5f554", null ]
 ];

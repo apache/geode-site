@@ -1,25 +1,9 @@
 var a00826 =
 [
-    [ "create", "a00826.html#ad40b6c59c92c671a731d7bc8f6fc7b1e", null ],
-    [ "setCacheListener", "a00826.html#a1557231192ad732efe16229d2e8cfc2c", null ],
-    [ "setCacheListener", "a00826.html#ab1ac0c806237a6aa345b1fe67e9726e7", null ],
-    [ "setCacheLoader", "a00826.html#a7668d8783bab0919de77a5f4f82fe1a7", null ],
-    [ "setCacheLoader", "a00826.html#a7eec947044ed43f503bc4993a4253fb8", null ],
-    [ "setCacheWriter", "a00826.html#a2451e0e696f59e0545eecf9a40c68955", null ],
-    [ "setCacheWriter", "a00826.html#a611097497e7154c8226e3c75111f9b9d", null ],
-    [ "setCachingEnabled", "a00826.html#aaf9b951cb04ae17a025c89ed1da59de3", null ],
-    [ "setConcurrencyChecksEnabled", "a00826.html#a8e3a5e0ae0b361bc640748f11b970793", null ],
-    [ "setConcurrencyLevel", "a00826.html#a9fd4d0e9cf5163018e9d9169917bcbe8", null ],
-    [ "setDiskPolicy", "a00826.html#a11e6a89051c601d305560f05df7b0a4c", null ],
-    [ "setEntryIdleTimeout", "a00826.html#abc6b03ed34a7892e3b639529f436c59c", null ],
-    [ "setEntryTimeToLive", "a00826.html#ac639776e014cba20ea1fc5ddd57b884c", null ],
-    [ "setInitialCapacity", "a00826.html#a6fd71e468887b4b1485ce606bbf0d120", null ],
-    [ "setLoadFactor", "a00826.html#aacada721fed15948d2a7bf094a075fc9", null ],
-    [ "setLruEntriesLimit", "a00826.html#ad67b6c94c2a9429b0bab8e89dd314cc1", null ],
-    [ "setPartitionResolver", "a00826.html#aaac59bad8229799ca990ae6e44c642c0", null ],
-    [ "setPartitionResolver", "a00826.html#ac38c4b51dd0ea1517c152801b281c02c", null ],
-    [ "setPersistenceManager", "a00826.html#ac6b1beab99d327fef95f7145f803cb76", null ],
-    [ "setPersistenceManager", "a00826.html#ad60aca47c338026159cd3f280261da44", null ],
-    [ "setRegionIdleTimeout", "a00826.html#a7de299324777a94a386e1e842bf03946", null ],
-    [ "setRegionTimeToLive", "a00826.html#aa52902a09755bdb9e7993f7970a70062", null ]
+    [ "RegionEntry", "a00826.html#ada1ace62a2496910d89e1de5d8e85607", null ],
+    [ "getKey", "a00826.html#ad8293cabdfc3e7c3da6444af6c244ca5", null ],
+    [ "getRegion", "a00826.html#ad93c5181fa19ceeae6832908b36cf63a", null ],
+    [ "getStatistics", "a00826.html#a999f71322bd2810115655a4416a67821", null ],
+    [ "getValue", "a00826.html#a46483a043f51beabf59d0d2163c5273b", null ],
+    [ "isDestroyed", "a00826.html#ab3c5cdcb2849d943527534b56a4fc7d9", null ]
 ];

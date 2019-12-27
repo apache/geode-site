@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa665fe92e141439d37aedebeffcafbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a new value into an entry in this region with the specified key, passing the callback argument to any cache writers and cache listeners that are invoked in the operation.  <a href="#aa665fe92e141439d37aedebeffcafbc1">More...</a><br /></td></tr>
 <tr class="separator:aa665fe92e141439d37aedebeffcafbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac800168130fe2a83d4ea2a9b1a38c2a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01014.html#ac800168130fe2a83d4ea2a9b1a38c2a5">Put</a> (TKey key, TValue value)</td></tr>
-<tr class="memdesc:ac800168130fe2a83d4ea2a9b1a38c2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a new value into an entry in this region with the specified key, passing the callback argument to any cache writers and cache listeners that are invoked in the operation.  <a href="#ac800168130fe2a83d4ea2a9b1a38c2a5">More...</a><br /></td></tr>
+<tr class="memdesc:ac800168130fe2a83d4ea2a9b1a38c2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a new value into an entry in this region with the specified key.  <a href="#ac800168130fe2a83d4ea2a9b1a38c2a5">More...</a><br /></td></tr>
 <tr class="separator:ac800168130fe2a83d4ea2a9b1a38c2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbac1059e1631716e1a43736a3941847"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01014.html#afbac1059e1631716e1a43736a3941847">PutAll</a> (IDictionary&lt; TKey, TValue &gt;^ map)</td></tr>
 <tr class="memdesc:afbac1059e1631716e1a43736a3941847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a (IDictionary) generic collection of key/value pairs in this region.  <a href="#afbac1059e1631716e1a43736a3941847">More...</a><br /></td></tr>
@@ -350,7 +350,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Destroys the whole distributed region and provides a user-defined parameter object to any <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code> invoked in the process. </p>
-<p>Destroy cascades to all entries and subregions. After the destroy, this region object can not be used any more. Any attempt to use this region object will get a <code><a class="el" href="a00678.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></code> The region destroy not only destroys the local region but also destroys the server region. For local region instance - destroys the whole local region only For distributed region instance - destroys the whole local region and this operation is also propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>Destroy cascades to all entries and subregions. After the destroy, this region object can not be used any more. Any attempt to use this region object will get a <code><a class="el" href="a00678.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></code> The region destroy not only destroys the local region but also destroys the server region. For local region instance - destroys the whole local region only For distributed region instance - destroys the whole local region and this operation is also propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -385,7 +385,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Destroys the whole distributed region and provides a user-defined parameter object to any <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code> invoked in the process. </p>
-<p>Destroy cascades to all entries and subregions. After the destroy, this region object can not be used any more. Any attempt to use this region object will get a <code><a class="el" href="a00678.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></code> The region destroy not only destroys the local region but also destroys the server region. For local region instance - destroys the whole local region only For distributed region instance - destroys the whole local region and this operation is also propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>Destroy cascades to all entries and subregions. After the destroy, this region object can not be used any more. Any attempt to use this region object will get a <code><a class="el" href="a00678.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></code> The region destroy not only destroys the local region but also destroys the server region. For local region instance - destroys the whole local region only For distributed region instance - destroys the whole local region and this operation is also propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1056,7 +1056,7 @@ template&lt;class TKey , class TValue &gt; </div>
 
 <p>Invalidates the entry with the specified key, passing the callback argument to any cache listeners that are invoked in the operation. </p>
 <p>Invalidate only removes the value from the entry &ndash; the key is kept intact. To completely remove the entry, call <a class="el" href="a00382.html#a30c72f6219e29e7305222feb4857caeca0e181f89f47654b86f3beb42f5cc08b8" title="When the region or cached object expires, it is destroyed.">Destroy</a>. </p>
-<p>For both local &amp; distributed region instaces, invalidate is not propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>For both local &amp; distributed region instaces, invalidate is not propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1106,7 +1106,7 @@ template&lt;class TKey , class TValue &gt; </div>
 
 <p>Invalidates the entry with the specified key, passing the callback argument to any cache listeners that are invoked in the operation. </p>
 <p>Invalidate only removes the value from the entry &ndash; the key is kept intact. To completely remove the entry, call <a class="el" href="a00382.html#a30c72f6219e29e7305222feb4857caeca0e181f89f47654b86f3beb42f5cc08b8" title="When the region or cached object expires, it is destroyed.">Destroy</a>. </p>
-<p>For both local &amp; distributed region instaces, invalidate is not propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>For both local &amp; distributed region instaces, invalidate is not propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1145,7 +1145,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Invalidates this region. </p>
-<p>The invalidation will cascade to all the subregions and cached entries. The region and the entries in it will still exist. For local region instance - invalidates this region without distributing to other caches. For distributed region instance - Invalidates this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>The invalidation will cascade to all the subregions and cached entries. The region and the entries in it will still exist. For local region instance - invalidates this region without distributing to other caches. For distributed region instance - Invalidates this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>To remove all the entries and the region, use <a class="el" href="a01014.html#a2fe272875b88cc79659999a01536142b" title="Destroys the whole distributed region and provides a user-defined parameter object to any ICacheWrite...">DestroyRegion</a>. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -1179,7 +1179,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Invalidates this region. </p>
-<p>The invalidation will cascade to all the subregions and cached entries. The region and the entries in it will still exist. For local region instance - invalidates this region without distributing to other caches. For distributed region instance - Invalidates this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>The invalidation will cascade to all the subregions and cached entries. The region and the entries in it will still exist. For local region instance - invalidates this region without distributing to other caches. For distributed region instance - Invalidates this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>To remove all the entries and the region, use <a class="el" href="a01014.html#a2fe272875b88cc79659999a01536142b" title="Destroys the whole distributed region and provides a user-defined parameter object to any ICacheWrite...">DestroyRegion</a>. </p>
 <p>Does not update any <code><a class="el" href="a00546.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1235,7 +1235,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Puts a new value into an entry in this region with the specified key, passing the callback argument to any cache writers and cache listeners that are invoked in the operation. </p>
-<p>If there is already an entry associated with the specified key in this region, the entry's previous value is overwritten. The new put value is propogated to the java server to which it is connected with. Put is intended for very simple caching situations. In general it is better to create a <code><a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a></code> object and allow the cache to manage the creation and loading of objects. For local region instance - Puts a new value into an entry in this region in the local cache only. For distributed region instance - Puts a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>If there is already an entry associated with the specified key in this region, the entry's previous value is overwritten. The new put value is propogated to the java server to which it is connected. Put is intended for very simple caching situations. In general it is better to create a <code><a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a></code> object and allow the cache to manage the creation and loading of objects. For local region instance - Puts a new value into an entry in this region in the local cache only. For distributed region instance - Puts a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Updates the <a class="el" href="a00546.html#a96ebbc337b95fd3760e038e91ab74849" title="For an entry, returns the last time it was accessed via Region.Get.">CacheStatistics.LastAccessedTime</a> and <a class="el" href="a00546.html#aba28f374153f91dca22feb868d9f7642" title="For an entry, returns the time that the entry&#39;s value was last modified.">CacheStatistics.LastModifiedTime</a> for this region and the entry. </p>
 <p>If remote server put fails throwing back a <code><a class="el" href="a00790.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></code> or security exception, then local put is tried to rollback. However, if the entry has overflowed/evicted/expired then the rollback is aborted since it may be due to a more recent notification or update by another thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1291,13 +1291,13 @@ template&lt;class TKey , class TValue &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Puts a new value into an entry in this region with the specified key, passing the callback argument to any cache writers and cache listeners that are invoked in the operation. </p>
-<p>If there is already an entry associated with the specified key in this region, the entry's previous value is overwritten. The new put value is propogated to the java server to which it is connected with. Put is intended for very simple caching situations. In general it is better to create a <code><a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a></code> object and allow the cache to manage the creation and loading of objects. For local region instance - Puts a new value into an entry in this region in the local cache only. For distributed region instance - Puts a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>Puts a new value into an entry in this region with the specified key. </p>
+<p>If there is already an entry associated with the specified key in this region, the entry's previous value is overwritten. The new put value is propogated to the java server to which it is connected. Put is intended for very simple caching situations. In general it is better to create a <code><a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a></code> object and allow the cache to manage the creation and loading of objects. For local region instance - Puts a new value into an entry in this region in the local cache only. For distributed region instance - Puts a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <p>Updates the <a class="el" href="a00546.html#a96ebbc337b95fd3760e038e91ab74849" title="For an entry, returns the last time it was accessed via Region.Get.">CacheStatistics.LastAccessedTime</a> and <a class="el" href="a00546.html#aba28f374153f91dca22feb868d9f7642" title="For an entry, returns the time that the entry&#39;s value was last modified.">CacheStatistics.LastModifiedTime</a> for this region and the entry. </p>
 <p>If remote server put fails throwing back a <code><a class="el" href="a00790.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></code> or security exception, then local put is tried to rollback. However, if the entry has overflowed/evicted/expired then the rollback is aborted since it may be due to a more recent notification or update by another thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>a key object associated with the value to be put into this region. </td></tr>
+    <tr><td class="paramname">key</td><td>a key object associated with the value to be put into this region </td></tr>
     <tr><td class="paramname">value</td><td>the value to be put into this region</td></tr>
   </table>
   </dd>
@@ -1338,7 +1338,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Puts a (IDictionary) generic collection of key/value pairs in this region. </p>
-<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected with. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
+<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>A map contains entries, i.e. (key, value) pairs. It is generic collection of key/value pairs. Value should not be null in any of the entries. </td></tr>
@@ -1390,7 +1390,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Puts a (IDictionary) generic collection of key/value pairs in this region. </p>
-<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected with. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
+<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>A map contains entries, i.e. (key, value) pairs. It is generic collection of key/value pairs. Value should not be null in any of the entries. </td></tr>
@@ -1450,7 +1450,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Puts a (IDictionary) generic collection of key/value pairs in this region. </p>
-<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected with. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
+<p>If there is already an entry associated with any key in the map in this region, the entry's previous value is overwritten. The new values are propogated to the java server to which it is connected. PutAll is intended for speed up large amount of put operation into the same region. For local region instance - this method is not applicable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>A map contains entries, i.e. (key, value) pairs. It is generic collection of key/value pairs. Value should not be null in any of the entries. </td></tr>
@@ -1892,7 +1892,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets or sets the element with the specified key. </p>
-<p>This property provides the ability to access a specific element in the collection by using the following syntax: myCollection[key]. You can also use the Item property to add new elements by setting the value of a key that does not exist in the dictionary; for example, myCollection["myNonexistentKey"] = myValue However, if the specified key already exists in the dictionary, setting the Item property overwrites the old value. In contrast, the Add method does not modify existing elements. This property is applicable to local as well as distributed region. For local region instance - Puts/Gets a new value into an entry in this region in the local cache only. For distributed region instance - Puts/Gets a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected with. </p>
+<p>This property provides the ability to access a specific element in the collection by using the following syntax: myCollection[key]. You can also use the Item property to add new elements by setting the value of a key that does not exist in the dictionary; for example, myCollection["myNonexistentKey"] = myValue However, if the specified key already exists in the dictionary, setting the Item property overwrites the old value. In contrast, the Add method does not modify existing elements. This property is applicable to local as well as distributed region. For local region instance - Puts/Gets a new value into an entry in this region in the local cache only. For distributed region instance - Puts/Gets a new value into an entry in this region and this operation is propogated to the <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> cache server to which it is connected. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The key of the element to get or set. </td></tr>

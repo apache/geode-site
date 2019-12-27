@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::RegionAttributes Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::QueryService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -87,141 +87,54 @@ $(document).ready(function(){initNavTree('a00810.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::RegionAttributes Class Reference</div>  </div>
+<div class="title">apache::geode::client::QueryService Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines attributes for configuring a region.  
+<p><a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> is the class obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
  <a href="a00810.html#details">More...</a></p>
-
-<p>Inherits DataSerializableInternal.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0559c5d8f55046ac81548c7d4592859e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00374.html">CacheListener</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a0559c5d8f55046ac81548c7d4592859e">getCacheListener</a> () const</td></tr>
-<tr class="memdesc:a0559c5d8f55046ac81548c7d4592859e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cache listener for the region.  <a href="#a0559c5d8f55046ac81548c7d4592859e">More...</a><br /></td></tr>
-<tr class="separator:a0559c5d8f55046ac81548c7d4592859e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb7966289ac6dc9d04671238812a3b4"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#abbb7966289ac6dc9d04671238812a3b4">getCacheListenerFactory</a> () const</td></tr>
-<tr class="memdesc:abbb7966289ac6dc9d04671238812a3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the symbol name of the factory function from which the loader will be created on a cache server.  <a href="#abbb7966289ac6dc9d04671238812a3b4">More...</a><br /></td></tr>
-<tr class="separator:abbb7966289ac6dc9d04671238812a3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0461a1dd613db7cd842961e1d648cb4"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ac0461a1dd613db7cd842961e1d648cb4">getCacheListenerLibrary</a> () const</td></tr>
-<tr class="memdesc:ac0461a1dd613db7cd842961e1d648cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the path of the library from which the factory function will be invoked on a cache server.  <a href="#ac0461a1dd613db7cd842961e1d648cb4">More...</a><br /></td></tr>
-<tr class="separator:ac0461a1dd613db7cd842961e1d648cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05acc3f27725cedb124d6971f51e47cd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00378.html">CacheLoader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a05acc3f27725cedb124d6971f51e47cd">getCacheLoader</a> () const</td></tr>
-<tr class="memdesc:a05acc3f27725cedb124d6971f51e47cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">public static methods  <a href="#a05acc3f27725cedb124d6971f51e47cd">More...</a><br /></td></tr>
-<tr class="separator:a05acc3f27725cedb124d6971f51e47cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d0e878d104eca15080bd798dae2b73"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#af3d0e878d104eca15080bd798dae2b73">getCacheLoaderFactory</a> () const</td></tr>
-<tr class="memdesc:af3d0e878d104eca15080bd798dae2b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the symbol name of the factory function from which the loader will be created on a cache server.  <a href="#af3d0e878d104eca15080bd798dae2b73">More...</a><br /></td></tr>
-<tr class="separator:af3d0e878d104eca15080bd798dae2b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa414080570e98b401a3034c8c397c402"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aa414080570e98b401a3034c8c397c402">getCacheLoaderLibrary</a> () const</td></tr>
-<tr class="memdesc:aa414080570e98b401a3034c8c397c402"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the path of the library from which the factory function will be invoked on a cache server.  <a href="#aa414080570e98b401a3034c8c397c402">More...</a><br /></td></tr>
-<tr class="separator:aa414080570e98b401a3034c8c397c402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35035c6637097a219d52153da5792439"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00390.html">CacheWriter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a35035c6637097a219d52153da5792439">getCacheWriter</a> () const</td></tr>
-<tr class="memdesc:a35035c6637097a219d52153da5792439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cache writer for the region.  <a href="#a35035c6637097a219d52153da5792439">More...</a><br /></td></tr>
-<tr class="separator:a35035c6637097a219d52153da5792439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf688606a9cf43cdef895703677c9845"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#adf688606a9cf43cdef895703677c9845">getCacheWriterFactory</a> () const</td></tr>
-<tr class="memdesc:adf688606a9cf43cdef895703677c9845"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the symbol name of the factory function from which the loader will be created on a cache server.  <a href="#adf688606a9cf43cdef895703677c9845">More...</a><br /></td></tr>
-<tr class="separator:adf688606a9cf43cdef895703677c9845"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38aff3a3df943f0e607ae85967bc115f"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a38aff3a3df943f0e607ae85967bc115f">getCacheWriterLibrary</a> () const</td></tr>
-<tr class="memdesc:a38aff3a3df943f0e607ae85967bc115f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the path of the library from which the factory function will be invoked on a cache server.  <a href="#a38aff3a3df943f0e607ae85967bc115f">More...</a><br /></td></tr>
-<tr class="separator:a38aff3a3df943f0e607ae85967bc115f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff9ff60a624ac82a42b0328b393540d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a8ff9ff60a624ac82a42b0328b393540d">getCachingEnabled</a> () const</td></tr>
-<tr class="memdesc:a8ff9ff60a624ac82a42b0328b393540d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, this region will store data in the current process.  <a href="#a8ff9ff60a624ac82a42b0328b393540d">More...</a><br /></td></tr>
-<tr class="separator:a8ff9ff60a624ac82a42b0328b393540d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b3cd67a20bad86e7da3c0ef946a715f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a0b3cd67a20bad86e7da3c0ef946a715f">getClientNotificationEnabled</a> () const</td></tr>
-<tr class="memdesc:a0b3cd67a20bad86e7da3c0ef946a715f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the setting of client notification.  <a href="#a0b3cd67a20bad86e7da3c0ef946a715f">More...</a><br /></td></tr>
-<tr class="separator:a0b3cd67a20bad86e7da3c0ef946a715f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d5bc8f80023f210525eec6da5464f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ac6d5bc8f80023f210525eec6da5464f8">getConcurrencyChecksEnabled</a> () const</td></tr>
-<tr class="memdesc:ac6d5bc8f80023f210525eec6da5464f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if concurrent update checks are turned on for this region.  <a href="#ac6d5bc8f80023f210525eec6da5464f8">More...</a><br /></td></tr>
-<tr class="separator:ac6d5bc8f80023f210525eec6da5464f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7d85bd00332cb58886d7d1419931da"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a5d7d85bd00332cb58886d7d1419931da">getConcurrencyLevel</a> () const</td></tr>
-<tr class="memdesc:a5d7d85bd00332cb58886d7d1419931da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the concurrencyLevel of the entry's local cache.  <a href="#a5d7d85bd00332cb58886d7d1419931da">More...</a><br /></td></tr>
-<tr class="separator:a5d7d85bd00332cb58886d7d1419931da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb3a445d051a33908dbdba3f549ba34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00882.html">DiskPolicyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aadb3a445d051a33908dbdba3f549ba34">getDiskPolicy</a> () const</td></tr>
-<tr class="memdesc:aadb3a445d051a33908dbdba3f549ba34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the disk policy type of the region.  <a href="#aadb3a445d051a33908dbdba3f549ba34">More...</a><br /></td></tr>
-<tr class="separator:aadb3a445d051a33908dbdba3f549ba34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c8404680c29e9be8681591e540b942"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a26c8404680c29e9be8681591e540b942">getEndpoints</a> () const</td></tr>
-<tr class="memdesc:a26c8404680c29e9be8681591e540b942"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the list of servername:portno separated by comma.  <a href="#a26c8404680c29e9be8681591e540b942">More...</a><br /></td></tr>
-<tr class="separator:a26c8404680c29e9be8681591e540b942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adafb77e8a8911700fd7a03a40819399e"><td class="memItemLeft" align="right" valign="top">std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#adafb77e8a8911700fd7a03a40819399e">getEntryIdleTimeout</a> () const</td></tr>
-<tr class="memdesc:adafb77e8a8911700fd7a03a40819399e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <code>idleTimeout</code> expiration attributes for entries in this region.  <a href="#adafb77e8a8911700fd7a03a40819399e">More...</a><br /></td></tr>
-<tr class="separator:adafb77e8a8911700fd7a03a40819399e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d0224cf85e7560a0f8093a5f28ba4c"><td class="memItemLeft" align="right" valign="top">std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aa8d0224cf85e7560a0f8093a5f28ba4c">getEntryTimeToLive</a> () const</td></tr>
-<tr class="memdesc:aa8d0224cf85e7560a0f8093a5f28ba4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <code>timeToLive</code> expiration attributes for entries in this region.  <a href="#aa8d0224cf85e7560a0f8093a5f28ba4c">More...</a><br /></td></tr>
-<tr class="separator:aa8d0224cf85e7560a0f8093a5f28ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a0c95fbf527b19d679db2dad581c4d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a0a0c95fbf527b19d679db2dad581c4d9">getInitialCapacity</a> () const</td></tr>
-<tr class="memdesc:a0a0c95fbf527b19d679db2dad581c4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the initial capacity of the entry's local cache.  <a href="#a0a0c95fbf527b19d679db2dad581c4d9">More...</a><br /></td></tr>
-<tr class="separator:a0a0c95fbf527b19d679db2dad581c4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add327378171a7b5939ff8e1d9b24bdbf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#add327378171a7b5939ff8e1d9b24bdbf">getLoadFactor</a> () const</td></tr>
-<tr class="memdesc:add327378171a7b5939ff8e1d9b24bdbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the load factor of the entry's local cache.  <a href="#add327378171a7b5939ff8e1d9b24bdbf">More...</a><br /></td></tr>
-<tr class="separator:add327378171a7b5939ff8e1d9b24bdbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5c30d89610395f0e46842cce2e138b3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aa5c30d89610395f0e46842cce2e138b3">getLruEntriesLimit</a> () const</td></tr>
-<tr class="memdesc:aa5c30d89610395f0e46842cce2e138b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of entries this cache will hold before using LRU eviction.  <a href="#aa5c30d89610395f0e46842cce2e138b3">More...</a><br /></td></tr>
-<tr class="separator:aa5c30d89610395f0e46842cce2e138b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3d2c2b248eabced8ca96cecf5ff1474"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00886.html">ExpirationAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ae3d2c2b248eabced8ca96cecf5ff1474">getLruEvictionAction</a> () const</td></tr>
-<tr class="memdesc:ae3d2c2b248eabced8ca96cecf5ff1474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="a00886.html" title="Enumerated type for expiration actions.">ExpirationAction</a> used for LRU Eviction, default is LOCAL_DESTROY.  <a href="#ae3d2c2b248eabced8ca96cecf5ff1474">More...</a><br /></td></tr>
-<tr class="separator:ae3d2c2b248eabced8ca96cecf5ff1474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d921c582a2e64fed61d8efb07474f2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00738.html">PartitionResolver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ab9d921c582a2e64fed61d8efb07474f2">getPartitionResolver</a> () const</td></tr>
-<tr class="memdesc:ab9d921c582a2e64fed61d8efb07474f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the partition resolver for the partition region.  <a href="#ab9d921c582a2e64fed61d8efb07474f2">More...</a><br /></td></tr>
-<tr class="separator:ab9d921c582a2e64fed61d8efb07474f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad15cc5f96e195e50abf3183e46322352"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ad15cc5f96e195e50abf3183e46322352">getPartitionResolverFactory</a> () const</td></tr>
-<tr class="memdesc:ad15cc5f96e195e50abf3183e46322352"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the symbol name of the factory function from which the loader will be created on a cache server.  <a href="#ad15cc5f96e195e50abf3183e46322352">More...</a><br /></td></tr>
-<tr class="separator:ad15cc5f96e195e50abf3183e46322352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea7488fd1ff9a3f499b0d562193075ad"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aea7488fd1ff9a3f499b0d562193075ad">getPartitionResolverLibrary</a> () const</td></tr>
-<tr class="memdesc:aea7488fd1ff9a3f499b0d562193075ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the path of the library from which the factory function will be invoked on a cache server.  <a href="#aea7488fd1ff9a3f499b0d562193075ad">More...</a><br /></td></tr>
-<tr class="separator:aea7488fd1ff9a3f499b0d562193075ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33335502d396e74f2e26a92c7a9bb0ba"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a33335502d396e74f2e26a92c7a9bb0ba">getPersistenceFactory</a> () const</td></tr>
-<tr class="memdesc:a33335502d396e74f2e26a92c7a9bb0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the symbol name of the factory function from which the persistence will be created on a cache server.  <a href="#a33335502d396e74f2e26a92c7a9bb0ba">More...</a><br /></td></tr>
-<tr class="separator:a33335502d396e74f2e26a92c7a9bb0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed439d3bbd9acef0eabd75534cf37c0"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a3ed439d3bbd9acef0eabd75534cf37c0">getPersistenceLibrary</a> () const</td></tr>
-<tr class="memdesc:a3ed439d3bbd9acef0eabd75534cf37c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the path of the library from which the factory function will be invoked on a cache server.  <a href="#a3ed439d3bbd9acef0eabd75534cf37c0">More...</a><br /></td></tr>
-<tr class="separator:a3ed439d3bbd9acef0eabd75534cf37c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa905ba715bc77f58bcca87ff68799d71"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00774.html">PersistenceManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aa905ba715bc77f58bcca87ff68799d71">getPersistenceManager</a> () const</td></tr>
-<tr class="memdesc:aa905ba715bc77f58bcca87ff68799d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the persistence for the region.  <a href="#aa905ba715bc77f58bcca87ff68799d71">More...</a><br /></td></tr>
-<tr class="separator:aa905ba715bc77f58bcca87ff68799d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe7e19a74772efb506591af3efcea690"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00790.html">Properties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#abe7e19a74772efb506591af3efcea690">getPersistenceProperties</a> () const</td></tr>
-<tr class="memdesc:abe7e19a74772efb506591af3efcea690"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the properties pointer which is set for persistence.  <a href="#abe7e19a74772efb506591af3efcea690">More...</a><br /></td></tr>
-<tr class="separator:abe7e19a74772efb506591af3efcea690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef565df384a6baacc0b99d2208a23db"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a4ef565df384a6baacc0b99d2208a23db">getPoolName</a> () const</td></tr>
-<tr class="memdesc:a4ef565df384a6baacc0b99d2208a23db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the pool attached to the region.  <a href="#a4ef565df384a6baacc0b99d2208a23db">More...</a><br /></td></tr>
-<tr class="separator:a4ef565df384a6baacc0b99d2208a23db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d89a9710549507d545cb9b1559dd740"><td class="memItemLeft" align="right" valign="top">std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a2d89a9710549507d545cb9b1559dd740">getRegionIdleTimeout</a> () const</td></tr>
-<tr class="memdesc:a2d89a9710549507d545cb9b1559dd740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the idleTimeout expiration attributes for the region as a whole.  <a href="#a2d89a9710549507d545cb9b1559dd740">More...</a><br /></td></tr>
-<tr class="separator:a2d89a9710549507d545cb9b1559dd740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a297b9a11086ae8d1d85bebc20106cb82"><td class="memItemLeft" align="right" valign="top">std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a297b9a11086ae8d1d85bebc20106cb82">getRegionTimeToLive</a> () const</td></tr>
-<tr class="memdesc:a297b9a11086ae8d1d85bebc20106cb82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <code>timeToLive</code> expiration attributes for the region as a whole.  <a href="#a297b9a11086ae8d1d85bebc20106cb82">More...</a><br /></td></tr>
-<tr class="separator:a297b9a11086ae8d1d85bebc20106cb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970a3f610db9e5be479f2e0a1fb802d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a970a3f610db9e5be479f2e0a1fb802d0">operator!=</a> (const <a class="el" href="a00810.html">RegionAttributes</a> &amp;other) const</td></tr>
-<tr class="memdesc:a970a3f610db9e5be479f2e0a1fb802d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if any of the attributes are not equal to those of other.  <a href="#a970a3f610db9e5be479f2e0a1fb802d0">More...</a><br /></td></tr>
-<tr class="separator:a970a3f610db9e5be479f2e0a1fb802d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae765606ca65aff466f84290431d137de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ae765606ca65aff466f84290431d137de">operator==</a> (const <a class="el" href="a00810.html">RegionAttributes</a> &amp;other) const</td></tr>
-<tr class="memdesc:ae765606ca65aff466f84290431d137de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if all the attributes are equal to those of other.  <a href="#ae765606ca65aff466f84290431d137de">More...</a><br /></td></tr>
-<tr class="separator:ae765606ca65aff466f84290431d137de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b93a9e7900c38eecbccb484d1dd2740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a8b93a9e7900c38eecbccb484d1dd2740">validateSerializableAttributes</a> ()</td></tr>
-<tr class="memdesc:a8b93a9e7900c38eecbccb484d1dd2740"><td class="mdescLeft">&#160;</td><td class="mdescRight">throws <a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a> if the attributes are not suited for serialization such as those that have a cache callback (listener, loader, or writer) set directly instead of through the string value setters.  <a href="#a8b93a9e7900c38eecbccb484d1dd2740">More...</a><br /></td></tr>
-<tr class="separator:a8b93a9e7900c38eecbccb484d1dd2740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0d5d862474e766a98cb046c64926311"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00846.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ac0d5d862474e766a98cb046c64926311">createDeserializable</a> ()</td></tr>
-<tr class="memdesc:ac0d5d862474e766a98cb046c64926311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an empty instance for deserialization.  <a href="#ac0d5d862474e766a98cb046c64926311">More...</a><br /></td></tr>
-<tr class="separator:ac0d5d862474e766a98cb046c64926311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03a9f051d462060c4299624975e03ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ab03a9f051d462060c4299624975e03ca">closeCqs</a> ()=0</td></tr>
+<tr class="memdesc:ab03a9f051d462060c4299624975e03ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all CQs, and release resources associated with executing CQs.  <a href="#ab03a9f051d462060c4299624975e03ca">More...</a><br /></td></tr>
+<tr class="separator:ab03a9f051d462060c4299624975e03ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b676cdbdce07fca000789df6e5ea724"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a4b676cdbdce07fca000789df6e5ea724">executeCqs</a> ()=0</td></tr>
+<tr class="memdesc:a4b676cdbdce07fca000789df6e5ea724"><td class="mdescLeft">&#160;</td><td class="mdescRight">@nativeclient Executes all the cqs on this client.  <a href="#a4b676cdbdce07fca000789df6e5ea724">More...</a><br /></td></tr>
+<tr class="separator:a4b676cdbdce07fca000789df6e5ea724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d882aaad5517a88b7568d6d5708d7d5"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00302.html">CacheableArrayList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a3d882aaad5517a88b7568d6d5708d7d5">getAllDurableCqsFromServer</a> () const =0</td></tr>
+<tr class="memdesc:a3d882aaad5517a88b7568d6d5708d7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all the durable CQs registered by this client.  <a href="#a3d882aaad5517a88b7568d6d5708d7d5">More...</a><br /></td></tr>
+<tr class="separator:a3d882aaad5517a88b7568d6d5708d7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad754c5568f06499f7ce52fa25373bef1"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00414.html">CqQuery</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ad754c5568f06499f7ce52fa25373bef1">getCq</a> (const std::string &amp;name) const =0</td></tr>
+<tr class="memdesc:ad754c5568f06499f7ce52fa25373bef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> by name.  <a href="#ad754c5568f06499f7ce52fa25373bef1">More...</a><br /></td></tr>
+<tr class="separator:ad754c5568f06499f7ce52fa25373bef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa809b95267fe2346ca05da62ab10d3d4"><td class="memItemLeft" align="right" valign="top">virtual query_container_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#aa809b95267fe2346ca05da62ab10d3d4">getCqs</a> () const =0</td></tr>
+<tr class="memdesc:aa809b95267fe2346ca05da62ab10d3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">@nativeclient Retrieve all registered CQs @endnativeclient  <a href="#aa809b95267fe2346ca05da62ab10d3d4">More...</a><br /></td></tr>
+<tr class="separator:aa809b95267fe2346ca05da62ab10d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9750b7d30a2d73ddc53d8a23d72a0cc6"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00422.html">CqServiceStatistics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#a9750b7d30a2d73ddc53d8a23d72a0cc6">getCqServiceStatistics</a> () const =0</td></tr>
+<tr class="memdesc:a9750b7d30a2d73ddc53d8a23d72a0cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">@nativeclient Get statistics information for all CQs  <a href="#a9750b7d30a2d73ddc53d8a23d72a0cc6">More...</a><br /></td></tr>
+<tr class="separator:a9750b7d30a2d73ddc53d8a23d72a0cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2715272fc10d26223d2dee60f2d78d4"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00414.html">CqQuery</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ad2715272fc10d26223d2dee60f2d78d4">newCq</a> (std::string name, std::string querystr, const std::shared_ptr&lt; <a class="el" href="a00394.html">CqAttributes</a> &gt; &amp;cqAttr, bool isDurable=false)=0</td></tr>
+<tr class="memdesc:ad2715272fc10d26223d2dee60f2d78d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new named continuous query, represented by an instance of <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>.  <a href="#ad2715272fc10d26223d2dee60f2d78d4">More...</a><br /></td></tr>
+<tr class="separator:ad2715272fc10d26223d2dee60f2d78d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2763e85abcd5035fc534af9f0b0d0a"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00414.html">CqQuery</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#acd2763e85abcd5035fc534af9f0b0d0a">newCq</a> (std::string querystr, const std::shared_ptr&lt; <a class="el" href="a00394.html">CqAttributes</a> &gt; &amp;cqAttr, bool isDurable=false)=0</td></tr>
+<tr class="memdesc:acd2763e85abcd5035fc534af9f0b0d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">@nativeclient Constructs a new named continuous query, represented by an instance of <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>.  <a href="#acd2763e85abcd5035fc534af9f0b0d0a">More...</a><br /></td></tr>
+<tr class="separator:acd2763e85abcd5035fc534af9f0b0d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4039c6723b533a165d1af714314c32e"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00806.html">Query</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ab4039c6723b533a165d1af714314c32e">newQuery</a> (std::string querystr)=0</td></tr>
+<tr class="memdesc:ab4039c6723b533a165d1af714314c32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a new <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> with the specified query string.  <a href="#ab4039c6723b533a165d1af714314c32e">More...</a><br /></td></tr>
+<tr class="separator:ab4039c6723b533a165d1af714314c32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07dc8ad779710ab9713b06bf7aee1fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00810.html#ab07dc8ad779710ab9713b06bf7aee1fa">stopCqs</a> ()=0</td></tr>
+<tr class="memdesc:ab07dc8ad779710ab9713b06bf7aee1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops all the cqs on this client.  <a href="#ab07dc8ad779710ab9713b06bf7aee1fa">More...</a><br /></td></tr>
+<tr class="separator:ab07dc8ad779710ab9713b06bf7aee1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines attributes for configuring a region. </p>
-<p>These are <code><a class="el" href="a00374.html" title="An application plug-in that can be installed on a region.">CacheListener</a></code>, <code><a class="el" href="a00378.html" title="An application plug-in that can be installed on a region.">CacheLoader</a></code>, <code><a class="el" href="a00390.html" title="An application plug-in that can be installed on the region.">CacheWriter</a></code>, scope expiration attributes for the region itself; expiration attributes for the region entries; and whether statistics are enabled for the region and its entries.</p>
-<p>To create an instance of this interface, use {<a class="el" href="a00814.html#a01faefe121ebef9a498bc65e7b67f464">}. For compatibility rules and default values, see { RegionAttributesFactory}. </a>Note that the <code><a class="el" href="a00810.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> are not distributed with the region.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00814.html" title="Creates instances of RegionAttributes.">RegionAttributesFactory</a> </dd>
-<dd>
-<a class="el" href="a00274.html" title="Supports modification of certain region attributes after the region has been created.">AttributesMutator</a> </dd>
-<dd>
-<a class="el" href="a00806.html#ac2cc9292b643aa332f13c79c24c5dbb6" title="Return the RegionAttributes for this region.">Region::getAttributes</a> </dd></dl>
+<div class="textblock"><p><a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> is the class obtained from a <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
+<p>A <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is created from a <a class="el" href="a00810.html" title="QueryService is the class obtained from a Cache.">QueryService</a> and executed on the server returning a <a class="el" href="a00850.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can be either a <a class="el" href="a00846.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00862.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac0d5d862474e766a98cb046c64926311"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0d5d862474e766a98cb046c64926311">&#9670;&nbsp;</a></span>createDeserializable()</h2>
+<a id="ab03a9f051d462060c4299624975e03ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03a9f051d462060c4299624975e03ca">&#9670;&nbsp;</a></span>closeCqs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +143,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00846.html">Serializable</a>&gt; apache::geode::client::RegionAttributes::createDeserializable </td>
+          <td class="memname">virtual void apache::geode::client::QueryService::closeCqs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -238,191 +151,17 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return an empty instance for deserialization. </p>
+<p>Close all CQs, and release resources associated with executing CQs. </p>
 
 </div>
 </div>
-<a id="a0559c5d8f55046ac81548c7d4592859e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0559c5d8f55046ac81548c7d4592859e">&#9670;&nbsp;</a></span>getCacheListener()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00374.html">CacheListener</a>&gt; apache::geode::client::RegionAttributes::getCacheListener </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the cache listener for the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer that points to the region's , <code><a class="el" href="a00374.html" title="An application plug-in that can be installed on a region.">CacheListener</a></code> , nullptr if there is no <a class="el" href="a00374.html" title="An application plug-in that can be installed on a region.">CacheListener</a> defined for this region. </dd></dl>
-
-</div>
-</div>
-<a id="abbb7966289ac6dc9d04671238812a3b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbb7966289ac6dc9d04671238812a3b4">&#9670;&nbsp;</a></span>getCacheListenerFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheListenerFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the symbol name of the factory function from which the loader will be created on a cache server. </p>
-
-</div>
-</div>
-<a id="ac0461a1dd613db7cd842961e1d648cb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0461a1dd613db7cd842961e1d648cb4">&#9670;&nbsp;</a></span>getCacheListenerLibrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheListenerLibrary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the path of the library from which the factory function will be invoked on a cache server. </p>
-
-</div>
-</div>
-<a id="a05acc3f27725cedb124d6971f51e47cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05acc3f27725cedb124d6971f51e47cd">&#9670;&nbsp;</a></span>getCacheLoader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00378.html">CacheLoader</a>&gt; apache::geode::client::RegionAttributes::getCacheLoader </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>public static methods </p>
-<p>Gets the cache loader for the region. </p><dl class="section return"><dt>Returns</dt><dd>a pointer that points to the region's , <code><a class="el" href="a00378.html" title="An application plug-in that can be installed on a region.">CacheLoader</a></code> , nullptr if there is no <a class="el" href="a00378.html" title="An application plug-in that can be installed on a region.">CacheLoader</a> for this region. </dd></dl>
-
-</div>
-</div>
-<a id="af3d0e878d104eca15080bd798dae2b73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d0e878d104eca15080bd798dae2b73">&#9670;&nbsp;</a></span>getCacheLoaderFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheLoaderFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the symbol name of the factory function from which the loader will be created on a cache server. </p>
-
-</div>
-</div>
-<a id="aa414080570e98b401a3034c8c397c402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa414080570e98b401a3034c8c397c402">&#9670;&nbsp;</a></span>getCacheLoaderLibrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheLoaderLibrary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the path of the library from which the factory function will be invoked on a cache server. </p>
-
-</div>
-</div>
-<a id="a35035c6637097a219d52153da5792439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35035c6637097a219d52153da5792439">&#9670;&nbsp;</a></span>getCacheWriter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00390.html">CacheWriter</a>&gt; apache::geode::client::RegionAttributes::getCacheWriter </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the cache writer for the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer that points to the region's , <code><a class="el" href="a00390.html" title="An application plug-in that can be installed on the region.">CacheWriter</a></code> , nullptr if there is no <a class="el" href="a00390.html" title="An application plug-in that can be installed on the region.">CacheWriter</a> for this region </dd></dl>
-
-</div>
-</div>
-<a id="adf688606a9cf43cdef895703677c9845"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf688606a9cf43cdef895703677c9845">&#9670;&nbsp;</a></span>getCacheWriterFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheWriterFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the symbol name of the factory function from which the loader will be created on a cache server. </p>
-
-</div>
-</div>
-<a id="a38aff3a3df943f0e607ae85967bc115f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38aff3a3df943f0e607ae85967bc115f">&#9670;&nbsp;</a></span>getCacheWriterLibrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getCacheWriterLibrary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the path of the library from which the factory function will be invoked on a cache server. </p>
-
-</div>
-</div>
-<a id="a8ff9ff60a624ac82a42b0328b393540d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ff9ff60a624ac82a42b0328b393540d">&#9670;&nbsp;</a></span>getCachingEnabled()</h2>
+<a id="a4b676cdbdce07fca000789df6e5ea724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b676cdbdce07fca000789df6e5ea724">&#9670;&nbsp;</a></span>executeCqs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,45 +170,26 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool apache::geode::client::RegionAttributes::getCachingEnabled </td>
+          <td class="memname">virtual void apache::geode::client::QueryService::executeCqs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>If true, this region will store data in the current process. </p>
-<dl class="section return"><dt>Returns</dt><dd>true or false, indicating cachingEnabled state. </dd></dl>
+<p>@nativeclient Executes all the cqs on this client. </p>
+<p>@endnativeclient </p>
 
 </div>
 </div>
-<a id="a0b3cd67a20bad86e7da3c0ef946a715f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b3cd67a20bad86e7da3c0ef946a715f">&#9670;&nbsp;</a></span>getClientNotificationEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::RegionAttributes::getClientNotificationEnabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the setting of client notification. </p>
-
-</div>
-</div>
-<a id="ac6d5bc8f80023f210525eec6da5464f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6d5bc8f80023f210525eec6da5464f8">&#9670;&nbsp;</a></span>getConcurrencyChecksEnabled()</h2>
+<a id="a3d882aaad5517a88b7568d6d5708d7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d882aaad5517a88b7568d6d5708d7d5">&#9670;&nbsp;</a></span>getAllDurableCqsFromServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +198,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool apache::geode::client::RegionAttributes::getConcurrencyChecksEnabled </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00302.html">CacheableArrayList</a>&gt; apache::geode::client::QueryService::getAllDurableCqsFromServer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -486,338 +206,174 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns true if concurrent update checks are turned on for this region. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if concurrent update checks are turned on </dd></dl>
+<p>Gets all the durable CQs registered by this client. </p>
+<dl class="section return"><dt>Returns</dt><dd>List of names of registered durable CQs, empty list if no durable cqs. </dd></dl>
 
 </div>
 </div>
-<a id="a5d7d85bd00332cb58886d7d1419931da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d7d85bd00332cb58886d7d1419931da">&#9670;&nbsp;</a></span>getConcurrencyLevel()</h2>
+<a id="ad754c5568f06499f7ce52fa25373bef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad754c5568f06499f7ce52fa25373bef1">&#9670;&nbsp;</a></span>getCq()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t apache::geode::client::RegionAttributes::getConcurrencyLevel </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00414.html">CqQuery</a>&gt; apache::geode::client::QueryService::getCq </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve a <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> by name. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> or nullptr if not found </dd></dl>
+
+</div>
+</div>
+<a id="aa809b95267fe2346ca05da62ab10d3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa809b95267fe2346ca05da62ab10d3d4">&#9670;&nbsp;</a></span>getCqs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual query_container_type apache::geode::client::QueryService::getCqs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the concurrencyLevel of the entry's local cache. </p>
-<dl class="section return"><dt>Returns</dt><dd>the concurrencyLevel </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00814.html" title="Creates instances of RegionAttributes.">RegionAttributesFactory</a> </dd></dl>
+<p>@nativeclient Retrieve all registered CQs @endnativeclient </p>
 
 </div>
 </div>
-<a id="aadb3a445d051a33908dbdba3f549ba34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadb3a445d051a33908dbdba3f549ba34">&#9670;&nbsp;</a></span>getDiskPolicy()</h2>
+<a id="a9750b7d30a2d73ddc53d8a23d72a0cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9750b7d30a2d73ddc53d8a23d72a0cc6">&#9670;&nbsp;</a></span>getCqServiceStatistics()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00882.html">DiskPolicyType</a> apache::geode::client::RegionAttributes::getDiskPolicy </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00422.html">CqServiceStatistics</a>&gt; apache::geode::client::QueryService::getCqServiceStatistics </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Returns the disk policy type of the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>the <code><a class="el" href="a00882.html" title="Enumerated type for disk policy.">DiskPolicyType</a></code>, default is DiskPolicyType::NONE. </dd></dl>
+<p>@nativeclient Get statistics information for all CQs </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a00422.html" title="This class provides methods to get aggregate statistical information about the CQs of a client.">CqServiceStatistics</a> @endnativeclient </dd></dl>
 
 </div>
 </div>
-<a id="a26c8404680c29e9be8681591e540b942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26c8404680c29e9be8681591e540b942">&#9670;&nbsp;</a></span>getEndpoints()</h2>
+<a id="ad2715272fc10d26223d2dee60f2d78d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2715272fc10d26223d2dee60f2d78d4">&#9670;&nbsp;</a></span>newCq() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getEndpoints </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00414.html">CqQuery</a>&gt; apache::geode::client::QueryService::newCq </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the list of servername:portno separated by comma. </p>
-
-</div>
-</div>
-<a id="adafb77e8a8911700fd7a03a40819399e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adafb77e8a8911700fd7a03a40819399e">&#9670;&nbsp;</a></span>getEntryIdleTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">std::chrono::seconds apache::geode::client::RegionAttributes::getEntryIdleTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>querystr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00394.html">CqAttributes</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cqAttr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDurable</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Gets the <code>idleTimeout</code> expiration attributes for entries in this region. </p>
-<dl class="section return"><dt>Returns</dt><dd>the idleTimeout expiration attributes for entries in this region </dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Duration</td><td>std::chrono::duration type to return </td></tr>
+<p>Constructs a new named continuous query, represented by an instance of <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>. </p>
+<p>The <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is not executed, however, until the execute method is invoked on the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>. The name of the query will be used to identify this query in statistics archival.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cqName</td><td>the String name for this query </td></tr>
+    <tr><td class="paramname">queryString</td><td>the OQL query </td></tr>
+    <tr><td class="paramname">cqAttributes</td><td>the <a class="el" href="a00394.html" title="This interface holds all attribute values for a CQ and provides methods for retrieving all attribute ...">CqAttributes</a> </td></tr>
+    <tr><td class="paramname">isDurable</td><td>true if the CQ is durable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the newly created <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00670.html" title="Thrown if a Cq by this name already exists on this client.">CqExistsException</a></td><td>if a CQ by this name already exists on this client </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if queryString is null, or cqAttr is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if this method is called from a cache server </td></tr>
+    <tr><td class="paramname">QueryInvalidException</td><td>if there is a syntax error in the query </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if failed to create cq, failure during creating managing cq metadata info. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00674.html" title="Thrown if the query doesnot meet the CQ constraints.">CqInvalidException</a></td><td>if the query doesnot meet the CQ constraints. E.g.: <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> string should refer only one region, join not supported. The query must be a SELECT statement. DISTINCT queries are not supported. Projections are not supported. Only one iterator in the FROM clause is supported, and it must be a region path. Bind parameters in the query are not supported for the initial release. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa8d0224cf85e7560a0f8093a5f28ba4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8d0224cf85e7560a0f8093a5f28ba4c">&#9670;&nbsp;</a></span>getEntryTimeToLive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::seconds apache::geode::client::RegionAttributes::getEntryTimeToLive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the <code>timeToLive</code> expiration attributes for entries in this region. </p>
-<dl class="section return"><dt>Returns</dt><dd>the timeToLive expiration attributes for entries in this region </dd></dl>
-
-</div>
-</div>
-<a id="a0a0c95fbf527b19d679db2dad581c4d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a0c95fbf527b19d679db2dad581c4d9">&#9670;&nbsp;</a></span>getInitialCapacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::RegionAttributes::getInitialCapacity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the initial capacity of the entry's local cache. </p>
-<dl class="section return"><dt>Returns</dt><dd>the initial capacity of the entry's local cache </dd></dl>
-
-</div>
-</div>
-<a id="add327378171a7b5939ff8e1d9b24bdbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add327378171a7b5939ff8e1d9b24bdbf">&#9670;&nbsp;</a></span>getLoadFactor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float apache::geode::client::RegionAttributes::getLoadFactor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the load factor of the entry's local cache. </p>
-<dl class="section return"><dt>Returns</dt><dd>the load factor of the entry's local cache </dd></dl>
-
-</div>
-</div>
-<a id="aa5c30d89610395f0e46842cce2e138b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5c30d89610395f0e46842cce2e138b3">&#9670;&nbsp;</a></span>getLruEntriesLimit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t apache::geode::client::RegionAttributes::getLruEntriesLimit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the maximum number of entries this cache will hold before using LRU eviction. </p>
-<p>A return value of zero, 0, indicates no limit. </p>
-
-</div>
-</div>
-<a id="ae3d2c2b248eabced8ca96cecf5ff1474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3d2c2b248eabced8ca96cecf5ff1474">&#9670;&nbsp;</a></span>getLruEvictionAction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00886.html">ExpirationAction</a> apache::geode::client::RegionAttributes::getLruEvictionAction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="a00886.html" title="Enumerated type for expiration actions.">ExpirationAction</a> used for LRU Eviction, default is LOCAL_DESTROY. </p>
-
-</div>
-</div>
-<a id="ab9d921c582a2e64fed61d8efb07474f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9d921c582a2e64fed61d8efb07474f2">&#9670;&nbsp;</a></span>getPartitionResolver()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00738.html">PartitionResolver</a>&gt; apache::geode::client::RegionAttributes::getPartitionResolver </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the partition resolver for the partition region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer that points to the region's , <code><a class="el" href="a00738.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a></code> , nullptr if there is no <a class="el" href="a00738.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> defined for this region. </dd></dl>
-
-</div>
-</div>
-<a id="ad15cc5f96e195e50abf3183e46322352"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad15cc5f96e195e50abf3183e46322352">&#9670;&nbsp;</a></span>getPartitionResolverFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getPartitionResolverFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the symbol name of the factory function from which the loader will be created on a cache server. </p>
-
-</div>
-</div>
-<a id="aea7488fd1ff9a3f499b0d562193075ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea7488fd1ff9a3f499b0d562193075ad">&#9670;&nbsp;</a></span>getPartitionResolverLibrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getPartitionResolverLibrary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the path of the library from which the factory function will be invoked on a cache server. </p>
-
-</div>
-</div>
-<a id="a33335502d396e74f2e26a92c7a9bb0ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33335502d396e74f2e26a92c7a9bb0ba">&#9670;&nbsp;</a></span>getPersistenceFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getPersistenceFactory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the symbol name of the factory function from which the persistence will be created on a cache server. </p>
-
-</div>
-</div>
-<a id="a3ed439d3bbd9acef0eabd75534cf37c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ed439d3bbd9acef0eabd75534cf37c0">&#9670;&nbsp;</a></span>getPersistenceLibrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getPersistenceLibrary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the path of the library from which the factory function will be invoked on a cache server. </p>
-
-</div>
-</div>
-<a id="aa905ba715bc77f58bcca87ff68799d71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa905ba715bc77f58bcca87ff68799d71">&#9670;&nbsp;</a></span>getPersistenceManager()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00774.html">PersistenceManager</a>&gt; apache::geode::client::RegionAttributes::getPersistenceManager </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the persistence for the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a pointer that points to the region's , <code><a class="el" href="a00774.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a></code> , nullptr if there is no <a class="el" href="a00774.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a> for this region. </dd></dl>
-
-</div>
-</div>
-<a id="abe7e19a74772efb506591af3efcea690"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe7e19a74772efb506591af3efcea690">&#9670;&nbsp;</a></span>getPersistenceProperties()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00790.html">Properties</a>&gt; apache::geode::client::RegionAttributes::getPersistenceProperties </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This method returns the properties pointer which is set for persistence. </p>
-
-</div>
-</div>
-<a id="a4ef565df384a6baacc0b99d2208a23db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ef565df384a6baacc0b99d2208a23db">&#9670;&nbsp;</a></span>getPoolName()</h2>
+<a id="acd2763e85abcd5035fc534af9f0b0d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2763e85abcd5035fc534af9f0b0d0a">&#9670;&nbsp;</a></span>newCq() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -826,119 +382,121 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::RegionAttributes::getPoolName </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00414.html">CqQuery</a>&gt; apache::geode::client::QueryService::newCq </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>querystr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00394.html">CqAttributes</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cqAttr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDurable</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the name of the pool attached to the region. </p>
+<p>@nativeclient Constructs a new named continuous query, represented by an instance of <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>. </p>
+<p>The <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> is not executed, however, until the execute method is invoked on the <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a>. The name of the query will be used to identify this query in statistics archival.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queryString</td><td>the OQL query </td></tr>
+    <tr><td class="paramname">cqAttributes</td><td>the <a class="el" href="a00394.html" title="This interface holds all attribute values for a CQ and provides methods for retrieving all attribute ...">CqAttributes</a> </td></tr>
+    <tr><td class="paramname">isDurable</td><td>true if the CQ is durable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the newly created <a class="el" href="a00414.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">CqQuery</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00670.html" title="Thrown if a Cq by this name already exists on this client.">CqExistsException</a></td><td>if a CQ by this name already exists on this client </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if queryString is null, or cqAttr is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00474.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if this method is called from a cache server </td></tr>
+    <tr><td class="paramname">QueryInvalidException</td><td>if there is a syntax error in the query </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown during continuous query execution time.">CqException</a></td><td>if failed to create cq, failure during creating managing cq metadata info. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00674.html" title="Thrown if the query doesnot meet the CQ constraints.">CqInvalidException</a></td><td>if the query doesnot meet the CQ constraints. E.g.: <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> string should refer only one region, join not supported. The query must be a SELECT statement. DISTINCT queries are not supported. Projections are not supported. Only one iterator in the FROM clause is supported, and it must be a region path. Bind parameters in the query are not supported for the initial release.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>@endnativeclient </p>
 
 </div>
 </div>
-<a id="a2d89a9710549507d545cb9b1559dd740"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d89a9710549507d545cb9b1559dd740">&#9670;&nbsp;</a></span>getRegionIdleTimeout()</h2>
+<a id="ab4039c6723b533a165d1af714314c32e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4039c6723b533a165d1af714314c32e">&#9670;&nbsp;</a></span>newQuery()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::chrono::seconds apache::geode::client::RegionAttributes::getRegionIdleTimeout </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00806.html">Query</a>&gt; apache::geode::client::QueryService::newQuery </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>querystr</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Gets the idleTimeout expiration attributes for the region as a whole. </p>
-<dl class="section return"><dt>Returns</dt><dd>the IdleTimeout expiration attributes for this region </dd></dl>
+<p>Get a new <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> with the specified query string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">querystr</td><td>The query string with which to create a new <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A smart pointer to the <a class="el" href="a00806.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a>. </dd></dl>
 
 </div>
 </div>
-<a id="a297b9a11086ae8d1d85bebc20106cb82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a297b9a11086ae8d1d85bebc20106cb82">&#9670;&nbsp;</a></span>getRegionTimeToLive()</h2>
+<a id="ab07dc8ad779710ab9713b06bf7aee1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07dc8ad779710ab9713b06bf7aee1fa">&#9670;&nbsp;</a></span>stopCqs()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::chrono::seconds apache::geode::client::RegionAttributes::getRegionTimeToLive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the <code>timeToLive</code> expiration attributes for the region as a whole. </p>
-<dl class="section return"><dt>Returns</dt><dd>the timeToLive expiration attributes for this region </dd></dl>
-
-</div>
-</div>
-<a id="a970a3f610db9e5be479f2e0a1fb802d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a970a3f610db9e5be479f2e0a1fb802d0">&#9670;&nbsp;</a></span>operator!=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::RegionAttributes::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00810.html">RegionAttributes</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return true if any of the attributes are not equal to those of other. </p>
-
-</div>
-</div>
-<a id="ae765606ca65aff466f84290431d137de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae765606ca65aff466f84290431d137de">&#9670;&nbsp;</a></span>operator==()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::RegionAttributes::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00810.html">RegionAttributes</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return true if all the attributes are equal to those of other. </p>
-
-</div>
-</div>
-<a id="a8b93a9e7900c38eecbccb484d1dd2740"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b93a9e7900c38eecbccb484d1dd2740">&#9670;&nbsp;</a></span>validateSerializableAttributes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void apache::geode::client::RegionAttributes::validateSerializableAttributes </td>
+          <td class="memname">virtual void apache::geode::client::QueryService::stopCqs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>throws <a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a> if the attributes are not suited for serialization such as those that have a cache callback (listener, loader, or writer) set directly instead of through the string value setters. </p>
+<p>Stops all the cqs on this client. </p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::PoolFactory Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::PersistenceManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.10.0</span>
+   &#160;<span id="projectnumber">1.11.0</span>
    </div>
   </td>
  </tr>
@@ -88,183 +88,109 @@ $(document).ready(function(){initNavTree('a00782.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::PoolFactory Class Reference</div>  </div>
+<div class="title">apache::geode::client::PersistenceManager Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This interface provides for the configuration and creation of instances of <a class="el" href="a00778.html">Pool</a>.  
+<p><a class="el" href="a00782.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a> API for persistence and overflow.  
  <a href="a00782.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa3f05ec7294f3024438a0a540020b4ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aa3f05ec7294f3024438a0a540020b4ac">addLocator</a> (const std::string &amp;host, int port)</td></tr>
-<tr class="memdesc:aa3f05ec7294f3024438a0a540020b4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a locator, given its host and port, to this factory.  <a href="#aa3f05ec7294f3024438a0a540020b4ac">More...</a><br /></td></tr>
-<tr class="separator:aa3f05ec7294f3024438a0a540020b4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd34be982576cbf4d71259266ebe11a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a5dd34be982576cbf4d71259266ebe11a">addServer</a> (const std::string &amp;host, int port)</td></tr>
-<tr class="memdesc:a5dd34be982576cbf4d71259266ebe11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a server, given its host and port, to this factory.  <a href="#a5dd34be982576cbf4d71259266ebe11a">More...</a><br /></td></tr>
-<tr class="separator:a5dd34be982576cbf4d71259266ebe11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd37baeb030c1b92ee50b3d25fc046d8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00778.html">Pool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#afd37baeb030c1b92ee50b3d25fc046d8">create</a> (std::string name)</td></tr>
-<tr class="memdesc:afd37baeb030c1b92ee50b3d25fc046d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="a00778.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> for connecting a client to a set of Geode <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> Servers.  <a href="#afd37baeb030c1b92ee50b3d25fc046d8">More...</a><br /></td></tr>
-<tr class="separator:afd37baeb030c1b92ee50b3d25fc046d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a81d9e5ba1e172a680b647acc7fe218"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a1a81d9e5ba1e172a680b647acc7fe218">reset</a> ()</td></tr>
-<tr class="memdesc:a1a81d9e5ba1e172a680b647acc7fe218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the configuration of this factory to its defaults.  <a href="#a1a81d9e5ba1e172a680b647acc7fe218">More...</a><br /></td></tr>
-<tr class="separator:a1a81d9e5ba1e172a680b647acc7fe218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f1e090d89a04eb81501c8e07c8ac22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a89f1e090d89a04eb81501c8e07c8ac22">setFreeConnectionTimeout</a> (std::chrono::milliseconds connectionTimeout)</td></tr>
-<tr class="memdesc:a89f1e090d89a04eb81501c8e07c8ac22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the free connection timeout for this pool.  <a href="#a89f1e090d89a04eb81501c8e07c8ac22">More...</a><br /></td></tr>
-<tr class="separator:a89f1e090d89a04eb81501c8e07c8ac22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5fef0b20d95f11399a1fa66f90fbc74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ae5fef0b20d95f11399a1fa66f90fbc74">setIdleTimeout</a> (std::chrono::milliseconds)</td></tr>
-<tr class="memdesc:ae5fef0b20d95f11399a1fa66f90fbc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount of time a connection can be idle before expiring the connection.  <a href="#ae5fef0b20d95f11399a1fa66f90fbc74">More...</a><br /></td></tr>
-<tr class="separator:ae5fef0b20d95f11399a1fa66f90fbc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa812743d8458017bdbb8afa144c05e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aaa812743d8458017bdbb8afa144c05e7">setLoadConditioningInterval</a> (std::chrono::milliseconds loadConditioningInterval)</td></tr>
-<tr class="memdesc:aaa812743d8458017bdbb8afa144c05e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the load conditioning interval for this pool.  <a href="#aaa812743d8458017bdbb8afa144c05e7">More...</a><br /></td></tr>
-<tr class="separator:aaa812743d8458017bdbb8afa144c05e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a73099cf267b976dde49ab2dd63efa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a06a73099cf267b976dde49ab2dd63efa">setMaxConnections</a> (int maxConnections)</td></tr>
-<tr class="memdesc:a06a73099cf267b976dde49ab2dd63efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the max number of client to server connections that the pool will create.  <a href="#a06a73099cf267b976dde49ab2dd63efa">More...</a><br /></td></tr>
-<tr class="separator:a06a73099cf267b976dde49ab2dd63efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae261c2d991dcf96884953b4b1dace1d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ae261c2d991dcf96884953b4b1dace1d2">setMinConnections</a> (int minConnections)</td></tr>
-<tr class="memdesc:ae261c2d991dcf96884953b4b1dace1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum number of connections to keep available at all times.  <a href="#ae261c2d991dcf96884953b4b1dace1d2">More...</a><br /></td></tr>
-<tr class="separator:ae261c2d991dcf96884953b4b1dace1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bce6ff92b63c66478b4298b57c000f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a2bce6ff92b63c66478b4298b57c000f8">setMultiuserAuthentication</a> (bool multiuserAuthentication)</td></tr>
-<tr class="memdesc:a2bce6ff92b63c66478b4298b57c000f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether <a class="el" href="a00778.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multi user secure mode.  <a href="#a2bce6ff92b63c66478b4298b57c000f8">More...</a><br /></td></tr>
-<tr class="separator:a2bce6ff92b63c66478b4298b57c000f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afebf7a1833a4e5d8388c14ad3ee6fb9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#afebf7a1833a4e5d8388c14ad3ee6fb9f">setPingInterval</a> (std::chrono::milliseconds pingInterval)</td></tr>
-<tr class="memdesc:afebf7a1833a4e5d8388c14ad3ee6fb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency with which servers must be pinged to verify that they are still alive.  <a href="#afebf7a1833a4e5d8388c14ad3ee6fb9f">More...</a><br /></td></tr>
-<tr class="separator:afebf7a1833a4e5d8388c14ad3ee6fb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ebe38b43baf0697c6ef6fc5da7a7ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#af4ebe38b43baf0697c6ef6fc5da7a7ec">setPRSingleHopEnabled</a> (bool enabled)</td></tr>
-<tr class="memdesc:af4ebe38b43baf0697c6ef6fc5da7a7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default setPRSingleHopEnabled is true<br />
- The client is aware of location of partitions on servers hosting <a class="el" href="a00806.html">Region</a>s.  <a href="#af4ebe38b43baf0697c6ef6fc5da7a7ec">More...</a><br /></td></tr>
-<tr class="separator:af4ebe38b43baf0697c6ef6fc5da7a7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05ef94395d0b20b047d6cb824389fea0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a05ef94395d0b20b047d6cb824389fea0">setReadTimeout</a> (std::chrono::milliseconds timeout)</td></tr>
-<tr class="memdesc:a05ef94395d0b20b047d6cb824389fea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the duration to wait for a response from a server before timing out the operation and trying another server (if any are available).  <a href="#a05ef94395d0b20b047d6cb824389fea0">More...</a><br /></td></tr>
-<tr class="separator:a05ef94395d0b20b047d6cb824389fea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f95158896641e3e8c2d30d60a294f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a09f95158896641e3e8c2d30d60a294f4">setRetryAttempts</a> (int retryAttempts)</td></tr>
-<tr class="memdesc:a09f95158896641e3e8c2d30d60a294f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of times to retry a request after timeout/exception.  <a href="#a09f95158896641e3e8c2d30d60a294f4">More...</a><br /></td></tr>
-<tr class="separator:a09f95158896641e3e8c2d30d60a294f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea06b9dd37aef7350c93477abc601b25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aea06b9dd37aef7350c93477abc601b25">setServerGroup</a> (std::string group)</td></tr>
-<tr class="memdesc:aea06b9dd37aef7350c93477abc601b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the group which contains all the servers that this pool connects to.  <a href="#aea06b9dd37aef7350c93477abc601b25">More...</a><br /></td></tr>
-<tr class="separator:aea06b9dd37aef7350c93477abc601b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad184c3bb3062443cef6d3381750ea54f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ad184c3bb3062443cef6d3381750ea54f">setSocketBufferSize</a> (int bufferSize)</td></tr>
-<tr class="memdesc:ad184c3bb3062443cef6d3381750ea54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the socket buffer size for each connection made in this pool.  <a href="#ad184c3bb3062443cef6d3381750ea54f">More...</a><br /></td></tr>
-<tr class="separator:ad184c3bb3062443cef6d3381750ea54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a962ade9a82ba2b0e949ffdc48942549a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a962ade9a82ba2b0e949ffdc48942549a">setStatisticInterval</a> (std::chrono::milliseconds statisticInterval)</td></tr>
-<tr class="memdesc:a962ade9a82ba2b0e949ffdc48942549a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency with which the client statistics must be sent to the server.  <a href="#a962ade9a82ba2b0e949ffdc48942549a">More...</a><br /></td></tr>
-<tr class="separator:a962ade9a82ba2b0e949ffdc48942549a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe4ea620da6690392bef64ab54a65319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#afe4ea620da6690392bef64ab54a65319">setSubscriptionAckInterval</a> (std::chrono::milliseconds ackInterval)</td></tr>
-<tr class="memdesc:afe4ea620da6690392bef64ab54a65319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the is the interval to wait before sending acknowledgements to the bridge server for events received from the server subscriptions.  <a href="#afe4ea620da6690392bef64ab54a65319">More...</a><br /></td></tr>
-<tr class="separator:afe4ea620da6690392bef64ab54a65319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64f0b1117a37daffb985b725cfd9ef67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a64f0b1117a37daffb985b725cfd9ef67">setSubscriptionEnabled</a> (bool enabled)</td></tr>
-<tr class="memdesc:a64f0b1117a37daffb985b725cfd9ef67"><td class="mdescLeft">&#160;</td><td class="mdescRight">If set to <code>true</code> then the created pool will have server-to-client subscriptions enabled.  <a href="#a64f0b1117a37daffb985b725cfd9ef67">More...</a><br /></td></tr>
-<tr class="separator:a64f0b1117a37daffb985b725cfd9ef67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ae2993716c4aa1b2f84b0e7f8f10eb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a8ae2993716c4aa1b2f84b0e7f8f10eb3">setSubscriptionMessageTrackingTimeout</a> (std::chrono::milliseconds messageTrackingTimeout)</td></tr>
-<tr class="memdesc:a8ae2993716c4aa1b2f84b0e7f8f10eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the messageTrackingTimeout attribute which is the time-to-live period for subscription events the client has received from the server.  <a href="#a8ae2993716c4aa1b2f84b0e7f8f10eb3">More...</a><br /></td></tr>
-<tr class="separator:a8ae2993716c4aa1b2f84b0e7f8f10eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856a05a701897311a00f51acd19cc9b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a856a05a701897311a00f51acd19cc9b7">setSubscriptionRedundancy</a> (int redundancy)</td></tr>
-<tr class="memdesc:a856a05a701897311a00f51acd19cc9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the redundancy level for this pools server-to-client subscriptions.  <a href="#a856a05a701897311a00f51acd19cc9b7">More...</a><br /></td></tr>
-<tr class="separator:a856a05a701897311a00f51acd19cc9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62f037e2c91bc6869fafaad690040322"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a62f037e2c91bc6869fafaad690040322">setThreadLocalConnections</a> (bool threadLocalConnections)</td></tr>
-<tr class="memdesc:a62f037e2c91bc6869fafaad690040322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thread local connections policy for this pool.  <a href="#a62f037e2c91bc6869fafaad690040322">More...</a><br /></td></tr>
-<tr class="separator:a62f037e2c91bc6869fafaad690040322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a624c44729a4cc8c28f0c4f8c8f6ff4bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00782.html">PoolFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a624c44729a4cc8c28f0c4f8c8f6ff4bb">setUpdateLocatorListInterval</a> (std::chrono::milliseconds updateLocatorListInterval)</td></tr>
-<tr class="memdesc:a624c44729a4cc8c28f0c4f8c8f6ff4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency with which client updates the locator list.  <a href="#a624c44729a4cc8c28f0c4f8c8f6ff4bb">More...</a><br /></td></tr>
-<tr class="separator:a624c44729a4cc8c28f0c4f8c8f6ff4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8796c68a02ca2cb6d40167a4ccf4556c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a8796c68a02ca2cb6d40167a4ccf4556c">close</a> ()=0</td></tr>
+<tr class="memdesc:a8796c68a02ca2cb6d40167a4ccf4556c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the persistence manager instance.  <a href="#a8796c68a02ca2cb6d40167a4ccf4556c">More...</a><br /></td></tr>
+<tr class="separator:a8796c68a02ca2cb6d40167a4ccf4556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52e1a2deab8c20db07a5007e3d91de3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ab52e1a2deab8c20db07a5007e3d91de3">destroy</a> (const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; void &gt; &amp;PersistenceInfo)=0</td></tr>
+<tr class="memdesc:ab52e1a2deab8c20db07a5007e3d91de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys the entry specified by the key in the argument.  <a href="#ab52e1a2deab8c20db07a5007e3d91de3">More...</a><br /></td></tr>
+<tr class="separator:ab52e1a2deab8c20db07a5007e3d91de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c823ff84c48c598581bc1903bc9c6af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a7c823ff84c48c598581bc1903bc9c6af">init</a> (const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;region, const std::shared_ptr&lt; <a class="el" href="a00798.html">Properties</a> &gt; &amp;diskProperties)=0</td></tr>
+<tr class="memdesc:a7c823ff84c48c598581bc1903bc9c6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets called after an implementation object is created.  <a href="#a7c823ff84c48c598581bc1903bc9c6af">More...</a><br /></td></tr>
+<tr class="separator:a7c823ff84c48c598581bc1903bc9c6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddf20039371c73ededad0160b0c516b"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a1ddf20039371c73ededad0160b0c516b">read</a> (const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; void &gt; &amp;PersistenceInfo)=0</td></tr>
+<tr class="memdesc:a1ddf20039371c73ededad0160b0c516b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the value for the key from the disk.  <a href="#a1ddf20039371c73ededad0160b0c516b">More...</a><br /></td></tr>
+<tr class="separator:a1ddf20039371c73ededad0160b0c516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031c8fa4eec38e3f7ee3cfbe78ecb930"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a031c8fa4eec38e3f7ee3cfbe78ecb930">readAll</a> ()=0</td></tr>
+<tr class="memdesc:a031c8fa4eec38e3f7ee3cfbe78ecb930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads all the values from the region.  <a href="#a031c8fa4eec38e3f7ee3cfbe78ecb930">More...</a><br /></td></tr>
+<tr class="separator:a031c8fa4eec38e3f7ee3cfbe78ecb930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8390100e20d88ad6527ff8391a037408"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a8390100e20d88ad6527ff8391a037408">write</a> (const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;value, std::shared_ptr&lt; void &gt; &amp;persistenceInfo)=0</td></tr>
+<tr class="memdesc:a8390100e20d88ad6527ff8391a037408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a key, value pair of region to the disk.  <a href="#a8390100e20d88ad6527ff8391a037408">More...</a><br /></td></tr>
+<tr class="separator:a8390100e20d88ad6527ff8391a037408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9468921fff75768ba6809224b1ae3b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aef9468921fff75768ba6809224b1ae3b">writeAll</a> ()=0</td></tr>
+<tr class="memdesc:aef9468921fff75768ba6809224b1ae3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes all the entries for a region.  <a href="#aef9468921fff75768ba6809224b1ae3b">More...</a><br /></td></tr>
+<tr class="separator:aef9468921fff75768ba6809224b1ae3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:af9697e12851d81c2fa78a8db4f02e2dc"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#af9697e12851d81c2fa78a8db4f02e2dc">DEFAULT_FREE_CONNECTION_TIMEOUT</a></td></tr>
-<tr class="memdesc:af9697e12851d81c2fa78a8db4f02e2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default amount of time which we will wait for a free connection if max connections is set and all of the connections are in use.  <a href="#af9697e12851d81c2fa78a8db4f02e2dc">More...</a><br /></td></tr>
-<tr class="separator:af9697e12851d81c2fa78a8db4f02e2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7650a8dc0e646bb277264303e2a4e700"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a7650a8dc0e646bb277264303e2a4e700">DEFAULT_IDLE_TIMEOUT</a></td></tr>
-<tr class="memdesc:a7650a8dc0e646bb277264303e2a4e700"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default amount of time in to wait for a connection to become idle.  <a href="#a7650a8dc0e646bb277264303e2a4e700">More...</a><br /></td></tr>
-<tr class="separator:a7650a8dc0e646bb277264303e2a4e700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90ef0091634fd937f08824515e24c82f"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a90ef0091634fd937f08824515e24c82f">DEFAULT_LOAD_CONDITIONING_INTERVAL</a></td></tr>
-<tr class="memdesc:a90ef0091634fd937f08824515e24c82f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default interval in which the pool will check to see if a connection to a given server should be moved to a different server to improve the load balance.  <a href="#a90ef0091634fd937f08824515e24c82f">More...</a><br /></td></tr>
-<tr class="separator:a90ef0091634fd937f08824515e24c82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a38df8ec53d4e6213928f9e239a589"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ab6a38df8ec53d4e6213928f9e239a589">DEFAULT_MAX_CONNECTIONS</a> = -1</td></tr>
-<tr class="memdesc:ab6a38df8ec53d4e6213928f9e239a589"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default maximum number of connections to be created.  <a href="#ab6a38df8ec53d4e6213928f9e239a589">More...</a><br /></td></tr>
-<tr class="separator:ab6a38df8ec53d4e6213928f9e239a589"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba2d8f4c32c8b6ba3eeb59fa4dff414"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#afba2d8f4c32c8b6ba3eeb59fa4dff414">DEFAULT_MIN_CONNECTIONS</a> = 1</td></tr>
-<tr class="memdesc:afba2d8f4c32c8b6ba3eeb59fa4dff414"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default number of connections to be created initially.  <a href="#afba2d8f4c32c8b6ba3eeb59fa4dff414">More...</a><br /></td></tr>
-<tr class="separator:afba2d8f4c32c8b6ba3eeb59fa4dff414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b6e74d9426c07ab610b4cd66f19e440"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a9b6e74d9426c07ab610b4cd66f19e440">DEFAULT_MULTIUSER_SECURE_MODE</a> = false</td></tr>
-<tr class="memdesc:a9b6e74d9426c07ab610b4cd66f19e440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether client is in multi user secure mode.  <a href="#a9b6e74d9426c07ab610b4cd66f19e440">More...</a><br /></td></tr>
-<tr class="separator:a9b6e74d9426c07ab610b4cd66f19e440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef1297a70763cc4052b29bdcc3ffdcbf"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aef1297a70763cc4052b29bdcc3ffdcbf">DEFAULT_PING_INTERVAL</a></td></tr>
-<tr class="memdesc:aef1297a70763cc4052b29bdcc3ffdcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default frequenc, to ping servers.  <a href="#aef1297a70763cc4052b29bdcc3ffdcbf">More...</a><br /></td></tr>
-<tr class="separator:aef1297a70763cc4052b29bdcc3ffdcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209612cdaf9a348c2b13c419a139df74"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a209612cdaf9a348c2b13c419a139df74">DEFAULT_PR_SINGLE_HOP_ENABLED</a> = true</td></tr>
-<tr class="memdesc:a209612cdaf9a348c2b13c419a139df74"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default value for whether to have single hop optimisations enabled.  <a href="#a209612cdaf9a348c2b13c419a139df74">More...</a><br /></td></tr>
-<tr class="separator:a209612cdaf9a348c2b13c419a139df74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c1ed6cea592346b491db157fc98885"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a60c1ed6cea592346b491db157fc98885">DEFAULT_READ_TIMEOUT</a></td></tr>
-<tr class="memdesc:a60c1ed6cea592346b491db157fc98885"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default amount of time to wait for a response from a server.  <a href="#a60c1ed6cea592346b491db157fc98885">More...</a><br /></td></tr>
-<tr class="separator:a60c1ed6cea592346b491db157fc98885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969656d163eb9fe391441f8f8e39bdea"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a969656d163eb9fe391441f8f8e39bdea">DEFAULT_RETRY_ATTEMPTS</a> = -1</td></tr>
-<tr class="memdesc:a969656d163eb9fe391441f8f8e39bdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default number of times to retry an operation after a timeout or exception.  <a href="#a969656d163eb9fe391441f8f8e39bdea">More...</a><br /></td></tr>
-<tr class="separator:a969656d163eb9fe391441f8f8e39bdea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef17df9a2e1145e4c99052f4bcabb79"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a3ef17df9a2e1145e4c99052f4bcabb79">DEFAULT_SERVER_GROUP</a></td></tr>
-<tr class="memdesc:a3ef17df9a2e1145e4c99052f4bcabb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default server group.  <a href="#a3ef17df9a2e1145e4c99052f4bcabb79">More...</a><br /></td></tr>
-<tr class="separator:a3ef17df9a2e1145e4c99052f4bcabb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a77de086f1733ab83e43a265b37a0a6"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a5a77de086f1733ab83e43a265b37a0a6">DEFAULT_SOCKET_BUFFER_SIZE</a> = 32768</td></tr>
-<tr class="memdesc:a5a77de086f1733ab83e43a265b37a0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default size in bytes of the socket buffer on each connection established.  <a href="#a5a77de086f1733ab83e43a265b37a0a6">More...</a><br /></td></tr>
-<tr class="separator:a5a77de086f1733ab83e43a265b37a0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5d3a61c8c8516fb8c11d959a59a51e"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a7c5d3a61c8c8516fb8c11d959a59a51e">DEFAULT_STATISTIC_INTERVAL</a></td></tr>
-<tr class="memdesc:a7c5d3a61c8c8516fb8c11d959a59a51e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default frequency that client statistics are sent to the server.  <a href="#a7c5d3a61c8c8516fb8c11d959a59a51e">More...</a><br /></td></tr>
-<tr class="separator:a7c5d3a61c8c8516fb8c11d959a59a51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9a0b501cdb334e8b71366df89439b47"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ae9a0b501cdb334e8b71366df89439b47">DEFAULT_SUBSCRIPTION_ACK_INTERVAL</a></td></tr>
-<tr class="memdesc:ae9a0b501cdb334e8b71366df89439b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default amount of time to wait before sending an acknowledgement to the server about events received from the subscriptions.  <a href="#ae9a0b501cdb334e8b71366df89439b47">More...</a><br /></td></tr>
-<tr class="separator:ae9a0b501cdb334e8b71366df89439b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fd46e658432db14d19d6bcd91324d9c"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a8fd46e658432db14d19d6bcd91324d9c">DEFAULT_SUBSCRIPTION_ENABLED</a> = false</td></tr>
-<tr class="memdesc:a8fd46e658432db14d19d6bcd91324d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default value for whether to establish a server to client subscription.  <a href="#a8fd46e658432db14d19d6bcd91324d9c">More...</a><br /></td></tr>
-<tr class="separator:a8fd46e658432db14d19d6bcd91324d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e4fb624bdaf89a32cdcb7af74d9eb5"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a72e4fb624bdaf89a32cdcb7af74d9eb5">DEFAULT_SUBSCRIPTION_MESSAGE_TRACKING_TIMEOUT</a></td></tr>
-<tr class="memdesc:a72e4fb624bdaf89a32cdcb7af74d9eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default amount of time that messages sent from a server to a client will be tracked.  <a href="#a72e4fb624bdaf89a32cdcb7af74d9eb5">More...</a><br /></td></tr>
-<tr class="separator:a72e4fb624bdaf89a32cdcb7af74d9eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa89b15a8b625d9d8b505e6bdd691ddd7"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#aa89b15a8b625d9d8b505e6bdd691ddd7">DEFAULT_SUBSCRIPTION_REDUNDANCY</a> = 0</td></tr>
-<tr class="memdesc:aa89b15a8b625d9d8b505e6bdd691ddd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default redundancy for servers holding subscriptions established by this client.  <a href="#aa89b15a8b625d9d8b505e6bdd691ddd7">More...</a><br /></td></tr>
-<tr class="separator:aa89b15a8b625d9d8b505e6bdd691ddd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b86f01b9a88efe937730a399ef6753a"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a1b86f01b9a88efe937730a399ef6753a">DEFAULT_THREAD_LOCAL_CONN</a> = false</td></tr>
-<tr class="memdesc:a1b86f01b9a88efe937730a399ef6753a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether thread local connection is enabled.  <a href="#a1b86f01b9a88efe937730a399ef6753a">More...</a><br /></td></tr>
-<tr class="separator:a1b86f01b9a88efe937730a399ef6753a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31fe1c44abfb3093c3469d7cc51f146c"><td class="memItemLeft" align="right" valign="top">static const std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a31fe1c44abfb3093c3469d7cc51f146c">DEFAULT_UPDATE_LOCATOR_LIST_INTERVAL</a></td></tr>
-<tr class="memdesc:a31fe1c44abfb3093c3469d7cc51f146c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default frequency to update the locator list.  <a href="#a31fe1c44abfb3093c3469d7cc51f146c">More...</a><br /></td></tr>
-<tr class="separator:a31fe1c44abfb3093c3469d7cc51f146c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a82f75be89ddf35f0a625b0e2c793f4e2"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00782.html">PersistenceManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a82f75be89ddf35f0a625b0e2c793f4e2">getPersistenceManager</a> ()</td></tr>
+<tr class="memdesc:a82f75be89ddf35f0a625b0e2c793f4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current persistence manager.  <a href="#a82f75be89ddf35f0a625b0e2c793f4e2">More...</a><br /></td></tr>
+<tr class="separator:a82f75be89ddf35f0a625b0e2c793f4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a57726d90c0ff1b61ce8cf1bd58a82e65"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a57726d90c0ff1b61ce8cf1bd58a82e65">m_regionPtr</a></td></tr>
+<tr class="memdesc:a57726d90c0ff1b61ce8cf1bd58a82e65"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a> for this persistence manager.  <a href="#a57726d90c0ff1b61ce8cf1bd58a82e65">More...</a><br /></td></tr>
+<tr class="separator:a57726d90c0ff1b61ce8cf1bd58a82e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This interface provides for the configuration and creation of instances of <a class="el" href="a00778.html">Pool</a>. </p>
-<p>Every pool needs to have at least one <a class="el" href="a00782.html#aa3f05ec7294f3024438a0a540020b4ac">locator</a> or <a class="el" href="a00782.html#a5dd34be982576cbf4d71259266ebe11a">server</a> added to it. Locators should be added unless direct connections to bridge servers are desired. </p>
-<p>The setter methods are used to specify non-default values for the other pool properties. </p>
-<p>Once it is configured <a class="el" href="a00782.html#afd37baeb030c1b92ee50b3d25fc046d8">create</a> will produce an instance. </p>
-<p>The factory can be restored to its default configuration by calling <a class="el" href="a00782.html#a1a81d9e5ba1e172a680b647acc7fe218">reset</a>. </p>
-<p>Instances of this interface can be created by calling <a class="el" href="">Cache#getPoolFactory</a>. </p>
-<p>If a subscription is going to be made using a pool then subscriptions <a class="el" href="a00782.html#a64f0b1117a37daffb985b725cfd9ef67">must be enabled</a> on the pool. Subscriptions are made using these APIs: </p><ul>
-<li>
-<a class="el" href="a00802.html#ad2715272fc10d26223d2dee60f2d78d4">QueryService#newCq</a> </li>
-<li>
-<a class="el" href="a00806.html#a5f9a5fcce916d2e353d0da6c72fb8695">Region#registerKeys</a> </li>
-<li>
-<a class="el" href="a00806.html#a831b5bac108bd92dd436ffad49d859c2">Region#registerAllKeys</a> </li>
-<li>
-<a class="el" href="a00806.html#ac2018c44f6006a5d6edf68cdec8ffec0">Region#registerRegex</a> </li>
-</ul>
+<div class="textblock"><p><a class="el" href="a00782.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a> API for persistence and overflow. </p>
+<p>This class abstracts the disk-related operations in case of persistence or overflow to disk. A specific disk storage implementation will implement all the methods described here. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa3f05ec7294f3024438a0a540020b4ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3f05ec7294f3024438a0a540020b4ac">&#9670;&nbsp;</a></span>addLocator()</h2>
+<a id="a8796c68a02ca2cb6d40167a4ccf4556c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8796c68a02ca2cb6d40167a4ccf4556c">&#9670;&nbsp;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::addLocator </td>
+          <td class="memname">virtual void apache::geode::client::PersistenceManager::close </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>host</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes the persistence manager instance. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00618.html" title="Thrown when persistence manager fails to close properly.">ShutdownFailedException</a></td><td>if close is not successful. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab52e1a2deab8c20db07a5007e3d91de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52e1a2deab8c20db07a5007e3d91de3">&#9670;&nbsp;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void apache::geode::client::PersistenceManager::destroy </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; void &gt; &amp;&#160;</td>
+          <td class="paramname"><em>PersistenceInfo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -272,44 +198,79 @@ Static Public Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Adds a locator, given its host and port, to this factory. </p>
-<p>The locator must be a server locator and will be used to discover other running bridge servers and locators. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>destroys the entry specified by the key in the argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">host</td><td>is the host name or ip address that the locator is listening on. </td></tr>
-    <tr><td class="paramname">port</td><td>is the port that the locator is listening on. </td></tr>
+    <tr><td class="paramname">key</td><td>is the key of the entry which is being destroyed. </td></tr>
+    <tr><td class="paramname">PersistenceInfo</td><td>related persistence information. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the <code>host</code> is an unknown host according to <a class="el" href="">java.net.InetAddress#getByName</a> or if the port is outside the valid range of [1..65535] inclusive. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the locator has already been {<a class="el" href="a00782.html#a5dd34be982576cbf4d71259266ebe11a">added} to this factory. </a></td></tr>
+    <tr><td class="paramname"><a class="el" href="a00510.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>is the region is already destroyed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00554.html" title="Thrown when an operation is attempted on a non-existent entry.">EntryNotFoundException</a></td><td>if the entry is not found on the disk. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a5dd34be982576cbf4d71259266ebe11a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dd34be982576cbf4d71259266ebe11a">&#9670;&nbsp;</a></span>addServer()</h2>
+<a id="a82f75be89ddf35f0a625b0e2c793f4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f75be89ddf35f0a625b0e2c793f4e2">&#9670;&nbsp;</a></span>getPersistenceManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::addServer </td>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00782.html">PersistenceManager</a>&gt; apache::geode::client::PersistenceManager::getPersistenceManager </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>host</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current persistence manager. </p>
+<dl class="section return"><dt>Returns</dt><dd>persistence manager </dd></dl>
+
+</div>
+</div>
+<a id="a7c823ff84c48c598581bc1903bc9c6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c823ff84c48c598581bc1903bc9c6af">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void apache::geode::client::PersistenceManager::init </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00814.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00798.html">Properties</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>diskProperties</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -317,686 +278,199 @@ Static Public Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Adds a server, given its host and port, to this factory. </p>
-<p>The server must be a bridge server and this client will directly connect to the server without consulting a server locator. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">host</td><td>is the host name or ip address that the server is listening on. </td></tr>
-    <tr><td class="paramname">port</td><td>is the port that the server is listening on. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<p>This method gets called after an implementation object is created. </p>
+<p>Initializes all the implementation specific environments needed. </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the <code>host</code> is an unknown host according to <a class="el" href="">java.net.InetAddress#getByName</a> or if the port is outside the valid range of [1..65535] inclusive. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the server has already been {<a class="el" href="a00782.html#aa3f05ec7294f3024438a0a540020b4ac">added} to this factory. </a></td></tr>
+    <tr><td class="paramname">InitfailedException</td><td>if the persistence manager cannot be initialized. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afd37baeb030c1b92ee50b3d25fc046d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd37baeb030c1b92ee50b3d25fc046d8">&#9670;&nbsp;</a></span>create()</h2>
+<a id="a1ddf20039371c73ededad0160b0c516b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddf20039371c73ededad0160b0c516b">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00778.html">Pool</a>&gt; apache::geode::client::PoolFactory::create </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00854.html">Cacheable</a>&gt; apache::geode::client::PersistenceManager::read </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; void &gt; &amp;&#160;</td>
+          <td class="paramname"><em>PersistenceInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Creates a new <a class="el" href="a00778.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> for connecting a client to a set of Geode <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> Servers. </p>
-<p>using this factory's settings for attributes.</p>
+<p>Reads the value for the key from the disk. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>is the name of the pool, used when connecting regions to it </td></tr>
+    <tr><td class="paramname">key</td><td>is the key for which the value has to be read. </td></tr>
+    <tr><td class="paramname">PersistenceInfo</td><td>related persistence information. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>value of type std::shared_ptr&lt;Cacheable&gt;. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if a pool with <code>name</code> already exists </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00470.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if a locator or server has not been added. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00610.html" title="Thrown by the persistence manager when the data.">DiskCorruptException</a></td><td>if the data to be read is corrupt. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the newly created pool. </dd></dl>
 
 </div>
 </div>
-<a id="a1a81d9e5ba1e172a680b647acc7fe218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a81d9e5ba1e172a680b647acc7fe218">&#9670;&nbsp;</a></span>reset()</h2>
+<a id="a031c8fa4eec38e3f7ee3cfbe78ecb930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031c8fa4eec38e3f7ee3cfbe78ecb930">&#9670;&nbsp;</a></span>readAll()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::reset </td>
+          <td class="memname">virtual bool apache::geode::client::PersistenceManager::readAll </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Resets the configuration of this factory to its defaults. </p>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
+<p>Reads all the values from the region. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd></dl>
 
 </div>
 </div>
-<a id="a89f1e090d89a04eb81501c8e07c8ac22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f1e090d89a04eb81501c8e07c8ac22">&#9670;&nbsp;</a></span>setFreeConnectionTimeout()</h2>
+<a id="a8390100e20d88ad6527ff8391a037408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8390100e20d88ad6527ff8391a037408">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setFreeConnectionTimeout </td>
+          <td class="memname">virtual void apache::geode::client::PersistenceManager::write </td>
           <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>connectionTimeout</em></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00338.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00854.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; void &gt; &amp;&#160;</td>
+          <td class="paramname"><em>persistenceInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Sets the free connection timeout for this pool. </p>
-<p>If the pool has a max connections setting, operations will block if all of the connections are in use. The free connection timeout specifies how long those operations will block waiting for a free connection before receiving an <a class="el" href="a00682.html">AllConnectionsInUseException</a>. If max connections is not set this setting has no effect.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00782.html#a06a73099cf267b976dde49ab2dd63efa" title="Sets the max number of client to server connections that the pool will create.">setMaxConnections(int)</a></dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Writes a key, value pair of region to the disk. </p>
+<p>The actual file or database related write operations should be implemented in this method by the class implementing this method. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">connectionTimeout</td><td>is the connection timeout</td></tr>
+    <tr><td class="paramname">key</td><td>the key to write. </td></tr>
+    <tr><td class="paramname">value</td><td>the value to write </td></tr>
+    <tr><td class="paramname">PersistenceInfo</td><td>related persistence information. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>connectionTimeout</code> is less than or equal to <code>std::chrono::milliseconds::zero()</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00510.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>is the region is already destroyed. </td></tr>
+    <tr><td class="paramname">OutofMemoryException</td><td>if the disk is full </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00606.html" title="Thrown by the persistence manager when a write fails due to disk failure.">DiskFailureException</a></td><td>if the write fails due to disk fail. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae5fef0b20d95f11399a1fa66f90fbc74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5fef0b20d95f11399a1fa66f90fbc74">&#9670;&nbsp;</a></span>setIdleTimeout()</h2>
+<a id="aef9468921fff75768ba6809224b1ae3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9468921fff75768ba6809224b1ae3b">&#9670;&nbsp;</a></span>writeAll()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setIdleTimeout </td>
+          <td class="memname">virtual bool apache::geode::client::PersistenceManager::writeAll </td>
           <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Sets the amount of time a connection can be idle before expiring the connection. </p>
-<p>If the pool size is greater than the minimum specified by <a class="el" href="a00782.html#ae261c2d991dcf96884953b4b1dace1d2">PoolFactory#setMinConnections(int)</a>, connections which have been idle for longer than the idleTimeout will be closed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idleTimeout</td><td>is the duration that an idle connection should live no less than before expiring, actual time may be longer depending on clock resolution. A duration std::chrono::milliseconds::zero() indicates that connections should never expire. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="aaa812743d8458017bdbb8afa144c05e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa812743d8458017bdbb8afa144c05e7">&#9670;&nbsp;</a></span>setLoadConditioningInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setLoadConditioningInterval </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>loadConditioningInterval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the load conditioning interval for this pool. </p>
-<p>This interval controls how frequently the pool will check to see if a connection to a given server should be moved to a different server to improve the load balance. </p>
-<p>A value of <code>std::chrono::milliseconds::zero()</code> disables load conditioning.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">loadConditioningInterval</td><td>is the connection lifetime</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
+<p>Writes all the entries for a region. </p>
+<p>Refer persistance requirement doc for the use case. </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>connectionLifetime</code> is less than <code>std::chrono::milliseconds::zero()</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00606.html" title="Thrown by the persistence manager when a write fails due to disk failure.">DiskFailureException</a></td><td>if the write fails due to disk fail. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a06a73099cf267b976dde49ab2dd63efa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06a73099cf267b976dde49ab2dd63efa">&#9670;&nbsp;</a></span>setMaxConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setMaxConnections </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxConnections</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the max number of client to server connections that the pool will create. </p>
-<p>If all of the connections are in use, an operation requiring a client to server connection will block until a connection is available.</p>
-<dl class="section see"><dt>See also</dt><dd>#setFreeConnectionTimeout(int)</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">maxConnections</td><td>is the maximum number of connections in the pool. <code>-1</code> indicates that there is no maximum number of connections</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>maxConnections</code> is less than <code>minConnections</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae261c2d991dcf96884953b4b1dace1d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae261c2d991dcf96884953b4b1dace1d2">&#9670;&nbsp;</a></span>setMinConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setMinConnections </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>minConnections</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the minimum number of connections to keep available at all times. </p>
-<p>When the pool is created, it will create this many connections. If <code>0</code> then connections will not be made until an actual operation is done that requires client-to-server communication.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">minConnections</td><td>is the initial number of connections this pool will create. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>minConnections</code> is less than <code>0</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2bce6ff92b63c66478b4298b57c000f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bce6ff92b63c66478b4298b57c000f8">&#9670;&nbsp;</a></span>setMultiuserAuthentication()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setMultiuserAuthentication </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>multiuserAuthentication</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets whether <a class="el" href="a00778.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multi user secure mode. </p>
-<p>If its in multiuser mode then app needs to get <a class="el" href="a00830.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a> instance of <a class="el" href="a00286.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. Deafult value is false. </p><dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="afebf7a1833a4e5d8388c14ad3ee6fb9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afebf7a1833a4e5d8388c14ad3ee6fb9f">&#9670;&nbsp;</a></span>setPingInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setPingInterval </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>pingInterval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The frequency with which servers must be pinged to verify that they are still alive. </p>
-<p>Each server will be sent a ping every <code>pingInterval</code> if there has not been any other communication with the server.</p>
-<p>These pings are used by the server to monitor the health of the client. Make sure that the <code>pingInterval</code> is less than the maximum time between pings allowed by the bridge server.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pingInterval</td><td>is the amount of time between pings. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>pingInterval</code> is less than <code>0</code>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>CacheServer::setMaximumTimeBetweenPings(int) </dd></dl>
-
-</div>
-</div>
-<a id="af4ebe38b43baf0697c6ef6fc5da7a7ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4ebe38b43baf0697c6ef6fc5da7a7ec">&#9670;&nbsp;</a></span>setPRSingleHopEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setPRSingleHopEnabled </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>By default setPRSingleHopEnabled is true<br />
- The client is aware of location of partitions on servers hosting <a class="el" href="a00806.html">Region</a>s. </p>
-<p>Using this information, the client routes the client cache operations directly to the server which is hosting the required partition for the cache operation. If setPRSingleHopEnabled is false the client can do an extra hop on servers to go to the required partition for that cache operation. The setPRSingleHopEnabled avoids extra hops only for following cache operations:<br />
-</p><ol type="1">
-<li><a class="el" href="">Region#put(Object, Object)</a><br />
-</li>
-<li><a class="el" href="">Region#get(Object)</a><br />
-</li>
-<li><a class="el" href="">Region#destroy(Object)</a><br />
- If true, works best when <a class="el" href="a00782.html#a06a73099cf267b976dde49ab2dd63efa">PoolFactory#setMaxConnections(int)</a> is set to -1. <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>is boolean whether PR Single Hop optimization is enabled or not. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-</li>
-</ol>
-
-</div>
-</div>
-<a id="a05ef94395d0b20b047d6cb824389fea0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05ef94395d0b20b047d6cb824389fea0">&#9670;&nbsp;</a></span>setReadTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setReadTimeout </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>timeout</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the duration to wait for a response from a server before timing out the operation and trying another server (if any are available). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">timeout</td><td>duration to wait for a response from a server </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>timeout</code> is less than or equal to <code>std::chrono::milliseconds::zero()</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a09f95158896641e3e8c2d30d60a294f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09f95158896641e3e8c2d30d60a294f4">&#9670;&nbsp;</a></span>setRetryAttempts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setRetryAttempts </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>retryAttempts</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the number of times to retry a request after timeout/exception. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">retryAttempts</td><td>is the number of times to retry a request after timeout/exception. -1 indicates that a request should be tried against every available server before failing </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>idleTimout</code> is less than <code>0</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aea06b9dd37aef7350c93477abc601b25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea06b9dd37aef7350c93477abc601b25">&#9670;&nbsp;</a></span>setServerGroup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setServerGroup </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>group</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configures the group which contains all the servers that this pool connects to. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">group</td><td>is the server group that this pool will connect to. If the value is <code>null</code> or <code>""</code> then the pool connects to all servers. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="ad184c3bb3062443cef6d3381750ea54f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad184c3bb3062443cef6d3381750ea54f">&#9670;&nbsp;</a></span>setSocketBufferSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setSocketBufferSize </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bufferSize</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the socket buffer size for each connection made in this pool. </p>
-<p>Large messages can be received and sent faster when this buffer is larger. Larger buffers also optimize the rate at which servers can send events for client subscriptions.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bufferSize</td><td>is the size of the socket buffers used for reading and writing on each connection in this pool.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>bufferSize</code> is less than or equal to <code>0</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a962ade9a82ba2b0e949ffdc48942549a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a962ade9a82ba2b0e949ffdc48942549a">&#9670;&nbsp;</a></span>setStatisticInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setStatisticInterval </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>statisticInterval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The frequency with which the client statistics must be sent to the server. </p>
-<p>Doing this allows <code>GFMon</code> to monitor clients. </p>
-<p>A value of <code>std::chrono::milliseconds::zero()</code> disables the sending of client statistics to the server.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">statisticInterval</td><td>is the amount of time between sends of client statistics to the server.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>statisticInterval</code> is less than <code>std::chrono::milliseconds::zero()</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afe4ea620da6690392bef64ab54a65319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe4ea620da6690392bef64ab54a65319">&#9670;&nbsp;</a></span>setSubscriptionAckInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setSubscriptionAckInterval </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>ackInterval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the is the interval to wait before sending acknowledgements to the bridge server for events received from the server subscriptions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ackInterval</td><td>is the duration to wait before sending event acknowledgements.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>ackInterval</code> is less than or equal to <code>0</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a64f0b1117a37daffb985b725cfd9ef67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f0b1117a37daffb985b725cfd9ef67">&#9670;&nbsp;</a></span>setSubscriptionEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setSubscriptionEnabled </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If set to <code>true</code> then the created pool will have server-to-client subscriptions enabled. </p>
-<p>If set to <code>false</code> then all <code>Subscription*</code> attributes are ignored at the time of creation. </p><dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a8ae2993716c4aa1b2f84b0e7f8f10eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ae2993716c4aa1b2f84b0e7f8f10eb3">&#9670;&nbsp;</a></span>setSubscriptionMessageTrackingTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setSubscriptionMessageTrackingTimeout </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>messageTrackingTimeout</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the messageTrackingTimeout attribute which is the time-to-live period for subscription events the client has received from the server. </p>
-<p>It is used to minimize duplicate events. Entries that have not been modified for this amount of time are expired from the list.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">messageTrackingTimeout</td><td>is the duration to set the timeout to. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code></dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>messageTrackingTimeout</code> is less than or equal to <code>0</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a856a05a701897311a00f51acd19cc9b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a856a05a701897311a00f51acd19cc9b7">&#9670;&nbsp;</a></span>setSubscriptionRedundancy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setSubscriptionRedundancy </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>redundancy</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the redundancy level for this pools server-to-client subscriptions. </p>
-<p>If <code>0</code> then no redundant copies are kept on the servers. Otherwise an effort is made to maintain the requested number of copies of the server-to-client subscriptions. At most, one copy per server is made up to the requested level. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">redundancy</td><td>is the number of redundant servers for this client's subscriptions. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00466.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if <code>redundancyLevel</code> is less than <code>-1</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a62f037e2c91bc6869fafaad690040322"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62f037e2c91bc6869fafaad690040322">&#9670;&nbsp;</a></span>setThreadLocalConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setThreadLocalConnections </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>threadLocalConnections</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the thread local connections policy for this pool. </p>
-<p>If <code>true</code> then any time a thread goes to use a connection from this pool it will check a thread local cache and see if it already has a connection in it. If so it will use it. If not it will get one from this pool and cache it in the thread local. This gets rid of thread contention for the connections but increases the number of connections the servers see. </p>
-<p>If <code>false</code> then connections are returned to the pool as soon as the operation being done with the connection completes. This allows connections to be shared amonst multiple threads keeping the number of connections down.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">threadLocalConnections</td><td>if <code>true</code> then enable thread local connections. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a624c44729a4cc8c28f0c4f8c8f6ff4bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a624c44729a4cc8c28f0c4f8c8f6ff4bb">&#9670;&nbsp;</a></span>setUpdateLocatorListInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00782.html">PoolFactory</a>&amp; apache::geode::client::PoolFactory::setUpdateLocatorListInterval </td>
-          <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>updateLocatorListInterval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The frequency with which client updates the locator list. </p>
-<p>To disable this set its value to std::chrono::milliseconds::zero().</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">updateLocatorListInterval</td><td>is the amount of time between checking locator list at locator. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="af9697e12851d81c2fa78a8db4f02e2dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9697e12851d81c2fa78a8db4f02e2dc">&#9670;&nbsp;</a></span>DEFAULT_FREE_CONNECTION_TIMEOUT</h2>
+<a id="a57726d90c0ff1b61ce8cf1bd58a82e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57726d90c0ff1b61ce8cf1bd58a82e65">&#9670;&nbsp;</a></span>m_regionPtr</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1005,469 +479,17 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_FREE_CONNECTION_TIMEOUT</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00814.html">Region</a>&gt; apache::geode::client::PersistenceManager::m_regionPtr</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>The default amount of time which we will wait for a free connection if max connections is set and all of the connections are in use. </p>
-<p>Current value: <code>10s</code>. </p>
-
-</div>
-</div>
-<a id="a7650a8dc0e646bb277264303e2a4e700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7650a8dc0e646bb277264303e2a4e700">&#9670;&nbsp;</a></span>DEFAULT_IDLE_TIMEOUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_IDLE_TIMEOUT</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default amount of time in to wait for a connection to become idle. </p>
-<p>Current value: <code>5s</code>. </p>
-
-</div>
-</div>
-<a id="a90ef0091634fd937f08824515e24c82f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90ef0091634fd937f08824515e24c82f">&#9670;&nbsp;</a></span>DEFAULT_LOAD_CONDITIONING_INTERVAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_LOAD_CONDITIONING_INTERVAL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default interval in which the pool will check to see if a connection to a given server should be moved to a different server to improve the load balance. </p>
-<p>Current value: <code>5min</code> </p>
-
-</div>
-</div>
-<a id="ab6a38df8ec53d4e6213928f9e239a589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6a38df8ec53d4e6213928f9e239a589">&#9670;&nbsp;</a></span>DEFAULT_MAX_CONNECTIONS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int apache::geode::client::PoolFactory::DEFAULT_MAX_CONNECTIONS = -1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default maximum number of connections to be created. </p>
-<p>Current value: <code>-1</code>. </p>
-
-</div>
-</div>
-<a id="afba2d8f4c32c8b6ba3eeb59fa4dff414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afba2d8f4c32c8b6ba3eeb59fa4dff414">&#9670;&nbsp;</a></span>DEFAULT_MIN_CONNECTIONS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int apache::geode::client::PoolFactory::DEFAULT_MIN_CONNECTIONS = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default number of connections to be created initially. </p>
-<p>Current value: <code>1</code>. </p>
-
-</div>
-</div>
-<a id="a9b6e74d9426c07ab610b4cd66f19e440"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b6e74d9426c07ab610b4cd66f19e440">&#9670;&nbsp;</a></span>DEFAULT_MULTIUSER_SECURE_MODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool apache::geode::client::PoolFactory::DEFAULT_MULTIUSER_SECURE_MODE = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Whether client is in multi user secure mode. </p>
-<p>Current value: <code>"false"</code>. </p>
-
-</div>
-</div>
-<a id="aef1297a70763cc4052b29bdcc3ffdcbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef1297a70763cc4052b29bdcc3ffdcbf">&#9670;&nbsp;</a></span>DEFAULT_PING_INTERVAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_PING_INTERVAL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default frequenc, to ping servers. </p>
-<p>Current value: <code>10s</code>. </p>
-
-</div>
-</div>
-<a id="a209612cdaf9a348c2b13c419a139df74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a209612cdaf9a348c2b13c419a139df74">&#9670;&nbsp;</a></span>DEFAULT_PR_SINGLE_HOP_ENABLED</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool apache::geode::client::PoolFactory::DEFAULT_PR_SINGLE_HOP_ENABLED = true</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default value for whether to have single hop optimisations enabled. </p>
-<p>Current value: <code>true</code>. </p>
-
-</div>
-</div>
-<a id="a60c1ed6cea592346b491db157fc98885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60c1ed6cea592346b491db157fc98885">&#9670;&nbsp;</a></span>DEFAULT_READ_TIMEOUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_READ_TIMEOUT</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default amount of time to wait for a response from a server. </p>
-<p>Current value: <code>10s</code>. </p>
-
-</div>
-</div>
-<a id="a969656d163eb9fe391441f8f8e39bdea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a969656d163eb9fe391441f8f8e39bdea">&#9670;&nbsp;</a></span>DEFAULT_RETRY_ATTEMPTS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int apache::geode::client::PoolFactory::DEFAULT_RETRY_ATTEMPTS = -1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default number of times to retry an operation after a timeout or exception. </p>
-<p>Current value: <code>-1</code>. </p>
-
-</div>
-</div>
-<a id="a3ef17df9a2e1145e4c99052f4bcabb79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ef17df9a2e1145e4c99052f4bcabb79">&#9670;&nbsp;</a></span>DEFAULT_SERVER_GROUP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string apache::geode::client::PoolFactory::DEFAULT_SERVER_GROUP</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default server group. </p>
-<p>Current value: <code>""</code>. </p>
-
-</div>
-</div>
-<a id="a5a77de086f1733ab83e43a265b37a0a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a77de086f1733ab83e43a265b37a0a6">&#9670;&nbsp;</a></span>DEFAULT_SOCKET_BUFFER_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int apache::geode::client::PoolFactory::DEFAULT_SOCKET_BUFFER_SIZE = 32768</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default size in bytes of the socket buffer on each connection established. </p>
-<p>Current value: <code>32768</code>. </p>
-
-</div>
-</div>
-<a id="a7c5d3a61c8c8516fb8c11d959a59a51e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c5d3a61c8c8516fb8c11d959a59a51e">&#9670;&nbsp;</a></span>DEFAULT_STATISTIC_INTERVAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_STATISTIC_INTERVAL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default frequency that client statistics are sent to the server. </p>
-<p>Current value: <code>std::chrono::milliseconds::zero()</code> (disabled). </p>
-
-</div>
-</div>
-<a id="ae9a0b501cdb334e8b71366df89439b47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9a0b501cdb334e8b71366df89439b47">&#9670;&nbsp;</a></span>DEFAULT_SUBSCRIPTION_ACK_INTERVAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_SUBSCRIPTION_ACK_INTERVAL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default amount of time to wait before sending an acknowledgement to the server about events received from the subscriptions. </p>
-<p>Current value: <code>100ms</code>. </p>
-
-</div>
-</div>
-<a id="a8fd46e658432db14d19d6bcd91324d9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fd46e658432db14d19d6bcd91324d9c">&#9670;&nbsp;</a></span>DEFAULT_SUBSCRIPTION_ENABLED</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool apache::geode::client::PoolFactory::DEFAULT_SUBSCRIPTION_ENABLED = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default value for whether to establish a server to client subscription. </p>
-<p>Current value: <code>false</code>. </p>
-
-</div>
-</div>
-<a id="a72e4fb624bdaf89a32cdcb7af74d9eb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72e4fb624bdaf89a32cdcb7af74d9eb5">&#9670;&nbsp;</a></span>DEFAULT_SUBSCRIPTION_MESSAGE_TRACKING_TIMEOUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_SUBSCRIPTION_MESSAGE_TRACKING_TIMEOUT</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default amount of time that messages sent from a server to a client will be tracked. </p>
-<p>The tracking is done to minimize duplicate events. </p>
-<p>Current value: <code>900s</code>. </p>
-
-</div>
-</div>
-<a id="aa89b15a8b625d9d8b505e6bdd691ddd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa89b15a8b625d9d8b505e6bdd691ddd7">&#9670;&nbsp;</a></span>DEFAULT_SUBSCRIPTION_REDUNDANCY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int apache::geode::client::PoolFactory::DEFAULT_SUBSCRIPTION_REDUNDANCY = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default redundancy for servers holding subscriptions established by this client. </p>
-<p>Current value: <code>0</code>. </p>
-
-</div>
-</div>
-<a id="a1b86f01b9a88efe937730a399ef6753a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b86f01b9a88efe937730a399ef6753a">&#9670;&nbsp;</a></span>DEFAULT_THREAD_LOCAL_CONN</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool apache::geode::client::PoolFactory::DEFAULT_THREAD_LOCAL_CONN = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Whether thread local connection is enabled. </p>
-<p>Current value: <code>"false"</code>. </p>
-
-</div>
-</div>
-<a id="a31fe1c44abfb3093c3469d7cc51f146c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31fe1c44abfb3093c3469d7cc51f146c">&#9670;&nbsp;</a></span>DEFAULT_UPDATE_LOCATOR_LIST_INTERVAL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::chrono::milliseconds apache::geode::client::PoolFactory::DEFAULT_UPDATE_LOCATOR_LIST_INTERVAL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The default frequency to update the locator list. </p>
-<p>Current value: <code>5s</code>. </p>
+<p><a class="el" href="a00814.html" title="This class manages subregions and cached data.">Region</a> for this persistence manager. </p>
 
 </div>
 </div>
