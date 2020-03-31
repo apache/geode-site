@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      System Level Configuration |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_112 docs_geode-native_cpp_112_configuring docs_geode-native_cpp_112_configuring_system-level-configuration has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/112/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/112/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/112/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/112/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/112/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/112/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/112/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/112/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/112/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/112/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/112/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/112/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/112/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/112/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/112/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/112/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/112/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/112/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    System Level Configuration
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#native-client-config_attribute_def_priority">Attribute Definition Priority</a></li>
+<li><a href="#native-client-config_search_path_for_props">Search Path for Multiple Properties Files</a></li>
+<li><a href="#native-client-config_defining_props_programmatically">Defining Properties Programmatically</a></li>
+<li><a href="#native-client-config__section_67D24B8F8C6C46CDA3474E6E42963D04">About the geode.properties Configuration File</a></li>
+<li><a href="#native-client-config__section_88780874FD6C4BBD9B1B993758A985BB">Configuration File Locations</a></li>
+<li><a href="#native-client-config_using_default_sample_file">Using the Default Sample File</a></li>
+<li><a href="#native-client-config__section_6EBE269F15A1497BB4ABBF659F978DA1">Configuring System Properties for the Client</a></li>
+<li><a href="#native-client-config__section_7F09E85DD0144972AAA7028D81780129">Running a Client Out of the Box</a></li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<h2 id="attribute-definition-priority"><a id="native-client-config_attribute_def_priority"></a>Attribute Definition Priority</h2>
+
+<p>You can specify attributes in different ways, which can cause conflicting definitions. Applications
+can be configured programmatically, and that has priority over other settings.</p>
+
+<p>In case an attribute is defined in more than one place, the first source in this list is used:</p>
+
+<ul>
+<li>  Programmatic configuration</li>
+<li>  Properties set at the command line</li>
+<li>  <code><em>current-working-directory</em>/geode.properties</code> file</li>
+<li>  <code><em>native-client-installation-directory</em>/defaultSystem/geode.properties</code> file</li>
+<li>  defaults</li>
+</ul>
+
+<p>The <code>geode.properties</code> files and programmatic configuration are optional. If they are not present,
+no warnings or errors occur. For details on programmatic configuration through the <code>Properties</code>
+object, see <a href="#native-client-config_defining_props_programmatically">Defining Properties Programmatically</a>.</p>
+
+<h2 id="search-path-for-multiple-properties-files"><a id="native-client-config_search_path_for_props"></a>Search Path for Multiple Properties Files</h2>
+
+<p>The client and cache server processes first look for their properties file in the
+<code><em>native-client-installation-directory</em>/defaultSystem</code> directory, then in the working directory.</p>
+
+<p>Any properties set in the working directory override settings in the <code><em>native-client-installation-directory</em>/defaultSystem/geode.properties</code> file.</p>
+
+<p>The <code>geode.properties</code> file provides information to the client regarding the expected server
+configuration. Properties set in this file (in the client environment) do not have any effect on the
+server itself. Its main purpose is to inform the client application as to how to communicate with
+the server.</p>
+
+<h2 id="defining-properties-programmatically"><a id="native-client-config_defining_props_programmatically"></a>Defining Properties Programmatically</h2>
+
+<p>You can pass in specific properties programmatically by using a <code>Properties</code> object to define the non-default properties.</p>
+
+<p>Example:</p>
+<pre class="highlight plaintext"><code>auto systemProps = Properties::create();
+systemProps-&gt;insert("statistic-archive-file", "stats.gfs");
+systemProps-&gt;insert("cache-xml-file", "./myapp-cache.xml");
+systemProps-&gt;insert("stacktrace-enabled", "true");
+auto cache = CacheFactory(systemProps).create();    
+</code></pre>
+
+<h2 id="about-the-geode.properties-configuration-file"><a id="native-client-config__section_67D24B8F8C6C46CDA3474E6E42963D04"></a>About the geode.properties Configuration File</h2>
+
+<p>The <code>geode.properties</code> file provides local settings required to connect a client to a distributed system, along with settings for licensing, logging, and statistics. See <a href="/docs/geode-native/cpp/112/configuring/sysprops.html">System Properties</a>.</p>
+
+<h2 id="configuration-file-locations"><a id="native-client-config__section_88780874FD6C4BBD9B1B993758A985BB"></a>Configuration File Locations</h2>
+
+<p>A client looks for a <code>geode.properties</code> file first in the working directory where the process runs, then in <code><em>native-client-installation-directory</em>/defaultSystem</code>.
+Use the <code>defaultSystem</code> directory to group configuration files or to share them among processes for more convenient administration. If <code>geode.properties</code> is not found, the process starts up with the default settings.</p>
+
+<p>For the <code>cache.xml</code> cache configuration file, a client looks for the path specified by the <code>cache-xml-file</code> attribute in <code>geode.properties</code> (see <a href="/docs/geode-native/cpp/112/configuring/sysprops.html#attributes-gfcpp">System Properties</a>). If the <code>cache.xml</code> is not found, the process starts with an unconfigured cache.</p>
+
+<h2 id="using-the-default-sample-file"><a id="native-client-config_using_default_sample_file"></a>Using the Default Sample File</h2>
+
+<p>A sample <code>geode.properties</code> file is included with the Apache Geode native client installation in the <code><em>native-client-installation-directory</em>/defaultSystem</code> directory.</p>
+
+<p>To use this file:</p>
+
+<ol>
+<li> Copy the file to the directory where you start the application.</li>
+<li><p>Uncomment the lines you need and edit the settings as shown in this example:</p>
+<pre class="highlight plaintext"><code>cache-xml-file=test.xml
+</code></pre></li>
+<li><p>Start the application.</p></li>
+</ol>
+
+<p><strong>Default geode.properties File</strong></p>
+<pre class="highlight plaintext"><code># Default C++ distributed system properties
+# Copy to current directory and uncomment to override defaults.
+#
+## Debugging support, enables stacktraces in  apache::geode::client::Exception.
+#
+# The default is false, uncomment to enable stacktraces in exceptions.
+#stacktrace-enabled=true
+#crash-dump-enabled=true
+#
+#
+## Cache region configuration
+#
+#cache-xml-file=cache.xml
+#
+## Log file config
+#
+#log-file=gemfire_cpp.log
+#log-level=config
+# zero indicates use no limit.
+#log-file-size-limit=0
+# zero indicates use no limit. 
+#log-disk-space-limit=0 
+...
+</code></pre>
+
+<h2 id="configuring-system-properties-for-the-client"><a id="native-client-config__section_6EBE269F15A1497BB4ABBF659F978DA1"></a>Configuring System Properties for the Client</h2>
+
+<p>The typical configuration procedure for a client includes the high-level steps listed below.</p>
+
+<ol>
+<li> Place the <code>geode.properties</code> file for the application in the working directory or in <code><em>native-client-installation-directory</em>/defaultSystem</code>.</li>
+<li> Place the <code>cache.xml</code> file for the application in the desired location and specify its path using the <code>cache-xml-file</code> property in the <code>geode.properties</code> file.</li>
+<li> Add other attributes to the <code>geode.properties</code> file as needed for the local system architecture.</li>
+</ol>
+
+<h2 id="running-a-client-out-of-the-box"><a id="native-client-config__section_7F09E85DD0144972AAA7028D81780129"></a>Running a Client Out of the Box</h2>
+
+<p>If you start a client without any configuration, it uses any attributes set programmatically plus any hard-coded defaults (listed in <a href="/docs/geode-native/cpp/112/configuring/sysprops.html#attributes-gfcpp">System Properties</a>). Running with the defaults is a convenient way to learn the operation of the distributed system and to test which attributes need to be reconfigured for your environment.</p>
+
+<p>Running based on defaults is not recommended for production systems, as important components, such as security, might be overlooked.</p>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>
