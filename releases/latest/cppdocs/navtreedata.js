@@ -24,6 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Apache Geode Native C++ Reference", "index.html", [
+    [ "Deprecated List", "a00266.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -44,11 +45,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"a00358.html#aabe4083211f84d41463b46a1749efeb7",
-"a00514.html#a4a13dbe4fe4936a0f92451738bab6f74",
-"a00750.html#a21a4f63885e135d281474d09f33023d8",
-"a00814.html#a56b987344899b83ff9e3a786adc2f8ec",
-"a00866.html#afe6210d8b9bb10ccca837e028d6208f4"
+"a00359.html#a7b299408c2cdee9f3944f671eb4a06c8",
+"a00515.html#a2a094d3ce2a253779866fe52b42e4d76",
+"a00751.html#a1ff2fa8400f94e360ccc2b7f2cff7b94",
+"a00815.html#a4f31ce8a0fa5482138b61e943499e197",
+"a00875.html#afb5a38b9f90a046905f5e8442b39a515"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
