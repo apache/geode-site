@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.12.0</span>
+   &#160;<span id="projectnumber">1.13.0</span>
    </div>
   </td>
  </tr>
@@ -3046,7 +3046,6 @@ template&lt;class VALUETYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Registers to get updates for all keys from the server. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isDurable</td><td>flag to indicate whether this is a durable registration </td></tr>
@@ -3058,7 +3057,7 @@ template&lt;class VALUETYPE &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00555.html" title="Thrown when an operation is attempted on a non-existent entry.">EntryNotFoundException</a></td><td>If an exception occurs while obtaining values from server after register interest is complete. The actual cause of the exception can be obtained using <code>Exception::getCause</code>. If an application wants to undo the registration on server, or take some other steps for the incomplete cache population then this is the exception that should be caught. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00511.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>If region destroy is pending. </td></tr>
@@ -3117,7 +3116,6 @@ template&lt;class VALUETYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Registers an array of keys for getting updates from the server. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keys</td><td>the array of keys </td></tr>
@@ -3132,7 +3130,7 @@ template&lt;class VALUETYPE &gt; </div>
     <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If the array of keys is empty. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If already registered interest for all keys. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00555.html" title="Thrown when an operation is attempted on a non-existent entry.">EntryNotFoundException</a></td><td>If an exception occurs while obtaining values from server after register interest is complete. The actual cause of the exception can be obtained using <code>Exception::getCause</code>. If an application wants to undo the registration on server, or take some other steps for the incomplete cache population then this is the exception that should be caught. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00511.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>If region destroy is pending. </td></tr>
@@ -3191,7 +3189,6 @@ template&lt;class VALUETYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Registers a regular expression to match with keys to get updates from the server. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">regex</td><td>The regular expression string. </td></tr>
@@ -3207,7 +3204,7 @@ template&lt;class VALUETYPE &gt; </div>
     <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If regex is empty. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If already registered interest for all keys. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00555.html" title="Thrown when an operation is attempted on a non-existent entry.">EntryNotFoundException</a></td><td>If an exception occurs while obtaining values from server after register interest is complete. The actual cause of the exception can be obtained using <code>Exception::getCause</code>. If an application wants to undo the registration on server, or take some other steps for the incomplete cache population then this is the exception that should be caught. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname">MessageExcepton</td><td>If the message received from server could not be handled. This will be the case when an unregistered typeId is received in the reply or reply is not well formed. More information can be found in the log. </td></tr>
@@ -3815,11 +3812,10 @@ template&lt;class KEYTYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Registers to get updates for all keys from the server. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If not previously registered all keys. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00511.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>If region destroy is pending. </td></tr>
@@ -3856,7 +3852,6 @@ template&lt;class KEYTYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Unregisters an array of keys to stop getting updates for them. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keys</td><td>the array of keys</td></tr>
@@ -3867,7 +3862,7 @@ template&lt;class KEYTYPE &gt; </div>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If the array of keys is empty. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If no keys were previously registered. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00511.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>If region destroy is pending. </td></tr>
@@ -3904,7 +3899,6 @@ template&lt;class KEYTYPE &gt; </div>
 </div><div class="memdoc">
 
 <p>Unregisters a regular expression to stop getting updates for keys from the server. </p>
-<p>Valid only for a Native Client region when client notification ( <a class="el" href="">RegionAttributesFactory::setClientNotification</a> ) is true.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">regex</td><td>The regular expression string.</td></tr>
@@ -3915,7 +3909,7 @@ template&lt;class KEYTYPE &gt; </div>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If regex is empty. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If not previously registered this regular expression string. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region or <a class="el" href="">RegionAttributesFactory::setClientNotification</a> is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>If the region is not a Native Client region </td></tr>
     <tr><td class="paramname"><a class="el" href="a00623.html" title="Thrown when an exception occurs on the cache server.">CacheServerException</a></td><td>If an exception is received from the Java cache server. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if it is not connected to the cache because the client cannot establish usable connections to any of the servers given to it For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00511.html" title="Thrown when an operation is attempted on a destroyed region.">RegionDestroyedException</a></td><td>If region destroy is pending. </td></tr>

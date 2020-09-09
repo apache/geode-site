@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Function Execution |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_113 docs_geode-native_cpp_113_function-execution has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/113/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/113/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/113/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/113/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/113/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/113/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/113/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/113/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Function Execution
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#nc-fe-server_side_requirements">Server-side Requirements</a></li>
+<li><a href="#nc-fe-client_side_requirements">Client-side Requirements</a></li>
+<li><a href="#nc-fe-how_functions_execute">How Functions Execute</a></li>
+<li><a href="#nc-fe-processing_function_results">Processing Function Results</a></li>
+<li>
+<a href="#nc-fe-examples">Function Execution Example</a><ul><li><a href="#nc-fe-cpp_example">C++ Example</a></li></ul>
+</li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>A client can invoke a server-resident function, with parameters, and can collect and operate on the returned results.</p>
+
+<h2 id="server-side-requirements"><a id="nc-fe-server_side_requirements"></a>Server-side Requirements</h2>
+
+<p>To be callable from your client, a function must be </p>
+
+<ul>
+<li>resident on the server, and</li>
+<li>registered as available for client access.</li>
+</ul>
+
+<p>See <a href="serverman/developing/function_exec/function_execution.html">Executing a Function in Apache Geode</a> 
+in the Geode User Guide for details on how to write and register server-resident functions.</p>
+
+<h2 id="client-side-requirements"><a id="nc-fe-client_side_requirements"></a>Client-side Requirements</h2>
+
+<p>The client must connect to the server through a connection pool in order to invoke a server-side function.</p>
+
+<h2 id="how-functions-execute"><a id="nc-fe-how_functions_execute"></a>How Functions Execute</h2>
+
+<ol>
+<li> The calling client application runs the <code>execute</code> method on the <code>Execution</code> object. The function must already be registered on the servers.</li>
+<li> The function is invoked on the servers where it needs to run. The servers are determined by the <code>FunctionService on*</code> 
+method calls, region configuration, and any filters.</li>
+<li> If the function has results, the result is returned in a <code>ResultCollector</code> object.</li>
+<li> The client collects results using the <code>ResultCollector.getResult()</code> method.</li>
+</ol>
+
+<p>In every client where you want to execute the function and process the results:</p>
+
+<ul>
+<li>Use one of the <code>FunctionService on*</code> methods to create an <code>Execution</code> object. The <code>on*</code> methods,
+<code>onRegion</code>, <code>onServer</code> and <code>onServers</code>, define the highest level where the function is run.</li>
+<li>If you use <code>onRegion</code> you can further narrow your run scope by setting key filters.</li>
+<li>A function run using <code>onRegion</code> is a <em>data dependent</em> function – others are <em>data-independent</em> functions.</li>
+<li><p>You can run a data dependent function against partitioned and colocated partitioned regions. From the client, provide the appropriate key
+sets to the function call.</p></li>
+<li><p>The <code>Execution</code> object allows you to customize the invocation by:</p>
+
+<ul>
+<li>  Providing a set of data keys to <code>withFilter</code> to narrow the execution scope. This works only for <code>onRegion</code> Execution objects (data-dependent functions).</li>
+<li>  Providing function arguments to <code>withArgs</code>.</li>
+<li>  Defining a custom <code>ResultCollector</code> for <code>withCollector</code>.</li>
+</ul></li>
+<li><p>Call the <code>Execution.execute()</code> method to run the function.</p></li>
+</ul>
+
+<h2 id="processing-function-results"><a id="nc-fe-processing_function_results"></a>Processing Function Results</h2>
+
+<p>To get the results from the function in the client app, use the result collector returned from the function execution.
+The <code>getResult</code> methods of the default result collector block until all results are received, then return the full result set.</p>
+
+<p>The client can use the default result collector. If the client needs special results handling, code a custom <code>ResultsCollector</code> implementation to replace the default.
+Use the <code>Execution::withCollector</code> method to specify the custom collector.
+To handle the results in a custom manner:</p>
+
+<ol>
+<li> Write a class that implements the <code>ResultCollector</code> interface to handle the results in a custom manner. The methods are of two types: one handles data and information from Geode and populates the results set, while the other returns the compiled results to the calling application:
+
+<ul>
+<li> <code>addResult</code> is called when results arrive from the <code>Function</code> methods. Use <code>addResult</code> to add a single result to the ResultCollector.</li>
+<li> <code>endResults</code> is called to signal the end of all results from the function execution.</li>
+<li> <code>getResult</code> is available to your executing application (the one that calls <code>Execution.execute</code>) to retrieve the results. This may block until all results are available.</li>
+<li> <code>clearResults</code> is called to clear partial results from the results collector. This is used only for highly available <code>onRegion</code> functions where the calling application waits for the results. If the call fails, before Geode retries the execution, it calls <code>clearResults</code> to ready the instance for a clean set of results.</li>
+</ul></li>
+<li> Use the <code>Execution</code> object in your executing member to call <code>withCollector</code>, passing your custom collector.</li>
+</ol>
+
+<h2 id="function-execution-example"><a id="nc-fe-examples"></a>Function Execution Example</h2>
+
+<p>The native client release contains examples of function execution in <code>../examples/cpp/functionexecution</code>.</p>
+
+<ul>
+<li>The example begins with a server-side script that runs <code>gfsh</code> commands to create a region, simply called &ldquo;partition_region&rdquo;.</li>
+<li>The function is preloaded with a JAR file containing the server-side Java function code. </li>
+<li>The function, called &ldquo;ExampleMultiGetFunction&rdquo;, is defined in the
+<code>examples/utilities</code> directory of your distribution. As its input parameter, the function takes an array of keys,
+then performs a <code>get</code> on each key and returns an array containing the results.</li>
+<li>The function does not load values into the data store. That is a separate operation, performed in these examples by
+the client, and does not involve the server-side function.</li>
+</ul>
+
+<p>As prerequisites, the client code must be aware of the connection to the server, the name of the function, and the expected type/format 
+of the input parameter and return value.</p>
+
+<p>The client:</p>
+
+<ul>
+<li>creates an execution object</li>
+<li>provides the execution object with a populated input parameter array</li>
+<li>invokes the object&rsquo;s execute method to invoke the server-side function</li>
+</ul>
+
+<p>If the client expects results, it must create a result object.
+The .NET example uses a built-in result collector (<code>IResultCollector.getResults()</code>) to retrieve the function results.</p>
+
+<p>The example creates a result variable to hold the results from the collector.</p>
+
+<h3 id="c++-example"><a id="nc-fe-cpp_example"></a>C++ Example</h3>
+
+<p>This section contains code snippets showing highlights of the C++ function execution example. They are not intended for cut-and-paste execution.
+For the complete source, see the example source directory.</p>
+
+<p>The C++ example creates a cache.</p>
+<pre class="highlight cpp"><code><span class="n">Cache</span> <span class="nf">setupCache</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">CacheFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The example client uses the cache to create a connection pool, </p>
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="nf">createPool</span><span class="p">(</span><span class="k">const</span> <span class="n">Cache</span><span class="o">&amp;</span> <span class="n">cache</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">pool</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">createFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">addServer</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="n">EXAMPLE_SERVER_PORT</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Then, using that pool, the client creates a region with the same characteristics and name as the server-side region (<code>partition_region</code>).</p>
+<pre class="highlight cpp"><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Region</span><span class="o">&gt;</span> <span class="n">createRegion</span><span class="p">(</span><span class="n">Cache</span><span class="o">&amp;</span> <span class="n">cache</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">regionFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">createRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="o">::</span><span class="n">PROXY</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="n">region</span> <span class="o">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">setPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="s">"partition_region"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="n">region</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The sample client populates the server&rsquo;s datastore with values, using the API and some sample key-value pairs.</p>
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="nf">populateRegion</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Region</span><span class="o">&gt;&amp;</span> <span class="n">region</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">region</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>As confirmation that the data has been stored, the sample client uses the API to retrieve the values and write them to the console.
+This is done without reference to the server-side example function.</p>
+<pre class="highlight cpp"><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">CacheableVector</span><span class="o">&gt;</span> <span class="n">populateArguments</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">arguments</span> <span class="o">=</span> <span class="n">CacheableVector</span><span class="o">::</span><span class="n">create</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">keys</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">arguments</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">CacheableKey</span><span class="o">::</span><span class="n">create</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">arguments</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Next, the client retrieves those same values using the server-side example function.
+The client code creates the input parameter, an array of keys whose values are to be retrieved.</p>
+<pre class="highlight cpp"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">executeFunctionOnServer</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Region</span><span class="o">&gt;</span> <span class="n">region</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">CacheableVector</span><span class="o">&gt;</span> <span class="n">arguments</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">resultList</span><span class="p">;</span>
+</code></pre>
+
+<p>The client creates an execution object using <code>Client.FunctionService.OnRegion</code> and specifying the region.</p>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">functionService</span> <span class="o">=</span> <span class="n">FunctionService</span><span class="o">::</span><span class="n">onServer</span><span class="p">(</span><span class="n">region</span><span class="o">-&gt;</span><span class="n">getRegionService</span><span class="p">());</span>
+</code></pre>
+
+<p>The client then calls the server side function with its input arguments and stores the results in a vector.</p>
+<pre class="highlight cpp"><code>  <span class="k">if</span><span class="p">(</span><span class="k">auto</span> <span class="n">executeFunctionResult</span> <span class="o">=</span> <span class="n">functionService</span><span class="p">.</span><span class="n">withArgs</span><span class="p">(</span><span class="n">arguments</span><span class="p">).</span><span class="n">execute</span><span class="p">(</span><span class="n">getFuncIName</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getResult</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">arrayList</span><span class="o">:</span> <span class="o">*</span><span class="n">executeFunctionResult</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">cachedString</span><span class="o">:</span> <span class="o">*</span><span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">CacheableArrayList</span><span class="o">&gt;</span><span class="p">(</span><span class="n">arrayList</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">resultList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">CacheableString</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cachedString</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">());</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"get executeFunctionResult is NULL</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">resultList</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>It then loops through the results vector and prints the retrieved values.</p>
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="nf">printResults</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">resultList</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Result count = "</span> <span class="o">&lt;&lt;</span> <span class="n">resultList</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">cachedString</span><span class="o">:</span> <span class="n">resultList</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\t</span><span class="s">Result["</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"]="</span> <span class="o">&lt;&lt;</span> <span class="n">cachedString</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

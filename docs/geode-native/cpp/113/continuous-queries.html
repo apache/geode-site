@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Continuous Queries |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_113 docs_geode-native_cpp_113_continuous-queries has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/113/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/113/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/113/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/113/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/113/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/113/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/113/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/113/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/113/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/113/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/113/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Continuous Queries
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#cq_main_features">Continuous Query Basics</a></li>
+<li><a href="#cq_api">Typical Continuous Query Lifecycle</a></li>
+<li>
+<a href="#ExecutingACQ">Executing a Continuous Query from the Client</a><ul><li><a href="#CppCQExample">C++ Continuous Query Example</a></li></ul>
+</li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>The C++ and .NET clients can initiate queries that run on the Geode cache server
+and notify the client when the query results have changed.  For details on the server-side setup for
+continuous queries, see <a href="serverman/developing/continuous_querying/how_continuous_querying_works.html">How Continuous Querying Works</a> 
+in the <em>Geode User Guide</em>.</p>
+
+<h2 id="continuous-query-basics"><a id="cq_main_features" ></a>Continuous Query Basics</h2>
+
+<p>Continuous querying provides the following features:</p>
+
+<ul>
+<li><p><strong>Standard Geode native client query syntax and semantics</strong>. Continuous queries are expressed in the same language used for other native client queries. See <a href="/docs/geode-native/cpp/113/remote-queries.html">Remote Queries</a>.</p></li>
+<li><p><strong>Standard Geode events-based management of CQ events</strong>. The event handling used
+to process CQ events is based on the standard Geode event handling framework. </p></li>
+<li><p><strong>Complete integration with the client/server architecture</strong>. CQ functionality uses existing
+server-to-client messaging mechanisms to send events. All tuning of your server-to-client
+messaging also tunes the messaging of your CQ events. If your system is configured for high
+availability then your CQs are highly available, with seamless failover provided in case of
+server failure (see <a href="/docs/geode-native/cpp/113/preserving-data/high-availability-client-server.html">High Availability for Client-to-Server Communication</a>). 
+If your clients are durable, you can also define any of your CQs as durable (see <a href="/docs/geode-native/cpp/113/preserving-data/durable-client-messaging.html">Durable Client Messaging</a>).</p></li>
+<li><p><strong>Interest criteria based on data values</strong>. Continuous queries are run against the region&rsquo;s entry values. 
+Compare this to register interest by reviewing <a href="/docs/geode-native/cpp/113/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>.</p></li>
+<li><p><strong>Active query execution</strong>. Once initialized, the queries operate on new events. Events that change the query result are sent to the client immediately.</p></li>
+</ul>
+
+<h2 id="typical-continuous-query-lifecycle"><a id="cq_api"></a>Typical Continuous Query Lifecycle</h2>
+
+<ol>
+<li> The client creates the CQ. This sets up everything for running the query and provides the client with a <code>CqQuery</code> object, but does not execute the CQ. At this point, the query is in a <code>STOPPED</code>state, ready to be closed or run.</li>
+<li><p>The client initiates the CQ with an API call to one of the <code>CqQuery execute*</code> methods. This puts the query into a <code>RUNNING</code> state on the client and on the server.  The server remotely evaluates the query string, and optionally returns the results to the client. <code>CqQuery execute*</code> methods include:</p>
+
+<ul>
+<li><code>CqQuery.execute()</code> </li>
+<li><code>CqQuery.executeWithInitialResults()</code></li>
+</ul></li>
+<li><p>A CQ Listener waits for events. When it receives events, it takes action accordingly with the data in the CqEvent.</p></li>
+<li><p>The CQ is closed by a client call to <code>CqQuery.close</code>. This de-allocates all resources in use for the CQ on the client and server. At this point, the cycle could begin again with the creation of a new <code>CqQuery</code> instance.</p></li>
+</ol>
+
+<h2 id="executing-a-continuous-query-from-the-client"><a id="ExecutingACQ"></a>Executing a Continuous Query from the Client</h2>
+
+<p>The essential steps to create and execute a continuous query are:</p>
+
+<ol>
+<li> Create an instance of the <code>QueryService</code> class. If you are using the pool API (recommended), you should obtain the <code>QueryService</code> from the pool.</li>
+<li> Define a CQ Listener (a <code>CqListener</code>) to field events sent from the server.</li>
+<li> Use one of the <code>CqQuery execute*</code> methods to submit the query string to the cache server.</li>
+<li> The server remotely evaluates the query string, then monitors those results and notifies the client if they change.</li>
+<li> The client listens for changes that match the query predicate.</li>
+<li> Iterate through the returned objects.</li>
+<li> When finished, close down the continuous query.</li>
+</ol>
+
+<h3 id="c++-continuous-query-example"><a id="CppCQExample"></a>C++ Continuous Query Example</h3>
+
+<p>These C++ code excerpts are from the <code>examples/cpp/continuousquery</code> example included in your client
+distribution. See the example for full context.</p>
+
+<p>Following the steps listed above,</p>
+
+<ol>
+<li><p>Create a query service:</p>
+<pre class="highlight plaintext"><code>auto queryService = pool-&gt;getQueryService();
+</code></pre></li>
+<li><p>Define a CqListener:</p>
+<pre class="highlight plaintext"><code>class MyCqListener : public CqListener {
+</code></pre></li>
+<li><p>Create an instance of your CqListener and insert it into a CQ attributes object:</p>
+<pre class="highlight plaintext"><code>CqAttributesFactory cqFactory;
+
+auto cqListener = std::make_shared&lt;MyCqListener&gt;();
+
+cqFactory.addCqListener(cqListener);
+auto cqAttributes = cqFactory.create();
+</code></pre></li>
+<li><p>Create a Continuous Query using the query service and the CQ attributes:</p>
+<pre class="highlight plaintext"><code>  auto query = queryService-&gt;newCq(
+  "MyCq", "SELECT * FROM /custom_orders c WHERE c.quantity &gt; 30",
+  cqAttributes);
+</code></pre></li>
+<li><p>Execute the query:</p>
+<pre class="highlight plaintext"><code>query-&gt;execute();
+</code></pre></li>
+<li><p>Wait for events and do something with them.</p>
+<pre class="highlight plaintext"><code>/* Excerpt from the CqListener */
+
+/* Determine Operation Type */
+switch (cqEvent.getQueryOperation()) {
+case CqOperation::OP_TYPE_CREATE:
+  opStr = "CREATE";
+  break;
+case CqOperation::OP_TYPE_UPDATE:
+  opStr = "UPDATE";
+  break;
+case CqOperation::OP_TYPE_DESTROY:
+  opStr = "DESTROY";
+  break;
+default:
+  break;
+}
+
+...
+
+/* Take action based on OP Type */
+
+</code></pre></li>
+<li><p>When finished, close up shop.</p>
+<pre class="highlight plaintext"><code>query-&gt;execute();
+
+... (respond to events as they arrive)
+
+query-&gt;stop();
+query-&gt;close();
+
+cache.close();
+</code></pre></li>
+</ol>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

@@ -5,6 +5,7 @@ org.apache.geode.annotations
 org.apache.geode.cache
 org.apache.geode.cache.asyncqueue
 org.apache.geode.cache.client
+org.apache.geode.cache.client.proxy
 org.apache.geode.cache.configuration
 org.apache.geode.cache.control
 org.apache.geode.cache.execute
