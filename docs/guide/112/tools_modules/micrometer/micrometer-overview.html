@@ -734,9 +734,6 @@ limitations under the License.
                                     <li>
                                         <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_garbage.html">Garbage Collection and System Performance</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_connection_thread_settings.html">Connection Thread Settings and Performance</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="has_submenu">
@@ -2630,6 +2627,9 @@ limitations under the License.
 <p>Geode uses <a href="https://micrometer.io">Micrometer</a> to provide an interface for emitting user focused metrics, instrumented in code, to a variety of different consuming Application Performance Monitoring (APM) tools. Geode has Micrometer instrumentation added to a subset of information available, which can be easily emitted from a Meter Registry.</p>
 
 <p>By default, Micrometer is enabeled and can emit metrics to any meter registry. However, time-based meters are available only when the <code>time-statistics</code> property is turned on.</p>
+
+<p>The API is currently marked experimental.
+The <code>MetricsSession</code> and <code>MetricsPublishingService</code> interfaces may change.</p>
 
 <ul>
 <li><p><strong><a href="/docs/guide/112/tools_modules/micrometer/micrometer-configuration.html">Micrometer configuration and publishing</a></strong></p>

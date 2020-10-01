@@ -734,9 +734,6 @@ limitations under the License.
                                     <li>
                                         <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_garbage.html">Garbage Collection and System Performance</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_connection_thread_settings.html">Connection Thread Settings and Performance</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="has_submenu">
@@ -2632,6 +2629,8 @@ limitations under the License.
 <p>Any member can host an embedded JMX Manager, which provides a federated view of all MBeans for the cluster. The member can be configured to be a manager at startup or anytime during its life by invoking the appropriate API calls on the ManagementService.</p>
 
 <p>You need to have a JMX Manager started in your cluster in order to use Geode management and monitoring tools such as <a href="/docs/guide/112/tools_modules/gfsh/chapter_overview.html">gfsh</a> and <a href="/docs/guide/112/tools_modules/pulse/pulse-overview.html">Geode Pulse</a>.</p>
+
+<p>To create MBeans, a Security Manager must be enabled. See <a href="/docs/guide/112/managing/security/enable_security.html">Enable Security with Property Definitions</a> for more information.</p>
 
 <p><strong>Note:</strong>
 Each node that acts as the JMX Manager has additional memory requirements depending on the number of resources that it is managing and monitoring. Being a JMX Manager can increase the memory footprint of any process, including locator processes. See <a href="/docs/guide/112/reference/topics/memory_requirements_for_cache_data.html#calculating_memory_requirements">Memory Requirements for Cached Data</a> for more information on calculating memory overhead on your Geode processes.</p>

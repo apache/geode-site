@@ -734,9 +734,6 @@ limitations under the License.
                                     <li>
                                         <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_garbage.html">Garbage Collection and System Performance</a>
                                     </li>
-                                    <li>
-                                        <a href="/docs/guide/112/managing/monitor_tune/system_member_performance_connection_thread_settings.html">Connection Thread Settings and Performance</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="has_submenu">
@@ -2630,6 +2627,10 @@ limitations under the License.
 <p>Force GC (Garbage Collection) on a member or members.</p>
 
 <p>The default is for garbage collection to occur on all caching members.</p>
+
+<p>The <strong>gfsh gc</strong> command should be used only in non-production environments.
+This is a forced GC event and not always handled well by the garbage collector outside of normal GC processing.
+This can cause slow-responding members to be perceived as unresponsive and disconnected from the cluster.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
