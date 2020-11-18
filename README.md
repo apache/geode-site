@@ -26,11 +26,11 @@ This repository contains the source files for the [Apache Geode website](https:/
 
 The repository contains two branches:
 
-- The __master__ branch contains the site's HTML framework, comprised of the top-level landing page and the next level of pages, such as Docs, Community, and Releases, and the tools needed to compile the deployable site. 
+- The __master__ branch contains the site's HTML framework, composed of the top-level landing page and the next level of pages, such as Docs, Community, and Releases, and the tools needed to compile the deployable site. 
 
   Content resides under the `website/content` directory. These sources are compiled into a deployable site by gradle scripts using a tool called [Pandoc](http://johnmacfarlane.net/pandoc).
 
-- The __asf-site__ branch contains a copy of the deployable site built from the __master__ branch, fleshed-out with __externally-generated__ content, which includes all non-HTML content such as the User Guide and the Javadocs, which you build separately then add manually before publishing the completed site. Stylesheets also reside on the __asf-site__ branch.
+- The __asf-site__ branch contains a copy of the deployable site built from the __master__ branch, fleshed-out with __externally-generated__ content, which includes all non-framework content such as the User Guide and the Javadocs, which you build separately then add manually on the __asf-site__ branch before publishing the completed site. Stylesheets also reside on the __asf-site__ branch.
 
   To deploy the Apache Geode website, you push the __asf-site__ branch to the upstream Apache repository. An Apache "sync" tool monitors the __asf-site__ branch 
 of the repository and publishes your update to the
