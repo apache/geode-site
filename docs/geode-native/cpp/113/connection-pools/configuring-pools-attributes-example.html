@@ -132,6 +132,21 @@ limitations under the License.
       </ul>
     </li>
 
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
     <li>
       <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
     </li>
@@ -244,7 +259,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>Connection pools require standard client/server distributed system and cache configuration settings. You must also configure settings for the locator, server, and pool elements.</p>
+<p>Connection pools require a standard client/server distributed system and cache configuration settings. You must also configure settings for the locator, server, and pool elements.</p>
 
 <ul>
 <li>  Locator. Host and port where a server locator is listening.</li>
@@ -252,11 +267,35 @@ limitations under the License.
 <li>  Pool. Client/server connection pool.</li>
 </ul>
 
-<p>The example shows a declarative pool configuration. Following the example is a table that describes the attributes that can be configured.</p>
+<p>This page shows examples of creating a pool configuration programmatically using C++ code, and declaratively using XML.</p>
 
-<h2 id="example—declarative-pool-configuration">Example—Declarative Pool Configuration</h2>
+<h2 id="programmatic-pool-configuration">Programmatic Pool Configuration</h2>
 
-<p>This example shows a declarative pool configuration.</p>
+<p>This example shows a programmatic pool configuration. For a list of the attributes you can configure, see <code>PoolFactory</code> in the API docs.</p>
+<pre class="highlight cpp"><code><span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">createFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">34756</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setFreeConnectionTimeout</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">12345</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setLoadConditioningInterval</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">23456</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setMaxConnections</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setMinConnections</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setPingInterval</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">12345</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setReadTimeout</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">23456</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setRetryAttempts</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setServerGroup</span><span class="p">(</span><span class="s">"ServerGroup1"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setSocketBufferSize</span><span class="p">(</span><span class="mi">32768</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setStatisticInterval</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">10123</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setSubscriptionAckInterval</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">567</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setSubscriptionEnabled</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setSubscriptionMessageTrackingTimeout</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">900123</span><span class="p">))</span>
+      <span class="p">.</span><span class="n">setSubscriptionRedundancy</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setThreadLocalConnections</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"test_pool_1"</span><span class="p">);</span>
+</code></pre>
+
+<h2 id="declarative-pool-configuration">Declarative Pool Configuration</h2>
+
+<p>This example shows a declarative pool configuration. Following the example is a table that describes the XML pool attributes you can configure.</p>
 
 <p><strong>Note:</strong>
 You create an instance of <code>PoolFactory</code> through <code>PoolManager</code>.</p>

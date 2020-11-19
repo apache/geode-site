@@ -132,6 +132,21 @@ limitations under the License.
       </ul>
     </li>
 
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
     <li>
       <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
     </li>
@@ -253,43 +268,22 @@ this means setting the authentication credentials when you create the CacheFacto
 <h3 id="c++-authentication-example">C++ Authentication Example</h3>
 
 <p>In this C++ authentication example, the <code>CacheFactory</code> creation process sets the authentication callback:</p>
-<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cacheFactory</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
-  <span class="k">auto</span> <span class="n">authInitialize</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">UserPasswordAuthInit</span><span class="o">&gt;</span><span class="p">();</span>
-  <span class="n">cacheFactory</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>
-  <span class="n">cacheFactory</span><span class="p">.</span><span class="n">setAuthInitialize</span><span class="p">(</span><span class="n">authInitialize</span><span class="p">);</span>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">setAuthInitialize</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">ExampleAuthInitialize</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">ExampleAuthInitialize</span><span class="p">()))</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">();</span>
 </code></pre>
 
-<p>Credentials are implemented in the <code>getCredentials</code> member function of the <code>AuthInitialize</code> abstract class.</p>
-<pre class="highlight cpp"><code><span class="k">class</span> <span class="nc">UserPasswordAuthInit</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AuthInitialize</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">UserPasswordAuthInit</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+<p>Credentials are implemented in the <code>getCredentials</code> member function of the <code>ExampleAuthInitialize</code>, which is derived from the <code>AuthInitialize</code> abstract class.</p>
+<pre class="highlight cpp"><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Properties</span><span class="o">&gt;</span> <span class="n">ExampleAuthInitialize</span><span class="o">::</span><span class="n">getCredentials</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Properties</span><span class="o">&gt;&amp;</span> <span class="n">securityprops</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="cm">/*server*/</span><span class="p">)</span> <span class="p">{</span>
 
-  <span class="o">~</span><span class="n">UserPasswordAuthInit</span><span class="p">()</span> <span class="k">noexcept</span> <span class="n">override</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+  <span class="n">securityprops</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="s">"security-username"</span><span class="p">,</span> <span class="s">"root"</span><span class="p">);</span>
+  <span class="n">securityprops</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="s">"security-password"</span><span class="p">,</span> <span class="s">"root"</span><span class="p">);</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Properties</span><span class="o">&gt;</span> <span class="n">getCredentials</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Properties</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">securityprops</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Cacheable</span><span class="o">&gt;</span> <span class="n">userName</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">securityprops</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">||</span>
-      <span class="p">(</span><span class="n">userName</span> <span class="o">=</span> <span class="n">securityprops</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="n">SECURITY_USERNAME</span><span class="p">))</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">AuthenticationFailedException</span><span class="p">(</span>
-      <span class="s">"UserPasswordAuthInit: user name "</span>
-      <span class="s">"property [SECURITY_USERNAME] not set."</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">auto</span> <span class="n">credentials</span> <span class="o">=</span> <span class="n">Properties</span><span class="o">::</span><span class="n">create</span><span class="p">();</span>
-    <span class="n">credentials</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="n">SECURITY_USERNAME</span><span class="p">,</span> <span class="n">userName</span><span class="o">-&gt;</span><span class="n">toString</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
-    <span class="k">auto</span> <span class="n">passwd</span> <span class="o">=</span> <span class="n">securityprops</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="n">SECURITY_PASSWORD</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">passwd</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">passwd</span> <span class="o">=</span> <span class="n">CacheableString</span><span class="o">::</span><span class="n">create</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">credentials</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="n">SECURITY_PASSWORD</span><span class="p">,</span> <span class="n">passwd</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
-    <span class="k">return</span> <span class="n">credentials</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="n">close</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
+  <span class="k">return</span> <span class="n">securityprops</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
 
         

@@ -132,6 +132,21 @@ limitations under the License.
       </ul>
     </li>
 
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
     <li>
       <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
     </li>
@@ -320,42 +335,37 @@ treated as unsuccessful. The transaction is retried until it succeeds.</li>
 For the complete source, see the example source directory.</p>
 
 <p>The C++ example creates a cache, then uses it to create a connection pool.</p>
-<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">().</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">).</span><span class="n">create</span><span class="p">();</span>
-  <span class="k">auto</span> <span class="n">poolFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">().</span><span class="n">createFactory</span><span class="p">();</span>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">();</span>
 
-  <span class="n">poolFactory</span><span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">10334</span><span class="p">);</span>
-  <span class="k">auto</span> <span class="n">pool</span> <span class="o">=</span> <span class="n">poolFactory</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+  <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">createFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">10334</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+
   <span class="k">auto</span> <span class="n">regionFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">createRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="o">::</span><span class="n">PROXY</span><span class="p">);</span>
   <span class="k">auto</span> <span class="n">region</span> <span class="o">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">setPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="s">"exampleRegion"</span><span class="p">);</span>
 </code></pre>
 
-<p>The example application gets a transaction manager from the cache and begins a transaction.</p>
+<p>The example application gets a transaction manager from the cache and a five-attempt retry loop.
+If all <code>put</code> operations succeed, the application commits the transaction. Otherwise, it retries up to 5 times if necessary.</p>
 <pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">transactionManager</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">getCacheTransactionManager</span><span class="p">();</span>
-
-  <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">();</span>
-</code></pre>
-
-<p>Within the transaction, the client populates data store with 10 values associated with Key1 - Key10.</p>
-<pre class="highlight cpp"><code>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">key</span> <span class="o">:</span> <span class="n">keys</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">getValueFromExternalSystem</span><span class="p">();</span>
-        <span class="n">region</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
-      <span class="p">}</span>
-</code></pre>
-
-<p>If all <code>put</code> operations succeed, the application commits the transaction. Otherwise, it retries up to 5 times if necessary.</p>
-<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">retries</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="k">auto</span> <span class="n">retries</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
   <span class="k">while</span> <span class="p">(</span><span class="n">retries</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
       <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">();</span>
-       <span class="p">...</span> <span class="c1">// PUT OPERATIONS ...
-</span>      <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">commit</span><span class="p">();</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Committed transaction - exiting"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span> <span class="p">...</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">rollback</span><span class="p">();</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Rolled back transaction - retrying("</span> <span class="o">&lt;&lt;</span> <span class="n">retries</span> <span class="o">&lt;&lt;</span> <span class="s">")"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">key</span> <span class="o">:</span> <span class="n">keys</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">getValueFromExternalSystem</span><span class="p">();</span>
+        <span class="n">region</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">commit</span><span class="p">();</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Committed transaction - exiting"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span> <span class="p">...</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">exists</span><span class="p">()){</span>
+        <span class="n">transactionManager</span><span class="o">-&gt;</span><span class="n">rollback</span><span class="p">();</span>
+      <span class="p">}</span>
 </code></pre>
 
         

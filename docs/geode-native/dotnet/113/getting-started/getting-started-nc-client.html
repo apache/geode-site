@@ -133,6 +133,21 @@ limitations under the License.
     </li>
 
     <li class="has_submenu">
+        <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
       <a href="/docs/geode-native/dotnet/113/serialization/data-serialization.html">Serializing Data</a>
       <ul>
         <li class="has_submenu">
@@ -145,7 +160,7 @@ limitations under the License.
               <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
             </li>
             <li>
-              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Examples</a>
+              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
             </li>
           </ul>
         </li>
@@ -287,37 +302,34 @@ and <a href="serverman/topologies_and_comm/cs_configuration/chapter_overview.htm
 <p>To connect to a server, your application must follow these steps:</p>
 
 <ol>
-<li>Instantiate a <code>CacheFactory</code>, setting characteristics of interest (for example, <code>log-level</code>).</li>
-<li>Create a cache and use it to instantiate a <code>PoolFactory</code>, specifying the hostname and port for the server locator.</li>
-<li>Create a named pool of network connections.</li>
-<li>Instantiate a region of the desired type (usually CACHING_PROXY or PROXY) and connect it by name to its counterpart on the server.</li>
+<li>Create a cache, setting characteristics of interest (for example, <code>log-level</code>).</li>
+<li>Use the cache to create a named pool of network connections, specifying the hostname and port for at least one server locator.</li>
+<li>Instantiate a region of the desired type (usually PROXY, sometimes CACHING_PROXY) and connect it by name to its counterpart on the server.</li>
 </ol>
 
 <p>Once the connection pool and the shared region are in place, your client application is ready to share data with the server.</p>
 
 <p><strong>Server Connection: .NET Example</strong></p>
 
-<p>This example of connecting to the server is taken from the .NET <code>PutGetRemove</code> example.</p>
+<p>Create a cache and set its characteristics:</p>
+<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">SetAuthInitialize</span><span class="p">(</span><span class="k">new</span> <span class="nf">ExampleAuthInitialize</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+</code></pre>
 
-<p>Instantiate a <code>CacheFactory</code> and set its characteristics:</p>
-<pre class="highlight csharp"><code>    <span class="kt">var</span> <span class="n">cacheFactory</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>     <span class="c1">// instantiate cache factory
-</span>        <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>            <span class="c1">// set cache log-level characteristics
-</span></code></pre>
+<p>Use the cache to create a named pool of network connections, specifying the hostname and port for the server locator:</p>
+<pre class="highlight csharp"><code><span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolManager</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">CreateFactory</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+</code></pre>
 
-<p>Create a cache and use it to instantiate a <code>PoolFactory</code>:</p>
-<pre class="highlight csharp"><code>    <span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="n">cacheFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">();</span>        <span class="c1">// create cache
-</span>
-    <span class="kt">var</span> <span class="n">poolFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolFactory</span><span class="p">()</span>  <span class="c1">// instantiate pool factory
-</span>        <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">);</span>      <span class="c1">// add locator to pool factory
-</span></code></pre>
-
-<p>Create a named pool of network connections, and instantiate a region of the desired type:</p>
-<pre class="highlight csharp"><code>    <span class="n">poolFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>               <span class="c1">// create a pool called "pool" that knows where the server is
-</span>
-    <span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span> <span class="c1">// instantiate region factory with PROXY characteristics
-</span>        <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
-    <span class="kt">var</span> <span class="n">region</span> <span class="p">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="s">"example_userinfo"</span><span class="p">);</span> <span class="c1">// create a connection to the region "example_userinfo" on the server
-</span></code></pre>
+<p>Instantiate a region of the desired type and connect to the pool by name:</p>
+<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">region</span> <span class="p">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="s">"example_userinfo"</span><span class="p">);</span>
+</code></pre>
 
 <p>See the <em>Geode User Guide</em> section <a href="serverman/topologies_and_comm/cs_configuration/setting_up_a_client_server_system.html">Configuring a Client/Server System</a>
 for more details.</p>

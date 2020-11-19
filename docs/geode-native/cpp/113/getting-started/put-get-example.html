@@ -132,6 +132,21 @@ limitations under the License.
       </ul>
     </li>
 
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
     <li>
       <a href="/docs/geode-native/cpp/113/serialization/data-serialization.html">Serializing Data</a>
     </li>
@@ -270,13 +285,15 @@ The examples are located in <code>examples/cpp/putgetremove</code>.</p>
 For the complete source, see the example source directory.</p>
 
 <p>The C++ example creates a cache, then uses it to create a connection pool and a region object (of class <code>Region</code>).</p>
-<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cacheFactory</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">();</span>
-  <span class="n">cacheFactory</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>
-  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">cacheFactory</span><span class="p">.</span><span class="n">create</span><span class="p">();</span>
-  <span class="k">auto</span> <span class="n">poolFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">().</span><span class="n">createFactory</span><span class="p">();</span>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">();</span>
 
-  <span class="n">poolFactory</span><span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">10334</span><span class="p">);</span>
-  <span class="k">auto</span> <span class="n">pool</span> <span class="o">=</span> <span class="n">poolFactory</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+  <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">createFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">10334</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+
   <span class="k">auto</span> <span class="n">regionFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">createRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="o">::</span><span class="n">PROXY</span><span class="p">);</span>
   <span class="k">auto</span> <span class="n">region</span> <span class="o">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">setPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="s">"example_userinfo"</span><span class="p">);</span>
 </code></pre>

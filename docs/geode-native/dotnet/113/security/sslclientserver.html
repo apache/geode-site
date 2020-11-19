@@ -133,6 +133,21 @@ limitations under the License.
     </li>
 
     <li class="has_submenu">
+        <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/113/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
       <a href="/docs/geode-native/dotnet/113/serialization/data-serialization.html">Serializing Data</a>
       <ul>
         <li class="has_submenu">
@@ -145,7 +160,7 @@ limitations under the License.
               <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
             </li>
             <li>
-              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Examples</a>
+              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
             </li>
           </ul>
         </li>
@@ -307,8 +322,6 @@ SSL properties as described and with the servers or locators specified as usual.
 </ul>
 
 <p>For details on stopping and starting locators and cache servers with SSL, see <a href="geodeman/configuring/running/starting_up_shutting_down.html">Starting Up and Shutting Down Your System</a>.</p>
-
-<p>The Geode Native’s libcryptoImpl found in /lib must be linked at compile time.  This binary is used to interact with OpenSSL.  Link libcryptoImpl, native client, and your application code.  We highly recommend using cmake.</p>
 
 <p><strong>Example locator start command</strong></p>
 
