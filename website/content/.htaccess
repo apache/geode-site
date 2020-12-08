@@ -16,5 +16,7 @@
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
-RedirectMatch 301 /serverman/(.*) https://geode.apache.org/docs/guide/110/$1
-RedirectMatch 301 /geodeman/(.*) https://geode.apache.org/docs/guide/110/$1
+RedirectMatch 301 /serverman/(.*) https://geode.apache.org/docs/guide/113/$1
+RedirectMatch 301 /geodeman/(.*) https://geode.apache.org/docs/guide/113/$1
+RedirectMatch 301 /cppdocs/(.*) https://geode.apache.org/releases/latest/cppdocs/$1
+RedirectMatch 301 /dotnetdocs/(.*) https://geode.apache.org/releases/latest/dotnetdocs/$1
