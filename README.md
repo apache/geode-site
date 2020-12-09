@@ -63,6 +63,10 @@ On the __master__ branch, update the website's framework pages. For a general re
   - {geode-site}/website/content/community/index.html
   - {geode-site}/website/content/docs/index.html
   - {geode-site}/website/content/releases/index.html
+
+A couple of notes specific to documentation:
+
+  - The Geode website is not equipped to understand the `redirects.rb` substitutions provided with the Geode and Geode Native user guides. On this site, the file `website/content/.htaccess` provides redirect information. Edit this file on the __master__ branch, and the `gradlew publish` operation will propagate your changes to the __asf-site__ branch.
   - If you need to change the layout or styling of the site, then you will probably need to change
 an HTML, JS or CSS file on the __asf-site__ branch.
 
