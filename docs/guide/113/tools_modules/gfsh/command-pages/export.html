@@ -2818,7 +2818,7 @@ Latest\server1\region2_20121001.gfd on host : 192.0.2.0
 
 <p>All files that have logs in the specified time range will be exported. If no time range is specified, all logs will be exported.</p>
 
-<p>The <code>--dir</code> parameter specifies a local directory to which log files will be written. This is used only when you are exporting logs using an http connection.  If executed over http, the zip archive will be saved in the specified directory on the user&rsquo;s client machine. If not specified, logs are written to the location specified by the <code>user.dir</code> system property. When the command is executed over JMX, logs will be saved as <code>exportedlogs_xxx.zip</code> in the connected locator&rsquo;s working directory.</p>
+<p>The <code>--dir</code> parameter specifies a local directory to which log files will be written. This is used only when you are exporting logs using an http connection. If executed over http, the zip archive will be saved in the specified directory on the user&rsquo;s client machine. If not specified, logs are written to the location specified by the <code>user.dir</code> system property. When the command is executed over JMX, logs will be saved as <code>exportedLogs_xxx.zip</code> in the connected locator&rsquo;s working directory.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
@@ -2870,12 +2870,12 @@ Latest\server1\region2_20121001.gfd on host : 192.0.2.0
 </tr>
 <tr>
 <td><span class="keyword parmname">--start-time</span></td>
-<td>Log entries that occurred after this time will be exported. Format: yyyy/MM/dd/HH/mm/ss/SSS/z OR yyyy/MM/dd</td>
+<td>Log entries that occurred after this time will be exported. Format: <code>yyyy/MM/dd/HH/mm/ss/SSS/z</code> OR <code>yyyy/MM/dd</code>. When using the <code>yyyy/MM/dd/HH/mm/ss/SSS/z</code> format, the time zone, denoted <code>z</code>, should be specified as either a 3-letter time zone such as <code>PST</code> or as an offset to GMT/UTC such as <code>GMT+08:00</code>.</td>
 <td>no limit</td>
 </tr>
 <tr>
 <td><span class="keyword parmname">--end-time</span></td>
-<td>Log entries that occurred before this time will be exported. Format: yyyy/MM/dd/HH/mm/ss/SSS/z OR yyyy/MM/dd</td>
+<td>Log entries that occurred before this time will be exported. Format: <code>yyyy/MM/dd/HH/mm/ss/SSS/z</code> OR <code>yyyy/MM/dd</code>. When using the <code>yyyy/MM/dd/HH/mm/ss/SSS/z</code> format, the time zone, denoted <code>z</code>, should be specified as either a 3-letter time zone such as <code>PST</code> or as an offset to GMT/UTC such as <code>GMT+08:00</code>. An end time specified by only a date implements a time of <code>00:00</code>. This exports logs written up until <code>23:59:59.999</code> on the date prior to the one specified.</td>
 <td>no limit</td>
 </tr>
 <tr>
@@ -2898,6 +2898,11 @@ Latest\server1\region2_20121001.gfd on host : 192.0.2.0
 <p><strong>Example commands, showing output:</strong></p>
 <pre class="highlight plaintext"><code>gfsh&gt;export logs --dir=data/logs
 Logs exported to the connected member's file system: /my-locator/data/logs/exportedLogs_1489513007261.zip
+</code></pre>
+<pre class="highlight plaintext"><code>gfsh&gt;export logs --start-time=2020/12/14/12/00/00/000/GMT-08:00 --end-time=2020/12/27 --dir=data/logs
+Start time parsed as 2020-12-14T12:00 PST
+End time parsed as 2020-12-27T00:00 PST
+Logs exported to the connected member's file system: /my-locator/data/logs/exportedLogs_1608165308676.zip
 </code></pre>
 <pre class="highlight plaintext"><code>gfsh&gt;export logs --dir=data/logs --file-size-limit=1k
 Estimated exported logs expanded file size = 95599, file-size-limit = 1024.
@@ -3015,7 +3020,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
