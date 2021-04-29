@@ -2667,7 +2667,7 @@ Make sure each member logs to its own files. This makes the logs easier to decip
 <li><p>Set the maximum size of a single log file in <code>log-file-size-limit</code>. If not set, the single, main log file is used. If set, the metadata file, the main log, and rolled child logs are used.</p></li>
 <li><p>Set the maximum size of all log files in <code>log-disk-space-limit</code>. If non-zero, this limits the combined size of all inactive log files, deleting oldest files first to stay under the limit. A zero setting indicates no limit.</p></li>
 </ol></li>
-<li><p>If you are using the <code>gfsh</code> command-line interface, <code>gfsh</code> can creates its own log file in the directory where you run the <code>gfsh</code> or <code>gfsh.bat</code> script. By default, gfsh does not generate log files for itself. To enable gfsh logs, set the following system property to the desired log level before starting gfsh:</p>
+<li><p>If you are using the <code>gfsh</code> command-line interface, <code>gfsh</code> can create its own log file in the directory where you run the <code>gfsh</code> or <code>gfsh.bat</code> script. By default, gfsh does not generate log files for itself. To enable gfsh logs, set the following system property to the desired log level before starting gfsh:</p>
 <pre class="highlight plaintext"><code>export JAVA_ARGS=-Dgfsh.log-level=[severe|warning|info|config|fine|finer|finest]
 </code></pre>
 
