@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrongregionscopeexception',['WrongRegionScopeException',['../a00758.html',1,'Apache::Geode::Client']]]
+  ['wrongregionscopeexception_923',['WrongRegionScopeException',['../a00758.html',1,'Apache::Geode::Client']]]
 ];

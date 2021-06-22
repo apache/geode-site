@@ -2,8 +2,8 @@ var a00387 =
 [
     [ "begin", "a00387.html#a0981149d55ba268e0599daa32cb373fa", null ],
     [ "commit", "a00387.html#abf655e511f2fae3bdc6746e2cfa941aa", null ],
-    [ "exists", "a00387.html#a262cbb8bb675167abcb99289b8f27529", null ],
     [ "exists", "a00387.html#aa5fec7a72fd3778176bc110d3e05f86e", null ],
+    [ "exists", "a00387.html#a262cbb8bb675167abcb99289b8f27529", null ],
     [ "getTransactionId", "a00387.html#aaac9612c9c13933ca31f81ac8a6ca431", null ],
     [ "isSuspended", "a00387.html#a77a2e4d0bd8a240700f087ed4156cff0", null ],
     [ "prepare", "a00387.html#ad7d47e1b7e4b130af348bd265e33ceee", null ],
