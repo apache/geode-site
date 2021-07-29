@@ -1,7 +1,7 @@
 var a01070 =
 [
-    [ "Destroy", "a01070.html#a457e6cf04342a945d9ee152761e9b423", null ],
     [ "Destroy", "a01070.html#a55e6659d932e0a5f19f76d03d877fe5d", null ],
+    [ "Destroy", "a01070.html#a457e6cf04342a945d9ee152761e9b423", null ],
     [ "GetQueryService", "a01070.html#a20b3e1886299185892fa89cc4ab38425", null ],
     [ "Destroyed", "a01070.html#a9dfe709a39e73e85daad704a5dc9c255", null ],
     [ "FreeConnectionTimeout", "a01070.html#a413cbd81ff2f09fb444467fea063f44f", null ],

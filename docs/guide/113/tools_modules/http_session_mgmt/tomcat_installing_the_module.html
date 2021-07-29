@@ -2625,22 +2625,39 @@ limitations under the License.
 <p>This topic describes how to install the HTTP session management module for Tomcat.</p>
 
 <ol>
-<li> If you do not already have Tomcat installed, download the desired version from the <a href="http://tomcat.apache.org/">Apache Website</a>.</li>
-<li><p>The HTTP Session Management Module for Tomcat is included in the Geode installation package. After you install Apache Geode, you will find the module in the <code>tools/Modules</code> directory of the installation.</p></li>
-<li><p>Unzip the module into the <code>$CATALINA_HOME</code> directory or wherever you installed the application server.</p></li>
-<li><p>Copy the following jar files to the <code>lib</code> directory of your Tomcat server (<code>$CATALINA_HOME/lib</code>):</p>
+<li> If you have not already installed Tomcat, download the desired version from the <a href="http://tomcat.apache.org/">Apache Website</a> and install it.</li>
+<li><p>Following the Apache Tomcat convention, this page assumes the CATALINA_HOME environment variable is set to the root directory of the &ldquo;binary&rdquo; Tomcat distribution.
+For example, if Apache Tomcat is installed in <code>/usr/bin/apache-tomcat-9.0.50</code> then</p>
+<pre class="highlight plaintext"><code>CATALINA_HOME=/usr/bin/apache-tomcat-9.0.50
+</code></pre>
+
+<p>Define $CATALINA_HOME if it is not already defined.</p></li>
+<li><p>For development purposes, you may find it helpful to establish manager-level access to Tomcat. To do so, edit the file <code>$CATALINA_HOME/conf/tomcat-users.xml</code>.
+Uncomment the following line, and replace the <code>&lt;must-be-changed&gt;</code> placeholder with a password of your own choosing:</p>
+<pre class="highlight plaintext"><code>  &lt;user username="admin" password="&lt;must-be-changed&gt;" roles="manager-gui"/&gt;
+</code></pre>
+
+<p>This creates an admin/password credential you can use to view system information when following links from the Tomcat home page.</p></li>
+<li><p>The HTTP Session Management Module for Tomcat is included in the Geode installation package. After you install Apache Geode, you will find the module in the <code>tools/Modules</code> directory of the installation with a name of the form <code>Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip</code>, where SERVER-VERSION is the Apache Geode version number.</p></li>
+<li><p>Set your current working directory to the <code>$CATALINA_HOME</code> directory (or wherever you installed the application server) and unzip the HTTP Session Management Module.
+This adds jar files to the <code>lib</code> subdirectory and XML files to the <code>conf</code> subdirectory.</p>
+<pre class="highlight plaintext"><code>cd $CATALINA_HOME
+unzip $GEODE_HOME/tools/Modules/Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip
+</code></pre></li>
+<li><p>Copy the following jar files from the Geode <code>lib</code> subdirectory to the <code>lib</code> subdirectory of your Tomcat server (<code>$CATALINA_HOME/lib</code>), adding version numbers to the filenames as needed:</p>
 
 <ul>
-<li>  antlr jar</li>
 <li>  commons-io jar</li>
 <li>  commons-lang jar</li>
 <li>  commons-validator jar</li>
 <li>  fastutil jar</li>
-<li>  geode-commons jar</li>
+<li>  geode-common jar</li>
 <li>  geode-core jar</li>
 <li>  geode-logging jar</li>
 <li>  geode-management jar</li>
+<li>  geode-membership jar</li>
 <li>  geode-serialization jar</li>
+<li>  geode-tcp-server jar</li>
 <li>  javax.transaction-api jar</li>
 <li>  jgroups jar</li>
 <li>  log4j-api jar</li>
@@ -2650,6 +2667,8 @@ limitations under the License.
 <li>  shiro-core jar</li>
 </ul></li>
 </ol>
+
+<p>Proceed to <a href="/docs/guide/113/tools_modules/http_session_mgmt/tomcat_setting_up_the_module.html">Setting Up the HTTP Module for Tomcat</a> to complete your Tomcat configuration.</p>
 
         
 

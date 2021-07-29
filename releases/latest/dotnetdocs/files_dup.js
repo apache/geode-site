@@ -4,7 +4,8 @@ var files_dup =
       [ "AttributesMutator", "a00402.html", "a00402" ]
     ] ],
     [ "Cache.hpp", "a00020.html", [
-      [ "Cache", "a00410.html", "a00410" ]
+      [ "Cache", "a00410.html", "a00410" ],
+      [ "Properties", "a00406.html", "a00406" ]
     ] ],
     [ "CacheableBuiltins.hpp", "a00026.html", "a00026" ],
     [ "CacheableDate.hpp", "a00029.html", [
@@ -90,10 +91,12 @@ var files_dup =
       [ "IPersistenceManager", "a00998.html", "a00998" ]
     ] ],
     [ "IRegionService.hpp", "a00242.html", [
+      [ "IRegion", "a01014.html", "a01014" ],
       [ "IRegionService", "a01018.html", "a01018" ]
     ] ],
     [ "ISelectResults.hpp", "a00248.html", [
-      [ "ISelectResults", "a01002.html", "a01002" ]
+      [ "ISelectResults", "a01002.html", "a01002" ],
+      [ "SelectResultsIterator", "a00926.html", "a00926" ]
     ] ],
     [ "ISerializable.hpp", "a00251.html", [
       [ "ISerializable", "a01022.html", "a01022" ]
@@ -101,9 +104,13 @@ var files_dup =
     [ "Log.hpp", "a00269.html", "a00269" ],
     [ "Properties.hpp", "a00302.html", "a00302" ],
     [ "Query.hpp", "a00305.html", [
+      [ "ISelectResults", "a01002.html", "a01002" ],
       [ "Query", "a00586.html", "a00586" ]
     ] ],
     [ "QueryService.hpp", "a00308.html", [
+      [ "CqAttributes", "a00562.html", "a00562" ],
+      [ "CqQuery", "a00590.html", "a00590" ],
+      [ "Query", "a00586.html", "a00586" ],
       [ "QueryService", "a01086.html", "a01086" ]
     ] ],
     [ "Region.hpp", "a00314.html", null ],
@@ -118,16 +125,19 @@ var files_dup =
     ] ],
     [ "RegionShortcut.hpp", "a00332.html", "a00332" ],
     [ "ResultSet.hpp", "a00338.html", [
-      [ "ResultSet", "a01110.html", "a01110" ]
+      [ "ResultSet", "a01110.html", "a01110" ],
+      [ "SelectResultsIterator", "a00926.html", "a00926" ]
     ] ],
     [ "SelectResultsIterator.hpp", "a00341.html", [
       [ "SelectResultsIterator", "a00926.html", "a00926" ]
     ] ],
     [ "Serializable.hpp", "a00344.html", "a00344" ],
     [ "Struct.hpp", "a00347.html", [
-      [ "Struct", "a01122.html", "a01122" ]
+      [ "Struct", "a01122.html", "a01122" ],
+      [ "StructSet", "a01118.html", "a01118" ]
     ] ],
     [ "StructSet.hpp", "a00350.html", [
+      [ "SelectResultsIterator", "a00926.html", "a00926" ],
       [ "StructSet", "a01118.html", "a01118" ]
     ] ],
     [ "SystemProperties.hpp", "a00353.html", [
@@ -135,8 +145,5 @@ var files_dup =
     ] ],
     [ "UserFunctionExecutionException.hpp", "a00374.html", [
       [ "UserFunctionExecutionException", "a01142.html", "a01142" ]
-    ] ],
-    [ "src/Utils.hpp", "a01376.html", [
-      [ "Utils", "a01146.html", "a01146" ]
     ] ]
 ];

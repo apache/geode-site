@@ -22,8 +22,8 @@ var a00823 =
     [ "setLruEntriesLimit", "a00823.html#a6c12a38a1431d3514a9bdae1dd21229d", null ],
     [ "setPartitionResolver", "a00823.html#a74be02f003fc243c08c58ef1e1c545a2", null ],
     [ "setPartitionResolver", "a00823.html#a5302224d000041032b9fa8684f1322e6", null ],
-    [ "setPersistenceManager", "a00823.html#a96214d1a27d930aaeb228871bd834797", null ],
     [ "setPersistenceManager", "a00823.html#a9a074462f4a22b4deddeaff43d00fbf1", null ],
+    [ "setPersistenceManager", "a00823.html#a96214d1a27d930aaeb228871bd834797", null ],
     [ "setPoolName", "a00823.html#a62bb293611ce69b45958aca093c19c97", null ],
     [ "setRegionIdleTimeout", "a00823.html#a77be53c6d65f7586ba09deb84ea67512", null ],
     [ "setRegionTimeToLive", "a00823.html#a64338589f8223761146de6dca54ceaed", null ]

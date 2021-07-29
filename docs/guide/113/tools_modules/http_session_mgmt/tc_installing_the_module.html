@@ -2626,8 +2626,14 @@ limitations under the License.
 
 <ol>
 <li> If you do not already have tc Server, download and install the product from the <a href="https://network.pivotal.io/products/pivotal-tcserver">Pivotal tc Server download page</a>. These instructions require <strong>tc Server 2.9</strong> or later.</li>
-<li><p>The HTTP Session Management Module for tc Server is included in the Apache Geode installation package. After you install Apache Geode, you will find the module in the <code>tools/Modules</code> directory of the installation.</p></li>
-<li><p>Unzip the module into the Pivotal tc Server <code>$CATALINA_HOME/templates</code> directory so that it creates <code>geode-p2p</code> and <code>geode-cs</code> subdirectories within the tc Server <code>templates</code> directory.</p></li>
+<li><p>The HTTP Session Management Module for tc Server is included in the Apache Geode installation package. After you install Apache Geode, you will find the module in the <code>tools/Modules</code> directory of the installation with a name of the form <code>Apache_Geode_Modules-SERVER-VERSION-tcServer30.zip</code> or <code>Apache_Geode_Modules-SERVER-VERSION-tcServer.zip</code>. In these names,</p>
+
+<ul>
+<li>SERVER-VERSION is the Apache Geode version number.</li>
+<li><code>tcServer30</code> supports tcServer version 3.x.</li>
+<li><code>tcserver</code> supports tcServer version 2.9.</li>
+</ul></li>
+<li><p>Unzip the appropriate module into the Pivotal tc Server <code>$CATALINA_HOME/templates</code> directory so that it creates <code>geode-p2p</code> and <code>geode-cs</code> subdirectories within the tc Server <code>templates</code> directory.</p></li>
 </ol>
 
         

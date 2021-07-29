@@ -18,8 +18,8 @@ var a00835 =
     [ "setLruEntriesLimit", "a00835.html#ad67b6c94c2a9429b0bab8e89dd314cc1", null ],
     [ "setPartitionResolver", "a00835.html#aaac59bad8229799ca990ae6e44c642c0", null ],
     [ "setPartitionResolver", "a00835.html#ac38c4b51dd0ea1517c152801b281c02c", null ],
-    [ "setPersistenceManager", "a00835.html#ad60aca47c338026159cd3f280261da44", null ],
     [ "setPersistenceManager", "a00835.html#ac6b1beab99d327fef95f7145f803cb76", null ],
+    [ "setPersistenceManager", "a00835.html#ad60aca47c338026159cd3f280261da44", null ],
     [ "setRegionIdleTimeout", "a00835.html#a7de299324777a94a386e1e842bf03946", null ],
     [ "setRegionTimeToLive", "a00835.html#aa52902a09755bdb9e7993f7970a70062", null ]
 ];

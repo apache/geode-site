@@ -2624,6 +2624,11 @@ limitations under the License.
 
 <p>In this section you download, install, and set up the HTTP Session Management modules.</p>
 
+<p>Following the Apache Tomcat convention, this page assumes the CATALINA_HOME environment variable is set to the root directory of the &ldquo;binary&rdquo; Tomcat distribution.
+For example, if Apache Tomcat is installed in <code>/usr/bin/apache-tomcat-9.0.50</code> then</p>
+<pre class="highlight plaintext"><code>CATALINA_HOME=/usr/bin/apache-tomcat-9.0.50
+</code></pre>
+
 <h2 id="quick-start-instructions"><a id="quick_start__section_6A4A00B6DA404E10A5C29E5E31101445" class="no-quick-link"></a>Quick Start Instructions</h2>
 
 <ol>
@@ -2644,12 +2649,12 @@ limitations under the License.
 <tr>
 <td>Tomcat</td>
 <td>8.5</td>
-<td><a href="http://tomcat.apache.org/download-80.cgi">http://tomcat.apache.org/download-80.cgi</a></td>
+<td><a href="https://tomcat.apache.org/download-80.cgi">Tomcat 8 Software Downloads</a></td>
 </tr>
 <tr>
 <td>Tomcat</td>
 <td>9.0</td>
-<td><a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a></td>
+<td><a href="https://tomcat.apache.org/download-90.cgi">Tomcat 9 Software Downloads</a></td>
 </tr>
 </tbody></table>
 
@@ -2666,20 +2671,20 @@ limitations under the License.
 </thead><tbody>
 <tr>
 <td>tc Server</td>
+<td>2.9</td>
+<td>Apache_Geode_Modules-SERVER-VERSION-tcServer.zip</td>
+<td><code>&lt;tc Server root dir&gt;/templates</code></td>
+</tr>
+<tr>
+<td>tc Server</td>
 <td>3.2</td>
-<td>HTTP Session Management Module for Pivotal tc Server</td>
-<td><code>&lt;tc Server root                                                 dir&gt;/templates</code></td>
+<td>Apache_Geode_Modules-SERVER-VERSION-tcServer30.zip</td>
+<td><code>&lt;tc Server root dir&gt;/templates</code></td>
 </tr>
 <tr>
 <td>Tomcat</td>
-<td>8.5</td>
-<td>HTTP Session Management Module for Tomcat</td>
-<td><code>$CATALINA_HOME</code></td>
-</tr>
-<tr>
-<td>Tomcat</td>
-<td>9.0</td>
-<td>HTTP Session Management Module for Tomcat</td>
+<td>8.5, 9.0</td>
+<td>Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip</td>
 <td><code>$CATALINA_HOME</code></td>
 </tr>
 </tbody></table></li>
@@ -2717,18 +2722,21 @@ $ ./tcruntime-ctl.sh my_instance_name start
 <li><p>Modify Tomcat&rsquo;s <code>server.xml</code> and <code>context.xml</code> files. Configuration is slightly different depending on the topology you are setting up and the version of Tomcat you are using.</p>
 
 <p>For example, in a peer-to-peer configuration using Tomcat 9, you would add the following entry within the <code>&lt;server&gt;</code> element of server.xml:</p>
-<pre class="highlight plaintext"><code>&lt;Listener className="org.apache.geode.modules.session.catalina.
-                         PeerToPeerCacheLifecycleListener"
-                         locator="localhost[10334]" /&gt;
+<pre class="highlight plaintext"><code>&lt;Listener className="org.apache.geode.modules.session.catalina.PeerToPeerCacheLifecycleListener"
+    locator="localhost[10334]" /&gt;
 </code></pre>
 
 <p>and the following entry within the <code>&lt;context&gt;</code> tag in the context.xml file:</p>
-<pre class="highlight plaintext"><code>&lt;Manager className="org.apache.geode.modules.session.catalina.
-                         Tomcat9DeltaSessionManager"/&gt; 
+<pre class="highlight plaintext"><code>&lt;Manager className="org.apache.geode.modules.session.catalina.Tomcat9DeltaSessionManager"/&gt; 
 </code></pre>
 
 <p>See <a href="/docs/guide/113/tools_modules/http_session_mgmt/tomcat_setting_up_the_module.html">Setting Up the HTTP Module for Tomcat</a> for additional instructions.</p></li>
-<li><p>Restart the application server.</p></li>
+<li><p>Start the Tomcat application server.</p>
+<pre class="highlight plaintext"><code>$CATALINA_HOME/bin/startup.sh
+</code></pre></li>
+<li><p>Confirm that Tomcat is running by opening a browser and navigating to <code>localhost:8080</code>. If you see the Tomcat home page, your installation was successful.</p>
+
+<p><img src="../../images/Apache_Tomcat_Homepage.png"></p></li>
 </ol>
 
 <h2 id="additional-instructions-for-appservers-module"><a id="quick_start__section_1587C3E55F06406EBD4AB13014A406D4" class="no-quick-link"></a>Additional Instructions for AppServers Module</h2>

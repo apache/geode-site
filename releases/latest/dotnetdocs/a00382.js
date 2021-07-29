@@ -1,7 +1,6 @@
 var a00382 =
 [
     [ "Internal", "a00383.html", "a00383" ],
-    [ "Template", "a00384.html", null ],
     [ "AllConnectionsInUseException", "a00826.html", "a00826" ],
     [ "AlreadyConnectedException", "a00690.html", "a00690" ],
     [ "AssertionException", "a00630.html", "a00630" ],
@@ -169,51 +168,5 @@ var a00382 =
     [ "UnsupportedOperationException", "a00702.html", "a00702" ],
     [ "UserFunctionExecutionException", "a01142.html", "a01142" ],
     [ "Utils", "a01146.html", "a01146" ],
-    [ "WrongRegionScopeException", "a00758.html", "a00758" ],
-    [ "BooleanArray", "a00382.html#aa060d146cb9da534fe8f7332d9f6efc2", null ],
-    [ "CacheableBytes", "a00382.html#abc1c478fcd06c27c986d04569b4eb4af", null ],
-    [ "CacheableDoubleArray", "a00382.html#a91c373e1aed76fe4730c6585b77ff567", null ],
-    [ "CacheableFloatArray", "a00382.html#a7314e3eae7da14098fc4c8966fd744da", null ],
-    [ "CacheableInt16Array", "a00382.html#a658b2e1602e2b7445bb1cb6fe9c00b1e", null ],
-    [ "CacheableInt32Array", "a00382.html#ad75351868ca2c8e887584874078a6d5b", null ],
-    [ "CacheableInt64Array", "a00382.html#a97bc325fcca1e5bab428db57042df096", null ],
-    [ "CharArray", "a00382.html#afb70b9e8a984ef6d7950141350d89037", null ],
-    [ "DiskPolicyType", "a00382.html#af01480bfbf06797b54fe5926ca27d06b", [
-      [ "None", "a00382.html#af01480bfbf06797b54fe5926ca27d06ba6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Overflows", "a00382.html#af01480bfbf06797b54fe5926ca27d06ba92b2c4355c525e01c70115ce6a541b2a", null ]
-    ] ],
-    [ "ExpirationAction", "a00382.html#a30c72f6219e29e7305222feb4857caec", [
-      [ "Invalidate", "a00382.html#a30c72f6219e29e7305222feb4857caeca85f5aa877be7431c42128b8112a4628e", null ],
-      [ "LocalInvalidate", "a00382.html#a30c72f6219e29e7305222feb4857caecab85b76e395d0b70923798115dc6bf4c3", null ],
-      [ "Destroy", "a00382.html#a30c72f6219e29e7305222feb4857caeca0e181f89f47654b86f3beb42f5cc08b8", null ],
-      [ "LocalDestroy", "a00382.html#a30c72f6219e29e7305222feb4857caecaa8901aa264d27b34fbc3934db5fd4e7d", null ],
-      [ "InvalidAction", "a00382.html#a30c72f6219e29e7305222feb4857caeca4ac740aa7097749d0a1cac65fd19fe67", null ]
-    ] ],
-    [ "FieldType", "a00382.html#a25534680ef2bea4c25253ae9d809bed6", null ],
-    [ "LogLevel", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfa", [
-      [ "Null", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaabbb93ef26e3c101ff11cdd21cab08a94", null ],
-      [ "Error", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa902b0d55fddef6f8d651fe1035b7d4bd", null ],
-      [ "Warning", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa0eaadb4fcb48a0a0ed7bc9868be9fbaa", null ],
-      [ "Info", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa4059b0251f66a18cb56f544728796875", null ],
-      [ "Default", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa7a1920d61156abc05a60135aefe8bc67", null ],
-      [ "Config", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaafa535ffb25e1fd20341652f9be21e06e", null ],
-      [ "Fine", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa5999b8900bb8b90cfa1af137d355ff14", null ],
-      [ "Finer", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaa08b2dc5e733227de0cac7796d3177bce", null ],
-      [ "Finest", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaae7a34f04b4216841339aefb8512a7db3", null ],
-      [ "Debug", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaaa603905470e2a5b8c13e96b579ef0dba", null ],
-      [ "All", "a00382.html#adbfce8e56c7ef4e4511637b4539dbcfaab1c94ca2fbc3e78fc30069c8d0f01680", null ]
-    ] ],
-    [ "RegionShortcut", "a00382.html#ab01341be2e091f1bbf219274838ee34c", [
-      [ "PROXY", "a00382.html#ab01341be2e091f1bbf219274838ee34cae69e6446e892e3922e76c82e96837920", null ],
-      [ "CACHING_PROXY", "a00382.html#ab01341be2e091f1bbf219274838ee34cace2cbb2b76e11c1c66c4cce4281504aa", null ],
-      [ "CACHING_PROXY_ENTRY_LRU", "a00382.html#ab01341be2e091f1bbf219274838ee34ca0149c0e59af006f47aeb4289c884a940", null ],
-      [ "LOCAL", "a00382.html#ab01341be2e091f1bbf219274838ee34ca54b4c4075463b2e02cd69f5cd139b5b2", null ],
-      [ "LOCAL_ENTRY_LRU", "a00382.html#ab01341be2e091f1bbf219274838ee34ca47c61bd1c0f14f25e6f03b4a4591c713", null ]
-    ] ],
-    [ "CreateException2", "a00382.html#a53fd190bdaefe0ee44026242f76392b9", null ],
-    [ "DataSerializablePrimitiveWrapperDelegate", "a00382.html#a3cea49722331efc6b764ce562c09b5d1", null ],
-    [ "PdxTypeFactoryMethod", "a00382.html#a7976afcda91defe8dccb2945b71dc9c6", null ],
-    [ "PropertyVisitorGeneric", "a00382.html#a4258e7293005f2017f1ad736296435e9", null ],
-    [ "TypeFactoryMethod", "a00382.html#ab4f8e3def2c048935fa696daacaec531", null ],
-    [ "TypeFactoryNativeMethodGeneric", "a00382.html#a3723d7ce3e2ef7497c32907bfdf4a8ca", null ]
+    [ "WrongRegionScopeException", "a00758.html", "a00758" ]
 ];

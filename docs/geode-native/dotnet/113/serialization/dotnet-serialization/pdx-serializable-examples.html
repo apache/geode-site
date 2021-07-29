@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
   <!-- Use title if it's in the page YAML frontmatter -->
   <title>
-      IPdxSerializable Example |
+      IPdxSerializable Examples |
     Geode Native .NET Docs
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,21 +133,6 @@ limitations under the License.
     </li>
 
     <li class="has_submenu">
-        <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools.html">Configuring Pools</a>
-        <ul>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/subscription-properties.html">Subscription Properties</a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="has_submenu">
       <a href="/docs/geode-native/dotnet/113/serialization/data-serialization.html">Serializing Data</a>
       <ul>
         <li class="has_submenu">
@@ -160,7 +145,7 @@ limitations under the License.
               <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
             </li>
             <li>
-              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Examples</a>
             </li>
           </ul>
         </li>
@@ -249,7 +234,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
   <h1 class="title-container" >
-    IPdxSerializable Example
+    IPdxSerializable Examples
   </h1>
 
           <div id="js-quick-links" >
@@ -275,12 +260,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>The native client release contain an example showing how a client application
+<p>The native client release contains examples showing how a client application
 can register for serialization of domain objects using the .NET IPdxSerializable interface.</p>
 
-<p>The example is located in <code>examples\dotnet\pdxserializable</code>.</p>
+<p>The examples are located in <code>examples\dotnet\pdxserializable</code>.</p>
 
-<p>The example defines the serializable class, <code>Orders</code>, including its serialization and deserialization methods and its factory method.
+<p>The examples define the serializable class, <code>Orders</code>, including its serialization and deserialization methods and its factory method.
 Once these pieces are in place, execution is simple: the main routine of the example registers the serializable class then performs some put and get operations.</p>
 
 <p><a id="pdxsbl_execution"></a></p>
@@ -290,7 +275,7 @@ Once these pieces are in place, execution is simple: the main routine of the exa
 <p>The example performs a sequence of operations, displaying simple log entries as they run.</p>
 
 <ul>
-<li><p>To run the example, follow the instructions in the README.md file in the example directory.</p></li>
+<li>To run an example, follow the instructions in the README.md file in the example directory.</li>
 <li><p>Review the source code in the example directory to see exactly how it operates.</p></li>
 <li><p>Begin by running a script that sets up the server-side environment by invoking <code>gfsh</code> commands to create a region, a locator, and a server.</p></li>
 <li><p>Run the example client application, which performs the following steps:</p>
@@ -359,18 +344,17 @@ methods that perform the serialization and deserialization operations, respectiv
 </code></pre>
 
 <p>The .NET example mainline creates a cache, then uses it to register the PdxSerializable class that was created in Orders.cs:</p>
-<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
-    <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+<pre class="highlight csharp"><code>   <span class="kt">var</span> <span class="n">cacheFactory</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
+       <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="n">cacheFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
 
    <span class="n">cache</span><span class="p">.</span><span class="n">TypeRegistry</span><span class="p">.</span><span class="nf">RegisterPdxType</span><span class="p">(</span><span class="n">Order</span><span class="p">.</span><span class="n">CreateDeserializable</span><span class="p">);</span>
 </code></pre>
 
 <p>The client creates a connection pool and a region named &ldquo;example_orderobject&rdquo;:</p>
-<pre class="highlight csharp"><code><span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolManager</span><span class="p">()</span>
-    <span class="p">.</span><span class="nf">CreateFactory</span><span class="p">()</span>
-    <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+<pre class="highlight csharp"><code>   <span class="kt">var</span> <span class="n">poolFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolFactory</span><span class="p">()</span>
+       <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">);</span>
+   <span class="n">poolFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
 
    <span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
         <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
@@ -424,7 +408,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

@@ -133,21 +133,6 @@ limitations under the License.
     </li>
 
     <li class="has_submenu">
-        <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools.html">Configuring Pools</a>
-        <ul>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/subscription-properties.html">Subscription Properties</a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="has_submenu">
       <a href="/docs/geode-native/dotnet/113/serialization/data-serialization.html">Serializing Data</a>
       <ul>
         <li class="has_submenu">
@@ -160,7 +145,7 @@ limitations under the License.
               <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
             </li>
             <li>
-              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Examples</a>
             </li>
           </ul>
         </li>
@@ -300,33 +285,26 @@ Region creation is subject to attribute consistency checks.</p>
 <p>To create a region:</p>
 
 <ol>
-<li>Create a cache using <code>CacheFactory</code> to set its characteristics.</li>
+<li>Instantiate a <code>CacheFactory</code> and use it to create a cache.</li>
 <li>The cache includes an instance of <code>PoolManager</code>&mdash;use it to create a connection pool.</li>
-<li>Use the cache to instantiate a <code>RegionFactory</code> and use it to create a region, specifying any desired attributes
+<li>Use cache to instantiate a <code>RegionFactory</code> and use it to create a region, specifying any desired attributes
 and an association with the connection pool.</li>
 </ol>
 
 <h3 id=".net-c#-region-creation-example">.NET C# Region Creation Example</h3>
 
-<p>This example illustrates how to create two regions with different characteristics using C#:</p>
-<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
-    <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+<p>This example illustrates how to create a pair of regions using C#:</p>
+<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">().</span><span class="nf">Create</span><span class="p">();</span>
 
 <span class="kt">var</span> <span class="n">examplePool</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolManager</span><span class="p">()</span>
     <span class="p">.</span><span class="nf">CreateFactory</span><span class="p">()</span>
-    <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">40404</span><span class="p">)</span>
     <span class="p">.</span><span class="nf">SetSubscriptionEnabled</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
     <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"examplePool"</span><span class="p">);</span>
 
 <span class="kt">var</span> <span class="n">clientRegion1</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"examplePool"</span><span class="p">)</span>
   <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"clientRegion1"</span><span class="p">);</span>
-
-<span class="kt">var</span> <span class="n">clientRegion2</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">CACHING_PROXY</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"examplePool"</span><span class="p">)</span>
-  <span class="p">.</span><span class="nf">SetEntryTimeToLive</span><span class="p">(</span><span class="n">ExpirationAction</span><span class="p">.</span><span class="n">Invalidate</span><span class="p">,</span> <span class="k">new</span> <span class="nf">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">120</span><span class="p">))</span>
-  <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"clientRegion2"</span><span class="p">);</span>
 </code></pre>
 
 <h2 id="declarative-region-creation"><a id="declarative-region-creation"></a>Declarative Region Creation</h2>
@@ -343,7 +321,7 @@ attribute settings, in a <code>cache.xml</code> file that is loaded at cache cre
       <span class="err">http://geode.apache.org/schema/cpp-cache/cpp-cache-1.0.xsd"</span>
     <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;pool</span> <span class="na">name=</span><span class="s">"examplePool"</span> <span class="na">subscription-enabled=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;server</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">port=</span><span class="s">"10334"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;server</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">port=</span><span class="s">"40404"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/pool&gt;</span>
     <span class="nt">&lt;region</span> <span class="na">name=</span><span class="s">"clientRegion1"</span> <span class="na">refid=</span><span class="s">"PROXY"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;region-attributes</span> <span class="na">pool-name=</span><span class="s">"examplePool"</span><span class="nt">/&gt;</span>
@@ -472,7 +450,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

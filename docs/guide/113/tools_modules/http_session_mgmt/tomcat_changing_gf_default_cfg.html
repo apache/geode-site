@@ -2641,11 +2641,13 @@ On the application server side, the default inactive interval for session expira
 <p>Geode system properties must be set by adding properties to Tomcat&rsquo;s <code>server.xml</code> file. When setting properties, use the following syntax:</p>
 <pre class="highlight plaintext"><code>&lt;Listener 
   className="org.apache.geode.modules.session.catalina.xxxLifecycleListener"
-  name="value" 
-  name="value" 
+  property-name="property-value" 
+  property-name="property-value" 
   ...
 /&gt; 
 </code></pre>
+
+<p>where <code>property-name</code> is the name of a property and <code>property-value</code> is that property&rsquo;s value.</p>
 
 <p>If the <code>xxxLifecycleListener</code> is a <code>PeerToPeerCacheLifecycleListener</code>, then a minimal addition to the <code>server.xml</code> file is</p>
 <pre class="highlight plaintext"><code>&lt;Listener 
@@ -2656,11 +2658,11 @@ On the application server side, the default inactive interval for session expira
  /&gt; 
 </code></pre>
 
-<p>The list of configurable Tomcat&rsquo;s <code>server.xml</code> system properties include any of the properties that can be specified in Geode&rsquo;s <code>gemfire.properties</code> file. The following list contains some of the properties that can be configured.</p>
+<p>The list of Tomcat&rsquo;s configurable <code>server.xml</code> system properties includes any of the properties that can be specified in Geode&rsquo;s <code>gemfire.properties</code> file. The following list contains some of the properties that can be configured.</p>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Property</th>
 <th>Description</th>
 <th>Default</th>
 </tr>
@@ -2698,7 +2700,7 @@ On the application server side, the default inactive interval for session expira
 
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Property</th>
 <th>Description</th>
 <th>Default</th>
 </tr>
@@ -2727,21 +2729,20 @@ On the application server side, the default inactive interval for session expira
 <p>To edit Geode cache properties such as the name and the characteristics of the cache region, you add these properties to Tomcat&rsquo;s <code>context.xml</code> file. When adding properties, unless otherwise specified, use the following syntax:</p>
 <pre class="highlight plaintext"><code>&lt;Manager 
   className="org.apache.geode.modules.session.catalina.Tomcat9DeltaSessionManager"
-  name="value" 
-  name="value" 
+  property-name="property-value" 
+  property-name="property-value" 
   ...
 /&gt; 
 </code></pre>
 
-<p>In the preceding code snippet, <code>name</code> is the property name and <code>value</code> is the property value. For example:</p>
+<p>where <code>property-name</code> is the name of a property and <code>property-value</code> is that property&rsquo;s value.
+For example, this entry creates a partitioned region by the name of &ldquo;my_region&rdquo;.</p>
 <pre class="highlight plaintext"><code>&lt;Manager className="org.apache.geode.modules.session.catalina.
       Tomcat9DeltaSessionManager" 
   regionAttributesId="PARTITION_REDUNDANT" 
   regionName="my_region" 
 /&gt; 
 </code></pre>
-
-<p>This example creates a partitioned region by the name of &ldquo;my_region&rdquo;.</p>
 
 <p>The following parameters are the cache configuration parameters that can be added to Tomcat&rsquo;s <code>context.xml</code> file.</p>
 

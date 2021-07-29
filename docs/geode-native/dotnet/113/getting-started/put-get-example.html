@@ -133,21 +133,6 @@ limitations under the License.
     </li>
 
     <li class="has_submenu">
-        <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools.html">Configuring Pools</a>
-        <ul>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/client-pool-api.html">Native Client Pool API</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
-            </li>
-            <li>
-                <a href="/docs/geode-native/dotnet/113/connection-pools/subscription-properties.html">Subscription Properties</a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="has_submenu">
       <a href="/docs/geode-native/dotnet/113/serialization/data-serialization.html">Serializing Data</a>
       <ul>
         <li class="has_submenu">
@@ -160,7 +145,7 @@ limitations under the License.
               <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
             </li>
             <li>
-              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+              <a href="/docs/geode-native/dotnet/113/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Examples</a>
             </li>
           </ul>
         </li>
@@ -282,7 +267,7 @@ The example is located in <code>../examples/dotnet/putgetremove</code>. </p>
 <p>The example performs a sequence of operations, displaying simple log entries as they run.</p>
 
 <ul>
-<li><p>To run the example, follow the instructions in the <code>README.md</code> file in the example directory.</p></li>
+<li>To run the example, follow the instructions in the <code>README.md</code> file in the example directory.</li>
 <li><p>Review the source code in the example directory to see exactly how it operates.</p></li>
 <li><p>Begin by running a script that sets up the server-side environment by invoking <code>gfsh</code> commands to create a region, simply called &ldquo;example_userinfo.&rdquo;</p></li>
 <li><p>Run the example client application, which performs the following steps:</p>
@@ -301,39 +286,38 @@ The example is located in <code>../examples/dotnet/putgetremove</code>. </p>
 For the complete source, see the example source directory.</p>
 
 <p>The .NET example creates a cache, then uses it to create a connection pool and a region object (of class <code>IRegion</code>).</p>
-<pre class="highlight csharp"><code>  <span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
-      <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
-      <span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+<pre class="highlight csharp"><code>   <span class="kt">var</span> <span class="n">cacheFactory</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
+       <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="n">cacheFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
 
-  <span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolManager</span><span class="p">()</span>
-      <span class="p">.</span><span class="nf">CreateFactory</span><span class="p">()</span>
-      <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">)</span>
-      <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">poolFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolFactory</span><span class="p">()</span>
+       <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">);</span>
+   <span class="n">poolFactory</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
 
-  <span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
-      <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
-  <span class="kt">var</span> <span class="n">region</span> <span class="p">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="s">"example_userinfo"</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">region</span> <span class="p">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">(</span><span class="s">"example_userinfo"</span><span class="p">);</span>
 </code></pre>
 
 <p>After declaring some keys and values, the client then populates the data store with two key/value pairs. </p>
-<pre class="highlight csharp"><code>  <span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">,</span> <span class="n">rtimmonsValue</span><span class="p">);</span>
-  <span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">scharlesKey</span><span class="p">,</span> <span class="n">scharlesValue</span><span class="p">);</span>
+<pre class="highlight csharp"><code>      <span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">,</span> <span class="n">rtimmonsValue</span><span class="p">);</span>
+      <span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">scharlesKey</span><span class="p">,</span> <span class="n">scharlesValue</span><span class="p">);</span>
 </code></pre>
 
 <p>Next, the application retrieves the stored values using <code>Get</code> operations.</p>
-<pre class="highlight csharp"><code>  <span class="kt">var</span> <span class="n">user1</span> <span class="p">=</span> <span class="n">region</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
-  <span class="kt">var</span> <span class="n">user2</span> <span class="p">=</span> <span class="n">region</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">scharlesKey</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+<pre class="highlight csharp"><code>      <span class="kt">var</span> <span class="n">user1</span> <span class="p">=</span> <span class="n">region</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+      <span class="kt">var</span> <span class="n">user2</span> <span class="p">=</span> <span class="n">region</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">scharlesKey</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
 </code></pre>
 
 <p>Finally, the application deletes one of the stored values using the <code>Remove</code> method.</p>
-<pre class="highlight csharp"><code>  <span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">))</span>
-  <span class="p">{</span>
-    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Info for "</span> <span class="p">+</span> <span class="n">rtimmonsKey</span> <span class="p">+</span> <span class="s">" has been deleted"</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span>
-  <span class="p">{</span>
-    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Info for "</span> <span class="p">+</span> <span class="n">rtimmonsKey</span> <span class="p">+</span> <span class="s">" has not been deleted"</span><span class="p">);</span>
-  <span class="p">}</span>
+<pre class="highlight csharp"><code>      <span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">rtimmonsKey</span><span class="p">))</span>
+      <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Info for "</span> <span class="p">+</span> <span class="n">rtimmonsKey</span> <span class="p">+</span> <span class="s">" has been deleted"</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">else</span>
+      <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Info for "</span> <span class="p">+</span> <span class="n">rtimmonsKey</span> <span class="p">+</span> <span class="s">" has not been deleted"</span><span class="p">);</span>
+      <span class="p">}</span>
 </code></pre>
 
         
@@ -365,7 +349,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
