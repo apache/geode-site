@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::Pool Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::PdxWriter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -89,107 +89,100 @@ $(document).ready(function(){initNavTree('a00787.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::Pool Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::PdxWriter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A pool of connections to connect from a client to a set of Geode <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> Servers.  
+<p>A <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> will be passed to <a class="el" href="a00771.html#a28894ac9e842832bcb336915ae3983e0" title="Serialize this object in Geode PDX format.">PdxSerializable.toData</a> when it is serializing the domain class.  
  <a href="a00787.html#details">More...</a></p>
-
-<p>Inherits enable_shared_from_this&lt; Pool &gt;.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a82821401108d78a1c493f4b6c952d90d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a82821401108d78a1c493f4b6c952d90d">destroy</a> (bool keepAlive=false)=0</td></tr>
-<tr class="memdesc:a82821401108d78a1c493f4b6c952d90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this pool closing any connections it produced.  <a href="#a82821401108d78a1c493f4b6c952d90d">More...</a><br /></td></tr>
-<tr class="separator:a82821401108d78a1c493f4b6c952d90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a587c61edadb69b69556c78db08068468"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a587c61edadb69b69556c78db08068468">getFreeConnectionTimeout</a> () const</td></tr>
-<tr class="memdesc:a587c61edadb69b69556c78db08068468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the connection timeout of this pool.  <a href="#a587c61edadb69b69556c78db08068468">More...</a><br /></td></tr>
-<tr class="separator:a587c61edadb69b69556c78db08068468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38e39761cf0cb1f178cb5d3ec7743a83"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a38e39761cf0cb1f178cb5d3ec7743a83">getIdleTimeout</a> () const</td></tr>
-<tr class="memdesc:a38e39761cf0cb1f178cb5d3ec7743a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the idle connection timeout for this pool.  <a href="#a38e39761cf0cb1f178cb5d3ec7743a83">More...</a><br /></td></tr>
-<tr class="separator:a38e39761cf0cb1f178cb5d3ec7743a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f63b3df5d03fbfda81aea4376dcf80"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a99f63b3df5d03fbfda81aea4376dcf80">getLoadConditioningInterval</a> () const</td></tr>
-<tr class="memdesc:a99f63b3df5d03fbfda81aea4376dcf80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the load conditioning interval of this pool.  <a href="#a99f63b3df5d03fbfda81aea4376dcf80">More...</a><br /></td></tr>
-<tr class="separator:a99f63b3df5d03fbfda81aea4376dcf80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d846fd4c075e5405e9a336e6ff2d672"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="a00026.html#abb5c1ce32786fe2c0f7793809b103737">CacheableStringArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a5d846fd4c075e5405e9a336e6ff2d672">getLocators</a> () const =0</td></tr>
-<tr class="memdesc:a5d846fd4c075e5405e9a336e6ff2d672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an unmodifiable list locators that this pool is using.  <a href="#a5d846fd4c075e5405e9a336e6ff2d672">More...</a><br /></td></tr>
-<tr class="separator:a5d846fd4c075e5405e9a336e6ff2d672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c484cc6f70fc8b530242d3a36964eb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a9c484cc6f70fc8b530242d3a36964eb7">getMaxConnections</a> () const</td></tr>
-<tr class="memdesc:a9c484cc6f70fc8b530242d3a36964eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum connections for this pool.  <a href="#a9c484cc6f70fc8b530242d3a36964eb7">More...</a><br /></td></tr>
-<tr class="separator:a9c484cc6f70fc8b530242d3a36964eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef2473e7207a026688e113125c75650"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#acef2473e7207a026688e113125c75650">getMinConnections</a> () const</td></tr>
-<tr class="memdesc:acef2473e7207a026688e113125c75650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum connections for this pool.  <a href="#acef2473e7207a026688e113125c75650">More...</a><br /></td></tr>
-<tr class="separator:acef2473e7207a026688e113125c75650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cf2fbfa5b7a02a53baa42a10eff3edc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a5cf2fbfa5b7a02a53baa42a10eff3edc">getMultiuserAuthentication</a> () const</td></tr>
-<tr class="memdesc:a5cf2fbfa5b7a02a53baa42a10eff3edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if multiuser authentication is enabled on this pool.  <a href="#a5cf2fbfa5b7a02a53baa42a10eff3edc">More...</a><br /></td></tr>
-<tr class="separator:a5cf2fbfa5b7a02a53baa42a10eff3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8fbe1db87ffb0ed8b8313e95c9057ea"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#ab8fbe1db87ffb0ed8b8313e95c9057ea">getName</a> () const =0</td></tr>
-<tr class="memdesc:ab8fbe1db87ffb0ed8b8313e95c9057ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the connection pool.  <a href="#ab8fbe1db87ffb0ed8b8313e95c9057ea">More...</a><br /></td></tr>
-<tr class="separator:ab8fbe1db87ffb0ed8b8313e95c9057ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f1a7bc84f20bd6dacfd9b56dcfcce71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a8f1a7bc84f20bd6dacfd9b56dcfcce71">getPendingEventCount</a> () const</td></tr>
-<tr class="memdesc:a8f1a7bc84f20bd6dacfd9b56dcfcce71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the approximate number of pending subscription events maintained at server for this durable client pool at the time it (re)connected to the server.  <a href="#a8f1a7bc84f20bd6dacfd9b56dcfcce71">More...</a><br /></td></tr>
-<tr class="separator:a8f1a7bc84f20bd6dacfd9b56dcfcce71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23939f23d01452d68df030bfa539913d"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a23939f23d01452d68df030bfa539913d">getPingInterval</a> () const</td></tr>
-<tr class="memdesc:a23939f23d01452d68df030bfa539913d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the ping interval for this pool.  <a href="#a23939f23d01452d68df030bfa539913d">More...</a><br /></td></tr>
-<tr class="separator:a23939f23d01452d68df030bfa539913d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b14ddcadde5139eccb5955ec9874302"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a8b14ddcadde5139eccb5955ec9874302">getPRSingleHopEnabled</a> () const</td></tr>
-<tr class="memdesc:a8b14ddcadde5139eccb5955ec9874302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if single-hop optimization is enabled on this pool.  <a href="#a8b14ddcadde5139eccb5955ec9874302">More...</a><br /></td></tr>
-<tr class="separator:a8b14ddcadde5139eccb5955ec9874302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa59f07f0ad8468aa6063dc083b2e8c9c"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00811.html">QueryService</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aa59f07f0ad8468aa6063dc083b2e8c9c">getQueryService</a> ()=0</td></tr>
-<tr class="memdesc:aa59f07f0ad8468aa6063dc083b2e8c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> for this <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a>.  <a href="#aa59f07f0ad8468aa6063dc083b2e8c9c">More...</a><br /></td></tr>
-<tr class="separator:aa59f07f0ad8468aa6063dc083b2e8c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa2f7b0e45135a3982de1cab2dcdbef"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a0fa2f7b0e45135a3982de1cab2dcdbef">getReadTimeout</a> () const</td></tr>
-<tr class="memdesc:a0fa2f7b0e45135a3982de1cab2dcdbef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the read timeout of this pool.  <a href="#a0fa2f7b0e45135a3982de1cab2dcdbef">More...</a><br /></td></tr>
-<tr class="separator:a0fa2f7b0e45135a3982de1cab2dcdbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c4b9b56fe1ab9c071087a41841f04f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a0c4b9b56fe1ab9c071087a41841f04f6">getRetryAttempts</a> () const</td></tr>
-<tr class="memdesc:a0c4b9b56fe1ab9c071087a41841f04f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the retry attempts for this pool.  <a href="#a0c4b9b56fe1ab9c071087a41841f04f6">More...</a><br /></td></tr>
-<tr class="separator:a0c4b9b56fe1ab9c071087a41841f04f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030ca4ba913df981785ff64493d693ea"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a030ca4ba913df981785ff64493d693ea">getServerGroup</a> () const</td></tr>
-<tr class="memdesc:a030ca4ba913df981785ff64493d693ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the server group of this pool.  <a href="#a030ca4ba913df981785ff64493d693ea">More...</a><br /></td></tr>
-<tr class="separator:a030ca4ba913df981785ff64493d693ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee410b91d9bab8f9def07e0b9df4f9cb"><td class="memItemLeft" align="right" valign="top">virtual const std::shared_ptr&lt; <a class="el" href="a00026.html#abb5c1ce32786fe2c0f7793809b103737">CacheableStringArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aee410b91d9bab8f9def07e0b9df4f9cb">getServers</a> ()=0</td></tr>
-<tr class="memdesc:aee410b91d9bab8f9def07e0b9df4f9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an unmodifiable list of servers this pool is using.  <a href="#aee410b91d9bab8f9def07e0b9df4f9cb">More...</a><br /></td></tr>
-<tr class="separator:aee410b91d9bab8f9def07e0b9df4f9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a914a037b9e99a999581d799967c388cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a914a037b9e99a999581d799967c388cf">getSocketBufferSize</a> () const</td></tr>
-<tr class="memdesc:a914a037b9e99a999581d799967c388cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the socket buffer size of this pool.  <a href="#a914a037b9e99a999581d799967c388cf">More...</a><br /></td></tr>
-<tr class="separator:a914a037b9e99a999581d799967c388cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a747f3f2e544cb520de67e5b214eb9e4d"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a747f3f2e544cb520de67e5b214eb9e4d">getStatisticInterval</a> () const</td></tr>
-<tr class="memdesc:a747f3f2e544cb520de67e5b214eb9e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the statistic interval for this pool.  <a href="#a747f3f2e544cb520de67e5b214eb9e4d">More...</a><br /></td></tr>
-<tr class="separator:a747f3f2e544cb520de67e5b214eb9e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6ef62d3affa923dbb768f7b5ad2339e"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#ab6ef62d3affa923dbb768f7b5ad2339e">getSubscriptionAckInterval</a> () const</td></tr>
-<tr class="memdesc:ab6ef62d3affa923dbb768f7b5ad2339e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subscription ack interval of this pool.  <a href="#ab6ef62d3affa923dbb768f7b5ad2339e">More...</a><br /></td></tr>
-<tr class="separator:ab6ef62d3affa923dbb768f7b5ad2339e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b9017660593e9cf5ee1096aaea15899"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a1b9017660593e9cf5ee1096aaea15899">getSubscriptionEnabled</a> () const</td></tr>
-<tr class="memdesc:a1b9017660593e9cf5ee1096aaea15899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the true if a server-to-client subscriptions are enabled on this pool.  <a href="#a1b9017660593e9cf5ee1096aaea15899">More...</a><br /></td></tr>
-<tr class="separator:a1b9017660593e9cf5ee1096aaea15899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24f2d27ca2152802416faf8c28428145"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a24f2d27ca2152802416faf8c28428145">getSubscriptionMessageTrackingTimeout</a> () const</td></tr>
-<tr class="memdesc:a24f2d27ca2152802416faf8c28428145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subscription message tracking timeout of this pool.  <a href="#a24f2d27ca2152802416faf8c28428145">More...</a><br /></td></tr>
-<tr class="separator:a24f2d27ca2152802416faf8c28428145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a790bfbf25debf7e90076c56623221c4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a790bfbf25debf7e90076c56623221c4f">getSubscriptionRedundancy</a> () const</td></tr>
-<tr class="memdesc:a790bfbf25debf7e90076c56623221c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subscription redundancy level of this pool.  <a href="#a790bfbf25debf7e90076c56623221c4f">More...</a><br /></td></tr>
-<tr class="separator:a790bfbf25debf7e90076c56623221c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4bc098087698c1ac1cdae0534fa542"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aed4bc098087698c1ac1cdae0534fa542">getThreadLocalConnections</a> () const</td></tr>
-<tr class="memdesc:aed4bc098087698c1ac1cdae0534fa542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if thread local connections are enabled on this pool.  <a href="#aed4bc098087698c1ac1cdae0534fa542">More...</a><br /></td></tr>
-<tr class="separator:aed4bc098087698c1ac1cdae0534fa542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd0d82690e3f66f016842cd72b7c6876"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#abd0d82690e3f66f016842cd72b7c6876">getUpdateLocatorListInterval</a> () const</td></tr>
-<tr class="memdesc:abd0d82690e3f66f016842cd72b7c6876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the update locator list interval for this pool.  <a href="#abd0d82690e3f66f016842cd72b7c6876">More...</a><br /></td></tr>
-<tr class="separator:abd0d82690e3f66f016842cd72b7c6876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcbdec8d008434d7579ed36c8b9c23ae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#afcbdec8d008434d7579ed36c8b9c23ae">isDestroyed</a> () const =0</td></tr>
-<tr class="memdesc:afcbdec8d008434d7579ed36c8b9c23ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> has been destroyed.  <a href="#afcbdec8d008434d7579ed36c8b9c23ae">More...</a><br /></td></tr>
-<tr class="separator:afcbdec8d008434d7579ed36c8b9c23ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ee45179b9b3055d035785e1f1eeacab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a6ee45179b9b3055d035785e1f1eeacab">releaseThreadLocalConnection</a> ()=0</td></tr>
-<tr class="memdesc:a6ee45179b9b3055d035785e1f1eeacab"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this pool was configured to use <code>threadlocalconnections</code>, then this method will release the connection cached for the calling thread.  <a href="#a6ee45179b9b3055d035785e1f1eeacab">More...</a><br /></td></tr>
-<tr class="separator:a6ee45179b9b3055d035785e1f1eeacab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4284cab342603084f26e40658ee66819"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a4284cab342603084f26e40658ee66819">markIdentityField</a> (const std::string &amp;fieldName)=0</td></tr>
+<tr class="memdesc:a4284cab342603084f26e40658ee66819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the given field name should be included in hashCode and equals checks of this object on a server that is using {<a class="el" href="a00371.html#a7133aa9a21c8481e0e0f912c9bbf6a3e">} or when a client executes a query on a server. </a> <a href="#a4284cab342603084f26e40658ee66819">More...</a><br /></td></tr>
+<tr class="separator:a4284cab342603084f26e40658ee66819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca557ffc4b412beff97d5c65e14ee91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a7ca557ffc4b412beff97d5c65e14ee91">PdxWriter</a> ()=default</td></tr>
+<tr class="memdesc:a7ca557ffc4b412beff97d5c65e14ee91"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructors  <a href="#a7ca557ffc4b412beff97d5c65e14ee91">More...</a><br /></td></tr>
+<tr class="separator:a7ca557ffc4b412beff97d5c65e14ee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da0ac9e3283f8cb54916db0192cb478"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a7da0ac9e3283f8cb54916db0192cb478">writeArrayOfByteArrays</a> (const std::string &amp;fieldName, int8_t *const *const array, int arrayLength, const int *elementLength)=0</td></tr>
+<tr class="memdesc:a7da0ac9e3283f8cb54916db0192cb478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a7da0ac9e3283f8cb54916db0192cb478">More...</a><br /></td></tr>
+<tr class="separator:a7da0ac9e3283f8cb54916db0192cb478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b7652a38153b22a0c52fed8ff229893"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a2b7652a38153b22a0c52fed8ff229893">writeBoolean</a> (const std::string &amp;fieldName, bool value)=0</td></tr>
+<tr class="memdesc:a2b7652a38153b22a0c52fed8ff229893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a2b7652a38153b22a0c52fed8ff229893">More...</a><br /></td></tr>
+<tr class="separator:a2b7652a38153b22a0c52fed8ff229893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654d85741bb002c517c59ee2dc7eea28"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a654d85741bb002c517c59ee2dc7eea28">writeBooleanArray</a> (const std::string &amp;fieldName, const std::vector&lt; bool &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a654d85741bb002c517c59ee2dc7eea28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a654d85741bb002c517c59ee2dc7eea28">More...</a><br /></td></tr>
+<tr class="separator:a654d85741bb002c517c59ee2dc7eea28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b8c1dbccf5fcb9df2ec44c67bab793"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a73b8c1dbccf5fcb9df2ec44c67bab793">writeByte</a> (const std::string &amp;fieldName, int8_t value)=0</td></tr>
+<tr class="memdesc:a73b8c1dbccf5fcb9df2ec44c67bab793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a73b8c1dbccf5fcb9df2ec44c67bab793">More...</a><br /></td></tr>
+<tr class="separator:a73b8c1dbccf5fcb9df2ec44c67bab793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a84d3088c6a23179fe0ee304dbf5cc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a32a84d3088c6a23179fe0ee304dbf5cc">writeByteArray</a> (const std::string &amp;fieldName, const std::vector&lt; int8_t &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a32a84d3088c6a23179fe0ee304dbf5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a32a84d3088c6a23179fe0ee304dbf5cc">More...</a><br /></td></tr>
+<tr class="separator:a32a84d3088c6a23179fe0ee304dbf5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f596ba97be4b759f9a374a261025672"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a2f596ba97be4b759f9a374a261025672">writeChar</a> (const std::string &amp;fieldName, char16_t value)=0</td></tr>
+<tr class="memdesc:a2f596ba97be4b759f9a374a261025672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form The fields type is <code>char16_t</code>  <a href="#a2f596ba97be4b759f9a374a261025672">More...</a><br /></td></tr>
+<tr class="separator:a2f596ba97be4b759f9a374a261025672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673bc2acf634f9a6ba78ca5e36dbd545"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a673bc2acf634f9a6ba78ca5e36dbd545">writeCharArray</a> (const std::string &amp;fieldName, const std::vector&lt; char16_t &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a673bc2acf634f9a6ba78ca5e36dbd545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a673bc2acf634f9a6ba78ca5e36dbd545">More...</a><br /></td></tr>
+<tr class="separator:a673bc2acf634f9a6ba78ca5e36dbd545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ea81fc0a7f4f34ede3225c0fd51982"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#ad1ea81fc0a7f4f34ede3225c0fd51982">writeDate</a> (const std::string &amp;fieldName, std::shared_ptr&lt; <a class="el" href="a00327.html">CacheableDate</a> &gt; date)=0</td></tr>
+<tr class="memdesc:ad1ea81fc0a7f4f34ede3225c0fd51982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#ad1ea81fc0a7f4f34ede3225c0fd51982">More...</a><br /></td></tr>
+<tr class="separator:ad1ea81fc0a7f4f34ede3225c0fd51982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf69137612072ce64d984cd6d8191db"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#acdf69137612072ce64d984cd6d8191db">writeDouble</a> (const std::string &amp;fieldName, double value)=0</td></tr>
+<tr class="memdesc:acdf69137612072ce64d984cd6d8191db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#acdf69137612072ce64d984cd6d8191db">More...</a><br /></td></tr>
+<tr class="separator:acdf69137612072ce64d984cd6d8191db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8ba26bc80de80fb93ffd32d3ba6b84"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a2c8ba26bc80de80fb93ffd32d3ba6b84">writeDoubleArray</a> (const std::string &amp;fieldName, const std::vector&lt; double &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a2c8ba26bc80de80fb93ffd32d3ba6b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a2c8ba26bc80de80fb93ffd32d3ba6b84">More...</a><br /></td></tr>
+<tr class="separator:a2c8ba26bc80de80fb93ffd32d3ba6b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bad4c003781181edf84e23c1a058f26"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a1bad4c003781181edf84e23c1a058f26">writeFloat</a> (const std::string &amp;fieldName, float value)=0</td></tr>
+<tr class="memdesc:a1bad4c003781181edf84e23c1a058f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a1bad4c003781181edf84e23c1a058f26">More...</a><br /></td></tr>
+<tr class="separator:a1bad4c003781181edf84e23c1a058f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ba2fc0758db2f2dc5f617006d75666"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aa7ba2fc0758db2f2dc5f617006d75666">writeFloatArray</a> (const std::string &amp;fieldName, const std::vector&lt; float &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:aa7ba2fc0758db2f2dc5f617006d75666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#aa7ba2fc0758db2f2dc5f617006d75666">More...</a><br /></td></tr>
+<tr class="separator:aa7ba2fc0758db2f2dc5f617006d75666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1600dafb47a07ce1533414061fc2b06"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aa1600dafb47a07ce1533414061fc2b06">writeInt</a> (const std::string &amp;fieldName, int32_t value)=0</td></tr>
+<tr class="memdesc:aa1600dafb47a07ce1533414061fc2b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#aa1600dafb47a07ce1533414061fc2b06">More...</a><br /></td></tr>
+<tr class="separator:aa1600dafb47a07ce1533414061fc2b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5570ef6b0aa04d472b7e227c25fc6c79"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a5570ef6b0aa04d472b7e227c25fc6c79">writeIntArray</a> (const std::string &amp;fieldName, const std::vector&lt; int32_t &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a5570ef6b0aa04d472b7e227c25fc6c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a5570ef6b0aa04d472b7e227c25fc6c79">More...</a><br /></td></tr>
+<tr class="separator:a5570ef6b0aa04d472b7e227c25fc6c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b072d1c0422da93b58452ce4c2805b9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a7b072d1c0422da93b58452ce4c2805b9">writeLong</a> (const std::string &amp;fieldName, int64_t value)=0</td></tr>
+<tr class="memdesc:a7b072d1c0422da93b58452ce4c2805b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a7b072d1c0422da93b58452ce4c2805b9">More...</a><br /></td></tr>
+<tr class="separator:a7b072d1c0422da93b58452ce4c2805b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1075298669017c6583bf63e968f658"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a0d1075298669017c6583bf63e968f658">writeLongArray</a> (const std::string &amp;fieldName, const std::vector&lt; int64_t &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a0d1075298669017c6583bf63e968f658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a0d1075298669017c6583bf63e968f658">More...</a><br /></td></tr>
+<tr class="separator:a0d1075298669017c6583bf63e968f658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2aef1a6a522842269b3aa9b1908e9a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a5e2aef1a6a522842269b3aa9b1908e9a">writeObject</a> (const std::string &amp;fieldName, std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt; value)=0</td></tr>
+<tr class="memdesc:a5e2aef1a6a522842269b3aa9b1908e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a5e2aef1a6a522842269b3aa9b1908e9a">More...</a><br /></td></tr>
+<tr class="separator:a5e2aef1a6a522842269b3aa9b1908e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c792204fbb8eda34642d32a70e7b4b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a22c792204fbb8eda34642d32a70e7b4b">writeObjectArray</a> (const std::string &amp;fieldName, std::shared_ptr&lt; <a class="el" href="a00355.html">CacheableObjectArray</a> &gt; array)=0</td></tr>
+<tr class="memdesc:a22c792204fbb8eda34642d32a70e7b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a22c792204fbb8eda34642d32a70e7b4b">More...</a><br /></td></tr>
+<tr class="separator:a22c792204fbb8eda34642d32a70e7b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43556c0b35daf855719ca04fd3cd7c69"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a43556c0b35daf855719ca04fd3cd7c69">writeShort</a> (const std::string &amp;fieldName, int16_t value)=0</td></tr>
+<tr class="memdesc:a43556c0b35daf855719ca04fd3cd7c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a43556c0b35daf855719ca04fd3cd7c69">More...</a><br /></td></tr>
+<tr class="separator:a43556c0b35daf855719ca04fd3cd7c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7987e3c50ab83631e29906b5db3a0926"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#a7987e3c50ab83631e29906b5db3a0926">writeShortArray</a> (const std::string &amp;fieldName, const std::vector&lt; int16_t &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:a7987e3c50ab83631e29906b5db3a0926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#a7987e3c50ab83631e29906b5db3a0926">More...</a><br /></td></tr>
+<tr class="separator:a7987e3c50ab83631e29906b5db3a0926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9a1b68b5716e21834234b4513ba830"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aba9a1b68b5716e21834234b4513ba830">writeString</a> (const std::string &amp;fieldName, const std::string &amp;value)=0</td></tr>
+<tr class="memdesc:aba9a1b68b5716e21834234b4513ba830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#aba9a1b68b5716e21834234b4513ba830">More...</a><br /></td></tr>
+<tr class="separator:aba9a1b68b5716e21834234b4513ba830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98876c145e567024e04fb0e15c6d94a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#aa98876c145e567024e04fb0e15c6d94a">writeStringArray</a> (const std::string &amp;fieldName, const std::vector&lt; std::string &gt; &amp;array)=0</td></tr>
+<tr class="memdesc:aa98876c145e567024e04fb0e15c6d94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the named field with the given value to the serialized form.  <a href="#aa98876c145e567024e04fb0e15c6d94a">More...</a><br /></td></tr>
+<tr class="separator:aa98876c145e567024e04fb0e15c6d94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6e9828597463ee36403fa3e415eb8c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00787.html">PdxWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#afe6e9828597463ee36403fa3e415eb8c">writeUnreadFields</a> (std::shared_ptr&lt; <a class="el" href="a00779.html">PdxUnreadFields</a> &gt; unread)=0</td></tr>
+<tr class="memdesc:afe6e9828597463ee36403fa3e415eb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given unread fields to the serialized form.  <a href="#afe6e9828597463ee36403fa3e415eb8c">More...</a><br /></td></tr>
+<tr class="separator:afe6e9828597463ee36403fa3e415eb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5368e4c96a78b48dfcf0d7cc5c3d1d6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00787.html#ab5368e4c96a78b48dfcf0d7cc5c3d1d6">~PdxWriter</a> ()=default</td></tr>
+<tr class="memdesc:ab5368e4c96a78b48dfcf0d7cc5c3d1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor  <a href="#ab5368e4c96a78b48dfcf0d7cc5c3d1d6">More...</a><br /></td></tr>
+<tr class="separator:ab5368e4c96a78b48dfcf0d7cc5c3d1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A pool of connections to connect from a client to a set of Geode <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> Servers. </p>
-<p>Instances of this interface are created using <a class="el" href="a00791.html#afd37baeb030c1b92ee50b3d25fc046d8">PoolFactory#create</a>. </p>
-<p>Existing instances can be found using <a class="el" href="">PoolFactory#find</a> and <a class="el" href="">PoolFactory#getAll</a>. </p>
-<p>The pool name must be configured on the client regions that will use this pool by calling <a class="el" href="">AttributeFactory#setPoolName</a>. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a82821401108d78a1c493f4b6c952d90d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82821401108d78a1c493f4b6c952d90d">&#9670;&nbsp;</a></span>destroy()</h2>
+<div class="textblock"><p>A <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> will be passed to <a class="el" href="a00771.html#a28894ac9e842832bcb336915ae3983e0" title="Serialize this object in Geode PDX format.">PdxSerializable.toData</a> when it is serializing the domain class. </p>
+<p>The domain class needs to serialize member fields using this abstract class. This class is implemented by Native Client. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7ca557ffc4b412beff97d5c65e14ee91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca557ffc4b412beff97d5c65e14ee91">&#9670;&nbsp;</a></span>PdxWriter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,10 +191,65 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void apache::geode::client::Pool::destroy </td>
+          <td class="memname">apache::geode::client::PdxWriter::PdxWriter </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>keepAlive</em> = <code>false</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>constructors </p>
+
+</div>
+</div>
+<a id="ab5368e4c96a78b48dfcf0d7cc5c3d1d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5368e4c96a78b48dfcf0d7cc5c3d1d6">&#9670;&nbsp;</a></span>~PdxWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual apache::geode::client::PdxWriter::~PdxWriter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>destructor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4284cab342603084f26e40658ee66819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4284cab342603084f26e40658ee66819">&#9670;&nbsp;</a></span>markIdentityField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::markIdentityField </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -212,84 +260,28 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destroys this pool closing any connections it produced. </p>
+<p>Indicate that the given field name should be included in hashCode and equals checks of this object on a server that is using {<a class="el" href="a00371.html#a7133aa9a21c8481e0e0f912c9bbf6a3e">} or when a client executes a query on a server. </a></p>
+<p>The fields that are marked as identity fields are used to generate the hashCode and equals methods of <a class="el" href="a00759.html">PdxInstance</a>. Because of this, the identity fields should themselves either be primitives, or implement hashCode and equals.</p>
+<p>If no fields are set as identity fields, then all fields will be used in hashCode and equals checks.</p>
+<p>The identity fields should make marked after they are written using a write* method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">keepAlive</td><td>defines whether the server should keep the durable client's subscriptions alive for the timeout period. </td></tr>
+    <tr><td class="paramname">fieldName</td><td>the name of the field to mark as an identity field. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a>&amp; </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the pool is still in use. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field does not exist. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a587c61edadb69b69556c78db08068468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a587c61edadb69b69556c78db08068468">&#9670;&nbsp;</a></span>getFreeConnectionTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getFreeConnectionTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the connection timeout of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a89f1e090d89a04eb81501c8e07c8ac22" title="Sets the free connection timeout for this pool.">PoolFactory::setFreeConnectionTimeout</a> </dd></dl>
-
-</div>
-</div>
-<a id="a38e39761cf0cb1f178cb5d3ec7743a83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38e39761cf0cb1f178cb5d3ec7743a83">&#9670;&nbsp;</a></span>getIdleTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getIdleTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the idle connection timeout for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd>PoolFactory::setIdleTimeout(long) </dd></dl>
-
-</div>
-</div>
-<a id="a99f63b3df5d03fbfda81aea4376dcf80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f63b3df5d03fbfda81aea4376dcf80">&#9670;&nbsp;</a></span>getLoadConditioningInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getLoadConditioningInterval </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the load conditioning interval of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#aaa812743d8458017bdbb8afa144c05e7" title="Sets the load conditioning interval for this pool.">PoolFactory::setLoadConditioningInterval</a> </dd></dl>
-
-</div>
-</div>
-<a id="a5d846fd4c075e5405e9a336e6ff2d672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d846fd4c075e5405e9a336e6ff2d672">&#9670;&nbsp;</a></span>getLocators()</h2>
+<a id="a7da0ac9e3283f8cb54916db0192cb478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da0ac9e3283f8cb54916db0192cb478">&#9670;&nbsp;</a></span>writeArrayOfByteArrays()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,10 +290,33 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::shared_ptr&lt;<a class="el" href="a00026.html#abb5c1ce32786fe2c0f7793809b103737">CacheableStringArray</a>&gt; apache::geode::client::Pool::getLocators </td>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeArrayOfByteArrays </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *const *const&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arrayLength</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>elementLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -311,176 +326,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns an unmodifiable list locators that this pool is using. </p>
-<p>Each locator was either <a class="el" href="a00791.html#aa3f05ec7294f3024438a0a540020b4ac">added explicitly</a> when the pool was created or was discovered using the explicit locators. </p>
-<p>If a pool has no locators, then it cannot discover servers or locators at runtime. </p>
-
-</div>
-</div>
-<a id="a9c484cc6f70fc8b530242d3a36964eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c484cc6f70fc8b530242d3a36964eb7">&#9670;&nbsp;</a></span>getMaxConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getMaxConnections </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the maximum connections for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a06a73099cf267b976dde49ab2dd63efa" title="Sets the max number of client to server connections that the pool will create.">PoolFactory::setMaxConnections(int)</a> </dd></dl>
-
-</div>
-</div>
-<a id="acef2473e7207a026688e113125c75650"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acef2473e7207a026688e113125c75650">&#9670;&nbsp;</a></span>getMinConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getMinConnections </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the minimum connections for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#ae261c2d991dcf96884953b4b1dace1d2" title="Sets the minimum number of connections to keep available at all times.">PoolFactory::setMinConnections(int)</a> </dd></dl>
-
-</div>
-</div>
-<a id="a5cf2fbfa5b7a02a53baa42a10eff3edc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cf2fbfa5b7a02a53baa42a10eff3edc">&#9670;&nbsp;</a></span>getMultiuserAuthentication()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::Pool::getMultiuserAuthentication </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns <code>true</code> if multiuser authentication is enabled on this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a2bce6ff92b63c66478b4298b57c000f8" title="Sets whether Pool is in multi user secure mode.">PoolFactory::setMultiuserAuthentication</a> </dd></dl>
-
-</div>
-</div>
-<a id="ab8fbe1db87ffb0ed8b8313e95c9057ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8fbe1db87ffb0ed8b8313e95c9057ea">&#9670;&nbsp;</a></span>getName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::Pool::getName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the name of the connection pool. </p>
-<dl class="section return"><dt>Returns</dt><dd>the name of the pool </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#afd37baeb030c1b92ee50b3d25fc046d8" title="Creates a new Pool for connecting a client to a set of Geode Cache Servers.">PoolFactory::create</a> </dd></dl>
-
-</div>
-</div>
-<a id="a8f1a7bc84f20bd6dacfd9b56dcfcce71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f1a7bc84f20bd6dacfd9b56dcfcce71">&#9670;&nbsp;</a></span>getPendingEventCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getPendingEventCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the approximate number of pending subscription events maintained at server for this durable client pool at the time it (re)connected to the server. </p>
-<p>Server would start dispatching these events to this durable client pool when it receives <a class="el" href="a00287.html#ac2db841bef19d9a508f15245b6b65b08">Cache#readyForEvents()</a> from it. </p>
-<p>Durable clients can call this method on reconnect to assess the amount of 'stale' data i.e. events accumulated at server while this client was away and, importantly, before calling <a class="el" href="a00287.html#ac2db841bef19d9a508f15245b6b65b08">Cache#readyForEvents()</a>. </p>
-<p>Any number of invocations of this method during a single session will return the same value. </p>
-<p>It may return a zero value if there are no events pending at server for this client pool. A negative value returned tells us that no queue was available at server for this client pool. </p>
-<p>A value -1 indicates that this client pool reconnected to server after its 'durable-client-timeout' period elapsed and hence its subscription queue at server was removed, possibly causing data loss. </p>
-<p>A value -2 indicates that this client pool connected to server for the first time.</p>
-<dl class="section return"><dt>Returns</dt><dd>int The number of subscription events maintained at server for this durable client pool at the time this pool (re)connected. A negative value indicates no queue was found for this client pool. </dd></dl>
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int8_t**</code>. </p>
+<p>C++ int8_t** is mapped to Java byte[][].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+    <tr><td class="paramname">arrayLength</td><td>the length of the actual byte array field holding individual byte arrays to write </td></tr>
+    <tr><td class="paramname">elementLength</td><td>the length of the individual byte arrays to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>If called by a non-durable client or if invoked any time after invocation of <a class="el" href="a00287.html#ac2db841bef19d9a508f15245b6b65b08">Cache#readyForEvents()</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>8.1 </dd></dl>
 
 </div>
 </div>
-<a id="a23939f23d01452d68df030bfa539913d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23939f23d01452d68df030bfa539913d">&#9670;&nbsp;</a></span>getPingInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getPingInterval </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the ping interval for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd>PoolFactory::setPingInterval(long) </dd></dl>
-
-</div>
-</div>
-<a id="a8b14ddcadde5139eccb5955ec9874302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b14ddcadde5139eccb5955ec9874302">&#9670;&nbsp;</a></span>getPRSingleHopEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::Pool::getPRSingleHopEnabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if single-hop optimization is enabled on this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#af4ebe38b43baf0697c6ef6fc5da7a7ec" title="By default setPRSingleHopEnabled is true.">PoolFactory::setPRSingleHopEnabled</a> </dd></dl>
-
-</div>
-</div>
-<a id="aa59f07f0ad8468aa6063dc083b2e8c9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa59f07f0ad8468aa6063dc083b2e8c9c">&#9670;&nbsp;</a></span>getQueryService()</h2>
+<a id="a2b7652a38153b22a0c52fed8ff229893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b7652a38153b22a0c52fed8ff229893">&#9670;&nbsp;</a></span>writeBoolean()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,10 +358,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00811.html">QueryService</a>&gt; apache::geode::client::Pool::getQueryService </td>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeBoolean </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -502,80 +382,28 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> for this <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a>. </p>
-<p>The query operations performed using this <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> will be executed on the servers that are associated with this pool. To perform <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> operation on the local cache obtain the <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> instance from the <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p><dl class="exception"><dt>Exceptions</dt><dd>
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>bool</code>. </p>
+<p>C++ bool is mapped to Java boolean</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">unSupported</td><td><a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> when <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multi user mode.</td></tr>
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00287.html#a2e58689fed2e5a2a2c99085e8b3034db" title="Gets the QueryService from which a new Query can be obtained.">Cache::getQueryService</a> </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> </dd></dl>
 
 </div>
 </div>
-<a id="a0fa2f7b0e45135a3982de1cab2dcdbef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa2f7b0e45135a3982de1cab2dcdbef">&#9670;&nbsp;</a></span>getReadTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getReadTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the read timeout of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a05ef94395d0b20b047d6cb824389fea0" title="Sets the duration to wait for a response from a server before timing out the operation and trying ano...">PoolFactory::setReadTimeout</a> </dd></dl>
-
-</div>
-</div>
-<a id="a0c4b9b56fe1ab9c071087a41841f04f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c4b9b56fe1ab9c071087a41841f04f6">&#9670;&nbsp;</a></span>getRetryAttempts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getRetryAttempts </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the retry attempts for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a09f95158896641e3e8c2d30d60a294f4" title="Set the number of times to retry a request after timeout/exception.">PoolFactory::setRetryAttempts(int)</a> </dd></dl>
-
-</div>
-</div>
-<a id="a030ca4ba913df981785ff64493d693ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a030ca4ba913df981785ff64493d693ea">&#9670;&nbsp;</a></span>getServerGroup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string&amp; apache::geode::client::Pool::getServerGroup </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the server group of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#aea06b9dd37aef7350c93477abc601b25" title="Configures the group which contains all the servers that this pool connects to.">PoolFactory::setServerGroup</a> </dd></dl>
-
-</div>
-</div>
-<a id="aee410b91d9bab8f9def07e0b9df4f9cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee410b91d9bab8f9def07e0b9df4f9cb">&#9670;&nbsp;</a></span>getServers()</h2>
+<a id="a654d85741bb002c517c59ee2dc7eea28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654d85741bb002c517c59ee2dc7eea28">&#9670;&nbsp;</a></span>writeBooleanArray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,9 +412,1074 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::shared_ptr&lt;<a class="el" href="a00026.html#abb5c1ce32786fe2c0f7793809b103737">CacheableStringArray</a>&gt; apache::geode::client::Pool::getServers </td>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeBooleanArray </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; bool &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>bool*</code>. </p>
+<p>C++ bool* is mapped to Java boolean[]</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73b8c1dbccf5fcb9df2ec44c67bab793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b8c1dbccf5fcb9df2ec44c67bab793">&#9670;&nbsp;</a></span>writeByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeByte </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int8_t</code>. </p>
+<p>C++ int8_t is mapped to Java byte</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a32a84d3088c6a23179fe0ee304dbf5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a84d3088c6a23179fe0ee304dbf5cc">&#9670;&nbsp;</a></span>writeByteArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeByteArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int8_t*</code>. </p>
+<p>C++ int8_t* is mapped to Java byte[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f596ba97be4b759f9a374a261025672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f596ba97be4b759f9a374a261025672">&#9670;&nbsp;</a></span>writeChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeChar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form The fields type is <code>char16_t</code> </p>
+<p>C++ char16_t is mapped to Java char</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>The name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a673bc2acf634f9a6ba78ca5e36dbd545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673bc2acf634f9a6ba78ca5e36dbd545">&#9670;&nbsp;</a></span>writeCharArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeCharArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; char16_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>char16_t*</code>. </p>
+<p>C++ char16_t* is mapped to Java char[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad1ea81fc0a7f4f34ede3225c0fd51982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ea81fc0a7f4f34ede3225c0fd51982">&#9670;&nbsp;</a></span>writeDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeDate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00327.html">CacheableDate</a> &gt;&#160;</td>
+          <td class="paramname"><em>date</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>CacheableDatePtr</code>. </p>
+<p>C++ std::shared_ptr&lt;CacheableDate&gt; is mapped to Java Date</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acdf69137612072ce64d984cd6d8191db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf69137612072ce64d984cd6d8191db">&#9670;&nbsp;</a></span>writeDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeDouble </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>double</code>. </p>
+<p>C++ double is mapped to Java double</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c8ba26bc80de80fb93ffd32d3ba6b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8ba26bc80de80fb93ffd32d3ba6b84">&#9670;&nbsp;</a></span>writeDoubleArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeDoubleArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>double*</code>. </p>
+<p>C++ double* is mapped to Java double[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1bad4c003781181edf84e23c1a058f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bad4c003781181edf84e23c1a058f26">&#9670;&nbsp;</a></span>writeFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeFloat </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>float</code>. </p>
+<p>C++ float is mapped to Java float</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa7ba2fc0758db2f2dc5f617006d75666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ba2fc0758db2f2dc5f617006d75666">&#9670;&nbsp;</a></span>writeFloatArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeFloatArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>float*</code>. </p>
+<p>C++ float* is mapped to Java float[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1600dafb47a07ce1533414061fc2b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1600dafb47a07ce1533414061fc2b06">&#9670;&nbsp;</a></span>writeInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeInt </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int32_t</code>. </p>
+<p>C++ int32_t is mapped to Java int</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5570ef6b0aa04d472b7e227c25fc6c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5570ef6b0aa04d472b7e227c25fc6c79">&#9670;&nbsp;</a></span>writeIntArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeIntArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int32_t*</code>. </p>
+<p>C++ int32_t* is mapped to Java int[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b072d1c0422da93b58452ce4c2805b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b072d1c0422da93b58452ce4c2805b9">&#9670;&nbsp;</a></span>writeLong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeLong </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int64_t</code>. </p>
+<p>C++ int64_t is mapped to Java long</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0d1075298669017c6583bf63e968f658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d1075298669017c6583bf63e968f658">&#9670;&nbsp;</a></span>writeLongArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeLongArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int64_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int64_t*</code>. </p>
+<p>C++ int64_t* is mapped to Java long[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e2aef1a6a522842269b3aa9b1908e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e2aef1a6a522842269b3aa9b1908e9a">&#9670;&nbsp;</a></span>writeObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>CacheablePtr</code>. </p>
+<p>C++ std::shared_ptr&lt;Cacheable&gt; is mapped to Java object.</p>
+<p>It is best to use one of the other writeXXX methods if your field type will always be XXX. This method allows the field value to be anything that is an instance of Object. This gives you more flexibility but more space is used to store the serialized field.</p>
+<p>Note that some Java objects serialized with this method may not be compatible with non-java languages. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22c792204fbb8eda34642d32a70e7b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c792204fbb8eda34642d32a70e7b4b">&#9670;&nbsp;</a></span>writeObjectArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeObjectArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00355.html">CacheableObjectArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>CacheableObjectArrayPtr</code>. C++ std::shared_ptr&lt;CacheableObjectArray&gt; is mapped to Java Object[]. For how each element of the array is a mapped to C++ see {<a class="el" href="a00787.html#a5e2aef1a6a522842269b3aa9b1908e9a">}. Note that this call may serialize elements that are not compatible with non-java languages.  fieldName the name of the field to write  array the value of the field to write  this PdxWriter  IllegalStateException if the named field has already been written or fieldName is nullptr or empty. </a></p>
+
+</div>
+</div>
+<a id="a43556c0b35daf855719ca04fd3cd7c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43556c0b35daf855719ca04fd3cd7c69">&#9670;&nbsp;</a></span>writeShort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeShort </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int16_t</code>. </p>
+<p>C++ int16_t is mapped to Java short</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7987e3c50ab83631e29906b5db3a0926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7987e3c50ab83631e29906b5db3a0926">&#9670;&nbsp;</a></span>writeShortArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeShortArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int16_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>int16_t*</code>. </p>
+<p>C++ int16_t* is mapped to Java short[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba9a1b68b5716e21834234b4513ba830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba9a1b68b5716e21834234b4513ba830">&#9670;&nbsp;</a></span>writeString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>char*</code>. </p>
+<p>C++ std::string is mapped to Java String</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">value</td><td>the UTF-8 value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa98876c145e567024e04fb0e15c6d94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa98876c145e567024e04fb0e15c6d94a">&#9670;&nbsp;</a></span>writeStringArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeStringArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the named field with the given value to the serialized form. </p>
+<p>The fields type is <code>std::vector&lt;std::string&gt;</code>. </p>
+<p>C++ std::vector&lt;std::string&gt; is mapped to Java String[].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the name of the field to write </td></tr>
+    <tr><td class="paramname">array</td><td>the value of the field to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the named field has already been written or fieldName is nullptr or empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afe6e9828597463ee36403fa3e415eb8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6e9828597463ee36403fa3e415eb8c">&#9670;&nbsp;</a></span>writeUnreadFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a00787.html">PdxWriter</a>&amp; apache::geode::client::PdxWriter::writeUnreadFields </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00779.html">PdxUnreadFields</a> &gt;&#160;</td>
+          <td class="paramname"><em>unread</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -597,225 +1490,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns an unmodifiable list of servers this pool is using. </p>
-<p>These servers where either <a class="el" href="a00791.html#a5dd34be982576cbf4d71259266ebe11a">added explicitly</a> when the pool was created or were discovered using this pools {<a class="el" href="a00787.html#a5d846fd4c075e5405e9a336e6ff2d672">locators}. </a></p>
-
-</div>
-</div>
-<a id="a914a037b9e99a999581d799967c388cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a914a037b9e99a999581d799967c388cf">&#9670;&nbsp;</a></span>getSocketBufferSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getSocketBufferSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the socket buffer size of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#ad184c3bb3062443cef6d3381750ea54f" title="Sets the socket buffer size for each connection made in this pool.">PoolFactory::setSocketBufferSize</a> </dd></dl>
-
-</div>
-</div>
-<a id="a747f3f2e544cb520de67e5b214eb9e4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a747f3f2e544cb520de67e5b214eb9e4d">&#9670;&nbsp;</a></span>getStatisticInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getStatisticInterval </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the statistic interval for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd>PoolFactory::setStatisticInterval(int) </dd></dl>
-
-</div>
-</div>
-<a id="ab6ef62d3affa923dbb768f7b5ad2339e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6ef62d3affa923dbb768f7b5ad2339e">&#9670;&nbsp;</a></span>getSubscriptionAckInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getSubscriptionAckInterval </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the subscription ack interval of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd>PoolFactory::setSubscriptionAckInterval(int) </dd></dl>
-
-</div>
-</div>
-<a id="a1b9017660593e9cf5ee1096aaea15899"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b9017660593e9cf5ee1096aaea15899">&#9670;&nbsp;</a></span>getSubscriptionEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::Pool::getSubscriptionEnabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the true if a server-to-client subscriptions are enabled on this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a64f0b1117a37daffb985b725cfd9ef67" title="If set to true then the created pool will have server-to-client subscriptions enabled.">PoolFactory::setSubscriptionEnabled</a> </dd></dl>
-
-</div>
-</div>
-<a id="a24f2d27ca2152802416faf8c28428145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24f2d27ca2152802416faf8c28428145">&#9670;&nbsp;</a></span>getSubscriptionMessageTrackingTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getSubscriptionMessageTrackingTimeout </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the subscription message tracking timeout of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a8ae2993716c4aa1b2f84b0e7f8f10eb3" title="Sets the messageTrackingTimeout attribute which is the time-to-live period for subscription events th...">PoolFactory::setSubscriptionMessageTrackingTimeout</a> </dd></dl>
-
-</div>
-</div>
-<a id="a790bfbf25debf7e90076c56623221c4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a790bfbf25debf7e90076c56623221c4f">&#9670;&nbsp;</a></span>getSubscriptionRedundancy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apache::geode::client::Pool::getSubscriptionRedundancy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the subscription redundancy level of this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a856a05a701897311a00f51acd19cc9b7" title="Sets the redundancy level for this pools server-to-client subscriptions.">PoolFactory::setSubscriptionRedundancy</a> </dd></dl>
-
-</div>
-</div>
-<a id="aed4bc098087698c1ac1cdae0534fa542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed4bc098087698c1ac1cdae0534fa542">&#9670;&nbsp;</a></span>getThreadLocalConnections()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool apache::geode::client::Pool::getThreadLocalConnections </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns <code>true</code> if thread local connections are enabled on this pool. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00791.html#a62f037e2c91bc6869fafaad690040322" title="Sets the thread local connections policy for this pool.">PoolFactory::setThreadLocalConnections</a> </dd></dl>
-
-</div>
-</div>
-<a id="abd0d82690e3f66f016842cd72b7c6876"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd0d82690e3f66f016842cd72b7c6876">&#9670;&nbsp;</a></span>getUpdateLocatorListInterval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::milliseconds apache::geode::client::Pool::getUpdateLocatorListInterval </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the update locator list interval for this pool. </p>
-<dl class="section see"><dt>See also</dt><dd>PoolFactory::setUpdateLocatorListInterval(long) </dd></dl>
-
-</div>
-</div>
-<a id="afcbdec8d008434d7579ed36c8b9c23ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcbdec8d008434d7579ed36c8b9c23ae">&#9670;&nbsp;</a></span>isDestroyed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool apache::geode::client::Pool::isDestroyed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates whether this <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> has been destroyed. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the pool has been destroyed. </dd></dl>
-
-</div>
-</div>
-<a id="a6ee45179b9b3055d035785e1f1eeacab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ee45179b9b3055d035785e1f1eeacab">&#9670;&nbsp;</a></span>releaseThreadLocalConnection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void apache::geode::client::Pool::releaseThreadLocalConnection </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>If this pool was configured to use <code>threadlocalconnections</code>, then this method will release the connection cached for the calling thread. </p>
-<p>The connection will then be available for use by other threads.</p>
-<p>If this pool is not using <code>threadlocalconnections</code>, this method will have no effect. </p>
+<p>Writes the given unread fields to the serialized form. </p>
+<p>The unread fields are obtained by calling {<a class="el" href="a00767.html#a57a21d6413b8e59e7667bb74bb46b0e5">}. </a>This method must be called first before any of the writeXXX methods is called. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unread</td><td>the object that was returned from {<a class="el" href="a00767.html#a57a21d6413b8e59e7667bb74bb46b0e5">}.  this PdxWriter  IllegalStateException if one of the writeXXX methods has already been called. </a></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      PdxSerializable Example |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_114 docs_geode-native_cpp_114_serialization docs_geode-native_cpp_114_serialization_cpp-serialization docs_geode-native_cpp_114_serialization_cpp-serialization_pdx-serializable-examples has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/114/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/114/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/114/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/114/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/114/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/114/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/114/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/114/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/114/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/114/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/114/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/114/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/114/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/114/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/114/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/114/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/114/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/114/serialization/data-serialization.html">Serializing Data</a>
+      <ul>
+        <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/114/serialization/cpp-serialization/cpp-pdx-serialization.html">Geode PDX Serialization</a>
+        <ul>
+          <li>
+          <a href="/docs/geode-native/cpp/114/serialization/cpp-serialization/pdxserializable-interface.html">Using the PdxSerializable Abstract Class</a>
+          </li>
+          <li>
+          <a href="/docs/geode-native/cpp/114/serialization/cpp-serialization/pdx-serializable-examples.html">PdxSerializable Example</a>
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/114/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/114/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/114/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/114/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/114/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/114/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/114/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/114/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/114/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    PdxSerializable Example
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>The native client release contains an example showing how a client application
+can register for serialization of custom objects using the C++ PdxSerializable abstract class.</p>
+
+<p>The example is located in <code>examples/cpp/pdxserializable</code>.</p>
+
+<p>The example defines the serializable class, <code>Orders</code>, including its serialization and deserialization methods and its factory method.
+Once these pieces are in place, execution is simple: the main routine of the example registers the serializable class then performs some put and get operations.</p>
+
+<p><a id="pdxsbl_execution"></a></p>
+
+<h3 id="execution">Execution</h3>
+
+<p>The example performs a sequence of operations, displaying simple log entries as they run.</p>
+
+<ul>
+<li><p>To run the example, follow the instructions in the README.md file in the example directory.</p></li>
+<li><p>Review the source code in the example directory to see exactly how it operates.</p></li>
+<li><p>Begin by running a script that sets up the server-side environment by invoking <code>gfsh</code> commands to create a region, a locator, and a server.</p></li>
+<li><p>Run the example client application, which performs the following steps:</p>
+
+<ul>
+<li>Connects to the server</li>
+<li>Registers the PdxSerializable class</li>
+<li>Creates orders</li>
+<li>Stores orders</li>
+<li>Retrieves orders</li>
+</ul></li>
+</ul>
+
+<p><a id="pdxsbl_cpp_example"></a></p>
+
+<h3 id="c++-example">C++ Example</h3>
+
+<p>This section contains code snippets showing highlights of the C++ PdxSerialiable example. They are not intended for cut-and-paste execution.
+For the complete source, see the example source directory.</p>
+
+<p>The C++ example defines a PdxSerializable class called <code>Order</code> that inherits from the <code>PdxSerializable</code> abstract class.
+An <code>Order</code> object contains three fields:</p>
+
+<ul>
+<li>an integer <code>order_id</code></li>
+<li>a string <code>name</code></li>
+<li>a short-int <code>quantity</code></li>
+</ul>
+
+<p>From Order.hpp:</p>
+<pre class="highlight cpp"><code><span class="k">class</span> <span class="nc">Order</span> <span class="o">:</span> <span class="k">public</span> <span class="n">PdxSerializable</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+ <span class="p">...</span>
+
+ <span class="k">private</span><span class="o">:</span>
+  <span class="kt">int32_t</span> <span class="n">order_id_</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name_</span><span class="p">;</span>
+  <span class="kt">int16_t</span> <span class="n">quantity_</span><span class="p">;</span>
+<span class="p">};</span>
+
+</code></pre>
+
+<p>Using the <code>PdxSerializable</code> read and write methods, the <code>Order</code> class defines <code>fromData()</code> and <code>toData()</code>
+methods that perform the deserialization and serialization operations, respectively, and the
+<code>createDeserializable()</code> factory method:</p>
+
+<p>From Order.cpp:</p>
+<pre class="highlight cpp"><code><span class="kt">void</span> <span class="n">Order</span><span class="o">::</span><span class="n">fromData</span><span class="p">(</span><span class="n">PdxReader</span><span class="o">&amp;</span> <span class="n">pdxReader</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">order_id_</span> <span class="o">=</span> <span class="n">pdxReader</span><span class="p">.</span><span class="n">readInt</span><span class="p">(</span><span class="n">ORDER_ID_KEY_</span><span class="p">);</span>
+  <span class="n">name_</span> <span class="o">=</span> <span class="n">pdxReader</span><span class="p">.</span><span class="n">readString</span><span class="p">(</span><span class="n">NAME_KEY_</span><span class="p">);</span>
+  <span class="n">quantity_</span> <span class="o">=</span> <span class="n">pdxReader</span><span class="p">.</span><span class="n">readShort</span><span class="p">(</span><span class="n">QUANTITY_KEY_</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Order</span><span class="o">::</span><span class="n">toData</span><span class="p">(</span><span class="n">PdxWriter</span><span class="o">&amp;</span> <span class="n">pdxWriter</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">writeInt</span><span class="p">(</span><span class="n">ORDER_ID_KEY_</span><span class="p">,</span> <span class="n">order_id_</span><span class="p">);</span>
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">markIdentityField</span><span class="p">(</span><span class="n">ORDER_ID_KEY_</span><span class="p">);</span>
+
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">writeString</span><span class="p">(</span><span class="n">NAME_KEY_</span><span class="p">,</span> <span class="n">name_</span><span class="p">);</span>
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">markIdentityField</span><span class="p">(</span><span class="n">NAME_KEY_</span><span class="p">);</span>
+
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">writeShort</span><span class="p">(</span><span class="n">QUANTITY_KEY_</span><span class="p">,</span> <span class="n">quantity_</span><span class="p">);</span>
+  <span class="n">pdxWriter</span><span class="p">.</span><span class="n">markIdentityField</span><span class="p">(</span><span class="n">QUANTITY_KEY_</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">PdxSerializable</span><span class="o">&gt;</span> <span class="n">Order</span><span class="o">::</span><span class="n">createDeserializable</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The C++ example mainline creates a cache, then uses it to create a connection pool and a region object (of class <code>Region</code>).</p>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">CacheFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">();</span>
+
+  <span class="n">cache</span><span class="p">.</span><span class="n">getPoolManager</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">createFactory</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">addLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="mi">10334</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="n">regionFactory</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">createRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="o">::</span><span class="n">PROXY</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="n">region</span> <span class="o">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">setPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">).</span><span class="n">create</span><span class="p">(</span><span class="s">"custom_orders"</span><span class="p">);</span>
+</code></pre>
+
+<p>The client registers the PdxSerializable class that was created in Orders.cpp:</p>
+<pre class="highlight cpp"><code>  <span class="n">cache</span><span class="p">.</span><span class="n">getTypeRegistry</span><span class="p">().</span><span class="n">registerPdxType</span><span class="p">(</span><span class="n">Order</span><span class="o">::</span><span class="n">createDeserializable</span><span class="p">);</span>
+</code></pre>
+
+<p>The client then instantiates and stores two <code>Order</code> objects:</p>
+<pre class="highlight cpp"><code>  <span class="k">auto</span> <span class="n">order1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"product x"</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="n">order2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">"product y"</span><span class="p">,</span> <span class="mi">37</span><span class="p">);</span>
+
+  <span class="n">region</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="s">"Customer1"</span><span class="p">,</span> <span class="n">order1</span><span class="p">);</span>
+  <span class="n">region</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="s">"Customer2"</span><span class="p">,</span> <span class="n">order2</span><span class="p">);</span>
+</code></pre>
+
+<p>Next, the application retrieves the stored values, in one case extracting the fields defined in
+the serialization code:</p>
+<pre class="highlight cpp"><code>  <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">order1retrieved</span> <span class="o">=</span>
+          <span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="p">(</span><span class="n">region</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="s">"Customer1"</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"OrderID: "</span> <span class="o">&lt;&lt;</span> <span class="n">order1retrieved</span><span class="o">-&gt;</span><span class="n">getOrderId</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Product Name: "</span> <span class="o">&lt;&lt;</span> <span class="n">order1retrieved</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Quantity: "</span> <span class="o">&lt;&lt;</span> <span class="n">order1retrieved</span><span class="o">-&gt;</span><span class="n">getQuantity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Order 1 not found."</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+
+<p>The application retrieves the second object and displays it without extracting the separate fields:</p>
+<pre class="highlight cpp"><code>  <span class="k">if</span> <span class="p">(</span><span class="n">region</span><span class="o">-&gt;</span><span class="n">existsValue</span><span class="p">(</span><span class="s">"rtimmons"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"rtimmons's info not deleted"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"rtimmons's info successfully deleted"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+
+<p>Finally, the application closes the cache:</p>
+<pre class="highlight cpp"><code>  <span class="n">cache</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</code></pre>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native .NET Reference: Apache::Geode::Client::Utils Class Reference</title>
+<title>Apache Geode Native .NET Reference: Apache::Geode::Client::UserFunctionExecutionException Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -87,36 +87,38 @@ $(document).ready(function(){initNavTree('a01146.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">Apache::Geode::Client::Utils Class Reference</div>  </div>
+<div class="title">Apache::Geode::Client::UserFunctionExecutionException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Some static utility methods.  
+<p><a class="el" href="a01146.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution.  
  <a href="a01146.html#details">More...</a></p>
+
+<p>Inherits <a class="el" href="a01022.html">Apache::Geode::Client::ISerializable</a>.</p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a657a1cc7b7ff5e1b16e1a92c7510f43d"><td class="memItemLeft" align="right" valign="top">static MethodInfo ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01146.html#a657a1cc7b7ff5e1b16e1a92c7510f43d">LoadMethod</a> (String^ assemblyPath, String^ typeName, String^ methodName)</td></tr>
-<tr class="memdesc:a657a1cc7b7ff5e1b16e1a92c7510f43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a method from the given assembly path using the default constructor (if not a static method) of the given type.  <a href="#a657a1cc7b7ff5e1b16e1a92c7510f43d">More...</a><br /></td></tr>
-<tr class="separator:a657a1cc7b7ff5e1b16e1a92c7510f43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19473d9cf42aae27b0d7383eb3bc55d4"><td class="memItemLeft" align="right" valign="top">static MethodInfo ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01146.html#a19473d9cf42aae27b0d7383eb3bc55d4">LoadMethodFrom</a> (String^ assemblyName, String^ typeName, String^ methodName)</td></tr>
-<tr class="memdesc:a19473d9cf42aae27b0d7383eb3bc55d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a method from the given assembly name using the default constructor (if not a static method) of the given type.  <a href="#a19473d9cf42aae27b0d7383eb3bc55d4">More...</a><br /></td></tr>
-<tr class="separator:a19473d9cf42aae27b0d7383eb3bc55d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a335290fd15fd41d39bc73a7ca10d19bd"><td class="memItemLeft" align="right" valign="top">String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01022.html#a335290fd15fd41d39bc73a7ca10d19bd">ToString</a> ()</td></tr>
+<tr class="memdesc:a335290fd15fd41d39bc73a7ca10d19bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="#a335290fd15fd41d39bc73a7ca10d19bd">More...</a><br /></td></tr>
+<tr class="separator:a335290fd15fd41d39bc73a7ca10d19bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a31c5586fce17003ceadd586677faa13c"><td class="memItemLeft" align="right" valign="top">static System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01146.html#a31c5586fce17003ceadd586677faa13c">LastError</a><code> [get]</code></td></tr>
-<tr class="memdesc:a31c5586fce17003ceadd586677faa13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility method to get the calling thread's last system error code.  <a href="#a31c5586fce17003ceadd586677faa13c">More...</a><br /></td></tr>
-<tr class="separator:a31c5586fce17003ceadd586677faa13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765b7fe1027fa5dc30015adc4bd9303b"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01146.html#a765b7fe1027fa5dc30015adc4bd9303b">Message</a><code> [get]</code></td></tr>
+<tr class="memdesc:a765b7fe1027fa5dc30015adc4bd9303b"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as String the Exception message returned from geode sendException api.  <a href="#a765b7fe1027fa5dc30015adc4bd9303b">More...</a><br /></td></tr>
+<tr class="separator:a765b7fe1027fa5dc30015adc4bd9303b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49005c6b80a99bed6d4840de7f0d45d"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01146.html#af49005c6b80a99bed6d4840de7f0d45d">Name</a><code> [get]</code></td></tr>
+<tr class="memdesc:af49005c6b80a99bed6d4840de7f0d45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as String the Exception name returned from geode sendException api.  <a href="#af49005c6b80a99bed6d4840de7f0d45d">More...</a><br /></td></tr>
+<tr class="separator:af49005c6b80a99bed6d4840de7f0d45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Some static utility methods. </p>
+<div class="textblock"><p><a class="el" href="a01146.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a657a1cc7b7ff5e1b16e1a92c7510f43d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a657a1cc7b7ff5e1b16e1a92c7510f43d">&#9670;&nbsp;</a></span>LoadMethod()</h2>
+<a id="a335290fd15fd41d39bc73a7ca10d19bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335290fd15fd41d39bc73a7ca10d19bd">&#9670;&nbsp;</a></span>ToString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,105 +127,28 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static MethodInfo ^ Apache::Geode::Client::Utils::LoadMethod </td>
+          <td class="memname">String ^ Apache::Geode::Client::ISerializable::ToString </td>
           <td>(</td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>assemblyPath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>typeName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>methodName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Load a method from the given assembly path using the default constructor (if not a static method) of the given type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">assemblyPath</td><td>The path of the assembly.</td></tr>
-    <tr><td class="paramname">typeName</td><td>The name of the class containing the method. </td></tr>
-    <tr><td class="paramname">methodName</td><td>The name of the method.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <code>System.Reflection.MethodInfo</code> for the given method, or null if the method is not found. </dd></dl>
+<p>Return a string representation of the object. </p>
 
-</div>
-</div>
-<a id="a19473d9cf42aae27b0d7383eb3bc55d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19473d9cf42aae27b0d7383eb3bc55d4">&#9670;&nbsp;</a></span>LoadMethodFrom()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static MethodInfo ^ Apache::Geode::Client::Utils::LoadMethodFrom </td>
-          <td>(</td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>assemblyName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>typeName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String^&#160;</td>
-          <td class="paramname"><em>methodName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Load a method from the given assembly name using the default constructor (if not a static method) of the given type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">assemblyName</td><td>The name of the assembly.</td></tr>
-    <tr><td class="paramname">typeName</td><td>The name of the class containing the method. </td></tr>
-    <tr><td class="paramname">methodName</td><td>The name of the method.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <code>System.Reflection.MethodInfo</code> for the given method, or null if the method is not found. </dd></dl>
+<p>Implemented in <a class="el" href="a00422.html#ab8b28a924b843eefd2a668687d291d44">Apache::Geode::Client::CacheableBuiltinArray&lt; TNative, TNativePtr, TManaged, TYPEID &gt;</a>, <a class="el" href="a00422.html#ab8b28a924b843eefd2a668687d291d44">Apache::Geode::Client::CacheableBuiltinArray&lt; NativeArray, NativeArray, ManagedType, DsCode &gt;</a>, <a class="el" href="a00406.html#a3d05e2243bcdfd0e4a3ad715bc6ccc07">Apache::Geode::Client::Properties&lt; TPropKey, TPropValue &gt;</a>, <a class="el" href="a00406.html#a3d05e2243bcdfd0e4a3ad715bc6ccc07">Apache::Geode::Client::Properties&lt; String^, String^&gt;</a>, <a class="el" href="a00462.html#ad2444cf71a9a38173aceab2f04dd971b">Apache::Geode::Client::CacheableDate</a>, <a class="el" href="a00522.html#a5bbf6e7b40afcdb5f34d7c26fb14b5ca">Apache::Geode::Client::CacheableString</a>, <a class="el" href="a00526.html#a778f034e0dcec70fa8f9f18ba1546ee4">Apache::Geode::Client::CacheableStringArray</a>, <a class="el" href="a01118.html#aab399122dadac5f60090908915eb174e">Apache::Geode::Client::Serializable</a>, <a class="el" href="a00514.html#acb81de701828d0a509b62c2df1cb9be4">Apache::Geode::Client::CacheableObjectXml</a>, <a class="el" href="a00506.html#a76344b40a20a6ac6b207d71210bdc0c6">Apache::Geode::Client::CacheableObject</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; TNative, TManaged, TYPEID &gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt32, System::Int32, static_cast&lt; int8_t &gt;(DSCode::CacheableInt32)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt16, System::Int16, static_cast&lt; int8_t &gt;(DSCode::CacheableInt16)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableCharacter, Char, static_cast&lt; int8_t &gt;(DSCode::CacheableCharacter)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableFloat, Single, static_cast&lt; int8_t &gt;(DSCode::CacheableFloat)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt64, System::Int64, static_cast&lt; int8_t &gt;(DSCode::CacheableInt64)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableDouble, Double, static_cast&lt; int8_t &gt;(DSCode::CacheableDouble)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableByte, Byte, static_cast&lt; int8_t &gt;(DSCode::CacheableByte)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableBoolean, bool, static_cast&lt; int8_t &gt;(DSCode::CacheableBoolean)&gt;</a>, and <a class="el" href="a00466.html#a70b00e8aa0f34bbbbfb07aabf3c4b67a">Apache::Geode::Client::CacheableFileName</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a31c5586fce17003ceadd586677faa13c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31c5586fce17003ceadd586677faa13c">&#9670;&nbsp;</a></span>LastError</h2>
+<a id="a765b7fe1027fa5dc30015adc4bd9303b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765b7fe1027fa5dc30015adc4bd9303b">&#9670;&nbsp;</a></span>Message</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,17 +157,43 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::Utils::LastError</td>
+          <td class="memname">String^ Apache::Geode::Client::UserFunctionExecutionException::Message</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Utility method to get the calling thread's last system error code. </p>
+<p>return as String the Exception message returned from geode sendException api. </p>
+<dl class="section return"><dt>Returns</dt><dd>the String Exception Message</dd></dl>
+
+</div>
+</div>
+<a id="af49005c6b80a99bed6d4840de7f0d45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49005c6b80a99bed6d4840de7f0d45d">&#9670;&nbsp;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String^ Apache::Geode::Client::UserFunctionExecutionException::Name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return as String the Exception name returned from geode sendException api. </p>
+<dl class="section return"><dt>Returns</dt><dd>the String Exception Name</dd></dl>
 
 </div>
 </div>

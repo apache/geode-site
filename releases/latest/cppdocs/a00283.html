@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47f7fef7730063963b8d33ef63a520fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00283.html#a47f7fef7730063963b8d33ef63a520fa">close</a> ()=0</td></tr>
 <tr class="memdesc:a47f7fef7730063963b8d33ef63a520fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked before the cache goes down.  <a href="#a47f7fef7730063963b8d33ef63a520fa">More...</a><br /></td></tr>
 <tr class="separator:a47f7fef7730063963b8d33ef63a520fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f89d1168170a72cf8abc2f6c2eb5ec0"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00283.html#a2f89d1168170a72cf8abc2f6c2eb5ec0">getCredentials</a> (const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;securityprops, const std::string &amp;server)=0</td></tr>
+<tr class="memitem:a2f89d1168170a72cf8abc2f6c2eb5ec0"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00283.html#a2f89d1168170a72cf8abc2f6c2eb5ec0">getCredentials</a> (const std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt; &amp;securityprops, const std::string &amp;server)=0</td></tr>
 <tr class="memdesc:a2f89d1168170a72cf8abc2f6c2eb5ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize with the given set of security properties and return the credentials for the client as properties.  <a href="#a2f89d1168170a72cf8abc2f6c2eb5ec0">More...</a><br /></td></tr>
 <tr class="separator:a2f89d1168170a72cf8abc2f6c2eb5ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -146,9 +146,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00799.html">Properties</a>&gt; apache::geode::client::AuthInitialize::getCredentials </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00807.html">Properties</a>&gt; apache::geode::client::AuthInitialize::getCredentials </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>securityprops</em>, </td>
         </tr>
         <tr>
@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
 <p>initialize with the given set of security properties and return the credentials for the client as properties. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">props</td><td>the set of security properties provided to the <code>DistributedSystem.connect</code> method </td></tr>
+    <tr><td class="paramname">securityprops</td><td>the set of security properties provided to the <code>DistributedSystem.connect</code> method </td></tr>
     <tr><td class="paramname">server</td><td>it is the ID of the current endpoint. The format expected is "host:port". </td></tr>
   </table>
   </dd>

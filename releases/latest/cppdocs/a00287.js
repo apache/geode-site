@@ -4,8 +4,10 @@ var a00287 =
     [ "close", "a00287.html#a8676b128ff2e84212860694d48471c6d", null ],
     [ "createAuthenticatedView", "a00287.html#a44c8cce9718be5b6b24c27eabddee54e", null ],
     [ "createPdxInstanceFactory", "a00287.html#acdb522f5ea28fbff56544a004be7946c", null ],
+    [ "createPdxInstanceFactory", "a00287.html#a7fc55829ea325aa65dfcc8ad315b70d9", null ],
     [ "createRegionFactory", "a00287.html#acdce453c9ede20bd5aa6d787a0032b62", null ],
     [ "getCacheTransactionManager", "a00287.html#a0a658b2846b5f8e5605a43bc8dbe158e", null ],
+    [ "getLogLevel", "a00287.html#a88f891e0824da01c0ae1368cd362bfce", null ],
     [ "getName", "a00287.html#a60e53f6d51eee37ef5526db665a3ebab", null ],
     [ "getPdxIgnoreUnreadFields", "a00287.html#abc85e20b6a09462d7840372cda9717b7", null ],
     [ "getPdxReadSerialized", "a00287.html#a923d251279eed32952aa777ba80fc1f0", null ],
@@ -16,5 +18,6 @@ var a00287 =
     [ "initializeDeclarativeCache", "a00287.html#af15c890de627c7aebb7800c4ad235cbe", null ],
     [ "isClosed", "a00287.html#a989d7fce829d1d12e7da49052445898d", null ],
     [ "readyForEvents", "a00287.html#ac2db841bef19d9a508f15245b6b65b08", null ],
-    [ "rootRegions", "a00287.html#a7a2a54c73beae53d3d3fd9809432ee3b", null ]
+    [ "rootRegions", "a00287.html#a7a2a54c73beae53d3d3fd9809432ee3b", null ],
+    [ "setLogLevel", "a00287.html#aac88034a75de859d7b1ac2863f08a294", null ]
 ];

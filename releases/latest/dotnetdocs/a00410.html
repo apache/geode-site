@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -116,16 +116,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11421ac27bf948764a89b4fa8816c4bd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a00970.html">IPdxInstanceFactory</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a11421ac27bf948764a89b4fa8816c4bd">CreatePdxInstanceFactory</a> (String^ className)</td></tr>
 <tr class="memdesc:a11421ac27bf948764a89b4fa8816c4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a factory that can create a <a class="el" href="">PdxInstance</a>.  <a href="#a11421ac27bf948764a89b4fa8816c4bd">More...</a><br /></td></tr>
 <tr class="separator:a11421ac27bf948764a89b4fa8816c4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9bd64c225ff5addafdf164bbd060c10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01106.html">RegionFactory</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#ab9bd64c225ff5addafdf164bbd060c10">CreateRegionFactory</a> (<a class="el" href="a00382.html#ab01341be2e091f1bbf219274838ee34c">RegionShortcut</a> regionShortcut)</td></tr>
-<tr class="memdesc:ab9bd64c225ff5addafdf164bbd060c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of <a class="el" href="a01106.html">RegionFactory</a> to create the region  <a href="#ab9bd64c225ff5addafdf164bbd060c10">More...</a><br /></td></tr>
+<tr class="memitem:ab9bd64c225ff5addafdf164bbd060c10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01110.html">RegionFactory</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#ab9bd64c225ff5addafdf164bbd060c10">CreateRegionFactory</a> (<a class="el" href="a00382.html#ab01341be2e091f1bbf219274838ee34c">RegionShortcut</a> regionShortcut)</td></tr>
+<tr class="memdesc:ab9bd64c225ff5addafdf164bbd060c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance of <a class="el" href="a01110.html">RegionFactory</a> to create the region  <a href="#ab9bd64c225ff5addafdf164bbd060c10">More...</a><br /></td></tr>
 <tr class="separator:ab9bd64c225ff5addafdf164bbd060c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92b3bb28fb0d9710c6cad3bf5af1dca2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a92b3bb28fb0d9710c6cad3bf5af1dca2">GetPdxIgnoreUnreadFields</a> ()</td></tr>
 <tr class="memdesc:a92b3bb28fb0d9710c6cad3bf5af1dca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">summary&gt; Returns whether <a class="el" href="">PdxInstance</a> is preferred for PDX types instead of .NET object.  <a href="#a92b3bb28fb0d9710c6cad3bf5af1dca2">More...</a><br /></td></tr>
 <tr class="separator:a92b3bb28fb0d9710c6cad3bf5af1dca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3be9585e2a61479917aabb8005e320c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01086.html">Client::QueryService</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#ab3be9585e2a61479917aabb8005e320c">GetQueryService</a> ()</td></tr>
+<tr class="memitem:a969ec11b5db2696aa2dbe77e5b453385"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01078.html">PoolFactory</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a969ec11b5db2696aa2dbe77e5b453385">GetPoolFactory</a> ()</td></tr>
+<tr class="memdesc:a969ec11b5db2696aa2dbe77e5b453385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a01078.html" title="This interface provides for the configuration and creation of instances of Pool.">PoolFactory</a> that can be used to create a <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> and that provides access to all <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> attributes.  <a href="#a969ec11b5db2696aa2dbe77e5b453385">More...</a><br /></td></tr>
+<tr class="separator:a969ec11b5db2696aa2dbe77e5b453385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97adfe06dc83d881b8c7296cf81e082d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01082.html">PoolManager</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a97adfe06dc83d881b8c7296cf81e082d">GetPoolManager</a> ()</td></tr>
+<tr class="memdesc:a97adfe06dc83d881b8c7296cf81e082d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a01082.html" title="This interface provides for the configuration and creation of instances of PoolFactory.">PoolManager</a> that provides for the configuration and creation of instances of <a class="el" href="a01078.html" title="This interface provides for the configuration and creation of instances of Pool.">PoolFactory</a>.  <a href="#a97adfe06dc83d881b8c7296cf81e082d">More...</a><br /></td></tr>
+<tr class="separator:a97adfe06dc83d881b8c7296cf81e082d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3be9585e2a61479917aabb8005e320c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01090.html">Client::QueryService</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#ab3be9585e2a61479917aabb8005e320c">GetQueryService</a> ()</td></tr>
 <tr class="memdesc:ab3be9585e2a61479917aabb8005e320c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a query service object to be able to query the cache.  <a href="#ab3be9585e2a61479917aabb8005e320c">More...</a><br /></td></tr>
 <tr class="separator:ab3be9585e2a61479917aabb8005e320c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0875168a3c3180dea49ec82e196ee7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01086.html">Client::QueryService</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a7c0875168a3c3180dea49ec82e196ee7">GetQueryService</a> (String^ poolName)</td></tr>
+<tr class="memitem:a7c0875168a3c3180dea49ec82e196ee7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="a01090.html">Client::QueryService</a> ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00410.html#a7c0875168a3c3180dea49ec82e196ee7">GetQueryService</a> (String^ poolName)</td></tr>
 <tr class="memdesc:a7c0875168a3c3180dea49ec82e196ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a query service object to be able to query the cache.  <a href="#a7c0875168a3c3180dea49ec82e196ee7">More...</a><br /></td></tr>
 <tr class="separator:a7c0875168a3c3180dea49ec82e196ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed71aeab49e1fba5f4f20fc8b65e85d3"><td class="memTemplParams" colspan="2">template&lt;class TKey , class TValue &gt; </td></tr>
@@ -297,7 +303,7 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">credentials</td><td>the user Credentials.</td></tr>
-    <tr><td class="paramname">poolName</td><td><a class="el" href="a01070.html" title="A pool of connections.">Pool</a>, which is in multiuser mode.</td></tr>
+    <tr><td class="paramname">poolName</td><td><a class="el" href="a01074.html" title="A pool of connections.">Pool</a>, which is in multiuser mode.</td></tr>
   </table>
   </dd>
 </dl>
@@ -350,7 +356,7 @@ Properties</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a01106.html">RegionFactory</a> ^ Apache::Geode::Client::Cache::CreateRegionFactory </td>
+          <td class="memname"><a class="el" href="a01110.html">RegionFactory</a> ^ Apache::Geode::Client::Cache::CreateRegionFactory </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00382.html#ab01341be2e091f1bbf219274838ee34c">RegionShortcut</a>&#160;</td>
           <td class="paramname"><em>regionShortcut</em></td><td>)</td>
@@ -359,7 +365,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the instance of <a class="el" href="a01106.html">RegionFactory</a> to create the region </p>
+<p>Returns the instance of <a class="el" href="a01110.html">RegionFactory</a> to create the region </p>
 <p>Pass the <a class="el" href="a00382.html#ab01341be2e091f1bbf219274838ee34c" title="Each enum represents a predefined RegionAttributes in a Cache.">RegionShortcut</a> to set the default region attributes </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -367,7 +373,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Instance of <a class="el" href="a01106.html">RegionFactory</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Instance of <a class="el" href="a01110.html">RegionFactory</a></dd></dl>
 
 </div>
 </div>
@@ -401,6 +407,62 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a969ec11b5db2696aa2dbe77e5b453385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a969ec11b5db2696aa2dbe77e5b453385">&#9670;&nbsp;</a></span>GetPoolFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a01078.html">PoolFactory</a> ^ Apache::Geode::Client::Cache::GetPoolFactory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a01078.html" title="This interface provides for the configuration and creation of instances of Pool.">PoolFactory</a> that can be used to create a <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> and that provides access to all <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> attributes. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a01078.html" title="This interface provides for the configuration and creation of instances of Pool.">PoolFactory</a> </dd></dl>
+
+</div>
+</div>
+<a id="a97adfe06dc83d881b8c7296cf81e082d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97adfe06dc83d881b8c7296cf81e082d">&#9670;&nbsp;</a></span>GetPoolManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a01082.html">PoolManager</a> ^ Apache::Geode::Client::Cache::GetPoolManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a01082.html" title="This interface provides for the configuration and creation of instances of PoolFactory.">PoolManager</a> that provides for the configuration and creation of instances of <a class="el" href="a01078.html" title="This interface provides for the configuration and creation of instances of Pool.">PoolFactory</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a01082.html" title="This interface provides for the configuration and creation of instances of PoolFactory.">PoolManager</a> </dd></dl>
+
+</div>
+</div>
 <a id="ab3be9585e2a61479917aabb8005e320c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3be9585e2a61479917aabb8005e320c">&#9670;&nbsp;</a></span>GetQueryService() <span class="overload">[1/2]</span></h2>
 
@@ -411,7 +473,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a01086.html">Client::QueryService</a> ^ Apache::Geode::Client::Cache::GetQueryService </td>
+          <td class="memname">virtual <a class="el" href="a01090.html">Client::QueryService</a> ^ Apache::Geode::Client::Cache::GetQueryService </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -442,7 +504,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a01086.html">Client::QueryService</a> ^ Apache::Geode::Client::Cache::GetQueryService </td>
+          <td class="memname">virtual <a class="el" href="a01090.html">Client::QueryService</a> ^ Apache::Geode::Client::Cache::GetQueryService </td>
           <td>(</td>
           <td class="paramtype">String^&#160;</td>
           <td class="paramname"><em>poolName</em></td><td>)</td>
@@ -457,7 +519,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get a query service object to be able to query the cache. </p>
-<p>Use only when <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a> has more than one <a class="el" href="a01070.html" title="A pool of connections.">Pool</a>. </p>
+<p>Use only when <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a> has more than one <a class="el" href="a01074.html" title="A pool of connections.">Pool</a>. </p>
 <p>Currently only works against the java server in native mode, and at least some endpoints must have been defined in some regions before actually firing a query. </p>
 
 </div>
@@ -489,7 +551,7 @@ template&lt;class TKey , class TValue &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns an existing region given the full path from root, or null if no such region exists. </p>
-<p>If <a class="el" href="a01070.html" title="A pool of connections.">Pool</a> attached with Region is in multiusersecure mode then don't use return instance of region as no credential are attached with this instance. Get region from RegionService instance of <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a>.Cache.CreateAuthenticatedView(std::shared_ptr&lt;PropertiesPtr&gt;). </p>
+<p>If <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> attached with Region is in multiusersecure mode then don't use return instance of region as no credential are attached with this instance. Get region from RegionService instance of <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a>.Cache.CreateAuthenticatedView(std::shared_ptr&lt;PropertiesPtr&gt;). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>the pathname of the region</td></tr>
@@ -599,7 +661,7 @@ template&lt;class TKey , class TValue &gt; </div>
 
 <p>Returns an array of root regions in the cache. </p>
 <p>This set is a snapshot and is not backed by the cache. </p>
-<p>It is not supported when <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a> is created from <a class="el" href="a01070.html" title="A pool of connections.">Pool</a>. </p>
+<p>It is not supported when <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a> is created from <a class="el" href="a01074.html" title="A pool of connections.">Pool</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>array of regions</dd></dl>
 
 <p>Implements <a class="el" href="a01018.html#a7eb08ad66499807abb879f3b2b0ff810">Apache::Geode::Client::IRegionService</a>.</p>

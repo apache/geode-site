@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -541,7 +541,7 @@ template&lt;class TKey , class TValue &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>key whose associated value is to be returned &ndash; the key object must implement the Equals and GetHashCode methods. </td></tr>
-    <tr><td class="paramname">callbackArg</td><td>An argument passed into the <a class="el" href="a00910.html" title="CacheLoader">CacheLoader</a> if loader is used. Has to be <a class="el" href="a01114.html" title="This class wraps the native C++ native::Serializable objects as managed ISerializable objects.">Serializable</a> (i.e. implement <code><a class="el" href="a01022.html" title="This interface class is the superclass of all user objects in the cache that can be serialized.">ISerializable</a></code>); can be null. </td></tr>
+    <tr><td class="paramname">callbackArg</td><td>An argument passed into the <a class="el" href="a00910.html" title="CacheLoader">CacheLoader</a> if loader is used. Has to be <a class="el" href="a01118.html" title="This class wraps the native C++ native::Serializable objects as managed ISerializable objects.">Serializable</a> (i.e. implement <code><a class="el" href="a01022.html" title="This interface class is the superclass of all user objects in the cache that can be serialized.">ISerializable</a></code>); can be null. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1518,7 +1518,7 @@ template&lt;class TResult &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SelectResults which can either be a <a class="el" href="a01110.html" title="Encapsulates a query result set.">ResultSet</a> or a <a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The SelectResults which can either be a <a class="el" href="a01114.html" title="Encapsulates a query result set.">ResultSet</a> or a <a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a>. </dd></dl>
 
 </div>
 </div>
@@ -1575,7 +1575,7 @@ template&lt;class TResult &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SelectResults which can either be a <a class="el" href="a01110.html" title="Encapsulates a query result set.">ResultSet</a> or a <a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The SelectResults which can either be a <a class="el" href="a01114.html" title="Encapsulates a query result set.">ResultSet</a> or a <a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a>. </dd></dl>
 
 </div>
 </div>
@@ -1714,7 +1714,7 @@ template&lt;class TKey , class TValue &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The single <a class="el" href="a01110.html" title="Encapsulates a query result set.">ResultSet</a> or <a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a> item, or NULL of no results are available. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The single <a class="el" href="a01114.html" title="Encapsulates a query result set.">ResultSet</a> or <a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a> item, or NULL of no results are available. </dd></dl>
 
 </div>
 </div>
@@ -1769,7 +1769,7 @@ template&lt;class TKey , class TValue &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The single <a class="el" href="a01110.html" title="Encapsulates a query result set.">ResultSet</a> or <a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a> item, or NULL of no results are available. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The single <a class="el" href="a01114.html" title="Encapsulates a query result set.">ResultSet</a> or <a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a> item, or NULL of no results are available. </dd></dl>
 
 </div>
 </div>
@@ -1903,7 +1903,7 @@ template&lt;class TKey , class TValue &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if key is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00858.html" title="Thrown if a Key is not present in the region.">KeyNotFoundException</a></td><td>If given key was not present in the region and if region is not in secure mode, or if <a class="el" href="a01070.html" title="A pool of connections.">Pool</a> attached with Region is not in multiusersecure mode. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00858.html" title="Thrown if a Key is not present in the region.">KeyNotFoundException</a></td><td>If given key was not present in the region and if region is not in secure mode, or if <a class="el" href="a01074.html" title="A pool of connections.">Pool</a> attached with Region is not in multiusersecure mode. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00722.html" title="Thrown when an operation is attempted on a non-existent entry.">EntryNotFoundException</a></td><td>if given key's value is null. </td></tr>
     <tr><td class="paramname"><a class="el" href="a00654.html" title="Thrown when the cache writer aborts the operation.">CacheWriterException</a></td><td>if CacheWriter aborts the operation </td></tr>
     <tr><td class="paramname"><a class="el" href="a00658.html" title="Thrown when the cache listener throws an exception.">CacheListenerException</a></td><td>if CacheListener throws an exception </td></tr>

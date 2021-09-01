@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::RegionFactory Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::RegionEntry Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -89,787 +89,181 @@ $(document).ready(function(){initNavTree('a00835.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::RegionFactory Class Reference</div>  </div>
+<div class="title">apache::geode::client::RegionEntry Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Provides for the configuration and creation of instances of <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a>.  
+<p>An object in a <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a> that represents an entry, i.e., a key-value pair.  
  <a href="a00835.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad40b6c59c92c671a731d7bc8f6fc7b1e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00815.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ad40b6c59c92c671a731d7bc8f6fc7b1e">create</a> (std::string name)</td></tr>
-<tr class="memdesc:ad40b6c59c92c671a731d7bc8f6fc7b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="a00815.html">Region</a> of the given <code>name</code>.  <a href="#ad40b6c59c92c671a731d7bc8f6fc7b1e">More...</a><br /></td></tr>
-<tr class="separator:ad40b6c59c92c671a731d7bc8f6fc7b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1557231192ad732efe16229d2e8cfc2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a1557231192ad732efe16229d2e8cfc2c">setCacheListener</a> (const std::shared_ptr&lt; <a class="el" href="a00375.html">CacheListener</a> &gt; &amp;aListener)</td></tr>
-<tr class="memdesc:a1557231192ad732efe16229d2e8cfc2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="a00375.html" title="An application plug-in that can be installed on a region.">CacheListener</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a1557231192ad732efe16229d2e8cfc2c">More...</a><br /></td></tr>
-<tr class="separator:a1557231192ad732efe16229d2e8cfc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ac0c806237a6aa345b1fe67e9726e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ab1ac0c806237a6aa345b1fe67e9726e7">setCacheListener</a> (const std::string &amp;libpath, const std::string &amp;factoryFuncName)</td></tr>
-<tr class="memdesc:ab1ac0c806237a6aa345b1fe67e9726e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the library path for the library that will be invoked for the listener of the region.  <a href="#ab1ac0c806237a6aa345b1fe67e9726e7">More...</a><br /></td></tr>
-<tr class="separator:ab1ac0c806237a6aa345b1fe67e9726e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7668d8783bab0919de77a5f4f82fe1a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a7668d8783bab0919de77a5f4f82fe1a7">setCacheLoader</a> (const std::shared_ptr&lt; <a class="el" href="a00379.html">CacheLoader</a> &gt; &amp;cacheLoader)</td></tr>
-<tr class="memdesc:a7668d8783bab0919de77a5f4f82fe1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cache loader for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a7668d8783bab0919de77a5f4f82fe1a7">More...</a><br /></td></tr>
-<tr class="separator:a7668d8783bab0919de77a5f4f82fe1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eec947044ed43f503bc4993a4253fb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a7eec947044ed43f503bc4993a4253fb8">setCacheLoader</a> (const std::string &amp;libpath, const std::string &amp;factoryFuncName)</td></tr>
-<tr class="memdesc:a7eec947044ed43f503bc4993a4253fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the library path for the library that will be invoked for the loader of the region.  <a href="#a7eec947044ed43f503bc4993a4253fb8">More...</a><br /></td></tr>
-<tr class="separator:a7eec947044ed43f503bc4993a4253fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2451e0e696f59e0545eecf9a40c68955"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a2451e0e696f59e0545eecf9a40c68955">setCacheWriter</a> (const std::shared_ptr&lt; <a class="el" href="a00391.html">CacheWriter</a> &gt; &amp;cacheWriter)</td></tr>
-<tr class="memdesc:a2451e0e696f59e0545eecf9a40c68955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cache writer for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a2451e0e696f59e0545eecf9a40c68955">More...</a><br /></td></tr>
-<tr class="separator:a2451e0e696f59e0545eecf9a40c68955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a611097497e7154c8226e3c75111f9b9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a611097497e7154c8226e3c75111f9b9d">setCacheWriter</a> (const std::string &amp;libpath, const std::string &amp;factoryFuncName)</td></tr>
-<tr class="memdesc:a611097497e7154c8226e3c75111f9b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the library path for the library that will be invoked for the writer of the region.  <a href="#a611097497e7154c8226e3c75111f9b9d">More...</a><br /></td></tr>
-<tr class="separator:a611097497e7154c8226e3c75111f9b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9b951cb04ae17a025c89ed1da59de3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#aaf9b951cb04ae17a025c89ed1da59de3">setCachingEnabled</a> (bool cachingEnabled)</td></tr>
-<tr class="memdesc:aaf9b951cb04ae17a025c89ed1da59de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set caching enabled flag for this region.  <a href="#aaf9b951cb04ae17a025c89ed1da59de3">More...</a><br /></td></tr>
-<tr class="separator:aaf9b951cb04ae17a025c89ed1da59de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e3a5e0ae0b361bc640748f11b970793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a8e3a5e0ae0b361bc640748f11b970793">setConcurrencyChecksEnabled</a> (bool enable)</td></tr>
-<tr class="memdesc:a8e3a5e0ae0b361bc640748f11b970793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables concurrent modification checks.  <a href="#a8e3a5e0ae0b361bc640748f11b970793">More...</a><br /></td></tr>
-<tr class="separator:a8e3a5e0ae0b361bc640748f11b970793"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fd4d0e9cf5163018e9d9169917bcbe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a9fd4d0e9cf5163018e9d9169917bcbe8">setConcurrencyLevel</a> (uint8_t concurrencyLevel)</td></tr>
-<tr class="memdesc:a9fd4d0e9cf5163018e9d9169917bcbe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the concurrency level tof the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a9fd4d0e9cf5163018e9d9169917bcbe8">More...</a><br /></td></tr>
-<tr class="separator:a9fd4d0e9cf5163018e9d9169917bcbe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11e6a89051c601d305560f05df7b0a4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a11e6a89051c601d305560f05df7b0a4c">setDiskPolicy</a> (const <a class="el" href="a00891.html">DiskPolicyType</a> diskPolicy)</td></tr>
-<tr class="memdesc:a11e6a89051c601d305560f05df7b0a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Disk policy type for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a11e6a89051c601d305560f05df7b0a4c">More...</a><br /></td></tr>
-<tr class="separator:a11e6a89051c601d305560f05df7b0a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6b03ed34a7892e3b639529f436c59c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#abc6b03ed34a7892e3b639529f436c59c">setEntryIdleTimeout</a> (<a class="el" href="a00895.html">ExpirationAction</a> action, std::chrono::seconds idleTimeout)</td></tr>
-<tr class="memdesc:abc6b03ed34a7892e3b639529f436c59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the idleTimeout expiration attributes for region entries for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#abc6b03ed34a7892e3b639529f436c59c">More...</a><br /></td></tr>
-<tr class="separator:abc6b03ed34a7892e3b639529f436c59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac639776e014cba20ea1fc5ddd57b884c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ac639776e014cba20ea1fc5ddd57b884c">setEntryTimeToLive</a> (<a class="el" href="a00895.html">ExpirationAction</a> action, std::chrono::seconds timeToLive)</td></tr>
-<tr class="memdesc:ac639776e014cba20ea1fc5ddd57b884c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the timeToLive expiration attributes for region entries for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#ac639776e014cba20ea1fc5ddd57b884c">More...</a><br /></td></tr>
-<tr class="separator:ac639776e014cba20ea1fc5ddd57b884c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fd71e468887b4b1485ce606bbf0d120"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a6fd71e468887b4b1485ce606bbf0d120">setInitialCapacity</a> (int initialCapacity)</td></tr>
-<tr class="memdesc:a6fd71e468887b4b1485ce606bbf0d120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the entry initial capacity for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a6fd71e468887b4b1485ce606bbf0d120">More...</a><br /></td></tr>
-<tr class="separator:a6fd71e468887b4b1485ce606bbf0d120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacada721fed15948d2a7bf094a075fc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#aacada721fed15948d2a7bf094a075fc9">setLoadFactor</a> (float loadFactor)</td></tr>
-<tr class="memdesc:aacada721fed15948d2a7bf094a075fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the entry load factor for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#aacada721fed15948d2a7bf094a075fc9">More...</a><br /></td></tr>
-<tr class="separator:aacada721fed15948d2a7bf094a075fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67b6c94c2a9429b0bab8e89dd314cc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ad67b6c94c2a9429b0bab8e89dd314cc1">setLruEntriesLimit</a> (const uint32_t entriesLimit)</td></tr>
-<tr class="memdesc:ad67b6c94c2a9429b0bab8e89dd314cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a limit on the number of entries that will be held in the cache.  <a href="#ad67b6c94c2a9429b0bab8e89dd314cc1">More...</a><br /></td></tr>
-<tr class="separator:ad67b6c94c2a9429b0bab8e89dd314cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaac59bad8229799ca990ae6e44c642c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#aaac59bad8229799ca990ae6e44c642c0">setPartitionResolver</a> (const std::shared_ptr&lt; <a class="el" href="a00747.html">PartitionResolver</a> &gt; &amp;aResolver)</td></tr>
-<tr class="memdesc:aaac59bad8229799ca990ae6e44c642c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#aaac59bad8229799ca990ae6e44c642c0">More...</a><br /></td></tr>
-<tr class="separator:aaac59bad8229799ca990ae6e44c642c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac38c4b51dd0ea1517c152801b281c02c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ac38c4b51dd0ea1517c152801b281c02c">setPartitionResolver</a> (const std::string &amp;libpath, const std::string &amp;factoryFuncName)</td></tr>
-<tr class="memdesc:ac38c4b51dd0ea1517c152801b281c02c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the library path for the library that will be invoked for the partition resolver of the region.  <a href="#ac38c4b51dd0ea1517c152801b281c02c">More...</a><br /></td></tr>
-<tr class="separator:ac38c4b51dd0ea1517c152801b281c02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6b1beab99d327fef95f7145f803cb76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ac6b1beab99d327fef95f7145f803cb76">setPersistenceManager</a> (const std::string &amp;libpath, const std::string &amp;factoryFuncName, const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;config=nullptr)</td></tr>
-<tr class="memdesc:ac6b1beab99d327fef95f7145f803cb76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the library path for the library that will be invoked for the persistence of the region.  <a href="#ac6b1beab99d327fef95f7145f803cb76">More...</a><br /></td></tr>
-<tr class="separator:ac6b1beab99d327fef95f7145f803cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad60aca47c338026159cd3f280261da44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ad60aca47c338026159cd3f280261da44">setPersistenceManager</a> (const std::shared_ptr&lt; <a class="el" href="a00783.html">PersistenceManager</a> &gt; &amp;persistenceManager, const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;config=nullptr)</td></tr>
-<tr class="memdesc:ad60aca47c338026159cd3f280261da44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="a00783.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#ad60aca47c338026159cd3f280261da44">More...</a><br /></td></tr>
-<tr class="separator:ad60aca47c338026159cd3f280261da44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de299324777a94a386e1e842bf03946"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a7de299324777a94a386e1e842bf03946">setRegionIdleTimeout</a> (<a class="el" href="a00895.html">ExpirationAction</a> action, std::chrono::seconds idleTimeout)</td></tr>
-<tr class="memdesc:a7de299324777a94a386e1e842bf03946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the idleTimeout expiration attributes for the region itself for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#a7de299324777a94a386e1e842bf03946">More...</a><br /></td></tr>
-<tr class="separator:a7de299324777a94a386e1e842bf03946"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52902a09755bdb9e7993f7970a70062"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html">RegionFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#aa52902a09755bdb9e7993f7970a70062">setRegionTimeToLive</a> (<a class="el" href="a00895.html">ExpirationAction</a> action, std::chrono::seconds timeToLive)</td></tr>
-<tr class="memdesc:aa52902a09755bdb9e7993f7970a70062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the timeToLive expiration attributes for the region itself for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created.  <a href="#aa52902a09755bdb9e7993f7970a70062">More...</a><br /></td></tr>
-<tr class="separator:aa52902a09755bdb9e7993f7970a70062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8293cabdfc3e7c3da6444af6c244ca5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ad8293cabdfc3e7c3da6444af6c244ca5">getKey</a> ()</td></tr>
+<tr class="memdesc:ad8293cabdfc3e7c3da6444af6c244ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the key for this entry.  <a href="#ad8293cabdfc3e7c3da6444af6c244ca5">More...</a><br /></td></tr>
+<tr class="separator:ad8293cabdfc3e7c3da6444af6c244ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93c5181fa19ceeae6832908b36cf63a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00823.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ad93c5181fa19ceeae6832908b36cf63a">getRegion</a> ()</td></tr>
+<tr class="memdesc:ad93c5181fa19ceeae6832908b36cf63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the region that contains this entry.  <a href="#ad93c5181fa19ceeae6832908b36cf63a">More...</a><br /></td></tr>
+<tr class="separator:ad93c5181fa19ceeae6832908b36cf63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999f71322bd2810115655a4416a67821"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00383.html">CacheStatistics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a999f71322bd2810115655a4416a67821">getStatistics</a> ()</td></tr>
+<tr class="memdesc:a999f71322bd2810115655a4416a67821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the statistics for this entry.  <a href="#a999f71322bd2810115655a4416a67821">More...</a><br /></td></tr>
+<tr class="separator:a999f71322bd2810115655a4416a67821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46483a043f51beabf59d0d2163c5273b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#a46483a043f51beabf59d0d2163c5273b">getValue</a> ()</td></tr>
+<tr class="memdesc:a46483a043f51beabf59d0d2163c5273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of this entry in the local cache.  <a href="#a46483a043f51beabf59d0d2163c5273b">More...</a><br /></td></tr>
+<tr class="separator:a46483a043f51beabf59d0d2163c5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c5cdcb2849d943527534b56a4fc7d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ab3c5cdcb2849d943527534b56a4fc7d9">isDestroyed</a> () const</td></tr>
+<tr class="memdesc:ab3c5cdcb2849d943527534b56a4fc7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this entry has been destroyed.  <a href="#ab3c5cdcb2849d943527534b56a4fc7d9">More...</a><br /></td></tr>
+<tr class="separator:ab3c5cdcb2849d943527534b56a4fc7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1ace62a2496910d89e1de5d8e85607"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00835.html#ada1ace62a2496910d89e1de5d8e85607">RegionEntry</a> (const std::shared_ptr&lt; <a class="el" href="a00823.html">Region</a> &gt; &amp;region, const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt; &amp;value)</td></tr>
+<tr class="memdesc:ada1ace62a2496910d89e1de5d8e85607"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructors created by region  <a href="#ada1ace62a2496910d89e1de5d8e85607">More...</a><br /></td></tr>
+<tr class="separator:ada1ace62a2496910d89e1de5d8e85607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides for the configuration and creation of instances of <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a>. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad40b6c59c92c671a731d7bc8f6fc7b1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad40b6c59c92c671a731d7bc8f6fc7b1e">&#9670;&nbsp;</a></span>create()</h2>
+<div class="textblock"><p>An object in a <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a> that represents an entry, i.e., a key-value pair. </p>
+<p>This object's operations are not distributed, do not acquire any locks, and do not affect <code><a class="el" href="a00383.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a></code>. </p>
+<p>Unless otherwise noted, all of these methods throw a <code><a class="el" href="a00499.html" title="Thrown when an operation is attempted on a closed cache.">CacheClosedException</a></code> if the <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is closed at the time of invocation, or an <code><a class="el" href="a00515.html" title="Thrown when an operation is attempted on a destroyed entry.">EntryDestroyedException</a></code> if the entry has been destroyed. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ada1ace62a2496910d89e1de5d8e85607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1ace62a2496910d89e1de5d8e85607">&#9670;&nbsp;</a></span>RegionEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00815.html">Region</a>&gt; apache::geode::client::RegionFactory::create </td>
+          <td class="memname">apache::geode::client::RegionEntry::RegionEntry </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00823.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>constructors created by region </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad8293cabdfc3e7c3da6444af6c244ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8293cabdfc3e7c3da6444af6c244ca5">&#9670;&nbsp;</a></span>getKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00339.html">CacheableKey</a>&gt; apache::geode::client::RegionEntry::getKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a <a class="el" href="a00815.html">Region</a> of the given <code>name</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>the name of the <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the key for this entry. </p>
+<dl class="section return"><dt>Returns</dt><dd>the key for this entry </dd></dl>
+
+</div>
+</div>
+<a id="ad93c5181fa19ceeae6832908b36cf63a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93c5181fa19ceeae6832908b36cf63a">&#9670;&nbsp;</a></span>getRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00823.html">Region</a>&gt; apache::geode::client::RegionEntry::getRegion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the region that contains this entry. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a> that contains this entry </dd></dl>
+
+</div>
+</div>
+<a id="a999f71322bd2810115655a4416a67821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999f71322bd2810115655a4416a67821">&#9670;&nbsp;</a></span>getStatistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00383.html">CacheStatistics</a>&gt; apache::geode::client::RegionEntry::getStatistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the statistics for this entry. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="a00383.html" title="Defines common statistical information for both the region and its entries.">CacheStatistics</a> for this entry </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00495.html" title="Thrown when an attempt is made to create an existing region.">RegionExistsException</a></td><td>if a region is already in this cache </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00499.html" title="Thrown when an operation is attempted on a closed cache.">CacheClosedException</a></td><td>if the cache is closed </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00539.html" title="Thrown when statistics are invoked for a region where they are disabled.">StatisticsDisabledException</a></td><td>if statistics have been disabled for this region </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a1557231192ad732efe16229d2e8cfc2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1557231192ad732efe16229d2e8cfc2c">&#9670;&nbsp;</a></span>setCacheListener() <span class="overload">[1/2]</span></h2>
+<a id="a46483a043f51beabf59d0d2163c5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46483a043f51beabf59d0d2163c5273b">&#9670;&nbsp;</a></span>getValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheListener </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00863.html">Cacheable</a>&gt; apache::geode::client::RegionEntry::getValue </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00375.html">CacheListener</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>aListener</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the <a class="el" href="a00375.html" title="An application plug-in that can be installed on a region.">CacheListener</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">aListener</td><td>a user defined <a class="el" href="a00375.html" title="An application plug-in that can be installed on a region.">CacheListener</a>, nullptr if no listener </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
+<p>Returns the value of this entry in the local cache. </p>
+<p>Does not invoke a <code><a class="el" href="a00379.html" title="An application plug-in that can be installed on a region.">CacheLoader</a></code>,</p>
+<dl class="section return"><dt>Returns</dt><dd>the value or <code>nullptr</code> if this entry is invalid </dd></dl>
 
 </div>
 </div>
-<a id="ab1ac0c806237a6aa345b1fe67e9726e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1ac0c806237a6aa345b1fe67e9726e7">&#9670;&nbsp;</a></span>setCacheListener() <span class="overload">[2/2]</span></h2>
+<a id="ab3c5cdcb2849d943527534b56a4fc7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c5cdcb2849d943527534b56a4fc7d9">&#9670;&nbsp;</a></span>isDestroyed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheListener </td>
+          <td class="memname">bool apache::geode::client::RegionEntry::isDestroyed </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>libpath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>factoryFuncName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the library path for the library that will be invoked for the listener of the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a7668d8783bab0919de77a5f4f82fe1a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7668d8783bab0919de77a5f4f82fe1a7">&#9670;&nbsp;</a></span>setCacheLoader() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheLoader </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00379.html">CacheLoader</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cacheLoader</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the cache loader for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cacheLoader</td><td>the cache loader or nullptr if no loader </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a7eec947044ed43f503bc4993a4253fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7eec947044ed43f503bc4993a4253fb8">&#9670;&nbsp;</a></span>setCacheLoader() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheLoader </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>libpath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>factoryFuncName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the library path for the library that will be invoked for the loader of the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a2451e0e696f59e0545eecf9a40c68955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2451e0e696f59e0545eecf9a40c68955">&#9670;&nbsp;</a></span>setCacheWriter() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheWriter </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00391.html">CacheWriter</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cacheWriter</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the cache writer for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cacheWriter</td><td>the cache writer or nullptr if no cache writer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a611097497e7154c8226e3c75111f9b9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a611097497e7154c8226e3c75111f9b9d">&#9670;&nbsp;</a></span>setCacheWriter() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCacheWriter </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>libpath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>factoryFuncName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the library path for the library that will be invoked for the writer of the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="aaf9b951cb04ae17a025c89ed1da59de3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf9b951cb04ae17a025c89ed1da59de3">&#9670;&nbsp;</a></span>setCachingEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setCachingEnabled </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>cachingEnabled</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set caching enabled flag for this region. </p>
-<p>If set to false, then no data is stored in the local process, but events and distributions will still occur, and the region can still be used to put and remove, etc... The default if not set is 'true', 'false' is illegal for regions of 'local' scope. This also requires that interestLists are turned off for the region. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cachingEnabled</td><td>if true, cache data for this region in this process. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a8e3a5e0ae0b361bc640748f11b970793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e3a5e0ae0b361bc640748f11b970793">&#9670;&nbsp;</a></span>setConcurrencyChecksEnabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setConcurrencyChecksEnabled </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enables or disables concurrent modification checks. </p>
-<dl class="section since"><dt>Since</dt><dd>7.0 </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">concurrencyChecksEnabled</td><td>whether to perform concurrency checks on operations </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a9fd4d0e9cf5163018e9d9169917bcbe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fd4d0e9cf5163018e9d9169917bcbe8">&#9670;&nbsp;</a></span>setConcurrencyLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setConcurrencyLevel </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>concurrencyLevel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the concurrency level tof the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<p>This value is used in initializing the map that holds the entries. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">concurrencyLevel</td><td>the concurrency level of the entry map </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if concurrencyLevel is nonpositive </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a11e6a89051c601d305560f05df7b0a4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e6a89051c601d305560f05df7b0a4c">&#9670;&nbsp;</a></span>setDiskPolicy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setDiskPolicy </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00891.html">DiskPolicyType</a>&#160;</td>
-          <td class="paramname"><em>diskPolicy</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the Disk policy type for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">diskPolicy</td><td>the type of disk policy to use for the region </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if diskPolicyType is Invalid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abc6b03ed34a7892e3b639529f436c59c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc6b03ed34a7892e3b639529f436c59c">&#9670;&nbsp;</a></span>setEntryIdleTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setEntryIdleTimeout </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00895.html">ExpirationAction</a>&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::chrono::seconds&#160;</td>
-          <td class="paramname"><em>idleTimeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the idleTimeout expiration attributes for region entries for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">action</td><td>the expiration action for entries in this region. </td></tr>
-    <tr><td class="paramname">idleTimeout</td><td>the idleTimeout for entries in this region. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="ac639776e014cba20ea1fc5ddd57b884c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac639776e014cba20ea1fc5ddd57b884c">&#9670;&nbsp;</a></span>setEntryTimeToLive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setEntryTimeToLive </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00895.html">ExpirationAction</a>&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::chrono::seconds&#160;</td>
-          <td class="paramname"><em>timeToLive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the timeToLive expiration attributes for region entries for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">action</td><td>the expiration action for entries in this region. </td></tr>
-    <tr><td class="paramname">timeToLive</td><td>the timeToLive for entries in this region. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a6fd71e468887b4b1485ce606bbf0d120"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fd71e468887b4b1485ce606bbf0d120">&#9670;&nbsp;</a></span>setInitialCapacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setInitialCapacity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>initialCapacity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the entry initial capacity for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<p>This value is used in initializing the map that holds the entries. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">initialCapacity</td><td>the initial capacity of the entry map </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if initialCapacity is negative. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aacada721fed15948d2a7bf094a075fc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacada721fed15948d2a7bf094a075fc9">&#9670;&nbsp;</a></span>setLoadFactor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setLoadFactor </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>loadFactor</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the entry load factor for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<p>This value is used in initializing the map that holds the entries. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">loadFactor</td><td>the load factor of the entry map </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if loadFactor is nonpositive </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad67b6c94c2a9429b0bab8e89dd314cc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad67b6c94c2a9429b0bab8e89dd314cc1">&#9670;&nbsp;</a></span>setLruEntriesLimit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setLruEntriesLimit </td>
-          <td>(</td>
-          <td class="paramtype">const uint32_t&#160;</td>
-          <td class="paramname"><em>entriesLimit</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a limit on the number of entries that will be held in the cache. </p>
-<p>If a new entry is added while at the limit, the cache will evict the least recently used entry. Defaults to 0, meaning no LRU actions will used. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entriesLimit</td><td>number of enteries to keep in region </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="aaac59bad8229799ca990ae6e44c642c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaac59bad8229799ca990ae6e44c642c0">&#9670;&nbsp;</a></span>setPartitionResolver() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setPartitionResolver </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00747.html">PartitionResolver</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>aResolver</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">aResolver</td><td>a user defined <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a>, nullptr if no resolver </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="ac38c4b51dd0ea1517c152801b281c02c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac38c4b51dd0ea1517c152801b281c02c">&#9670;&nbsp;</a></span>setPartitionResolver() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setPartitionResolver </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>libpath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>factoryFuncName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the library path for the library that will be invoked for the partition resolver of the region. </p>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="ac6b1beab99d327fef95f7145f803cb76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6b1beab99d327fef95f7145f803cb76">&#9670;&nbsp;</a></span>setPersistenceManager() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setPersistenceManager </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>libpath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>factoryFuncName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>config</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the library path for the library that will be invoked for the persistence of the region. </p>
-<p>If the region is being created from a client on a server, or on a server directly, then this must be used to set the <a class="el" href="a00783.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a>. </p><dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="ad60aca47c338026159cd3f280261da44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad60aca47c338026159cd3f280261da44">&#9670;&nbsp;</a></span>setPersistenceManager() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setPersistenceManager </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00783.html">PersistenceManager</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>persistenceManager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00799.html">Properties</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>config</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the <a class="el" href="a00783.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a> for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">persistenceManager</td><td>a user defined <a class="el" href="a00783.html" title="PersistenceManager API for persistence and overflow.">PersistenceManager</a>, nullptr if no persistenceManager </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="a7de299324777a94a386e1e842bf03946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7de299324777a94a386e1e842bf03946">&#9670;&nbsp;</a></span>setRegionIdleTimeout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setRegionIdleTimeout </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00895.html">ExpirationAction</a>&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::chrono::seconds&#160;</td>
-          <td class="paramname"><em>idleTimeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the idleTimeout expiration attributes for the region itself for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">action</td><td>the expiration action for entries in this region. </td></tr>
-    <tr><td class="paramname">idleTimeout</td><td>the idleTimeout for the region as a whole. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
-
-</div>
-</div>
-<a id="aa52902a09755bdb9e7993f7970a70062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa52902a09755bdb9e7993f7970a70062">&#9670;&nbsp;</a></span>setRegionTimeToLive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00835.html">RegionFactory</a>&amp; apache::geode::client::RegionFactory::setRegionTimeToLive </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00895.html">ExpirationAction</a>&#160;</td>
-          <td class="paramname"><em>action</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::chrono::seconds&#160;</td>
-          <td class="paramname"><em>timeToLive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the timeToLive expiration attributes for the region itself for the next <code><a class="el" href="a00819.html" title="Defines attributes for configuring a region.">RegionAttributes</a></code> created. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">action</td><td>the expiration action for entries in this region. </td></tr>
-    <tr><td class="paramname">timeToLive</td><td>the timeToLive for the region as a whole. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a reference to <code>this</code> </dd></dl>
+<p>Returns whether this entry has been destroyed. </p>
+<p>Does not throw a <code><a class="el" href="a00515.html" title="Thrown when an operation is attempted on a destroyed entry.">EntryDestroyedException</a></code> if this entry has been destroyed.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if this entry has been destroyed </dd></dl>
 
 </div>
 </div>

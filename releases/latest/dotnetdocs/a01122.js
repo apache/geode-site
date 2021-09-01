@@ -1,8 +1,8 @@
 var a01122 =
 [
-    [ "ToString", "a01122.html#aab399122dadac5f60090908915eb174e", null ],
-    [ "Count", "a01122.html#aeadb0e777952352dd109ffa9910b5502", null ],
-    [ "Item", "a01122.html#ac090952a8515f8d4f3aa05a6eb074cc7", null ],
-    [ "ObjectSize", "a01122.html#af073822a47dac5d41afb64df6ad52fee", null ],
-    [ "Set", "a01122.html#ace80a417cdad26d1708d488cb7a479bd", null ]
+    [ "GetEnumerator", "a01122.html#a8249a5a1a26b608da8d67c34a8637647", null ],
+    [ "GetFieldIndex", "a01122.html#abf4f0e50957c0c8677592d65a80f2312", null ],
+    [ "GetFieldName", "a01122.html#a6bc0295f66a9fc7be8278d4e64d91688", null ],
+    [ "Item", "a01122.html#aaebabd2cb18901cdcf7501b68f1c7698", null ],
+    [ "Size", "a01122.html#a5887bc9f1602fb8ed37b7f3239b5df47", null ]
 ];

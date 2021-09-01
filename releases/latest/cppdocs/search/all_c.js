@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['newcq',['newCq',['../a00811.html#ad2715272fc10d26223d2dee60f2d78d4',1,'apache::geode::client::QueryService::newCq(std::string name, std::string querystr, const std::shared_ptr&lt; CqAttributes &gt; &amp;cqAttr, bool isDurable=false)=0'],['../a00811.html#acd2763e85abcd5035fc534af9f0b0d0a',1,'apache::geode::client::QueryService::newCq(std::string querystr, const std::shared_ptr&lt; CqAttributes &gt; &amp;cqAttr, bool isDurable=false)=0']]],
-  ['newquery',['newQuery',['../a00811.html#ab4039c6723b533a165d1af714314c32e',1,'apache::geode::client::QueryService']]],
+  ['newcq',['newCq',['../a00819.html#ad2715272fc10d26223d2dee60f2d78d4',1,'apache::geode::client::QueryService::newCq(std::string name, std::string querystr, const std::shared_ptr&lt; CqAttributes &gt; &amp;cqAttr, bool isDurable=false)=0'],['../a00819.html#acd2763e85abcd5035fc534af9f0b0d0a',1,'apache::geode::client::QueryService::newCq(std::string querystr, const std::shared_ptr&lt; CqAttributes &gt; &amp;cqAttr, bool isDurable=false)=0']]],
+  ['newquery',['newQuery',['../a00819.html#ab4039c6723b533a165d1af714314c32e',1,'apache::geode::client::QueryService']]],
   ['noavailablelocatorsexception',['NoAvailableLocatorsException',['../a00683.html',1,'apache::geode::client']]],
   ['nosystemexception',['NoSystemException',['../a00519.html',1,'apache::geode::client']]],
   ['notauthorizedexception',['NotAuthorizedException',['../a00639.html',1,'apache::geode::client']]],
   ['notconnectedexception',['NotConnectedException',['../a00575.html',1,'apache::geode::client']]],
-  ['notifyackinterval',['notifyAckInterval',['../a00867.html#a5eaf1e2031c72b9bea9474032174f167',1,'apache::geode::client::SystemProperties']]],
-  ['notifydupchecklife',['notifyDupCheckLife',['../a00867.html#ac77b92cf310e12c8c7a83e94cc75c24c',1,'apache::geode::client::SystemProperties']]],
+  ['notifyackinterval',['notifyAckInterval',['../a00875.html#a5eaf1e2031c72b9bea9474032174f167',1,'apache::geode::client::SystemProperties']]],
+  ['notifydupchecklife',['notifyDupCheckLife',['../a00875.html#ac77b92cf310e12c8c7a83e94cc75c24c',1,'apache::geode::client::SystemProperties']]],
   ['notownerexception',['NotOwnerException',['../a00587.html',1,'apache::geode::client']]],
   ['nullpointerexception',['NullPointerException',['../a00567.html',1,'apache::geode::client']]],
   ['numcqsactive',['numCqsActive',['../a00423.html#ad9ccce40acc3d51a755db18d92248e1f',1,'apache::geode::client::CqServiceStatistics']]],

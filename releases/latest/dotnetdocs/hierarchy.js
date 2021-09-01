@@ -120,7 +120,7 @@ var hierarchy =
     [ "Apache::Geode::Client::IPdxReader", "a00974.html", null ],
     [ "Apache::Geode::Client::IPdxSerializable", "a00978.html", null ],
     [ "Apache::Geode::Client::IPdxSerializer", "a00982.html", [
-      [ "Apache::Geode::Client::ReflectionBasedAutoSerializer", "a01090.html", null ]
+      [ "Apache::Geode::Client::ReflectionBasedAutoSerializer", "a01094.html", null ]
     ] ],
     [ "Apache::Geode::Client::IPdxTypeMapper", "a00986.html", null ],
     [ "Apache::Geode::Client::IPdxUnreadFields", "a00990.html", null ],
@@ -137,9 +137,9 @@ var hierarchy =
     ] ],
     [ "Apache::Geode::Client::ISelectResults< TResult >", "a01002.html", [
       [ "Apache::Geode::Client::ICqResults< TResult >", "a00582.html", [
-        [ "Apache::Geode::Client::StructSet< TResult >", "a01118.html", null ]
+        [ "Apache::Geode::Client::StructSet< TResult >", "a01122.html", null ]
       ] ],
-      [ "Apache::Geode::Client::ResultSet< TResult >", "a01110.html", null ]
+      [ "Apache::Geode::Client::ResultSet< TResult >", "a01114.html", null ]
     ] ],
     [ "Apache::Geode::Client::ISerializable", "a01022.html", [
       [ "Apache::Geode::Client::CacheableObjectXml", "a00514.html", null ],
@@ -176,10 +176,10 @@ var hierarchy =
         ] ]
       ] ],
       [ "Apache::Geode::Client::IDataSerializable", "a00934.html", null ],
-      [ "Apache::Geode::Client::Serializable", "a01114.html", [
+      [ "Apache::Geode::Client::Serializable", "a01118.html", [
         [ "Apache::Geode::Client::CacheableKey", "a00498.html", null ],
         [ "Apache::Geode::Client::Internal::CacheableHashSetType< TYPEID, HSTYPE >", "a00474.html", null ],
-        [ "Apache::Geode::Client::Struct", "a01122.html", null ],
+        [ "Apache::Geode::Client::Struct", "a01126.html", null ],
         [ "Apache::Geode::Client::Internal::CacheableHashSetType< static_cast< int8_t >(native::private ::DSCode::CacheableHashSet), apache::geode::client::CacheableHashSet >", "a00474.html", [
           [ "Apache::Geode::Client::CacheableHashSet", "a00482.html", null ]
         ] ],
@@ -187,29 +187,29 @@ var hierarchy =
           [ "Apache::Geode::Client::CacheableLinkedHashSet", "a00486.html", null ]
         ] ]
       ] ],
-      [ "Apache::Geode::Client::UserFunctionExecutionException", "a01142.html", null ]
+      [ "Apache::Geode::Client::UserFunctionExecutionException", "a01146.html", null ]
     ] ],
     [ "Apache::Geode::Client::ISubscriptionService< TKey >", "a01026.html", null ],
     [ "Apache::Geode::Client::IWritablePdxInstance", "a01030.html", null ],
     [ "Apache::Geode::Client::Log", "a01038.html", null ],
     [ "apache::geode::client::ManagedDataSerializableHandler", "a01042.html", null ],
     [ "apache::geode::client::ManagedPdxTypeHandler", "a01046.html", null ],
-    [ "Apache::Geode::Client::PdxIdentityFieldAttribute", "a01066.html", null ],
-    [ "Apache::Geode::Client::Pool", "a01070.html", null ],
-    [ "Apache::Geode::Client::PoolFactory", "a01074.html", null ],
-    [ "Apache::Geode::Client::PoolManager", "a01078.html", null ],
+    [ "Apache::Geode::Client::PdxIdentityFieldAttribute", "a01070.html", null ],
+    [ "Apache::Geode::Client::Pool", "a01074.html", null ],
+    [ "Apache::Geode::Client::PoolFactory", "a01078.html", null ],
+    [ "Apache::Geode::Client::PoolManager", "a01082.html", null ],
     [ "Apache::Geode::Client::Properties< TPropKey, TPropValue >", "a00406.html", null ],
     [ "Apache::Geode::Client::Properties< String^, String^>", "a00406.html", null ],
     [ "Apache::Geode::Client::Query< TResult >", "a00586.html", null ],
-    [ "Apache::Geode::Client::QueryService", "a01086.html", null ],
+    [ "Apache::Geode::Client::QueryService", "a01090.html", null ],
     [ "Apache::Geode::Client::RegionAttributes< TKey, TValue >", "a01010.html", null ],
-    [ "Apache::Geode::Client::RegionAttributesFactory< TKey, TValue >", "a01098.html", null ],
+    [ "Apache::Geode::Client::RegionAttributesFactory< TKey, TValue >", "a01102.html", null ],
     [ "Apache::Geode::Client::RegionEntry< TKey, TValue >", "a01006.html", null ],
-    [ "Apache::Geode::Client::RegionEvent< TKey, TValue >", "a01102.html", null ],
-    [ "Apache::Geode::Client::RegionFactory", "a01106.html", null ],
+    [ "Apache::Geode::Client::RegionEvent< TKey, TValue >", "a01106.html", null ],
+    [ "Apache::Geode::Client::RegionFactory", "a01110.html", null ],
     [ "Apache::Geode::Client::SelectResultsIterator< TResult >", "a00926.html", null ],
-    [ "Apache::Geode::Client::SystemProperties", "a01126.html", null ],
-    [ "Apache::Geode::Client::TransactionId", "a01134.html", null ],
-    [ "Apache::Geode::Client::TypeRegistry", "a01138.html", null ],
-    [ "Apache::Geode::Client::Utils", "a01146.html", null ]
+    [ "Apache::Geode::Client::SystemProperties", "a01130.html", null ],
+    [ "Apache::Geode::Client::TransactionId", "a01138.html", null ],
+    [ "Apache::Geode::Client::TypeRegistry", "a01142.html", null ],
+    [ "Apache::Geode::Client::Utils", "a01150.html", null ]
 ];

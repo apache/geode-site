@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -106,10 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a643b6dbda145061fd3df36c7368fdf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#a2a643b6dbda145061fd3df36c7368fdf">BeforeDestroy</a> (<a class="el" href="a00618.html">EntryEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
 <tr class="memdesc:a2a643b6dbda145061fd3df36c7368fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before an entry is destroyed.  <a href="#a2a643b6dbda145061fd3df36c7368fdf">More...</a><br /></td></tr>
 <tr class="separator:a2a643b6dbda145061fd3df36c7368fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf421b26ca2aaebde9ff08f9ca1a3cc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#adf421b26ca2aaebde9ff08f9ca1a3cc2">BeforeRegionClear</a> (<a class="el" href="a01102.html">RegionEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
+<tr class="memitem:adf421b26ca2aaebde9ff08f9ca1a3cc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#adf421b26ca2aaebde9ff08f9ca1a3cc2">BeforeRegionClear</a> (<a class="el" href="a01106.html">RegionEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
 <tr class="memdesc:adf421b26ca2aaebde9ff08f9ca1a3cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before this region is cleared.  <a href="#adf421b26ca2aaebde9ff08f9ca1a3cc2">More...</a><br /></td></tr>
 <tr class="separator:adf421b26ca2aaebde9ff08f9ca1a3cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad61b2e507a3e77455a4979f01e4f0fca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#ad61b2e507a3e77455a4979f01e4f0fca">BeforeRegionDestroy</a> (<a class="el" href="a01102.html">RegionEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
+<tr class="memitem:ad61b2e507a3e77455a4979f01e4f0fca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#ad61b2e507a3e77455a4979f01e4f0fca">BeforeRegionDestroy</a> (<a class="el" href="a01106.html">RegionEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
 <tr class="memdesc:ad61b2e507a3e77455a4979f01e4f0fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before this region is destroyed.  <a href="#ad61b2e507a3e77455a4979f01e4f0fca">More...</a><br /></td></tr>
 <tr class="separator:ad61b2e507a3e77455a4979f01e4f0fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcbf2c234449adf36f4e437d71fcd52c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00918.html#afcbf2c234449adf36f4e437d71fcd52c">BeforeUpdate</a> (<a class="el" href="a00618.html">EntryEvent</a>&lt; TKey, TValue &gt;^ ev)</td></tr>
@@ -132,7 +132,7 @@ interface Apache::Geode::Client::ICacheWriter&lt; TKey, TValue &gt;</h3>
 <p>The typical use for a <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code> is to update a database. Application writers should implement these methods to execute application-specific behavior before the cache is modified. </p>
 <p>Note that cache writer callbacks are synchronous callbacks and have the ability to veto the cache update. Since cache writer invocations require communications over the network, (especially if they are not co-located on the nodes where the change occurs) the use of cache writers presents a performance penalty. </p>
 <p>The <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code> is capable of aborting the update to the cache by throwing a <code><a class="el" href="a00654.html" title="Thrown when the cache writer aborts the operation.">CacheWriterException</a></code>. This exception or any runtime exception thrown by the <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code> will abort the operation, and the exception will be propagated to the initiator of the operation, regardless of whether the initiator is in the same process as the <code><a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></code>. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01098.html#a5acd87ead880f53e6b64e3b3620338d6" title="Sets the cache writer for the RegionAttributes being created.">RegionAttributesFactory.SetCacheWriter</a>, <a class="el" href="a01010.html#aacb4efa0e2abdec427815286ed7d8d02" title="Gets the cache writer for the region.">RegionAttributes.CacheWriter</a>, <a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a>, <a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01102.html#a5acd87ead880f53e6b64e3b3620338d6" title="Sets the cache writer for the RegionAttributes being created.">RegionAttributesFactory.SetCacheWriter</a>, <a class="el" href="a01010.html#aacb4efa0e2abdec427815286ed7d8d02" title="Gets the cache writer for the region.">RegionAttributes.CacheWriter</a>, <a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a>, <a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a></dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a304aec2a3a786a6a1b6081e403ac468c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a304aec2a3a786a6a1b6081e403ac468c">&#9670;&nbsp;</a></span>BeforeCreate()</h2>
@@ -210,7 +210,7 @@ template&lt;class TKey , class TValue &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="a00918.html">Apache::Geode::Client::ICacheWriter</a>&lt; TKey, TValue &gt;::BeforeRegionClear </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a01102.html">RegionEvent</a>&lt; TKey, TValue &gt;^&#160;</td>
+          <td class="paramtype"><a class="el" href="a01106.html">RegionEvent</a>&lt; TKey, TValue &gt;^&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
           <td></td>
         </tr>
@@ -234,7 +234,7 @@ template&lt;class TKey , class TValue &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="a00918.html">Apache::Geode::Client::ICacheWriter</a>&lt; TKey, TValue &gt;::BeforeRegionDestroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a01102.html">RegionEvent</a>&lt; TKey, TValue &gt;^&#160;</td>
+          <td class="paramtype"><a class="el" href="a01106.html">RegionEvent</a>&lt; TKey, TValue &gt;^&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
           <td></td>
         </tr>

@@ -7,6 +7,8 @@ var a00410 =
     [ "CreatePdxInstanceFactory", "a00410.html#a11421ac27bf948764a89b4fa8816c4bd", null ],
     [ "CreateRegionFactory", "a00410.html#ab9bd64c225ff5addafdf164bbd060c10", null ],
     [ "GetPdxIgnoreUnreadFields", "a00410.html#a92b3bb28fb0d9710c6cad3bf5af1dca2", null ],
+    [ "GetPoolFactory", "a00410.html#a969ec11b5db2696aa2dbe77e5b453385", null ],
+    [ "GetPoolManager", "a00410.html#a97adfe06dc83d881b8c7296cf81e082d", null ],
     [ "GetQueryService", "a00410.html#ab3be9585e2a61479917aabb8005e320c", null ],
     [ "GetQueryService", "a00410.html#a7c0875168a3c3180dea49ec82e196ee7", null ],
     [ "GetRegion", "a00410.html#aed71aeab49e1fba5f4f20fc8b65e85d3", null ],

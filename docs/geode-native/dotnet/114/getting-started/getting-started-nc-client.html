@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Getting Started with the Native Library |
+    Geode Native .NET Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_dotnet docs_geode-native_dotnet_114 docs_geode-native_dotnet_114_getting-started docs_geode-native_dotnet_114_getting-started_getting-started-nc-client has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native .NET Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/dotnet/114/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/114/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/114/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/114/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/114/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/114/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/114/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/114/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="has_submenu">
+        <a href="/docs/geode-native/dotnet/114/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/dotnet/114/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/114/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/114/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/114/serialization/data-serialization.html">Serializing Data</a>
+      <ul>
+        <li class="has_submenu">
+          <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/dotnet-pdx-serialization.html">Geode PDX Serialization</a>
+          <ul>
+            <li>
+              <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/dotnet-pdx-autoserializer.html">Using the Geode PDX Autoserializer</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/114/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/114/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/114/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/114/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/114/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/114/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/114/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/114/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/114/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native .NET
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Getting Started with the Native Library
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#set_up_dev_environment">Set Up Your Development Environment</a></li>
+<li>
+<a href="#establish_cluster_access">Establish Access to a Geode Cluster</a><ul>
+<li><a href="#connecting_to_server">Connecting to the Server</a></li>
+<li><a href="#app_dev_walkthroughs">Application Development Walkthrough</a></li>
+</ul>
+</li>
+<li><a href="#programming_examples">Programming Examples</a></li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <p>To use the Geode Native Library for developing Geode client applications:</p>
+
+<ul>
+<li>Obtain a distribution of the Native library and install it on your development platform.</li>
+<li>Set up your development environment with the tools you need, such as a compiler and an OpenSSL security library.</li>
+<li>Establish access to a new or existing Geode cluster.</li>
+<li>Write your client application using the Geode native library to interact with the Geode server.</li>
+</ul>
+
+<h2 id="set-up-your-development-environment"><a id="set_up_dev_environment"></a>Set Up Your Development Environment</h2>
+
+<p>You will need some essential tools, such as a compiler and a linker.
+Your compiler must have access to the Native Client header files, and the linker must have access to the Native Client libraries.
+The header files and libraries are located in the Native Client installation directory.</p>
+
+<h2 id="establish-access-to-a-geode-cluster"><a id="establish_cluster_access"></a>Establish Access to a Geode Cluster</h2>
+
+<p>As you develop your application, you will need access to a Geode cluster.
+Your client application connects to a Geode cluster by specifying the address (host name
+or IP address) and port number of one or more locators, and the name of a region that also exists
+on the cluster.
+The client API establishes a pool of these network connections for your client application to use.</p>
+
+<p>You can choose whether to use a large, remote, production-quality cluster; a small, local,
+development cluster; or something in-between, such as a testing or experimental lab installation.</p>
+
+<p>In the <em>Geode User&rsquo;s Guide</em>,
+see <a href="serverman/configuring/chapter_overview.html">Configuring and Running a Cluster</a> 
+and <a href="serverman/topologies_and_comm/cs_configuration/chapter_overview.html">Client/Server Configuration</a> for instructions on setting up and starting the cluster for a client/server configuration.</p>
+
+<h3 id="connecting-to-the-server"><a id="connecting_to_server"></a>Connecting to the Server</h3>
+
+<p>To connect to a server, your application must follow these steps:</p>
+
+<ol>
+<li>Create a cache, setting characteristics of interest (for example, <code>log-level</code>).</li>
+<li>Use the cache to create a named pool of network connections, specifying the hostname and port for at least one server locator.</li>
+<li>Instantiate a region of the desired type (usually PROXY, sometimes CACHING_PROXY) and connect it by name to its counterpart on the server.</li>
+</ol>
+
+<p>Once the connection pool and the shared region are in place, your client application is ready to share data with the server.</p>
+
+<p><strong>Server Connection: .NET Example</strong></p>
+
+<p>Create a cache and set its characteristics:</p>
+<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">cache</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CacheFactory</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">"log-level"</span><span class="p">,</span> <span class="s">"none"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">SetAuthInitialize</span><span class="p">(</span><span class="k">new</span> <span class="nf">ExampleAuthInitialize</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">Create</span><span class="p">();</span>
+</code></pre>
+
+<p>Use the cache to create a named pool of network connections, specifying the hostname and port for the server locator:</p>
+<pre class="highlight csharp"><code><span class="n">cache</span><span class="p">.</span><span class="nf">GetPoolManager</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">CreateFactory</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">AddLocator</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span> <span class="m">10334</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+</code></pre>
+
+<p>Instantiate a region of the desired type and connect to the pool by name:</p>
+<pre class="highlight csharp"><code><span class="kt">var</span> <span class="n">regionFactory</span> <span class="p">=</span> <span class="n">cache</span><span class="p">.</span><span class="nf">CreateRegionFactory</span><span class="p">(</span><span class="n">RegionShortcut</span><span class="p">.</span><span class="n">PROXY</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">SetPoolName</span><span class="p">(</span><span class="s">"pool"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">region</span> <span class="p">=</span> <span class="n">regionFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;(</span><span class="s">"example_userinfo"</span><span class="p">);</span>
+</code></pre>
+
+<p>See the <em>Geode User Guide</em> section <a href="serverman/topologies_and_comm/cs_configuration/setting_up_a_client_server_system.html">Configuring a Client/Server System</a>
+for more details.</p>
+
+<h3 id="application-development-walkthrough"><a id="app_dev_walkthroughs"></a>Application Development Walkthrough</h3>
+
+<p>The <a href="/docs/geode-native/dotnet/114/getting-started/app-dev-walkthrough-dotnet.html">.NET App Development Walkthrough</a> describes how to set up a native client development environment using CMake.</p>
+
+<h2 id="programming-examples"><a id="programming_examples"></a>Programming Examples</h2>
+
+<p>The Geode Client build provides a set of programming examples to help you understand the client API.
+The <code>examples</code> directory contains CMake files and a <code>cpp</code> subdirectory containing C++ examples.
+The Windows build also includes a <code>dotnet</code> subdirectory containing C# examples.</p>
+
+<p>CMake files are located at each level of the directory structure to allow examples to be built individually or in groups.</p>
+
+<p>The directory structure resembles this hierarchy (some entries are omitted for clarity):</p>
+<pre class="highlight plaintext"><code>MyProject/
+  cmake/
+  CMakeLists.txt
+  examples/
+    BUILD-EXAMPLES.md
+    CMakeLists.txt
+    CMakeLists.txt.in
+    cmake/
+    cpp/
+      authinitialize/
+      continuousquery/
+      dataserializable/
+      functionexecution/
+      pdxserializable/
+      pdxserializer/
+      putgetremove/
+      remotequery/
+      sslputget/
+      transaction/
+    dotnet/
+      authinitialize/
+      continuousquery/
+      dataserializable/
+      functionexecution/
+      pdxautoserializer/
+      pdxserializable/
+      putgetremove/
+      remotequery/
+      sslputget/
+      transaction/
+</code></pre>
+
+<p>See the <code>BUILD-EXAMPLES.md</code> file for detailed instructions on building and executing the examples,
+and read the source code to understand how the examples are constructed.</p>
+
+<p>See <a href="/docs/geode-native/dotnet/114/getting-started/put-get-example.html">Put/Get/Remove Example</a> for sample code showing the basics of how a client application
+connects to a Geode cluster and performs basic operations on a remote server.</p>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

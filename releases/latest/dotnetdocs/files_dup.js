@@ -111,21 +111,21 @@ var files_dup =
       [ "CqAttributes", "a00562.html", "a00562" ],
       [ "CqQuery", "a00590.html", "a00590" ],
       [ "Query", "a00586.html", "a00586" ],
-      [ "QueryService", "a01086.html", "a01086" ]
+      [ "QueryService", "a01090.html", "a01090" ]
     ] ],
     [ "Region.hpp", "a00314.html", null ],
     [ "RegionAttributesFactory.hpp", "a00320.html", [
-      [ "RegionAttributesFactory", "a01098.html", "a01098" ]
+      [ "RegionAttributesFactory", "a01102.html", "a01102" ]
     ] ],
     [ "RegionEntry.hpp", "a00323.html", [
       [ "RegionEntry", "a01006.html", "a01006" ]
     ] ],
     [ "RegionEvent.hpp", "a00326.html", [
-      [ "RegionEvent", "a01102.html", "a01102" ]
+      [ "RegionEvent", "a01106.html", "a01106" ]
     ] ],
     [ "RegionShortcut.hpp", "a00332.html", "a00332" ],
     [ "ResultSet.hpp", "a00338.html", [
-      [ "ResultSet", "a01110.html", "a01110" ],
+      [ "ResultSet", "a01114.html", "a01114" ],
       [ "SelectResultsIterator", "a00926.html", "a00926" ]
     ] ],
     [ "SelectResultsIterator.hpp", "a00341.html", [
@@ -133,17 +133,17 @@ var files_dup =
     ] ],
     [ "Serializable.hpp", "a00344.html", "a00344" ],
     [ "Struct.hpp", "a00347.html", [
-      [ "Struct", "a01122.html", "a01122" ],
-      [ "StructSet", "a01118.html", "a01118" ]
+      [ "Struct", "a01126.html", "a01126" ],
+      [ "StructSet", "a01122.html", "a01122" ]
     ] ],
     [ "StructSet.hpp", "a00350.html", [
       [ "SelectResultsIterator", "a00926.html", "a00926" ],
-      [ "StructSet", "a01118.html", "a01118" ]
+      [ "StructSet", "a01122.html", "a01122" ]
     ] ],
     [ "SystemProperties.hpp", "a00353.html", [
-      [ "SystemProperties", "a01126.html", "a01126" ]
+      [ "SystemProperties", "a01130.html", "a01130" ]
     ] ],
     [ "UserFunctionExecutionException.hpp", "a00374.html", [
-      [ "UserFunctionExecutionException", "a01142.html", "a01142" ]
+      [ "UserFunctionExecutionException", "a01146.html", "a01146" ]
     ] ]
 ];

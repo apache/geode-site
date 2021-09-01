@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::SslException Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::LowMemoryException Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -89,11 +89,11 @@ $(document).ready(function(){initNavTree('a00723.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::SslException Class Reference</div>  </div>
+<div class="title">apache::geode::client::LowMemoryException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Thrown when an error is encountered during an SSL operation.  
+<p>Thrown if an operation causes fails due to critical memory threshold reached.  
  <a href="a00723.html#details">More...</a></p>
 
 <p>Inherits <a class="el" href="a00463.html">apache::geode::client::Exception</a>.</p>
@@ -103,15 +103,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00463.html#a4a13dbe4fe4936a0f92451738bab6f74">getMessage</a> () const noexcept</td></tr>
 <tr class="memdesc:a4a13dbe4fe4936a0f92451738bab6f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a message with details regarding this exception.  <a href="#a4a13dbe4fe4936a0f92451738bab6f74">More...</a><br /></td></tr>
 <tr class="separator:a4a13dbe4fe4936a0f92451738bab6f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad36a96aa8ba1fa29ab6ee19a1892e1f0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00723.html#ad36a96aa8ba1fa29ab6ee19a1892e1f0">getName</a> () const override</td></tr>
-<tr class="memdesc:ad36a96aa8ba1fa29ab6ee19a1892e1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this exception type.  <a href="#ad36a96aa8ba1fa29ab6ee19a1892e1f0">More...</a><br /></td></tr>
-<tr class="separator:ad36a96aa8ba1fa29ab6ee19a1892e1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5304fe3bd910924daeee66ee3474498c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00723.html#a5304fe3bd910924daeee66ee3474498c">getName</a> () const override</td></tr>
+<tr class="memdesc:a5304fe3bd910924daeee66ee3474498c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the name of this exception type.  <a href="#a5304fe3bd910924daeee66ee3474498c">More...</a><br /></td></tr>
+<tr class="separator:a5304fe3bd910924daeee66ee3474498c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00463.html#ae92dba8992cbda0cd2aaa1d6fa05b54f">getStackTrace</a> () const</td></tr>
 <tr class="memdesc:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a stacktrace string from the location the exception was created.  <a href="#ae92dba8992cbda0cd2aaa1d6fa05b54f">More...</a><br /></td></tr>
 <tr class="separator:ae92dba8992cbda0cd2aaa1d6fa05b54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thrown when an error is encountered during an SSL operation. </p>
+<div class="textblock"><p>Thrown if an operation causes fails due to critical memory threshold reached. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4a13dbe4fe4936a0f92451738bab6f74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a13dbe4fe4936a0f92451738bab6f74">&#9670;&nbsp;</a></span>getMessage()</h2>
@@ -141,8 +141,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad36a96aa8ba1fa29ab6ee19a1892e1f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad36a96aa8ba1fa29ab6ee19a1892e1f0">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="a5304fe3bd910924daeee66ee3474498c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5304fe3bd910924daeee66ee3474498c">&#9670;&nbsp;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string apache::geode::client::SslException::getName </td>
+          <td class="memname">std::string apache::geode::client::LowMemoryException::getName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native .NET Reference: Apache::Geode::Client::UserFunctionExecutionException Class Reference</title>
+<title>Apache Geode Native .NET Reference: Apache::Geode::Client::TypeRegistry Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -90,65 +90,111 @@ $(document).ready(function(){initNavTree('a01142.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">Apache::Geode::Client::UserFunctionExecutionException Class Reference</div>  </div>
+<div class="title">Apache::Geode::Client::TypeRegistry Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="a01142.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution.  
+<p>Registry for custom serializable types, both PDXSerializable and DataSerializable.  
  <a href="a01142.html#details">More...</a></p>
-
-<p>Inherits <a class="el" href="a01022.html">Apache::Geode::Client::ISerializable</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a335290fd15fd41d39bc73a7ca10d19bd"><td class="memItemLeft" align="right" valign="top">String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01022.html#a335290fd15fd41d39bc73a7ca10d19bd">ToString</a> ()</td></tr>
-<tr class="memdesc:a335290fd15fd41d39bc73a7ca10d19bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="#a335290fd15fd41d39bc73a7ca10d19bd">More...</a><br /></td></tr>
-<tr class="separator:a335290fd15fd41d39bc73a7ca10d19bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b77cec60fe8eb8c264d7b140c7381a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01142.html#ad0b77cec60fe8eb8c264d7b140c7381a">RegisterPdxType</a> (<a class="el" href="a00382.html#a7976afcda91defe8dccb2945b71dc9c6">PdxTypeFactoryMethod</a>^ creationMethod)</td></tr>
+<tr class="memdesc:ad0b77cec60fe8eb8c264d7b140c7381a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an instance factory method for a given type.  <a href="#ad0b77cec60fe8eb8c264d7b140c7381a">More...</a><br /></td></tr>
+<tr class="separator:ad0b77cec60fe8eb8c264d7b140c7381a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea41f2e4c9cbd475b41fc7243bea144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01142.html#a2ea41f2e4c9cbd475b41fc7243bea144">RegisterType</a> (<a class="el" href="a00382.html#ab4f8e3def2c048935fa696daacaec531">TypeFactoryMethod</a>^ creationMethod, int32_t id)</td></tr>
+<tr class="memdesc:a2ea41f2e4c9cbd475b41fc7243bea144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an instance factory method for a given type.  <a href="#a2ea41f2e4c9cbd475b41fc7243bea144">More...</a><br /></td></tr>
+<tr class="separator:a2ea41f2e4c9cbd475b41fc7243bea144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a765b7fe1027fa5dc30015adc4bd9303b"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01142.html#a765b7fe1027fa5dc30015adc4bd9303b">Message</a><code> [get]</code></td></tr>
-<tr class="memdesc:a765b7fe1027fa5dc30015adc4bd9303b"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as String the Exception message returned from geode sendException api.  <a href="#a765b7fe1027fa5dc30015adc4bd9303b">More...</a><br /></td></tr>
-<tr class="separator:a765b7fe1027fa5dc30015adc4bd9303b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49005c6b80a99bed6d4840de7f0d45d"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01142.html#af49005c6b80a99bed6d4840de7f0d45d">Name</a><code> [get]</code></td></tr>
-<tr class="memdesc:af49005c6b80a99bed6d4840de7f0d45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">return as String the Exception name returned from geode sendException api.  <a href="#af49005c6b80a99bed6d4840de7f0d45d">More...</a><br /></td></tr>
-<tr class="separator:af49005c6b80a99bed6d4840de7f0d45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39a19b0a644a454457ff5e6f8484b66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00986.html">IPdxTypeMapper</a>^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01142.html#af39a19b0a644a454457ff5e6f8484b66">PdxTypeMapper</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af39a19b0a644a454457ff5e6f8484b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an PdxTypeMapper to map the local types to pdx types  <a href="#af39a19b0a644a454457ff5e6f8484b66">More...</a><br /></td></tr>
+<tr class="separator:af39a19b0a644a454457ff5e6f8484b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a01142.html" title="UserFunctionExecutionException class is used to encapsulate geode sendException in case of Function e...">UserFunctionExecutionException</a> class is used to encapsulate geode sendException in case of Function execution. </p>
+<div class="textblock"><p>Registry for custom serializable types, both PDXSerializable and DataSerializable. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a335290fd15fd41d39bc73a7ca10d19bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a335290fd15fd41d39bc73a7ca10d19bd">&#9670;&nbsp;</a></span>ToString()</h2>
+<a id="ad0b77cec60fe8eb8c264d7b140c7381a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b77cec60fe8eb8c264d7b140c7381a">&#9670;&nbsp;</a></span>RegisterPdxType()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String ^ Apache::Geode::Client::ISerializable::ToString </td>
+          <td class="memname">void Apache::Geode::Client::TypeRegistry::RegisterPdxType </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00382.html#a7976afcda91defe8dccb2945b71dc9c6">PdxTypeFactoryMethod</a>^&#160;</td>
+          <td class="paramname"><em>creationMethod</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Return a string representation of the object. </p>
+<p>Register an instance factory method for a given type. </p>
+<p>This should be used when registering types that implement <a class="el" href="a00978.html" title="When a domain class implements PdxSerializable it marks itself as a PDX.">IPdxSerializable</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">creationMethod</td><td>the creation function to register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the method is null </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implemented in <a class="el" href="a00422.html#ab8b28a924b843eefd2a668687d291d44">Apache::Geode::Client::CacheableBuiltinArray&lt; TNative, TNativePtr, TManaged, TYPEID &gt;</a>, <a class="el" href="a00422.html#ab8b28a924b843eefd2a668687d291d44">Apache::Geode::Client::CacheableBuiltinArray&lt; NativeArray, NativeArray, ManagedType, DsCode &gt;</a>, <a class="el" href="a00406.html#a3d05e2243bcdfd0e4a3ad715bc6ccc07">Apache::Geode::Client::Properties&lt; TPropKey, TPropValue &gt;</a>, <a class="el" href="a00406.html#a3d05e2243bcdfd0e4a3ad715bc6ccc07">Apache::Geode::Client::Properties&lt; String^, String^&gt;</a>, <a class="el" href="a00462.html#ad2444cf71a9a38173aceab2f04dd971b">Apache::Geode::Client::CacheableDate</a>, <a class="el" href="a00522.html#a5bbf6e7b40afcdb5f34d7c26fb14b5ca">Apache::Geode::Client::CacheableString</a>, <a class="el" href="a00526.html#a778f034e0dcec70fa8f9f18ba1546ee4">Apache::Geode::Client::CacheableStringArray</a>, <a class="el" href="a01114.html#aab399122dadac5f60090908915eb174e">Apache::Geode::Client::Serializable</a>, <a class="el" href="a00514.html#acb81de701828d0a509b62c2df1cb9be4">Apache::Geode::Client::CacheableObjectXml</a>, <a class="el" href="a00506.html#a76344b40a20a6ac6b207d71210bdc0c6">Apache::Geode::Client::CacheableObject</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; TNative, TManaged, TYPEID &gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt32, System::Int32, static_cast&lt; int8_t &gt;(DSCode::CacheableInt32)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt16, System::Int16, static_cast&lt; int8_t &gt;(DSCode::CacheableInt16)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableCharacter, Char, static_cast&lt; int8_t &gt;(DSCode::CacheableCharacter)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableFloat, Single, static_cast&lt; int8_t &gt;(DSCode::CacheableFloat)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt64, System::Int64, static_cast&lt; int8_t &gt;(DSCode::CacheableInt64)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableDouble, Double, static_cast&lt; int8_t &gt;(DSCode::CacheableDouble)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableByte, Byte, static_cast&lt; int8_t &gt;(DSCode::CacheableByte)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableBoolean, bool, static_cast&lt; int8_t &gt;(DSCode::CacheableBoolean)&gt;</a>, and <a class="el" href="a00466.html#a70b00e8aa0f34bbbbfb07aabf3c4b67a">Apache::Geode::Client::CacheableFileName</a>.</p>
+</div>
+</div>
+<a id="a2ea41f2e4c9cbd475b41fc7243bea144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea41f2e4c9cbd475b41fc7243bea144">&#9670;&nbsp;</a></span>RegisterType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Apache::Geode::Client::TypeRegistry::RegisterType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00382.html#ab4f8e3def2c048935fa696daacaec531">TypeFactoryMethod</a>^&#160;</td>
+          <td class="paramname"><em>creationMethod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register an instance factory method for a given type. </p>
+<p>This should be used when registering types that implement <a class="el" href="a01022.html" title="This interface class is the superclass of all user objects in the cache that can be serialized.">ISerializable</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">creationMethod</td><td>the creation function to register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the method is null </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00638.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if the typeId has already been registered, or there is an error in registering the type; check <code>Utils::LastError</code> for more information in the latter case. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a765b7fe1027fa5dc30015adc4bd9303b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a765b7fe1027fa5dc30015adc4bd9303b">&#9670;&nbsp;</a></span>Message</h2>
+<a id="af39a19b0a644a454457ff5e6f8484b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39a19b0a644a454457ff5e6f8484b66">&#9670;&nbsp;</a></span>PdxTypeMapper</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,43 +203,17 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String^ Apache::Geode::Client::UserFunctionExecutionException::Message</td>
+          <td class="memname"><a class="el" href="a00986.html">IPdxTypeMapper</a>^ Apache::Geode::Client::TypeRegistry::PdxTypeMapper</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>return as String the Exception message returned from geode sendException api. </p>
-<dl class="section return"><dt>Returns</dt><dd>the String Exception Message</dd></dl>
-
-</div>
-</div>
-<a id="af49005c6b80a99bed6d4840de7f0d45d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af49005c6b80a99bed6d4840de7f0d45d">&#9670;&nbsp;</a></span>Name</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::UserFunctionExecutionException::Name</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>return as String the Exception name returned from geode sendException api. </p>
-<dl class="section return"><dt>Returns</dt><dd>the String Exception Name</dd></dl>
+<p>Register an PdxTypeMapper to map the local types to pdx types </p>
 
 </div>
 </div>

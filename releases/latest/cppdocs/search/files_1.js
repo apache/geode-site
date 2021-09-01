@@ -6,7 +6,6 @@ var searchData=
   ['cacheablefilename_2ehpp',['CacheableFileName.hpp',['../a00035.html',1,'']]],
   ['cacheablekey_2ehpp',['CacheableKey.hpp',['../a00038.html',1,'']]],
   ['cacheableobjectarray_2ehpp',['CacheableObjectArray.hpp',['../a00041.html',1,'']]],
-  ['cacheablestring_2ehpp',['CacheableString.hpp',['../a00044.html',1,'']]],
   ['cacheableundefined_2ehpp',['CacheableUndefined.hpp',['../a00047.html',1,'']]],
   ['cachefactory_2ehpp',['CacheFactory.hpp',['../a00050.html',1,'']]],
   ['cachelistener_2ehpp',['CacheListener.hpp',['../a00053.html',1,'']]],

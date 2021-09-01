@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -113,7 +113,7 @@ interface Apache::Geode::Client::ICacheLoader&lt; TKey, TValue &gt;</h3>
 <p>Loaders facilitate loading of data into the cache from a third-party data source. When an application does a lookup for a key in a region and it does not exist, <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> checks to see if any loaders are available for the region in the system and invokes them to get the value for the key into the cache. </p>
 <p>A cache loader is defined in the <a class="el" href="a01010.html" title="Defines attributes for configuring a region.">RegionAttributes</a>. </p>
 <p>When Region.Get is called for a region entry that has a null value, the <a class="el" href="a00914.html#ab83b569c80f81ff132dd881e7e997590" title="Loads a value.">ICacheLoader.Load</a> method of the region's cache loader is invoked. The <code>Load</code> method creates the value for the desired key by performing an operation such as a database query. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01098.html#a9f3538bd7d5c4a885e5defc84234b0cb" title="Sets the cache loader for the RegionAttributes being created.">RegionAttributesFactory.SetCacheLoader</a>, <a class="el" href="a01010.html#aaed51d72dc1a777348e474a259ad93ff" title="Gets the cache loader for the region.">RegionAttributes.CacheLoader</a>, <a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a>, <a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01102.html#a9f3538bd7d5c4a885e5defc84234b0cb" title="Sets the cache loader for the RegionAttributes being created.">RegionAttributesFactory.SetCacheLoader</a>, <a class="el" href="a01010.html#aaed51d72dc1a777348e474a259ad93ff" title="Gets the cache loader for the region.">RegionAttributes.CacheLoader</a>, <a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a>, <a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac134d7bb955fb07205de87e3ec02e551"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac134d7bb955fb07205de87e3ec02e551">&#9670;&nbsp;</a></span>Close()</h2>

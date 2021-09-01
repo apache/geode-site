@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::FunctionService Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::ExpirationAttributes Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -87,39 +87,61 @@ $(document).ready(function(){initNavTree('a00739.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::FunctionService Class Reference</div>  </div>
+<div class="title">apache::geode::client::ExpirationAttributes Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>entry point for function execution  
+<p>Immutable parameter object for accessing and setting the attributes associated with <code>timeToLive</code> and <code>idleTimeout</code>.  
  <a href="a00739.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a824e55ef433d8c7d9cf5a7910422899c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00727.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a824e55ef433d8c7d9cf5a7910422899c">onRegion</a> (const std::shared_ptr&lt; <a class="el" href="a00815.html">Region</a> &gt; &amp;region)</td></tr>
-<tr class="memdesc:a824e55ef433d8c7d9cf5a7910422899c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data dependent function on the specified <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a>.  <a href="#a824e55ef433d8c7d9cf5a7910422899c">More...</a><br /></td></tr>
-<tr class="separator:a824e55ef433d8c7d9cf5a7910422899c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac64664e504faa87912fc9d1d9b610054"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00727.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#ac64664e504faa87912fc9d1d9b610054">onServer</a> (const std::shared_ptr&lt; <a class="el" href="a00787.html">Pool</a> &gt; &amp;pool)</td></tr>
-<tr class="memdesc:ac64664e504faa87912fc9d1d9b610054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on a server in the provided <a class="el" href="a00787.html">Pool</a>.  <a href="#ac64664e504faa87912fc9d1d9b610054">More...</a><br /></td></tr>
-<tr class="separator:ac64664e504faa87912fc9d1d9b610054"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3862a342de28eccf58c30bb676635660"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00727.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a3862a342de28eccf58c30bb676635660">onServer</a> (<a class="el" href="a00839.html">RegionService</a> &amp;regionService)</td></tr>
-<tr class="memdesc:a3862a342de28eccf58c30bb676635660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on a server where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached.  <a href="#a3862a342de28eccf58c30bb676635660">More...</a><br /></td></tr>
-<tr class="separator:a3862a342de28eccf58c30bb676635660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00727.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a0dcd8211ec15911e26aa81b645f3e4a4">onServers</a> (const std::shared_ptr&lt; <a class="el" href="a00787.html">Pool</a> &gt; &amp;pool)</td></tr>
-<tr class="memdesc:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on all the servers in the provided <a class="el" href="a00787.html">Pool</a>.  <a href="#a0dcd8211ec15911e26aa81b645f3e4a4">More...</a><br /></td></tr>
-<tr class="separator:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00727.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a89bf08f75d48e18c27b9d68ab9fe2a21">onServers</a> (<a class="el" href="a00839.html">RegionService</a> &amp;regionService)</td></tr>
-<tr class="memdesc:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on all the servers where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached.  <a href="#a89bf08f75d48e18c27b9d68ab9fe2a21">More...</a><br /></td></tr>
-<tr class="separator:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a019122fb45e7dcf8f7676e794208ea1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a019122fb45e7dcf8f7676e794208ea1a">ExpirationAttributes</a> ()</td></tr>
+<tr class="memdesc:a019122fb45e7dcf8f7676e794208ea1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">public methods  <a href="#a019122fb45e7dcf8f7676e794208ea1a">More...</a><br /></td></tr>
+<tr class="separator:a019122fb45e7dcf8f7676e794208ea1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbdf9d5c8a1aa7aba45420b72dd34e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#aebbdf9d5c8a1aa7aba45420b72dd34e9">ExpirationAttributes</a> (const std::chrono::seconds &amp;expirationTime, const <a class="el" href="a00134.html#a64074a351a25bec6bb150cd04c85352f">ExpirationAction</a> expirationAction=ExpirationAction::INVALIDATE)</td></tr>
+<tr class="memdesc:aebbdf9d5c8a1aa7aba45420b72dd34e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <code><a class="el" href="a00739.html" title="Immutable parameter object for accessing and setting the attributes associated with timeToLive and id...">ExpirationAttributes</a></code> with the specified expiration time and expiration action.  <a href="#aebbdf9d5c8a1aa7aba45420b72dd34e9">More...</a><br /></td></tr>
+<tr class="separator:aebbdf9d5c8a1aa7aba45420b72dd34e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe42fa17cbc7c0e82e75c1084b042b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134.html#a64074a351a25bec6bb150cd04c85352f">ExpirationAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#adbe42fa17cbc7c0e82e75c1084b042b5">getAction</a> () const</td></tr>
+<tr class="memdesc:adbe42fa17cbc7c0e82e75c1084b042b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the action that should take place when this value or region expires.  <a href="#adbe42fa17cbc7c0e82e75c1084b042b5">More...</a><br /></td></tr>
+<tr class="separator:adbe42fa17cbc7c0e82e75c1084b042b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c644cb846dd93ca8081b0442480d136"><td class="memItemLeft" align="right" valign="top">const std::chrono::seconds &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00739.html#a2c644cb846dd93ca8081b0442480d136">getTimeout</a> () const</td></tr>
+<tr class="memdesc:a2c644cb846dd93ca8081b0442480d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the duration before a region or value expires.  <a href="#a2c644cb846dd93ca8081b0442480d136">More...</a><br /></td></tr>
+<tr class="separator:a2c644cb846dd93ca8081b0442480d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>entry point for function execution </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a824e55ef433d8c7d9cf5a7910422899c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a824e55ef433d8c7d9cf5a7910422899c">&#9670;&nbsp;</a></span>onRegion()</h2>
+<div class="textblock"><p>Immutable parameter object for accessing and setting the attributes associated with <code>timeToLive</code> and <code>idleTimeout</code>. </p>
+<p>If the expiration action is not specified, it defaults to <code>ExpirationAction.INVALIDATE</code>. If the timeout is not specified, it defaults to zero (which means to never time out).</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00831.html" title="Creates instances of RegionAttributes.">RegionAttributesFactory</a> </dd>
+<dd>
+<a class="el" href="a00827.html" title="Defines attributes for configuring a region.">RegionAttributes</a> </dd>
+<dd>
+<a class="el" href="a00275.html" title="Supports modification of certain region attributes after the region has been created.">AttributesMutator</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a019122fb45e7dcf8f7676e794208ea1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019122fb45e7dcf8f7676e794208ea1a">&#9670;&nbsp;</a></span>ExpirationAttributes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">apache::geode::client::ExpirationAttributes::ExpirationAttributes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>public methods </p>
+<p>constructorsConstructs a default <code><a class="el" href="a00739.html" title="Immutable parameter object for accessing and setting the attributes associated with timeToLive and id...">ExpirationAttributes</a></code>, which indicates no expiration will take place. </p>
+
+</div>
+</div>
+<a id="aebbdf9d5c8a1aa7aba45420b72dd34e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebbdf9d5c8a1aa7aba45420b72dd34e9">&#9670;&nbsp;</a></span>ExpirationAttributes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,206 +150,85 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00727.html">Execution</a> apache::geode::client::FunctionService::onRegion </td>
+          <td class="memname">apache::geode::client::ExpirationAttributes::ExpirationAttributes </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00815.html">Region</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>region</em></td><td>)</td>
+          <td class="paramtype">const std::chrono::seconds &amp;&#160;</td>
+          <td class="paramname"><em>expirationTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="a00134.html#a64074a351a25bec6bb150cd04c85352f">ExpirationAction</a>&#160;</td>
+          <td class="paramname"><em>expirationAction</em> = <code>ExpirationAction::INVALIDATE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data dependent function on the specified <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a>. </p>
-<p><br />
- When invoked from a Geode client, the method returns an <a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> instance that sends a message to one of the connected servers as specified by the <a class="el" href="a00787.html">Pool</a> for the region. Depending on the filters setup on the <a class="el" href="a00727.html">Execution</a>, the function is executed on all Geode members that define the data region, or a subset of members. <a class="el" href="">Execution::withFilter(filter)</a>).</p>
+<p>Constructs an <code><a class="el" href="a00739.html" title="Immutable parameter object for accessing and setting the attributes associated with timeToLive and id...">ExpirationAttributes</a></code> with the specified expiration time and expiration action. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">region</td><td>If <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is multiusersecure mode then one need to pass nstance of <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a> from <a class="el" href="a00839.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a>.</td></tr>
+    <tr><td class="paramname">expirationTime</td><td>Duration live before it expires </td></tr>
+    <tr><td class="paramname">expirationAction</td><td>the action to take when the value expires </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the region passed in is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if expirationTime is nonpositive </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ac64664e504faa87912fc9d1d9b610054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64664e504faa87912fc9d1d9b610054">&#9670;&nbsp;</a></span>onServer() <span class="overload">[1/2]</span></h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="adbe42fa17cbc7c0e82e75c1084b042b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe42fa17cbc7c0e82e75c1084b042b5">&#9670;&nbsp;</a></span>getAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00727.html">Execution</a> apache::geode::client::FunctionService::onServer </td>
+          <td class="memname"><a class="el" href="a00134.html#a64074a351a25bec6bb150cd04c85352f">ExpirationAction</a> apache::geode::client::ExpirationAttributes::getAction </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00787.html">Pool</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>pool</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on a server in the provided <a class="el" href="a00787.html">Pool</a>. </p>
-<p>If the server goes down while dispatching or executing the function, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pool</td><td>from which to chose a server for execution </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the action that should take place when this value or region expires. </p>
+<dl class="section return"><dt>Returns</dt><dd>the action to take when expiring </dd></dl>
 
 </div>
 </div>
-<a id="a3862a342de28eccf58c30bb676635660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3862a342de28eccf58c30bb676635660">&#9670;&nbsp;</a></span>onServer() <span class="overload">[2/2]</span></h2>
+<a id="a2c644cb846dd93ca8081b0442480d136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c644cb846dd93ca8081b0442480d136">&#9670;&nbsp;</a></span>getTimeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="a00727.html">Execution</a> apache::geode::client::FunctionService::onServer </td>
+          <td class="memname">const std::chrono::seconds&amp; apache::geode::client::ExpirationAttributes::getTimeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00839.html">RegionService</a> &amp;&#160;</td>
-          <td class="paramname"><em>regionService</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on a server where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached. </p>
-<p>If the server goes down while dispatching or executing the function, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cache</td><td>cache from which to chose a server for execution </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0dcd8211ec15911e26aa81b645f3e4a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dcd8211ec15911e26aa81b645f3e4a4">&#9670;&nbsp;</a></span>onServers() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00727.html">Execution</a> apache::geode::client::FunctionService::onServers </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00787.html">Pool</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>pool</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on all the servers in the provided <a class="el" href="a00787.html">Pool</a>. </p>
-<p>If one of the servers goes down while dispatching or executing the function on the server, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pool</td><td>the set of servers to execute the function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a89bf08f75d48e18c27b9d68ab9fe2a21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bf08f75d48e18c27b9d68ab9fe2a21">&#9670;&nbsp;</a></span>onServers() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00727.html">Execution</a> apache::geode::client::FunctionService::onServers </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00839.html">RegionService</a> &amp;&#160;</td>
-          <td class="paramname"><em>regionService</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a <a class="el" href="a00727.html">Execution</a> object that can be used to execute a data independent function on all the servers where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached. </p>
-<p>If one of the servers goes down while dispatching or executing the function on the server, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cache</td><td>the <a class="el" href="a00287.html">Cache</a> where function need to execute. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00727.html" title="gathers results from function execution">Execution</a> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00787.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the duration before a region or value expires. </p>
+<dl class="section return"><dt>Returns</dt><dd>the duration before a region or value expires or zero if it will never expire </dd></dl>
 
 </div>
 </div>
