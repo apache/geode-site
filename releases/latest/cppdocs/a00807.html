@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::Query Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::Properties Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -87,40 +87,88 @@ $(document).ready(function(){initNavTree('a00807.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::Query Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::Properties Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>.  
+<p>Contains a set of (key, value) pair properties with key being the name of the property; value, the value of the property.  
  <a href="a00807.html#details">More...</a></p>
+
+<p>Inherits DataSerializablePrimitive.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3204746b2ccad832e96c211b1bb9497a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a3204746b2ccad832e96c211b1bb9497a">compile</a> ()=0</td></tr>
-<tr class="memdesc:a3204746b2ccad832e96c211b1bb9497a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile the <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> - client side query compilation is not supported.  <a href="#a3204746b2ccad832e96c211b1bb9497a">More...</a><br /></td></tr>
-<tr class="separator:a3204746b2ccad832e96c211b1bb9497a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a303f46d2be832f73fbb90096305192a1"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00851.html">SelectResults</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a303f46d2be832f73fbb90096305192a1">execute</a> (std::chrono::milliseconds timeout=DEFAULT_QUERY_RESPONSE_TIMEOUT)=0</td></tr>
-<tr class="memdesc:a303f46d2be832f73fbb90096305192a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the OQL <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results.  <a href="#a303f46d2be832f73fbb90096305192a1">More...</a><br /></td></tr>
-<tr class="separator:a303f46d2be832f73fbb90096305192a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c63cf9268acbc5e5406349de7c16c9"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00851.html">SelectResults</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a50c63cf9268acbc5e5406349de7c16c9">execute</a> (std::shared_ptr&lt; <a class="el" href="a00291.html">CacheableVector</a> &gt; paramList, std::chrono::milliseconds timeout=DEFAULT_QUERY_RESPONSE_TIMEOUT)=0</td></tr>
-<tr class="memdesc:a50c63cf9268acbc5e5406349de7c16c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the parameterized OQL <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results.  <a href="#a50c63cf9268acbc5e5406349de7c16c9">More...</a><br /></td></tr>
-<tr class="separator:a50c63cf9268acbc5e5406349de7c16c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a340733f198ec219a743368c07bc32e7d"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a340733f198ec219a743368c07bc32e7d">getQueryString</a> () const =0</td></tr>
-<tr class="memdesc:a340733f198ec219a743368c07bc32e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query string provided when a new <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a>.  <a href="#a340733f198ec219a743368c07bc32e7d">More...</a><br /></td></tr>
-<tr class="separator:a340733f198ec219a743368c07bc32e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae398308c9952ac883cc05e31efd60451"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ae398308c9952ac883cc05e31efd60451">isCompiled</a> ()=0</td></tr>
-<tr class="memdesc:ae398308c9952ac883cc05e31efd60451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is compiled - client side query compilation is not supported.  <a href="#ae398308c9952ac883cc05e31efd60451">More...</a><br /></td></tr>
-<tr class="separator:ae398308c9952ac883cc05e31efd60451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16381f8466a3934e3ff933a6a953fb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a16381f8466a3934e3ff933a6a953fb97">addAll</a> (const std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt; &amp;other)</td></tr>
+<tr class="memdesc:a16381f8466a3934e3ff933a6a953fb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the contents of other to this instance, replacing any existing values with those from other.  <a href="#a16381f8466a3934e3ff933a6a953fb97">More...</a><br /></td></tr>
+<tr class="separator:a16381f8466a3934e3ff933a6a953fb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0691cc55045e8f31807c487531923f0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00359.html">CacheableString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ae0691cc55045e8f31807c487531923f0">find</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:ae0691cc55045e8f31807c487531923f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the value for the given key, or nullptr if not found.  <a href="#ae0691cc55045e8f31807c487531923f0">More...</a><br /></td></tr>
+<tr class="separator:ae0691cc55045e8f31807c487531923f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84faa286f88c0493205a0ad43b3da1d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ad84faa286f88c0493205a0ad43b3da1d">find</a> (const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;key)</td></tr>
+<tr class="memdesc:ad84faa286f88c0493205a0ad43b3da1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the value for the given <code><a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a></code>, or nullptr if not found.  <a href="#ad84faa286f88c0493205a0ad43b3da1d">More...</a><br /></td></tr>
+<tr class="separator:ad84faa286f88c0493205a0ad43b3da1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9199d1a4b0d838ad092f75818cfe56c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ac9199d1a4b0d838ad092f75818cfe56c">foreach</a> (Visitor &amp;visitor) const</td></tr>
+<tr class="memdesc:ac9199d1a4b0d838ad092f75818cfe56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the Visitor's <code>visit( const char* key, const char* value )</code> method for each entry in the collection.  <a href="#ac9199d1a4b0d838ad092f75818cfe56c">More...</a><br /></td></tr>
+<tr class="separator:ac9199d1a4b0d838ad092f75818cfe56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4d569b61582859db3d21a7f6bd41c8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a2d4d569b61582859db3d21a7f6bd41c8">getSize</a> () const</td></tr>
+<tr class="memdesc:a2d4d569b61582859db3d21a7f6bd41c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of entries in the collection.  <a href="#a2d4d569b61582859db3d21a7f6bd41c8">More...</a><br /></td></tr>
+<tr class="separator:a2d4d569b61582859db3d21a7f6bd41c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a236cd79bd5ac2c51a3ef4107f1d8d668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a236cd79bd5ac2c51a3ef4107f1d8d668">insert</a> (std::string key, std::string value)</td></tr>
+<tr class="memdesc:a236cd79bd5ac2c51a3ef4107f1d8d668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or update the string value for key.  <a href="#a236cd79bd5ac2c51a3ef4107f1d8d668">More...</a><br /></td></tr>
+<tr class="separator:a236cd79bd5ac2c51a3ef4107f1d8d668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb49ee01207c64a3d51f88221b3e80b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#adb49ee01207c64a3d51f88221b3e80b1">insert</a> (std::string key, const int value)</td></tr>
+<tr class="memdesc:adb49ee01207c64a3d51f88221b3e80b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or update the int value for key.  <a href="#adb49ee01207c64a3d51f88221b3e80b1">More...</a><br /></td></tr>
+<tr class="separator:adb49ee01207c64a3d51f88221b3e80b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf83e86989382a1ad014a2fd688e031a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#aaf83e86989382a1ad014a2fd688e031a">insert</a> (const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;key, const std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt; &amp;value)</td></tr>
+<tr class="memdesc:aaf83e86989382a1ad014a2fd688e031a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or update Cacheable value for <a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a>.  <a href="#aaf83e86989382a1ad014a2fd688e031a">More...</a><br /></td></tr>
+<tr class="separator:aaf83e86989382a1ad014a2fd688e031a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecc905e38151a951b29d046b3ddf672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a7ecc905e38151a951b29d046b3ddf672">load</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a7ecc905e38151a951b29d046b3ddf672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read property values from a file, overriding what is currently in the properties object.  <a href="#a7ecc905e38151a951b29d046b3ddf672">More...</a><br /></td></tr>
+<tr class="separator:a7ecc905e38151a951b29d046b3ddf672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f70f7f60292a59e7d2e3d77d051a6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#a25f70f7f60292a59e7d2e3d77d051a6e">remove</a> (const std::string &amp;key)</td></tr>
+<tr class="memdesc:a25f70f7f60292a59e7d2e3d77d051a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the key from the collection.  <a href="#a25f70f7f60292a59e7d2e3d77d051a6e">More...</a><br /></td></tr>
+<tr class="separator:a25f70f7f60292a59e7d2e3d77d051a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97b8efdbdecfdb5cde21bce435d3689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ad97b8efdbdecfdb5cde21bce435d3689">remove</a> (const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;key)</td></tr>
+<tr class="memdesc:ad97b8efdbdecfdb5cde21bce435d3689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the <code><a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a></code> from the collection.  <a href="#ad97b8efdbdecfdb5cde21bce435d3689">More...</a><br /></td></tr>
+<tr class="separator:ad97b8efdbdecfdb5cde21bce435d3689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af12b14402c52a0aafcabbf9b1861806e"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#af12b14402c52a0aafcabbf9b1861806e">create</a> ()</td></tr>
+<tr class="memdesc:af12b14402c52a0aafcabbf9b1861806e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method, returns an empty collection.  <a href="#af12b14402c52a0aafcabbf9b1861806e">More...</a><br /></td></tr>
+<tr class="separator:af12b14402c52a0aafcabbf9b1861806e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2aaeaa6463f69918e482212c913d244"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00863.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00807.html#ab2aaeaa6463f69918e482212c913d244">createDeserializable</a> ()</td></tr>
+<tr class="memdesc:ab2aaeaa6463f69918e482212c913d244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an empty instance for deserialization.  <a href="#ab2aaeaa6463f69918e482212c913d244">More...</a><br /></td></tr>
+<tr class="separator:ab2aaeaa6463f69918e482212c913d244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is obtained from a <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a> which in turn is obtained from the <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a>. </p>
-<p>This can be executed to return <a class="el" href="a00851.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can be either a <a class="el" href="a00847.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00863.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>.</p>
-<p>This class is intentionally not thread-safe. So multiple threads should not operate on the same <code><a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a></code> object concurrently rather should have their own <code><a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a></code> objects. </p>
+<div class="textblock"><p>Contains a set of (key, value) pair properties with key being the name of the property; value, the value of the property. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3204746b2ccad832e96c211b1bb9497a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3204746b2ccad832e96c211b1bb9497a">&#9670;&nbsp;</a></span>compile()</h2>
+<a id="a16381f8466a3934e3ff933a6a953fb97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16381f8466a3934e3ff933a6a953fb97">&#9670;&nbsp;</a></span>addAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::addAll </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00807.html">Properties</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add the contents of other to this instance, replacing any existing values with those from other. </p>
+
+</div>
+</div>
+<a id="af12b14402c52a0aafcabbf9b1861806e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12b14402c52a0aafcabbf9b1861806e">&#9670;&nbsp;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,7 +177,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void apache::geode::client::Query::compile </td>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00807.html">Properties</a>&gt; apache::geode::client::Properties::create </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -137,23 +185,17 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Compile the <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> - client side query compilation is not supported. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>because this is not currently supported. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Factory method, returns an empty collection. </p>
 
 </div>
 </div>
-<a id="a303f46d2be832f73fbb90096305192a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a303f46d2be832f73fbb90096305192a1">&#9670;&nbsp;</a></span>execute() <span class="overload">[1/2]</span></h2>
+<a id="ab2aaeaa6463f69918e482212c913d244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2aaeaa6463f69918e482212c913d244">&#9670;&nbsp;</a></span>createDeserializable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,60 +204,131 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00851.html">SelectResults</a>&gt; apache::geode::client::Query::execute </td>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00863.html">Serializable</a>&gt; apache::geode::client::Properties::createDeserializable </td>
           <td>(</td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>DEFAULT_QUERY_RESPONSE_TIMEOUT</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Executes the OQL <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">timeout</td><td>The time to wait for query response, optional.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If timeout exceeds 2147483647ms. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00631.html" title="Thrown when query exception occurs at the server.">QueryException</a></td><td>if some query error occurred at the server. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if some error occurred. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if no java cache server is available. For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A smart pointer to the <a class="el" href="a00851.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can either be a <a class="el" href="a00847.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00863.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>. </dd></dl>
+<p>Return an empty instance for deserialization. </p>
 
 </div>
 </div>
-<a id="a50c63cf9268acbc5e5406349de7c16c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50c63cf9268acbc5e5406349de7c16c9">&#9670;&nbsp;</a></span>execute() <span class="overload">[2/2]</span></h2>
+<a id="ae0691cc55045e8f31807c487531923f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0691cc55045e8f31807c487531923f0">&#9670;&nbsp;</a></span>find() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00851.html">SelectResults</a>&gt; apache::geode::client::Query::execute </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00359.html">CacheableString</a>&gt; apache::geode::client::Properties::find </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00291.html">CacheableVector</a> &gt;&#160;</td>
-          <td class="paramname"><em>paramList</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the value for the given key, or nullptr if not found. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is null </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad84faa286f88c0493205a0ad43b3da1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84faa286f88c0493205a0ad43b3da1d">&#9670;&nbsp;</a></span>find() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="a00863.html">Cacheable</a>&gt; apache::geode::client::Properties::find </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the value for the given <code><a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a></code>, or nullptr if not found. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9199d1a4b0d838ad092f75818cfe56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9199d1a4b0d838ad092f75818cfe56c">&#9670;&nbsp;</a></span>foreach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::foreach </td>
+          <td>(</td>
+          <td class="paramtype">Visitor &amp;&#160;</td>
+          <td class="paramname"><em>visitor</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute the Visitor's <code>visit( const char* key, const char* value )</code> method for each entry in the collection. </p>
+
+</div>
+</div>
+<a id="a2d4d569b61582859db3d21a7f6bd41c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d4d569b61582859db3d21a7f6bd41c8">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t apache::geode::client::Properties::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the number of entries in the collection. </p>
+
+</div>
+</div>
+<a id="a236cd79bd5ac2c51a3ef4107f1d8d668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a236cd79bd5ac2c51a3ef4107f1d8d668">&#9670;&nbsp;</a></span>insert() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::insert </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::chrono::milliseconds&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>DEFAULT_QUERY_RESPONSE_TIMEOUT</code>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -223,88 +336,156 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Executes the parameterized OQL <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> on the cache server and returns the results. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">paramList</td><td>The query parameters list </td></tr>
-    <tr><td class="paramname">timeout</td><td>The time to wait for query response, optional.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Add or update the string value for key. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00471.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>If timeout exceeds 2147483647ms. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00631.html" title="Thrown when query exception occurs at the server.">QueryException</a></td><td>if some query error occurred at the server. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00475.html" title="Thrown when the state of cache is manipulated to be illegal.">IllegalStateException</a></td><td>if some error occurred. </td></tr>
-    <tr><td class="paramname"><a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a></td><td>if no java cache server is available. For pools configured with locators, if no locators are available, the cause of <a class="el" href="a00575.html" title="Thrown when an operation is attempted before connecting to the distributed system.">NotConnectedException</a> is set to <a class="el" href="a00683.html" title="Thrown if the No locators are active to reply for new connection.">NoAvailableLocatorsException</a>. returns A smart pointer to the <a class="el" href="a00851.html" title="A SelectResults is obtained by executing a Query on the server.">SelectResults</a> which can either be a <a class="el" href="a00847.html" title="A ResultSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">ResultSet</a> or a <a class="el" href="a00863.html" title="A StructSet may be obtained after executing a Query which is obtained from a QueryService which in tu...">StructSet</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is null </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a340733f198ec219a743368c07bc32e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a340733f198ec219a743368c07bc32e7d">&#9670;&nbsp;</a></span>getQueryString()</h2>
+<a id="adb49ee01207c64a3d51f88221b3e80b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb49ee01207c64a3d51f88221b3e80b1">&#9670;&nbsp;</a></span>insert() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::Query::getQueryString </td>
+          <td class="memname">void apache::geode::client::Properties::insert </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the query string provided when a new <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> was created from a <a class="el" href="a00811.html" title="QueryService is the class obtained from a Cache.">QueryService</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The query string. </dd></dl>
+<p>Add or update the int value for key. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is null </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae398308c9952ac883cc05e31efd60451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae398308c9952ac883cc05e31efd60451">&#9670;&nbsp;</a></span>isCompiled()</h2>
+<a id="aaf83e86989382a1ad014a2fd688e031a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf83e86989382a1ad014a2fd688e031a">&#9670;&nbsp;</a></span>insert() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool apache::geode::client::Query::isCompiled </td>
+          <td class="memname">void apache::geode::client::Properties::insert </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00863.html">Cacheable</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add or update Cacheable value for <a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a>. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is nullptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ecc905e38151a951b29d046b3ddf672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecc905e38151a951b29d046b3ddf672">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Check whether the <a class="el" href="a00807.html" title="A Query is obtained from a QueryService which in turn is obtained from the Cache.">Query</a> is compiled - client side query compilation is not supported. </p>
+<p>Read property values from a file, overriding what is currently in the properties object. </p>
+
+</div>
+</div>
+<a id="a25f70f7f60292a59e7d2e3d77d051a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f70f7f60292a59e7d2e3d77d051a6e">&#9670;&nbsp;</a></span>remove() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the key from the collection. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>because this is not currently supported. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is null </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad97b8efdbdecfdb5cde21bce435d3689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97b8efdbdecfdb5cde21bce435d3689">&#9670;&nbsp;</a></span>remove() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apache::geode::client::Properties::remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the <code><a class="el" href="a00339.html" title="Represents a cacheable key.">CacheableKey</a></code> from the collection. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the key is nullptr </td></tr>
   </table>
   </dd>
 </dl>

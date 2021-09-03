@@ -28,12 +28,10 @@ var hierarchy =
     ] ],
     [ "apache::geode::client::CqQuery", "a00415.html", null ],
     [ "apache::geode::client::CqServiceStatistics", "a00423.html", null ],
-    [ "CqState", "a00887.html", null ],
     [ "apache::geode::client::CqStatistics", "a00427.html", null ],
     [ "apache::geode::client::DataInput", "a00435.html", null ],
     [ "apache::geode::client::DataOutput", "a00439.html", null ],
     [ "apache::geode::client::Delta", "a00455.html", null ],
-    [ "DiskPolicyType", "a00891.html", null ],
     [ "apache::geode::client::EntryEvent", "a00459.html", null ],
     [ "apache::geode::client::Exception", "a00463.html", [
       [ "apache::geode::client::AllConnectionsInUseException", "a00687.html", null ],
@@ -76,6 +74,7 @@ var hierarchy =
       [ "apache::geode::client::InvalidDeltaException", "a00691.html", null ],
       [ "apache::geode::client::KeyNotFoundException", "a00695.html", null ],
       [ "apache::geode::client::LeaseExpiredException", "a00503.html", null ],
+      [ "apache::geode::client::LowMemoryException", "a00723.html", null ],
       [ "apache::geode::client::MessageException", "a00635.html", null ],
       [ "apache::geode::client::NoAvailableLocatorsException", "a00683.html", null ],
       [ "apache::geode::client::NoSystemException", "a00519.html", null ],
@@ -87,12 +86,13 @@ var hierarchy =
       [ "apache::geode::client::OutOfRangeException", "a00627.html", null ],
       [ "apache::geode::client::PutAllPartialResultException", "a00719.html", null ],
       [ "apache::geode::client::QueryException", "a00631.html", null ],
+      [ "apache::geode::client::QueryExecutionLowMemoryException", "a00727.html", null ],
       [ "apache::geode::client::RegionCreationFailedException", "a00599.html", null ],
       [ "apache::geode::client::RegionDestroyedException", "a00511.html", null ],
       [ "apache::geode::client::RegionExistsException", "a00495.html", null ],
       [ "apache::geode::client::RollbackException", "a00703.html", null ],
       [ "apache::geode::client::ShutdownFailedException", "a00619.html", null ],
-      [ "apache::geode::client::SslException", "a00723.html", null ],
+      [ "apache::geode::client::SslException", "a00731.html", null ],
       [ "apache::geode::client::StatisticsDisabledException", "a00539.html", null ],
       [ "apache::geode::client::TimeoutException", "a00487.html", null ],
       [ "apache::geode::client::TransactionDataNodeHasDepartedException", "a00711.html", null ],
@@ -102,65 +102,63 @@ var hierarchy =
       [ "apache::geode::client::UnsupportedOperationException", "a00535.html", null ],
       [ "apache::geode::client::WrongRegionScopeException", "a00591.html", null ]
     ] ],
-    [ "apache::geode::client::Execution", "a00727.html", null ],
-    [ "ExpirationAction", "a00895.html", null ],
-    [ "apache::geode::client::ExpirationAttributes", "a00731.html", null ],
-    [ "apache::geode::client::FunctionService", "a00739.html", null ],
-    [ "apache::geode::client::PartitionResolver", "a00747.html", [
-      [ "apache::geode::client::FixedPartitionResolver", "a00735.html", null ]
+    [ "apache::geode::client::Execution", "a00735.html", null ],
+    [ "apache::geode::client::ExpirationAttributes", "a00739.html", null ],
+    [ "apache::geode::client::FunctionService", "a00747.html", null ],
+    [ "apache::geode::client::PartitionResolver", "a00755.html", [
+      [ "apache::geode::client::FixedPartitionResolver", "a00743.html", null ]
     ] ],
-    [ "apache::geode::client::PdxInstanceFactory", "a00755.html", null ],
-    [ "apache::geode::client::PdxReader", "a00759.html", null ],
-    [ "apache::geode::client::PdxSerializer", "a00767.html", null ],
-    [ "apache::geode::client::PdxUnreadFields", "a00771.html", null ],
-    [ "apache::geode::client::PdxWriter", "a00779.html", null ],
-    [ "apache::geode::client::PersistenceManager", "a00783.html", null ],
-    [ "apache::geode::client::Pool", "a00787.html", null ],
-    [ "apache::geode::client::PoolFactory", "a00791.html", null ],
-    [ "apache::geode::client::PoolManager", "a00795.html", null ],
-    [ "apache::geode::client::Properties", "a00799.html", null ],
-    [ "apache::geode::client::Query", "a00807.html", null ],
-    [ "apache::geode::client::QueryService", "a00811.html", null ],
-    [ "apache::geode::client::Region", "a00815.html", null ],
-    [ "apache::geode::client::RegionAttributes", "a00819.html", null ],
-    [ "apache::geode::client::RegionAttributesFactory", "a00823.html", null ],
-    [ "apache::geode::client::RegionEntry", "a00827.html", null ],
-    [ "apache::geode::client::RegionEvent", "a00831.html", null ],
-    [ "apache::geode::client::RegionFactory", "a00835.html", null ],
-    [ "apache::geode::client::RegionService", "a00839.html", [
+    [ "apache::geode::client::PdxInstanceFactory", "a00763.html", null ],
+    [ "apache::geode::client::PdxReader", "a00767.html", null ],
+    [ "apache::geode::client::PdxSerializer", "a00775.html", null ],
+    [ "apache::geode::client::PdxUnreadFields", "a00779.html", null ],
+    [ "apache::geode::client::PdxWriter", "a00787.html", null ],
+    [ "apache::geode::client::PersistenceManager", "a00791.html", null ],
+    [ "apache::geode::client::Pool", "a00795.html", null ],
+    [ "apache::geode::client::PoolFactory", "a00799.html", null ],
+    [ "apache::geode::client::PoolManager", "a00803.html", null ],
+    [ "apache::geode::client::Properties", "a00807.html", null ],
+    [ "apache::geode::client::Query", "a00815.html", null ],
+    [ "apache::geode::client::QueryService", "a00819.html", null ],
+    [ "apache::geode::client::Region", "a00823.html", null ],
+    [ "apache::geode::client::RegionAttributes", "a00827.html", null ],
+    [ "apache::geode::client::RegionAttributesFactory", "a00831.html", null ],
+    [ "apache::geode::client::RegionEntry", "a00835.html", null ],
+    [ "apache::geode::client::RegionEvent", "a00839.html", null ],
+    [ "apache::geode::client::RegionFactory", "a00843.html", null ],
+    [ "apache::geode::client::RegionService", "a00847.html", [
       [ "apache::geode::client::AuthenticatedView", "a00279.html", null ],
-      [ "apache::geode::client::GeodeCache", "a00743.html", [
+      [ "apache::geode::client::GeodeCache", "a00751.html", [
         [ "apache::geode::client::Cache", "a00287.html", null ]
       ] ]
     ] ],
-    [ "RegionShortcut", "a00899.html", null ],
-    [ "apache::geode::client::ResultCollector", "a00843.html", null ],
-    [ "apache::geode::client::SelectResults", "a00851.html", [
+    [ "apache::geode::client::ResultCollector", "a00851.html", null ],
+    [ "apache::geode::client::SelectResults", "a00859.html", [
       [ "apache::geode::client::CqResults", "a00419.html", [
-        [ "apache::geode::client::StructSet", "a00863.html", null ]
+        [ "apache::geode::client::StructSet", "a00871.html", null ]
       ] ],
-      [ "apache::geode::client::ResultSet", "a00847.html", null ]
+      [ "apache::geode::client::ResultSet", "a00855.html", null ]
     ] ],
-    [ "apache::geode::client::Serializable", "a00855.html", [
+    [ "apache::geode::client::Serializable", "a00863.html", [
       [ "apache::geode::client::CacheableKey", "a00339.html", [
         [ "apache::geode::client::CacheableDate", "a00327.html", null ],
         [ "apache::geode::client::CacheableEnum", "a00331.html", null ],
         [ "apache::geode::client::CacheableString", "a00359.html", [
           [ "apache::geode::client::CacheableFileName", "a00335.html", null ]
         ] ],
-        [ "apache::geode::client::PdxSerializable", "a00763.html", [
-          [ "apache::geode::client::PdxInstance", "a00751.html", [
-            [ "apache::geode::client::WritablePdxInstance", "a00883.html", null ]
+        [ "apache::geode::client::PdxSerializable", "a00771.html", [
+          [ "apache::geode::client::PdxInstance", "a00759.html", [
+            [ "apache::geode::client::WritablePdxInstance", "a00891.html", null ]
           ] ],
-          [ "apache::geode::client::PdxWrapper", "a00775.html", null ]
+          [ "apache::geode::client::PdxWrapper", "a00783.html", null ]
         ] ]
       ] ],
       [ "apache::geode::client::DataSerializable", "a00447.html", null ],
-      [ "apache::geode::client::PdxSerializable", "a00763.html", null ],
-      [ "apache::geode::client::UserFunctionExecutionException", "a00879.html", null ]
+      [ "apache::geode::client::PdxSerializable", "a00771.html", null ],
+      [ "apache::geode::client::UserFunctionExecutionException", "a00887.html", null ]
     ] ],
-    [ "apache::geode::client::Struct", "a00859.html", null ],
-    [ "apache::geode::client::SystemProperties", "a00867.html", null ],
-    [ "apache::geode::client::TransactionId", "a00871.html", null ],
-    [ "apache::geode::client::TypeRegistry", "a00875.html", null ]
+    [ "apache::geode::client::Struct", "a00867.html", null ],
+    [ "apache::geode::client::SystemProperties", "a00875.html", null ],
+    [ "apache::geode::client::TransactionId", "a00879.html", null ],
+    [ "apache::geode::client::TypeRegistry", "a00883.html", null ]
 ];

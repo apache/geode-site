@@ -1,8 +1,8 @@
 var a00851 =
 [
-    [ "iterator", "a00851.html#a51a183166096893fcb16b569327c60b3", null ],
-    [ "begin", "a00851.html#a47897882766667431cdf1eebc1eb00b3", null ],
-    [ "end", "a00851.html#a626bd746b3e1919281221eb9a5f1d105", null ],
-    [ "operator[]", "a00851.html#a267694c8d139ff91b578548c907dd083", null ],
-    [ "size", "a00851.html#a8dff8beca5db847869d66d81ea7b85d4", null ]
+    [ "ResultCollector", "a00851.html#a3f2a157b14b8c21f586c2325776e6e03", null ],
+    [ "addResult", "a00851.html#adfb3fb793a4dd7fcec334a083b4f6967", null ],
+    [ "clearResults", "a00851.html#a8454297e6d0407859a1d57a6f95a5d4a", null ],
+    [ "endResults", "a00851.html#a599979d80e433a8e26fb25c29a43e0b3", null ],
+    [ "getResult", "a00851.html#a9eb6f392dcc27a6053db46bb26508b15", null ]
 ];

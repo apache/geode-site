@@ -47,7 +47,6 @@ var searchData=
   ['cqqueryexception',['CqQueryException',['../a00667.html',1,'apache::geode::client']]],
   ['cqresults',['CqResults',['../a00419.html',1,'apache::geode::client']]],
   ['cqservicestatistics',['CqServiceStatistics',['../a00423.html',1,'apache::geode::client']]],
-  ['cqstate',['CqState',['../a00887.html',1,'']]],
   ['cqstatistics',['CqStatistics',['../a00427.html',1,'apache::geode::client']]],
   ['cqstatuslistener',['CqStatusListener',['../a00431.html',1,'apache::geode::client']]]
 ];

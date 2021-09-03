@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native C++ Reference: apache::geode::client::PartitionResolver Class Reference</title>
+<title>Apache Geode Native C++ Reference: apache::geode::client::FunctionService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -87,45 +87,39 @@ $(document).ready(function(){initNavTree('a00747.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apache::geode::client::PartitionResolver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">apache::geode::client::FunctionService Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implement the <code><a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a></code> interface to enable custom partitioning on the <code>PartitionedRegion</code>.  
+<p>entry point for function execution  
  <a href="a00747.html#details">More...</a></p>
-
-<p>Inherited by <a class="el" href="a00735.html">apache::geode::client::FixedPartitionResolver</a>.</p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a68793ed428ca0d18ed5aad5bb8e00bf3">getName</a> ()</td></tr>
-<tr class="memdesc:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a>.  <a href="#a68793ed428ca0d18ed5aad5bb8e00bf3">More...</a><br /></td></tr>
-<tr class="separator:a68793ed428ca0d18ed5aad5bb8e00bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6492385156922aca28af866905e5f554"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="a00339.html">CacheableKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a6492385156922aca28af866905e5f554">getRoutingObject</a> (const <a class="el" href="a00459.html">EntryEvent</a> &amp;opDetails)=0</td></tr>
-<tr class="separator:a6492385156922aca28af866905e5f554"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4eac0ea8435f6e28ef2417e0b2cdd9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a8c4eac0ea8435f6e28ef2417e0b2cdd9">~PartitionResolver</a> ()</td></tr>
-<tr class="memdesc:a8c4eac0ea8435f6e28ef2417e0b2cdd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">public methods  <a href="#a8c4eac0ea8435f6e28ef2417e0b2cdd9">More...</a><br /></td></tr>
-<tr class="separator:a8c4eac0ea8435f6e28ef2417e0b2cdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:af201d1ddf3ff2a89924a108e047657ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#af201d1ddf3ff2a89924a108e047657ec">PartitionResolver</a> ()</td></tr>
-<tr class="memdesc:af201d1ddf3ff2a89924a108e047657ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructors  <a href="#af201d1ddf3ff2a89924a108e047657ec">More...</a><br /></td></tr>
-<tr class="separator:af201d1ddf3ff2a89924a108e047657ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a824e55ef433d8c7d9cf5a7910422899c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00735.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a824e55ef433d8c7d9cf5a7910422899c">onRegion</a> (const std::shared_ptr&lt; <a class="el" href="a00823.html">Region</a> &gt; &amp;region)</td></tr>
+<tr class="memdesc:a824e55ef433d8c7d9cf5a7910422899c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data dependent function on the specified <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a>.  <a href="#a824e55ef433d8c7d9cf5a7910422899c">More...</a><br /></td></tr>
+<tr class="separator:a824e55ef433d8c7d9cf5a7910422899c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac64664e504faa87912fc9d1d9b610054"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00735.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#ac64664e504faa87912fc9d1d9b610054">onServer</a> (const std::shared_ptr&lt; <a class="el" href="a00795.html">Pool</a> &gt; &amp;pool)</td></tr>
+<tr class="memdesc:ac64664e504faa87912fc9d1d9b610054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on a server in the provided <a class="el" href="a00795.html">Pool</a>.  <a href="#ac64664e504faa87912fc9d1d9b610054">More...</a><br /></td></tr>
+<tr class="separator:ac64664e504faa87912fc9d1d9b610054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3862a342de28eccf58c30bb676635660"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00735.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a3862a342de28eccf58c30bb676635660">onServer</a> (<a class="el" href="a00847.html">RegionService</a> &amp;regionService)</td></tr>
+<tr class="memdesc:a3862a342de28eccf58c30bb676635660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on a server where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached.  <a href="#a3862a342de28eccf58c30bb676635660">More...</a><br /></td></tr>
+<tr class="separator:a3862a342de28eccf58c30bb676635660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00735.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a0dcd8211ec15911e26aa81b645f3e4a4">onServers</a> (const std::shared_ptr&lt; <a class="el" href="a00795.html">Pool</a> &gt; &amp;pool)</td></tr>
+<tr class="memdesc:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on all the servers in the provided <a class="el" href="a00795.html">Pool</a>.  <a href="#a0dcd8211ec15911e26aa81b645f3e4a4">More...</a><br /></td></tr>
+<tr class="separator:a0dcd8211ec15911e26aa81b645f3e4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00735.html">Execution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00747.html#a89bf08f75d48e18c27b9d68ab9fe2a21">onServers</a> (<a class="el" href="a00847.html">RegionService</a> &amp;regionService)</td></tr>
+<tr class="memdesc:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on all the servers where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached.  <a href="#a89bf08f75d48e18c27b9d68ab9fe2a21">More...</a><br /></td></tr>
+<tr class="separator:a89bf08f75d48e18c27b9d68ab9fe2a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implement the <code><a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a></code> interface to enable custom partitioning on the <code>PartitionedRegion</code>. </p>
-<p>The Key class or callback arg can implement the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> interface to enable custom partitioning, or you can configure your own <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> class in partition attributes (for instance when the Key is a primitive type or String):</p><ul>
-<li>Implement the appropriate equals. For all implementations, you need to be sure to code the class equals method so it properly verifies equality for the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> implementation. This might mean verifying that class names are the same or that the returned routing objects are the same etc. When you initiate the partitioned region on multiple nodes, Geode uses the equals method to ensure you are using the same <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> implementation for all of the nodes for the region.</li>
-<li>Geode uses the routing object's hashCode to determine where the data is being managed. Say, for example, you want to colocate all Trades by month and year. The key is implemented by a TradeKey class which also implements the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a> interface:</li>
-</ul>
-<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>TradeKey <span class="keyword">implements</span> <a class="code" href="a00747.html#af201d1ddf3ff2a89924a108e047657ec">PartitionResolver</a> {</div><div class="line">  <span class="keyword">private</span> String tradeID;</div><div class="line">  <span class="keyword">private</span> Month month;</div><div class="line">  <span class="keyword">private</span> Year year;</div><div class="line"></div><div class="line">  <span class="keyword">public</span> TradingKey() { }</div><div class="line">  <span class="keyword">public</span> TradingKey(Month month, Year year) {</div><div class="line">    this.month = month;</div><div class="line">    this.year = year;</div><div class="line">  }</div><div class="line">  <span class="keyword">public</span> Serializable <a class="code" href="a00747.html#a6492385156922aca28af866905e5f554">getRoutingObject</a>(EntryOperation opDetails) {</div><div class="line">    <span class="keywordflow">return</span> this.month + this.year;</div><div class="line">  }</div><div class="line">}</div></div><!-- fragment --><p>In the example above, all trade entries with the same month and year are guaranteed to be colocated. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8c4eac0ea8435f6e28ef2417e0b2cdd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c4eac0ea8435f6e28ef2417e0b2cdd9">&#9670;&nbsp;</a></span>~PartitionResolver()</h2>
+<div class="textblock"><p>entry point for function execution </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a824e55ef433d8c7d9cf5a7910422899c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824e55ef433d8c7d9cf5a7910422899c">&#9670;&nbsp;</a></span>onRegion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,116 +128,206 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual apache::geode::client::PartitionResolver::~PartitionResolver </td>
+          <td class="memname">static <a class="el" href="a00735.html">Execution</a> apache::geode::client::FunctionService::onRegion </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00823.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>public methods </p>
-<p>destructor </p>
-
-</div>
-</div>
-<a id="af201d1ddf3ff2a89924a108e047657ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af201d1ddf3ff2a89924a108e047657ec">&#9670;&nbsp;</a></span>PartitionResolver()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">apache::geode::client::PartitionResolver::PartitionResolver </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>constructors </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a68793ed428ca0d18ed5aad5bb8e00bf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68793ed428ca0d18ed5aad5bb8e00bf3">&#9670;&nbsp;</a></span>getName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const std::string&amp; apache::geode::client::PartitionResolver::getName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the name of the <a class="el" href="a00747.html" title="Implement the PartitionResolver interface to enable custom partitioning on the PartitionedRegion.">PartitionResolver</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>String name </dd></dl>
-
-</div>
-</div>
-<a id="a6492385156922aca28af866905e5f554"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6492385156922aca28af866905e5f554">&#9670;&nbsp;</a></span>getRoutingObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="a00339.html">CacheableKey</a>&gt; apache::geode::client::PartitionResolver::getRoutingObject </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00459.html">EntryEvent</a> &amp;&#160;</td>
-          <td class="paramname"><em>opDetails</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data dependent function on the specified <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a>. </p>
+<p><br />
+ When invoked from a Geode client, the method returns an <a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> instance that sends a message to one of the connected servers as specified by the <a class="el" href="a00795.html">Pool</a> for the region. Depending on the filters setup on the <a class="el" href="a00735.html">Execution</a>, the function is executed on all Geode members that define the data region, or a subset of members. <a class="el" href="">Execution::withFilter(filter)</a>).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">opDetails</td><td>the detail of the entry event </td></tr>
+    <tr><td class="paramname">region</td><td>If <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is multiusersecure mode then one need to pass nstance of <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a> from <a class="el" href="a00847.html" title="A RegionService provides access to existing regions that exist in a Geode cache.">RegionService</a>.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">RuntimeException</td><td>- any exception thrown will terminate the operation and the exception will be passed to the calling thread. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if the region passed in is nullptr </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>object associated with entry event which allows the Partitioned <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a> to store associated data together </dd></dl>
+
+</div>
+</div>
+<a id="ac64664e504faa87912fc9d1d9b610054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64664e504faa87912fc9d1d9b610054">&#9670;&nbsp;</a></span>onServer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="a00735.html">Execution</a> apache::geode::client::FunctionService::onServer </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00795.html">Pool</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pool</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on a server in the provided <a class="el" href="a00795.html">Pool</a>. </p>
+<p>If the server goes down while dispatching or executing the function, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pool</td><td>from which to chose a server for execution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3862a342de28eccf58c30bb676635660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3862a342de28eccf58c30bb676635660">&#9670;&nbsp;</a></span>onServer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="a00735.html">Execution</a> apache::geode::client::FunctionService::onServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00847.html">RegionService</a> &amp;&#160;</td>
+          <td class="paramname"><em>regionService</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on a server where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached. </p>
+<p>If the server goes down while dispatching or executing the function, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>cache from which to chose a server for execution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0dcd8211ec15911e26aa81b645f3e4a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcd8211ec15911e26aa81b645f3e4a4">&#9670;&nbsp;</a></span>onServers() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="a00735.html">Execution</a> apache::geode::client::FunctionService::onServers </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="a00795.html">Pool</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pool</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on all the servers in the provided <a class="el" href="a00795.html">Pool</a>. </p>
+<p>If one of the servers goes down while dispatching or executing the function on the server, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pool</td><td>the set of servers to execute the function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89bf08f75d48e18c27b9d68ab9fe2a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bf08f75d48e18c27b9d68ab9fe2a21">&#9670;&nbsp;</a></span>onServers() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="a00735.html">Execution</a> apache::geode::client::FunctionService::onServers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00847.html">RegionService</a> &amp;&#160;</td>
+          <td class="paramname"><em>regionService</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a00735.html">Execution</a> object that can be used to execute a data independent function on all the servers where <a class="el" href="a00287.html" title="Caches are obtained from the create method on the CacheFactory#create class.">Cache</a> is attached. </p>
+<p>If one of the servers goes down while dispatching or executing the function on the server, an <a class="el" href="a00463.html" title="A description of an exception that occurred during a cache operation.">Exception</a> will be thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>the <a class="el" href="a00287.html">Cache</a> where function need to execute. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00735.html" title="gathers results from function execution">Execution</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00567.html" title="Thrown when a null argument is provided to a method where it is expected to be non-null.">NullPointerException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> instance passed in is nullptr </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00535.html" title="Thrown when an operation unsupported by the current configuration is attempted.">UnsupportedOperationException</a></td><td>if <a class="el" href="a00795.html" title="A pool of connections to connect from a client to a set of Geode Cache Servers.">Pool</a> is in multiusersecure Mode </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

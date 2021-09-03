@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a722438e8f9011c8943b400d726d784f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads in delta information to this object in a user-defined format.  <a href="#a722438e8f9011c8943b400d726d784f3">More...</a><br /></td></tr>
 <tr class="separator:a722438e8f9011c8943b400d726d784f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee49a30db31321cde7673481ff2f3fe5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5">hasDelta</a> () const =0</td></tr>
-<tr class="memdesc:aee49a30db31321cde7673481ff2f3fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> is invoked by Geode during <code><a class="el" href="a00815.html#a6d37f770f04349d9c06799ab2ea4329e" title="Places a new value into an entry in this region with the specified key, providing a user-defined para...">Region::put</a>( std::shared_ptr&lt;CacheableKey&gt;, std::shared_ptr&lt;Cacheable&gt; )</code> to determine if the object contains a delta.  <a href="#aee49a30db31321cde7673481ff2f3fe5">More...</a><br /></td></tr>
+<tr class="memdesc:aee49a30db31321cde7673481ff2f3fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> is invoked by Geode during <code><a class="el" href="a00823.html#a6d37f770f04349d9c06799ab2ea4329e" title="Places a new value into an entry in this region with the specified key, providing a user-defined para...">Region::put</a>( std::shared_ptr&lt;CacheableKey&gt;, std::shared_ptr&lt;Cacheable&gt; )</code> to determine if the object contains a delta.  <a href="#aee49a30db31321cde7673481ff2f3fe5">More...</a><br /></td></tr>
 <tr class="separator:aee49a30db31321cde7673481ff2f3fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa848968dd5ee554afaa0eb33537a7fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00455.html#afa848968dd5ee554afaa0eb33537a7fb">toDelta</a> (<a class="el" href="a00439.html">DataOutput</a> &amp;out) const =0</td></tr>
 <tr class="memdesc:afa848968dd5ee554afaa0eb33537a7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes out delta information to out in a user-defined format.  <a href="#afa848968dd5ee554afaa0eb33537a7fb">More...</a><br /></td></tr>
@@ -202,7 +202,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> is invoked by Geode during <code><a class="el" href="a00815.html#a6d37f770f04349d9c06799ab2ea4329e" title="Places a new value into an entry in this region with the specified key, providing a user-defined para...">Region::put</a>( std::shared_ptr&lt;CacheableKey&gt;, std::shared_ptr&lt;Cacheable&gt; )</code> to determine if the object contains a delta. </p>
+<p><code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> is invoked by Geode during <code><a class="el" href="a00823.html#a6d37f770f04349d9c06799ab2ea4329e" title="Places a new value into an entry in this region with the specified key, providing a user-defined para...">Region::put</a>( std::shared_ptr&lt;CacheableKey&gt;, std::shared_ptr&lt;Cacheable&gt; )</code> to determine if the object contains a delta. </p>
 <p>If <code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> returns true, the delta in the object is serialized by invoking <code>Delta::toDelta( DataOutput&amp; )</code>. If <code><a class="el" href="a00455.html#aee49a30db31321cde7673481ff2f3fe5" title="hasDelta( ) is invoked by Geode during Region::put( std::shared_ptr&lt;CacheableKey&gt;,...">hasDelta( )</a></code> returns false, the object is serialized by invoking <code>Cacheable::toData( DataOutput&amp; )</code>. </p>
 
 </div>

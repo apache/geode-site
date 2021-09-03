@@ -1,8 +1,14 @@
 var a00807 =
 [
-    [ "compile", "a00807.html#a3204746b2ccad832e96c211b1bb9497a", null ],
-    [ "execute", "a00807.html#a303f46d2be832f73fbb90096305192a1", null ],
-    [ "execute", "a00807.html#a50c63cf9268acbc5e5406349de7c16c9", null ],
-    [ "getQueryString", "a00807.html#a340733f198ec219a743368c07bc32e7d", null ],
-    [ "isCompiled", "a00807.html#ae398308c9952ac883cc05e31efd60451", null ]
+    [ "addAll", "a00807.html#a16381f8466a3934e3ff933a6a953fb97", null ],
+    [ "find", "a00807.html#ae0691cc55045e8f31807c487531923f0", null ],
+    [ "find", "a00807.html#ad84faa286f88c0493205a0ad43b3da1d", null ],
+    [ "foreach", "a00807.html#ac9199d1a4b0d838ad092f75818cfe56c", null ],
+    [ "getSize", "a00807.html#a2d4d569b61582859db3d21a7f6bd41c8", null ],
+    [ "insert", "a00807.html#a236cd79bd5ac2c51a3ef4107f1d8d668", null ],
+    [ "insert", "a00807.html#adb49ee01207c64a3d51f88221b3e80b1", null ],
+    [ "insert", "a00807.html#aaf83e86989382a1ad014a2fd688e031a", null ],
+    [ "load", "a00807.html#a7ecc905e38151a951b29d046b3ddf672", null ],
+    [ "remove", "a00807.html#a25f70f7f60292a59e7d2e3d77d051a6e", null ],
+    [ "remove", "a00807.html#ad97b8efdbdecfdb5cde21bce435d3689", null ]
 ];

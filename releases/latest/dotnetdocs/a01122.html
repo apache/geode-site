@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native .NET Reference: Apache::Geode::Client::Struct Class Reference</title>
+<title>Apache Geode Native .NET Reference: Apache::Geode::Client::StructSet&lt; TResult &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -90,51 +90,55 @@ $(document).ready(function(){initNavTree('a01122.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">Apache::Geode::Client::Struct Class Reference</div>  </div>
+<div class="title">Apache::Geode::Client::StructSet&lt; TResult &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulates a row of query struct set.  
+<p>Encapsulates a query struct set.  
  <a href="a01122.html#details">More...</a></p>
 
-<p>Inherits <a class="el" href="a01114.html">Apache::Geode::Client::Serializable</a>.</p>
+<p>Inherits <a class="el" href="a00582.html">Apache::Geode::Client::ICqResults&lt; TResult &gt;</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab399122dadac5f60090908915eb174e"><td class="memItemLeft" align="right" valign="top">virtual String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01114.html#aab399122dadac5f60090908915eb174e">ToString</a> () override</td></tr>
-<tr class="memdesc:aab399122dadac5f60090908915eb174e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="#aab399122dadac5f60090908915eb174e">More...</a><br /></td></tr>
-<tr class="separator:aab399122dadac5f60090908915eb174e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8249a5a1a26b608da8d67c34a8637647"><td class="memItemLeft" align="right" valign="top">virtual System::Collections::Generic::IEnumerator&lt; TResult &gt; ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a8249a5a1a26b608da8d67c34a8637647">GetEnumerator</a> ()</td></tr>
+<tr class="memdesc:a8249a5a1a26b608da8d67c34a8637647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>.  <a href="#a8249a5a1a26b608da8d67c34a8637647">More...</a><br /></td></tr>
+<tr class="separator:a8249a5a1a26b608da8d67c34a8637647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4f0e50957c0c8677592d65a80f2312"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#abf4f0e50957c0c8677592d65a80f2312">GetFieldIndex</a> (String^ fieldName)</td></tr>
+<tr class="memdesc:abf4f0e50957c0c8677592d65a80f2312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index number of the specified field name in the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>.  <a href="#abf4f0e50957c0c8677592d65a80f2312">More...</a><br /></td></tr>
+<tr class="separator:abf4f0e50957c0c8677592d65a80f2312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc0295f66a9fc7be8278d4e64d91688"><td class="memItemLeft" align="right" valign="top">String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a6bc0295f66a9fc7be8278d4e64d91688">GetFieldName</a> (int32_t index)</td></tr>
+<tr class="memdesc:a6bc0295f66a9fc7be8278d4e64d91688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field name of the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code> from the specified index number.  <a href="#a6bc0295f66a9fc7be8278d4e64d91688">More...</a><br /></td></tr>
+<tr class="separator:a6bc0295f66a9fc7be8278d4e64d91688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aeadb0e777952352dd109ffa9910b5502"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#aeadb0e777952352dd109ffa9910b5502">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:aeadb0e777952352dd109ffa9910b5502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of field values available.  <a href="#aeadb0e777952352dd109ffa9910b5502">More...</a><br /></td></tr>
-<tr class="separator:aeadb0e777952352dd109ffa9910b5502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="memItemLeft" align="right" valign="top">Object^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ac090952a8515f8d4f3aa05a6eb074cc7">Item</a><code> [get]</code></td></tr>
-<tr class="memdesc:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field value for the given index number.  <a href="#ac090952a8515f8d4f3aa05a6eb074cc7">More...</a><br /></td></tr>
-<tr class="separator:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af073822a47dac5d41afb64df6ad52fee"><td class="memItemLeft" align="right" valign="top">virtual System::UInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01114.html#af073822a47dac5d41afb64df6ad52fee">ObjectSize</a><code> [get]</code></td></tr>
-<tr class="memdesc:af073822a47dac5d41afb64df6ad52fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the size of this object in bytes  <a href="#af073822a47dac5d41afb64df6ad52fee">More...</a><br /></td></tr>
-<tr class="separator:af073822a47dac5d41afb64df6ad52fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace80a417cdad26d1708d488cb7a479bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01118.html">Apache::Geode::Client::StructSet</a>&lt; Object^&gt;^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ace80a417cdad26d1708d488cb7a479bd">Set</a><code> [get]</code></td></tr>
-<tr class="memdesc:ace80a417cdad26d1708d488cb7a479bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent <code><a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01122.html" title="Encapsulates a row of query struct set.">Struct</a></code>.  <a href="#ace80a417cdad26d1708d488cb7a479bd">More...</a><br /></td></tr>
-<tr class="separator:ace80a417cdad26d1708d488cb7a479bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaebabd2cb18901cdcf7501b68f1c7698"><td class="memItemLeft" align="right" valign="top">virtual TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#aaebabd2cb18901cdcf7501b68f1c7698">Item</a><code> [get]</code></td></tr>
+<tr class="memdesc:aaebabd2cb18901cdcf7501b68f1c7698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index operator to directly access an item in the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>.  <a href="#aaebabd2cb18901cdcf7501b68f1c7698">More...</a><br /></td></tr>
+<tr class="separator:aaebabd2cb18901cdcf7501b68f1c7698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5887bc9f1602fb8ed37b7f3239b5df47"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a5887bc9f1602fb8ed37b7f3239b5df47">Size</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5887bc9f1602fb8ed37b7f3239b5df47"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>.  <a href="#a5887bc9f1602fb8ed37b7f3239b5df47">More...</a><br /></td></tr>
+<tr class="separator:a5887bc9f1602fb8ed37b7f3239b5df47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Encapsulates a row of query struct set. </p>
-<p>A <a class="el" href="a01122.html" title="Encapsulates a row of query struct set.">Struct</a> has a <a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a> as its parent. It contains the field values returned after executing a <a class="el" href="a00586.html" title="Class to encapsulate a query.">Query</a> obtained from a <a class="el" href="a01086.html" title="Provides a query service.">QueryService</a> which in turn is obtained from a <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a>. </p>
+<div class="textblock"><h3>template&lt;class TResult&gt;<br />
+class Apache::Geode::Client::StructSet&lt; TResult &gt;</h3>
+
+<p>Encapsulates a query struct set. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aab399122dadac5f60090908915eb174e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab399122dadac5f60090908915eb174e">&#9670;&nbsp;</a></span>ToString()</h2>
+<a id="a8249a5a1a26b608da8d67c34a8637647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8249a5a1a26b608da8d67c34a8637647">&#9670;&nbsp;</a></span>GetEnumerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class TResult &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual String ^ Apache::Geode::Client::Serializable::ToString </td>
+          <td class="memname">virtual System::Collections::Generic::IEnumerator&lt;TResult&gt; ^ <a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; TResult &gt;::GetEnumerator </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -142,70 +146,42 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a string representation of the object. </p>
-<p>It simply returns the string representation of the underlying native object by calling its <code>toString()</code> function. </p>
-
-<p>Implements <a class="el" href="a01022.html#a335290fd15fd41d39bc73a7ca10d19bd">Apache::Geode::Client::ISerializable</a>.</p>
-
-<p>Reimplemented in <a class="el" href="a00522.html#a5bbf6e7b40afcdb5f34d7c26fb14b5ca">Apache::Geode::Client::CacheableString</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; TNative, TManaged, TYPEID &gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt32, System::Int32, static_cast&lt; int8_t &gt;(DSCode::CacheableInt32)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt16, System::Int16, static_cast&lt; int8_t &gt;(DSCode::CacheableInt16)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableCharacter, Char, static_cast&lt; int8_t &gt;(DSCode::CacheableCharacter)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableFloat, Single, static_cast&lt; int8_t &gt;(DSCode::CacheableFloat)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt64, System::Int64, static_cast&lt; int8_t &gt;(DSCode::CacheableInt64)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableDouble, Double, static_cast&lt; int8_t &gt;(DSCode::CacheableDouble)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableByte, Byte, static_cast&lt; int8_t &gt;(DSCode::CacheableByte)&gt;</a>, and <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableBoolean, bool, static_cast&lt; int8_t &gt;(DSCode::CacheableBoolean)&gt;</a>.</p>
+<p>Returns an enumerator that iterates through the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>System.Collections.Generic.IEnumerator</code> that can be used to iterate through the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="aeadb0e777952352dd109ffa9910b5502"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeadb0e777952352dd109ffa9910b5502">&#9670;&nbsp;</a></span>Count</h2>
+<a id="abf4f0e50957c0c8677592d65a80f2312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4f0e50957c0c8677592d65a80f2312">&#9670;&nbsp;</a></span>GetFieldIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;class TResult &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int32_t Apache::Geode::Client::Struct::Count</td>
+          <td class="memname">int32_t <a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; TResult &gt;::GetFieldIndex </td>
+          <td>(</td>
+          <td class="paramtype">String^&#160;</td>
+          <td class="paramname"><em>fieldName</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the number of field values available. </p>
-<dl class="section return"><dt>Returns</dt><dd>the number of field values available.</dd></dl>
-
-</div>
-</div>
-<a id="ac090952a8515f8d4f3aa05a6eb074cc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac090952a8515f8d4f3aa05a6eb074cc7">&#9670;&nbsp;</a></span>Item</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Object Apache::Geode::Client::Struct::Item</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the field value for the given index number. </p>
-<p>Get the field value for the given field name.</p>
-<dl class="section return"><dt>Returns</dt><dd>The value of the field or null if index is out of bounds. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the field.</dd></dl>
+<p>Get the index number of the specified field name in the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldName</td><td>the field name for which the index is required. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the index number of the specified field name.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the field name is not found. </td></tr>
@@ -215,41 +191,49 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="af073822a47dac5d41afb64df6ad52fee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af073822a47dac5d41afb64df6ad52fee">&#9670;&nbsp;</a></span>ObjectSize</h2>
+<a id="a6bc0295f66a9fc7be8278d4e64d91688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc0295f66a9fc7be8278d4e64d91688">&#9670;&nbsp;</a></span>GetFieldName()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;class TResult &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">virtual System:: UInt64 Apache::Geode::Client::Serializable::ObjectSize</td>
+          <td class="memname">String ^ <a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; TResult &gt;::GetFieldName </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>return the size of this object in bytes </p>
+<p>Get the field name of the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code> from the specified index number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index number of the field name to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the field name from the specified index number or null if not found. </dd></dl>
 
 </div>
 </div>
-<a id="ace80a417cdad26d1708d488cb7a479bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace80a417cdad26d1708d488cb7a479bd">&#9670;&nbsp;</a></span>Set</h2>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="aaebabd2cb18901cdcf7501b68f1c7698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaebabd2cb18901cdcf7501b68f1c7698">&#9670;&nbsp;</a></span>Item</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class TResult &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Apache:: Geode:: Client:: <a class="el" href="a01118.html">StructSet</a>&lt; Object^&gt;^ Apache::Geode::Client::Struct::Set</td>
+          <td class="memname">virtual TResult <a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; TResult &gt;::Item</td>
         </tr>
       </table>
   </td>
@@ -259,8 +243,41 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the parent <code><a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01122.html" title="Encapsulates a row of query struct set.">Struct</a></code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the parent <code><a class="el" href="a01118.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01122.html" title="Encapsulates a row of query struct set.">Struct</a></code>. </dd></dl>
+<p>Index operator to directly access an item in the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the index is out of bounds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Item at the given index.</dd></dl>
+
+</div>
+</div>
+<a id="a5887bc9f1602fb8ed37b7f3239b5df47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5887bc9f1602fb8ed37b7f3239b5df47">&#9670;&nbsp;</a></span>Size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class TResult &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; TResult &gt;::Size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The size of the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of items in the <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code>. </dd></dl>
 
 </div>
 </div>

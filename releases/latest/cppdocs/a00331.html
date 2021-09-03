@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('a00331.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Since C++ enums cannot be directly passed as a parameter to <a class="el" href="a00779.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a>'s writeObject and <a class="el" href="a00759.html" title="A PdxReader will be passed to PdxSerializable.fromData or during deserialization of a PDX.">PdxReader</a>'s readObject api, wrap C++ enums with an immutable wrapper <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a> class type by specifying enum class name, enum value name and its ordinal.  
+<p>Since C++ enums cannot be directly passed as a parameter to <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a>'s writeObject and <a class="el" href="a00767.html" title="A PdxReader will be passed to PdxSerializable.fromData or during deserialization of a PDX.">PdxReader</a>'s readObject api, wrap C++ enums with an immutable wrapper <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a> class type by specifying enum class name, enum value name and its ordinal.  
  <a href="a00331.html#details">More...</a></p>
 
 <p>Inherits DataSerializablePrimitive, and <a class="el" href="a00339.html">apache::geode::client::CacheableKey</a>.</p>
@@ -127,16 +127,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ade3652892e3b61b295d3b778f4a6a4be"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00331.html">CacheableEnum</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00331.html#ade3652892e3b61b295d3b778f4a6a4be">create</a> (std::string enumClassName, std::string enumName, int32_t ordinal)</td></tr>
 <tr class="memdesc:ade3652892e3b61b295d3b778f4a6a4be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method for creating an instance of <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a>.  <a href="#ade3652892e3b61b295d3b778f4a6a4be">More...</a><br /></td></tr>
 <tr class="separator:ade3652892e3b61b295d3b778f4a6a4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5f047e75f252619c340fab3c5837a17"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00855.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00331.html#ad5f047e75f252619c340fab3c5837a17">createDeserializable</a> ()</td></tr>
+<tr class="memitem:ad5f047e75f252619c340fab3c5837a17"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="a00863.html">Serializable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00331.html#ad5f047e75f252619c340fab3c5837a17">createDeserializable</a> ()</td></tr>
 <tr class="memdesc:ad5f047e75f252619c340fab3c5837a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">creation function for enum.  <a href="#ad5f047e75f252619c340fab3c5837a17">More...</a><br /></td></tr>
 <tr class="separator:ad5f047e75f252619c340fab3c5837a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Since C++ enums cannot be directly passed as a parameter to <a class="el" href="a00779.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a>'s writeObject and <a class="el" href="a00759.html" title="A PdxReader will be passed to PdxSerializable.fromData or during deserialization of a PDX.">PdxReader</a>'s readObject api, wrap C++ enums with an immutable wrapper <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a> class type by specifying enum class name, enum value name and its ordinal. </p>
-<p>C++ enum allows explicit setting of ordinal number, but it is up to the user to map java enumName with that of C++ enumName. Currently this wrapper only works as part of <a class="el" href="a00763.html" title="An interface for objects whose contents can be serialized as PDX types.">PdxSerializable</a> member object and cannot be directly used in <a class="el" href="a00815.html" title="This class manages subregions and cached data.">Region</a> operations.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00779.html#a5e2aef1a6a522842269b3aa9b1908e9a" title="Writes the named field with the given value to the serialized form.">PdxWriter::writeObject</a> </dd>
+<div class="textblock"><p>Since C++ enums cannot be directly passed as a parameter to <a class="el" href="a00787.html" title="A PdxWriter will be passed to PdxSerializable.toData when it is serializing the domain class.">PdxWriter</a>'s writeObject and <a class="el" href="a00767.html" title="A PdxReader will be passed to PdxSerializable.fromData or during deserialization of a PDX.">PdxReader</a>'s readObject api, wrap C++ enums with an immutable wrapper <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a> class type by specifying enum class name, enum value name and its ordinal. </p>
+<p>C++ enum allows explicit setting of ordinal number, but it is up to the user to map java enumName with that of C++ enumName. Currently this wrapper only works as part of <a class="el" href="a00771.html" title="An interface for objects whose contents can be serialized as PDX types.">PdxSerializable</a> member object and cannot be directly used in <a class="el" href="a00823.html" title="This class manages subregions and cached data.">Region</a> operations.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00787.html#a5e2aef1a6a522842269b3aa9b1908e9a" title="Writes the named field with the given value to the serialized form.">PdxWriter::writeObject</a> </dd>
 <dd>
-<a class="el" href="a00759.html#a3f409ec8eac96e690290af4579b6e1a3" title="Read a std::shared_ptr&lt;Cacheable&gt; value from the PdxReader.">PdxReader::readObject</a> </dd></dl>
+<a class="el" href="a00767.html#a3f409ec8eac96e690290af4579b6e1a3" title="Read a std::shared_ptr&lt;Cacheable&gt; value from the PdxReader.">PdxReader::readObject</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a562c8827c49b9808ca4a601a48b944b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a562c8827c49b9808ca4a601a48b944b6">&#9670;&nbsp;</a></span>create() <span class="overload">[1/2]</span></h2>
@@ -212,7 +212,7 @@ template&lt;class _T &gt; </div>
 <p>Factory method for creating an instance of <a class="el" href="a00331.html" title="Since C++ enums cannot be directly passed as a parameter to PdxWriter&#39;s writeObject and PdxReader&#39;s r...">CacheableEnum</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">className</td><td>the name of the enum class that maps to the java enum type. </td></tr>
+    <tr><td class="paramname">enumClassName</td><td>the name of the enum class that maps to the java enum type. </td></tr>
     <tr><td class="paramname">enumName</td><td>the name of the enum constant that maps to the java enum type. </td></tr>
     <tr><td class="paramname">ordinal</td><td>the ordinal value of the enum constant that maps to the java enum type. </td></tr>
   </table>
@@ -232,7 +232,7 @@ template&lt;class _T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00855.html">Serializable</a>&gt; apache::geode::client::CacheableEnum::createDeserializable </td>
+          <td class="memname">static std::shared_ptr&lt;<a class="el" href="a00863.html">Serializable</a>&gt; apache::geode::client::CacheableEnum::createDeserializable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -381,7 +381,7 @@ template&lt;class _T &gt; </div>
 <p>return the size in bytes of the instance being serialized. </p>
 <p>This is used to determine whether the cache is using up more physical memory than it has been configured to use. The method can return zero if the user does not require the ability to control cache memory utilization. Note that you must implement this only if you use the HeapLRU feature. </p>
 
-<p>Reimplemented from <a class="el" href="a00855.html#aa1e74dde03eb0d3fb17752bfdcd347ef">apache::geode::client::Serializable</a>.</p>
+<p>Reimplemented from <a class="el" href="a00863.html#aa1e74dde03eb0d3fb17752bfdcd347ef">apache::geode::client::Serializable</a>.</p>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ template&lt;class _T &gt; </div>
 
 <p>Display this object as c string. </p>
 
-<p>Reimplemented from <a class="el" href="a00855.html#ac7a8d506b1a6f8313302b5efd0990378">apache::geode::client::Serializable</a>.</p>
+<p>Reimplemented from <a class="el" href="a00863.html#ac7a8d506b1a6f8313302b5efd0990378">apache::geode::client::Serializable</a>.</p>
 
 </div>
 </div>

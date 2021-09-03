@@ -1,6 +1,6 @@
 var a01146 =
 [
-    [ "LoadMethod", "a01146.html#a657a1cc7b7ff5e1b16e1a92c7510f43d", null ],
-    [ "LoadMethodFrom", "a01146.html#a19473d9cf42aae27b0d7383eb3bc55d4", null ],
-    [ "LastError", "a01146.html#a31c5586fce17003ceadd586677faa13c", null ]
+    [ "ToString", "a01146.html#a335290fd15fd41d39bc73a7ca10d19bd", null ],
+    [ "Message", "a01146.html#a765b7fe1027fa5dc30015adc4bd9303b", null ],
+    [ "Name", "a01146.html#af49005c6b80a99bed6d4840de7f0d45d", null ]
 ];

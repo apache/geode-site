@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -129,7 +129,7 @@ interface Apache::Geode::Client::ICqListener&lt; TKey, TResult &gt;</h3>
 <p>A cache listener is defined in the <a class="el" href="a01010.html" title="Defines attributes for configuring a region.">RegionAttributes</a>. </p>
 <p>The methods on a <code><a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a></code> are invoked asynchronously. Multiple events can cause concurrent invocation of <code><a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a></code> methods. If event A occurs before event B, there is no guarantee that their corresponding <code><a class="el" href="a00906.html" title="An application plug-in that can be installed on a region.">ICacheListener</a></code> method invocations will occur in the same order. Any exceptions thrown by the listener are caught by <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a> and logged.</p>
 <p>Listeners are user callbacks that are invoked by <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a>. It is important to ensure that minimal work is done in the listener before returning control back to <a class="el" href="a00381.html" title="This namespace contains all the Geode .NET classes and utility classes.">Geode</a>. For example, a listener implementation may choose to hand off the event to a thread pool that then processes the event on its thread rather than the listener thread </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01098.html#aaf05127120e1fb829caf34ee24d2be6b" title="Sets the CacheListener for the RegionAttributes being created.">RegionAttributesFactory.SetCacheListener</a>, <a class="el" href="a01010.html#a6bfca4ea932b8f49f78c02b626bd868e" title="Gets the cache listener for the region.">RegionAttributes.CacheListener</a>, <a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a>, <a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a01102.html#aaf05127120e1fb829caf34ee24d2be6b" title="Sets the CacheListener for the RegionAttributes being created.">RegionAttributesFactory.SetCacheListener</a>, <a class="el" href="a01010.html#a6bfca4ea932b8f49f78c02b626bd868e" title="Gets the cache listener for the region.">RegionAttributes.CacheListener</a>, <a class="el" href="a00914.html" title="A data-loading application plug-in that can be installed on a region.">ICacheLoader</a>, <a class="el" href="a00918.html" title="An application plug-in that can be installed on a region.">ICacheWriter</a></dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0d17514f1953568e07c4f8b82967614d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d17514f1953568e07c4f8b82967614d">&#9670;&nbsp;</a></span>Close() <span class="overload">[1/2]</span></h2>

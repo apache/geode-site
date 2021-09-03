@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Apache Geode Native .NET Reference: Apache::Geode::Client::SystemProperties Class Reference</title>
+<title>Apache Geode Native .NET Reference: Apache::Geode::Client::Struct Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native .NET Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -90,137 +90,75 @@ $(document).ready(function(){initNavTree('a01126.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
-<div class="title">Apache::Geode::Client::SystemProperties Class Reference</div>  </div>
+<div class="title">Apache::Geode::Client::Struct Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A class for internal use that encapsulates the properties that can be set through <a class="el" href="a00614.html#a0e1fbe633fe9ca276d086b8917fcfb32" title="Initializes the Native Client system to be able to connect to the Geode Java servers.">DistributedSystem.Connect</a> or a geode.properties file.  
+<p>Encapsulates a row of query struct set.  
  <a href="a01126.html#details">More...</a></p>
+
+<p>Inherits <a class="el" href="a01118.html">Apache::Geode::Client::Serializable</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adacb1b5d6f8b58653847a003ea6da6d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#adacb1b5d6f8b58653847a003ea6da6d9">LogSettings</a> ()</td></tr>
-<tr class="memdesc:adacb1b5d6f8b58653847a003ea6da6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all settings to the process log.  <a href="#adacb1b5d6f8b58653847a003ea6da6d9">More...</a><br /></td></tr>
-<tr class="separator:adacb1b5d6f8b58653847a003ea6da6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab399122dadac5f60090908915eb174e"><td class="memItemLeft" align="right" valign="top">virtual String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01118.html#aab399122dadac5f60090908915eb174e">ToString</a> () override</td></tr>
+<tr class="memdesc:aab399122dadac5f60090908915eb174e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="#aab399122dadac5f60090908915eb174e">More...</a><br /></td></tr>
+<tr class="separator:aab399122dadac5f60090908915eb174e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ad1385fe85b1551993560d9029c8a35b3"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ad1385fe85b1551993560d9029c8a35b3">CacheXmlFile</a><code> [get]</code></td></tr>
-<tr class="memdesc:ad1385fe85b1551993560d9029c8a35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the "cache.xml" file.  <a href="#ad1385fe85b1551993560d9029c8a35b3">More...</a><br /></td></tr>
-<tr class="separator:ad1385fe85b1551993560d9029c8a35b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63f0bf9883db414df6138ca2849bf598"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a63f0bf9883db414df6138ca2849bf598">ConflateEvents</a><code> [get]</code></td></tr>
-<tr class="memdesc:a63f0bf9883db414df6138ca2849bf598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the conflate event's option  <a href="#a63f0bf9883db414df6138ca2849bf598">More...</a><br /></td></tr>
-<tr class="separator:a63f0bf9883db414df6138ca2849bf598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a981013e3a571de2d00a4d47b449e6483"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a981013e3a571de2d00a4d47b449e6483">ConnectTimeout</a><code> [get]</code></td></tr>
-<tr class="memdesc:a981013e3a571de2d00a4d47b449e6483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the connect timeout used for server and locator handshakes.  <a href="#a981013e3a571de2d00a4d47b449e6483">More...</a><br /></td></tr>
-<tr class="separator:a981013e3a571de2d00a4d47b449e6483"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce23229610f42db78eab2b703531b5b"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#adce23229610f42db78eab2b703531b5b">DurableClientId</a><code> [get]</code></td></tr>
-<tr class="memdesc:adce23229610f42db78eab2b703531b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the durable client's ID.  <a href="#adce23229610f42db78eab2b703531b5b">More...</a><br /></td></tr>
-<tr class="separator:adce23229610f42db78eab2b703531b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c668a79947b477a45a9a5508a1598bb"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a1c668a79947b477a45a9a5508a1598bb">DurableTimeout</a><code> [get]</code></td></tr>
-<tr class="memdesc:a1c668a79947b477a45a9a5508a1598bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the durable client's timeout.  <a href="#a1c668a79947b477a45a9a5508a1598bb">More...</a><br /></td></tr>
-<tr class="separator:a1c668a79947b477a45a9a5508a1598bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d94e2ef37fdd7d60c2b41b7101d363b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00406.html">Properties</a>&lt; String^, String^&gt;^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a5d94e2ef37fdd7d60c2b41b7101d363b">GetSecurityProperties</a><code> [get]</code></td></tr>
-<tr class="memdesc:a5d94e2ef37fdd7d60c2b41b7101d363b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all the security properties  <a href="#a5d94e2ef37fdd7d60c2b41b7101d363b">More...</a><br /></td></tr>
-<tr class="separator:a5d94e2ef37fdd7d60c2b41b7101d363b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a492f983b535fd5eae409e4f886e941f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00382.html#adbfce8e56c7ef4e4511637b4539dbcfa">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a492f983b535fd5eae409e4f886e941f6">GFLogLevel</a><code> [get]</code></td></tr>
-<tr class="memdesc:a492f983b535fd5eae409e4f886e941f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the message logging level.  <a href="#a492f983b535fd5eae409e4f886e941f6">More...</a><br /></td></tr>
-<tr class="separator:a492f983b535fd5eae409e4f886e941f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d8f6423ff38d74dd1d11b86d773ad59"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a4d8f6423ff38d74dd1d11b86d773ad59">HeapLRUDelta</a><code> [get]</code></td></tr>
-<tr class="memdesc:a4d8f6423ff38d74dd1d11b86d773ad59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the HeapLRUDelta value (a percent value).  <a href="#a4d8f6423ff38d74dd1d11b86d773ad59">More...</a><br /></td></tr>
-<tr class="separator:a4d8f6423ff38d74dd1d11b86d773ad59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5652ff4cbfd3083c9ffd511ae1dd50b4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a5652ff4cbfd3083c9ffd511ae1dd50b4">HeapLRULimit</a><code> [get]</code></td></tr>
-<tr class="memdesc:a5652ff4cbfd3083c9ffd511ae1dd50b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the HeapLRULimit value (in bytes), the maximum memory that values in a cache can use to store data before overflowing to disk or destroying entries to ensure that the server process never runs out of memory due to cache memory usage  <a href="#a5652ff4cbfd3083c9ffd511ae1dd50b4">More...</a><br /></td></tr>
-<tr class="separator:a5652ff4cbfd3083c9ffd511ae1dd50b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f776cc03f9415ad15646d03048a0cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a50f776cc03f9415ad15646d03048a0cd">HeapLRULimitEnabled</a><code> [get]</code></td></tr>
-<tr class="memdesc:a50f776cc03f9415ad15646d03048a0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a boolean that specifies if heapLRULimit has been enabled for the process.  <a href="#a50f776cc03f9415ad15646d03048a0cd">More...</a><br /></td></tr>
-<tr class="separator:a50f776cc03f9415ad15646d03048a0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e05180cf0f3eeba2e9737789e784cb"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#af1e05180cf0f3eeba2e9737789e784cb">LogDiskSpaceLimit</a><code> [get]</code></td></tr>
-<tr class="memdesc:af1e05180cf0f3eeba2e9737789e784cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum log Disk size, in bytes, or 0 if unlimited.  <a href="#af1e05180cf0f3eeba2e9737789e784cb">More...</a><br /></td></tr>
-<tr class="separator:af1e05180cf0f3eeba2e9737789e784cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cadf52efb25f0203e49e645ea6faa83"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a7cadf52efb25f0203e49e645ea6faa83">LogFileName</a><code> [get]</code></td></tr>
-<tr class="memdesc:a7cadf52efb25f0203e49e645ea6faa83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the message log file.  <a href="#a7cadf52efb25f0203e49e645ea6faa83">More...</a><br /></td></tr>
-<tr class="separator:a7cadf52efb25f0203e49e645ea6faa83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411d9ecfb39f641002b0bba4538bd00d"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a411d9ecfb39f641002b0bba4538bd00d">LogFileSizeLimit</a><code> [get]</code></td></tr>
-<tr class="memdesc:a411d9ecfb39f641002b0bba4538bd00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum log file size, in bytes, or 0 if unlimited.  <a href="#a411d9ecfb39f641002b0bba4538bd00d">More...</a><br /></td></tr>
-<tr class="separator:a411d9ecfb39f641002b0bba4538bd00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad650a6d35a4294a120b02ee523b8c985"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ad650a6d35a4294a120b02ee523b8c985">MaxSocketBufferSize</a><code> [get]</code></td></tr>
-<tr class="memdesc:ad650a6d35a4294a120b02ee523b8c985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum socket buffer size to use  <a href="#ad650a6d35a4294a120b02ee523b8c985">More...</a><br /></td></tr>
-<tr class="separator:ad650a6d35a4294a120b02ee523b8c985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a2d94bbe961f03da2f2d1c1d957d77"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#af1a2d94bbe961f03da2f2d1c1d957d77">Name</a><code> [get]</code></td></tr>
-<tr class="memdesc:af1a2d94bbe961f03da2f2d1c1d957d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the system name.  <a href="#af1a2d94bbe961f03da2f2d1c1d957d77">More...</a><br /></td></tr>
-<tr class="separator:af1a2d94bbe961f03da2f2d1c1d957d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa87a803494b7819ff61c3d2e050fd47b"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#aa87a803494b7819ff61c3d2e050fd47b">NotifyAckInterval</a><code> [get]</code></td></tr>
-<tr class="memdesc:aa87a803494b7819ff61c3d2e050fd47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the periodic notify ack interval  <a href="#aa87a803494b7819ff61c3d2e050fd47b">More...</a><br /></td></tr>
-<tr class="separator:aa87a803494b7819ff61c3d2e050fd47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5df68632e67a0053a1e25b0c01ae1a7"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ab5df68632e67a0053a1e25b0c01ae1a7">NotifyDupCheckLife</a><code> [get]</code></td></tr>
-<tr class="memdesc:ab5df68632e67a0053a1e25b0c01ae1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the expiry time of an idle event id map entry for duplicate notification checking  <a href="#ab5df68632e67a0053a1e25b0c01ae1a7">More...</a><br /></td></tr>
-<tr class="separator:ab5df68632e67a0053a1e25b0c01ae1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52733854d1cbb29256bad6f38f92e765"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a52733854d1cbb29256bad6f38f92e765">OnClientDisconnectClearPdxTypeIds</a><code> [get]</code></td></tr>
-<tr class="memdesc:a52733854d1cbb29256bad6f38f92e765"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if app want to clear pdx types ids on client disconnect  <a href="#a52733854d1cbb29256bad6f38f92e765">More...</a><br /></td></tr>
-<tr class="separator:a52733854d1cbb29256bad6f38f92e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e22cb2b08bae08012d4c4d4c7c4e081"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a7e22cb2b08bae08012d4c4d4c7c4e081">PingInterval</a><code> [get]</code></td></tr>
-<tr class="memdesc:a7e22cb2b08bae08012d4c4d4c7c4e081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the time between two consecutive ping to servers  <a href="#a7e22cb2b08bae08012d4c4d4c7c4e081">More...</a><br /></td></tr>
-<tr class="separator:a7e22cb2b08bae08012d4c4d4c7c4e081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5678020af5b45534b945d08318fa0cb"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ac5678020af5b45534b945d08318fa0cb">RedundancyMonitorInterval</a><code> [get]</code></td></tr>
-<tr class="memdesc:ac5678020af5b45534b945d08318fa0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the time between two consecutive checks for redundancy for HA  <a href="#ac5678020af5b45534b945d08318fa0cb">More...</a><br /></td></tr>
-<tr class="separator:ac5678020af5b45534b945d08318fa0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62cb0ba06becb585a9708d04c58ebc73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a62cb0ba06becb585a9708d04c58ebc73">SSLEnabled</a><code> [get]</code></td></tr>
-<tr class="memdesc:a62cb0ba06becb585a9708d04c58ebc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if ssl connection support is enabled.  <a href="#a62cb0ba06becb585a9708d04c58ebc73">More...</a><br /></td></tr>
-<tr class="separator:a62cb0ba06becb585a9708d04c58ebc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de5f1854dabc35c0d0546f90c25f2c1"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a2de5f1854dabc35c0d0546f90c25f2c1">SSLKeyStore</a><code> [get]</code></td></tr>
-<tr class="memdesc:a2de5f1854dabc35c0d0546f90c25f2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the SSL private keystore file path.  <a href="#a2de5f1854dabc35c0d0546f90c25f2c1">More...</a><br /></td></tr>
-<tr class="separator:a2de5f1854dabc35c0d0546f90c25f2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebebdfd72665c07964e1cd851a46ddfa"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#aebebdfd72665c07964e1cd851a46ddfa">SSLKeystorePassword</a><code> [get]</code></td></tr>
-<tr class="memdesc:aebebdfd72665c07964e1cd851a46ddfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the client keystore password.  <a href="#aebebdfd72665c07964e1cd851a46ddfa">More...</a><br /></td></tr>
-<tr class="separator:aebebdfd72665c07964e1cd851a46ddfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe3f0b34aeb8c92db57e4ab3925652d5"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#afe3f0b34aeb8c92db57e4ab3925652d5">SSLTrustStore</a><code> [get]</code></td></tr>
-<tr class="memdesc:afe3f0b34aeb8c92db57e4ab3925652d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the SSL public certificate trust store file path.  <a href="#afe3f0b34aeb8c92db57e4ab3925652d5">More...</a><br /></td></tr>
-<tr class="separator:afe3f0b34aeb8c92db57e4ab3925652d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c3aba98192c32b200e8b0966797db2"><td class="memItemLeft" align="right" valign="top">String^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#af3c3aba98192c32b200e8b0966797db2">StatisticsArchiveFile</a><code> [get]</code></td></tr>
-<tr class="memdesc:af3c3aba98192c32b200e8b0966797db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the statistics archive file.  <a href="#af3c3aba98192c32b200e8b0966797db2">More...</a><br /></td></tr>
-<tr class="separator:af3c3aba98192c32b200e8b0966797db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2a6504017d877c1d5df01fcf6f383e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ae2a6504017d877c1d5df01fcf6f383e5">StatisticsEnabled</a><code> [get]</code></td></tr>
-<tr class="memdesc:ae2a6504017d877c1d5df01fcf6f383e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if statistics are enabled (archived).  <a href="#ae2a6504017d877c1d5df01fcf6f383e5">More...</a><br /></td></tr>
-<tr class="separator:ae2a6504017d877c1d5df01fcf6f383e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a815a6dad231f14cd48da34adfca4f"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a23a815a6dad231f14cd48da34adfca4f">StatisticsSampleInterval</a><code> [get]</code></td></tr>
-<tr class="memdesc:a23a815a6dad231f14cd48da34adfca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sampling interval, that is, how often the statistics thread writes to disk, in seconds.  <a href="#a23a815a6dad231f14cd48da34adfca4f">More...</a><br /></td></tr>
-<tr class="separator:a23a815a6dad231f14cd48da34adfca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af007147b4c113a5ae55d719f8686885e"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#af007147b4c113a5ae55d719f8686885e">StatsDiskSpaceLimit</a><code> [get]</code></td></tr>
-<tr class="memdesc:af007147b4c113a5ae55d719f8686885e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum statistics Disk size, in bytes, or 0 if unlimited.  <a href="#af007147b4c113a5ae55d719f8686885e">More...</a><br /></td></tr>
-<tr class="separator:af007147b4c113a5ae55d719f8686885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a681e4fe631658129ab8870ba5313f24a"><td class="memItemLeft" align="right" valign="top">System::Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#a681e4fe631658129ab8870ba5313f24a">StatsFileSizeLimit</a><code> [get]</code></td></tr>
-<tr class="memdesc:a681e4fe631658129ab8870ba5313f24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum statistics file size, in bytes, or 0 if unlimited.  <a href="#a681e4fe631658129ab8870ba5313f24a">More...</a><br /></td></tr>
-<tr class="separator:a681e4fe631658129ab8870ba5313f24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff0b5437edb8e1243c6e3d9224460708"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#aff0b5437edb8e1243c6e3d9224460708">SuspendedTxTimeout</a><code> [get]</code></td></tr>
-<tr class="memdesc:aff0b5437edb8e1243c6e3d9224460708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timeout after which suspended transactions are rolled back.  <a href="#aff0b5437edb8e1243c6e3d9224460708">More...</a><br /></td></tr>
-<tr class="separator:aff0b5437edb8e1243c6e3d9224460708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeadb0e777952352dd109ffa9910b5502"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#aeadb0e777952352dd109ffa9910b5502">Count</a><code> [get]</code></td></tr>
+<tr class="memdesc:aeadb0e777952352dd109ffa9910b5502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of field values available.  <a href="#aeadb0e777952352dd109ffa9910b5502">More...</a><br /></td></tr>
+<tr class="separator:aeadb0e777952352dd109ffa9910b5502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="memItemLeft" align="right" valign="top">Object^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ac090952a8515f8d4f3aa05a6eb074cc7">Item</a><code> [get]</code></td></tr>
+<tr class="memdesc:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field value for the given index number.  <a href="#ac090952a8515f8d4f3aa05a6eb074cc7">More...</a><br /></td></tr>
+<tr class="separator:ac090952a8515f8d4f3aa05a6eb074cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af073822a47dac5d41afb64df6ad52fee"><td class="memItemLeft" align="right" valign="top">virtual System::UInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01118.html#af073822a47dac5d41afb64df6ad52fee">ObjectSize</a><code> [get]</code></td></tr>
+<tr class="memdesc:af073822a47dac5d41afb64df6ad52fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the size of this object in bytes  <a href="#af073822a47dac5d41afb64df6ad52fee">More...</a><br /></td></tr>
+<tr class="separator:af073822a47dac5d41afb64df6ad52fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace80a417cdad26d1708d488cb7a479bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01122.html">Apache::Geode::Client::StructSet</a>&lt; Object^&gt;^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01126.html#ace80a417cdad26d1708d488cb7a479bd">Set</a><code> [get]</code></td></tr>
+<tr class="memdesc:ace80a417cdad26d1708d488cb7a479bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01126.html" title="Encapsulates a row of query struct set.">Struct</a></code>.  <a href="#ace80a417cdad26d1708d488cb7a479bd">More...</a><br /></td></tr>
+<tr class="separator:ace80a417cdad26d1708d488cb7a479bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class for internal use that encapsulates the properties that can be set through <a class="el" href="a00614.html#a0e1fbe633fe9ca276d086b8917fcfb32" title="Initializes the Native Client system to be able to connect to the Geode Java servers.">DistributedSystem.Connect</a> or a geode.properties file. </p>
+<div class="textblock"><p>Encapsulates a row of query struct set. </p>
+<p>A <a class="el" href="a01126.html" title="Encapsulates a row of query struct set.">Struct</a> has a <a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a> as its parent. It contains the field values returned after executing a <a class="el" href="a00586.html" title="Class to encapsulate a query.">Query</a> obtained from a <a class="el" href="a01090.html" title="Provides a query service.">QueryService</a> which in turn is obtained from a <a class="el" href="a00410.html" title="Provides a distributed cache.">Cache</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="adacb1b5d6f8b58653847a003ea6da6d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adacb1b5d6f8b58653847a003ea6da6d9">&#9670;&nbsp;</a></span>LogSettings()</h2>
+<a id="aab399122dadac5f60090908915eb174e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab399122dadac5f60090908915eb174e">&#9670;&nbsp;</a></span>ToString()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Apache::Geode::Client::SystemProperties::LogSettings </td>
+          <td class="memname">virtual String ^ Apache::Geode::Client::Serializable::ToString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Prints all settings to the process log. </p>
+<p>Return a string representation of the object. </p>
+<p>It simply returns the string representation of the underlying native object by calling its <code>toString()</code> function. </p>
+
+<p>Implements <a class="el" href="a01022.html#a335290fd15fd41d39bc73a7ca10d19bd">Apache::Geode::Client::ISerializable</a>.</p>
+
+<p>Reimplemented in <a class="el" href="a00522.html#a5bbf6e7b40afcdb5f34d7c26fb14b5ca">Apache::Geode::Client::CacheableString</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; TNative, TManaged, TYPEID &gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt32, System::Int32, static_cast&lt; int8_t &gt;(DSCode::CacheableInt32)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt16, System::Int16, static_cast&lt; int8_t &gt;(DSCode::CacheableInt16)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableCharacter, Char, static_cast&lt; int8_t &gt;(DSCode::CacheableCharacter)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableFloat, Single, static_cast&lt; int8_t &gt;(DSCode::CacheableFloat)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableInt64, System::Int64, static_cast&lt; int8_t &gt;(DSCode::CacheableInt64)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableDouble, Double, static_cast&lt; int8_t &gt;(DSCode::CacheableDouble)&gt;</a>, <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableByte, Byte, static_cast&lt; int8_t &gt;(DSCode::CacheableByte)&gt;</a>, and <a class="el" href="a00418.html#a93998b074515d5609416e8a633e71333">Apache::Geode::Client::CacheableBuiltinKey&lt; native::CacheableBoolean, bool, static_cast&lt; int8_t &gt;(DSCode::CacheableBoolean)&gt;</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="ad1385fe85b1551993560d9029c8a35b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1385fe85b1551993560d9029c8a35b3">&#9670;&nbsp;</a></span>CacheXmlFile</h2>
+<a id="aeadb0e777952352dd109ffa9910b5502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeadb0e777952352dd109ffa9910b5502">&#9670;&nbsp;</a></span>Count</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +167,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::CacheXmlFile</td>
+          <td class="memname">int32_t Apache::Geode::Client::Struct::Count</td>
         </tr>
       </table>
   </td>
@@ -239,13 +177,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the name of the "cache.xml" file. </p>
-<dl class="section return"><dt>Returns</dt><dd>the filename</dd></dl>
+<p>Get the number of field values available. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of field values available.</dd></dl>
 
 </div>
 </div>
-<a id="a63f0bf9883db414df6138ca2849bf598"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63f0bf9883db414df6138ca2849bf598">&#9670;&nbsp;</a></span>ConflateEvents</h2>
+<a id="ac090952a8515f8d4f3aa05a6eb074cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac090952a8515f8d4f3aa05a6eb074cc7">&#9670;&nbsp;</a></span>Item</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +192,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::ConflateEvents</td>
+          <td class="memname">Object Apache::Geode::Client::Struct::Item</td>
         </tr>
       </table>
   </td>
@@ -264,13 +202,21 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the conflate event's option </p>
-<dl class="section return"><dt>Returns</dt><dd>the conflate event option</dd></dl>
+<p>Get the field value for the given index number. </p>
+<p>Get the field value for the given field name.</p>
+<dl class="section return"><dt>Returns</dt><dd>The value of the field or null if index is out of bounds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the field.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00634.html" title="Thrown when an argument to a method is illegal.">IllegalArgumentException</a></td><td>if the field name is not found. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a981013e3a571de2d00a4d47b449e6483"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a981013e3a571de2d00a4d47b449e6483">&#9670;&nbsp;</a></span>ConnectTimeout</h2>
+<a id="af073822a47dac5d41afb64df6ad52fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af073822a47dac5d41afb64df6ad52fee">&#9670;&nbsp;</a></span>ObjectSize</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +225,31 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::ConnectTimeout</td>
+          <td class="memname">virtual System:: UInt64 Apache::Geode::Client::Serializable::ObjectSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return the size of this object in bytes </p>
+
+</div>
+</div>
+<a id="ace80a417cdad26d1708d488cb7a479bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace80a417cdad26d1708d488cb7a479bd">&#9670;&nbsp;</a></span>Set</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Apache:: Geode:: Client:: <a class="el" href="a01122.html">StructSet</a>&lt; Object^&gt;^ Apache::Geode::Client::Struct::Set</td>
         </tr>
       </table>
   </td>
@@ -289,685 +259,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the connect timeout used for server and locator handshakes. </p>
-<dl class="section return"><dt>Returns</dt><dd>the connect timeout used for server and locator handshakes</dd></dl>
-
-</div>
-</div>
-<a id="adce23229610f42db78eab2b703531b5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adce23229610f42db78eab2b703531b5b">&#9670;&nbsp;</a></span>DurableClientId</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::DurableClientId</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the durable client's ID. </p>
-<dl class="section return"><dt>Returns</dt><dd>the durable client ID</dd></dl>
-
-</div>
-</div>
-<a id="a1c668a79947b477a45a9a5508a1598bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c668a79947b477a45a9a5508a1598bb">&#9670;&nbsp;</a></span>DurableTimeout</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::DurableTimeout</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the durable client's timeout. </p>
-<dl class="section return"><dt>Returns</dt><dd>the durable client timeout</dd></dl>
-
-</div>
-</div>
-<a id="a5d94e2ef37fdd7d60c2b41b7101d363b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d94e2ef37fdd7d60c2b41b7101d363b">&#9670;&nbsp;</a></span>GetSecurityProperties</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00406.html">Properties</a>&lt; String^, String^&gt;^ Apache::Geode::Client::SystemProperties::GetSecurityProperties</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all the security properties </p>
-<dl class="section return"><dt>Returns</dt><dd>the security properties</dd></dl>
-
-</div>
-</div>
-<a id="a492f983b535fd5eae409e4f886e941f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a492f983b535fd5eae409e4f886e941f6">&#9670;&nbsp;</a></span>GFLogLevel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00382.html#adbfce8e56c7ef4e4511637b4539dbcfa">LogLevel</a> Apache::Geode::Client::SystemProperties::GFLogLevel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the message logging level. </p>
-<dl class="section return"><dt>Returns</dt><dd>the log level</dd></dl>
-
-</div>
-</div>
-<a id="a4d8f6423ff38d74dd1d11b86d773ad59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d8f6423ff38d74dd1d11b86d773ad59">&#9670;&nbsp;</a></span>HeapLRUDelta</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::HeapLRUDelta</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the HeapLRUDelta value (a percent value). </p>
-<p>This specifies the percentage of entries the system will evict each time it detects that it has exceeded the HeapLRULimit. Defaults to 10% </p>
-<dl class="section return"><dt>Returns</dt><dd>the HeapLRUDelta value</dd></dl>
-
-</div>
-</div>
-<a id="a5652ff4cbfd3083c9ffd511ae1dd50b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5652ff4cbfd3083c9ffd511ae1dd50b4">&#9670;&nbsp;</a></span>HeapLRULimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t Apache::Geode::Client::SystemProperties::HeapLRULimit</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the HeapLRULimit value (in bytes), the maximum memory that values in a cache can use to store data before overflowing to disk or destroying entries to ensure that the server process never runs out of memory due to cache memory usage </p>
-<dl class="section return"><dt>Returns</dt><dd>the HeapLRULimit value</dd></dl>
-
-</div>
-</div>
-<a id="a50f776cc03f9415ad15646d03048a0cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50f776cc03f9415ad15646d03048a0cd">&#9670;&nbsp;</a></span>HeapLRULimitEnabled</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Apache::Geode::Client::SystemProperties::HeapLRULimitEnabled</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a boolean that specifies if heapLRULimit has been enabled for the process. </p>
-<p>If enabled, the HeapLRULimit specifies the maximum amount of memory that values in a cache can use to store data before overflowing to disk or destroying entries to ensure that the server process never runs out of memory </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled</dd></dl>
-
-</div>
-</div>
-<a id="af1e05180cf0f3eeba2e9737789e784cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1e05180cf0f3eeba2e9737789e784cb">&#9670;&nbsp;</a></span>LogDiskSpaceLimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::LogDiskSpaceLimit</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum log Disk size, in bytes, or 0 if unlimited. </p>
-<dl class="section return"><dt>Returns</dt><dd>the maximum limit</dd></dl>
-
-</div>
-</div>
-<a id="a7cadf52efb25f0203e49e645ea6faa83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cadf52efb25f0203e49e645ea6faa83">&#9670;&nbsp;</a></span>LogFileName</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::LogFileName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the name of the message log file. </p>
-<dl class="section return"><dt>Returns</dt><dd>the filename</dd></dl>
-
-</div>
-</div>
-<a id="a411d9ecfb39f641002b0bba4538bd00d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a411d9ecfb39f641002b0bba4538bd00d">&#9670;&nbsp;</a></span>LogFileSizeLimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::LogFileSizeLimit</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum log file size, in bytes, or 0 if unlimited. </p>
-<dl class="section return"><dt>Returns</dt><dd>the maximum limit</dd></dl>
-
-</div>
-</div>
-<a id="ad650a6d35a4294a120b02ee523b8c985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad650a6d35a4294a120b02ee523b8c985">&#9670;&nbsp;</a></span>MaxSocketBufferSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::MaxSocketBufferSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum socket buffer size to use </p>
-<dl class="section return"><dt>Returns</dt><dd>the MaxSocketBufferSize value</dd></dl>
-
-</div>
-</div>
-<a id="af1a2d94bbe961f03da2f2d1c1d957d77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1a2d94bbe961f03da2f2d1c1d957d77">&#9670;&nbsp;</a></span>Name</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::Name</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the system name. </p>
-<dl class="section return"><dt>Returns</dt><dd>the name</dd></dl>
-
-</div>
-</div>
-<a id="aa87a803494b7819ff61c3d2e050fd47b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87a803494b7819ff61c3d2e050fd47b">&#9670;&nbsp;</a></span>NotifyAckInterval</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::NotifyAckInterval</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the periodic notify ack interval </p>
-<dl class="section return"><dt>Returns</dt><dd>the NotifyAckInterval value</dd></dl>
-
-</div>
-</div>
-<a id="ab5df68632e67a0053a1e25b0c01ae1a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5df68632e67a0053a1e25b0c01ae1a7">&#9670;&nbsp;</a></span>NotifyDupCheckLife</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::NotifyDupCheckLife</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the expiry time of an idle event id map entry for duplicate notification checking </p>
-<dl class="section return"><dt>Returns</dt><dd>the NotifyDupCheckLife value</dd></dl>
-
-</div>
-</div>
-<a id="a52733854d1cbb29256bad6f38f92e765"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52733854d1cbb29256bad6f38f92e765">&#9670;&nbsp;</a></span>OnClientDisconnectClearPdxTypeIds</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Apache::Geode::Client::SystemProperties::OnClientDisconnectClearPdxTypeIds</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>True if app want to clear pdx types ids on client disconnect </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled</dd></dl>
-
-</div>
-</div>
-<a id="a7e22cb2b08bae08012d4c4d4c7c4e081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e22cb2b08bae08012d4c4d4c7c4e081">&#9670;&nbsp;</a></span>PingInterval</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::PingInterval</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the time between two consecutive ping to servers </p>
-<dl class="section return"><dt>Returns</dt><dd>the PingInterval value</dd></dl>
-
-</div>
-</div>
-<a id="ac5678020af5b45534b945d08318fa0cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5678020af5b45534b945d08318fa0cb">&#9670;&nbsp;</a></span>RedundancyMonitorInterval</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::RedundancyMonitorInterval</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the time between two consecutive checks for redundancy for HA </p>
-<dl class="section return"><dt>Returns</dt><dd>the RedundancyMonitorInterval value</dd></dl>
-
-</div>
-</div>
-<a id="a62cb0ba06becb585a9708d04c58ebc73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62cb0ba06becb585a9708d04c58ebc73">&#9670;&nbsp;</a></span>SSLEnabled</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Apache::Geode::Client::SystemProperties::SSLEnabled</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>True if ssl connection support is enabled. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled</dd></dl>
-
-</div>
-</div>
-<a id="a2de5f1854dabc35c0d0546f90c25f2c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2de5f1854dabc35c0d0546f90c25f2c1">&#9670;&nbsp;</a></span>SSLKeyStore</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::SSLKeyStore</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the SSL private keystore file path. </p>
-<dl class="section return"><dt>Returns</dt><dd>the SSL private keystore file path</dd></dl>
-
-</div>
-</div>
-<a id="aebebdfd72665c07964e1cd851a46ddfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebebdfd72665c07964e1cd851a46ddfa">&#9670;&nbsp;</a></span>SSLKeystorePassword</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::SSLKeystorePassword</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the client keystore password. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the client keystore password.</dd></dl>
-
-</div>
-</div>
-<a id="afe3f0b34aeb8c92db57e4ab3925652d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe3f0b34aeb8c92db57e4ab3925652d5">&#9670;&nbsp;</a></span>SSLTrustStore</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::SSLTrustStore</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the SSL public certificate trust store file path. </p>
-<dl class="section return"><dt>Returns</dt><dd>the SSL public certificate trust store file path</dd></dl>
-
-</div>
-</div>
-<a id="af3c3aba98192c32b200e8b0966797db2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3c3aba98192c32b200e8b0966797db2">&#9670;&nbsp;</a></span>StatisticsArchiveFile</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String^ Apache::Geode::Client::SystemProperties::StatisticsArchiveFile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the name of the statistics archive file. </p>
-<dl class="section return"><dt>Returns</dt><dd>the filename</dd></dl>
-
-</div>
-</div>
-<a id="ae2a6504017d877c1d5df01fcf6f383e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2a6504017d877c1d5df01fcf6f383e5">&#9670;&nbsp;</a></span>StatisticsEnabled</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Apache::Geode::Client::SystemProperties::StatisticsEnabled</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>True if statistics are enabled (archived). </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled</dd></dl>
-
-</div>
-</div>
-<a id="a23a815a6dad231f14cd48da34adfca4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23a815a6dad231f14cd48da34adfca4f">&#9670;&nbsp;</a></span>StatisticsSampleInterval</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::StatisticsSampleInterval</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the sampling interval, that is, how often the statistics thread writes to disk, in seconds. </p>
-<dl class="section return"><dt>Returns</dt><dd>the statistics sampling interval</dd></dl>
-
-</div>
-</div>
-<a id="af007147b4c113a5ae55d719f8686885e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af007147b4c113a5ae55d719f8686885e">&#9670;&nbsp;</a></span>StatsDiskSpaceLimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::StatsDiskSpaceLimit</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum statistics Disk size, in bytes, or 0 if unlimited. </p>
-<dl class="section return"><dt>Returns</dt><dd>the maximum limit</dd></dl>
-
-</div>
-</div>
-<a id="a681e4fe631658129ab8870ba5313f24a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681e4fe631658129ab8870ba5313f24a">&#9670;&nbsp;</a></span>StatsFileSizeLimit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">System:: Int32 Apache::Geode::Client::SystemProperties::StatsFileSizeLimit</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the maximum statistics file size, in bytes, or 0 if unlimited. </p>
-<dl class="section return"><dt>Returns</dt><dd>the maximum limit</dd></dl>
-
-</div>
-</div>
-<a id="aff0b5437edb8e1243c6e3d9224460708"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff0b5437edb8e1243c6e3d9224460708">&#9670;&nbsp;</a></span>SuspendedTxTimeout</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TimeSpan Apache::Geode::Client::SystemProperties::SuspendedTxTimeout</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the timeout after which suspended transactions are rolled back. </p>
-<dl class="section return"><dt>Returns</dt><dd>the timeout for suspended transactions</dd></dl>
+<p>Get the parent <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01126.html" title="Encapsulates a row of query struct set.">Struct</a></code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the parent <code><a class="el" href="a01122.html" title="Encapsulates a query struct set.">StructSet</a></code> of this <code><a class="el" href="a01126.html" title="Encapsulates a row of query struct set.">Struct</a></code>. </dd></dl>
 
 </div>
 </div>

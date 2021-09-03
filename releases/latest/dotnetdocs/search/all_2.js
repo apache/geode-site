@@ -2,9 +2,9 @@ var searchData=
 [
   ['add',['Add',['../a00474.html#a1fd57bfd84b9c65d5b5261aa557efcbf',1,'Apache::Geode::Client::Internal::CacheableHashSetType']]],
   ['addcqlistener',['AddCqListener',['../a00566.html#a449b853aecbb024b07882be90e8b9ec3',1,'Apache::Geode::Client::CqAttributesFactory::AddCqListener()'],['../a00574.html#ae6f9c8967183dd66230efa5b25ea8b26',1,'Apache::Geode::Client::CqAttributesMutator::AddCqListener()']]],
-  ['addlocator',['AddLocator',['../a01074.html#aa7923c47752e784d6fca709dfa0eb03a',1,'Apache::Geode::Client::PoolFactory']]],
+  ['addlocator',['AddLocator',['../a01078.html#aa7923c47752e784d6fca709dfa0eb03a',1,'Apache::Geode::Client::PoolFactory']]],
   ['addresult',['AddResult',['../a00874.html#af6e1a82feffd98f1859ed44576d00139',1,'Apache::Geode::Client::IResultCollector::AddResult()'],['../a00878.html#a68c0a773590af1326591fa32944428d0',1,'Apache::Geode::Client::ResultCollector::AddResult()']]],
-  ['addserver',['AddServer',['../a01074.html#aac1066ab48aca71ed8bb7f9e3a74b12d',1,'Apache::Geode::Client::PoolFactory']]],
+  ['addserver',['AddServer',['../a01078.html#aac1066ab48aca71ed8bb7f9e3a74b12d',1,'Apache::Geode::Client::PoolFactory']]],
   ['advancecursor',['AdvanceCursor',['../a00602.html#a2fe8940242e5b64d2befe6fbad6cd7a1',1,'Apache::Geode::Client::DataInput::AdvanceCursor()'],['../a00606.html#a3f0610d09a07bb4dbd8515f3b04ec38b',1,'Apache::Geode::Client::DataOutput::AdvanceCursor()']]],
   ['aftercreate',['AfterCreate',['../a00542.html#ad28bd3c28ac67fc35f4294c3b3165fbe',1,'Apache::Geode::Client::CacheListenerAdapter::AfterCreate()'],['../a00906.html#a66b8b2af8d0de71e0b0c383c43bc6e49',1,'Apache::Geode::Client::ICacheListener::AfterCreate()']]],
   ['afterdestroy',['AfterDestroy',['../a00542.html#af9643635661645e89a27205fa34c5321',1,'Apache::Geode::Client::CacheListenerAdapter::AfterDestroy()'],['../a00906.html#a5127c94ebd1650b787824ed6b6b1e3c6',1,'Apache::Geode::Client::ICacheListener::AfterDestroy()']]],

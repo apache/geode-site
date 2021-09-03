@@ -5,7 +5,6 @@ var searchData=
   ['entryexistsexception',['EntryExistsException',['../a00571.html',1,'apache::geode::client']]],
   ['entrynotfoundexception',['EntryNotFoundException',['../a00555.html',1,'apache::geode::client']]],
   ['exception',['Exception',['../a00463.html',1,'apache::geode::client']]],
-  ['execution',['Execution',['../a00727.html',1,'apache::geode::client']]],
-  ['expirationaction',['ExpirationAction',['../a00895.html',1,'']]],
-  ['expirationattributes',['ExpirationAttributes',['../a00731.html',1,'apache::geode::client']]]
+  ['execution',['Execution',['../a00735.html',1,'apache::geode::client']]],
+  ['expirationattributes',['ExpirationAttributes',['../a00739.html',1,'apache::geode::client']]]
 ];

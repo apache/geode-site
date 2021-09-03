@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Apache Geode Native C++ Reference
-   &#160;<span id="projectnumber">1.13.4</span>
+   &#160;<span id="projectnumber">1.14.0</span>
    </div>
   </td>
  </tr>
@@ -97,22 +97,22 @@ $(document).ready(function(){initNavTree('a00339.html','');});
 <p>Represents a cacheable key.  
  <a href="a00339.html#details">More...</a></p>
 
-<p>Inherits <a class="el" href="a00855.html">apache::geode::client::Serializable</a>.</p>
+<p>Inherits <a class="el" href="a00863.html">apache::geode::client::Serializable</a>.</p>
 
-<p>Inherited by <a class="el" href="a00327.html">apache::geode::client::CacheableDate</a>, <a class="el" href="a00331.html">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00359.html">apache::geode::client::CacheableString</a>, and <a class="el" href="a00763.html">apache::geode::client::PdxSerializable</a><code> [virtual]</code>.</p>
+<p>Inherited by <a class="el" href="a00327.html">apache::geode::client::CacheableDate</a>, <a class="el" href="a00331.html">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00359.html">apache::geode::client::CacheableString</a>, and <a class="el" href="a00771.html">apache::geode::client::PdxSerializable</a><code> [virtual]</code>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aff9da784fe4916ea44340e247e0a0bb3"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00339.html#aff9da784fe4916ea44340e247e0a0bb3">hashcode</a> () const =0</td></tr>
 <tr class="memdesc:aff9da784fe4916ea44340e247e0a0bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the hashcode for this key.  <a href="#aff9da784fe4916ea44340e247e0a0bb3">More...</a><br /></td></tr>
 <tr class="separator:aff9da784fe4916ea44340e247e0a0bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00855.html#aa1e74dde03eb0d3fb17752bfdcd347ef">objectSize</a> () const</td></tr>
+<tr class="memitem:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#aa1e74dde03eb0d3fb17752bfdcd347ef">objectSize</a> () const</td></tr>
 <tr class="memdesc:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the size in bytes of the instance being serialized.  <a href="#aa1e74dde03eb0d3fb17752bfdcd347ef">More...</a><br /></td></tr>
 <tr class="separator:aa1e74dde03eb0d3fb17752bfdcd347ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a508b0eef9d80aeda9edf877880c0705f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00339.html#a508b0eef9d80aeda9edf877880c0705f">operator==</a> (const <a class="el" href="a00339.html">CacheableKey</a> &amp;other) const =0</td></tr>
 <tr class="memdesc:a508b0eef9d80aeda9edf877880c0705f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return true if this key matches other.  <a href="#a508b0eef9d80aeda9edf877880c0705f">More...</a><br /></td></tr>
 <tr class="separator:a508b0eef9d80aeda9edf877880c0705f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7a8d506b1a6f8313302b5efd0990378"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00855.html#ac7a8d506b1a6f8313302b5efd0990378">toString</a> () const</td></tr>
+<tr class="memitem:ac7a8d506b1a6f8313302b5efd0990378"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ac7a8d506b1a6f8313302b5efd0990378">toString</a> () const</td></tr>
 <tr class="memdesc:ac7a8d506b1a6f8313302b5efd0990378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display this object as 'string', which depends on the implementation in the subclasses.  <a href="#ac7a8d506b1a6f8313302b5efd0990378">More...</a><br /></td></tr>
 <tr class="separator:ac7a8d506b1a6f8313302b5efd0990378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -182,7 +182,7 @@ template&lt;class _T &gt; </div>
 
 <p>return the hashcode for this key. </p>
 
-<p>Implemented in <a class="el" href="a00751.html#a5d7cd1603dcb22930cf0c3d32abe4c70">apache::geode::client::PdxInstance</a>, <a class="el" href="a00331.html#ad6a736e27c0d1baf0dae9d0851b2f77d">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00327.html#abd5c98fe3eddaa9e7d77b23ef1462037">apache::geode::client::CacheableDate</a>, <a class="el" href="a00359.html#a7b299408c2cdee9f3944f671eb4a06c8">apache::geode::client::CacheableString</a>, <a class="el" href="a00335.html#a6ca45b3ae98f82e8ba9decdd9bca5659">apache::geode::client::CacheableFileName</a>, <a class="el" href="a00775.html#a1c2b24f33cd3b6b3a16ffab25aa9af28">apache::geode::client::PdxWrapper</a>, and <a class="el" href="a00763.html#a68fb65d907f98893391d0c46c7685f22">apache::geode::client::PdxSerializable</a>.</p>
+<p>Implemented in <a class="el" href="a00759.html#a5d7cd1603dcb22930cf0c3d32abe4c70">apache::geode::client::PdxInstance</a>, <a class="el" href="a00331.html#ad6a736e27c0d1baf0dae9d0851b2f77d">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00327.html#abd5c98fe3eddaa9e7d77b23ef1462037">apache::geode::client::CacheableDate</a>, <a class="el" href="a00359.html#a7b299408c2cdee9f3944f671eb4a06c8">apache::geode::client::CacheableString</a>, <a class="el" href="a00335.html#a6ca45b3ae98f82e8ba9decdd9bca5659">apache::geode::client::CacheableFileName</a>, <a class="el" href="a00783.html#a1c2b24f33cd3b6b3a16ffab25aa9af28">apache::geode::client::PdxWrapper</a>, and <a class="el" href="a00771.html#a68fb65d907f98893391d0c46c7685f22">apache::geode::client::PdxSerializable</a>.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ template&lt;class _T &gt; </div>
 <p>return the size in bytes of the instance being serialized. </p>
 <p>This is used to determine whether the cache is using up more physical memory than it has been configured to use. The method can return zero if the user does not require the ability to control cache memory utilization. Note that you must implement this only if you use the HeapLRU feature. </p>
 
-<p>Reimplemented in <a class="el" href="a00751.html#a147bbc2fa40218981d1e4c9a0eaed512">apache::geode::client::PdxInstance</a>, <a class="el" href="a00359.html#afaac3e6c0601e799b224243dd293a50d">apache::geode::client::CacheableString</a>, <a class="el" href="a00331.html#a7eaa7d097c0761ea913ead9f3817ba6d">apache::geode::client::CacheableEnum</a>, and <a class="el" href="a00327.html#ae5c6cd45fdfc3c547899456cb6f4c129">apache::geode::client::CacheableDate</a>.</p>
+<p>Reimplemented in <a class="el" href="a00759.html#a147bbc2fa40218981d1e4c9a0eaed512">apache::geode::client::PdxInstance</a>, <a class="el" href="a00359.html#afaac3e6c0601e799b224243dd293a50d">apache::geode::client::CacheableString</a>, <a class="el" href="a00331.html#a7eaa7d097c0761ea913ead9f3817ba6d">apache::geode::client::CacheableEnum</a>, and <a class="el" href="a00327.html#ae5c6cd45fdfc3c547899456cb6f4c129">apache::geode::client::CacheableDate</a>.</p>
 
 </div>
 </div>
@@ -242,7 +242,7 @@ template&lt;class _T &gt; </div>
 
 <p>return true if this key matches other. </p>
 
-<p>Implemented in <a class="el" href="a00751.html#a00654c7ddd97e35970bac9d8fa92c8b6">apache::geode::client::PdxInstance</a>, <a class="el" href="a00331.html#a54e2d72daaf3fa662be9642262565c1a">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00327.html#a163129601ba9f5e6a6d8b5529b42dd66">apache::geode::client::CacheableDate</a>, <a class="el" href="a00359.html#ad017884259abbca42deb80ae3a4c640c">apache::geode::client::CacheableString</a>, <a class="el" href="a00775.html#aaef3ddf82d18e028bd16afacd1dcd886">apache::geode::client::PdxWrapper</a>, and <a class="el" href="a00763.html#ab8fb2a61f8b949dd511efb60a08d2950">apache::geode::client::PdxSerializable</a>.</p>
+<p>Implemented in <a class="el" href="a00759.html#a00654c7ddd97e35970bac9d8fa92c8b6">apache::geode::client::PdxInstance</a>, <a class="el" href="a00331.html#a54e2d72daaf3fa662be9642262565c1a">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00327.html#a163129601ba9f5e6a6d8b5529b42dd66">apache::geode::client::CacheableDate</a>, <a class="el" href="a00359.html#ad017884259abbca42deb80ae3a4c640c">apache::geode::client::CacheableString</a>, <a class="el" href="a00783.html#aaef3ddf82d18e028bd16afacd1dcd886">apache::geode::client::PdxWrapper</a>, and <a class="el" href="a00771.html#ab8fb2a61f8b949dd511efb60a08d2950">apache::geode::client::PdxSerializable</a>.</p>
 
 </div>
 </div>
@@ -272,7 +272,7 @@ template&lt;class _T &gt; </div>
 <p>Display this object as 'string', which depends on the implementation in the subclasses. </p>
 <p>The default implementation renders the classname. </p>
 
-<p>Reimplemented in <a class="el" href="a00751.html#a21a4f63885e135d281474d09f33023d8">apache::geode::client::PdxInstance</a>, <a class="el" href="a00359.html#a1c6d6fa313cc22a6b00e6e6d8b6399a1">apache::geode::client::CacheableString</a>, <a class="el" href="a00327.html#a07d857d6f3682e03ca05c92d42852a10">apache::geode::client::CacheableDate</a>, <a class="el" href="a00331.html#adeb7927b785a0b7c6e2e7206dcf63292">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00775.html#a59316ed8601f54dfc1a0d71795d09ac4">apache::geode::client::PdxWrapper</a>, <a class="el" href="a00879.html#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">apache::geode::client::UserFunctionExecutionException</a>, and <a class="el" href="a00763.html#a0bf1fbe334bc15e8869fbb33decfc8aa">apache::geode::client::PdxSerializable</a>.</p>
+<p>Reimplemented in <a class="el" href="a00759.html#a21a4f63885e135d281474d09f33023d8">apache::geode::client::PdxInstance</a>, <a class="el" href="a00327.html#a07d857d6f3682e03ca05c92d42852a10">apache::geode::client::CacheableDate</a>, <a class="el" href="a00359.html#a1c6d6fa313cc22a6b00e6e6d8b6399a1">apache::geode::client::CacheableString</a>, <a class="el" href="a00331.html#adeb7927b785a0b7c6e2e7206dcf63292">apache::geode::client::CacheableEnum</a>, <a class="el" href="a00783.html#a59316ed8601f54dfc1a0d71795d09ac4">apache::geode::client::PdxWrapper</a>, <a class="el" href="a00887.html#a928d2aa4a8a1f466f6f06ec7fa7d1f7d">apache::geode::client::UserFunctionExecutionException</a>, and <a class="el" href="a00771.html#a0bf1fbe334bc15e8869fbb33decfc8aa">apache::geode::client::PdxSerializable</a>.</p>
 
 </div>
 </div>
