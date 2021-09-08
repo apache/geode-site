@@ -279,17 +279,17 @@ limitations under the License.
 
 <p>You can register interest for specific entry keys or for all keys. Regular expressions can be used to register interest for keys whose strings match the expression. You can also unregister interest for specific keys, groups of keys based on regular expressions, or for all keys.</p>
 
-<p><strong>Note:</strong> Interest registration and unregistration are symmetrical operations. Consequently, you cannot register interest in all keys and then unregister interest in a specific set of keys. Also, if you first register interest in specific keys with <code>registerKeys</code>, then call <code>registerAllKeys</code>, you must call <code>unregisterAllKeys</code> before specifying interest in specific keys again.</p>
+<p><strong>Note:</strong> Interest registration and unregistration are symmetrical operations. Consequently, you cannot register interest in all keys and then unregister interest in a specific set of keys. Also, if you first register interest in specific keys with <code>RegisterKeys</code>, then call <code>RegisterAllKeys</code>, you must call <code>UnregisterAllKeys</code> before specifying interest in specific keys again.</p>
 
 <h2 id="client-api-for-registering-interest"><a id="registering-interest-for-entries__section_C9A3D7F193B24ACD83B2D67813E596A0" class="no-quick-link"></a>Client API for Registering Interest</h2>
 
 <p>You register client interest through the .NET API. The .NET API provides the <code>RegisterKeys</code>, <code>RegisterAllKeys</code>, and <code>RegisterRegex</code> methods, with corresponding unregistration accomplished using the <code>UnregisterKeys</code>, <code>UnregisterAllKeys</code>, and <code>UnregisterRegex</code> methods.</p>
 
-<p>The <code>registerKeys</code>, <code>registerRegex</code> and <code>registerAllKeys</code> methods have the option to populate the cache with the registration results from the server. The <code>registerRegex</code> and <code>registerAllKeys</code> methods can also optionally return the current list of keys registered on the server.</p>
+<p>The <code>RegisterKeys</code>, <code>RegisterRegex</code> and <code>RegisterAllKeys</code> methods have the option to populate the cache with the registration results from the server. The <code>RegisterRegex</code> and <code>RegisterAllKeys</code> methods can also optionally return the current list of keys registered on the server.</p>
 
 <h2 id="setting-up-client-notification"><a id="registering-interest-for-entries__section_C1A3F89EE73448D7AFF2076F41848F55" class="no-quick-link"></a>Setting Up Client Notification</h2>
 
-<p>In addition to the programmatic function calls, to register interest for a server region and receive updated entries you need to configure the region with the <code>PROXY</code> or <code>CACHING_PROXY RegionShortcut</code> setting. The region&rsquo;s pool should have <code>subscription-enabled=true</code> set either in the client XML or programmatically via a <code>CacheFactory::setSubscriptionEnabled(true)</code> API call. Otherwise, when you register interest, you will get an <code>UnsupportedOperationException</code>.</p>
+<p>In addition to the programmatic function calls, to register interest for a server region and receive updated entries you need to configure the region with the <code>PROXY</code> or <code>CACHING_PROXY RegionShortcut</code> setting. The region&rsquo;s pool should have <code>subscription-enabled=true</code> set either in the client XML or programmatically via a <code>CacheFactory::SetSubscriptionEnabled(true)</code> API call. Otherwise, when you register interest, you will get an <code>UnsupportedOperationException</code>.</p>
 <pre class="highlight plaintext"><code>&lt;region name="listenerWriterLoader" refid="CACHING_PROXY"&gt;
    ... 
 </code></pre>
@@ -298,48 +298,48 @@ limitations under the License.
 
 <p><strong>Notification Sequence</strong></p>
 
-<p>Notifications invoke <code>CacheListeners</code> of cacheless clients in all cases for keys that have been registered on the server. Similarly, invalidates received from the server invoke <code>CacheListeners</code> of cacheless clients.</p>
+<p>Notifications invoke <code>CacheListeners</code> of cacheless clients in all cases for keys that have been registered on the server. Similarly, Invalidate events received from the server invoke <code>CacheListeners</code> of cacheless clients.</p>
 
-<p>If you register to receive notifications, listener callbacks are invoked irrespective of whether the key is in the client cache when a <code>destroy</code> or <code>invalidate</code> event is received.</p>
+<p>If you register to receive notifications, listener callbacks are invoked irrespective of whether the key is in the client cache when a <code>Destroy</code> or <code>Invalidate</code> event is received.</p>
 
 <h2 id="registering-interest-for-specific-keys"><a id="registering-interest-for-entries__section_8772147940754C2D9688C789EB2F2AA6" class="no-quick-link"></a>Registering Interest for Specific Keys</h2>
 
-<p>You register and unregister interest for specific keys through the <code>registerKeys</code> and <code>unregisterKeys</code> functions. You register interest in a key or set of keys by specifying the key name using the programmatic syntax shown in the following example:</p>
+<p>You register and unregister interest for specific keys through the <code>RegisterKeys</code> and <code>UnregisterKeys</code> functions. You register interest in a key or set of keys by specifying the key name using the programmatic syntax shown in the following example:</p>
 <pre class="highlight plaintext"><code>keys0.push_back(keyPtr1);
 keys1.push_back(keyPtr3);
-regPtr0-&gt;registerKeys(keys0);
-regPtr1-&gt;registerKeys(keys1); 
+regPtr0-&gt;RegisterKeys(keys0);
+regPtr1-&gt;RegisterKeys(keys1); 
 </code></pre>
 
 <p>The programmatic code snippet in the next example shows how to unregister interest in specific keys:</p>
-<pre class="highlight plaintext"><code>regPtr0-&gt;unregisterKeys(keys0);
-regPtr1-&gt;unregisterKeys(keys1);
+<pre class="highlight plaintext"><code>regPtr0-&gt;UnregisterKeys(keys0);
+regPtr1-&gt;UnregisterKeys(keys1);
 </code></pre>
 
 <h2 id="registering-interest-for-all-keys"><a id="registering-interest-for-entries__section_EA4525CCDC474DD495410E948EAF566C" class="no-quick-link"></a>Registering Interest for All Keys</h2>
 
 <p>If the client registers interest in all keys, the server provides notifications for all updates to all keys in the region. The next example shows how to register interest in all keys:</p>
-<pre class="highlight plaintext"><code>regPtr0-&gt;registerAllKeys();
-regPtr1-&gt;registerAllKeys();
+<pre class="highlight plaintext"><code>regPtr0-&gt;RegisterAllKeys();
+regPtr1-&gt;RegisterAllKeys();
 </code></pre>
 
 <p>The following example shows a code sample for unregistering interest in all keys.</p>
-<pre class="highlight plaintext"><code>regPtr0-&gt;unregisterAllKeys();
-regPtr1-&gt;unregisterAllKeys();
+<pre class="highlight plaintext"><code>regPtr0-&gt;UnregisterAllKeys();
+regPtr1-&gt;UnregisterAllKeys();
 </code></pre>
 
 <h2 id="registering-interest-using-regular-expressions"><a id="registering-interest-for-entries__section_BD50B80FCE9F429C8F6A9FEA818D5A91" class="no-quick-link"></a>Registering Interest Using Regular Expressions</h2>
 
-<p>The <code>registerRegex</code> function registers interest in a regular expression pattern. The server automatically sends the client changes for entries whose keys match the specified pattern.</p>
+<p>The <code>RegisterRegex</code> function registers interest in a regular expression pattern. The server automatically sends the client changes for entries whose keys match the specified pattern.</p>
 
 <p><em>Keys must be strings in order to register interest using regular expressions.</em></p>
 
 <p>The following example shows interest registration for all keys whose first four characters are <code>Key-</code>, followed by any string of characters. The characters <code>.*</code> represent a wildcard that matches any string.</p>
-<pre class="highlight plaintext"><code>regPtr1-&gt;registerRegex("Key-.*");
+<pre class="highlight plaintext"><code>regPtr1-&gt;RegisterRegex("Key-.*");
 </code></pre>
 
-<p>To unregister interest using regular expressions, you use the <code>unregisterRegex</code> function. The next example shows how to unregister interest in all keys whose first four characters are <code>Key-</code>, followed by any string (represented by the <code>.*</code> wildcard).</p>
-<pre class="highlight plaintext"><code>regPtr1-&gt;unregisterRegex("Key-.*");
+<p>To unregister interest using regular expressions, you use the <code>UnregisterRegex</code> function. The next example shows how to unregister interest in all keys whose first four characters are <code>Key-</code>, followed by any string (represented by the <code>.*</code> wildcard).</p>
+<pre class="highlight plaintext"><code>regPtr1-&gt;UnregisterRegex("Key-.*");
 </code></pre>
 
 <h2 id="register-interest-scenario"><a id="registering-interest-for-entries__section_2D71A423B185493489129AAC30DC6733" class="no-quick-link"></a>Register Interest Scenario</h2>

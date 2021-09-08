@@ -304,36 +304,36 @@ in the Geode User Guide for details on how to write and register server-resident
 <h2 id="how-functions-execute"><a id="nc-fe-how_functions_execute"></a>How Functions Execute</h2>
 
 <ol>
-<li> The calling client application runs the <code>execute</code> method on the <code>Execution</code> object. The function must already be registered on the servers.</li>
-<li> The function is invoked on the servers where it needs to run. The servers are determined by the <code>FunctionService on*</code> 
+<li> The calling client application runs the <code>Execute</code> method on the <code>Execution</code> object. The function must already be registered on the servers.</li>
+<li> The function is invoked on the servers where it needs to run. The servers are determined by the <code>FunctionService On*</code> 
 method calls, region configuration, and any filters.</li>
 <li> If the function has results, the result is returned in a <code>ResultCollector</code> object.</li>
-<li> The client collects results using the <code>ResultCollector.getResult()</code> method.</li>
+<li> The client collects results using the <code>ResultCollector.GetResult()</code> method.</li>
 </ol>
 
 <p>In every client where you want to execute the function and process the results:</p>
 
 <ul>
-<li>Use one of the <code>FunctionService on*</code> methods to create an <code>Execution</code> object. The <code>on*</code> methods,
-<code>onRegion</code>, <code>onServer</code> and <code>onServers</code>, define the highest level where the function is run.</li>
-<li>If you use <code>onRegion</code> you can further narrow your run scope by setting key filters.</li>
-<li>A function run using <code>onRegion</code> is a <em>data dependent</em> function – others are <em>data-independent</em> functions.</li>
+<li>Use one of the <code>FunctionService On*</code> methods to create an <code>Execution</code> object. The <code>On*</code> methods,
+<code>OnRegion</code>, <code>OnServer</code> and <code>OnServers</code>, define the highest level where the function is run.</li>
+<li>If you use <code>OnRegion</code> you can further narrow your run scope by setting key filters.</li>
+<li>A function run using <code>OnRegion</code> is a <em>data dependent</em> function – others are <em>data-independent</em> functions.</li>
 <li><p>You can run a data dependent function against partitioned and colocated partitioned regions. From the client, provide the appropriate key
 sets to the function call.</p></li>
 <li><p>The <code>Execution</code> object allows you to customize the invocation by:</p>
 
 <ul>
-<li>  Providing a set of data keys to <code>withFilter</code> to narrow the execution scope. This works only for <code>onRegion</code> Execution objects (data-dependent functions).</li>
-<li>  Providing function arguments to <code>withArgs</code>.</li>
-<li>  Defining a custom <code>ResultCollector</code> for <code>withCollector</code>.</li>
+<li>  Providing a set of data keys to <code>WithFilter</code> to narrow the execution scope. This works only for <code>OnRegion</code> Execution objects (data-dependent functions).</li>
+<li>  Providing function arguments to <code>WithArgs</code>.</li>
+<li>  Defining a custom <code>ResultCollector</code> for <code>WithCollector</code>.</li>
 </ul></li>
-<li><p>Call the <code>Execution.execute()</code> method to run the function.</p></li>
+<li><p>Call the <code>Execution.Execute()</code> method to run the function.</p></li>
 </ul>
 
 <h2 id="processing-function-results"><a id="nc-fe-processing_function_results"></a>Processing Function Results</h2>
 
 <p>To get the results from the function in the client app, use the result collector returned from the function execution.
-The <code>getResult</code> methods of the default result collector block until all results are received, then return the full result set.</p>
+The <code>GetResult</code> methods of the default result collector block until all results are received, then return the full result set.</p>
 
 <p>The client can use the default result collector. If the client needs special results handling, code a custom <code>ResultsCollector</code> implementation to replace the default.
 Use the <code>Execution::withCollector</code> method to specify the custom collector.
@@ -343,12 +343,12 @@ To handle the results in a custom manner:</p>
 <li> Write a class that implements the <code>ResultCollector</code> interface to handle the results in a custom manner. The methods are of two types: one handles data and information from Geode and populates the results set, while the other returns the compiled results to the calling application:
 
 <ul>
-<li> <code>addResult</code> is called when results arrive from the <code>Function</code> methods. Use <code>addResult</code> to add a single result to the ResultCollector.</li>
-<li> <code>endResults</code> is called to signal the end of all results from the function execution.</li>
-<li> <code>getResult</code> is available to your executing application (the one that calls <code>Execution.execute</code>) to retrieve the results. This may block until all results are available.</li>
-<li> <code>clearResults</code> is called to clear partial results from the results collector. This is used only for highly available <code>onRegion</code> functions where the calling application waits for the results. If the call fails, before Geode retries the execution, it calls <code>clearResults</code> to ready the instance for a clean set of results.</li>
+<li> <code>AddResult</code> is called when results arrive from the <code>Function</code> methods. Use <code>AddResult</code> to add a single result to the ResultCollector.</li>
+<li> <code>EndResults</code> is called to signal the end of all results from the function execution.</li>
+<li> <code>GetResult</code> is available to your executing application (the one that calls <code>Execution.Execute</code>) to retrieve the results. This may block until all results are available.</li>
+<li> <code>ClearResults</code> is called to clear partial results from the results collector. This is used only for highly available <code>OnRegion</code> functions where the calling application waits for the results. If the call fails, before Geode retries the execution, it calls <code>ClearResults</code> to ready the instance for a clean set of results.</li>
 </ul></li>
-<li> Use the <code>Execution</code> object in your executing member to call <code>withCollector</code>, passing your custom collector.</li>
+<li> Use the <code>Execution</code> object in your executing member to call <code>WithCollector</code>, passing your custom collector.</li>
 </ol>
 
 <h2 id="function-execution-example"><a id="nc-fe-examples"></a>Function Execution Example</h2>
@@ -360,7 +360,7 @@ To handle the results in a custom manner:</p>
 <li>The function is preloaded with a JAR file containing the server-side Java function code. </li>
 <li>The function, called &ldquo;ExampleMultiGetFunction&rdquo;, is defined in the
 <code>examples/utilities</code> directory of your distribution. As its input parameter, the function takes an array of keys,
-then performs a <code>get</code> on each key and returns an array containing the results.</li>
+then performs a <code>Get</code> on each key and returns an array containing the results.</li>
 <li>The function does not load values into the data store. That is a separate operation, performed in these examples by
 the client, and does not involve the server-side function.</li>
 </ul>
@@ -377,7 +377,7 @@ of the input parameter and return value.</p>
 </ul>
 
 <p>If the client expects results, it must create a result object.
-The .NET example uses a built-in result collector (<code>IResultCollector.getResults()</code>) to retrieve the function results.</p>
+The .NET example uses a built-in result collector (<code>IResultCollector.GetResults()</code>) to retrieve the function results.</p>
 
 <h3 id=".net-example"><a id="nc-fe-dotnet_example"></a>.NET Example</h3>
 

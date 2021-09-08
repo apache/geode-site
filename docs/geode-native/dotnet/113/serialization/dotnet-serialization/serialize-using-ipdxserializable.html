@@ -279,7 +279,7 @@ specify are deserialized.</p>
 
 <ol>
 <li> Write your domain class&rsquo;s standard .NET data fields using the <code>IPdxWriter</code> write methods. Geode automatically provides <code>IPdxWriter</code> to the <code>ToData</code> function for <code>IPdxSerializable</code> objects.</li>
-<li><p>Call the <code>ToData markIdentifyField</code> function for each field Geode should use to identify your object. This is used to compare objects for operations like <code>DISTINCT</code> queries. The <code>markIdentifyField</code> call must come after the associated field write methods.</p>
+<li><p>Call the <code>ToData MarkIdentifyField</code> function for each field Geode should use to identify your object. This is used to compare objects for operations like <code>DISTINCT</code> queries. The <code>MarkIdentifyField</code> call must come after the associated field write methods.</p>
 
 <p>Example:</p>
 <pre class="highlight plaintext"><code>// object fields
@@ -352,7 +352,7 @@ public void ToData(IPdxWriter writer)
       m_arrayZeroSize = reader.ReadByteArray("arrayZeroSize");
 }
 </code></pre></li>
-<li><p>Optionally, program your domain object&rsquo;s <code>equals</code> and <code>hashcode</code> methods.</p></li>
+<li><p>Optionally, program your domain object&rsquo;s <code>Equals</code> and <code>Hashcode</code> methods.</p></li>
 </ol>
 
         

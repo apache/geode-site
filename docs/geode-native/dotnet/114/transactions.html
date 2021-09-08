@@ -288,8 +288,8 @@ For complete information about how transactions are conducted on the Geode serve
 
 <h2 id="native-client-transaction-apis"><a id="client-transaction-apis"></a>Native Client Transaction APIs</h2>
 
-<p>The API for distributed transactions has the familiar relational database methods, <code>begin</code>,
-<code>commit</code>, and <code>rollback</code>. There are also APIs available to suspend and resume transactions.</p>
+<p>The API for distributed transactions has the familiar relational database methods, <code>Begin</code>,
+<code>Commit</code>, and <code>Rollback</code>. There are also APIs available to suspend and resume transactions.</p>
 
 <p>The .NET classes for executing transactions are:</p>
 
@@ -304,7 +304,7 @@ For complete information about how transactions are conducted on the Geode serve
 a client performs a transaction, the transaction is delegated to a server that brokers the
 transaction.</p>
 
-<p>Start each transaction with a <code>begin</code> operation, and end the transaction with a <code>commit</code> or a <code>rollback</code>.</p>
+<p>Start each transaction with a <code>Begin</code> operation, and end the transaction with a <code>Commit</code> or a <code>Rollback</code>.</p>
 
 <p>To maintain cache consistency, the local client cache is not used during a transaction.
 When the transaction completes or is suspended, local cache usage is reinstated.</p>
@@ -372,7 +372,7 @@ For the complete source, see the example source directory.</p>
 <p>Within the transaction, the client populates data store with 10 values associated with Key1 - Key10.</p>
 <pre class="highlight csharp"><code>       <span class="k">foreach</span><span class="p">(</span><span class="kt">var</span> <span class="n">key</span> <span class="k">in</span> <span class="n">keys</span><span class="p">)</span>
        <span class="p">{</span>
-         <span class="kt">var</span> <span class="k">value</span> <span class="p">=</span> <span class="nf">getValueFromExternalSystem</span><span class="p">();</span>
+         <span class="kt">var</span> <span class="k">value</span> <span class="p">=</span> <span class="nf">GetValueFromExternalSystem</span><span class="p">();</span>
          <span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
        <span class="p">}</span>
 </code></pre>

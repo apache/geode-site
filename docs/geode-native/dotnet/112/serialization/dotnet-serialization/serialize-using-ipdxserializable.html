@@ -261,7 +261,7 @@ limitations under the License.
 
 <ol>
 <li> Write your domain class&rsquo;s standard .NET data fields using the <code>IPdxWriter</code> write methods. Geode automatically provides <code>IPdxWriter</code> to the <code>ToData</code> function for <code>IPdxSerializable</code> objects.</li>
-<li><p>Call the <code>ToData markIdentifyField</code> function for each field Geode should use to identify your object. This is used to compare objects for operations like <code>DISTINCT</code> queries. The <code>markIdentifyField</code> call must come after the associated field write methods.</p>
+<li><p>Call the <code>ToData MarkIdentifyField</code> function for each field Geode should use to identify your object. This is used to compare objects for operations like <code>DISTINCT</code> queries. The <code>MarkIdentifyField</code> call must come after the associated field write methods.</p>
 
 <p>Example:</p>
 <pre class="highlight plaintext"><code>// object fields
@@ -334,7 +334,7 @@ public void ToData(IPdxWriter writer)
       m_arrayZeroSize = reader.ReadByteArray("arrayZeroSize");
 }
 </code></pre></li>
-<li><p>Optionally, program your domain object&rsquo;s equals and hashcode methods.</p></li>
+<li><p>Optionally, program your domain object&rsquo;s <code>Equals</code> and <code>Hashcode</code> methods.</p></li>
 </ol>
 
         
@@ -366,7 +366,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

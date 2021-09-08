@@ -283,6 +283,9 @@ You can optimize your queries by defining indexes on the cache server.</p>
 
 <p>Querying and indexing operate only on remote cache server contents.</p>
 
+<p><strong>Note:</strong> Because floating point numbers can not reliably be compared for equality, do not use
+floating point values as keys or key components when constructing a query.</p>
+
 <h3 id="query-language:-oql"><a id="QueryLanguage"></a>Query language: OQL</h3>
 
 <p>Geode provides a SQL-like querying language called OQL that allows you to access data stored in Geode regions.
@@ -327,7 +330,7 @@ managing the compilation and execution of queries, and for retrieving an existin
 <ol>
 <li> Create an instance of the <code>QueryService</code> class. If you are using the pool API (recommended), you should obtain the <code>QueryService</code> from the pool.</li>
 <li> Create a <code>Query</code> instance that is compatible with the OQL specification.</li>
-<li> Use the <code>Query.execute()</code> method to submit the query string to the cache server. The server
+<li> Use the <code>Query.Execute()</code> method to submit the query string to the cache server. The server
 remotely evaluates the query string and returns the results to the client.</li>
 <li> Iterate through the returned objects.</li>
 </ol>

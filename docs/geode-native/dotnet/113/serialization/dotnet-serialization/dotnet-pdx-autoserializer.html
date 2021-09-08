@@ -272,9 +272,9 @@ is a single line of code to set the <code>PdxSerializer</code> to the .NET clien
 <p>(The autoserializer can be registered only in the application code. It cannot be configured declaratively in <code>cache.xml</code>.)</p>
 
 <p>After an autoserializer has been registered, all user classes can automatically be stored without needing to implement any
-interfaces. For example, the following <code>put</code> command stores <code>value</code>, which is an instance of a user defined class, in
+interfaces. For example, the following <code>Put</code> command stores <code>value</code>, which is an instance of a user defined class, in
 the region.</p>
-<pre class="highlight csharp"><code><span class="n">region</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+<pre class="highlight csharp"><code><span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
 </code></pre>
 
 <p>The .NET client&rsquo;s <code>ReflectionBasedAutoSerializer</code> supports the full list of .NET primitives and other common
