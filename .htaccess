@@ -20,6 +20,6 @@ RedirectMatch 301 /serverman/(.*) https://geode.apache.org/docs/guide/114/$1
 RedirectMatch 301 /geodeman/(.*) https://geode.apache.org/docs/guide/114/$1
 RedirectMatch 301 /cppapiref/(.*) https://geode.apache.org/releases/latest/cppdocs/$1
 RedirectMatch 301 /dotnetapiref/(.*) https://geode.apache.org/releases/latest/dotnetdocs/$1
-RedirectMatch 301 /docs/guide/14/(.*) https://geode.apache.org/docs/guide/114/$1
-RedirectMatch 301 /docs/guide/13/(.*) https://geode.apache.org/docs/guide/113/$1
-RedirectMatch 301 /docs/guide/12/(.*) https://geode.apache.org/docs/guide/112/$1
+
+# Removed document versions redirect to latest, will redirect to doc index if missing after that.
+RedirectMatch 301 /docs/guide/(?:111|110|19|18|17|16|15|14|13|12|11|10)/(.*) https://geode.apache.org/docs/guide/114/$1
