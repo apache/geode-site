@@ -21,3 +21,5 @@ RedirectMatch 301 /geodeman/(.*) https://geode.apache.org/docs/guide/114/$1
 RedirectMatch 301 /cppapiref/(.*) https://geode.apache.org/releases/latest/cppdocs/$1
 RedirectMatch 301 /dotnetapiref/(.*) https://geode.apache.org/releases/latest/dotnetdocs/$1
 RedirectMatch 301 /docs/guide/14/(.*) https://geode.apache.org/docs/guide/114/$1
+RedirectMatch 301 /docs/guide/13/(.*) https://geode.apache.org/docs/guide/113/$1
+RedirectMatch 301 /docs/guide/12/(.*) https://geode.apache.org/docs/guide/112/$1
