@@ -24,7 +24,7 @@
     <license rdf:resource="https://spdx.org/licenses/Apache-2.0" />
     <name>Apache Geode</name>
     <homepage rdf:resource="https://geode.apache.org" />
-    <asfext:pmc rdf:resource="https://abdera.apache.org" />
+    <asfext:pmc rdf:resource="https://geode.apache.org" />
     <shortdesc>Apache Geode is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</shortdesc>
     <description>Apache Geode is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures. Geode pools memory, CPU, network resources, and optionally local disk across multiple processes to manage application objects and behavior. It uses dynamic replication and data partitioning techniques to implement high availability, improved performance, scalability, and fault tolerance. In addition to being a distributed data container, Geode is an in-memory data management system that provides reliable asynchronous event notifications and guaranteed message delivery.</description>
     <bug-database rdf:resource="https://issues.apache.org/jira/browse/GEODE" />
