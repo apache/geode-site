@@ -295,28 +295,38 @@ dependencies {
 				<p>
 					The PGP signatures can be verified using PGP or GPG. First download the <a href="https://downloads.apache.org/geode/KEYS">KEYS</a> as well as the <em>asc signature</em> file for the particular distribution. Then verify the signatures using:
 				</p>
-				<p>
+				<p style="margin-left:5%"><tt>
        				% pgpk -a KEYS
-					</br></br>
-        			% pgpv ${filename}.tar.gz.asc
-        			</br></br>
+					</br>
+        			% pgpv ${filename}.tar.gz.asc</tt>
+        			</p>
+                                <p>
     				or
-    				</br></br>
+				<p style="margin-left:5%"><tt>
         			% pgp -ka KEYS
-        			</br></br>
-        			% pgp ${filename}.tar.gz.asc
-        			</br></br>
+        			</br>
+        			% pgp ${filename}.tar.gz.asc</tt>
+                                <p>
     				or
-    				</br></br>
+				<p style="margin-left:5%"><tt>
         			% gpg --import KEYS
-        			</br></br>
-        			% gpg --verify ${filename}.tar.gz.asc
-        			</br></br>
+        			</br>
+        			% gpg --verify ${filename}.tar.gz.asc</tt>
         		</p>
-    			<p>
-				Alternatively, you can verify the MD5 signature on the files. A Unix program called md5 or md5sum is included in many Unix distributions. 
-                                It is also available as part of <a href="http://www.gnu.org/software/textutils/textutils.html">GNU Textutils</a>. 
-                                Windows users can get binary md5 programs from <a href="http://www.fourmilab.ch/md5/">Fourmilab.ch</a>, <a href="http://www.pc-tools.net/win32/md5sums/">PC-Tools.Net</a>, or <a href="http://www.slavasoft.com/fsum/">SlavaSoft.com</a>.
+        <p>
+        Alternatively, you can verify the SHA256 checksum on the files. A program called <tt>sha256sum</tt>
+        or <tt>shasum -a 256</tt> is included in most Linux distributions:
+        </p>
+        <p style="margin-left:5%"><tt>sha256sum --check ${filename}.tgz.sha256</tt>
+        </p>
+        <p>
+          Windows users can use the built-in CertUtil:
+        </p>
+      <p style="margin-left:5%"><tt>CertUtil -hashfile ${filename}.tgz SHA256</tt>
+      </p>
+      <p>or PowerShell command:</p>
+      <p style="margin-left:5%"><tt>Get-FileHash ${filename}.tgz -Algorithm SHA256 | Format-List</tt>
+      </p>
 				<p>
 					If you want to build directly from source, see the BUILDING.md file in the top-level source directory.
 				</p>
