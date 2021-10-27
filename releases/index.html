@@ -296,22 +296,22 @@ dependencies {
 					The PGP signatures can be verified using PGP or GPG. First download the <a href="https://downloads.apache.org/geode/KEYS">KEYS</a> as well as the <em>asc signature</em> file for the particular distribution. Then verify the signatures using:
 				</p>
 				<p style="margin-left:5%"><tt>
-       				% pgpk -a KEYS
+       				pgpk -a KEYS
 					</br>
-        			% pgpv ${filename}.tar.gz.asc</tt>
+        			pgpv ${filename}.tgz.asc</tt>
         			</p>
                                 <p>
     				or
 				<p style="margin-left:5%"><tt>
-        			% pgp -ka KEYS
+        			pgp -ka KEYS
         			</br>
-        			% pgp ${filename}.tar.gz.asc</tt>
+        			pgp ${filename}.tgz.asc</tt>
                                 <p>
     				or
 				<p style="margin-left:5%"><tt>
-        			% gpg --import KEYS
+        			gpg --import KEYS
         			</br>
-        			% gpg --verify ${filename}.tar.gz.asc</tt>
+        			gpg --verify ${filename}.tgz.asc</tt>
         		</p>
         <p>
         Alternatively, you can verify the SHA256 checksum on the files. A program called <tt>sha256sum</tt>
