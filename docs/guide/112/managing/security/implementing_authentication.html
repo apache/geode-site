@@ -2647,30 +2647,49 @@ compared to the credential presented or will have a way of obtaining those pairs
 <p>In order to connect with a locator that does authentication,
 a server will need to set its credential, composed of the two properties
 <code>security-username</code> and <code>security-password</code>.
-There are two ways of accomplishing this:</p>
+Choose one of these two ways to accomplish this:</p>
 
 <ul>
-<li><p>Set the <code>security-username</code> and <code>security-password</code> in the server&rsquo;s
+<li><p>Set <code>security-username</code> and <code>security-password</code> in the server&rsquo;s
 <code>gfsecurity.properties</code> file that will be read upon server start up,
 as in the example</p>
-<pre class="highlight plaintext"><code> security-username=admin
- security-password=xyz1234
+<pre class="highlight plaintext"><code>security-username=admin
+security-password=xyz1234
 </code></pre>
 
-<p>The user name and password are stored in the clear, so the
+<p>The user name and password are stored in cleartext, so the
 <code>gfsecurity.properties</code> file must be protected by restricting access with
 file system permissions.</p></li>
-<li><p>Implement the <code>getCredentials</code> method of the <code>AuthInitialize</code> interface
-for the server.
-This callback&rsquo;s location is defined in the property <code>security-peer-auth-init</code>,
-as in the example</p>
-<pre class="highlight plaintext"><code> security-peer-auth-init=com.example.security.MyAuthInitialize
+<li><p>Implement <code>AuthInitialize</code> interface for the server.</p>
+
+<ul>
+<li><p>Set the property <code>security-peer-auth-init</code>,
+so that an object of the class that implements the <code>AuthInitialize</code>
+interface will be instantiated.
+Set the property to one of these two values:</p>
+
+<ul>
+<li>Set property <code>security-peer-auth-init</code> to the fully-qualified
+class name that implements the <code>AuthInitialize</code> interface
+as in the example</li>
+</ul>
+<pre class="highlight plaintext"><code>security-peer-auth-init=com.example.security.ServerAuthenticate
 </code></pre>
 
-<p>The implementation of <code>getCredentials</code> may then acquire values for
-the properties <code>security-username</code> and <code>security-password</code> in whatever way
-it wishes.
+<ul>
+<li>Set property <code>security-peer-auth-init</code> to the fully-qualified
+method name of a method that instantiates an object of the class
+that implements the <code>AuthInitialize</code> interface
+as in the example</li>
+</ul>
+<pre class="highlight plaintext"><code>security-peer-auth-init=com.example.security.ServerAuthenticate.create
+</code></pre></li>
+<li><p>Implement the <code>getCredentials</code> method within the <code>AuthInitialize</code>
+interface to acquire values for
+the <code>security-username</code> and <code>security-password</code> properties
+in whatever way it wishes.
 It might look up values in a database or another external resource.</p></li>
+</ul></li>
 </ul>
 
 <p>Gateway senders and receivers communicate as a component of their
@@ -2678,60 +2697,54 @@ server member.
 Therefore, the credential of the server become those of the gateway
 sender or receiver.</p>
 
-<h2 id="how-a-cache-client-sets-its-credential">How a Cache Client Sets Its Credential</h2>
-
-<!--  Revised for GEODE-1883
-In order to connect with a locator or a server that does authentication,
-a client will need to set its credential, composed of the two properties
-`security-username` and `security-password`.
-There are two ways of accomplishing this:
-
-- Set the `security-username` and `security-password` in the client's
-`gfsecurity.properties` file that will be read upon client start up,
-as in the example
-
-     ``` pre
-     security-username=clientapp
-     security-password=xyz1234
-     ```
-The user name and password are stored in the clear, so the
-`gfsecurity.properties` file must be protected by restricting access with
-file system permissions.
-To accomplish this:
-
-- Implement the `getCredentials` method of the `AuthInitialize` interface
-for the client.
-This callback's location is defined in the property `security-client-auth-init`,
-as in the example
-
-     ``` pre
-     security-client-auth-init=com.example.security.ClientAuthInitialize
-     ```
-The implementation of `getCredentials` may then acquire values for
-the properties `security-username` and `security-password` in whatever way
-it wishes.
-It might look up values in a database or another external resource,
-or it might prompt for values.
--->
+<h2 id="how-a-client-cache-sets-its-credential">How a Client Cache Sets Its Credential</h2>
 
 <p>In order to connect with a locator or a server that does authentication,
 a client will need to set its credential, composed of the two properties
 <code>security-username</code> and <code>security-password</code>.
-To accomplish this:</p>
+Choose one of these two ways to accomplish this:</p>
 
 <ul>
-<li><p>Implement the <code>getCredentials</code> method of the <code>AuthInitialize</code> interface
-for the client.
-This callback&rsquo;s location is defined in the property <code>security-client-auth-init</code>,
-as in the example</p>
-<pre class="highlight plaintext"><code> security-client-auth-init=com.example.security.ClientAuthInitialize
+<li><p>Set the <code>security-username</code> and <code>security-password</code> properties for the client
+using the API:</p>
+<pre class="highlight plaintext"><code>Properties properties = new Properties();
+properties.setProperty("security-username", "exampleuser23");
+properties.setProperty("security-password", "xyz1234");
+ClientCache cache = new ClientCacheFactory(properties).create();
 </code></pre>
 
-<p>The implementation of <code>getCredentials</code> may then acquire values for
-the properties <code>security-username</code> and <code>security-password</code> in whatever way
+<p>Take care that credentials set in this manner are not accessible
+to observers of the code.</p></li>
+<li><p>Implement <code>AuthInitialize</code> interface for the client.</p>
+
+<ul>
+<li><p>Set the property <code>security-client-auth-init</code>,
+so that an object of the class that implements the
+<code>AuthInitialize</code> interface will be instantiated.
+Set the property to one of these two values:</p>
+
+<ul>
+<li>Set property <code>security-client-auth-init</code> to the fully-qualified
+class name that implements the <code>AuthInitialize</code> interface:</li>
+</ul>
+<pre class="highlight plaintext"><code>security-client-auth-init=com.example.security.ClientAuthInitialize
+</code></pre>
+
+<ul>
+<li>Set property <code>security-client-auth-init</code> to the fully-qualified
+name of a static method that instantiates an object of the class
+that implements the <code>AuthInitialize</code> interface:</li>
+</ul>
+<pre class="highlight plaintext"><code>security-client-auth-init=com.example.security.ClientAuthInitialize.create
+</code></pre></li>
+<li><p>Implement the <code>getCredentials</code> method of the <code>AuthInitialize</code> interface
+for the client.
+The implementation of <code>getCredentials</code> acquires values for
+the <code>security-username</code> and <code>security-password</code> properties in whatever way
 it wishes.
 It might look up values in a database or another external resource,
 or it might prompt for values.</p></li>
+</ul></li>
 </ul>
 
 <h2 id="how-other-components-set-their-credentials">How Other Components Set Their Credentials</h2>
@@ -2798,7 +2811,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

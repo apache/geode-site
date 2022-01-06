@@ -2665,7 +2665,7 @@ While a member is running, its disk stores are online. When the member exits and
 <ul>
 <li>  Online, a disk store is owned and managed by its member process. To run operations on an online disk store, use API calls in the member process, or use the <code>gfsh</code> command-line interface.</li>
 <li>  Offline, the disk store is just a collection of files in the host file system. The files are accessible based on file system permissions. You can copy the files for backup or to move the member’s disk store location. You can also run some maintenance operations, such as file compaction and validation, by using the <code>gfsh</code> command-line interface. When offline, the disk store&rsquo;s information is unavailable to the cluster. 
-For partitioned regions, region data is split between multiple members, and therefore the start up of a member is dependent onall members, and must wait for all members to be online. An attempt to access an entry that is stored on disk by an offline member results in a <code>PartitionOfflineException</code>.</li>
+For partitioned regions, region data is split between multiple members, and therefore the start up of a member is dependent on all members, and must wait for all members to be online. An attempt to access an entry that is stored on disk by an offline member results in a <code>PartitionOfflineException</code>.</li>
 </ul>
 
         
@@ -2697,7 +2697,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

@@ -2642,7 +2642,7 @@ The default property setting for all locators is <code>gemfire.jmx-manager=true<
 
 <p>By default, any locator can become a JMX Manager when started. When you start up a locator, if no other JMX Manager is detected in the cluster, the locator starts one automatically. If you start a second locator, it will detect the current JMX Manager and will not start up another JMX Manager unless the second locator&rsquo;s <code>gemfire.jmx-manager-start</code> property is set to true.</p>
 
-<p>For most deployments, you only need to have one JMX Manager per cluster. However, you can run more than JMX Manager if necessary. If you want to provide high-availability and redundancy for the Pulse monitoring tool, or if you are running additional JMX clients other than gfsh, then use the <code>jmx-manager-start=true</code> property to force individual nodes (either locators or servers) to become JMX Managers at startup. Since there is some performance overhead to being a JMX Manager, we recommend using locators as JMX Managers. If you do not want a locator to become a JMX manager, then you must use the <code>jmx-manager=false</code> property when you start the locator.</p>
+<p>For most deployments, you only need to have one JMX Manager per cluster. However, you can run more than one JMX Manager if necessary. If you want to provide high-availability and redundancy for the Pulse monitoring tool, or if you are running additional JMX clients other than gfsh, then use the <code>jmx-manager-start=true</code> property to force individual nodes (either locators or servers) to become JMX Managers at startup. Since there is some performance overhead to being a JMX Manager, we recommend using locators as JMX Managers. If you do not want a locator to become a JMX manager, then you must use the <code>jmx-manager=false</code> property when you start the locator.</p>
 
 <p>After the node becomes a JMX Manager, all other <code>jmx-manager-*</code> configuration properties listed in <a href="/docs/guide/113/managing/management/jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6">Configuring a JMX Manager</a> are applied.</p>
 
@@ -2816,7 +2816,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
