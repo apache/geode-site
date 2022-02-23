@@ -126,10 +126,10 @@ The `gradlew publish` command *does not* update the `css` and `stylesheets` dire
         ```
         {geode-site}/docs/guide/XY
         ```
-  where `XY` is the product version of your documentation (e.g., `{geode-site}/website/content/docs/guide/17` if you are publishing the documentation for Apache Geode 1.7). So, if your current working directory is the top level of `{geode-site}`, you would create the destination directory with the following command:
+  where `XY` is the product version of your documentation (e.g., `{geode-site}/website/content/docs/guide/17` if you are publishing the documentation for Apache Geode 1.14). So, if your current working directory is the top level of `{geode-site}`, you would create the destination directory with the following command:
 
         ```
-        $ mkdir -p {geode-site}/docs/guide/XY
+        $ mkdir -p {geode-site}/docs/guide/114
         ```
 
   1. Navigate to the User Guide you have built in the Geode repository: `{geode-project-dir}/geode-book/final_app/public/docs/guide/XY`.
@@ -149,6 +149,16 @@ The `gradlew publish` command *does not* update the `css` and `stylesheets` dire
         $ tar xvf ~/Desktop/new-guide-content.tar
         ```
 
+  - Replace the entire `docs/guide/latest` directory with a copy of the latest user guide's directory. Use `tar` (rather than `cp`) to preserve the original directory's structure.
+
+        ```
+        $ cd {geode-site}/docs/guide
+        $ rm -rf latest
+        $ mkdir latest
+        $ cd latest
+        $ (cd ../XY && tar cf - *) | (tar xf -)
+        ```
+  
 ### 3. Publish new javadocs
 
 You should still be on the __asf-site__ branch. Copy new javadocs directly to the directory
