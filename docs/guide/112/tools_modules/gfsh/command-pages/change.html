@@ -2631,10 +2631,12 @@ limitations under the License.
 
 <p>Changes the logging level on specified members.</p>
 
+<p>The <code>change loglevel</code> command applies only to the members specified, whether they are servers or locators. The change does not apply to unspecified or subsequently-added members.</p>
+
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
 <p><strong>Syntax:</strong></p>
-<pre class="highlight plaintext"><code>change loglevel --loglevel=value [--members=value(,value)*] [--groups=value(,value)*]
+<pre class="highlight plaintext"><code>change loglevel --log-level=value [--members=value(,value)*] [--groups=value(,value)*]
 </code></pre>
 
 <p><a id="topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6"></a></p>
@@ -2665,7 +2667,7 @@ limitations under the License.
 <td> </td>
 </tr>
 <tr>
-<td><span class="keyword parmname">--loglevel</span></td>
+<td><span class="keyword parmname">--log-level</span></td>
 <td><em>Required.</em> Log level to change. Valid options are:
  <code>ALL</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code>, <code>OFF</code>. 
 </td>
@@ -2677,11 +2679,11 @@ limitations under the License.
 <p><span class="tablecap">Table 1. Change Loglevel Parameters</span></p>
 
 <p><strong>Example Commands:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;change loglevel --loglevel=DEBUG --members=server1
+<pre class="highlight plaintext"><code>gfsh&gt;change loglevel --log-level=DEBUG --members=server1
 </code></pre>
 
 <p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;change loglevel --loglevel=DEBUG --members=server1
+<pre class="highlight plaintext"><code>gfsh&gt;change loglevel --log-level=DEBUG --members=server1
 
 Summary
 
