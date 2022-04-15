@@ -2946,25 +2946,23 @@ When using the Java API, you must create any region that might receive events fr
 ...
 (2) Executing - list gateways
 
-Gateways
-
-GatewaySender
+GatewaySender Section
 
 GatewaySender Id |              Member               | Remote Cluster Id |   Type   | Status  | Queued Events | Receiver Location
 ---------------- | --------------------------------- | ----------------- | -------- | ------- | ------------- | -----------------
-ln               | boglesbymac(ny-1:88641)&lt;v2&gt;:33491 | 2                 | Parallel | Running | 0             | boglesbymac:5037
-ln               | boglesbymac(ny-2:88705)&lt;v3&gt;:29329 | 2                 | Parallel | Running | 0             | boglesbymac:5064
-ln               | boglesbymac(ny-3:88715)&lt;v4&gt;:36808 | 2                 | Parallel | Running | 0             | boglesbymac:5132
-ln               | boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 2                 | Parallel | Running | 0             | boglesbymac:5324
+ln               | mymac(ny-1:88641)&lt;v2&gt;:33491       | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)&lt;v3&gt;:29329       | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)&lt;v4&gt;:36808       | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)&lt;v5&gt;:52993       | 2                 | Parallel | Running | 0             | mymac:5324
 
-GatewayReceiver
+GatewayReceiver Section
 
-             Member               | Port | Sender Count | Sender's Connected
+             Member               | Port | Sender Count | Senders Connected
 --------------------------------- | ---- | ------------ | --------------------------------------------------------------------------
-boglesbymac(ny-1:88641)&lt;v2&gt;:33491 | 5057 | 24           | ["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-2:88662)&lt;v3&gt;:12796","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
-boglesbymac(ny-2:88705)&lt;v3&gt;:29329 | 5082 | 0            | []
-boglesbymac(ny-3:88715)&lt;v4&gt;:36808 | 5371 | 0            | []
-boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 5247 | 0            | []
+mymac(ny-1:88641)&lt;v2&gt;:33491       | 5057 | 24           | ["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-2:88662)&lt;v3&gt;:12796","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-2:88705)&lt;v3&gt;:29329       | 5082 | 0            | []
+mymac(ny-3:88715)&lt;v4&gt;:36808       | 5371 | 0            | []
+mymac(ny-4:88724)&lt;v5&gt;:52993       | 5247 | 0            | []
 </code></pre>
 
 <p>Execute the load-balance command:</p>
@@ -2974,10 +2972,10 @@ boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 5247 | 0            | []
 
              Member               | Result | Message
 --------------------------------- | ------ |--------------------------------------------------------------------------
-boglesbymac(ln-1:88651)&lt;v2&gt;:48277 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-1:88651)&lt;v2&gt;:48277
-boglesbymac(ln-4:88681)&lt;v5&gt;:42784 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-4:88681)&lt;v5&gt;:42784
-boglesbymac(ln-3:88672)&lt;v4&gt;:43675 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-3:88672)&lt;v4&gt;:43675
-boglesbymac(ln-2:88662)&lt;v3&gt;:12796 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-2:88662)&lt;v3&gt;:12796
+mymac(ln-1:88651)&lt;v2&gt;:48277       | OK     | GatewaySender ny is rebalanced on member mymac(ln-1:88651)&lt;v2&gt;:48277
+mymac(ln-4:88681)&lt;v5&gt;:42784       | OK     | GatewaySender ny is rebalanced on member mymac(ln-4:88681)&lt;v5&gt;:42784
+mymac(ln-3:88672)&lt;v4&gt;:43675       | OK     | GatewaySender ny is rebalanced on member mymac(ln-3:88672)&lt;v4&gt;:43675
+mymac(ln-2:88662)&lt;v3&gt;:12796       | OK     | GatewaySender ny is rebalanced on member mymac(ln-2:88662)&lt;v3&gt;:12796
 </code></pre>
 
 <p>Listing gateways in ny again shows the connections are spread much better among the receivers.</p>
@@ -2985,34 +2983,32 @@ boglesbymac(ln-2:88662)&lt;v3&gt;:12796 | OK     | GatewaySender ny is rebalance
 
 (2) Executing - list gateways
 
-Gateways
-
-GatewaySender
+GatewaySender Section
 
 GatewaySender Id |              Member               | Remote Cluster Id |  Type    | Status  | Queued Events | Receiver Location
 ---------------- | --------------------------------- |  ---------------- | -------- | ------- | ------------- | -----------------
-ln               | boglesbymac(ny-1:88641)&lt;v2&gt;:33491 | 2                 | Parallel | Running | 0             | boglesbymac:5037
-ln               | boglesbymac(ny-2:88705)&lt;v3&gt;:29329 | 2                 | Parallel | Running | 0             | boglesbymac:5064
-ln               | boglesbymac(ny-3:88715)&lt;v4&gt;:36808 | 2                 | Parallel | Running | 0             | boglesbymac:5132
-ln               | boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 2                 | Parallel | Running | 0             | boglesbymac:5324
+ln               | mymac(ny-1:88641)&lt;v2&gt;:33491       | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)&lt;v3&gt;:29329       | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)&lt;v4&gt;:36808       | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)&lt;v5&gt;:52993       | 2                 | Parallel | Running | 0             | mymac:5324
 
-GatewayReceiver
+GatewayReceiver Section
 
-         Member                   | Port | Sender Count | Sender's Connected
+         Member                   | Port | Sender Count | Senders Connected
 --------------------------------- | ---- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------
-boglesbymac(ny-1:88641)&lt;v2&gt;:33491 | 5057 | 9            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-3:88672)&lt;v4&gt;:43675","boglesbymac(ln-2:88662)&lt;v3&gt;:12796"]
-boglesbymac(ny-2:88705)&lt;v3&gt;:29329 | 5082 | 4            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
-boglesbymac(ny-3:88715)&lt;v4&gt;:36808 | 5371 | 4            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
-boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 5247 | 3            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-1:88641)&lt;v2&gt;:33491       | 5057 | 9            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675","mymac(ln-2:88662)&lt;v3&gt;:12796"]
+mymac(ny-2:88705)&lt;v3&gt;:29329       | 5082 | 4            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-3:88715)&lt;v4&gt;:36808       | 5371 | 4            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-4:88724)&lt;v5&gt;:52993       | 5247 | 3            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
 </code></pre>
 
 <p>Running the load balance command in site ln again produces even better balance.</p>
-<pre class="highlight plaintext"><code>         Member                   | Port | Sender Count | Sender's Connected
+<pre class="highlight plaintext"><code>         Member                   | Port | Sender Count | Senders Connected
 --------------------------------- | ---- | ------------ |-------------------------------------------------------------------------------------------------------------------------------------------------
-boglesbymac(ny-1:88641)&lt;v2&gt;:33491 | 5057 | 7            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-2:88662)&lt;v3&gt;:12796","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
-boglesbymac(ny-2:88705)&lt;v3&gt;:29329 | 5082 | 3            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-3:88672)&lt;v4&gt;:43675","boglesbymac(ln-2:88662)&lt;v3&gt;:12796"]
-boglesbymac(ny-3:88715)&lt;v4&gt;:36808 | 5371 | 5            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-2:88662)&lt;v3&gt;:12796","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
-boglesbymac(ny-4:88724)&lt;v5&gt;:52993 | 5247 | 6            |["boglesbymac(ln-1:88651)&lt;v2&gt;:48277","boglesbymac(ln-4:88681)&lt;v5&gt;:42784","boglesbymac(ln-2:88662)&lt;v3&gt;:12796","boglesbymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-1:88641)&lt;v2&gt;:33491       | 5057 | 7            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-2:88662)&lt;v3&gt;:12796","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-2:88705)&lt;v3&gt;:29329       | 5082 | 3            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-3:88672)&lt;v4&gt;:43675","mymac(ln-2:88662)&lt;v3&gt;:12796"]
+mymac(ny-3:88715)&lt;v4&gt;:36808       | 5371 | 5            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-2:88662)&lt;v3&gt;:12796","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-4:88724)&lt;v5&gt;:52993       | 5247 | 6            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-2:88662)&lt;v3&gt;:12796","mymac(ln-3:88672)&lt;v4&gt;:43675"]
 </code></pre>
 
 <h2 id="configuring-one-ip-address-and-port-to-access-all-gateway-receivers-in-a-site"><a id="setting_up_a_multisite_system_one_ipaddr" class="no-quick-link"></a>Configuring One IP Address and Port to Access All Gateway Receivers in a Site</h2>

@@ -2708,7 +2708,7 @@ See <a href="/docs/guide/114/managing/disk_storage/operation_logs.html">Disk Sto
 
 <ul>
 <li><p>Compact the logs for a single online disk store through the API, with the <code>forceCompaction</code> method. This method first rolls the oplogs and then compacts them. Example:</p>
-<pre class="highlight plaintext"><code>myCache.findDiskStore("myDiskStore").forceCompaction();
+<pre class="highlight plaintext"><code>myCache.getDiskStore("myDiskStore").forceCompaction();
 </code></pre></li>
 <li><p>Using <code>gfsh</code>, compact a disk store with the <a href="/docs/guide/114/tools_modules/gfsh/command-pages/compact.html#topic_F113C95C076F424E9AA8AC4F1F6324CC">compact disk-store</a> command. Examples:</p>
 <pre class="highlight plaintext"><code>gfsh&gt;compact disk-store --name=Disk1

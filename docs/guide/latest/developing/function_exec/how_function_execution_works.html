@@ -2676,15 +2676,15 @@ limitations under the License.
 <p><strong>For Data-independent Functions</strong></p>
 
 <ul>
-<li>  <strong>On a specific member or members—</strong>Execute the function within a peer-to-peer cluster, specifying the member or members where you want to run the function by using <code>FunctionService</code> methods <code>onMember()</code> and <code>onMembers()</code>.</li>
-<li>  <strong>On a specific server or set of servers—</strong>If you are connected to a cluster as a client, you can execute the function on a server or servers configured for a specific connection pool, or on a server or servers connected to a given cache using the default connection pool. For data-independent functions on client/server architectures, a client invokes <code>FunctionService</code> methods <code>onServer()</code> or <code>onServers()</code>. (See <a href="/docs/guide/114/topologies_and_comm/topology_concepts/how_the_pool_manages_connections.html">How Client/Server Connections Work</a> for details regarding pool connections.)</li>
-<li>  <strong>On member groups or on a single member within each member group—</strong>You can organize members into logical member groups. (See <a href="/docs/guide/114/configuring/chapter_overview.html#concept_lrh_gyq_s4">Configuring and Running a Cluster</a> for more information about using member groups.) You can invoke a data independent function on all members in a specified member group or member groups, or execute the function on only one member of each specified member group.</li>
+<li>  <strong>On a specific member or members:</strong> Execute the function within a peer-to-peer cluster, specifying the member or members where you want to run the function by using <code>FunctionService</code> methods <code>onMember()</code> and <code>onMembers()</code>.</li>
+<li>  <strong>On a specific server or set of servers:</strong> If you are connected to a cluster as a client, you can execute the function on a server or servers configured for a specific connection pool, or on a server or servers connected to a given cache using the default connection pool. For data-independent functions on client/server architectures, a client invokes <code>FunctionService</code> methods <code>onServer()</code> or <code>onServers()</code>. (See <a href="/docs/guide/114/topologies_and_comm/topology_concepts/how_the_pool_manages_connections.html">How Client/Server Connections Work</a> for details regarding pool connections.)</li>
+<li>  <strong>On member groups or on a single member within each member group:</strong> You can organize members into logical member groups. (See <a href="/docs/guide/114/configuring/chapter_overview.html#concept_lrh_gyq_s4">Configuring and Running a Cluster</a> for more information about using member groups.) You can invoke a data independent function on all members in a specified member group or member groups, or execute the function on only one member of each specified member group.</li>
 </ul>
 
 <p><strong>For Data-dependent Functions</strong></p>
 
 <ul>
-<li>  <strong>On a region—</strong>If you are executing a data-dependent function, specify a region and, optionally, a set of keys on which to run the function. The method <code>FunctionService.onRegion()</code> directs a data-dependent function to execute on a specific region.</li>
+<li>  <strong>On a region:</strong> If you are executing a data-dependent function, specify a region and, optionally, a set of keys on which to run the function. The method <code>FunctionService.onRegion()</code> directs a data-dependent function to execute on a specific region.</li>
 </ul>
 
 <p>See the <code>org.apache.geode.cache.execute.FunctionService</code> Java API documentation for more details.</p>

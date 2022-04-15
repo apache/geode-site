@@ -2677,7 +2677,7 @@ limitations under the License.
 <p>Display a list of async event queues for all members.</p></li>
 <li><p><strong><a href="#topic_ts1_qb1_dk">list clients</a></strong></p>
 
-<p>Displays a list of connected clients.</p></li>
+<p>Display a list of connected clients.</p></li>
 <li><p><strong><a href="#topic_59DF60DE71AD4097B281749425254BFF">list deployed</a></strong></p>
 
 <p>Display a list of JARs that were deployed to members using the deploy command.</p></li>
@@ -2692,7 +2692,7 @@ limitations under the License.
 <p>Display a list of registered functions. The default is to display functions for all members.</p></li>
 <li><p><strong><a href="#topic_B1D89671C7B74074899C7D52F15849ED">list gateways</a></strong></p>
 
-<p>Displays the gateway senders and receivers for a member or members.</p></li>
+<p>Display the gateway senders and receivers for a member or members.</p></li>
 <li><p><strong><a href="#topic_B3B51B6DEA484EE086C4F657EC9831F2">list indexes</a></strong></p>
 
 <p>Display the list of indexes created for all members.</p></li>
@@ -2726,9 +2726,7 @@ limitations under the License.
 
 <h2 id="list-clients"><a id="topic_ts1_qb1_dk" class="no-quick-link"></a>list clients</h2>
 
-<p>Displays a list of connected clients.</p>
-
-<p>Displays a list of connected clients and the servers they are connected to.</p>
+<p>Display a list of connected clients and the servers to which they connect.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
@@ -2745,8 +2743,8 @@ limitations under the License.
 
 ClientList
 
-            Client Name / ID              | Server Name / ID
------------------------------------------ | -----------------------------------------------------
+          Client Name / ID           | Server Name / ID
+------------------------------------ | -----------------------------------------------------
 192.0.2.0(4987:loner):58922:7b3398cf | member=server2,port=53508;  member=server1,port=56806
 192.0.2.0(5065:loner):39906:a6f598cf | member=server2,port=53508;  member=server1,port=56806
 </code></pre>
@@ -2795,9 +2793,9 @@ datanode2 | group1_functions.jar | /usr/local/gemfire/deploy/vf.gf#group1_functi
 
 <h2 id="list-disk-stores"><a id="topic_BC14AD57EA304FB3845766898D01BD04" class="no-quick-link"></a>list disk-stores</h2>
 
-<p>List all available disk stores across the Geode cluster</p>
+<p>List all available disk stores across the Geode cluster.</p>
 
-<p>The command also lists the configured disk directories and any Regions, Cache Servers, Gateways, PDX Serialization and Async Event Queues using Disk Stores to either overflow and/or persist information to disk. Use the <code>describe                         disk-store</code> command to see the details for a particular Disk Store.</p>
+<p>The command also lists the configured disk directories and any Regions, Cache Servers, Gateways, PDX Serialization and Async Event Queues using Disk Stores to either overflow and/or persist information to disk. Use the <code>describe disk-store</code> command to see the details for a particular Disk Store.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
@@ -2812,17 +2810,15 @@ datanode2 | group1_functions.jar | /usr/local/gemfire/deploy/vf.gf#group1_functi
 <p><strong>Sample Output:</strong></p>
 <pre class="highlight plaintext"><code>gfsh&gt; list disk-stores
 
-   Member Name   |                   Member Id                   | Disk Store Name |            Disk Store ID
-  -------------- | --------------------------------------------- | --------------- | ------------------------------------
+   Member Name   |                   Member Id               | Disk Store Name |            Disk Store ID
+  -------------- | ------------------------------------------| --------------- | ------------------------------------
   consumerServer | 192.0.2.0(consumerServer:13825)&lt;v5&gt;:3545  | consumerData    | 4029af26-fd82-4997-bd6c-33382cdbb5e9
   consumerServer | 192.0.2.0(consumerServer:13825)&lt;v5&gt;:3545  | observerData    | 7e0316ad-963c-49b0-9b01-8f59b8d9e29e
   producerServer | 192.0.2.0(producerServer:13826)&lt;v3&gt;:53764 | producerData    | 4670e4eb-1c50-4465-b418-08ede3d5dbed
 </code></pre>
 
 <p><strong>Error Messages:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt; list disk-stores
-No Disk Stores Found
-
+<pre class="highlight plaintext"><code>No Disk Stores Found
 </code></pre>
 
 <h2 id="list-durable-cqs"><a id="topic_66016A698C334F4EBA19B99F51B0204B" class="no-quick-link"></a>list durable-cqs</h2>
@@ -2874,9 +2870,7 @@ server4 | cq3
 </code></pre>
 
 <p><strong>Error Messages:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt;list durable-cqs --durable-client-id=client1
-
-Unable to list durable-cqs for durable-client-id : "client1" due to following reasons.
+<pre class="highlight plaintext"><code>Unable to list durable-cqs for durable-client-id : "client1" due to following reasons.
 
 No client found with client-id : client1
 Occurred on members
@@ -2906,7 +2900,7 @@ Occurred on members
 </thead><tbody>
 <tr>
 <td><span class="keyword parmname">--matches </span></td>
-<td>Pattern that the function ID must match in order to be included. Uses Java pattern matching rules, not UNIX. For example, to match any character any number of times use &ldquo;.*&rdquo; instead of &ldquo;*&rdquo;.</td>
+<td>Pattern that the function ID must match in order to be included. Uses Java pattern matching rules, not UNIX. For example, to match any character any number of times use &ldquo;.*&rdquo; rather than &ldquo;*&rdquo;.</td>
 </tr>
 <tr>
 <td><span class="keyword parmname">--groups</span></td>
@@ -2919,12 +2913,12 @@ Occurred on members
 </tbody></table>
 
 <p><strong>Example Commands:</strong></p>
-<pre class="highlight plaintext"><code>gfsh&gt; list functions
-gfsh&gt; list functions --matches=reconcile.*
+<pre class="highlight plaintext"><code>list functions
+list functions --matches=reconcile.*
 </code></pre>
 
 <p><strong>Sample Output:</strong></p>
-<pre class="highlight plaintext"><code>list functions
+<pre class="highlight plaintext"><code>gfsh&gt; list functions
 
    Member   |          Function
   --------- | --------------------------
@@ -2932,27 +2926,24 @@ gfsh&gt; list functions --matches=reconcile.*
   camelot   | reconcileWeeklyExpenses
   excalibur | loadDataFromExternalSource
   excalibur | reconcileDailyExpenses
+</code></pre>
 
-
-Example of 'list function' with a "matches" filter:
-
-gfsh&gt; list functions --matches=reconcile.*
+<p>Example of <code>list functions</code> with a &ldquo;matches&rdquo; filter:</p>
+<pre class="highlight plaintext"><code>gfsh&gt; list functions --matches=reconcile.*
 
    Member   |        Function
   --------- | -----------------------
   camelot   | reconcileWeeklyExpenses
   excalibur | reconcileDailyExpenses
+</code></pre>
 
-
-Example of 'list functions' when no functions are found in Geode :
-
-gfsh&gt; list functions
-No Functions Found.
+<p><strong>Error Messages:</strong></p>
+<pre class="highlight plaintext"><code>No Functions Found
 </code></pre>
 
 <h2 id="list-gateways"><a id="topic_B1D89671C7B74074899C7D52F15849ED" class="no-quick-link"></a>list gateways</h2>
 
-<p>Displays the gateway senders and receivers for a member or members.</p>
+<p>Display the gateway senders and receivers for a member or members.</p>
 
 <p><strong>Availability:</strong> Online. You must be connected in <code>gfsh</code> to a JMX Manager member to use this command.</p>
 
@@ -2992,6 +2983,30 @@ list gateways --senders-only
 list gateways --receivers-only
 </code></pre>
 
+<p><strong>Sample Output:</strong></p>
+<pre class="highlight plaintext"><code>
+gfsh&gt;list gateways
+
+GatewaySender Section
+
+GatewaySender Id |              Member         | Remote Cluster Id |  Type    | Status  | Queued Events | Receiver Location
+---------------- | --------------------------- | ----------------- | -------- | ------- | ------------- | -----------------
+ln               | mymac(ny-1:88641)&lt;v2&gt;:33491 | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)&lt;v3&gt;:29329 | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)&lt;v4&gt;:36808 | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)&lt;v5&gt;:52993 | 2                 | Parallel | Running | 0             | mymac:5324
+
+GatewayReceiver Section
+
+         Member             | Port | Sender Count | Senders Connected
+--------------------------- | ---- | ------------ | -----------------------------------------------------------------------------------------------------------------------
+mymac(ny-1:88641)&lt;v2&gt;:33491 | 5057 | 9            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675","mymac(ln-2:88662)&lt;v3&gt;:12796"]
+mymac(ny-2:88705)&lt;v3&gt;:29329 | 5082 | 4            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-3:88715)&lt;v4&gt;:36808 | 5371 | 4            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+mymac(ny-4:88724)&lt;v5&gt;:52993 | 5247 | 3            |["mymac(ln-1:88651)&lt;v2&gt;:48277","mymac(ln-4:88681)&lt;v5&gt;:42784","mymac(ln-3:88672)&lt;v4&gt;:43675"]
+
+</code></pre>
+
 <h2 id="list-indexes"><a id="topic_B3B51B6DEA484EE086C4F657EC9831F2" class="no-quick-link"></a>list indexes</h2>
 
 <p>Display the list of indexes created for all members.</p>
@@ -3020,21 +3035,20 @@ list gateways --receivers-only
 
 <p><strong>Example Commands:</strong></p>
 <pre class="highlight plaintext"><code>list indexes
-
 list indexes --with-stats
 </code></pre>
 
 <p><strong>Sample Output:</strong></p>
 <pre class="highlight plaintext"><code>gfsh&gt;list indexes
-Member Name    |                   Member ID                   | Region Path |   Name   | Type  | Indexed Expression | From Clause
--------------- | --------------------------------------------- | ----------- | -------- | ----- | ------------------ | -----------
+Member Name    |                   Member ID               | Region Path |   Name   | Type  | Indexed Expression | From Clause
+-------------- | ----------------------------------------- | ----------- | -------- | ----- | ------------------ | -----------
 consumerServer | 192.0.2.0(consumerServer:13873):6317      | /consumers  | cidIdx   | KEY   | id                 | /consumers
 consumerServer | 192.0.2.0(consumerServer:13873):6317      | /consumers  | cnameIdx | RANGE | name               | /consumers
 producerServer | 192.0.2.0(producerServer:13874):19198     | /producers  | pidIdx   | RANGE | id                 | /producers
+</code></pre>
 
-Example of 'list indexes' with stats printed:
-
-gfsh&gt;list indexes --with-stats
+<p>Example of &lsquo;list indexes&rsquo; with stats printed:</p>
+<pre class="highlight plaintext"><code>gfsh&gt;list indexes --with-stats
 
 Member Name  | Member ID | Region Path |   Name   | Type  | Indexed Expression | From Clause | Uses | Updates | Update Time | Keys | Values
 ------------ | --------- | ----------- | -------- | ----- | ------------------ | ----------- | ---- | ------- | ----------- | ---- | ------
@@ -3044,10 +3058,7 @@ ps...        | 192...    | /producers  | pidIdx   | RANGE | id                 |
 </code></pre>
 
 <p><strong>Error Messages:</strong></p>
-
-<p>Example of output when no indexes are found in Geode:</p>
-<pre class="highlight plaintext"><code>gfsh&gt; list indexes
-No Indexes Found
+<pre class="highlight plaintext"><code>No Indexes Found
 </code></pre>
 
 <h2 id="list-jndi-binding"><a id="list_jndi-binding" class="no-quick-link"></a>list jndi-binding</h2>
