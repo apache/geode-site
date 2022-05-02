@@ -49,7 +49,7 @@ limitations under the License.
   <h1 class="logo">
     <a href="/">
         <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
-      Apache Geode Native .NET Documentation
+      Apache Geode Native .NET Framework Documentation
     </a>
   </h1>
   <div class="header-links js-bar-links">
@@ -226,7 +226,7 @@ limitations under the License.
 -->
 <span style="font-weight:200;font-size:31px;" style="float:left;">
     <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
-  Apache Geode Native .NET
+  Apache Geode Native .NET Framework
 </span>
   <span class="local-header version-info" style="float:right;">
     <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
@@ -279,11 +279,11 @@ limitations under the License.
 
 <p>Conflation is enabled for a cache server region, so all clients receiving updates for a particular region benefit from the conflation. To enable conflation, set the cache server’s <code>enable-subscription-conflation</code> region attribute to <code>true</code>. This region attribute is <code>false</code> by default.</p>
 
-<p>The queue managment code conflates entry updates as part of the enqueue operation. If the previous enqueued item for that key is also an <code>update</code> operation, the queue management code removes that previously enqueued update, leaving only the latest update to be sent when event distribution occurs. For high availability, conflation also occurs for any secondary queues.</p>
+<p>The queue management code conflates entry updates as part of the enqueue operation. If the previous enqueued item for that key is also an <code>update</code> operation, the queue management code removes that previously enqueued update, leaving only the latest update to be sent when event distribution occurs. For high availability, conflation also occurs for any secondary queues.</p>
 
 <p>Only entry <code>update</code> messages in a cache server region with <code>distributed-no-ack</code> scope are conflated. Region operations and entry operations other than updates are not conflated.</p>
 
-<p>For more information, see the server documentation at <a href="geodeman/developing/events/conflate_server_subscription_queue.html">Conflate the Server Subscription Queue</a>.</p>
+<p>For more information, see the server documentation at <a href="https://geode.apache.org/docs/guide/latest/developing/events/conflate_server_subscription_queue.html">Conflate the Server Subscription Queue</a>.</p>
 
 <h2 id="overriding-queue-conflation-per-client"><a id="concept_AEFA04AF9ABD42C0A37ED31806596D24__section_BE506A32A8E44073B197B03AC5232C01" class="no-quick-link"></a>Overriding Queue Conflation Per-Client</h2>
 
@@ -326,7 +326,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

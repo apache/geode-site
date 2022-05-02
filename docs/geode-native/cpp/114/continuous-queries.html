@@ -280,7 +280,7 @@ limitations under the License.
 
 <p>The C++ and .NET clients can initiate queries that run on the Geode cache server
 and notify the client when the query results have changed.  For details on the server-side setup for
-continuous queries, see <a href="serverman/developing/continuous_querying/how_continuous_querying_works.html">How Continuous Querying Works</a> 
+continuous queries, see <a href="https://geode.apache.org/docs/guide/latest/developing/continuous_querying/how_continuous_querying_works.html">How Continuous Querying Works</a> 
 in the <em>Geode User Guide</em>.</p>
 
 <h2 id="continuous-query-basics"><a id="cq_main_features" ></a>Continuous Query Basics</h2>
@@ -295,8 +295,8 @@ to process CQ events is based on the standard Geode event handling framework. </
 server-to-client messaging mechanisms to send events. All tuning of your server-to-client
 messaging also tunes the messaging of your CQ events. If your system is configured for high
 availability then your CQs are highly available, with seamless failover provided in case of
-server failure (see <a href="/serverman/developing/events/ha_event_messaging_whats_next.html">Highly Available Client/Server Event Messaging</a>). 
-If your clients are durable, you can also define any of your CQs as durable (see <a href="/serverman/developing/events/implementing_durable_client_server_messaging.html">Implementing Durable Client/Server Messaging</a>).</p></li>
+server failure (see <a href="https://geode.apache.org/docs/guide/latest/developing/events/ha_event_messaging_whats_next.html">Highly Available Client/Server Event Messaging</a>). 
+If your clients are durable, you can also define any of your CQs as durable (see <a href="https://geode.apache.org/docs/guide/latest/developing/events/implementing_durable_client_server_messaging.html">Implementing Durable Client/Server Messaging</a>).</p></li>
 <li><p><strong>Interest criteria based on data values</strong>. Continuous queries are run against the region&rsquo;s entry values. 
 Compare this to register interest by reviewing <a href="/docs/geode-native/cpp/114/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>.</p></li>
 <li><p><strong>Active query execution</strong>. Once initialized, the queries operate on new events. Events that change the query result are sent to the client immediately.</p></li>
@@ -427,7 +427,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
