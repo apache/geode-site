@@ -49,7 +49,7 @@ limitations under the License.
   <h1 class="logo">
     <a href="/">
         <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
-      Apache Geode Native .NET Documentation
+      Apache Geode Native .NET Framework Documentation
     </a>
   </h1>
   <div class="header-links js-bar-links">
@@ -226,7 +226,7 @@ limitations under the License.
 -->
 <span style="font-weight:200;font-size:31px;" style="float:left;">
     <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
-  Apache Geode Native .NET
+  Apache Geode Native .NET Framework
 </span>
   <span class="local-header version-info" style="float:right;">
     <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
@@ -254,8 +254,8 @@ limitations under the License.
 
           <div id="js-quick-links" >
             <div class="quick-links"><ul>
-<li><a href="#auto-ser-java-interop">Java Interoperability with .NET Specific Types</a></li>
-<li><a href="#auto-ser-remote-queries">Remote Queries of .NET Only Types</a></li>
+<li><a href="#auto-ser-java-interop">Java Interoperability with .NET Framework Specific Types</a></li>
+<li><a href="#auto-ser-remote-queries">Remote Queries of .NET Framework Only Types</a></li>
 <li><a href="#pdx-ser-extending-auto">Extending the PDX Autoserializer</a></li>
 </ul></div>
           </div>
@@ -279,8 +279,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>It&rsquo;s extremely easy for .NET applications to store and retrieve data from Geode. All that&rsquo;s required
-is a single line of code to set the <code>PdxSerializer</code> to the .NET client&rsquo;s <code>ReflectionBasedAutoSerializer</code>:</p>
+<p>It&rsquo;s extremely easy for .NET Framework applications to store and retrieve data from Geode. All
+that&rsquo;s required is a single line of code to set the <code>PdxSerializer</code> to the .NET Framework client&rsquo;s
+<code>ReflectionBasedAutoSerializer</code>:</p>
 <pre class="highlight csharp"><code><span class="n">cache</span><span class="p">.</span><span class="n">TypeRegistry</span><span class="p">.</span><span class="n">PdxSerializer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ReflectionBasedAutoSerializer</span><span class="p">();</span>
 </code></pre>
 
@@ -292,30 +293,31 @@ the region.</p>
 <pre class="highlight csharp"><code><span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
 </code></pre>
 
-<p>The .NET client&rsquo;s <code>ReflectionBasedAutoSerializer</code> supports the full list of .NET primitives and other common
-built-in types.</p>
+<p>The .NET Framework client&rsquo;s <code>ReflectionBasedAutoSerializer</code> supports the full list of .NET
+Framework primitives and other common built-in types.</p>
 
 <p>Types without a no-arg constructor are not supported by the <code>ReflectionBasedAutoSerializer</code>. This
 includes all user defined structs. <code>System.Data.Datatable</code> is an example of a system class that is not
 supported due to lack of a no-arg constructor.</p>
 
-<h2 id="java-interoperability-with-.net-specific-types"><a id="auto-ser-java-interop"></a>Java Interoperability with .NET Specific Types</h2>
+<h2 id="java-interoperability-with-.net-framework-specific-types"><a id="auto-ser-java-interop"></a>Java Interoperability with .NET Framework Specific Types</h2>
 
 <p>Java does not have unsigned data types or exact equivalents of <code>Guid</code> and <code>Decimal</code>. Care should be
-taken when passing these types between .NET and Java applications using the .NET
-<code>ReflectionBasedAutoSerializer</code>. For example, if storing <code>UInt16</code> data (that is, 16-bit unsigned values),
-be aware that values greater than <code>UInt16.MaxValue/2 - 1</code> will show up as negative numbers in
-Java. Using that data in a Java application may have unexpected behavior. If you expect to exceed
+taken when passing these types between .NET Framework and Java applications using the .NET
+Framework <code>ReflectionBasedAutoSerializer</code>. For example, if storing <code>UInt16</code> data (that is, 16-bit
+unsigned values), be aware that values greater than <code>UInt16.MaxValue/2 - 1</code> will show up as
+negative numbers in Java.
+Using that data in a Java application may have unexpected behavior. If you expect to exceed
 half the range for the given type (<code>Byte.MaxValue/2</code>, <code>UInt16.MaxValue/2</code>, <code>UInt32.MaxValue/2</code>, or
 <code>UInt64.MaxValue/2</code>) you should use the next larger type. This obviously breaks down for
-<code>UInt64</code>, which has no next larger type. However, if your range exceeds <code>UIn64.MaxValue/2</code>, you likely
-have a much more complex set of issues to deal with, such as heavy paging due to such a large data
-set.</p>
+<code>UInt64</code>, which has no next larger type. However, if your range exceeds <code>UIn64.MaxValue/2</code>, you
+likely have a much more complex set of issues to deal with, such as heavy paging due to such a
+large data set.</p>
 
-<h2 id="remote-queries-of-.net-only-types"><a id="auto-ser-remote-queries"></a>Remote Queries of .NET Only Types</h2>
+<h2 id="remote-queries-of-.net-framework-only-types"><a id="auto-ser-remote-queries"></a>Remote Queries of .NET Framework Only Types</h2>
 
-<p>At this time the .NET Client does not support queries against user classes that have been stored on
-the server using the <code>ReflectionBasedAutoSerializer</code>.</p>
+<p>At this time the .NET Framework Client does not support queries against user classes that have been
+stored on the server using the <code>ReflectionBasedAutoSerializer</code>.</p>
 
 <p>When you register the reflection-based serializer, Geode uses it to serialize all
 objects that do not implement <code>IPdxSerializable</code>. You can customize the
@@ -345,7 +347,7 @@ object’s fields.</p>
 <pre class="highlight csharp"><code><span class="na">[PdxIdentityField]</span> <span class="k">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
 </code></pre>
 
-<p>To exclude a field from serialization, add the .NET attribute <code>NonSerialized</code> to the field.</p>
+<p>To exclude a field from serialization, add the .NET Framework attribute <code>NonSerialized</code> to the field.</p>
 
 <p>For example:</p>
 <pre class="highlight csharp"><code><span class="na">[NonSerialized]</span> <span class="k">private</span> <span class="kt">int</span> <span class="n">myLocalData</span><span class="p">;</span>
@@ -353,7 +355,7 @@ object’s fields.</p>
 
 <p>For each domain class Geode serializes using the autoserializer, all fields are
 considered for serialization except those defined as <code>static</code>, <code>literal</code> or <code>readonly</code> and those you
-explicitly exclude using the .NET <code>NonSerialized</code> attribute.</p>
+explicitly exclude using the .NET Framework <code>NonSerialized</code> attribute.</p>
 
 <p>This example code demonstrates how to extend the autoserializer to customize serialization.</p>
 <pre class="highlight csharp"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">AutoSerializerEx</span> <span class="p">:</span> <span class="n">ReflectionBasedAutoSerializer</span>
@@ -434,7 +436,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>

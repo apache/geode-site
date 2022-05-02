@@ -49,7 +49,7 @@ limitations under the License.
   <h1 class="logo">
     <a href="/">
         <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
-      Apache Geode Native .NET Documentation
+      Apache Geode Native .NET Framework Documentation
     </a>
   </h1>
   <div class="header-links js-bar-links">
@@ -226,7 +226,7 @@ limitations under the License.
 -->
 <span style="font-weight:200;font-size:31px;" style="float:left;">
     <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
-  Apache Geode Native .NET
+  Apache Geode Native .NET Framework
 </span>
   <span class="local-header version-info" style="float:right;">
     <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
@@ -282,7 +282,7 @@ limitations under the License.
 
 <p>Geode&rsquo;s Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects.</p>
 
-<p>Geode .NET PDX serialization:</p>
+<p>Geode .NET Framework PDX serialization:</p>
 
 <ul>
 <li><p>Is <a href="#pdx-ser-portability">interoperable with other languages by Geode</a> &ndash; no need to program a Java-side implementation</p></li>
@@ -293,9 +293,11 @@ avoid the cost of deserializing the entire data object</p></li>
 <li><p><a href="#pdx-ser-delta-prop">Works with Geode delta propagation</a></p></li>
 </ul>
 
-<p>The simplest option is to use <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/dotnet-pdx-autoserializer.html">automatic serialization</a> by registering the Geode .NET
-PDX reflection-based autoserializer in your application. When you have an autoserializer,
-Geode uses it for all domain objects that are not separately treated under the IPDXSerializable interface.</p>
+<p>The simplest option is to use <a href="/docs/geode-native/dotnet/114/serialization/dotnet-serialization/dotnet-pdx-autoserializer.html">automatic serialization</a> by
+registering the Geode .NET Framework PDX reflection-based autoserializer in your
+application. When you have an autoserializer,
+Geode uses it for all domain objects that are not separately treated under the
+IPDXSerializable interface.</p>
 
 <p>For greater control, you can specify individual treatment for domain objects using the <code>IPdxSerializable</code> interface.
 Objects derived from the <code>IPdxSerializable</code> interface are not subject to autoserialization.</p>
@@ -306,21 +308,23 @@ Objects derived from the <code>IPdxSerializable</code> interface are not subject
 information in a central registry. The information is passed between peers, between clients and
 servers, and between distributed systems.</p>
 
-<p>This offers a notable advantage to the .NET client, which shares data with Java cache
-servers. When using PDX serialization, clients automatically pass registry information to servers when they store an
-<code>IPdxSerializable</code> object. Clients can run queries and functions against the data in the servers
-without the servers needing to know anything about the stored objects. One client can store data on
-the server to be retrieved by another client, with the server never needing to know the object
-type. This means you can code your .NET clients to manage data using Java servers without having to
-create Java implementations of your .NET domain objects.</p>
+<p>This offers a notable advantage to the .NET Framework client, which shares data with Java cache
+servers. When using PDX serialization, clients automatically pass registry information to servers
+when they store an <code>IPdxSerializable</code> object. Clients can run queries and functions against the
+data in the servers without the servers needing to know anything about the stored objects. One
+client can store data on the server to be retrieved by another client, with the server never
+needing to know the object type. This means you can code your .NET Framework clients to manage data
+using Java servers without having to create Java implementations of your .NET Framework domain
+objects.</p>
 
 <h2 id="reduced-deserialization-of-serialized-objects"><a id="pdx-ser-reduced-deserialization"></a>Reduced Deserialization of Serialized Objects</h2>
 
 <p>The access methods for <code>IPdxSerializable</code> objects allow you to examine specific fields of your
 domain object without deserializing the entire object. This can reduce 
-deserialization costs significantly. Client .NET apps can run queries and execute functions against
-the objects in the server caches without deserializing the entire object on the server side. The
-query engine automatically recognizes PDX objects and uses only the fields it needs.</p>
+deserialization costs significantly. Client .NET Framework apps can run queries and execute
+functions against the objects in the server caches without deserializing the entire object on the
+server side. The query engine automatically recognizes PDX objects and uses only the fields it
+needs.</p>
 
 <p>Clients can execute Java functions on server data that only access parts of the domain objects by using <code>PdxInstance.</code></p>
 
@@ -370,7 +374,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2021 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
