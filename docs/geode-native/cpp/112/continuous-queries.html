@@ -274,6 +274,9 @@ Compare this to register interest by reviewing <a href="/docs/geode-native/cpp/1
 <li><p><strong>Active query execution</strong>. Once initialized, the queries operate on new events. Events that change the query result are sent to the client immediately.</p></li>
 </ul>
 
+<p><strong>Note:</strong> Because floating point numbers can not reliably be compared for equality, do not use
+floating point values as keys or key components when constructing a query.</p>
+
 <h2 id="typical-continuous-query-lifecycle"><a id="cq_api"></a>Typical Continuous Query Lifecycle</h2>
 
 <ol>
@@ -396,7 +399,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
