@@ -267,6 +267,9 @@ You can optimize your queries by defining indexes on the cache server.</p>
 
 <p>Querying and indexing operate only on remote cache server contents.</p>
 
+<p><strong>Note:</strong> Because floating point numbers can not reliably be compared for equality, do not use
+floating point values as keys or key components when constructing a query.</p>
+
 <h3 id="query-language:-oql"><a id="QueryLanguage"></a>Query language: OQL</h3>
 
 <p>Geode provides a SQL-like querying language called OQL that allows you to access data stored in Geode regions.
@@ -370,7 +373,7 @@ limitations under the License.
 -->
 <div class="copyright">
   <a href='/'>Apache Geode Documentation</a>
-  &copy; 2020 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
 </div>
 <div class="support">
   Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
