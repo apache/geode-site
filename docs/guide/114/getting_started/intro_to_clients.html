@@ -2735,26 +2735,6 @@ Apache Geode that you have installed.</p>
 }
 </code></pre>
 
-<p><strong>Connect to the server from your application</strong></p>
-<pre class="highlight plaintext"><code>import org.apache.geode.cache.client.ClientCache;
-import org.apache.geode.cache.client.ClientCacheFactory;
-
-public class HelloWorld {
-
-  public static void main(String[] args) {
-      ClientCache cache = new ClientCacheFactory().addPoolLocator("127.0.0.1", 10334).create();
-
-      System.out.println(cache.getDefaultPool().getLocators());
-
-      cache.close();
- }
-}
-</code></pre>
-
-<p>The information printed out should match the host and port of your Apache Geode instance locators and should resemble</p>
-<pre class="highlight plaintext"><code>[/127.0.0.1:10334]
-</code></pre>
-
 <p><strong>Simple Put and Get with Apache Geode Java client</strong></p>
 <pre class="highlight plaintext"><code>public static void main(String[] args) {
 ClientCache cache = new ClientCacheFactory().addPoolLocator("127.0.0.1", 10334).create();
