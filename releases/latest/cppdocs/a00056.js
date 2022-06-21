@@ -1,4 +1,4 @@
 var a00056 =
 [
-    [ "CacheLoader", "a00379.html", "a00379" ]
+    [ "apache::geode::client::CacheLoader", "a00382.html", "a00382" ]
 ];

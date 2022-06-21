@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['persistencemanager_2ehpp',['PersistenceManager.hpp',['../a00182.html',1,'']]],
-  ['poolfactory_2ehpp',['PoolFactory.hpp',['../a00188.html',1,'']]],
-  ['properties_2ehpp',['Properties.hpp',['../a00194.html',1,'']]]
+  ['query_2ehpp_0',['Query.hpp',['../a00197.html',1,'']]],
+  ['queryservice_2ehpp_1',['QueryService.hpp',['../a00200.html',1,'']]]
 ];

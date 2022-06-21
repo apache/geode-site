@@ -1,4 +1,4 @@
 var a00194 =
 [
-    [ "Properties", "a00807.html", "a00807" ]
+    [ "apache::geode::client::Properties", "a00810.html", "a00810" ]
 ];

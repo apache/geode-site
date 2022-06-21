@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writablepdxinstance',['WritablePdxInstance',['../a00891.html',1,'apache::geode::client']]],
-  ['wrongregionscopeexception',['WrongRegionScopeException',['../a00591.html',1,'apache::geode::client']]]
+  ['writablepdxinstance_0',['WritablePdxInstance',['../a00898.html',1,'apache::geode::client']]],
+  ['wrongregionscopeexception_1',['WrongRegionScopeException',['../a00594.html',1,'apache::geode::client']]]
 ];

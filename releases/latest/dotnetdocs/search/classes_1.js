@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffersizeexceededexception',['BufferSizeExceededException',['../a00762.html',1,'Apache::Geode::Client']]]
+  ['buffersizeexceededexception_0',['BufferSizeExceededException',['../a00768.html',1,'Apache::Geode::Client']]]
 ];

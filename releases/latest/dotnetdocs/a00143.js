@@ -1,6 +1,6 @@
 var a00143 =
 [
-    [ "Expiration", "a00886.html", "a00886" ],
+    [ "Apache::Geode::Client::Expiration", "a00892.html", "a00892" ],
     [ "ExpirationAction", "a00143.html#a30c72f6219e29e7305222feb4857caec", [
       [ "Invalidate", "a00143.html#a30c72f6219e29e7305222feb4857caeca85f5aa877be7431c42128b8112a4628e", null ],
       [ "LocalInvalidate", "a00143.html#a30c72f6219e29e7305222feb4857caecab85b76e395d0b70923798115dc6bf4c3", null ],

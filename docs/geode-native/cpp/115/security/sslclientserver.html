@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      TLS/SSL Client-Server Communication Encryption |
+    Geode Native C++ Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_cpp docs_geode-native_cpp_115 docs_geode-native_cpp_115_security docs_geode-native_cpp_115_security_sslclientserver has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native C++ Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/cpp/115/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/115/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/115/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/115/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/115/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/115/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/cpp/115/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/115/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/cpp/115/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/115/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/115/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/115/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/115/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/115/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/cpp/115/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/115/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/cpp/115/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/115/serialization/data-serialization.html">Serializing Data</a>
+      <ul>
+        <li class="has_submenu">
+        <a href="/docs/geode-native/cpp/115/serialization/cpp-serialization/cpp-pdx-serialization.html">Geode PDX Serialization</a>
+        <ul>
+          <li>
+          <a href="/docs/geode-native/cpp/115/serialization/cpp-serialization/pdxserializable-interface.html">Using the PdxSerializable Abstract Class</a>
+          </li>
+          <li>
+          <a href="/docs/geode-native/cpp/115/serialization/cpp-serialization/pdx-serializable-examples.html">PdxSerializable Example</a>
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/115/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/115/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/cpp/115/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/cpp/115/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/cpp/115/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/115/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/cpp/115/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/115/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/cpp/115/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native C++
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    TLS/SSL Client-Server Communication Encryption
+  </h1>
+
+          <div id="js-quick-links" >
+            
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>This section describes how to implement TLS-based communication between your clients and servers using the OpenSSL encryption utility.
+When configuring TLS/SSL security for your client, you may find it helpful to refer to <a href="https://geode.apache.org/docs/guide/latest/managing/security/ssl_overview.html">The SSL section of the Geode User Guide</a>.</p>
+
+<h1 id="set-up-openssl">Set Up OpenSSL</h1>
+
+<p>The open-source OpenSSL toolkit provides a full-strength general purpose cryptography library for encrypting client-server communications.</p>
+
+<p>Download and install OpenSSL 1.1.1 for your specific operating system.</p>
+
+<p><strong>Notes for Windows users:</strong></p>
+
+<ul>
+<li><p>For Windows platforms, you can use either the regular or the &ldquo;Light&rdquo; version of SSL.</p></li>
+<li><p>Use a 64-bit implementation of OpenSSL.</p></li>
+<li><p>If you use Cygwin, do not use the OpenSSL library that comes with Cygwin, which is built with
+<code>cygwin.dll</code> as a dependency. Instead, download a fresh copy from OpenSSL.</p></li>
+<li><p>For many Windows applications, the most convenient way to install OpenSSL is to use <code>choco</code> (see <a href="https://chocolatey.org/packages/OpenSSL.Light">chocolatey.org</a>) to install the “Light” version of OpenSSL.</p></li>
+</ul>
+
+<h2 id="step-1.-create-keystores">Step 1. Create keystores</h2>
+
+<p>The Geode server requires keys and keystores in the Java Key Store (JKS) format while the native client requires them in the clear PEM format. Thus you need to be able to generate private/public keypairs in either format and convert between the two using the <code>keytool</code> utility and the <code>openssl</code> command.</p>
+
+<h2 id="step-2.-enable-ssl-on-the-server-and-on-the-client">Step 2. Enable SSL on the server and on the client</h2>
+
+<ol>
+<li><p>On the server, enable SSL for the <code>locator</code> and <code>server</code> components, as the SSL-enabled client
+must be able to communicate with both locator and server components.</p></li>
+<li><p>On the client, set <code>ssl-enabled</code> to <code>true</code>. </p></li>
+<li><p>On the client, set <code>ssl-keystore</code> and <code>ssl-truststore</code> to point to your keystore files. Paths to the keystore and truststore are local to the client.
+See <a href="/docs/geode-native/cpp/115/configuring/sysprops.html#attributes-gfcpp__table_security_props">Security Properties</a> for a description of these properties.</p></li>
+</ol>
+
+<h1 id="starting-and-stopping-the-client-and-server-with-ssl-in-place">Starting and stopping the client and server with SSL in place</h1>
+
+<p>Before you start and stop the client and server, make sure you configure the native client with the
+SSL properties as described and with the servers or locators specified as usual.</p>
+
+<p>Specifically, ensure that:</p>
+
+<ul>
+<li>  The OpenSSL and Geode DLLs are in the right environment variables for your system: <code>PATH</code> for Windows, and <code>LD_LIBRARY_PATH</code> for Unix.</li>
+<li>  You have generated the keys and keystores.</li>
+<li>  You have set the system properties.</li>
+</ul>
+
+<p>For details on stopping and starting locators and cache servers with SSL, see <a href="https://geode.apache.org/docs/guide/latest/configuring/running/starting_up_shutting_down.html">Starting Up and Shutting Down Your System</a>.</p>
+
+<p><strong>Example locator start command</strong></p>
+
+<p>Ensure that all required SSL properties are configured in your server&rsquo;s <code>geode.properties</code> file. Then start your locator as follows:</p>
+<pre class="highlight plaintext"><code>gfsh&gt;start locator --name=my_locator --port=12345 --dir=. \
+--security-properties-file=/path/to/your/geode.properties
+</code></pre>
+
+<p><strong>Example locator stop command</strong></p>
+<pre class="highlight plaintext"><code>gfsh&gt;stop locator --port=12345 \
+--security-properties-file=/path/to/your/geode.properties
+</code></pre>
+
+<p><strong>Example server start command</strong></p>
+
+<p>Again, ensure that all required SSL properties are configured in <code>geode.properties</code>. Then start the server with:</p>
+<pre class="highlight plaintext"><code>gfsh&gt;start server --name=my_server --locators=hostname[12345] \
+--cache-xml-file=server.xml --log-level=fine \
+--security-properties-file=/path/to/your/geode.properties
+</code></pre>
+
+<p><strong>Example server stop command</strong></p>
+<pre class="highlight plaintext"><code>gfsh&gt;stop server --name=my_server
+</code></pre>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

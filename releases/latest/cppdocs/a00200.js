@@ -1,4 +1,4 @@
 var a00200 =
 [
-    [ "QueryService", "a00819.html", "a00819" ]
+    [ "apache::geode::client::QueryService", "a00822.html", "a00822" ]
 ];

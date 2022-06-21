@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Remote Queries |
+    Geode Native .NET Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_dotnet docs_geode-native_dotnet_115 docs_geode-native_dotnet_115_remote-queries has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native .NET Framework Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="has_submenu">
+        <a href="/docs/geode-native/dotnet/115/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/serialization/data-serialization.html">Serializing Data</a>
+      <ul>
+        <li class="has_submenu">
+          <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/dotnet-pdx-serialization.html">Geode PDX Serialization</a>
+          <ul>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/dotnet-pdx-autoserializer.html">Using the Geode PDX Autoserializer</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native .NET Framework
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Remote Queries
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li>
+<a href="#RemoteQueryBasics">Remote Query Basics</a><ul>
+<li><a href="#QueryLanguage">Query language: OQL</a></li>
+<li><a href="#CreatingIndexes">Creating Indexes</a></li>
+</ul>
+</li>
+<li>
+<a href="#RemoteQueryAPI">Remote Query API</a><ul>
+<li><a href="#Query">Query</a></li>
+<li><a href="#ExecutingAQuery">Executing a Query from the Client</a></li>
+<li><a href="#DotNetQueryExample">.NET Framework Query Example</a></li>
+</ul>
+</li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>Use the remote query API to query your cached data stored on a cache server. </p>
+
+<h2 id="remote-query-basics"><a id="RemoteQueryBasics"></a>Remote Query Basics</h2>
+
+<p>Queries are evaluated and executed on the cache server, and the results are returned to the client.
+You can optimize your queries by defining indexes on the cache server.</p>
+
+<p>Querying and indexing operate only on remote cache server contents.</p>
+
+<p><strong>Note:</strong> Because floating point numbers can not reliably be compared for equality, do not use
+floating point values as keys or key components when constructing a query.</p>
+
+<h3 id="query-language:-oql"><a id="QueryLanguage"></a>Query language: OQL</h3>
+
+<p>Geode provides a SQL-like querying language called OQL that allows you to access data stored in Geode regions.
+OQL is very similar to SQL, but OQL allows you to query complex objects, object attributes, and methods.</p>
+
+<p>In the context of a query, specify the name of a region by its full path, starting with a slash (<code>/</code>).</p>
+
+<p>The query language supports drilling down into nested object structures.
+Nested data collections can be explicitly referenced in the FROM clause of a query.</p>
+
+<p>A query execution returns its results as either a <code>ResultSet</code> or a <code>StructSet</code>. </p>
+
+<p>Query language features and grammar are described in the Geode manual at
+<a href="https://geode.apache.org/docs/guide/latest/developing/querying_basics/chapter_overview.html">Querying</a>.</p>
+
+<h3 id="creating-indexes"><a id="CreatingIndexes"></a>Creating Indexes</h3>
+
+<p>Indexes can provide significant performance gains for query execution. You create and maintain indexes on the cache server.
+For detailed information about working with indexes configured on a cache server, 
+see <a href="https://geode.apache.org/docs/guide/latest/developing/query_index/query_index.html">Working with Indexes</a> in the server&rsquo;s documentation.</p>
+
+<h2 id="remote-query-api"><a id="RemoteQueryAPI"></a>Remote Query API</h2>
+
+<p>This section gives a general overview of the interfaces and classes that are provided by the query package API.</p>
+
+<h3 id="query"><a id="Query"></a>Query</h3>
+
+<p>You must create a <code>Query</code> object for each new query. The <code>Query</code> interface provides methods for
+managing the compilation and execution of queries, and for retrieving an existing query string.</p>
+
+<p>A <code>Query</code> is obtained from a <code>QueryService</code>, which is obtained from one of two sources:</p>
+
+<ul>
+<li><p>To create a <code>Query</code> that operates on the Geode server, use <code>Apache::Geode::Client::Pool::GetQueryService()</code> to instantiate a <code>QueryService</code> obtained from a <code>Pool</code>.</p></li>
+<li><p>To create a <code>Query</code> that operates on your application&rsquo;s local cache, use <code>Apache::Geode::Client::Cache::GetQueryService()</code> to instantiate a <code>QueryService</code> obtained from a <code>Cache</code>.</p></li>
+</ul>
+
+<h3 id="executing-a-query-from-the-client"><a id="ExecutingAQuery"></a>Executing a Query from the Client</h3>
+
+<p>The essential steps to create and execute a query are:</p>
+
+<ol>
+<li> Create an instance of the <code>QueryService</code> class. If you are using the pool API (recommended), you should obtain the <code>QueryService</code> from the pool.</li>
+<li> Create a <code>Query</code> instance that is compatible with the OQL specification.</li>
+<li> Use the <code>Query.Execute()</code> method to submit the query string to the cache server. The server
+remotely evaluates the query string and returns the results to the client.</li>
+<li> Iterate through the returned objects.</li>
+</ol>
+
+<h3 id=".net-framework-query-example"><a id="DotNetQueryExample"></a>.NET Framework Query Example</h3>
+
+<p>These C# code excerpts are from the <code>examples\dotnet\remotequery</code> example included in your client
+distribution. See the example for full context.</p>
+
+<p>Following the steps listed above,</p>
+
+<ol>
+<li><p>Obtain a <code>QueryService</code> object from the connection pool:</p>
+<pre class="highlight plaintext"><code>var queryService = pool.GetQueryService();
+</code></pre></li>
+<li><p>Create a <code>Query</code> object by calling <code>QueryService.NewQuery()</code>, specifying your OQL query as a string parameter:</p>
+<pre class="highlight plaintext"><code>var query = queryService.NewQuery&lt;Order&gt;("SELECT * FROM /custom_orders WHERE quantity &gt; 30");
+</code></pre></li>
+<li><p>Execute the query. Collect the query output, returned as either a <code>ResultSet</code> or a <code>StructSet</code>, and iterate through the results:</p>
+<pre class="highlight plaintext"><code>var queryResults = query.Execute();
+
+foreach (Order value in queryResults)
+{
+  Console.WriteLine(value.ToString());
+}
+</code></pre></li>
+</ol>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

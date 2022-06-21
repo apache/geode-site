@@ -1,4 +1,4 @@
 var a00050 =
 [
-    [ "CacheFactory", "a00371.html", "a00371" ]
+    [ "apache::geode::client::CacheFactory", "a00374.html", "a00374" ]
 ];

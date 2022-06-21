@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unknownexception',['UnknownException',['../a00547.html',1,'apache::geode::client']]],
-  ['unsupportedoperationexception',['UnsupportedOperationException',['../a00535.html',1,'apache::geode::client']]],
-  ['userfunctionexecutionexception',['UserFunctionExecutionException',['../a00887.html',1,'apache::geode::client']]]
+  ['unknownexception_0',['UnknownException',['../a00550.html',1,'apache::geode::client']]],
+  ['unsupportedoperationexception_1',['UnsupportedOperationException',['../a00538.html',1,'apache::geode::client']]],
+  ['userfunctionexecutionexception_2',['UserFunctionExecutionException',['../a00894.html',1,'apache::geode::client']]]
 ];

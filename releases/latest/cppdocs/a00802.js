@@ -1,0 +1,27 @@
+var a00802 =
+[
+    [ "addLocator", "a00802.html#a75424385e9761f96b9ca7e29d533d10f", null ],
+    [ "addServer", "a00802.html#a58ee6642d908a4eb862be6aad231c75e", null ],
+    [ "create", "a00802.html#afa445c0b45de3f64ca26fd1fe0d42b1e", null ],
+    [ "reset", "a00802.html#a07fe0ff7e86096f18c4495fe0345c1c7", null ],
+    [ "setFreeConnectionTimeout", "a00802.html#a77fc81e1a05115870caf5ff1c9f2777f", null ],
+    [ "setIdleTimeout", "a00802.html#a2c9d6980c580a65e398d4dc7c5dfe160", null ],
+    [ "setLoadConditioningInterval", "a00802.html#a0328ad88ffc8f231ad85f35499bcb7bf", null ],
+    [ "setMaxConnections", "a00802.html#a9f7c9c37bf13b5dee5396806dfc077d3", null ],
+    [ "setMinConnections", "a00802.html#af19135f171d4a26627f9466ef692da15", null ],
+    [ "setMultiuserAuthentication", "a00802.html#ae4b1e97aeb0f3922eb93ebcb739ebadc", null ],
+    [ "setPingInterval", "a00802.html#a7ab2b89f89d899fa584df777be8f8bd9", null ],
+    [ "setPRSingleHopEnabled", "a00802.html#ae624d8e9c7031686d9d41524f5039ce1", null ],
+    [ "setReadTimeout", "a00802.html#a71a642e4ff822dbf69c886d3abdecc63", null ],
+    [ "setRetryAttempts", "a00802.html#a4cff3fc4040fd6eb6bf385e7f6bdc680", null ],
+    [ "setServerGroup", "a00802.html#aa30540fff77a3b42e0645bbeb3445c52", null ],
+    [ "setSniProxy", "a00802.html#af2c00b2ce13bfcc54cf0a37dc4d46c57", null ],
+    [ "setSocketBufferSize", "a00802.html#a60c694461bfde76050f64566a761a499", null ],
+    [ "setStatisticInterval", "a00802.html#a2398a0ae256536ead1694b7d65cae5c0", null ],
+    [ "setSubscriptionAckInterval", "a00802.html#a39b9c509f3b210af90ac350265721cab", null ],
+    [ "setSubscriptionEnabled", "a00802.html#a3bf4ad82e86ad12cab781a2408cabbaa", null ],
+    [ "setSubscriptionMessageTrackingTimeout", "a00802.html#a275288f7a8b8db570d0eae4efcb6bf56", null ],
+    [ "setSubscriptionRedundancy", "a00802.html#a63e2b9732aa6efaf1df3a23c06622095", null ],
+    [ "setThreadLocalConnections", "a00802.html#a43428c62da6283b1d61ce432dcc59fea", null ],
+    [ "setUpdateLocatorListInterval", "a00802.html#ad50e3fafb9bdbedf4352d177e8ac0cc1", null ]
+];

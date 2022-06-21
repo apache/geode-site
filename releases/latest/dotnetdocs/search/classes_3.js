@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['datainput',['DataInput',['../a00602.html',1,'Apache::Geode::Client']]],
-  ['dataoutput',['DataOutput',['../a00606.html',1,'Apache::Geode::Client']]],
-  ['diskcorruptexception',['DiskCorruptException',['../a00778.html',1,'Apache::Geode::Client']]],
-  ['diskfailureexception',['DiskFailureException',['../a00774.html',1,'Apache::Geode::Client']]],
-  ['diskpolicy',['DiskPolicy',['../a00610.html',1,'Apache::Geode::Client']]],
-  ['distributedsystem',['DistributedSystem',['../a00614.html',1,'Apache::Geode::Client']]],
-  ['duplicatedurableclientexception',['DuplicateDurableClientException',['../a00818.html',1,'Apache::Geode::Client']]]
+  ['datainput_0',['DataInput',['../a00608.html',1,'Apache::Geode::Client']]],
+  ['dataoutput_1',['DataOutput',['../a00612.html',1,'Apache::Geode::Client']]],
+  ['diskcorruptexception_2',['DiskCorruptException',['../a00784.html',1,'Apache::Geode::Client']]],
+  ['diskfailureexception_3',['DiskFailureException',['../a00780.html',1,'Apache::Geode::Client']]],
+  ['diskpolicy_4',['DiskPolicy',['../a00616.html',1,'Apache::Geode::Client']]],
+  ['distributedsystem_5',['DistributedSystem',['../a00620.html',1,'Apache::Geode::Client']]],
+  ['duplicatedurableclientexception_6',['DuplicateDurableClientException',['../a00824.html',1,'Apache::Geode::Client']]]
 ];

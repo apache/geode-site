@@ -1,4 +1,4 @@
 var a00116 =
 [
-    [ "Delta", "a00455.html", "a00455" ]
+    [ "apache::geode::client::Delta", "a00458.html", "a00458" ]
 ];

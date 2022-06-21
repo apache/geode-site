@@ -1,4 +1,4 @@
 var a00182 =
 [
-    [ "PersistenceManager", "a00791.html", "a00791" ]
+    [ "apache::geode::client::PersistenceManager", "a00794.html", "a00794" ]
 ];

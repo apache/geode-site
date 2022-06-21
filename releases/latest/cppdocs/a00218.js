@@ -1,4 +1,4 @@
 var a00218 =
 [
-    [ "RegionFactory", "a00843.html", "a00843" ]
+    [ "apache::geode::client::RegionFactory", "a00846.html", "a00846" ]
 ];

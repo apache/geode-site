@@ -1,4 +1,4 @@
 var a00017 =
 [
-    [ "AuthenticatedView", "a00279.html", "a00279" ]
+    [ "apache::geode::client::AuthenticatedView", "a00282.html", "a00282" ]
 ];

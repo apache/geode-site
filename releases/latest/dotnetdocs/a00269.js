@@ -1,6 +1,6 @@
 var a00269 =
 [
-    [ "Log", "a01038.html", "a01038" ],
+    [ "Apache::Geode::Client::Log", "a01044.html", "a01044" ],
     [ "LogLevel", "a00269.html#adbfce8e56c7ef4e4511637b4539dbcfa", [
       [ "Null", "a00269.html#adbfce8e56c7ef4e4511637b4539dbcfaabbb93ef26e3c101ff11cdd21cab08a94", null ],
       [ "Error", "a00269.html#adbfce8e56c7ef4e4511637b4539dbcfaa902b0d55fddef6f8d651fe1035b7d4bd", null ],
