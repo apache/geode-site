@@ -90,6 +90,9 @@ limitations under the License.
                                 <a href="/docs/guide/115/getting_started/system_requirements/host_machine.html">Host Machine Requirements</a>
                             </li>
                             <li>
+                                <a href="/docs/guide/115/getting_started/system_requirements/java_support.html">Java Support</a>
+                            </li>
+                            <li>
                                 <a href="/docs/guide/115/getting_started/installation/install_standalone.html">How to Install</a>
                             </li>
                             <li>
@@ -723,7 +726,7 @@ limitations under the License.
                         <a href="/docs/guide/115/managing/monitor_tune/chapter_overview.html">Performance Tuning and Configuration</a>
                         <ul>
                             <li>
-                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disabling TCP SYN Cookies</a>
+                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disable TCP SYN Cookies</a>
                             </li>
                             <li>
                                 <a href="/docs/guide/115/managing/monitor_tune/performance_on_vsphere.html">Improving Performance on vSphere</a>
@@ -2791,8 +2794,7 @@ The recommendations provided here for using the manager assume you have a solid 
 
 <p>Although the garbage first (G1) garbage collector works effectively with Apache Geode, issues can arise in some cases due to the differences between CMS and G1.
 For example, G1 by design is not able to set a maximum tenured heap size, so when this value is requested from the garbage collector, it reports the total heap maximum size. This impacts Apache Geode, as the resource manager uses the maximum size of the tenured heap size to calculate the value in bytes of the eviction and critical percentages.
-Extensive testing is recommended before using G1 garbage collector. See your JVM documentation for all JVM-specific settings that can be used to improve garbage collection (GC) response.
-If you find the Apache Geode Resource Manager does not detect crossing the eviction or critical threshold quickly enough, it has been observed that its responsiveness is increased by reducing the default value of <code>--J-XX:MaxGCPauseMillis=VALUE</code> JVM parameter (which is <code>200</code>). Be sure to take into account that this change also increases the amount of time spent in garbage collection.</p>
+Extensive testing is recommended before using G1 garbage collector. See your JVM documentation for all JVM-specific settings that can be used to improve garbage collection (GC) response.</p>
 
 <p>Size of objects stored on a region must also be taken into account. If the primary heap objects you allocate are larger than 50 percent of the G1 region size (what are called &ldquo;humongous&rdquo; objects), this can cause the JVM to report <code>out of heap memory</code> when it has used only 50 percent of the heap.
 The default G1 region size is 1 Mb; it can be increased up to 32 Mb (with values that are always a power of 2) by using the <code>--J-XX:G1HeapRegionSize=VALUE</code> JVM parameter. If you are using large objects and want to use G1GC without increasing its heap region size (or if your values are larger than 16 Mb), then you could configure your Apache Geode regions to store the large values off-heap. However, even if you do that the large off-heap values will allocate large temporary heap values that G1GC will treat as &ldquo;humongous&rdquo; allocations, even though they will be short lived. Consider using CMS if most of you values will result in &ldquo;humongous&rdquo; allocations.</p>

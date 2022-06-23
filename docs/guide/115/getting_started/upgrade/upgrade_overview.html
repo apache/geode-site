@@ -90,6 +90,9 @@ limitations under the License.
                                 <a href="/docs/guide/115/getting_started/system_requirements/host_machine.html">Host Machine Requirements</a>
                             </li>
                             <li>
+                                <a href="/docs/guide/115/getting_started/system_requirements/java_support.html">Java Support</a>
+                            </li>
+                            <li>
                                 <a href="/docs/guide/115/getting_started/installation/install_standalone.html">How to Install</a>
                             </li>
                             <li>
@@ -723,7 +726,7 @@ limitations under the License.
                         <a href="/docs/guide/115/managing/monitor_tune/chapter_overview.html">Performance Tuning and Configuration</a>
                         <ul>
                             <li>
-                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disabling TCP SYN Cookies</a>
+                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disable TCP SYN Cookies</a>
                             </li>
                             <li>
                                 <a href="/docs/guide/115/managing/monitor_tune/performance_on_vsphere.html">Improving Performance on vSphere</a>
@@ -2682,8 +2685,67 @@ the upgrade process.</p></li>
 
 <p>An offline upgrade can handle the widest variety of software versions and cluster configurations, but requires shutting down the entire
 system for at least a short time.</p></li>
-<li><p><strong><a href="/docs/guide/115/getting_started/upgrade/upgrade_clients.html">Upgrading Clients</a></strong></p></li>
+<li><p><strong><a href="/docs/guide/115/getting_started/upgrade/upgrade_clients.html">Upgrading Clients</a></strong></p>
+
+<p>When you upgrade your Geode server software, you may need to update your client
+applications in order to maintain compatibility with the upgraded servers.</p></li>
 </ul>
+
+<h2 id="upgrading-to-v1.15"><a id="upgrade_to_115" class="no-quick-link"></a>Upgrading to v1.15</h2>
+
+<p>For some users, issues regarding SSL protocols and their default values require a preparatory SSL protocol migration step when upgrading to Geode v1.15.
+Please read the following section carefully to determine whether your system requires this additional SSL protocol migration step.</p>
+
+<h3 id="does-my-system-require-ssl-protocol-migration-before-upgrading-to-geode-v1.15?"><a id="is_ssl_protocol_migration_required" class="no-quick-link"></a>Does my System Require SSL Protocol Migration Before Upgrading to Geode v1.15?</h3>
+
+<p>To determine whether your system requires the SSL protocol migration preparatory step, see if your system meets both of the following conditions:</p>
+
+<ul>
+<li>If <code>ssl-endpoint-identification-enabled</code> is set to <code>true</code> AND<br/></li>
+<li>If <code>ssl-protocols</code> is set to a value other than &ldquo;any&rdquo;, that is, it specifies a list of specific protocols, but does not include &ldquo;SSLv2Hello&rdquo;,</li>
+</ul>
+
+<p>THEN your system requires the SSL protocol migration step.</p>
+
+<p><strong>How do I determine my system&rsquo;s settings for the <code>ssl-endpoint-identification-enabled</code> and <code>ssl-protocols</code> properties?</strong></p>
+
+<p>SSL properties may be set in properties files or on the gfsh command line. To determine the settings for these parameters,</p>
+
+<ul>
+<li><p>Check <code>gemfire.properties</code> and <code>gfsecurity.properties</code> for
+<code>ssl-endpoint-identification-enabled=true</code>. Also look for <code>ssl-use-default-context=true</code>, which sets
+<code>ssl-endpoint-identification-enabled=true</code>.</p></li>
+<li><p>Search system logs for these properties (using <code>grep</code>, for example).</p></li>
+</ul>
+
+<h2 id="preparatory-ssl-protocol-migration"><a id="preparatory-migration" class="no-quick-link"></a>Preparatory SSL Protocol Migration</h2>
+
+<p>The preparatory SSL protocol migration process consists of replacing one property, <code>ssl-protocols</code>,
+with two new properties, <code>ssl-client-protocols</code> and <code>ssl-server-protocols</code>, then removing the old
+<code>ssl-protocols</code> definition. Perform this substitution in whatever way the original <code>ssl-protocols</code>
+were defined: in <code>.properties</code> files or on a command line.</p>
+
+<ol>
+<li>If your system is running JDK 8, upgrade to the latest version of JDK 8 before proceeding. This is necessary, even if you plan to
+perform the optional JDK upgrade step to JDK 11 or JDK 17.</li>
+<li>Shutdown a member (server or locator).</li>
+<li>Install Geode 1.15.</li>
+<li>Optionally install a new Java JDK.</li>
+<li>Add security property <code>ssl-client-protocols</code> with the same definition as the old <code>ssl-protocols</code> property.</li>
+<li>Add security property <code>ssl-server-protocols</code> with the same definition as the old <code>ssl-protocols</code> property PLUS &ldquo;SSLv2Hello&rdquo;.
+For example, if the original value of <code>ssl-protocols</code> is &ldquo;TLSv1.2&rdquo;, then define
+
+<ul>
+<li><code>ssl-client-protocols=&quot;TLSv1.2&quot;</code></li>
+<li><code>ssl-server-protocols=&quot;TLSv1.2,SSLv2Hello&quot;</code></li>
+</ul></li>
+<li>Start the member.</li>
+<li>Verify successful cluster join.</li>
+<li>Repeat from step 1 for the next member.</li>
+</ol>
+
+<p>Optionally, after your upgrade is complete, you may restore your original <code>ssl-protocols</code> property
+and restart all your members to eliminate the <code>SSLv2Hello</code> protocol support.</p>
 
         
 

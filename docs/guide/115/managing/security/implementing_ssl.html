@@ -90,6 +90,9 @@ limitations under the License.
                                 <a href="/docs/guide/115/getting_started/system_requirements/host_machine.html">Host Machine Requirements</a>
                             </li>
                             <li>
+                                <a href="/docs/guide/115/getting_started/system_requirements/java_support.html">Java Support</a>
+                            </li>
+                            <li>
                                 <a href="/docs/guide/115/getting_started/installation/install_standalone.html">How to Install</a>
                             </li>
                             <li>
@@ -723,7 +726,7 @@ limitations under the License.
                         <a href="/docs/guide/115/managing/monitor_tune/chapter_overview.html">Performance Tuning and Configuration</a>
                         <ul>
                             <li>
-                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disabling TCP SYN Cookies</a>
+                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disable TCP SYN Cookies</a>
                             </li>
                             <li>
                                 <a href="/docs/guide/115/managing/monitor_tune/performance_on_vsphere.html">Improving Performance on vSphere</a>
@@ -2661,32 +2664,32 @@ clients may differ &mdash; see the client&rsquo;s documentation for details.</p>
 system components.  The following list shows the system components that can be separately configured
 to communicate using SSL, and the kind of communications to which each component name refers:</p>
 
-<p><dt><strong>cluster</strong></dt>
-<dd>Peer-to-peer communications among members of a cluster</dd></p>
+<p><strong>cluster</strong>
+:    Peer-to-peer communications among members of a cluster</p>
 
-<p><dt><strong>gateway</strong></dt>
-<dd>Communication across WAN gateways from one site to another</dd></p>
+<p><strong>gateway</strong>
+:    Communication across WAN gateways from one site to another</p>
 
-<p><dt><strong>web</strong></dt>
-<dd>All web-based services hosted on the configured server, which can include the Developer REST API
+<p><strong>web</strong>
+:    All web-based services hosted on the configured server, which can include the Developer REST API
 service, the Management REST API service (used for remote cluster management) and the Pulse
-monitoring tool&rsquo;s web-based user interface.</dd></p>
+monitoring tool&rsquo;s web-based user interface.</p>
 
-<p><dt><strong>jmx</strong></dt>
-<dd>Java management extension communications, including communications with the <code>gfsh</code> utility. 
+<p><strong>jmx</strong>
+:    Java management extension communications, including communications with the <code>gfsh</code> utility. 
 The Pulse monitoring tool uses JMX for server-side communication with a locator, but SSL
 applies to this connection only if Pulse is located on an app server separate from the
 locator. When Pulse and the locator are colocated, JMX communication between the two does not
-involve a TCP connection, so SSL does not apply.</dd></p>
+involve a TCP connection, so SSL does not apply.</p>
 
-<p><dt><strong>locator</strong></dt>
-<dd>Communication with and between locators</dd></p>
+<p><strong>locator</strong>
+:    Communication with and between locators</p>
 
-<p><dt><strong>server</strong></dt>
-<dd>Communication between clients and servers</dd></p>
+<p><strong>server</strong>
+:    Communication between clients and servers</p>
 
-<p><dt><strong>all</strong></dt>
-<dd>All of the above (use SSL system-wide)</dd></p>
+<p><strong>all</strong>
+:    All of the above (use SSL system-wide)</p>
 
 <p>Specifying that a component is enabled for SSL applies to the component&rsquo;s server-socket side and its
 client-socket side.  For example, if you enable SSL for locators, then any process that communicates
@@ -2697,55 +2700,54 @@ with a locator must also have SSL enabled.  If you provide &ldquo;&rdquo; as the
 <p>You can use Geode configuration properties to enable or disable SSL, to identify SSL ciphers and
 protocols, and to provide the location and credentials for key and trust stores.</p>
 
-<p><dt><strong>ssl-enabled-components</strong></dt>
-<dd>List of components for which to enable SSL. Component list can be &ldquo;&rdquo; (disable SSL), &ldquo;all&rdquo;, or a comma-separated list of components.</dd></p>
+<p><strong>ssl-enabled-components</strong>
+:    List of components for which to enable SSL. Component list can be &ldquo;&rdquo; (disable SSL), &ldquo;all&rdquo;, or a comma-separated list of components.</p>
 
-<p><dt><strong>ssl-endpoint-identification-enabled</strong></dt>
-<dd>A boolean value that, when set to true, causes clients to validate the server&rsquo;s hostname using the server&rsquo;s certificate.
+<p><strong>ssl-endpoint-identification-enabled</strong>
+:    A boolean value that, when set to true, causes clients to validate the server&rsquo;s hostname using the server&rsquo;s certificate.
 The default value is false.
-Enabling endpoint identification guards against DNS man-in-the-middle attacks when trusting certificates that are not self-signed.</dd></p>
+Enabling endpoint identification guards against DNS man-in-the-middle attacks when trusting certificates that are not self-signed.</p>
 
-<p><dt><strong>ssl-use-default-context</strong></dt>
-<dd>A boolean value that, when set to true, allows Geode to use the default SSL context as returned by
+<p><strong>ssl-use-default-context</strong>
+:    A boolean value that, when set to true, allows Geode to use the default SSL context as returned by
 SSLContext.getInstance(&lsquo;Default&rsquo;) or set by using SSLContext.setDefault().
-When enabled, also causes ssl-endpoint-identification-enabled to be set to true.
-</dd></p>
+When enabled, also causes ssl-endpoint-identification-enabled to be set to true.</p>
 
-<p><dt><strong>ssl-require-authentication</strong></dt>
-<dd>Requires two-way authentication, applies to all components except web. Boolean - if true (the default), two-way authentication is required.</dd></p>
+<p><strong>ssl-require-authentication</strong>
+:    Requires two-way authentication, applies to all components except web. Boolean - if true (the default), two-way authentication is required.</p>
 
-<p><dt><strong>ssl-web-require-authentication</strong></dt>
-<dd>Requires two-way authentication for web component. Boolean - if true, two-way authentication is required. Default is false (one-way authentication only).</dd></p>
+<p><strong>ssl-web-require-authentication</strong>
+:    Requires two-way authentication for web component. Boolean - if true, two-way authentication is required. Default is false (one-way authentication only).</p>
 
-<p><dt><strong>ssl-default-alias</strong></dt>
-<dd>A server uses one key store to hold its SSL certificates. All components on that server can share a
+<p><strong>ssl-default-alias</strong>
+:    A server uses one key store to hold its SSL certificates. All components on that server can share a
 single certificate, designated by the ssl-default-alias property.  If ssl-default-alias
-is not specified, the first certificate in the key store acts as the default certificate.</dd></p>
+is not specified, the first certificate in the key store acts as the default certificate.</p>
 
-<p><dt><strong>ssl-<em>component</em>-alias=string</strong></dt>
-<dd>You can configure a separate certificate for any component. All certificates reside in the same key
+<p><strong>ssl-<em>component</em>-alias=string</strong>
+:    You can configure a separate certificate for any component. All certificates reside in the same key
 store, but can be designated by separate aliases that incorporate the component name, using this syntax,
 where <em>component</em> is the name of a component. When a component-specific alias is specified, it
 overrides the ssl-default-alias for the <em>component</em> specified.</p>
 
-<p>For example, ssl-locator-alias would specify a name for the locator component&rsquo;s certificate in the system key store.</dd></p>
+<p>For example, ssl-locator-alias would specify a name for the locator component&rsquo;s certificate in the system key store.</p>
 
-<p><dt><strong>ssl-ciphers</strong></dt>
-<dd>A comma-separated list of the valid ciphers for TCP/IP connections with TLS encryption enabled. A setting of &#39;any&rsquo;
-allows the JSSE provider to select an appropriate cipher that it supports.</dd></p>
+<p><strong>ssl-ciphers</strong>
+:    A comma-separated list of the valid ciphers for TCP/IP connections with TLS encryption enabled. A setting of &#39;any&rsquo;
+allows the JSSE provider to select an appropriate cipher that it supports.</p>
 
-<p><dt><strong>ssl-protocols</strong></dt>
-<dd>A comma-separated list of the valid protocol versions for TCP/IP connections with TLS encryption enabled.
-A setting of &#39;any&rsquo; attempts to use your JSSE provider&rsquo;s TLSv1.3, or TLSv1.2 if v1.3 is not available.</dd></p>
+<p><strong>ssl-protocols</strong>
+:    A comma-separated list of the valid protocol versions for TCP/IP connections with TLS encryption enabled.
+A setting of &#39;any&rsquo; attempts to use your JSSE provider&rsquo;s TLSv1.3, or TLSv1.2 if v1.3 is not available.</p>
 
-<p><dt><strong>ssl-keystore, ssl-keystore-password</strong></dt>
-<dd>The path to the key store and the key store password, specified as strings</dd></p>
+<p><strong>ssl-keystore, ssl-keystore-password</strong>
+:    The path to the key store and the key store password, specified as strings</p>
 
-<p><dt><strong>ssl-truststore, ssl-truststore-password</strong></dt>
-<dd>The path to the trust store and the trust store password, specified as strings</dd></p>
+<p><strong>ssl-truststore, ssl-truststore-password</strong>
+:    The path to the trust store and the trust store password, specified as strings</p>
 
-<p><dt><strong>ssl-keystore-type, ssl-truststore-type</strong></dt>
-<dd>The types of the key store and trust store, specified as strings. The default for both is &ldquo;JKS&rdquo;, indicating a Java key store or trust store.</dd></p>
+<p><strong>ssl-keystore-type, ssl-truststore-type</strong>
+:    The types of the key store and trust store, specified as strings. The default for both is &ldquo;JKS&rdquo;, indicating a Java key store or trust store.</p>
 
 <h3 id="example:-secure-communications-throughout">Example: secure communications throughout</h3>
 

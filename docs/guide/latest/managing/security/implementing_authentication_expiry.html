@@ -90,6 +90,9 @@ limitations under the License.
                                 <a href="/docs/guide/115/getting_started/system_requirements/host_machine.html">Host Machine Requirements</a>
                             </li>
                             <li>
+                                <a href="/docs/guide/115/getting_started/system_requirements/java_support.html">Java Support</a>
+                            </li>
+                            <li>
                                 <a href="/docs/guide/115/getting_started/installation/install_standalone.html">How to Install</a>
                             </li>
                             <li>
@@ -723,7 +726,7 @@ limitations under the License.
                         <a href="/docs/guide/115/managing/monitor_tune/chapter_overview.html">Performance Tuning and Configuration</a>
                         <ul>
                             <li>
-                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disabling TCP SYN Cookies</a>
+                                <a href="/docs/guide/115/managing/monitor_tune/disabling_tcp_syn_cookies.html">Disable TCP SYN Cookies</a>
                             </li>
                             <li>
                                 <a href="/docs/guide/115/managing/monitor_tune/performance_on_vsphere.html">Improving Performance on vSphere</a>
@@ -2626,7 +2629,7 @@ limitations under the License.
   </h1>
 
           <div id="js-quick-links" >
-            
+            <div class="quick-links"><ul><li><a href="#authentication_expiry_considerations">Authentication Expiry Considerations</a></li></ul></div>
           </div>
         <div class="to-top" id="js-to-top">
           <a href="#top" title="back to top"></a>
@@ -2648,15 +2651,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<p>Authentication expiry makes it possible for cluster administrators to limit the life span of client
-and peer connections within the cluster. The use of expirable credentials is most common when used in
-combination with token based authentication and authorization.</p>
+<p>Authentication expiry is supported only with client connections.
+The use of expirable credentials is most common when used in combination with token-based authentication and authorization.
+Authentication expiry makes it possible for cluster administrators to limit the life span of client
+connections within the cluster.</p>
 
-<p>Client connections are notified of expiry through the throwing of an <code>AuthenticationExpiredException</code>
+<p>Client connections are notified of expiry by <code>AuthenticationExpiredException</code>,
 which is thrown in the implementations of <code>SecurityManager.authenticate</code> or <code>SecurityManager.authorize</code>.</p>
 
-<p>Clients will do one automatic attempt to reconnect. Upon receiving a second <code>AuthenticationExpiredException</code>
-the exception will be propagated up the chain for the user to handle. There are some differences in
+<p>Upon receiving the AuthenticationExpiredException, clients will make one automatic attempt to gather new credentials and reconnect (AuthInitialize.getCredentials()).
+Upon receiving a second <code>AuthenticationExpiredException</code>
+the exception is thrown back to the user to handle. There are some differences in
 behavior between older and newer clients.</p>
 
 <p><strong>Support for Automatic Reconnect</strong></p>
@@ -2697,21 +2702,15 @@ is one of the following types where the exception will always be propagated up t
 <li>event-dispatching (CQ and registered interest)</li>
 </ul>
 
-<h2 id="authentication-expiry-considerations"><id="authentication_expiry_considerations"></a>Authentication Expiry Considerations</h2>
+<h2 id="authentication-expiry-considerations"><a id="authentication_expiry_considerations"></a>Authentication Expiry Considerations</h2>
 
 <p>The common cycle for authentication and authorization is the following:</p>
 <pre class="highlight plaintext"><code>AuthInitialize.getCredentials(...) -&gt; SecurityManager.authenticate(...) -&gt; SecurityManager.authorize(...)
 </code></pre>
 
-<p>Where <code>AuthInitialize.getCredentials()</code> provides the <code>security properties</code> for <code>SecurityManager.authenticate()</code>
-which in turn provides the <code>principal object</code> for <code>SecurityManager.authorize()</code>. It&rsquo;s important to
-understand that some time will pass between the <code>AuthInitialize.getCredentials()</code> call and the
-<code>SecurityManager.authorize()</code> call. The specific amount of time depends on the implementation and
-runtime environment details.</p>
-
 <p>In case of the use of an external token provider we assume that this token provider will be asked for
-a token in the <code>AuthInitialize.getCredentials()</code> call. A token provider can return existing tokens for
-a given user so it is recommended that implementers of the <code>AuthInitialize</code> and <code>SecurityManager</code>
+a token in the <code>AuthInitialize.getCredentials()</code> call. A token provider can return existing tokens (which are about to expire) for
+a given user, so it is recommended that implementers of the <code>AuthInitialize</code> and <code>SecurityManager</code>
 interfaces take imminent timeout and token refresh in consideration to avoid receiving multiple
 unintended <code>AuthenticationExpiredException</code>s in a row and having to deal with the propagation of these
 exceptions.</p>
