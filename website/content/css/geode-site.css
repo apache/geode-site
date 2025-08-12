@@ -196,7 +196,7 @@ a.btn {
   font-family: 'klavika-web', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500 !important;
   font-style: normal;
-  letter-spacing: 110%;
+  letter-spacing: 4%;
 }
 h1 {
   font-weight: 200;
@@ -381,8 +381,9 @@ li.divider {
 .bf-masthead .description {
   font-style: normal;
   font-size: 150%;
-  margin-bottom: 45px;
-  /*line-height: 100%;*/
+  margin-bottom: 20px;
+  letter-spacing: 2%;
+  line-height: 135%;
 }
 .bf-masthead .btn-wrapper {
   text-align: center;
