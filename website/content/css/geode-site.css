@@ -196,7 +196,7 @@ a.btn {
   font-family: 'klavika-web', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500 !important;
   font-style: normal;
-  letter-spacing: 110%;
+  letter-spacing: 4%;
 }
 h1 {
   font-weight: 200;
@@ -381,8 +381,9 @@ li.divider {
 .bf-masthead .description {
   font-style: normal;
   font-size: 150%;
-  margin-bottom: 45px;
-  /*line-height: 100%;*/
+  margin-bottom: 20px;
+  letter-spacing: 2%;
+  line-height: 135%;
 }
 .bf-masthead .btn-wrapper {
   text-align: center;
@@ -1500,7 +1501,7 @@ h2.icns-tools:before{
 }
 
 /* desert scheme ported from vim to google prettify */
-pre.prettyprint { display: block; background-color: #333 }
+pre.prettyprint { display: block; background-color: #D4D4D4 }
 pre .nocode { background-color: none; color: #000 }
 pre .str { color: #ffa0a0 } /* string  - pink */
 pre .kwd { color: #f0e68c; font-weight: bold }
