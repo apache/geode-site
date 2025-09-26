@@ -98,6 +98,7 @@ rat {
 
     // graphics
     'website/content/docs/guide/**/*.svg',
+    'website/content/img/**/*.svg',
 
     // compiled logs and locks
     'website/utilities/markers.txt',
