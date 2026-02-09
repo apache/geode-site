@@ -15,29 +15,30 @@
 # specific language governing permissions and limitations
 # under the License.
 
-github:
-  description: "Apache Website Template"
-  homepage: https://foo.apache.org/
-  features:
-    issues: true
-    projects: false
-    wiki: false
-  labels:
-    - website
-  enabled_merge_buttons:
-    squash:  true
-    merge:   false
-    rebase:  false
-  protected_branches:
-    main: {}
-    asf-site: {}
+name: Deploy
 
-publish:
-  whoami: asf-site
+on:
+  push:
+    branches: [ main ]
+  pull_request:
 
-# notifications:
-#   commits:      commits@foo.apache.org
-#   issues:       commits@foo.apache.org
-#   pullrequests: commits@foo.apache.org
-#   jobs:         commits@foo.apache.org
-#   discussions:  commits@foo.apache.org
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install
+      - run: pnpm run build
+      - run: cp .asf.yaml build/.asf.yaml
+      - uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name != 'pull_request'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: asf-site
