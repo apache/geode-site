@@ -187,7 +187,7 @@ function TopAboutSection() {
                     </p>
 
                     <p className={styles.aboutDescription}>
-                        Test auto updates for local testing, test again
+                        Test auto updates for local testing
                     </p>
 
                     <div className={styles.githubButtons}>
