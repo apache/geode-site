@@ -186,10 +186,6 @@ function TopAboutSection() {
                         concurrency processing.
                     </p>
 
-                    <p className={styles.aboutDescription}>
-                        Test auto updates for local testing again
-                    </p>
-
                     <div className={styles.githubButtons}>
                         <a
                             className={styles.githubBadge}
