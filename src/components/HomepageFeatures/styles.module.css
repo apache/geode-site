@@ -27,6 +27,7 @@
     width: 100%;
     padding: 3rem 0;
     background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+    text-align: center;
 }
 
 [data-theme='dark'] .aboutSection {
@@ -36,7 +37,7 @@
 .aboutContent {
     max-width: 800px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .aboutHeading {
@@ -49,7 +50,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--ifm-color-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.7rem;
 }
 
 .aboutDescription {

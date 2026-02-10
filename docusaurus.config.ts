@@ -26,8 +26,8 @@ const mainRepoName = "geode";
 const siteRepoName = "geode-site";
 
 const config: Config = {
-  title: `Performance is key. Consistency is a must.`,
-  tagline: `Apache Geode™ Providing low latency, high concurrency data management solutions since 2002`,
+  title: `Apache Geode™`,
+  tagline: `Providing low latency, high concurrency data management solutions since 2002.`,
   favicon: 'img/favicon.ico',
 
   url: `https://${projectName.toLowerCase()}.apache.org/`,
@@ -164,7 +164,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [],
       logo: {
         width: 200,
@@ -174,8 +174,8 @@ const config: Config = {
       },
       copyright: `<div>
       <a href="https://www.apache.org" target="_blank"></a>
-                <p>Copyright © 2026 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.<br>
-                Apache Geode, Apache, Geode, the Apache logo, and the Apache Geode project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+                <p>Copyright © 2026 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.</p>
+                <p> Apache Geode, Apache, Geode, the Apache logo, and the Apache Geode project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
                 <p>Modified and Modernized for Apache Geode by <a href="https://github.com/harmoncoffee">@harmoncoffee</a>.</p>
       </div>`,
     },

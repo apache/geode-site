@@ -169,66 +169,10 @@ function TopAboutSection() {
         <div className={styles.aboutSection}>
             <div className="container">
                 <div className={styles.aboutContent}>
-                    <Heading as="h2" className={styles.aboutHeading}>
-                        Performance is key. Consistency is a must.
-                    </Heading>
                     <p className={styles.aboutTagline}>
-                        Providing low latency, high concurrency data management solutions since 2002.
+                    Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
                     </p>
-                    <p className={styles.aboutDescription}>
-                        Build high-speed, data-intensive applications that elastically meet performance
-                        requirements at any scale. Take advantage of Apache Geode's unique technology that
-                        blends advanced techniques for data replication, partitioning and distributed processing.
-                    </p>
-                    <p className={styles.aboutDescription}>
-                        Apache Geode provides a database-like consistency model, reliable transaction processing,
-                        and a shared-nothing architecture to maintain very low latency performance with high
-                        concurrency processing.
-                    </p>
-
-                    <div className={styles.githubButtons}>
-                        <a
-                            className={styles.githubBadge}
-                            href="https://github.com/apache/geode/stargazers"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            ⭐ Star
-                        </a>
-                        <a
-                            className={styles.githubBadge}
-                            href="https://github.com/apache/geode/fork"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            🍴 Fork
-                        </a>
-                        <a
-                            className={styles.githubBadge}
-                            href="https://github.com/apache/geode/subscription"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            👁 Watch
-                        </a>
-                    </div>
-
-                    <div className={styles.actionButtons}>
-                        <a
-                            className={clsx('button button--primary button--lg', styles.downloadButton)}
-                            href="https://github.com/apache/geode/releases"
-                        >
-                            Download
-                        </a>
-                        <a
-                            className={clsx('button button--outline button--lg', styles.forkButton)}
-                            href="https://github.com/apache/geode/fork"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Fork on GitHub
-                        </a>
-                    </div>
+                        <a className={clsx('button button--primary button--lg', styles.downloadButton)} href="https://github.com/apache/geode/releases">Download Geode</a>
                 </div>
             </div>
         </div>
@@ -239,11 +183,8 @@ function BottomAboutSection() {
     return (
         <div className={styles.aboutSection}>
             <div className="container">
-                <div className={styles.aboutContent}>
-
-                    <p className={styles.aboutTagline}>
-                        Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
-                    </p>
+					<div className={styles.aboutContent}>
+										<h2>How does Geode work?</h2>
                     <p className={styles.aboutDescription}>
                         Geode pools memory, CPU, network resources, and optionally local disk across multiple processes
                         to manage application objects and behavior. It uses dynamic replication and data partitioning
@@ -252,10 +193,10 @@ function BottomAboutSection() {
                         management system that provides reliable asynchronous event notifications and guaranteed message
                         delivery.
                     </p>
+										<h2>Who uses Geode?</h2>
                     <p className={styles.aboutDescription}>
                         Apache Geode is a mature, robust technology originally developed by GemStone Systems.
-                        Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used
-                        in Wall Street trading platforms.
+                        Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms.
                         Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
                     </p>
                 </div>
