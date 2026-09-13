@@ -1,3 +1,4 @@
-.gradle/
-/build
-/website/content/docs/guide
+/output
+__pycache__/
+*.pyc
+.venv/
