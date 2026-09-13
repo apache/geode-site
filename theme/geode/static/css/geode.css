@@ -1,0 +1,413 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Apache Geode brand colors, taken from the official logo at
+ * https://www.apache.org/logos/res/geode/geode.pdf
+ *
+ *   Geode blue      #0089d0
+ *   Geode purple    #74489d
+ *   Geode charcoal  #454242
+ *
+ * Darker and lighter shades of these are used where text needs more
+ * contrast than the logo colors provide.
+ */
+:root {
+  --geode-blue: #0089d0;
+  --geode-purple: #74489d;
+  --geode-charcoal: #454242;
+
+  --geode-blue-text: #006ba3;
+  --geode-blue-tint: #9bd6f5;
+  --geode-purple-deep: #2e1d40;
+  --geode-blue-deep: #003a5a;
+  --geode-charcoal-deep: #232121;
+  --geode-ink: #2b2929;
+  --geode-muted: #5e5a5a;
+  --geode-surface: #f5f4f7;
+  --geode-border: #e2dfe6;
+
+  --bs-body-color: var(--geode-ink);
+  --bs-link-color-rgb: 0, 107, 163;
+  --bs-link-hover-color-rgb: 116, 72, 157;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 1100;
+  padding: .5rem 1rem;
+  background: #fff;
+}
+
+/* Navigation */
+
+.geode-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--geode-border);
+  padding-block: .75rem;
+}
+
+.geode-nav .nav-link {
+  color: var(--geode-charcoal);
+  font-weight: 500;
+}
+
+.geode-nav .nav-link:hover,
+.geode-nav .nav-link:focus-visible {
+  color: var(--geode-blue-text);
+}
+
+.geode-nav .nav-link.active {
+  color: var(--geode-purple);
+  box-shadow: inset 0 -2px 0 var(--geode-purple);
+}
+
+.btn-geode {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--geode-blue-text);
+  --bs-btn-border-color: var(--geode-blue-text);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--geode-purple);
+  --bs-btn-hover-border-color: var(--geode-purple);
+  --bs-btn-active-bg: var(--geode-purple);
+  --bs-btn-active-border-color: var(--geode-purple);
+  font-weight: 600;
+}
+
+/* Home page */
+
+.hero {
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(0, 137, 208, .45), transparent 45%),
+    linear-gradient(135deg, var(--geode-charcoal-deep) 0%, var(--geode-purple-deep) 55%, var(--geode-blue-deep) 100%);
+  padding-block: 5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--geode-blue-tint);
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.hero .lead {
+  color: #e6e2ec;
+  max-width: 38rem;
+  margin-bottom: 2rem;
+}
+
+.hero-mark {
+  max-width: 100%;
+  height: auto;
+  opacity: .92;
+}
+
+.section {
+  padding-block: 4rem;
+}
+
+.section-alt {
+  background: var(--geode-surface);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  color: var(--geode-charcoal);
+}
+
+.feature {
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--geode-border);
+  border-top: 3px solid var(--geode-blue);
+  border-radius: .5rem;
+  background: #fff;
+}
+
+.col-md-6:nth-child(even) .feature {
+  border-top-color: var(--geode-purple);
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 650;
+  color: var(--geode-charcoal);
+}
+
+.feature p {
+  margin-bottom: 0;
+  color: var(--geode-muted);
+}
+
+.next-step {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--geode-border);
+  border-left: 3px solid var(--geode-purple);
+  border-radius: .5rem;
+  background: #fff;
+  color: var(--geode-ink);
+  text-decoration: none;
+}
+
+.next-step:hover,
+.next-step:focus-visible {
+  border-color: var(--geode-blue);
+  color: var(--geode-ink);
+}
+
+.next-step strong {
+  display: block;
+  color: var(--geode-blue-text);
+}
+
+.next-step span {
+  color: var(--geode-muted);
+}
+
+/* Content pages */
+
+.page-header {
+  background: linear-gradient(135deg, var(--geode-charcoal-deep) 0%, var(--geode-purple-deep) 100%);
+  border-bottom: 3px solid var(--geode-blue);
+  color: #fff;
+  padding-block: 3rem;
+}
+
+.page-header h1 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.page-header .lead {
+  color: #e6e2ec;
+  margin: .75rem 0 0;
+  max-width: 48rem;
+}
+
+.page-body {
+  padding-block: 3rem;
+}
+
+.prose {
+  max-width: 60rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--geode-charcoal);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.prose th,
+.prose td {
+  padding: .6rem .75rem;
+  border-bottom: 1px solid var(--geode-border);
+  vertical-align: top;
+  text-align: left;
+}
+
+.prose thead th {
+  border-bottom: 2px solid var(--geode-border);
+}
+
+.prose pre {
+  padding: 1rem;
+  border-radius: .375rem;
+  background: var(--geode-surface);
+}
+
+/* Releases page */
+
+.release {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--geode-border);
+  border-radius: .5rem;
+}
+
+.release-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.release-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.release-header .badge {
+  background: var(--geode-purple) !important;
+}
+
+.release-meta {
+  color: var(--geode-muted);
+  font-size: .9rem;
+}
+
+.artifact-table {
+  display: table;
+  margin-bottom: 1rem;
+}
+
+.artifact-table th[scope="row"] {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .release {
+    padding: 1rem;
+  }
+
+  .artifact-table thead {
+    display: none;
+  }
+
+  .artifact-table,
+  .artifact-table tbody,
+  .artifact-table tr,
+  .artifact-table th,
+  .artifact-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .artifact-table tr {
+    padding-block: .6rem;
+    border-bottom: 1px solid var(--geode-border);
+  }
+
+  .artifact-table th[scope="row"],
+  .artifact-table td {
+    padding: .1rem 0;
+    border: 0;
+  }
+
+  .artifact-table td a {
+    overflow-wrap: anywhere;
+  }
+
+  /* Other tables scroll sideways instead of squeezing their columns. */
+  .prose table:not(.artifact-table) th,
+  .prose table:not(.artifact-table) td {
+    min-width: 9rem;
+  }
+}
+
+.release details summary {
+  cursor: pointer;
+  color: var(--geode-blue-text);
+  font-weight: 500;
+}
+
+.release details pre {
+  margin-top: .5rem;
+}
+
+/* Footer */
+
+.geode-footer {
+  background: var(--geode-charcoal-deep);
+  border-top: 3px solid var(--geode-purple);
+  color: #cfcaca;
+  padding-block: 3rem 2rem;
+  font-size: .925rem;
+}
+
+.geode-footer a {
+  color: #f0eeee;
+  text-decoration: none;
+}
+
+.geode-footer a:hover,
+.geode-footer a:focus-visible {
+  color: var(--geode-blue-tint);
+  text-decoration: underline;
+}
+
+.footer-heading {
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #a39e9e;
+  margin-bottom: .75rem;
+}
+
+.geode-footer li {
+  margin-bottom: .35rem;
+}
+
+.asf-logo {
+  max-width: 100%;
+  width: 150px;
+  height: auto;
+  background: #fff;
+  border-radius: .375rem;
+  padding: .5rem;
+}
+
+.legal {
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: .825rem;
+  color: #a39e9e;
+}

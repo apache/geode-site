@@ -1,0 +1,86 @@
+{#
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+#}
+{% extends "base.html" %}
+
+{% block content %}
+{% set latest = RELEASES.geode[0] %}
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <p class="eyebrow">In-memory data management platform</p>
+        <h1 class="hero-title">Performance is key.<br>Consistency is a must.</h1>
+        <p class="lead">
+          Build high-speed, data-intensive applications that elastically meet performance
+          requirements at any scale, with low latency and high concurrency.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-lg btn-light" href="/releases/">Download {{ latest.version }}</a>
+          <a class="btn btn-lg btn-outline-light" href="/docs/">Read the docs</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block text-center">
+        <img class="hero-mark" src="/images/Apache_Geode_logo_symbol_white.png" alt="" width="254" height="252">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What Geode gives you</h2>
+    <div class="row g-4">
+      {% for feature in FEATURES %}
+      <div class="col-md-6 col-lg-4">
+        <div class="feature">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.text }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 class="section-title">About the project</h2>
+        <div class="prose">{{ page.content }}</div>
+      </div>
+      <div class="col-lg-5">
+        <h2 class="section-title">Get started</h2>
+        <div class="d-grid gap-3">
+          <a class="next-step" href="/releases/">
+            <strong>Download Apache Geode {{ latest.version }}</strong>
+            <span>Binaries, sources, and Maven coordinates.</span>
+          </a>
+          <a class="next-step" href="/docs/">
+            <strong>Read the user guide</strong>
+            <span>Install Geode, start a cluster, and store your first data.</span>
+          </a>
+          <a class="next-step" href="/community/">
+            <strong>Join the community</strong>
+            <span>Ask questions on the mailing lists and help build Geode.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
