@@ -215,24 +215,12 @@ The MIT License (http://opensource.org/licenses/mit-license.html)
 
 Apache Geode bundles the following files under the MIT license:
 
-  - Bootflat v1.0.1 (http://bootflat.github.io/), Copyright (c) 2014
-    bootflat
-  - Bootstrap v3.0.0 (http://getbootstrap.com/), Copyright (c) 2011-2016
-    Twitter, Inc.
-  - Font Awesome v4.0.3 (code files) (http://fontawesome.io), Copyright (c)
-    Dave Gandy
-  - HeadJS v0.96 (http://headjs.com/), Copyright (c) 2013 Tero Piirainen
-    (tipiirai)
-  - HTML5 Shiv v3.6.2pre (https://github.com/aFarkas/html5shiv), Copyright
-    (c) 2014 Alexander Farkas (aFarkas)
-  - iCheck v0.8 (http://icheck.fronteed.com/), Copyright (c) 2013 Damir
-    Foy, http://damirfoy.com
-  - jQuery JavaScript Library v1.10.1 (https://jquery.com), Copyright (c)
-    jQuery Foundation and other contributors, http://jquery.org
-  - Normalize.css v2.1.0 (https://necolas.github.io/normalize.css/),
-    Copyright (c) Nicolas Gallagher and Jonathan Neal
-  - Respond.js v1.1.0 (https://github.com/scottjehl/Respond), Copyright (c)
-    2012 Scott Jehl
+  - Bootstrap v5.3.8, including Popper (https://getbootstrap.com/),
+    Copyright (c) 2011-2025 The Bootstrap Authors
+    (theme/geode/static/css/bootstrap.min.css,
+    theme/geode/static/js/bootstrap.bundle.min.js)
+  - Font Awesome v4.6.2 (code files) (https://fontawesome.com/v4/),
+    Copyright (c) Dave Gandy (content/stylesheets/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -258,8 +246,8 @@ SIL Open Font License (https://opensource.org/licenses/OFL-1.1)
 
 Apache Geode bundles the following files under the SIL OFL 1.1 license:
 
-  - Font Awesome (font files) (http://fontawesome.io) Copyright (c) Dave
-    Gandy
+  - Font Awesome v4.6.2 (font files) (https://fontawesome.com/v4/),
+    Copyright (c) Dave Gandy (content/fonts/font-awesome/)
 
 Version 1.1 - 26 February 2007
 

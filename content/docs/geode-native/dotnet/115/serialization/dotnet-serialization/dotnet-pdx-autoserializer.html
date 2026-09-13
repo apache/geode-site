@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400italic,400,600' rel='stylesheet' type='text/css'>
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Using the Geode PDX Autoserializer |
+    Geode Native .NET Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/all.css" rel="stylesheet" media="screen, print" />
+  <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+  <link href='/images/favicon.ico' rel='shortcut icon'>
+
+  <script src="/javascripts/all.js"></script>
+  
+</head>
+
+<body class="docs docs_geode-native docs_geode-native_dotnet docs_geode-native_dotnet_115 docs_geode-native_dotnet_115_serialization docs_geode-native_dotnet_115_serialization_dotnet-serialization docs_geode-native_dotnet_115_serialization_dotnet-serialization_dotnet-pdx-autoserializer has-subnav">
+
+<div class="viewport">
+  <div class='wrap'>
+    <script type="text/javascript">
+      document.domain = "apache.org";
+    </script>
+
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<header class="header header-layout">
+  <h1 class="logo">
+    <a href="/">
+        <img src="/images/Apache_Geode_logo_symbol_white.png" style="width:30px;">
+      Apache Geode Native .NET Framework Documentation
+    </a>
+  </h1>
+  <div class="header-links js-bar-links">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-item"><a href="http://geode.apache.org">Back to Product Page</a></div>
+    <div class="header-item">
+      <a href="http://geode.apache.org/community" target="_blank">Community</a>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+<a class="sidenav-title" data-behavior="SubMenuMobile">Doc Index</a>
+  <div class="nav-content">
+  <ul>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/about-client-users-guide.html">Apache Geode Native Documentation</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html">Getting Started with the Native Library</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#set_up_dev_environment">Set Up Your Development Environment</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#establish_cluster_access">Establish Access to a Geode Cluster</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#app_dev_walkthroughs">Application Development Walkthroughs</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/getting-started-nc-client.html#programming_examples">Programming Examples</a>
+        </li>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/getting-started/put-get-example.html">Put/Get/Remove Examples</a>
+        </li>
+      </ul>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/configuring/configuration.html">Configuring a Client Application</a>
+      <ul>
+        <li>
+          <a href="/docs/geode-native/dotnet/115/configuring/system-level-configuration.html">System Level Configuration</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/configuring/config-client-cache.html">Configuring the Client Cache</a>
+    </li>
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/regions/regions.html">Configuring Regions</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/regions/registering-interest-for-entries.html">Registering Interest for Entries</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/regions/region-attributes.html">Region Attributes</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="has_submenu">
+        <a href="/docs/geode-native/dotnet/115/connection-pools/configuring-pools.html">Configuring Pools</a>
+        <ul>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/client-pool-api.html">Native Client Pool API</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/configuring-pools-attributes-example.html">Pool Configuration Example and Settings</a>
+            </li>
+            <li>
+                <a href="/docs/geode-native/dotnet/115/connection-pools/subscription-properties.html">Subscription Properties</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/serialization/data-serialization.html">Serializing Data</a>
+      <ul>
+        <li class="has_submenu">
+          <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/dotnet-pdx-serialization.html">Geode PDX Serialization</a>
+          <ul>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/dotnet-pdx-autoserializer.html">Using the Geode PDX Autoserializer</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/serialize-using-ipdxserializable.html">Using the IPdxSerializable Interface</a>
+            </li>
+            <li>
+              <a href="/docs/geode-native/dotnet/115/serialization/dotnet-serialization/pdx-serializable-examples.html">IPdxSerializable Example</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/remote-queries.html">Remote Queries</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/continuous-queries.html">Continuous Queries</a>
+    </li>
+
+    <li class="has_submenu">
+      <a href="/docs/geode-native/dotnet/115/security/security.html">Security: Authentication and Encryption</a>
+      <ul>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/security/authentication.html">Authentication</a>
+        </li>
+        <li>
+        <a href="/docs/geode-native/dotnet/115/security/sslclientserver.html">TLS/SSL Client-Server Communication Encryption</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/function-execution.html">Function Execution</a>
+    </li>
+
+    <li>
+      <a href="/docs/geode-native/dotnet/115/transactions.html">Transactions</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/configuring/sysprops.html">System Properties</a>
+    </li>
+    <li>
+      <a href="/docs/geode-native/dotnet/115/client-cache-ref.html">Client Cache XML Reference</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<span style="font-weight:200;font-size:31px;" style="float:left;">
+    <img src="/images/Apache_Geode_logo_symbol.png" style="height:26px;">
+  Apache Geode Native .NET Framework
+</span>
+  <span class="local-header version-info" style="float:right;">
+    <a href="https://cwiki.apache.org/confluence/display/GEODE/Release+Notes">CHANGELOG</a>
+  </span>
+
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+  <h1 class="title-container" >
+    Using the Geode PDX Autoserializer
+  </h1>
+
+          <div id="js-quick-links" >
+            <div class="quick-links"><ul>
+<li><a href="#auto-ser-java-interop">Java Interoperability with .NET Framework Specific Types</a></li>
+<li><a href="#auto-ser-remote-queries">Remote Queries of .NET Framework Only Types</a></li>
+<li><a href="#pdx-ser-extending-auto">Extending the PDX Autoserializer</a></li>
+</ul></div>
+          </div>
+        <div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div>
+        <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<p>It&rsquo;s extremely easy for .NET Framework applications to store and retrieve data from Geode. All
+that&rsquo;s required is a single line of code to set the <code>PdxSerializer</code> to the .NET Framework client&rsquo;s
+<code>ReflectionBasedAutoSerializer</code>:</p>
+<pre class="highlight csharp"><code><span class="n">cache</span><span class="p">.</span><span class="n">TypeRegistry</span><span class="p">.</span><span class="n">PdxSerializer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ReflectionBasedAutoSerializer</span><span class="p">();</span>
+</code></pre>
+
+<p>(The autoserializer can be registered only in the application code. It cannot be configured declaratively in <code>cache.xml</code>.)</p>
+
+<p>After an autoserializer has been registered, all user classes can automatically be stored without needing to implement any
+interfaces. For example, the following <code>Put</code> command stores <code>value</code>, which is an instance of a user defined class, in
+the region.</p>
+<pre class="highlight csharp"><code><span class="n">region</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+</code></pre>
+
+<p>The .NET Framework client&rsquo;s <code>ReflectionBasedAutoSerializer</code> supports the full list of .NET
+Framework primitives and other common built-in types.</p>
+
+<p>Types without a no-arg constructor are not supported by the <code>ReflectionBasedAutoSerializer</code>. This
+includes all user defined structs. <code>System.Data.Datatable</code> is an example of a system class that is not
+supported due to lack of a no-arg constructor.</p>
+
+<h2 id="java-interoperability-with-.net-framework-specific-types"><a id="auto-ser-java-interop"></a>Java Interoperability with .NET Framework Specific Types</h2>
+
+<p>Java does not have unsigned data types or exact equivalents of <code>Guid</code> and <code>Decimal</code>. Care should be
+taken when passing these types between .NET Framework and Java applications using the .NET
+Framework <code>ReflectionBasedAutoSerializer</code>. For example, if storing <code>UInt16</code> data (that is, 16-bit
+unsigned values), be aware that values greater than <code>UInt16.MaxValue/2 - 1</code> will show up as
+negative numbers in Java.
+Using that data in a Java application may have unexpected behavior. If you expect to exceed
+half the range for the given type (<code>Byte.MaxValue/2</code>, <code>UInt16.MaxValue/2</code>, <code>UInt32.MaxValue/2</code>, or
+<code>UInt64.MaxValue/2</code>) you should use the next larger type. This obviously breaks down for
+<code>UInt64</code>, which has no next larger type. However, if your range exceeds <code>UIn64.MaxValue/2</code>, you
+likely have a much more complex set of issues to deal with, such as heavy paging due to such a
+large data set.</p>
+
+<h2 id="remote-queries-of-.net-framework-only-types"><a id="auto-ser-remote-queries"></a>Remote Queries of .NET Framework Only Types</h2>
+
+<p>At this time the .NET Framework Client does not support queries against user classes that have been
+stored on the server using the <code>ReflectionBasedAutoSerializer</code>.</p>
+
+<p>When you register the reflection-based serializer, Geode uses it to serialize all
+objects that do not implement <code>IPdxSerializable</code>. You can customize the
+auto-serialization behavior for your domain objects by adding serialization attributes to your
+object’s fields.</p>
+
+<h2 id="extending-the-pdx-autoserializer"><a id='pdx-ser-extending-auto'></a>Extending the PDX Autoserializer</h2>
+
+<p>For each object you intend to have autoserialized, you can customize the serialization as needed.</p>
+
+<p><strong>Note:</strong> If you also use PDX serialization in Java for the object, customize your serialization in the same way for both languages.</p>
+
+<p>The following extension methods apply to autoserialization:</p>
+
+<ul>
+<li>  <strong>WriteTransform</strong>. Controls what field value is written during auto serialization.</li>
+<li>  <strong>ReadTransform</strong>. Controls what field value is read during auto deserialization.</li>
+<li>  <strong>GetFieldType</strong>. Defines the specific field names that will be generated during autoserialization.</li>
+<li>  <strong>IsIdentityField</strong>. Controls which field is marked as the identity field. Identity fields are used when a <code>PdxInstance</code> computes its hash code to determine whether it is equal to another object.</li>
+<li>  <strong>GetFieldType</strong>. Determines the field type that will be used when autoserializing the given field.</li>
+<li>  <strong>IsFieldIncluded</strong>. Specifies which fields of a class to autoserialize.</li>
+</ul>
+
+<p>To specify an identifier field in your domain object, add the attribute <code>PdxIdentityField</code> to the field.</p>
+
+<p>For example:</p>
+<pre class="highlight csharp"><code><span class="na">[PdxIdentityField]</span> <span class="k">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+</code></pre>
+
+<p>To exclude a field from serialization, add the .NET Framework attribute <code>NonSerialized</code> to the field.</p>
+
+<p>For example:</p>
+<pre class="highlight csharp"><code><span class="na">[NonSerialized]</span> <span class="k">private</span> <span class="kt">int</span> <span class="n">myLocalData</span><span class="p">;</span>
+</code></pre>
+
+<p>For each domain class Geode serializes using the autoserializer, all fields are
+considered for serialization except those defined as <code>static</code>, <code>literal</code> or <code>readonly</code> and those you
+explicitly exclude using the .NET Framework <code>NonSerialized</code> attribute.</p>
+
+<p>This example code demonstrates how to extend the autoserializer to customize serialization.</p>
+<pre class="highlight csharp"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">AutoSerializerEx</span> <span class="p">:</span> <span class="n">ReflectionBasedAutoSerializer</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">override</span> <span class="kt">object</span> <span class="nf">WriteTransform</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="kt">object</span> <span class="n">originalValue</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Guid"</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">originalValue</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Decimal"</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">originalValue</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span>
+        <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="nf">WriteTransform</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">originalValue</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">object</span> <span class="nf">ReadTransform</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">,</span> <span class="kt">object</span> <span class="n">serializeValue</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Guid"</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">Guid</span> <span class="n">g</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Guid</span><span class="p">((</span><span class="kt">string</span><span class="p">)</span><span class="n">serializeValue</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">g</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Decimal"</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">ToDecimal</span><span class="p">((</span><span class="kt">string</span><span class="p">)</span><span class="n">serializeValue</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span>
+        <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="nf">ReadTransform</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">serializeValue</span><span class="p">);</span>
+    <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">override</span> <span class="n">FieldType</span> <span class="nf">GetFieldType</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Guid"</span><span class="p">))</span> <span class="p">||</span>
+              <span class="n">fi</span><span class="p">.</span><span class="n">FieldType</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetType</span><span class="p">(</span><span class="s">"System.Decimal"</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">FieldType</span><span class="p">.</span><span class="n">STRING</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="nf">GetFieldType</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">IsIdentityField</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"_identityField"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="nf">IsIdentityField</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">GetFieldName</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"_nameChange"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fi</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">"NewName"</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">fi</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">IsFieldIncluded</span><span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">fi</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"_notInclude"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="nf">IsFieldIncluded</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">type</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+        
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<div class="copyright">
+  <a href='/'>Apache Geode Documentation</a>
+  &copy; 2022 <a href='http://www.apache.org/'>The Apache Software Foundation</a>.
+</div>
+<div class="support">
+  Need help? <a href="http://geode.apache.org/community" target="_blank">Visit the Community</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+</body>
+</html>

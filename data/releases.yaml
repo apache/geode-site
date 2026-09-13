@@ -1,0 +1,40 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Releases shown on /releases/. List only releases that are currently on
+# https://downloads.apache.org/geode/, newest first. When a release moves to
+# https://archive.apache.org/dist/geode/, remove it from this file.
+
+geode:
+  - version: 2.0.2
+    java: 17
+  - version: 1.15.4
+    java: 8
+  - version: 1.14.4
+    java: 8
+  - version: 1.13.8
+    java: 8
+
+kafka_connector:
+  - version: 1.1.0
+    directory: kafka-connector-1.1.0
+    release_notes: KakfaConnector1.1.0
+    artifacts:
+      - label: Binary
+        file: apache-kafka-connect-geode-1.1.0.zip
+      - label: Source
+        file: geode-kafka-connector-rel-v1.1.0.tar.gz

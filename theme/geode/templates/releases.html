@@ -1,0 +1,92 @@
+{#
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+#}
+{% extends "page.html" %}
+
+{% set mirror = 'https://www.apache.org/dyn/closer.lua/geode/' %}
+{% set dist = 'https://downloads.apache.org/geode/' %}
+{% set notes = 'https://cwiki.apache.org/confluence/display/GEODE/Release+Notes#ReleaseNotes-' %}
+
+{% macro artifact_table(directory, artifacts) %}
+<div class="table-responsive">
+  <table class="table artifact-table">
+    <thead>
+      <tr><th scope="col">Artifact</th><th scope="col">Download</th><th scope="col">Verify</th></tr>
+    </thead>
+    <tbody>
+      {% for artifact in artifacts %}
+      <tr>
+        <th scope="row">{{ artifact.label }}</th>
+        <td><a href="{{ mirror }}{{ directory }}/{{ artifact.file }}">{{ artifact.file }}</a></td>
+        <td class="text-nowrap">
+          <a href="{{ dist }}{{ directory }}/{{ artifact.file }}.sha256">SHA-256</a>
+          &middot;
+          <a href="{{ dist }}{{ directory }}/{{ artifact.file }}.asc">PGP</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endmacro %}
+
+{% block body %}
+{% for release in RELEASES.geode %}
+{% set v = release.version %}
+<article class="release" id="{{ v }}">
+  <header class="release-header">
+    <h2>Apache Geode {{ v }}</h2>
+    {% if loop.first %}<span class="badge text-bg-success">Latest</span>{% endif %}
+    <span class="release-meta">Minimum Java version: {{ release.java }}</span>
+    <a class="ms-auto" href="{{ notes }}{{ v }}">Release notes</a>
+  </header>
+  {{ artifact_table(v, [
+    {'label': 'Binary', 'file': 'apache-geode-%s.tgz' | format(v)},
+    {'label': 'Source', 'file': 'apache-geode-%s-src.tgz' | format(v)},
+    {'label': 'Geode Native source', 'file': 'apache-geode-native-%s-src.tgz' | format(v)},
+    {'label': 'Benchmarks source', 'file': 'apache-geode-benchmarks-%s-src.tgz' | format(v)},
+    {'label': 'Examples source', 'file': 'apache-geode-examples-%s-src.tgz' | format(v)},
+  ]) }}
+  <details>
+    <summary>Maven and Gradle coordinates</summary>
+    <p class="mb-1"><strong>Gradle</strong></p>
+    <pre><code>dependencies {
+  implementation 'org.apache.geode:geode-core:{{ v }}'
+}</code></pre>
+    <p class="mb-1"><strong>Maven</strong></p>
+    <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.geode&lt;/groupId&gt;
+  &lt;artifactId&gt;geode-core&lt;/artifactId&gt;
+  &lt;version&gt;{{ v }}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+  </details>
+</article>
+{% endfor %}
+
+{% for release in RELEASES.kafka_connector %}
+<article class="release" id="kafka-connector-{{ release.version }}">
+  <header class="release-header">
+    <h2>Geode Kafka Connector {{ release.version }}</h2>
+    <a class="ms-auto" href="{{ notes }}{{ release.release_notes }}">Release notes</a>
+  </header>
+  {{ artifact_table(release.directory, release.artifacts) }}
+</article>
+{% endfor %}
+
+<p>Older releases are available from the <a href="https://archive.apache.org/dist/geode/">release archive</a>.</p>
+
+{{ page.content }}
+{% endblock %}

@@ -1,0 +1,124 @@
+{#
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{{ SITEDESC }}">
+  <link rel="canonical" href="{{ SITEURL }}/{{ page.url | replace('index.html', '') }}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/geode.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
+
+  {% set section = page.url.split('/')[0] %}
+  <nav class="navbar navbar-expand-lg geode-nav" aria-label="Main">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/Apache_Geode_logo.png" alt="Apache Geode" width="127" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav"
+              aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          {% for slug, label in [('docs', 'Docs'), ('releases', 'Releases'), ('community', 'Community')] %}
+          <li class="nav-item">
+            <a class="nav-link{{ ' active' if section == slug }}" href="/{{ slug }}/"{{ ' aria-current="page"' if section == slug }}>{{ label }}</a>
+          </li>
+          {% endfor %}
+          <li class="nav-item"><a class="nav-link" href="https://github.com/apache/geode">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://issues.apache.org/jira/browse/GEODE">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ASF</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="https://www.apache.org/">Foundation</a></li>
+              <li><a class="dropdown-item" href="https://www.apache.org/licenses/">License</a></li>
+              <li><a class="dropdown-item" href="https://www.apache.org/events/current-event.html">Events</a></li>
+              <li><a class="dropdown-item" href="https://www.apache.org/security/">Security</a></li>
+              <li><a class="dropdown-item" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+              <li><a class="dropdown-item" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+              <li><a class="dropdown-item" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-geode" href="/releases/">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="geode-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Project</h2>
+          <ul class="list-unstyled">
+            <li><a href="/docs/">Documentation</a></li>
+            <li><a href="/releases/">Releases</a></li>
+            <li><a href="/community/">Community</a></li>
+            <li><a href="https://cwiki.apache.org/confluence/display/GEODE/">Wiki</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Contribute</h2>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/apache/geode">Source code</a></li>
+            <li><a href="https://issues.apache.org/jira/browse/GEODE">Issue tracker</a></li>
+            <li><a href="/community/#mailing-lists">Mailing lists</a></li>
+            <li><a href="https://cwiki.apache.org/confluence/display/GEODE/How+to+Contribute">How to contribute</a></li>
+            <li><a href="{{ SITEREPOSITORY }}">Edit this website</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Apache Software Foundation</h2>
+          <ul class="list-unstyled">
+            <li><a href="https://www.apache.org/">Foundation</a></li>
+            <li><a href="https://www.apache.org/licenses/">License</a></li>
+            <li><a href="https://www.apache.org/events/current-event.html">Events</a></li>
+            <li><a href="https://www.apache.org/security/">Security</a></li>
+            <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+            <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+            <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 text-md-end">
+          <a href="https://www.apache.org/"><img class="asf-logo" src="/img/asf_logo.png" alt="The Apache Software Foundation"></a>
+        </div>
+      </div>
+      <p class="legal">
+        Copyright &copy; 2016&ndash;{{ CURRENTYEAR }} The Apache Software Foundation, licensed under the
+        <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+        Apache, Apache Geode, the Apache Geode logo, and the Apache feather logo are trademarks of
+        The Apache Software Foundation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/{{ THEME_STATIC_DIR }}/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
