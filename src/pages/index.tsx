@@ -17,7 +17,7 @@
  * under the License.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
@@ -59,7 +59,7 @@ function HomepageLogo() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): ReactNode {
     return (
         <Layout title='Apache Geode™'>
             <header className={clsx('hero', styles.heroBanner)}>

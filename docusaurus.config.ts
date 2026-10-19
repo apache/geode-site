@@ -34,7 +34,7 @@ const mainRepoName = "geode";
 const siteRepoName = "geode-site";
 
 const config: Config = {
-  title: `Providing low latency, high concurrency data management solutions since 2002.`,
+  title: `Apache Geode`,
   tagline: `Providing low latency, high concurrency data management solutions since 2002.`,
   favicon: 'img/favicon.ico',
 
@@ -146,6 +146,16 @@ const config: Config = {
     ],
 
   themeConfig: {
+    metadata: [
+      {name: 'keywords', content: 'apache, geode, in-memory data grid, distributed database, caching, high concurrency, low latency'},
+      {name: 'description', content: 'Apache Geode is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.'},
+      {property: 'og:title', content: 'Apache Geode'},
+      {property: 'og:description', content: 'High concurrency, low latency in-memory data management at scale.'},
+      {property: 'og:type', content: 'website'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:title', content: 'Apache Geode'},
+      {name: 'twitter:description', content: 'High concurrency, low latency in-memory data management at scale.'},
+    ],
     image: 'img/logo.png',
     navbar: {
       logo: {

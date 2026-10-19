@@ -16,14 +16,17 @@
 # under the License.
 
 github:
-  description: "Apache Website Template"
-  homepage: https://foo.apache.org/
+  description: "Apache Geode Official Website"
+  homepage: https://geode.apache.org/
   features:
     issues: true
     projects: false
     wiki: false
   labels:
     - website
+    - apache
+    - geode
+    - documentation
   enabled_merge_buttons:
     squash:  true
     merge:   false
@@ -35,9 +38,9 @@ github:
 publish:
   whoami: asf-site
 
-# notifications:
-#   commits:      commits@foo.apache.org
-#   issues:       commits@foo.apache.org
-#   pullrequests: commits@foo.apache.org
-#   jobs:         commits@foo.apache.org
-#   discussions:  commits@foo.apache.org
+notifications:
+  commits:      notifications@geode.apache.org
+  issues:       issues@geode.apache.org
+  pullrequests: notifications@geode.apache.org
+  jobs:         notifications@geode.apache.org
+  discussions:  dev@geode.apache.org
