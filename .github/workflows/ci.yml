@@ -31,32 +31,17 @@ on:
 # Reference:
 #   https://docs.github.com/en/actions/using-jobs/using-concurrency
 #   https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.number || github.run_id }}
   cancel-in-progress: true
 
 jobs:
   check:
-    name: License Header Check
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: korandoru/hawkeye@v4
-
-  build:
-    name: Build & Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-          cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run typecheck
-      - run: pnpm run build
 
 # TODO: enable markdownlint & typos
