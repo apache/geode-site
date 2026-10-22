@@ -1,0 +1,8 @@
+{
+  "label": "HTTP Session Management Module for Pivotal tc Server",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "session_mgmt_tcserver"
+  }
+}

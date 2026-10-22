@@ -1,0 +1,140 @@
+﻿---
+title:  Running Compaction on Disk Store Log Files
+sidebar_label: Running Compaction on Disk Store Log Files
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#compacting_disk_stores__section_64BA304595364E38A28098EB09494531}
+When a cache operation is added to a disk store, any preexisting operation record for the same entry
+becomes obsolete, and @@product_name_long@@ marks it as garbage. For example, when you create
+an entry, the create operation is added to the store. If you update the entry later, the update
+operation is added and the create operation becomes garbage. @@product_name@@ does not remove
+garbage records as it goes, but it tracks the percentage of non-garbage (live data) remaining in each operation log, and
+provides mechanisms for removing garbage to compact your log files.
+
+@@product_name@@ compacts an old operation log by copying all non-garbage records into the current log and discarding the old files. As with logging, oplogs are rolled as needed during compaction to stay within the max oplog setting.
+
+The system is configured by default to automatically compact any closed operation log when its non-garbage
+content drops below a certain percentage. This automatic compaction is well suited to most @@product_name@@ implementations.
+In some circumstances, you may choose to  manually initiate compaction for online and
+offline disk stores.
+
+## Log File Compaction for the Online Disk Store {#compacting_disk_stores__section_98C6B6F48E4F4F0CB7749E426AF4D647}
+<img src="/images/diskStores-3.gif" id="compacting_disk_stores__image_7E34CC58B13548B196DAA15F5B0A0ECA" class="image" />
+
+For the online disk store, the current operation log is not available for
+compaction, no matter how much garbage it contains. You can use `DiskStore.forceRoll` to close the current oplog, making it eligible for compaction.
+See [Disk Store Operation Logs](operation_logs) for details.
+
+Offline compaction runs essentially in the same way, but without the incoming cache operations. Also, because there is no currently open log, the compaction creates a new one to get started.
+
+## Run Online Compaction {#compacting_disk_stores__section_96E774B5502648458E7742B37CA235FF}
+Old log files become eligible for online compaction when their live data (non-garbage) content drops below a configured percentage of the total file. A record is garbage when its operation is superseded by a more recent operation for the same object. During compaction, the non-garbage records are added to the current log along with new cache operations. Online compaction does not block current system operations.
+
+-   **Automatic compaction**. When `auto-compact` is true, @@product_name@@ automatically compacts each oplog when its non-garbage (live data) content drops below the `compaction-threshold`. This takes cycles from your other operations, so you may want to disable this and only do manual compaction, to control the timing.
+-   **Manual compaction**. To run manual compaction:
+    -   Set the disk store attribute `allow-force-compaction` to true. This causes @@product_name@@ to maintain extra data about the files so it can compact on demand. This is disabled by default to save space. You can run manual online compaction at any time while the system is running. Oplogs eligible for compaction based on the `compaction-threshold` are compacted into the current oplog.
+    -   Run manual compaction as needed. @@product_name@@ has two types of manual compaction:
+        -   Compact the logs for a single online disk store through the API, with the `forceCompaction` method. This method first rolls the oplogs and then compacts them. Example:
+
+            ``` pre
+            myCache.findDiskStore("myDiskStore").forceCompaction();
+            ```
+
+        -   Using `gfsh`, compact a disk store with the [compact disk-store](../../tools_modules/gfsh/command-pages/compact#topic_F113C95C076F424E9AA8AC4F1F6324CC) command. Examples:
+
+            ``` pre
+            gfsh>compact disk-store --name=Disk1
+
+            gfsh>compact disk-store --name=Disk1 --group=MemberGroup1,MemberGroup2
+            ```
+
+            **Note:**
+            You need to be connected to a JMX Manager in `gfsh` to run this command.
+
+## Run Offline Compaction {#compacting_disk_stores__section_25BDB098E9584EAA9BC6582597544726}
+Offline compaction is a manual process. All log files are compacted as much as possible, regardless of how much garbage they hold. Offline compaction creates new log files for the compacted log records.
+
+Using `gfsh`, compact individual offline disk stores with the [compact offline-disk-store](../../tools_modules/gfsh/command-pages/compact#topic_9CCFCB2FA2154E16BD775439C8ABC8FB) command:
+
+``` pre
+gfsh>compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2
+
+gfsh>compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2 
+--max-oplog-size=512 -J=-Xmx1024m
+```
+
+**Note:**
+Do not perform offline compaction on the baseline directory of an incremental backup.
+
+You must provide all of the directories in the disk store. If no oplog max size is specified, @@product_name@@ uses the system default.
+
+Offline compaction can take a lot of memory. If you get a `java.lang.OutOfMemory` error while running this, you may need to increase your heap size with the `-J=-Xmx` parameter.
+
+## Performance Benefits of Manual Compaction {#compacting_disk_stores__section_D2374039480947C5AE4CC64167E60978}
+You can improve performance during busy times if you disable automatic compaction and run your own manual compaction during lighter system load or during downtimes. You could run the API call after your application performs a large set of data operations. You could run `compact disk-store` command every night when system use is very low.
+
+To follow a strategy like this, you need to set aside enough disk space to accommodate all non-compacted disk data. You might need to increase system monitoring to make sure you do not overrun your disk space. You may be able to run only offline compaction. If so, you can set `allow-force-compaction` to false and avoid storing the information required for manual online compaction.
+
+## Directory Size Limits {#compacting_disk_stores__section_A9EE86F662EE4D46A327C336E901A0F2}
+Reaching directory size limits during compaction has different results depending on whether you are running an automatic or manual compaction:
+
+-   For automatic compaction, the system logs a warning, but does not stop.
+-   For manual compaction, the operation stops and returns a `DiskAccessException` to the calling process, reporting that the system has run out of disk space.
+
+## Example Compaction Run {#compacting_disk_stores__section_7A311038408440D49097B8FA4E2BCED9}
+In this example offline compaction run listing, the disk store compaction had nothing to do in the `*_3.*` files, so they were left alone. The `*_4.*` files had garbage records, so the oplog from them was compacted into the new `*_5.*` files.
+
+``` pre
+bash-2.05$ ls -ltra backupDirectory
+total 28
+-rw-rw-r--   1 user users          3 Apr  7 14:56 BACKUPds1_3.drf
+-rw-rw-r--   1 user users         25 Apr  7 14:56 BACKUPds1_3.crf
+drwxrwxr-x   3 user users       1024 Apr  7 15:02 ..
+-rw-rw-r--   1 user users       7085 Apr  7 15:06 BACKUPds1.if
+-rw-rw-r--   1 user users         18 Apr  7 15:07 BACKUPds1_4.drf
+-rw-rw-r--   1 user users       1070 Apr  7 15:07 BACKUPds1_4.crf
+drwxrwxr-x   2 user users        512 Apr  7 15:07 .
+
+bash-2.05$ gfsh
+
+gfsh>validate offline-disk-store --name=ds1 --disk-dirs=backupDirectory
+
+/root: entryCount=6
+/partitioned_region entryCount=1 bucketCount=10
+Disk store contains 12 compactable records.
+Total number of region entries in this disk store is: 7
+
+gfsh>compact offline-disk-store --name=ds1 --disk-dirs=backupDirectory
+Offline compaction removed 12 records.
+Total number of region entries in this disk store is: 7
+
+gfsh>exit
+
+bash-2.05$ ls -ltra backupDirectory
+total 16
+-rw-rw-r--   1 user users          3 Apr  7 14:56 BACKUPds1_3.drf
+-rw-rw-r--   1 user users         25 Apr  7 14:56 BACKUPds1_3.crf
+drwxrwxr-x   3 user users       1024 Apr  7 15:02 ..
+-rw-rw-r--   1 user users          0 Apr  7 15:08 BACKUPds1_5.drf
+-rw-rw-r--   1 user users        638 Apr  7 15:08 BACKUPds1_5.crf
+-rw-rw-r--   1 user users       2788 Apr  7 15:08 BACKUPds1.if
+drwxrwxr-x   2 user users        512 Apr  7 15:09 .
+bash-2.05$
+```

@@ -1,0 +1,65 @@
+﻿---
+title:  How to Safely Modify the Cache from an Event Handler Callback
+sidebar_label: How to Safely Modify the Cache from an Event Handler Callback
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Event handlers are synchronous. If you need to change the cache or perform any other distributed operation from event handler callbacks, be careful to avoid activities that might block and affect your overall system performance.
+
+## Operations to Avoid in Event Handlers {#writing_callbacks_that_modify_the_cache__section_98E49363C91945DEB0A3B2FD9A209969}
+Do not perform distributed operations of any kind directly from your event handler. @@product_name@@ is a highly distributed system and many operations that may seem local invoke distributed operations.
+
+These are common distributed operations that can get you into trouble:
+
+-   Calling `Region` methods, on the event's region or any other region.
+-   Using the @@product_name@@ `DistributedLockService`.
+-   Modifying region attributes.
+-   Executing a function through the @@product_name@@ `FunctionService`.
+
+To be on the safe side, do not make any calls to the @@product_name@@ API directly from your event handler. Make all @@product_name@@ API calls from within a separate thread or executor.
+
+## How to Perform Distributed Operations Based on Events {#writing_callbacks_that_modify_the_cache__section_78648D4177E14EA695F0B059E336137C}
+If you need to use the @@product_name@@ API from your handlers, make your work asynchronous to the event handler. You can spawn a separate thread or use a solution like the `java.util.concurrent.Executor` interface.
+
+This example shows a serial executor where the callback creates a `Runnable` that can be pulled off a queue and run by another object. This preserves the ordering of events.
+
+``` pre
+public void afterCreate(EntryEvent event) {
+  final Region otherRegion = cache.getRegion("/otherRegion");
+  final Object key = event.getKey();
+  final Object val = event.getNewValue();
+
+  serialExecutor.execute(new Runnable() {
+    public void run() {
+      try {
+        otherRegion.create(key, val);
+      }
+      catch (org.apache.geode.cache.RegionDestroyedException e) {
+        ...
+      }
+      catch (org.apache.geode.cache.EntryExistsException e) {
+        ...
+      }
+    }
+  });
+  }
+```
+
+For additional information on the `Executor`, see the `SerialExecutor` example on the Oracle Java web site.

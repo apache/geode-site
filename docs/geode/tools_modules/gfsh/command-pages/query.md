@@ -1,0 +1,64 @@
+﻿---
+title:  query
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Run queries against @@product_name@@ regions.
+
+If a limit restricting the result size is not set in the query,
+then a default limit of the gfsh environment variable `APP_FETCH_SIZE`,
+as defined in
+[Useful gfsh Shell Variables](../useful_gfsh_shell_variables),
+will be applied.
+
+Surround the OQL query with single quote marks.
+
+**Note:**
+This command should not be executed from `gfsh` if the objects being queried contain cyclic references.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+query --query=value [--file=path/to/results/file] [--member=member-name]
+```
+## {#concept_89A129F729DF4D3B9056C8D9016AA760__table_ocr_gcg_2w}
+| Name                     | Description                                                    |
+|--------------------------|----------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;query </span>      | *Required.* The OQL string     |
+| <span class="keyword parmname">&#8209;&#8209;file</span> | When specified, all query results are written to the specified file. An error is issued if the file already exists. |
+| <span class="keyword parmname">&#8209;&#8209;member </span>     | Name/Id of the member on which to execute the query (as shown in the output of the gfsh `describe region` command, for example)     |
+
+**Sample Output:**
+
+``` pre
+gfsh>query --query='SELECT * FROM /region2'
+
+Result     : true
+startCount : 0
+endCount   : 20
+Rows       : 1
+
+Result
+-----------------
+('Hello World!!')
+
+NEXT_STEP_NAME : END
+```

@@ -1,0 +1,8 @@
+{
+  "label": "Configuring Multi-Site (WAN) Event Queues",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "configure_multisite_event_messaging"
+  }
+}

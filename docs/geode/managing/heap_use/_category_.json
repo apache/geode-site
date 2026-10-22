@@ -1,0 +1,8 @@
+{
+  "label": "Managing Heap and Off-heap Memory",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "heap_and_off_heap_management"
+  }
+}

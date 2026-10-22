@@ -1,0 +1,58 @@
+﻿---
+title: How Member Discovery Works
+sidebar_label: How Member Discovery Works
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name_long@@ provides various options for member discovery within a cluster and between clients and servers.
+
+-   [Peer Member Discovery](how_member_discovery_works#how_member_discovery_works__section_F2B8EBF2909440BD90B4CDEE0CAA0C2A)
+-   [Standalone Member](how_member_discovery_works#how_member_discovery_works__section_E26DFAFE9E994C0C9A489E325E345816)
+-   [Client Discovery of Servers](how_member_discovery_works#how_member_discovery_works__section_37DE53BDCDB541618C6DF4E47A1F2B73)
+
+## Peer Member Discovery {#how_member_discovery_works__section_F2B8EBF2909440BD90B4CDEE0CAA0C2A}
+Peer member discovery is what defines a cluster. All applications and cache servers that use the same settings for peer discovery are members of the same cluster. Each system member has a unique identity and knows the identities of the other members. A member can belong to only one cluster at a time. Once they have found each other, members communicate directly, independent of the discovery mechanism. In peer discovery, @@product_name@@ uses a membership coordinator to manage member joins and departures.
+
+Members discover each other using one or more locators. A locator provides both discovery and load balancing services. Peer locators manage a dynamic list of cluster members. New members connect to one of the locators to retrieve the member list, which it uses to join the system.
+
+<img src="/images_svg/locator_discovery.svg" id="how_member_discovery_works__image_dm3_y3x_15" class="image" />
+
+**Note:**
+Multiple locators ensure the most stable start up and availability for your cluster.
+
+## Standalone Member {#how_member_discovery_works__section_E26DFAFE9E994C0C9A489E325E345816}
+The standalone member has no peers, does no peer discovery, and so does not use locators. It creates a cluster connection only to access the @@product_name@@ caching features. Running standalone has a faster startup and is appropriate for any member that is isolated from other applications. The primary use case is for client applications. Standalone members can be accessed and monitored if you enable the member to become a JMX Manager.
+
+## Client Discovery of Servers {#how_member_discovery_works__section_37DE53BDCDB541618C6DF4E47A1F2B73}
+Locators provide clients with dynamic server discovery and server load balancing. Clients are configured with locator information for the server system, and turn to the locators for directions to the servers to use. The servers can come and go and their capacity to service new client connections can vary. The locators continuously monitor server availability and server load information, providing clients with connection information for the server with the least load at any time.
+
+**Note:**
+For performance and cache coherency, clients must run as standalone members or in different clusters than their servers.
+
+You do not need to run any special processes to use locators for server discovery. The locators that provide peer discovery in the server system also provide server discovery for clients to the server system. This is the standard configuration.
+
+<img src="/images_svg/cs_locator_discovery.svg" id="how_member_discovery_works__image_ED0D22E30A274675ADF0815D102A7D5B" class="image" />
+
+## Multi-site Discovery {#how_member_discovery_works__section_1CB9D1439346415FB630E9DCD373CAC9}
+In a multi-site (WAN) configuration, a @@product_name@@ cluster uses locators to discover remote @@product_name@@ clusters as well as to discover local @@product_name@@ members. Each locator in a WAN configuration uniquely identifies the local cluster to which it belongs, and it can also identify locators in remote @@product_name@@ clusters to which it will connect for WAN distribution.
+
+When a locator starts up, it contacts each remote locator to exchange information about the available locators and gateway receiver configurations in the remote cluster. In addition to sharing information about its own cluster, a locator shares information that it has obtained from all other connected clusters. Each time a new locator starts up or an existing locator shuts down, the changed information is broadcast to other connected @@product_name@@ clusters across the WAN.
+
+See [Discovery for Multi-Site Systems](multisite_overview#topic_1742957C8D4B4F7590847EB8DB6CD4F7) for more information.

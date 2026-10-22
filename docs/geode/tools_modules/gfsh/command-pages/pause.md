@@ -1,0 +1,47 @@
+﻿---
+title:  pause gateway-sender
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Pause a gateway sender.
+
+Pause the gateway sender on a member or members. See [Pausing Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview#topic_9AA37B43642D4DE19072CA3367C849BA__section_hdt_2js_bq) for details on pausing gateway senders.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+pause gateway-sender --id=value [--groups=value(,value)*] 
+[--members=value(,value)*]
+```
+## {#concept_44B6EC91FD464A1A91E438D6DF65C9D6__table_nhn_zcg_2w}
+| Name                                           | Description                                                    |
+|------------------------------------------------|----------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the gateway sender.                          |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members on which to pause the gateway sender.      |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name or ID of the member(s) on which to pause the gateway sender. |
+
+<span class="tablecap">Table 1. Pause Gateway-Sender Parameters</span>
+
+**Example Commands:**
+
+``` pre
+pause gateway-sender --id=sender1
+```

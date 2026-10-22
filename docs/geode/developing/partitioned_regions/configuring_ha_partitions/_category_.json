@@ -1,0 +1,8 @@
+{
+  "label": "Configuring High Availability for Partitioned Regions",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "overview_how_pr_ha_works"
+  }
+}

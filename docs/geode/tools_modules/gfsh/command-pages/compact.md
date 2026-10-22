@@ -1,0 +1,104 @@
+﻿---
+title: compact
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_2522766FD5DD45D991A523F84BD54920}
+Compact online and offline disk-stores.
+
+-   **[compact disk-store](../../../tools_modules/gfsh/command-pages/compact#topic_F113C95C076F424E9AA8AC4F1F6324CC)**
+
+    Compact a disk store on all members with that disk store.
+
+-   **[compact offline-disk-store](../../../tools_modules/gfsh/command-pages/compact#topic_9CCFCB2FA2154E16BD775439C8ABC8FB)**
+
+    Compact an offline disk store.
+
+## compact disk-store {#topic_F113C95C076F424E9AA8AC4F1F6324CC}
+Compact a disk store on all members with that disk store.
+
+This command uses the compaction threshold that each member has configured for its disk stores. The disk store must have the `allow-force-compaction` property set to `true`.
+
+See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/compacting_disk_stores) for more information.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+compact disk-store --name=value [--groups=value(,value)*]
+```
+
+**Parameters, compact disk-store**
+
+| Name                                          | Description                                                                                                                  |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>  | *Required.* Name of the disk store to be compacted.                                                                          |
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) of members that perform disk compaction. If no group is specified, then the disk store is compacted by all members. |
+
+**Example Commands:**
+
+``` pre
+compact disk-store --name=Disk1
+compact disk-store --name=Disk1 --group=MemberGroup1,MemberGroup2
+```
+
+**Error Messages:**
+
+``` pre
+"Disk store \"{0}\" does not exist.";
+ " for group(s) \"{0}\"";
+"No members found in the specified group(s) \"{0}\".";
+"Compaction was attempted but nothing to compact.";
+"Error occurred while doing compaction. Reason: \"{0}\"";
+```
+
+## compact offline-disk-store {#topic_9CCFCB2FA2154E16BD775439C8ABC8FB}
+Compact an offline disk store.
+
+If the disk store is large, you may need to allocate additional memory to the process by using the `--J=-XmxNNNm` parameter.
+
+See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/compacting_disk_stores) for more information.
+
+**Note:**
+Do not perform offline compaction on the baseline directory of an incremental backup.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+compact offline-disk-store --name=value --disk-dirs=value(,value)* 
+[--max-oplog-size=value] [--J=value(,value)*]
+```
+
+**Parameters, compact offline-disk-store**
+
+| Name                                                   | Description                                                                                                                   | Default Value |
+|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>           | *Required.* Name of the offline disk store to be compacted.                                                                   |               |
+| <span class="keyword parmname">&#8209;&#8209;disk-dirs</span>      | *Required.* One or more directories where data for the disk store was previously written. Separate directories with commas.   |               |
+| <span class="keyword parmname">&#8209;&#8209;max-oplog-size</span> | Maximum size (in megabytes) of the oplogs created by compaction.                                                              | -1            |
+| <span class="keyword parmname">&#8209;&#8209;J</span>              | Arguments passed to the Java Virtual Machine performing the compact operation on the disk store. For example: `--J=-Xmx1024m`. |               |
+
+**Example Commands:**
+
+``` pre
+compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2
+compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2 --max-oplog-size=512 --J=-Xmx1024m
+```

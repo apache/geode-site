@@ -1,0 +1,203 @@
+---
+title:  Setting Up the HTTP Module for AppServers
+sidebar_label:  Setting Up the HTTP Module for AppServers
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+To use the module, you need to modify your application's `web.xml` files. Configuration is slightly different depending on the topology you are setting up.
+
+Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies#common_gemfire_topologies) for more information. Modifying the war file can be done manually or with the `modify_war` script. To see the command line options for the `modify_war` script, invoke:
+
+``` pre
+$ modify_war -h
+```
+
+## Manual Configuration {#weblogic_setting_up_the_module__section_9D330F0A9E934B209D77C5A5D79B741C}
+To modify your war or ear file manually, make the following updates:
+
+-   **web.xml** needs a filter added as follows. If you have your own filters, the @@product_name@@ Module filter **must** be the first one.
+
+    ``` pre
+    <filter>
+        <filter-name>gemfire-session-filter</filter-name>
+        <filter-class>
+          org.apache.geode.modules.session.filter.SessionCachingFilter
+        </filter-class>
+        <init-param>
+            <param-name>cache-type</param-name>
+            <param-value>peer-to-peer</param-value>
+        </init-param>
+        <init-param>
+            <param-name>gemfire.property.locators</param-name>
+            <param-value>localhost[10334]</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>gemfire-session-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    ```
+
+-   Add the following jar files from the AppServer.zip to the `WEB-INF/lib` directory of the war:
+    -   geode-modules jar
+    -   geode-modules-session-internal jar
+    -   geode-modules-session jar
+    -   slf4j-api jar
+    -   slf4j-jdk14 jar
+-   Add the following jar files from the `$GEODE/lib` directory to the `WEB-INF/lib` directory of the war, where `$GEODE` is set to the @@product_name@@ product installation:
+    -   antlr jar
+    -   commons-io jar
+    -   commons-lang jar
+    -   commons-validator jar
+    -   fastutil jar
+    -   geode-common jar
+    -   geode-core jar
+    -   geode-management jar
+    -   geode-logging jar
+    -   geode-serialization jar
+    -   geode-membership jar
+    -   geode-tcp-server jar
+    -   jakarta.transaction-api jar
+    -   jgroups jar
+    -   log4j-api jar
+    -   log4j-core jar
+    -   log4j-jul jar
+    -   micrometer-core jar
+    -   shiro-core jar
+
+If you are deploying an ear file:
+
+-   Copy all the dependent files, given above, to the `lib` directory of the ear.
+-   Modify each embedded war file's manifest by adding a Class-Path entry which references the shared jars added in the previous step. For example:
+
+    ``` pre
+    Manifest-Version: 1.0
+    Built-By: joe
+    Build-Jdk: 17.0.16
+    Created-By: Apache Maven
+    Archiver-Version: Plexus Archiver
+    Class-Path: lib/geode-modules-2.0.0.jar
+    lib/geode-modules-session-internal-2.0.0.jar
+    lib/geode-modules-session-2.0.0.jar
+    lib/slf4j-api-2.0.17.jar
+    lib/slf4j-jdk14-2.0.17.jar
+    lib/antlr-2.7.7.jar
+    lib/geode-membership-2.0.0.jar
+    lib/geode-tcp-server-2.0.0.jar
+    lib/fastutil-8.5.8.jar
+    lib/geode-core-2.0.0.jar
+    lib/geode-common-2.0.0.jar
+    lib/geode-management-2.0.0.jar
+    lib/geode-logging-2.0.0.jar
+    lib/geode-serialization-2.0.0.jar
+    lib/jakarta.transaction-api-2.0.1.jar
+    lib/jgroups-3.6.20.Final.jar
+    lib/log4j-api-2.25.3.jar
+    lib/log4j-core-2.25.3.jar
+    lib/log4j-jul-2.25.3.jar
+    ```
+
+## Peer-to-Peer Setup {#weblogic_setting_up_the_module__section_20294A39368D4402AEFB3D074E8D5887}
+<img src="/images_svg/http_module_p2p_with_locator.svg" id="weblogic_setting_up_the_module__image_86E949E0F1AD4E9EB67605EFA4E97E13" class="image" />
+
+To run @@product_name@@ in a peer-to-peer configuration, use the `modify_war` script with options
+`-t peer-to-peer`,  `-p gemfire.property.locators=localhost[10334]`, and `-p gemfire.propery.cache-xml-file=<moduleDir>/conf/cache-peer.xml`
+to result in the following `web.xml` content:
+
+``` pre
+<filter>
+    <filter-name>gemfire-session-filter</filter-name>
+    <filter-class>
+        org.apache.geode.modules.session.filter.SessionCachingFilter
+    </filter-class>
+    <init-param>
+        <param-name>cache-type</param-name>
+        <param-value>peer-to-peer</param-value>
+    </init-param>
+    <init-param>
+        <param-name>gemfire.property.locators</param-name>
+        <param-value>localhost[10334]</param-value>
+    </init-param>
+</filter>
+```
+
+## Client/Server Setup {#weblogic_setting_up_the_module__section_B0CEBE93564540DBA165E0F7A10FDC0B}
+<img src="/images_svg/http_module_cs_with_locator.svg" id="weblogic_setting_up_the_module__image_BDF2273487EA4FEB9895D02A6F6FD445" class="image" />
+
+To run @@product_name@@ in a client/server configuration, you make the application server operate as a @@product_name@@ client. Use the `-t client-server` option to the `modify_war` script. This adds the following filter to application server's `web.xml` file:
+
+To run @@product_name@@ in a client/server configuration, you make the application server operate as a @@product_name@@ client. Use the `modify_war` script with options
+`-t client-server` and `-p gemfire.property.cache-xml-file=<module dir>/conf/cache-client.xml`
+to result in the following `web.xml` content:
+
+``` pre
+<filter>
+    <filter-name>gemfire-session-filter</filter-name>
+    <filter-class>
+        org.apache.geode.modules.session.filter.SessionCachingFileter
+    </filter-class>
+    <init-param>
+        <param-name>cache-type</param-name>
+        <param-value>client-server</param-value>
+    </init-param>
+    <init-param>
+        <param-name>gemfire.property.cache-xml-file</param-name>
+        <param-value>module dir/conf/cache-client.xml</param-value>
+    </init-param>
+</filter>
+```
+
+The `cache-client.xml` file contains a &lt;pool&gt; element pointing at the locator. Its default value is localhost\[10334\].
+
+## Starting the Application Server {#weblogic_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6}
+After you update the configuration, you are now ready to start your application server instance. Instantiate the locator first:
+
+``` pre
+$ gfsh start locator --name=locator1
+```
+
+Then start the server:
+
+``` pre
+$ gfsh start server \
+    --name=server1 \
+    --server-port=0 \
+    --locators=localhost[10334] \
+    --classpath=<moduleDir>/lib/geode-modules-2.0.0.jar:\
+<moduleDir>/lib/geode-modules-session-internal-2.0.0.jar
+```
+
+Once the application server is started, the @@product_name@@ client will automatically launch within the application server process.
+
+## Verifying that @@product_name@@ Started {#weblogic_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B}
+You can verify that @@product_name@@ has successfully started by inspecting the application server log file. For example:
+
+``` pre
+info 2025/04/18 10:04:18.685 PDT <localhost-startStop-2> tid=0x1a]
+Initializing @@product_name@@ Modules
+Java version:   2.0.0 user1 041816 2025-11-18 08:46:17 -0700
+javac @@min_java_version@@.0.@@min_java_update@@
+Native version: native code unavailable
+Source revision: 19dd8eb1907e0beb2aa3e0a17d5f12c6cbec6968
+Source repository: develop
+Running on: /192.0.2.0, 8 cpu(s), x86_64 Mac OS X 10.11.4
+```
+
+Information is also logged within the @@product_name@@ log file, which by default is named `gemfire_modules.<date>.log`.

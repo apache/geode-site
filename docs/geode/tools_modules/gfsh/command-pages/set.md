@@ -1,0 +1,58 @@
+﻿---
+title:  set variable
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Set variables in the gfsh environment.
+## {#concept_E9CC746480464556AA8FF69EB991776E__section_66C36B0123F54A52AE3815E5D31F8239}
+Set gfsh variables that can be used by commands.
+
+You can use the gfsh [echo](echo) command to view the value of a variable. For example, to see a list of all environment variables and their current values, use the following command:
+
+``` pre
+gfsh>echo --string=$*
+```
+
+See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a description of preset environment variables.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+set variable --name=value --value=value
+```
+## {#concept_E9CC746480464556AA8FF69EB991776E__table_ec2_jkf_2w}
+| Name                                          | Description                                                                                                                               |
+|-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>  | *Required.* The name to be assigned for the variable. The name must only be composed of letters, digits, and the underscore character (`_`); the name may not start with a digit. |
+| <span class="keyword parmname">&#8209;&#8209;value</span> | *Required.* Value that the variable will be set to.                                                                                       |
+**Example Commands:**
+
+``` pre
+set variable --name=FOO --value="foo"
+set variable --name=BAR --value="bar"
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>set variable --name=BAR --value="bar"
+Value for variable BAR is now: "bar".
+```

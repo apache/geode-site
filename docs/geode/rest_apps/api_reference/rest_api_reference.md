@@ -1,0 +1,37 @@
+﻿<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section summarizes all available @@product_name_long@@ REST API resources and endpoints.
+
+**Note:**
+This documentation covers the **v1** release of @@product_name@@ REST APIs for developing applications.
+
+-   **[Region Endpoints](rest_regions)**
+
+    A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
+
+-   **[Query Endpoints](rest_queries)**
+
+    @@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. Since @@product_name@@ regions are key-value stores, values can range from simple byte arrays to complex nested objects.
+
+-   **[Function Endpoints](rest_functions)**
+
+    @@product_name@@ functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
+
+-   **[Administrative Endpoints](rest_admin)**
+
+    Administrative endpoints provide management and monitoring functionality for the REST API interface.

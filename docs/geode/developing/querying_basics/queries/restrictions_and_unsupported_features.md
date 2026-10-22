@@ -1,0 +1,36 @@
+---
+title:  Query Language Restrictions and Unsupported Features
+sidebar_label: Query Language Restrictions and Unsupported Features
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+At a high level, @@product_name@@ does not support the following querying features:
+
+-   Indexes targeted for joins across more than one region are not supported
+-   Static method invocations. For example, the following query is invalid:
+
+    ``` pre
+    SELECT DISTINCT * FROM /QueryRegion0 WHERE aDay = Day.Wednesday
+    ```
+
+-   You cannot create an index on fields using Set/List types (Collection types) that are not comparable. The OQL index implementation expects fields to be Comparable. To workaround this, you can create a custom Collection type that implements Comparable.
+-   ORDER BY is only supported with DISTINCT queries.
+-   In the Geode model, attributes and methods are resolved at runtime during query execution. This means that OQL queries are not pre-validated for references to nonexistent methods and attributes.
+In addition, there are some specific limitations on partitioned region querying. See [Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions#concept_5353476380D44CC1A7F586E5AE1CE7E8).

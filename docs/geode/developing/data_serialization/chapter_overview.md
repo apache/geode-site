@@ -1,0 +1,40 @@
+﻿---
+title:  Data Serialization
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Data that you manage in @@product_name@@ must be serialized and deserialized for storage and transmittal between processes. You can choose among several options for data serialization.
+
+-   **[Overview of Data Serialization](data_serialization_options)**
+
+    @@product_name@@ offers serialization options other than Java serialization that give you higher performance and greater flexibility for data storage, transfers, and language types.
+
+-   **[@@product_name@@ PDX Serialization](gemfire_pdx_serialization)**
+
+    @@product_name@@'s Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
+
+-   **[@@product_name@@ Data Serialization (DataSerializable and DataSerializer)](gemfire_data_serialization)**
+
+    @@product_name@@'s `DataSerializable` interface gives you quick serialization of your objects.
+
+-   **[Standard Java Serialization](java_serialization)**
+
+    You can use standard Java serialization for data you only distribute between Java applications. If you distribute your data between non-Java clients and Java servers, you need to do additional programming to get the data between the various class formats.
+
+

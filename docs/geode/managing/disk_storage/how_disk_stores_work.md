@@ -1,0 +1,59 @@
+﻿---
+title:  How Disk Stores Work
+sidebar_label: How Disk Stores Work
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Overflow and persistence use disk stores individually or together to store data.
+## {#how_disk_stores_work__section_1A93EFBE3E514918833592C17CFC4C40}
+Disk storage is available for these items:
+
+-   **Regions**. Persist and/or overflow data from regions.
+-   **Server's client subscription queues**. Overflow the messaging queues to control memory use.
+-   **Gateway sender queues**. Persist these for high availability. These queues always overflow.
+-   **PDX serialization metadata**. Persist metadata about objects you serialize using @@product_name@@ PDX serialization.
+
+Each member has its own set of disk stores, and they are completely separate from the disk stores of any other member. For each disk store, define where and how the data is stored to disk. You can store data from multiple regions and queues in a single disk store.
+
+This figure shows a member with disk stores D through R defined. The member has two persistent regions using disk store D and an overflow region and an overflow queue using disk store R.
+
+<img src="/images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
+
+## What @@product_name@@ Writes to the Disk Store {#how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A}
+@@product_name@@ writes the following to the disk store:
+
+-   Persisted and overflowed data as specified when the disk store was created and configured
+-   The members that host the store and information on their status, such as which members are online and which members are offline and time stamps
+-   A disk store identifier
+-   Which regions are in the disk store, specified by region name and including selected attributes
+-   Names of colocated regions on which the regions in the disk store depend
+-   A record of all operations on the regions
+
+@@product_name@@ does not write indexes to disk.
+
+## Disk Store State {#how_disk_stores_work__section_C1A047CD5518499D94A0E9A0328F6DB8}
+The files for a disk store are used by @@product_name@@ as a group. Treat them as a single entity. If you copy them, copy them all together. Do not change the file names.
+
+Disk store access and management differs according to whether the member is online or offline.
+While a member is running, its disk stores are online. When the member exits and is not running, its disk stores are offline.
+
+-   Online, a disk store is owned and managed by its member process. To run operations on an online disk store, use API calls in the member process, or use the `gfsh` command-line interface.
+-   Offline, the disk store is just a collection of files in the host file system. The files are accessible based on file system permissions. You can copy the files for backup or to move the member’s disk store location. You can also run some maintenance operations, such as file compaction and validation, by using the `gfsh` command-line interface. When offline, the disk store's information is unavailable to the cluster. 
+For partitioned regions, region data is split between multiple members, and therefore the start up of a member is dependent on all members, and must wait for all members to be online. An attempt to access an entry that is stored on disk by an offline member results in a `PartitionOfflineException`.

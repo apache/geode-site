@@ -1,0 +1,94 @@
+﻿---
+title: Advanced Users—Configuring Log4j 2 for Geode
+sidebar_label: Advanced Users—Configuring Log4j 2 for Geode
+sidebar_position: 5
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Basic @@product_name@@ logging configuration is configured via the `gemfire.properties` file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.
+
+An example `log4j2.xml` can be located within the product distribution at `$GEODE/config/log4j2.xml`.
+
+To specify your own `log4j2.xml` configuration file (or anything else supported by Log4j 2 such as .json or .yaml), use the following flag when starting up your JVM or @@product_name@@ member:
+
+``` pre
+-Dlog4j.configurationFile=<location-of-your-file>
+```
+
+If the Java system property `log4j.configurationFile` is specified,
+then Log4j will not use the `log4j2.xml` included in `geode-log4j-<version>.jar`.
+
+## Using Different Front-End Logging APIs to Log to Log4j2
+
+You can also configure Log4j 2 to work with various popular and commonly used logging APIs. To obtain and configure the most popular front-end logging APIs to log to Log4j 2, see the instructions on the Apache Log4j 2 web site at [http://logging.apache.org/log4j/2.x/](http://logging.apache.org/log4j/2.x/).
+
+For example, if you are using:
+
+-   **Commons Logging**, download "Commons Logging Bridge" (`log4j-jcl-2.25.3.jar`)
+-   **SLF4J**, download "SLFJ4 Binding" (`log4j-slf4j-impl-2.25.3.jar`)
+-   **java.util.logging**, download the "JUL adapter" (`log4j-jul-2.25.3.jar`)
+
+See [http://logging.apache.org/log4j/2.x/faq.html](http://logging.apache.org/log4j/2.x/faq.html) for more examples.
+
+All three of the above JAR files are in the full distribution of Log4J 2.25.3 which can be downloaded at [http://logging.apache.org/log4j/2.x/download.html](http://logging.apache.org/log4j/2.x/download.html). Download the appropriate bridge, adapter, or binding JARs to ensure that @@product_name@@ logging is integrated with every logging API used in various third-party libraries or in your own applications.
+
+**Note:**
+@@product_name_long@@ has been tested with Log4j 2.25.3. As newer versions of Log4j 2 come out, you can find 2.25.3 under Previous Releases on that page.
+
+## Customizing Your Own log4j2.xml File
+
+Advanced users may want to move away entirely from setting `log-*` gemfire properties and instead specify their own `log4j2.xml` using `-Dlog4j.configurationFile`.
+
+Custom Log4j 2 configuration in @@product_name@@ comes with some caveats and notes:
+
+-   Do not use `"monitorInterval="` in your `log4j2.xml` file, because doing so can have significant performance impact. This setting instructs Log4j 2 to monitor the log4j2.xml config file at runtime and automatically reload and reconfigure if the file changes.
+-   @@product_name@@'s default `log4j2.xml` specifies status="FATAL" because Log4j 2's StatusLogger generates warnings to standard out at ERROR level anytime @@product_name@@ stops its AlertAppender or LogWriterAppender. @@product_name@@ uses a lot of concurrent threads that are executing code with log statements; these threads may be logging while the @@product_name@@ appenders are being stopped.
+-   @@product_name@@'s default `log4j2.xml` specifies `shutdownHook="disable"` because @@product_name@@ has a shutdown hook which disconnects the DistributedSystem and closes the Cache, which is executing the code that performs logging. If the Log4J2 shutdown hook stops logging before @@product_name@@ completes its shutdown, Log4j 2 will attempt to start back up. This restart in turn attempts to register another Log4j 2 shutdown hook which fails resulting in a FATAL level message logged by Log4j 2.
+-   The GEODE\_VERBOSE marker (Log4J2 Marker are discussed on [http://logging.apache.org/log4j/2.x/manual/markers.html](http://logging.apache.org/log4j/2.x/manual/markers.html)) can be used to enable additional verbose log statements at TRACE level. Many log statements are enabled simply by enabling DEBUG or TRACE. However, even more log statements can be further enabled by using MarkerFilter to accept GEODE\_VERBOSE. The default @@product_name@@ `log4j2.xml` disables GEODE\_VERBOSE with this line:
+
+    ``` pre
+    <MarkerFilter marker="GEODE_VERBOSE" onMatch="DENY" onMismatch="NEUTRAL"/>
+    ```
+
+    You can enable the GEODE\_VERBOSE log statements by changing `onMatch="DENY"` to `onMatch="ACCEPT"`. Typically, it's more useful to simply enable DEBUG or TRACE on certain classes or packages instead of for the entire @@product_name@@ product. However, this setting can be used for internal debugging purposes if all other debugging methods fail.
+-   The usage of filters can have an impact on performance. @@product_name@@ has some logging optimizations that are deactivated when filters are used (except for the GEODE_VERBOSE marker mentioned previously).
+
+- Geode's custom Log4j 2 Appenders can be used in a custom log4j2.xml. This requires:
+ 
+  1. Specify GeodeConsole, GeodeLogWriter, and/or GeodeAlert in the Appenders section:
+ 
+    ```xml
+    <Properties>
+      <Property name="geode-pattern">[%level{lowerCase=true} %date{yyyy/MM/dd HH:mm:ss.SSS z} &lt;%thread&gt; tid=%hexTid] %message%n%throwable%n</Property>
+    </Properties>
+
+    <Appenders>
+      <GeodeConsole name="STDOUT" target="SYSTEM_OUT">
+        <PatternLayout pattern="${geode-pattern}"/>
+      </GeodeConsole>
+      <GeodeLogWriter name="LOGWRITER">
+        <PatternLayout pattern="${geode-pattern}"/>
+      </GeodeLogWriter>
+      <GeodeAlert name="ALERT"/>
+    </Appenders>
+    ```
+ 
+    (Note that GeodeAlert does not use a PatternLayout)
+
+  2. See the default `log4j2.xml` in the Geode source directory `geode-log4j/src/main/resources/` as a reference for creating a custom configuration.

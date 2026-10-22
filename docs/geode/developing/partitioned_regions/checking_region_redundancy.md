@@ -1,0 +1,49 @@
+﻿---
+title:  Checking Redundancy in Partitioned Regions
+sidebar_label: Checking Redundancy in Partitioned Regions
+sidebar_position: 8
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Under some circumstances, it can be important to verify that your partitioned region data is redundant and that upon member restart, redundancy has been recovered properly across partitioned region members.
+
+Initiate an operation to report the current redundancy status of regions using one of the following:
+
+-   `gfsh` command. Start `gfsh` and connect to the cluster. Then type the following command:
+
+    ``` pre
+    gfsh>status redundancy
+    ```
+
+    Optionally, you can specify regions to include or exclude from restoring redundancy. Type `help restore redundancy` or see [status redundancy](../../tools_modules/gfsh/command-pages/status#topic_status_redundancy) for more information.
+
+-   API call:
+
+    ``` pre
+    ResourceManager manager = cache.getResourceManager();
+    RestoreRedundancyResults currentStatus = manager.createRestoreRedundancyOperation().redundancyStatus();
+    //These are some of the details we can get about the run from the API
+    System.out.println("Status for all regions: " + currentStatus.getMessage());
+    System.out.println("Number of regions with no redundant copies: " + currentStatus.getZeroRedundancyRegionResults().size();
+    System.out.println("Status for region " + regionName + ": " + currentStatus.getRegionResult(regionName).getMessage();
+    ```
+
+If you have `startup-recovery-delay=-1` configured for your partitioned region, you will need to trigger a restore redundancy operation on your region after you restart any members in your cluster in order to recover redundancy. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy).
+
+If you have `startup-recovery-delay` set to a low number, you may need to wait extra time until the region has recovered redundancy.

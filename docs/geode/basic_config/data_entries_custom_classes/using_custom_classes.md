@@ -1,0 +1,57 @@
+---
+title:  Requirements for Using Custom Classes in Data Caching
+sidebar_label: Requirements for Using Custom Classes in Data Caching
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Follow these guidelines to use custom domain classes for your cached entry keys and values.
+
+## CLASSPATH {#using_custom_classes__section_F098CAC546164094BE6872BF0C443A71}
+Each member’s `CLASSPATH` must include classes for all objects the member accesses.
+
+-   For Java applications, use the standard Java `CLASSPATH`.
+-   For the cache server process, use the `CLASSPATH` environment variable or the `gfsh start server`'s `--classpath` parameter. See [Running @@product_name@@ Server Processes](../../configuring/running_the_cacheserver).
+
+Data is sent between clients and servers in serialized form and the server stores client data in serialized form. The server does not need to deserialize data to send it to another client or to access it through a `PDXInstance`, but it does need to deserialize it to access it in other ways. The server `CLASSPATH` must include the classes for:
+
+-   All entry keys
+-   Entry values in regions that the server persists to disk
+-   Entry values the server accesses for any reason other than access using a `PdxInstance` or transfer of the full entry value to a client
+
+For information on `PdxInstance`s, see [Data Serialization](../../developing/data_serialization/chapter_overview#data_serialization).
+
+## Data Serialization {#using_custom_classes__section_57EB5D02C06947B4BDE75A49286D581D}
+@@product_name@@ serializes data entry keys and values for distribution, so all data that @@product_name@@ moves out of the local cache for any reason must be serializable. Additionally, partitioned regions store data in serialized form. Almost every configuration requires serialization.
+
+For information on the requirements and options for data serialization, see [Data Serialization](../../developing/data_serialization/chapter_overview#data_serialization).
+
+## Classes Used as Keys {#using_custom_classes__section_CE776B94EDCB4D269A71C3C9CFEDD5FD}
+The region uses hashing on keys. If you define a custom class to use as a key, for the class, override:
+
+-   `equals`
+-   `hashCode`. The default `hashCode` inherited from `Object` uses identity, which is different in every system member. In partitioned regions, hashing based on identity puts data in the wrong place. For details, see the Java API documentation for `java.lang.Object`.
+
+Do not call `hashCode()` on an `enum` type data member
+within the key's custom `hashCode()` implementation.
+The `enum` `hashCode()` may not be overridden,
+and its hash is based upon an address.
+Therefore, an enumerated type's `hashCode()` return value can be different
+on each server, violating the restriction that `hashCode()` must return
+the same value on every server that hosts the region.

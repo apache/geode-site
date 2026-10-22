@@ -1,0 +1,57 @@
+---
+title:  Region Shortcuts
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This topic describes the various region shortcuts you can use to configure @@product_name@@ regions.
+
+Region shortcuts are groupings of pre-configured attributes that define the characteristics of a region. You can use a region shortcut as a starting point when configuring regions and you can add additional configurations to customize your application. To reference a region shortcut in a @@product_name@@ `cache.xml` file, use the `refid` attribute of the `<region>` element. For example:
+
+``` pre
+<region name="myRegion" refid="PARTITION_REDUNDANT"/>
+```
+
+You can override the default values and add additional configurations within a `<region-attributes>` element of the `cache.xml` file. For example, the following configuration overrides the <span class="keyword parmname">local-max-memory</span> setting and adds the <span class="keyword parmname">recovery-delay</span> attribute:
+
+``` pre
+<region name="myRegion" refid="PARTITION_REDUNDANT">
+    <region-attributes>
+        <partition-attributes 
+          local-max-memory="512" 
+           recovery-delay=-1/>
+    </region-attributes>
+</region>
+```
+
+You can also create your own, named region shortcuts for common custom configurations. See [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts).
+
+To configure a region using the gfsh command-line tool, specify the shortcut name with the `--type` argument. For example:
+
+``` pre
+gfsh>create region --name=myRegion --type=PARTITION_REDUNDANT
+```
+
+**Note:**
+If you change the cache.xml file that defines a region, you must restart the member before the changes take effect.
+
+For more information about configuring regions, see [Region Management](../../basic_config/data_regions/managing_data_regions).
+
+For more information about using the various types of @@product_name@@ regions and when to use them, see [Region Types](../../developing/region_options/region_types#region_types).
+     
+For a quick reference listing all region shortcuts, see [Region Shortcuts Quick Reference](region_shortcuts_table).

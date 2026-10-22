@@ -1,0 +1,58 @@
+---
+title: Geode PDX Serialization Features
+sidebar_label: Geode PDX Serialization Features
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name@@ PDX serialization offers several advantages in terms of functionality.
+
+## Application Versioning of PDX Domain Objects {#concept_F02E40517C4B42F2A75B133BB507C626__section_A0EEB4DA3E9F4EA4B65FE727D3951EA1}
+Domain objects evolve along with your application code. You might create an address object with two address lines, then realize later that a third line is required for some situations. Or you might realize that a particular field is not used and want to get rid of it. With PDX, you can use old and new versions of domain objects together in a cluster if the versions differ by the addition or removal of fields. This compatibility lets you gradually introduce modified code and data into the cluster, without bringing the cluster down.
+
+@@product_name@@ maintains a central registry of the PDX domain object metadata. Using the registry, @@product_name@@ preserves fields in each member's cache regardless of whether the field is defined. When a member receives an object with a registered field that the member is not aware of, the member does not access the field, but preserves it and passes it along with the entire object to other members. When a member receives an object that is missing one or more fields according to the member's version, @@product_name@@ assigns the Java default values for the field types to the missing fields.
+
+## Portability of PDX Serializable Objects {#concept_F02E40517C4B42F2A75B133BB507C626__section_D68A6A9C2C0C4D32AE7DADA2A4C3104D}
+When you serialize an object using PDX, @@product_name@@ stores the object's type information in the central registry. The information is passed among clients and servers, peers, and clusters.
+
+This centralization of object type information is advantageous for client/server installations in which clients and servers are written in different languages. Clients pass registry information to servers automatically when they store a PDX serialized object. Clients can run queries and functions against the data in the servers without compatibility between server and the stored objects. One client can store data on the server to be retrieved by another client, with no requirements on the part of the server.
+
+**Note:**
+
+There are situations where some of the information in the central registry of the PDX domain object metadata is lost, e.g. when restoring an old backup with an outdated central registry.
+
+When that happens, new clients connecting to the cluster for the first time will get outdated PDX type information from the central registry, but, since information in the central registry is cached by clients, old clients may have fresher information about PDX types than the central registry does. That will result into inconsistent information about PDX types spread across the system:
+
+-   old clients have fresh information
+-   the central registry has outdated information
+-   new clients have outdated information
+
+If old clients write entries of a PDX type they know but the central registry doesn't, new clients will get "Unknown PDX type" errors when they read those objects.
+
+To avoid this problem, clients may be configured with the system property in the table below to clear their PDX type cache when they disconnect from the cluster. After clearing their cache, old clients will re-generate type information for all PDX types, including the types the central registry "forgot". Since new PDX type information will be written in the central registry before entries of that type are written in the cluster, the central registry and all clients, old and new, will store consistent PDX type information.
+
+| Name                                      | Default | Client type   |
+|-------------------------------------------|---------|---------------|
+| `gemfire.ON_DISCONNECT_CLEAR_PDXTYPEIDS`  | `false` | Java Client   |
+| `on-client-disconnect-clear-pdxType-Ids`  | `false` | Native Client |
+
+## Reduced Deserialization of Serialized Objects {#concept_F02E40517C4B42F2A75B133BB507C626__section_08C901A3CF3E438C8778F09D482B9A63}
+The access methods of PDX serialized objects allow you to examine specific fields of your domain object without deserializing the entire object. Depending on your object usage, you can reduce serialization and deserialization costs significantly.
+
+Java and other clients can run queries and execute functions against the objects in the server caches without deserializing the entire object on the server side. The query engine automatically recognizes PDX objects, retrieves the `PdxInstance` of the object and uses only the fields it needs. Likewise, peers can access only the necessary fields from the serialized object, keeping the object stored in the cache in serialized form.

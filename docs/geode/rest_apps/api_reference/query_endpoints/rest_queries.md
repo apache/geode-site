@@ -1,0 +1,46 @@
+﻿---
+title:  Query Endpoints
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. Since @@product_name@@ regions are key-value stores, values can range from simple byte arrays to complex nested objects.
+
+-   **[GET /geode/v1/queries](get_queries)**
+
+    List all parameterized queries by ID or name.
+
+-   **[POST /geode/v1/queries?id=&lt;queryId&gt;&q=&lt;OQL-statement&gt;](post_create_query)**
+
+    Create (prepare) the specified parameterized query and assign the corresponding ID for lookup.
+
+-   **[POST /geode/v1/queries/\{queryId\}](post_execute_query)**
+
+    Execute the specified named query passing in scalar values for query parameters in the POST body.
+
+-   **[PUT /geode/v1/queries/\{queryId\}](put_update_query)**
+
+    Update a named, parameterized query.
+
+-   **[DELETE /geode/v1/queries/\{queryId\}](delete_named_query)**
+
+    Delete the specified named query.
+
+-   **[GET /geode/v1/queries/adhoc?q=&lt;OQL-statement&gt;](get_execute_adhoc_query)**
+
+    Run an unnamed (unidentified), ad-hoc query passed as a URL parameter.

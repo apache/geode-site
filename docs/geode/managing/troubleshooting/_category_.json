@@ -1,0 +1,8 @@
+{
+  "label": "Troubleshooting and System Recovery",
+  "position": 10,
+  "link": {
+    "type": "doc",
+    "id": "chapter_overview"
+  }
+}

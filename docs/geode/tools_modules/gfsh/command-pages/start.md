@@ -1,0 +1,434 @@
+﻿---
+title: start
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Start servers, locators, gateway senders and gateway receivers, and monitoring tools.
+
+-   **[start gateway-receiver](#topic_67738A5B68E84DEE95D1C92DAB2E26E5)**
+
+    Start the gateway receiver on a given member or group of members.
+
+-   **[start gateway-sender](#topic_AB8BA3F42B9645A8BE9BD97CE2F839A8)**
+
+    Start the gateway sender on a member or members.
+
+-   **[start jconsole](#topic_D00507416F3944DFAB48D2FA2B9E4A31)**
+
+    Start the JDK JConsole monitoring application in a separate process.
+
+-   **[start jvisualvm](#topic_5B5BF8BEE905463D8B7762B89E2D65E7)**
+
+    Start the JDK's Java VisualVM monitoring application in a separate process.
+
+-   **[start locator](#topic_591260CF25D64562A0EDD7260D2AC6D4)**
+
+    Start a locator.
+
+-   **[start pulse](#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77)**
+
+    Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
+
+-   **[start server](#topic_3764EE2DB18B4AE4A625E0354471738A)**
+
+    Start a @@product_name@@ cache server process.
+
+## start gateway-receiver {#topic_67738A5B68E84DEE95D1C92DAB2E26E5}
+Start the gateway receiver on a given member or group of members.
+
+Note that you can only have one gateway receiver on each member, and unlike a gateway sender, you do not need to specify an identifier for the gateway receiver.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+start gateway-receiver [--groups=value(,value)*] [--members=value(,value)*]
+```
+**Parameters, start gateway-receiver**
+
+| Name          | Description                                                         |
+|---------------|---------------------------------------------------------------------|
+| &#8209;&#8209;members | Name or ID of the member(s) on which to start the Gateway Receiver. |
+| &#8209;&#8209;groups  | Group(s) of members on which to start the Gateway Receiver.         |
+
+
+**Example Commands:**
+
+``` pre
+start gateway-receiver
+start gateway-receiver --members=member1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>start gateway-receiver
+      Member                | Result | Message
+--------------------------- | -------| -----------------------------------------------------------------------
+pc13(2266)<v6>:56852        | OK     | GatewayReceiver is started on member pc13(2266)<v6>:56852
+pc13(Manager:2242)<v5>:57631| Error  | GatewayReceiver is not available on member pc13(Manager:2242)<v5>:57631
+pc13(2275)<v7>:47480        | OK     | GatewayReceiver is started on member pc13(2275)<v7>:47480
+pc13(2293)<v8>:55472        | OK     | GatewayReceiver is started on member pc13(2293)<v8>:55472
+
+gfsh>start gateway-receiver --members=pc13(2266)<v14>:36579
+GatewayReceiver is started on member pc13(2266)<v14>:36579
+
+gfsh>start gateway-receiver --group=RG1
+         Member      | Result | Message
+-------------------- | -------| ----------------------------------------------------------
+pc13(2275)<v23>:27484| OK     | GatewayReceiver is started on member pc13(2275)<v23>:27484
+pc13(2293)<v24>:55810| OK     | GatewayReceiver is started on member pc13(2293)<v24>:55810
+pc13(2266)<v22>:4522 | OK     | GatewayReceiver is started on member pc13(2266)<v22>:4522
+```
+
+## start gateway-sender {#topic_AB8BA3F42B9645A8BE9BD97CE2F839A8}
+Start the gateway sender on a member or members.
+
+For information on how to configure a gateway sender, see [Configure Gateway Senders](../../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system#setting_up_a_multisite_system__section_1500299A8F9A4C2385680E337F5D3DEC).
+
+Note: By default, gateway senders are configured to start automatically. Manual restart introduces a risk of data loss; it is not intended for production systems.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+start gateway-sender --id=value [--groups=value(,value)*] [--members=value(,value)*] [--clean-queues(=value)]
+```
+**Parameters, start gateway-sender**
+
+| Name         | Description    | Default Value |
+|--------------|----------------|---------------|
+| &#8209;&#8209;id           | *Required.* ID of the GatewaySender.                      | |
+| &#8209;&#8209;groups       | Group(s) of members on which to start the Gateway Sender. | |
+| &#8209;&#8209;members      | Member(s) on which to start the Gateway Sender. | |
+| &#8209;&#8209;clean-queues | Option to clean existing queue at start of the Gateway Sender. This option can be executed only on all members on which Gateway Sender is created. | false |
+
+**Example Commands:**
+
+``` pre
+start gateway-sender --id=sender1-NY
+start gateway-sender --id=sender1-NY --members=server1
+start gateway-sender --id=sender1-NY --groups=MemberGroup1,MemberGroup2
+start gateway-sender --id=sender1-NY --clean-queues
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>start gateway-sender --id=ln
+ Member                       |  Result |                   Message
+------------------------------| ------- | -------------------------------------------------------------------------
+pc13(30614)<v6>:63670         | OK      | GatewaySender ln is started on member pc13(30614)<v6>:63670
+pc13(30621)<v7>:36015         | OK      | GatewaySender ln is started on member pc13(30621)<v7>:36015
+pc13(30633)<v8>:13633         | OK      | GatewaySender ln is started on member pc13(30633)<v8>:13633
+pc13(Manager:30588)<v5>:42792 | Error   | GatewaySender ln is not available on member pc13(Manager:30588)<v5>:42792
+
+gfsh>start gateway-sender --id=ln --members=pc13(30614)<v14>:44519
+GatewaySender ln is started on member pc13(30614)<v14>:44519
+gfsh>start gateway-sender --id=ln --groups=SenderGroup1
+Member                 | Result| Message
+---------------------- | ------| ------------------------------------------------------------
+pc13(30614)<v18>:15201 | OK    | GatewaySender ln is started on member pc13(30614)<v18>:15201
+pc13(30621)<v19>:61437 | OK    | GatewaySender ln is started on member pc13(30621)<v19>:61437
+pc13(30633)<v20>:22567 | OK    | GatewaySender ln is started on member pc13(30633)<v20>:22567
+```
+
+## start jconsole {#topic_D00507416F3944DFAB48D2FA2B9E4A31}
+Start the JDK JConsole monitoring application in a separate process.
+
+JConsole automatically connects to a running JMX Manager node if one is available.
+
+Note that you must have a JDK installed (not just a JRE) and the correct PATH and JAVA\_HOME environment variables set.
+
+See [Browsing @@product_name@@ MBeans through JConsole](../../../managing/management/mbeans_jconsole) for an example of using JConsole with the @@product_name@@ management and monitoring system.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+start jconsole [--interval=<seconds>] [--notile] [--version]
+[--J<jconsole JVM options>]
+```
+
+**Parameters, start jconsole**
+
+| Name             | Description    | Default Value |
+|------------------|----------------|---------------|
+| &#8209;&#8209;interval   | Set the update interval to n seconds (default is 4 seconds). (Equivalent to JConsole's `-interval=n`) | 4 |
+| &#8209;&#8209;notile     | Whether to initially tile windows for two or more connections. This parameter is passed as `-notile` to JConsole. | false |
+| &#8209;&#8209;pluginpath | Directories or JAR files which are searched for JConsole plugins. The path should contain a provider-configuration file named:`META-INF/services/com.sun.tools.jconsole.JConsolePlugin` containing one line for each plugin specifying the fully qualified class name of the class implementing the `com.sun.tools.jconsole.JConsolePlugin` class. | |
+| &#8209;&#8209;version    | Display the JConsole version information. This parameter is passed as `-version` to JConsole. | false |
+| &#8209;&#8209;J          | Arguments passed to the JVM on which JConsole runs | |
+
+**Example Commands:**
+
+``` pre
+gfsh>start jconsole --interval=8 --notile;
+Running JDK JConsole
+
+gfsh>start jconsole --version;
+JConsole version "1.8.0_31-b01-1"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b01-1-11)
+Java HotSpot(TM) 64-Bit Server VM (build 20.6-b01-11, mixed mode)
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>start jconsole
+Running JDK JConsole
+```
+
+The JConsole application appears and auto-connects to a JMX Manager node if one is available:
+
+<img src="/../images/JConsole.png" id="topic_D00507416F3944DFAB48D2FA2B9E4A31__image_AAB6A784AD4B4BD1B5155AC796C22F82" class="image imagecenter" />
+
+**Error Messages:**
+
+``` pre
+An error occurred while launching JConsole = %1$s
+
+Connecting by the @@product_name@@ member's name or ID is not currently supported.
+Please specify the member as '<hostname|IP>[PORT].
+
+An IO error occurred while launching JConsole.
+Please ensure that JAVA_HOME is set to the JDK installation
+or the JDK bin directory is in the system PATH.
+
+JConsole could not be found.\nPlease ensure that JAVA_HOME is set to the
+JDK installation or the JDK bin directory is in the system PATH.
+```
+
+## start jvisualvm {#topic_5B5BF8BEE905463D8B7762B89E2D65E7}
+Start the JDK's Java VisualVM monitoring application in a separate process.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+start jvisualvm [--J=value(,value)*]
+```
+
+**Parameters, start jvisualvm**
+
+| Name       | Description |
+|------------|-------------|
+| &#8209;&#8209;J    | VM-option passed to the spawned CacheServer VM.<br/>For example: `--J=-Dfoo.bar=true` for setting foo.bar to 'true'. |
+
+**Example Commands:**
+
+``` pre
+start jvisualvm
+```
+
+**Sample Output:** <img src="/../images/jvisualvm.png" id="topic_5B5BF8BEE905463D8B7762B89E2D65E7__image_BDA0F3A31F784C5FBBB5999EDA2BD942" class="image" />
+
+## start locator {#topic_591260CF25D64562A0EDD7260D2AC6D4}
+Start a locator.
+
+The command creates a subdirectory and log file named after the locator. If the locator detects that no other JMX Manager exists, then the locator will automatically start an embedded JMX Manager and connect the current `gfsh` session to the JMX Manager.
+
+**Note:** You must have `JAVA_HOME` set before starting gfsh to use this command.
+
+In addition, if gfsh is not already connected to a JMX Manager, the gfsh console will automatically connect to the new embedded JMX Manager started by the new locator.
+
+**Note:** When both `--max-heap` and `--initial-heap` are specified during locator startup, additional GC parameters are specified internally by @@product_name@@'s Resource Manager. If you do not want the additional default GC properties set by the Resource Manager, then use the`-Xms` and `-Xmx` JVM options. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management#configuring_resource_manager) for more information.
+
+**Note:** The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+start locator --name=value [--bind-address=value] [--force(=value)]
+ [--groups=value(,value)*] [--hostname-for-clients=value] [--classpath=value]
+ [--locators=value] [--log-level=value] [--mcast-address=value] [--mcast-port=value] [--port=value] [--dir=value]
+ [--properties-file=value] [--security-properties-file=value] [--initial-heap=value] [--max-heap=value]
+ [--connect(=value)] [--enable-cluster-configuration(=value)] [--load-cluster-configuration-from-dir(=value)]
+ [--cluster-config-dir=value] [--redirect-output(=value)]
+ [--http-service-port=value] [--http-service-bind-address=value] 
+ [--J=value(,value)*]
+```
+
+**Parameters, start locator**
+
+| Name         | Description    | Default Value |
+|--------------|----------------|---------------|
+| &#8209;&#8209;name                                | Name to be used for this @@product_name@@ locator service. If not specified, gfsh generates a random name. | |
+| &#8209;&#8209;bind-address                        | IP address on which the locator will be bound. | bind to all addresses |
+| &#8209;&#8209;force                               | Whether to allow the PID file from a previous locator run to be overwritten. | false |
+| &#8209;&#8209;groups                              | Group(s) the locator will be a part of. | |
+| &#8209;&#8209;hostname-for-clients                | Host name or IP address that will be sent to clients so they can connect to this locator. | uses `bind-address` |
+| &#8209;&#8209;classpath                           | Application classes to be added to the locator's CLASSPATH after the core jar file. See <a href="../../../getting_started/setup_classpath">Setting Up the CLASSPATH</a> for details. | |
+| &#8209;&#8209;locators                            | List of locators used by this locator to join the appropriate @@product_name@@ cluster. | |
+| &#8209;&#8209;log-level                           | Level of output logged to the locator log file. Possible values for log-level include: <code>ALL</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code>, <code>OFF</code>. | |
+| &#8209;&#8209;mcast-address                       | IP address or hostname used to bind the UPD socket for multi-cast networking so the locator can locate other members in the @@product_name@@ cluster. If mcast-port is zero, then mcast-address is ignored. | |
+| &#8209;&#8209;mcast-port                          | Port used for multi-cast networking so the locator can locate other members of the @@product_name@@ cluster. A zero value disables mcast. | |
+| &#8209;&#8209;port                                | Port the locator will listen on. | 10334 |
+| &#8209;&#8209;dir                                 | Directory in which the Locator will be started and run. | `./<locator-member-name>` |
+| &#8209;&#8209;properties-file                     | Specify the `gemfire.properties` file for configuring the locator's cluster. The file's path should be absolute or relative to gfsh's working directory. | |
+| &#8209;&#8209;security-properties-file            | The `gfsecurity.properties` file for configuring the Locator's security configuration in the cluster. The file's path can be absolute or relative to gfsh's working directory. | |
+| &#8209;&#8209;initial-heap                        | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then @@product_name@@ does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p> | |
+| &#8209;&#8209;max-heap                            | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then @@product_name@@ does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p><p><b>Note:</b> The additional GC parameters introduced by the `-max-heap` option are not compatible with the usage of G1 garbage collector.</p> | |
+| &#8209;&#8209;connect                             | When connect is set to false, gfsh does not automatically connect to the locator which is started using this command. | true |
+| &#8209;&#8209;enable-cluster-configuration        | Enables cluster configuration behavior where locators maintain configurations for all members of the cluster.<br/>See <a href="../../../configuring/gfsh_persist">Overview of the Cluster Configuration Service</a>. | true |
+| &#8209;&#8209;load-cluster-configuration-from-dir | <b>Deprecated. Use `gfsh import cluster-configuration` for this functionality.</b><br/> Loads the cluster configuration from the `shared-config` directory. (When set to false, the configuration is loaded from the disk store of the internal, persistent region used by the locator to persist the configuration.) | false |
+| &#8209;&#8209;cluster-config-dir                  | Directory used by the cluster configuration service to store the cluster configuration on the filesystem | cluster-config |
+| &#8209;&#8209;redirect-output                     | When true, redirect standard output and standard error to the locator log file. If specified without a value, the value is set to true. | false |
+| &#8209;&#8209;http-service-port                   | Specifies the HTTP service port. | 7070 |
+| &#8209;&#8209;http-service-bind-address           | Specifies the IP address to which the HTTP service will be bound. | the local host machine's address |
+| &#8209;&#8209;J                                   | Argument passed to the JVM on which the Locator will run. For example, specifying `--J=-Dfoo.bar=true` sets property &quot;foo.bar&quot; to &quot;true&quot;.<p><b>Note:</b> If the argument you are passing contains spaces or commas, enclose the option in single quotes. For example:<br/>`start locator --name=locator1 --port=9009 --mcast-port=0 --J='-Dgemfire.remote-locators=192.0.2.0[9009],192.0.2.1[9009]'`</p> | none |
+
+
+**Example Commands:**
+
+``` pre
+start locator --name=locator1
+```
+
+## start pulse {#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77}
+Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
+
+For more information on @@product_name@@ Pulse, see [@@product_name@@ Pulse](../../pulse/pulse-overview).
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+start pulse [--url=value]
+```
+
+**Parameters, start pulse**
+
+| Name         | Description    | Default Value |
+|--------------|----------------|---------------|
+| &#8209;&#8209;url    | URL of the Pulse Web application | `http://localhost:7070/pulse` |
+
+**Example Commands:**
+
+``` pre
+start pulse
+start pulse --url=http://gemfire.example.com:7070/pulse
+```
+
+**Sample Output:**
+
+```
+Launched Geode Pulse
+```
+
+
+## start server {#topic_3764EE2DB18B4AE4A625E0354471738A}
+Start a @@product_name@@ cache server process.
+
+**Note:** When both `--max-heap` and `--initial-heap` are specified during server startup, additional GC parameters are specified on your behalf. If you do not want the additional default GC properties set, then use the `-Xms` and `-Xmx` JVM options to set just these parameters. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management#configuring_resource_manager) for more information.
+
+**Note:** The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+start server --name=value [--assign-buckets(=value)] [--bind-address=value]
+    [--cache-xml-file=value] [--classpath=value] [--disable-default-server(=value)]
+    [--disable-exit-when-out-of-memory(=value)] [--enable-time-statistics(=value)]
+    [--force(=value)] [--include-system-classpath(=value)] [--properties-file=value]
+    [--security-properties-file=value] [--groups=value(,value)*]
+    [--locators=value] [--locator-wait-time=value] [--log-level=value]
+    [--mcast-address=value] [--mcast-port=value] [--memcached-port=value]
+    [--memcached-protocol=value] [--rebalance(=value)] [--server-bind-address=value]
+    [--server-port=value] [--spring-xml-location=value]
+    [--statistic-archive-file=value] [--dir=value] [--initial-heap=value]
+    [--max-heap=value] [--use-cluster-configuration(=value)] [--J=value(,value)*]
+    [--critical-heap-percentage=value] [--critical-off-heap-percentage=value]
+    [--eviction-heap-percentage=value] [--eviction-off-heap-percentage=value]
+    [--hostname-for-clients=value] [--max-connections=value]
+    [--message-time-to-live=value] [--max-message-count=value] [--max-threads=value]
+    [--socket-buffer-size=value] [--lock-memory=value] [--off-heap-memory-size=value]
+    [--start-rest-api=value] [--redirect-output(=value)]
+    [--http-service-port=value] [--http-service-bind-address=value]
+    [--username=value] [--password=value]
+```
+
+**Parameters, start server**
+
+| Name         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Default Value |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| &#8209;&#8209;name                            | Member name for this server. If not specified, gfsh generates a random name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | |
+| &#8209;&#8209;assign-buckets                  | Whether to assign buckets to the partitioned regions of the cache on server start.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | false |
+| &#8209;&#8209;bind-address                    | The IP address on which the server will be bound.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | binds to all local addresses |
+| &#8209;&#8209;cache-xml-file                  | Specifies the name of the XML file or resource to initialize the cache with when it is created.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | |
+| &#8209;&#8209;classpath                       | Application classes to be added to the server's CLASSPATH after the core jar file.<br/>See <a href="../../../getting_started/setup_classpath">Setting Up the CLASSPATH</a> for details.                                                                                                                                                                                                                                                                                                                                                                                                             | |
+| &#8209;&#8209;include-system-classpath        | When true, include the System CLASSPATH on the Server's CLASSPATH, as the System CLASSPATH is not included by default. If specified without a value, the value is set to true.                                                                                                                                                                                                                                                                                                                                                                                                                           | false |
+| &#8209;&#8209;disable-default-server          | Whether the cache server will be started by default. If the parameter is specified without a value, the value is set to true. If set to true, the cache server acts as a peer.                                                                                                                                                                                                                                                                                                                                                                                                                           | false |
+| &#8209;&#8209;disable-exit-when-out-of-memory | Prevents the JVM from exiting when an OutOfMemoryError occurs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | false |
+| &#8209;&#8209;enable-time-statistics          | Causes additional time-based statistics to be gathered for Geode operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | true |
+| &#8209;&#8209;properties-file                 | The `gemfire.properties` file for configuring the server's cluster. The file's path can be absolute or relative to the gfsh working directory.                                                                                                                                                                                                                                                                                                                                                                                                                                                           | |
+| &#8209;&#8209;security-properties-file        | The `gfsecurity.properties` file for configuring the server's security configuration in the cluster. The file's path can be absolute or relative to gfsh directory.                                                                                                                                                                                                                                                                                                                                                                                                                                      | |
+| &#8209;&#8209;groups                          | Group(s) the Cache Server will be a part of.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | |
+| &#8209;&#8209;force                           | Whether to allow the PID file from a previous Cache Server run to be overwritten.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | false |
+| &#8209;&#8209;locators                        | Sets the list of locators used by the Cache Server to join the appropriate  cluster.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | |
+| &#8209;&#8209;locator-wait-time               | Sets the number of seconds the server will wait for a locator to become available during startup before giving up.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 0 |
+| &#8209;&#8209;log-level                       | Sets the level of output logged to the Cache Server log file. Possible values for log-level include: <code>ALL</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code>, <code>OFF</code>.                                                                                                                                                                                                                                                                                                                                           | |
+| &#8209;&#8209;mcast-address                   | The IP address or hostname used to bind the UDP socket for multi-cast networking so the Cache Server can locate other members in the  cluster. If mcast-port is zero, then mcast-address is ignored.                                                                                                                                                                                                                                                                                                                                                                                                     | |
+| &#8209;&#8209;mcast-port                      | Sets the port used for multi-cast networking so the Cache Server can locate other members of the  cluster. A zero value disables mcast.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | |
+| &#8209;&#8209;memcached-port                  | If specified and is non-zero, sets the port number for an embedded Gemcached server and starts the Gemcached server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | |
+| &#8209;&#8209;memcached-protocol              | Sets the protocol used by an embedded Gemcached server. Valid values are `BINARY` and `ASCII`. If you omit this property, the ASCII protocol is used.                                                                                                                                                                                                                                                                                                                                                                                                                                                    | |
+| &#8209;&#8209;server-bind-address             | Overrides the `bind-address` on which this server will listen for client connections. Set this option in a multi-homed server environment to distinguish communications from clients. Setting a value of the empty string (&quot;&quot;) uses the value of `bind-address`.                                                                                                                                                                                                                                                                                                                               | value of `bind-address` |
+| &#8209;&#8209;server-port                     | Port the Server will listen on for client connections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 40404 |
+| &#8209;&#8209;spring-xml-location             | Specifies the location of a Spring XML configuration file(s) for bootstrapping and configuring a Geode Server. This configuration file can exist on the CLASSPATH (default) or any location supported by Spring's Resource(Loader) location specifiers (for example, classpath:, file:, etc).<br/>ResourceLoader is described in the <a href="http://docs.spring.io/spring/docs/4.0.9.RELEASE/spring-framework-referencesingle/#resources-resourceloader">Spring documentation</a>.                                                                                                                      | |
+| &#8209;&#8209;rebalance                       | Whether to initiate rebalancing across the Geode cluster.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | false |
+| &#8209;&#8209;dir                             | Specify the directory in which the server will run in. This directory is written to the location where you started `gfsh`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | If not specified, the directory is named after the server. |
+| &#8209;&#8209;statistic-archive-file          | The file that statistic samples are written to. For example: &quot;StatisticsArchiveFile.gfs&quot;. Must be defined to store the archiving to a file. An empty string (default) disables statistic archival.                                                                                                                                                                                                                                                                                                                                                                                             | not set |
+| &#8209;&#8209;initial-heap                    | Initial size of the heap in the same format as the JVM -Xms parameter.<p><b>Note:</b> If you use the `--J=-Xms` and `--J=-Xmx` JVM properties instead of `--initial-heap` and `--max-heap`, then Geode Geode does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p>                                                                                                                                                                                             | |
+| &#8209;&#8209;max-heap                        | Maximum size of the heap in the same format as the JVM -Xmx parameter.<p><b>Note:</b> If you use the `--J=-Xms` and `--J=-Xmx` JVM properties instead of `--initial-heap` and `--max-heap`, then  does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p><p><b>Note:</b> The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.</p>                                            | |
+| &#8209;&#8209;J                               | Argument passed to the JVM on which the Cache Server will run. For example, `--J=-Dfoo.bar=true` will set the property &quot;foo.bar&quot; to &quot;true&quot;.<p>If the argument you are passing contains spaces or commas, enclose the option in single quotes.</p>                                                                                                                                                                                                                                                                                                                                    | |
+| &#8209;&#8209;use-cluster-configuration       | Specifies whether the server requests a cluster configuration from the locator.<p>See <a href="../../../configuring/gfsh_persist">Overview of the Cluster Configuration Service</a>.</p>                                                                                                                                                                                                                                                                                                                                                                                             | true |
+| &#8209;&#8209;critical-heap-percentage        | Set the percentage of heap at or above which the cache is considered in danger of becoming inoperable due to garbage collection pauses or out of memory exceptions. Past the threshold, operations that require heap space will throw a `LowMemoryException`. This feature requires additional VM flags to perform properly; you must set `--initial-heap` and `--max-heap` or the corresponding JVM properties to use this threshold. You must also set `--max-heap` and `--initial-heap` to the same value.                                                                                            |0 (no critical heap threshold enforced)|
+| &#8209;&#8209;critical-off-heap-percentage    | The percentage of off-heap memory used at or above which the cache is considered in danger of becoming inoperable due to out of memory exceptions. Past the threshold, operations that require heap space will throw a `LowMemoryException`.                                                                                                                                                                                                                                                                                                                                                             |0 (no critical off-heap threshold enforced)|
+| &#8209;&#8209;eviction-heap-percentage        | Set the percentage of heap at or above which the eviction should begin on Regions configured for HeapLRU eviction. Changing this value may cause eviction to begin immediately. Only one change to this attribute or critical heap percentage will be allowed at any given time and its effect will be fully realized before the next change is allowed. This feature requires additional VM flags to perform properly; you must set `--initial-heap` and `--max-heap` or the corresponding JVM properties to use this threshold. You must also set `--max-heap` and `--initial-heap` to the same value. | <ul><li>0, if no region is configured with heap eviction</li><li>If `critical-heap-percentage` is set to a non-zero value, 5% less than that value.</li><li>80%, if `critical-heap-percentage` is not configured.</li></ul>|
+| &#8209;&#8209;eviction-off-heap-percentage    | The percentage of off-heap memory used at or above which the eviction should begin on regions configured for off-heap and HeapLRU eviction. Changing this value may cause eviction to begin immediately. Only one change to this attribute or critical off-heap percentage will be allowed at any given time, and its effect will be fully realized before the next change is allowed.                                                                                                                                                                                                                   |<ul><li>0, if no region is configured with heap eviction</li><li>If `critical-off-heap-percentage` is set to a non-zero value, 5% less than that value.</li><li>80%, if `critical-off-heap-percentage` is not configured.</li></ul>|
+| &#8209;&#8209;hostname-for-clients            | Sets the IP address or host name that a locator will provide to clients. Clients use the address to connect to a server. Set this value when clients use a different address to connect with the server than the `bind-address`, as those clients might with servers in a private cloud or multi-homed environment. Not specifying this option or setting this option to the empty string (&quot;&quot;) causes the `bind-address` to be given to clients.                                                                                                                                               | |
+| &#8209;&#8209;max-connections                 | Sets the maximum number of client connections allowed. When the maximum is reached the cache server will stop accepting connections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | |
+| &#8209;&#8209;message-time-to-live            | Sets the time (in seconds ) after which a message in the client queue will expire.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | |
+| &#8209;&#8209;max-message-count               | Sets maximum number of messages that can be enqueued in a client-queue.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | |
+| &#8209;&#8209;max-threads                     | Sets the maximum number of threads allowed in this cache server to service client requests. The default of 0 causes the cache server to dedicate a thread for every client connection. When client-server TLS/SSL is configured, values other than the default are not supported.                                                                                                                                                                                                                                                                                                                        | |
+| &#8209;&#8209;socket-buffer-size              | Sets the buffer size in bytes of the socket connection for this CacheServer. The default is 32768 bytes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | |
+| &#8209;&#8209;lock-memory                     | (Linux only) When true, the member's heap and off-heap memory are locked in RAM, preventing them from being paged to disk. You must increase the related `ulimit` operating system resource to allow the OS to lock memory chunks of sufficient size.                                                                                                                                                                                                                                                                                                                                                    | false |
+| &#8209;&#8209;off-heap-memory-size            | The integer quantity of off-heap memory to be used for storing region values. Specified in Gigabytes with a "g" suffix, or Megabytes with an "m" suffix. For example, allocate a 2 Gigabyte off-heap space with `--off-heap-memory-size=2g`. The default value of 0 does not use any off-heap memory.                                                                                                                                                                                                                                                                                                    | 0 |
+| &#8209;&#8209;start-rest-api                  | When true, starts the REST API service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | false |
+| &#8209;&#8209;redirect-output                 | When true, redirect standard output and standard error to the server log file. If specified without a value, the value is set to true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | false |
+| &#8209;&#8209;http-service-port               | Specifies the HTTP service port.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | 7070 |
+| &#8209;&#8209;http-service-bind-address       | Specifies the IP address to which the HTTP service will be bound.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | the local host machine's address |
+| &#8209;&#8209;username<br />&#8209;&#8209;user        | The user name of the credential to use in authenticating to the cluster. When specified, if the `--password` option is not also specified, then `gfsh` will prompt for the password.                                                                                                                                                                                                                                                                                                                                                                                                                     | |
+| &#8209;&#8209;password                        | The password portion of the credential to use in authenticating to the cluster.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | |
+
+
+### Examples {#topic_3764EE2DB18B4AE4A625E0354471738A__section_A50120613D3C4A848463236C4EFF18C7}
+``` pre
+gfsh>start server --name=server1
+gfsh>start server --name=server2 --server-port=40405
+```

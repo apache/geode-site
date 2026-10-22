@@ -1,0 +1,28 @@
+﻿---
+title: Building a New Region with Existing Content
+sidebar_label: Building a New Region with Existing Content
+sidebar_position: 7
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+A new region or cluster may need to be loaded with the data of an existing system. There are two approaches to accomplish this task. The approach used depends upon the organization of both the new and the existing cluster.
+
+If both the number and the type of members is the same in both the new and the existing cluster, then the simplest option is to use backup and restore on the persistent disk store contents. Make a full online backup of the persistent data in the disk store of the existing cluster. Copy the files that comprise the backup to the new cluster location. A restore instills the data into the new cluster. See [Creating Backups for System Recovery and Operational Management](../../managing/disk_storage/backup_restore_disk_store) for details on how to make a backup and use the backup to restore a disk store.
+
+Take a different approach when the number or the type of members is *not* the same in both the new and the existing cluster. This approach uses export and import of region data. Export the region data of the existing cluster to create a snapshot. Copy the snapshot to the new cluster location. Import the snapshot into the new cluster. See appropriate sections within [Cache and Region Snapshots](../../managing/cache_snapshots/chapter_overview) for details on making and using a snapshot.

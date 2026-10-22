@@ -1,0 +1,36 @@
+﻿---
+title:  HTTP Session Management Module for Tomcat
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You set up and use the module by modifying Tomcat's `server.xml` and `context.xml` files.
+
+**Note:** Geode only supports Tomcat 10.1 and later versions (Jakarta EE). Support for Tomcat 7, 8, 9, and Pivotal tc Server has been discontinued. For tc Server users, migration to Tomcat 10.1 or later is required.
+
+-   **[Installing the HTTP Module for Tomcat](../../tools_modules/http_session_mgmt/tomcat_installing_the_module)**
+
+    This topic describes how to install the HTTP session management module for Tomcat.
+
+-   **[Setting Up the HTTP Module for Tomcat](../../tools_modules/http_session_mgmt/tomcat_setting_up_the_module)**
+
+    To use the @@product_name@@ HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
+
+-   **[Changing the Default @@product_name@@ Configuration in the Tomcat Module](../../tools_modules/http_session_mgmt/tomcat_changing_gf_default_cfg)**
+
+    By default, the Tomcat module will run @@product_name@@ automatically with pre-configured settings. You can change these @@product_name@@ settings.

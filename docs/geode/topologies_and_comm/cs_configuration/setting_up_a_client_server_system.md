@@ -1,0 +1,104 @@
+﻿---
+title:  Configuring a Client/Server System
+sidebar_label: Configuring a Client/Server System
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Configure your server and client processes and data regions to run your client/server system.
+
+**Prerequisites**
+
+-   Configure your server system using locators for member discovery. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system) and [Managing a Peer or Server Cache](../../basic_config/the_cache/managing_a_peer_server_cache#creating_and_closing_a_peer_cache).
+-   Configure your clients as standalone applications. See [Managing a Client Cache](../../basic_config/the_cache/managing_a_client_cache#managing_a_client_cache).
+-   Be familiar with cache region configuration. See [Data Regions](../../basic_config/data_regions/chapter_overview#data_regions).
+-   Be familiar with server and client configuration properties. See [cache.xml](../../reference/cache/chapter_overview_cache_xml#cache_xml).
+
+**Procedure**
+
+1.  
+
+    Configure servers to listen for clients by completing one or both of the following tasks. 
+    -   Configure each application server as a server by specifying the `<cache-server>` element in the application's `cache.xml` and optionally specifying a non-default port to listen on for client connections.
+
+        For example:
+
+        ``` pre
+        <cache-server port="40404" ... />
+        ```
+    -   Optional. Configure each `cacheserver` process with a non-default port to listen on for client connections.
+
+        For example:
+
+        ``` pre
+        prompt> cacheserver start -port="44454"
+        ```
+
+2.  Configure clients to connect to servers. In the client `cache.xml`, use the server system's locator list to configure your client server pools and configure your client regions to use the pools. 
+    For example:
+    
+```        
+<client-cache>
+    <pool name="publisher" subscription-enabled="true">
+        <locator host="lucy1" port="41111"/>
+        <locator host="lucy2" port="41111"/>
+    </pool>
+    ...
+    <region name="clientRegion" ...
+    <region-attributes pool-name="publisher" ...
+```
+
+    You do not need to provide the complete list of locators to the clients at startup, but you should provide as complete a list as possible. The locators maintain a dynamic list of locators and servers and provide the information to the clients as needed.
+
+    When TLS (SSL) is used clients can also be directed to go through a SNI gateway such as Istio or HAProxy to reach locators and servers.  To do this add the following to your cache.xml pool configuration:
+```        
+        <pool... >
+          <socket-factory>
+            <class-name>org.apache.geode.cache.client.proxy.SniProxySocketFactory</class-name>
+            <parameter name="hostname">
+              <string>my-gateway-address</string>
+            </parameter>
+            <parameter name="port">
+              <string>12345</string>
+            </parameter>
+          </socket-factory>
+        </pool>
+```
+3.  
+
+    Configure the server data regions for client/server work, following these guidelines. These do not need to be performed in this order. 
+    1.  
+
+        Configure your server regions as partitioned or replicated, to provide a coherent cache view of server data to all clients. 
+        **Note:**
+        If you do not configure your server regions as partitioned or replicated, you can get unexpected results with calls that check server region contents, such as `keySetOnServer` and `containsKeyOnServer`. You might get only partial results, and you might also get inconsistent responses from two consecutive calls. These results occur because the servers report only on their local cache content and, without partitioned or replicated regions, they might not have a complete view of the data in their local caches.
+
+    2.  
+
+        When you define your replicated server regions, use any of the `REPLICATE` `RegionShortcut` settings except for `REPLICATE_PROXY`. Replicated server regions must have `distributed-ack` or `global` `scope`, and every server that defines the region must store data. The region shortcuts use `distributed-ack` scope and all non-proxy settings store data. 
+    3.  
+
+        When you define your partitioned server regions, use the `PARTITION` `RegionShortcut` options. 
+        You can have local data storage in some servers and no local storage in others.
+
+When you start the server and client systems, the client regions will use the server regions for cache misses, event subscriptions, querying, and other caching activities.
+
+**What to do next**
+
+Configure your clients to use the cache and to subscribe to events from the servers as needed by your application. See [Configuring Client/Server Event Messaging](../../developing/events/configure_client_server_event_messaging#receiving_events_from_servers).

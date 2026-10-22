@@ -1,0 +1,79 @@
+---
+title:  Configuring and Running a Cluster
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Use the `gfsh` command-line utility to configure your @@product_name_long@@ cluster. The cluster configuration service persists the cluster configurations and distributes the configurations to members of the cluster. There are also several additional ways to configure a cluster.
+
+Use `gfsh` to configure regions, disk stores, members, and other @@product_name@@ objects.
+You can also use `gfsh` to start and stop locators, servers, and @@product_name@@ monitoring tools. As you execute these commands, the cluster configuration service persists the configuration. When new members join the cluster, the service distributes the configuration to the new members.
+
+`gfsh` is the recommended means of configuring and managing your @@product_name_long@@ cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/cache/chapter_overview_cache_xml#cache_xml) and the [Reference](../reference/book_intro#reference) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing @@product_name_long@@](../managing/book_intro#managing_gemfire_intro).
+
+-   **[Overview of the Cluster Configuration Service](./gfsh_persist)**
+
+    The @@product_name_long@@ cluster configuration service persists cluster configurations created by `gfsh` commands to the locators in a cluster and distributes the configurations to members of the cluster.
+
+-   **[Tutorial—Creating and Using a Cluster Configuration](./persisting_configurations)**
+
+    A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a @@product_name@@ cluster.
+
+-   **[Deploying Application JARs to @@product_name_long@@ Members](./deploying_application_jars)**
+
+    You can dynamically deploy your application JAR files to specific members or to all members in your cluster. @@product_name@@ automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
+
+-   **[Using Member Groups](./using_member_groups)**
+
+    @@product_name_long@@ allows you to organize your cluster members into logical member groups.
+
+-   **[Exporting and Importing Cluster Configurations](./export-import)**
+
+    The cluster configuration service exports and imports configurations created using `gfsh` for an entire @@product_name_long@@ cluster.
+
+-   **[Cluster Configuration Files and Troubleshooting](./gfsh_config_troubleshooting)**
+
+    When you use the cluster configuration service in @@product_name@@, you can examine the generated configuration files in the `cluster_config` directory on the locator. `gfsh` saves configuration files at the cluster-level and at the individual group-level.
+
+-   **[Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](./gfsh_remote)**
+
+    You can connect `gfsh` via HTTP or HTTPS to a remote cluster and manage the cluster using `gfsh` commands.
+
+-   **[Deploying Configuration Files without the Cluster Configuration Service](./deployingconfig/deploying_config_files)**
+
+    You can deploy your @@product_name_long@@ configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
+
+-   **[Starting Up and Shutting Down Your System](./starting_up_shutting_down)**
+
+    Determine the proper startup and shutdown procedures, and write your startup and shutdown scripts.
+
+-   **[Running @@product_name@@ Locator Processes](./running_the_locator)**
+
+    The locator is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use.
+
+-   **[Running @@product_name@@ Server Processes](./running_the_cacheserver)**
+
+    A @@product_name@@ server is a process that runs as a long-lived, configurable member of a client/server system.
+
+-   **[Managing System Output Files](./managing_output_files)**
+
+    @@product_name@@ output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
+
+-   **[Firewall Considerations](./firewall/firewall_ports_config)**
+
+    You can configure and limit port usage for situations that involve firewalls, for example, between client-server or server-server connections.

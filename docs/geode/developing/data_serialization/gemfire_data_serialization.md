@@ -1,0 +1,52 @@
+---
+title: Geode Data Serialization (DataSerializable and DataSerializer)
+sidebar_label: Geode Data Serialization (DataSerializable and DataSerializer)
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name@@'s `DataSerializable` interface gives you quick serialization of your objects.
+
+## Data Serialization with the DataSerializable Interface {#gemfire_data_serialization__section_0C84D6BF5E9748CB865E6BB944A077DE}
+@@product_name@@'s `DataSerializable` interface gives you faster and more compact data serialization than the standard Java serialization or @@product_name@@ PDX serialization. However, while @@product_name@@ `DataSerializable` interface is generally more performant than @@product_name@@'s `PdxSerializable`, it requires full deserialization on the server and then reserialization to send the data back to the client.
+
+You can further speed serialization by registering the instantiator for your `DataSerializable` class through `Instantiator`, eliminating the need for reflection to find the right serializer. You can provide your own serialization through the API.
+
+The recommended way to register your custom `Instantiator` is by specifying it in the `serialization-registration` element of cache.xml.
+
+For more information, see the online Java documentation for `DataSerializable` and `DataSerializer`.
+
+**Example cache.xml:**
+
+The following provides an example of how to register an instantiator using cache.xml.
+
+``` pre
+<serialization-registration>
+<instantiator id="30">
+   <class-name>com.package.MyClass</class-name>
+</instantiator>
+</serialization-registration>
+```
+
+In addition to speeding standard object serialization, you can use the `DataSerializable` interface to serialize any custom objects you store in the cache.
+
+## Serializing Your Domain Object with DataSerializer {#gemfire_data_serialization__section_B21408E7090C41B08BF300146F87648B}
+You can also use `DataSerializer` to serialize domain objects. It serializes data in the same way as `DataSerializable` but allows you to serialize classes without modifying the domain class code.
+
+See the JavaDocs on [DataSerializable](/org/apache/geode/DataSerializable) and [DataSerializer](/org/apache/geode/DataSerializer) for more information.

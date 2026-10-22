@@ -1,0 +1,177 @@
+---
+title: POST /geode/v1/functions/functionId
+sidebar_label: POST /geode/v1/functions/functionId
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Execute @@product_name@@ function on an entire cluster or on a specified region, members, and member groups.
+
+## Resource URL
+
+``` pre
+/geode/v1/functions/{functionId}?[&onRegion=regionname|&onMembers=member1,member2,...,memberN|&onGroups=group1,group2,...,groupN]
+```
+
+## Parameters
+
+- **`{functionId}`** This required parameter is the name of the function to execute. Place it in the resource URL, as in the example request: `AddFreeItemToOrders`.
+- **onRegion** This optional parameter specifies the target region for the function. You can only invoke a function on a single region. Substitute the region's name for `regionname` within the sample syntax `onRegion=regionname`.
+- **onMembers** This optional parameter specifies the target members of the function. For multiple members, specify a comma-delimited list of member names, as in the sample `onMembers=member1,member2`.
+- **onGroups** This optional parameter specifies the target groups of the function. For multiple groups, specify a comma-delimited list of group names, as in the sample `onGroups=membergroup1,membergroup2`.
+- **filter** This optional parameter can only be used with the **onRegion** parameter, where the region has a `data-policy` of `PARTITION`. The parameter specifies a list of applicable keys that the function needs to filter on. There are three keys in the example resource URL:
+
+```pre
+http://serverURL/functions/SampleFunction?onRegion=TestPartitionRegion&filter=key1,key2,key3
+```
+
+- Any *function arguments* are passed in the request body in JSON format. The content of the arguments depends on how the function is defined. Each function argument must be written as a JSON object (enclosed in braces `{ }`) and using `@type` to declare its type. `@value` can be used to specify a scalar value. Nested JSON objects (`{ }`) or JSON collections (`[ ]`) are not accepted.
+
+Collections of Java objects cannot be specified as parameters in JSON format, so if a function expects a collection of objects as one of its arguments (for example, `function(List<Item> list)`), it cannot be called using the Geode REST API.
+
+Following are some examples of functions and their arguments in JSON format:
+
+## Function argument mapping
+
+### `myFunction1(int n)`
+
+**Function arguments (JSON)**
+
+``` json
+[
+  {
+    "@type": "integer",
+    "@value": 10
+  }
+]
+```
+
+### `myFunction2(double d, Item i)`
+
+**Function arguments (JSON)**
+
+```json
+[
+  {
+    "@type": "double",
+    "@value": 210
+  },
+  {
+    "@type": "org.apache.geode.web.rest.domain.Item",
+    "itemNo": "599",
+    "description": "Part X Free on Bumper Offer",
+    "quantity": "2",
+    "unitprice": "5",
+    "totalprice": "10.00"
+  }
+]
+```
+
+Notice how `item` fields are written directly in JSON format due to the restrictions against nested objects.
+
+The following approach is **incorrect**:
+
+```json
+[
+  {
+    "@type": "double",
+    "@value": 210
+  },
+  {
+    "@type": "org.apache.geode.web.rest.domain.Item",
+    "itemNo": {
+      "@type": "double",
+      "@value": 599
+    },
+    "description": "Part X Free on Bumper Offer",
+    "quantity": "2",
+    "unitprice": "5",
+    "totalprice": "10.00"
+  }
+]
+```
+
+## Example Requests
+
+```pre
+Request Payload: application/json
+POST /geode/v1/functions/AddFreeItemToOrders
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "@type": "double",
+    "@value": 210
+  },
+  {
+    "@type": "org.apache.geode.web.rest.domain.Item",
+    "itemNo": "599",
+    "description": "Part X Free on Bumper Offer",
+    "quantity": "2",
+    "unitprice": "5",
+    "totalprice": "10.00"
+  }
+]
+```
+
+Another example:
+
+```pre
+Request Payload: null
+
+POST /geode/v1/functions/getDeliveredOrders
+Accept: application/json
+```
+
+## Example Success Responses
+
+```pre
+Response Payload: null
+200 OK
+Location: http://localhost:8080/geode/v1/functions/AddFreeItemToOrders
+```
+
+Another example response:
+
+```pre
+Response Payload: application/json
+
+200 OK
+Content-Length: 316
+Content-Type: application/json
+Location: http://localhost:8080/geode/v1/functions/getDeliveredOrders
+[
+  {
+    "purchaseOrderNo": "1121",
+    "deliveryDate": "Thu Oct 10 00:00:00 IST 2019"
+  },
+  {
+    "purchaseOrderNo": "777",
+    "deliveryDate": "Thu Oct 10 00:00:00 IST 2019"
+  },
+  {
+    ...
+  }
+]
+```
+
+## Error Codes
+
+Status code 500 INTERNAL SERVER ERROR is an error encountered in a server. Check the HTTP response body for a stack trace of the exception.

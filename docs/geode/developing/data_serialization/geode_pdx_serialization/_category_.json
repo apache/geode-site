@@ -1,0 +1,8 @@
+{
+  "label": "Geode PDX Serialization",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "gemfire_pdx_serialization"
+  }
+}

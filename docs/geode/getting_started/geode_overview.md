@@ -1,0 +1,35 @@
+---
+title: About Apache Geode
+sidebar_label: About Apache Geode
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name_long@@ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
+## {#concept_3B5E445B19884680900161BDF25E32C9__section_itx_b41_mr}
+@@product_name@@ pools memory, CPU, network resources, and optionally local disk across multiple processes to manage application objects and behavior. It uses dynamic replication and data partitioning techniques to implement high availability, improved performance, scalability, and fault tolerance. In addition to being a distributed data container, @@product_name@@ is an in-memory data management system that provides reliable asynchronous event notifications and guaranteed message delivery.
+
+## Main Concepts and Components {#concept_3B5E445B19884680900161BDF25E32C9__section_0031B81824874FC18F0828DB66150833}
+*Caches* are an abstraction that describe a node in a @@product_name@@ cluster. Application architects can arrange these nodes in peer-to-peer or client/server topologies.
+
+Within each cache, you define data *regions*. Data regions are analogous to tables in a relational database and manage data in a distributed fashion as name/value pairs. A *replicated* region stores identical copies of the data on each cache member of a cluster. A *partitioned* region spreads the data among cache members. After the system is configured, client applications can access the distributed data in regions without knowledge of the underlying system architecture. You can define listeners to create notifications about when data has changed, and you can define expiration criteria to delete obsolete data in a region.
+
+For large production systems, @@product_name@@ provides *locators*. Locators provide both discovery and load balancing services. You configure clients with a list of locator services and the locators maintain a dynamic list of member servers. By default, @@product_name@@ clients and servers use port 40404 to discover each other.
+
+For more information on product features, see [Main Features of @@product_name_long@@](product_intro).

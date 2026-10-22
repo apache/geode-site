@@ -1,0 +1,169 @@
+---
+title: Changing the Default Geode Configuration in the Tomcat Module
+sidebar_label: Changing the Default Geode Configuration in the Tomcat Module
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+By default, the Tomcat module will run @@product_name@@ automatically with pre-configured settings. You can change these @@product_name@@ settings.
+
+Here are the default settings:
+
+-   Locators are used for member discovery.
+-   The region name is set to `gemfire_modules_sessions`.
+-   The cache region is replicated for peer-to-peer configurations and partitioned (with redundancy turned on) for client/server configurations.
+-   @@product_name@@ clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
+
+**Note:**
+On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
+
+## Changing @@product_name@@ Distributed System Properties {#tomcat_changing_gf_default_cfg__section_changing_sys_props}
+@@product_name@@ system properties must be set by adding properties to Tomcat's `server.xml` file. When setting properties, use the following syntax:
+
+``` pre
+<Listener 
+  className="org.apache.geode.modules.session.catalina.xxxLifecycleListener"
+  property-name="property-value" 
+  property-name="property-value" 
+  ...
+/> 
+```
+where `property-name` is the name of a property and `property-value` is that property's value.
+
+If the `xxxLifecycleListener` is a `PeerToPeerCacheLifecycleListener`, then a minimal addition to the `server.xml` file is
+
+``` pre
+<Listener 
+  className="org.apache.geode.modules.session.catalina.
+     PeerToPeerCacheLifecycleListener"
+  cache-xml-file="cache-peer.xml" 
+  locators="localhost[10334]" 
+ /> 
+```
+
+The list of Tomcat's configurable `server.xml` system properties includes any of the properties that can be specified in @@product_name@@'s `gemfire.properties` file. The following list contains some of the properties that can be configured.
+
+| Property                                 | Description                           | Default  |
+|------------------------------------------|---------------------------------------|----------|
+| cache-xml-file                            | name of the cache configuration file | `cache-peer.xml` for peer-to-peer, `cache-client.xml` for client/server |
+| locators (only for peer-to-peer topology) | (required) list of locators (host\[port\]) used by @@product_name@@ members; if a single locator listens on its default port, then set this value to `"localhost[10334]"` | empty string                                                            |
+| log-file                                  | name of the @@product_name@@ log file | `gemfire_modules.log`   |
+| statistic-archive-file                    | name of the @@product_name@@ statistics file                    | `gemfire_modules.gfs` |
+| statistic-sampling-enabled                | whether @@product_name@@ statistics sampling is enabled         | false                 |
+
+For more information on these properties, along with the full list of properties, see the [Reference](../../reference/book_intro#reference).
+
+In addition to the standard @@product_name@@ system properties, the following cache-specific properties can also be configured with the `LifecycleListener`.
+
+| Property               | Description                                                                                     | Default      |
+|------------------------|-------------------------------------------------------------------------------------------------|--------------|
+| criticalHeapPercentage | percentage of heap at which updates to the cache are refused                                    | 0 (disabled) |
+| evictionHeapPercentage | percentage of heap at which session eviction begins                                             | 80.0         |
+| rebalance              | whether a rebalance of the cache should be done when the application server instance is started | false        |
+
+Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance and are therefore also handled by the `LifecycleListener`. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+
+## Changing Cache Configuration Properties {#tomcat_changing_gf_default_cfg__section_changing_cache_config_props}
+To edit @@product_name@@ cache properties such as the name and the characteristics of the cache region, you add these properties to Tomcat's `context.xml` file. When adding properties, unless otherwise specified, use the following syntax:
+
+``` pre
+<Manager 
+  className="org.apache.geode.modules.session.catalina.Tomcat10DeltaSessionManager"
+  property-name="property-value" 
+  property-name="property-value" 
+  ...
+/> 
+```
+where `property-name` is the name of a property and `property-value` is that property's value.
+For example, this entry creates a partitioned region by the name of "my\_region".
+
+``` pre
+<Manager className="org.apache.geode.modules.session.catalina.
+      Tomcat10DeltaSessionManager" 
+  regionAttributesId="PARTITION_REDUNDANT" 
+  regionName="my_region" 
+/> 
+```
+
+**Note:** For Tomcat 10.1 and later, use `Tomcat10DeltaSessionManager`. Support for Tomcat 7, 8, and 9 has been discontinued.
+
+The following parameters are the cache configuration parameters that can be added to Tomcat's `context.xml` file.
+
+<dt>**CommitSessionValve**</dt>
+<dd>Whether to wait until the end of the HTTP request to save all session attribute changes to the @@product_name@@ cache; if the configuration line is present in the application's `context.xml` file, then only one put will be performed into the cache for the session per HTTP request. If the configuration line is not included, then the session is saved each time the `setAttribute` or `removeAttribute` method is invoked. As a consequence, multiple puts are performed into the cache during a single session. This configuration setting is recommended for any applications that modify the session frequently during a single HTTP request.</dd>
+
+Default: Set
+
+To disable this configuration, remove or comment out the following line from Tomcat's `context.xml` file.
+
+``` pre
+<Valve className="org.apache.geode.modules.session.catalina.CommitSessionValve"/>
+```
+
+<dt>**enableDebugListener**</dt>
+<dd>Whether to enable a debug listener in the session region; if this parameter is set to true, info-level messages are logged to the GemFire log when sessions are created, updated, invalidated or expired.</dd>
+
+Default: `false`
+
+The @@product_name@@ API equivalent to setting this parameter:
+
+``` pre
+// Create factory
+AttributesFactory factory = ...; <or> RegionFactory factory = ...;
+// Add cache listener
+factory.addCacheListener(new DebugCacheListener());
+```
+
+<dt>**enableLocalCache**</dt>
+<dd>Whether a local cache is enabled. If this parameter is set to true, the app server load balancer should be configured for sticky session mode.</dd>
+
+Default: `false` for peer-to-peer, `true` for client/server
+
+The @@product_name@@ API equivalent to setting this parameter:
+
+``` pre
+// For peer-to-peer members: 
+Cache.createRegionFactory(REPLICATE_PROXY); 
+// For client members: 
+ClientCache.createClientRegionFactory(CACHING_PROXY_HEAP_LRU);
+```
+
+<dt>**regionAttributesId**</dt>
+<dd>Specifies the region shortcut. For more information see [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts); when using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.</dd>
+
+Default: REPLICATE for peer-to-peer, PARTITION\_REDUNDANT for client/server
+
+The @@product_name@@ API equivalent to setting this parameter:
+
+``` pre
+// Creates a region factory for the specified region shortcut 
+Cache.createRegionFactory(regionAttributesId); 
+```
+
+<dt>**regionName**</dt>
+<dd>Name of the region.</dd>
+
+Default: gemfire\_modules\_sessions
+
+The @@product_name@@ API equivalent to setting this parameter:
+
+``` pre
+// Creates a region with the specified name 
+RegionFactory.create(regionName); 
+```

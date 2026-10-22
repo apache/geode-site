@@ -1,0 +1,8 @@
+{
+  "label": "Multi-site (WAN) Configuration",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "chapter_overview"
+  }
+}

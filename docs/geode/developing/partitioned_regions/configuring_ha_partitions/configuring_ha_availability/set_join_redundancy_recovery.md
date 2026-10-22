@@ -1,0 +1,80 @@
+﻿---
+title:  Configure Member Join Redundancy Recovery for a Partitioned Region
+sidebar_label: Configure Member Join Redundancy Recovery for a Partitioned Region
+sidebar_position: 5
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section covers configuring whether and how redundancy is
+recovered in a partitioned region, after a member joins.
+## {#set_join_redundancy_recovery__section_D6FB0D69CC454B53B9CF1E656A44465C}
+Use the partition attribute `startup-recovery-delay` to specify member join redundancy recovery.
+
+| value of `startup-recovery-delay`            | Effect following a member join                                                                                                                                                                                               |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -1                                         | No automatic recovery of redundancy after a new member comes online. With this value and the default `recovery-delay` setting, redundancy recovery is only achieved by a rebalance operation. |
+| long >= 0 | Number of milliseconds to wait after a member joins before recovering redundancy. The default is 0 (zero), which causes immediate redundancy recovery whenever a member that hosts the partitioned region joins. |
+
+Setting `startup-recovery-delay` to a value higher than the 
+default of 0 allows multiple new members to join before 
+redundancy recovery begins.
+With the multiple members present during recovery,
+the system will spread redundancy recovery among them.
+With no delay, if multiple members are started in close succession,
+the system may choose only the first member started for most or all
+of the redundancy recovery.
+
+**Note:**
+Satisfying redundancy is not the same as adding capacity.
+If redundancy is satisfied, new members do not take buckets
+until the invocation of a rebalance operation.
+
+The parallel recovery implementation recovers quickly.
+For this reason,
+it is even more important to configure `startup-recovery-delay`
+to an appropriate value when restarting multiple members
+at the same time.
+Set `startup-recovery-delay` to a value that ensures all members
+are up and available *before* redundancy recovery kicks in.
+
+Set join redundancy recovery using one of the following:
+
+-   XML:
+
+    ``` pre
+    // Wait 5 seconds after a new member joins before  
+    // recovering redundancy
+    <region name="PR1"> 
+      <region-attributes refid="PARTITION"> 
+        <partition-attributes startup-recovery-delay="5000"/> 
+      </region-attributes> 
+    </region> 
+    ```
+
+-   Java:
+
+    ``` pre
+    PartitionAttributes pa = new PartitionAttributesFactory().setStartupRecoveryDelay(5000).create(); 
+    ```
+
+-   gfsh:
+
+    ``` pre
+    gfsh>create region --name="PR1" --type=PARTITION --startup-recovery-delay=5000
+    ```

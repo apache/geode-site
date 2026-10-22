@@ -1,0 +1,231 @@
+---
+title: Quick Reference of gfsh Commands by Functional Area
+sidebar_label:  Quick Reference of gfsh Commands by Functional Area
+sidebar_position: 8
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_77DA6E3929404EB4AC24230CC7C21493}
+## {#topic_77DA6E3929404EB4AC24230CC7C21493__table_pk5_vw1_3l}
+
+| Command                                                                                                                                                   | Description                                                                                                                                                     | Availability    |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| [debug](command-pages/debug)                                             | Enable or disable debugging output in `gfsh`.                                                                                                                   | online, offline |
+| [echo](command-pages/echo)                         | Echo the given text, which may include system and user variables.                                                                                               | online, offline |
+| [exit](command-pages/exit)                             | Exit the gfsh shell. You can also use `quit` to exit the shell.                                                                                                 | online, offline |
+| [help](command-pages/help)                      | If the argument is a gfsh command, displays syntax and usage information for the command. If there are no arguments, displays a list of all available commands. | online, offline |
+| [hint](command-pages/hint)             | Display information on topics and a list of commands associated with a topic.                                                                                   | online, offline |
+| [history](command-pages/history)                                                   | Show or save the command history.                                                                                                                               | online, offline |
+| [run](command-pages/run)                                                             | Execute a set of GFSH commands.                                                                                                                                 | online, offline |
+| [set variable](command-pages/set)                                             | Set variables in the GFSH environment.                                                                                                                          | online, offline |
+| [sh](command-pages/sh)                                                            | Executes operating system (OS) commands.                                                                                                                        | offline, online |
+| [sleep](command-pages/sleep)                                                           | Delay `gfsh` command execution.                                                                                                                                 | online, offline |
+| [version](command-pages/version)                                                | Display product version information.                                                                                                                            | online, offline |
+
+## Configuration Commands {#topic_EB854534301A477BB01058B3B142AE1D}
+## {#topic_EB854534301A477BB01058B3B142AE1D__table_uyf_jz1_3l}
+| Command | Description | Availability |
+|---|---|---|
+| `alter runtime` | Alters configuration properties for one or more running members. | online |
+| `change loglevel` | Changes the logging level on specified servers. | online |
+| `configure pdx` | Alters cluster-wide PDX configuration settings for all caches. **Note:** Must be run before starting data members to enforce settings. | online |
+| `describe config` | Displays the configuration of a member. | online |
+| `export config` | Exports configurations, data, logs, and stack traces. | online |
+| `export cluster-configuration` | Exports a shared configuration ZIP containing `cache.xml`, `gemfire.properties`, and required JAR files. | online |
+| `import cluster-configuration` | Imports an exported configuration. | online |
+| `status cluster-config-service` | Reports the status of the cluster configuration service. | online |
+
+
+## Data Commands {#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4}
+## {#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4__table_rcv_jz1_3l}
+| Command                                                                                                                                                   | Description                                                     | Availability |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|--------------|
+| [export data](command-pages/export#topic_263B70069BFC4A7185F86B3272011734) | Export user data from a region to a file.                       | online       |
+| [get](command-pages/get)                                                               | Display an entry in a region.                                   | online       |
+| [import data](command-pages/import#topic_jw2_2ld_2l)                       | Import user data from a file to a region.                        | online       |
+| [locate entry](command-pages/locate#concept_73B980C1138743DDBBFACE68009BD1E3__section_04BD7EC0032147DFA9CCD1331EE3B694)      | Locate a region entry on a member.                              | online       |
+| [put](command-pages/put)                                                               | Add or update a region entry.                                   | online       |
+| [query](command-pages/query)                                                      | Run queries against @@product_name@@ regions. | online       |
+| [remove](command-pages/remove)                                                        | Remove an entry from a region.                                  | online       |
+| [wan-copy region ](command-pages/wan_copy_region) | Copy the entries of a region in a WAN site onto the same region in another WAN site, using a gateway sender.  | online       |
+
+## Deployment Commands {#topic_1B47A0E110124EB6BF08A467EB510412}
+## {#topic_1B47A0E110124EB6BF08A467EB510412__table_cdk_kz1_3l}
+| Command                                                                                                                                                                                        | Description                                                                            | Availability |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|--------------|
+| [deploy](command-pages/deploy)                                                                   | Deploy JAR-packaged applications to a member or members.                               | online       |
+| [list deployed](command-pages/list#topic_59DF60DE71AD4097B281749425254BFF) | Display a list of JARs that were deployed to members using the `deploy` command.       | online       |
+| [undeploy](command-pages/undeploy)                                   | Undeploy the JAR files that were deployed on members or groups using `deploy` command. | online       |
+
+## Disk Store Commands {#topic_1ACC91B493EE446E89EC7DBFBBAE00EA}
+## {#topic_1ACC91B493EE446E89EC7DBFBBAE00EA__table_trm_lz1_3l}
+| Command                                                                                                                                                                                                                                                 | Description                                                                                                                              | Availability    |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| [alter disk-store](command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB)                                                                               | Modify an existing @@product_name@@ resource.                                                                          | online          |
+| [backup disk-store](command-pages/backup#topic_E74ED23CB60342538B2175C326E7D758)                                                              | Back up persistent data from all members to the specified directory.                                                                     | online          |
+| [compact disk-store](command-pages/compact#topic_F113C95C076F424E9AA8AC4F1F6324CC)                                                                       | Compact online disk-stores.                                                                                                              | online          |
+| [compact offline-disk-store](command-pages/compact#topic_9CCFCB2FA2154E16BD775439C8ABC8FB)                                                                                          | Compact an offline disk store.                                                                                                           | online, offline |
+| [create disk-store](command-pages/create#topic_bkn_zty_ck) | Defines a pool of one or more disk stores, which can be used by regions and client subscription queues.                                  | online          |
+| [describe disk-store](command-pages/describe#topic_C635B500BE6A4F1D9572D0BC98A224F2)                                                                          | Display information about a member's disk store.                                                                                         | online          |
+| [describe offline-disk-store](command-pages/describe#topic_kys_yvk_2l)                                                                               | Display information about an offline member's disk store                                                                                 | online, offline |
+| [destroy disk-store](command-pages/destroy#topic_yfr_l2z_ck)              | Deletes a disk store and all files on disk used by the disk store. Data for closed regions that previously used this disk store is lost. | online          |
+| [list disk-stores](command-pages/list#topic_BC14AD57EA304FB3845766898D01BD04)                                                                              | List all available disk stores in a @@product_name@@ cluster.                                                          | online          |
+| [revoke missing-disk-store](command-pages/revoke)                                                                 | Instruct the cluster member(s) to stop waiting for a disk store to be available.                                         | online          |
+| [show missing-disk-stores](command-pages/show#topic_7B3D624D5B4F41D1A0F8A9C3C8B2E780)                                   | Display a summary of the disk stores that are currently missing from the cluster.                                               | online          |
+| [validate offline-disk-store](command-pages/validate)                                                                                                                                | Validate offline disk stores.                                                                                                            | online, offline |
+
+## Durable CQ and Client Commands {#topic_10613D4850F04A3EB507F6B441AD3413}
+## {#topic_10613D4850F04A3EB507F6B441AD3413__table_kqb_mz1_3l}
+| Command                                                                                                                                                                                                                                                             | Description                                                                                                                                                    | Availability |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| [list durable-cqs](command-pages/list#topic_66016A698C334F4EBA19B99F51B0204B)                                                                         | List durable client CQs associated with the specified durable client id.                                                                                       | online       |
+| [close durable-cq](command-pages/close#topic_1BC15B3132BA480DB227921A9B3ABDD1) | Closes the durable CQ registered by the durable client and drain events held for the durable CQ from the subscription queue.                                   | online       |
+| [close durable-client](command-pages/close#topic_4125AAAB9FE44CD787166E48B694C41D)                                               | Attempts to close the durable client. The client must be disconnected.                                                                                         | online       |
+| [show subscription-queue-size](command-pages/show#topic_395C96B500AD430CBF3D3C8886A4CD2E)                                                                                | Shows the number of events in the subscription queue. If a CQ name is provided, it counts the number of events in the subscription queue for the specified CQ. | online       |
+
+## Function Execution Commands {#topic_8BB061D1A7A9488C819FE2B7881A1278}
+## {#topic_8BB061D1A7A9488C819FE2B7881A1278__table_xqk_mz1_3l}
+| Command                                                                                                                                                                                                       | Description                                                                                            | Availability |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|--------------|
+| [destroy function](command-pages/destroy#topic_E48C2DF809054C12A162026D8A2139BB)                                                       | Destroy or unregister a function. The default is for the function to be unregistered from all members. | online       |
+| [execute function](command-pages/execute#concept_F2ED1987126E4338AEB14A7C8F561A2A__section_FB435A8AC76E4E1A8E72DBEA64BA2E57)                                                     | Execute the function with the specified ID. By default, executes on all members.                       | online       |
+| [list functions](command-pages/list#topic_DCC7CCBBEF5942B783A8F2A4A5B2FABF) | Display a list of registered functions. The default is to display functions for all members.           | online       |
+
+## Gateway (WAN) Commands {#topic_F0AE5CE40D6D49BF92247F5EF4F871D2}
+## {#topic_F0AE5CE40D6D49BF92247F5EF4F871D2__table_vp5_mz1_3l}
+| Command                                                                                                                                                                                                                                                                                   | Description                                                                                                                                | Availability |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| [alter async-event-queue](command-pages/alter#topic_alter_async_event_queue)   | Alter attributes of a specified asynchronous event queue.       | online      |
+| [create async-event-queue](command-pages/create#topic_ryz_pb1_dk)                                                                             | Creates an asynchronous event queue.                                                                                                       | online       |
+| [create gateway-receiver](command-pages/create#topic_a4x_pb1_dk) | Creates a gateway receiver on one or more members.                                                                                         | online       |
+| [create gateway-sender](command-pages/create#topic_hg2_bjz_ck)                                                                                                              | Creates a gateway sender on one or more members.                                                                                           | online       |
+| [destroy async-event-queue](command-pages/destroy#topic_destroy-async-event-queue)                                                                                                              | Destroys an asynchronous event queue on one or more members.                                                                                           | online       |
+| [destroy gateway-sender](command-pages/destroy#destroy-gs)                                                                                                              | Destroys a gateway sender on one or more members.                                                                                           | online       |
+| [list async-event-queues](command-pages/list#topic_j22_kzk_2l)                                                                                                                                 | Display a list of async event queues for all members.                                                                                      | online       |
+| [list gateways](command-pages/list#topic_B1D89671C7B74074899C7D52F15849ED)                                                                                                       | Displays the gateway senders and receivers for a member or members.                                                                        | online       |
+| [load-balance gateway-sender](command-pages/load-balance#concept_fn2_qls_5q)                              | Causes the specified gateway sender to close its current connections and reconnect to remote gateway receivers in a more balanced fashion. | online       |
+| [pause gateway-sender](command-pages/pause#concept_44B6EC91FD464A1A91E438D6DF65C9D6)                                                                                                                                         | Pause a gateway sender.                                                                                                                    | online       |
+| [resume async-event-queue-dispatcher](command-pages/resume#topic_resume_async_event_queue_dispatcher)                                                                                                              | Resumes dispatching of events on a specified asynchronous event queue which is currently in a paused state.   | online       |
+| [resume gateway-sender](command-pages/resume#concept_8B0532D13CF34E0CB04ACC3F14F1E4A2)                                                                                                              | Resumes specified gateway sender that is currently in a paused state.    | online       |
+| [start gateway-receiver](command-pages/start#topic_67738A5B68E84DEE95D1C92DAB2E26E5)                                                                                               | Start the gateway receiver on a given member or group of members.                                                                          | online       |
+| [start gateway-sender](command-pages/start#topic_AB8BA3F42B9645A8BE9BD97CE2F839A8)                                                                                                                  | Start the gateway sender on a member or members.                                                                                           | online       |
+| [status gateway-receiver](command-pages/status#topic_B0F45DC2D5F64FB1A2F738206BC6539E)                                                                                                         | Display the status of the specified gateway receiver.                                                                                      | online       |
+| [status gateway-sender](command-pages/status#topic_6F539877F0564F05AF264A9E704EC842)                                                                                                             | Display the status of the specified gateway sender.                                                                                        | online       |
+| [stop gateway-receiver](command-pages/stop#topic_CD1D526FD6F84A7B80B25C741129ED30)                                                                                                                 | Stop the gateway receiver on a member or members.                                                                                          | online       |
+| [stop gateway-sender](command-pages/stop#topic_0BBDD4B3B8A44A65A610F766C9E85519)                                                                 | top a gateway sender with a given id on a specified member or members of a specified member group.                                         | online       |
+
+## @@product_name@@ AsyncEventQueue Commands {#topic_F0AE5CE40D6D49BF92247F5EF4F871D3}
+## {#topic_F0AE5CE40D6D49BF92247F5EF4F871D3__table_vp5_mz1_3l}
+| Command                                                                                                                                                                                                       | Description                                           | Availability |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|--------------|
+| [alter async-event-queue](command-pages/alter#topic_alter_async_event_queue)   | Alter attributes of a specified asynchronous event queue.       | online      |
+| [create async-event-queue](command-pages/create#topic_ryz_pb1_dk) | Creates an asynchronous event queue.                  | online       |
+| [destroy async-event-queue](command-pages/destroy#topic_destroy-async-event-queue)                                                                                                              | Destroys an asynchronous event queue on one or more members.                                                                                           | online       |
+| [list async-event-queues](command-pages/list#topic_j22_kzk_2l)                                                     | Display a list of async event queues for all members. | online       |
+| [resume async-event-queue-dispatcher](command-pages/resume#topic_resume_async_event_queue_dispatcher)                                                                                                              | Resumes dispatching of events on a specified asynchronous event queue which is currently in a paused state.                                                                                           | online       |
+## @@product_name@@ Monitoring Commands {#topic_B742E9E862BA457082E2346581C97D03}
+## {#topic_B742E9E862BA457082E2346581C97D03__table_pkf_nz1_3l}
+| Command                                                                                                                                                                                                                                                           | Description                                                                                                                                            | Availability    |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| [describe client](command-pages/describe#topic_gyr_jgz_ck)                                                                                                                        | Displays details about a specified client.                                                                                                             | online          |
+| [describe member](command-pages/describe#topic_D62F3D42B1D84CF68F03D54D5122806A)                                                                                             | Display details of a member with given name/id.                                                                                                        | online          |
+| [export logs](command-pages/export#topic_B80978CC659244AE91E2B8CE56EBDFE3)                                                                                                                 | Export/dump logs to a given directory.                                                                                                                 | online          |
+| [export stack-traces](command-pages/export#topic_195D27B8B2B64A4E84CF2256636D54BD)                                                                                           | Export the stack trace for a member or members.                                                                                                        | online          |
+| [gc](command-pages/gc)                                                                                                                                                 | Force garbage collection on a member or members. (Development only, not advised for production systems.)                                                                                                      | online          |
+| [list clients](command-pages/list#topic_ts1_qb1_dk)                                                                                                                                    | Displays a list of connected clients.                                                                                                                  | online          |
+| [list members](command-pages/list#topic_5B5BFB2E5F314210858641BE3A689637)                                                                                                                | Display all or a subset of members.                                                                                                                    | online          |
+| [netstat](command-pages/netstat)                                                                                             | Report network information and statistics via the "netstat" operating system command.                                                                  | online          |
+| [show dead-locks](command-pages/show#topic_1125347FAD6541DF995C9999650165B1)                                                                                          | Display deadlocks, logs, metrics and missing disk-stores.                                                                                              | online          |
+| [show log](command-pages/show#topic_45AAEDAC3AFF46EC9BB68B24FC9A32B3)                                                                                                                          | Display the log for a member.                                                                                                                          | online          |
+| [show metrics](command-pages/show#topic_6EB786C63AEB46179EEE8FA18624295A)                                                                 | Display or export metrics for the entire cluster, a member or a region.                                                                     | online          |
+| [shutdown](command-pages/shutdown)                                                                                                                                                                         | Shut down all members that have a cache.                                                                                                               | online          |
+| [start jconsole](command-pages/start#topic_D00507416F3944DFAB48D2FA2B9E4A31)                                                                            | Start the JDK JConsole monitoring application in a separate process. JConsole automatically connects to a running JMX Manager node if one is available | online, offline |
+| [start jvisualvm](command-pages/start#topic_5B5BF8BEE905463D8B7762B89E2D65E7)                                                                | Start the JDK's Java VisualVM monitoring application in a separate process.                                                                            | online, offline |
+| [start pulse](command-pages/start#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77) | Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser.                                    | online, offline |
+
+## Index Commands {#topic_688C66526B4649AFA51C0F72F34FA45E}
+## {#topic_688C66526B4649AFA51C0F72F34FA45E__table_k3p_nz1_3l}
+| Command                                                                                                                                                                                                                                        | Description                                                                                                | Availability    |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-----------------|
+| [clear defined indexes](command-pages/clear)                                                                                                                              | Clears all the defined indexes.                                                                            | online, offline |
+| [create defined indexes](command-pages/create#topic_w2t_l3m_qq)                                                                                                          | Creates all the defined indexes.                                                                           | online          |
+| [create index](command-pages/create#topic_960A5B6FD3D84E1881EE118E299DD12D)                                                                      | Create an index that can be used when executing queries.                                                   | online          |
+| [define index](command-pages/define) | Define an index that can be used when executing queries. Then you can create multiple indexes all at once. | online, offline |
+| [destroy index](command-pages/destroy#topic_D00219CCD6F64C1582A0802AC5CDF3F3)                                                                                      | Destroy or remove the specified index.                                                                     | online          |
+| [list indexes](command-pages/list#topic_B3B51B6DEA484EE086C4F657EC9831F2)                                                                            | Display the list of indexes created for all members.                                                       | online          |
+
+## JMX Connection Commands {#topic_2A6DA4078E4E496A9F725A29BC4CFD0D}
+## {#topic_2A6DA4078E4E496A9F725A29BC4CFD0D__table_ktf_4z1_3l}
+| Command                                                                                                                                                           | Description                                                | Availability    |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|-----------------|
+| [connect](command-pages/connect)                                  | Connect to a jmx-manager either directly or via a locator. | offline         |
+| [describe connection](command-pages/describe#topic_591DC6B781B641168E6173E69AC6D201) | Display connection information details.                    | online, offline |
+| [disconnect](command-pages/disconnect)                                                       | Close any active connection(s).                            | online          |
+
+## Locator Commands {#topic_1C82E6F1B2AF4A65A8DA6B3C846BAC13}
+## {#topic_1C82E6F1B2AF4A65A8DA6B3C846BAC13__table_hy4_4z1_3l}
+| Command                                                                                                                                                          | Description                                                                                                                                                                                                                                                                     | Availability    |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| [start locator](command-pages/start#topic_591260CF25D64562A0EDD7260D2AC6D4)                                | Start a locator. The command creates a subdirectory and log file named after the locator. If the locator detects that no other JMX Manager exists, then the locator will automatically start an embedded JMX Manager and connect the current `gfsh` session to the JMX Manager. | online, offline |
+| [status locator](command-pages/status#topic_E96D0EFA513C4CD79B833FCCDD69C832) | Displays the status of the specified locator.                                                                                                                                                                                                                                   | online, offline |
+| [stop locator](command-pages/stop#topic_EF61C54B35BA4AB7B14E58CF911F283E)                                   | Stop a locator.                                                                                                                                                                                                                                                                 | online, offline |
+
+## Lucene Commands {#topic_lucene_commands}
+## {#topic_1C82E6F1B2AF4A65A8DA6B3C846BAC13__table_hy4_4z1_3l}
+| Command                                                                                                                                                          | Description                                                                                                                                                                                                                                                                     | Availability    |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| [create lucene index](command-pages/create#create_lucene_index)                                | Create a Lucene index. | online |
+| [describe lucene index](command-pages/describe#describe_lucene_index) | Describe a Lucene index. | online |
+| [destroy lucene index](command-pages/destroy#destroy_lucene_index) | Destroy a Lucene index. | online |
+| [list lucene indexes](command-pages/list#list_lucene_indexes) | List Lucene indexes created for all members. The optional `--with-stats` qualifier shows activity on the indexes. | online |
+| [search lucene](command-pages/search#search_lucene) | Search a Lucene index. | online |
+
+## PDX Commands {#topic_cvg_bls_5q}
+## {#topic_cvg_bls_5q__table_tdf_cls_5q}
+| Command                                                                                                          | Description                                                           | Availability    |
+|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------|
+| [configure pdx](command-pages/configure#topic_jdkdiqbgphqh)                         | Configure Portable Data eXchange for all the cache(s) in the cluster. | online, offline |
+| [pdx rename](command-pages/pdx) | Renames PDX types in an offline disk store.                           | online, offline |
+
+## Query Service Commands {#topic_query_service_commands}
+## {#topic_query_service_commands_table}
+| Command                                                                                                                                                                   | Description                                                                          | Availability    |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|-----------------|
+| [alter query-service](command-pages/alter#topic_alter_query_service)                       | Alter configuration details of the query service.                     | online |
+| [describe query-service](command-pages/describe#topic_describe_query_service)                       | Print the information that describes the current configuration of the query service.                     | online |
+
+## Region Commands {#topic_EF03119A40EE492984F3B6248596E1DD}
+## {#topic_EF03119A40EE492984F3B6248596E1DD__table_a5k_r31_3l}
+| Command                                                                                                                                                                                                                                      | Description                                                                                                                                                | Availability |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| [alter region](command-pages/alter#topic_E74ED23CB60342538B2175C326E7D758)                                                                                        | Alters the configuration of a region.                                                                                                                      | online       |
+| [create region](command-pages/create#topic_54B0985FEC5241CA9D26B0CE0A5EA863)                                                                         | Create and configure a region.                                                                                                                             | online       |
+| [describe region](command-pages/describe#topic_DECF7D3D33F54071B6B8AD4EA7E3F90B)                                                                | Display the attributes and key information of a region.                                                                                                    | online       |
+| [destroy region](command-pages/destroy#topic_BEDACECF4599407794ACBC0E56B30F65)                                                                                              | Destroy or remove a region.                                                                                                                                | online       |
+| [list regions](command-pages/list#topic_F0ECEFF26086474498598035DD83C588) | Display regions of a member or members. If no parameter is specified, all regions in the cluster are listed. | online       |
+| [rebalance](command-pages/rebalance)                                                                                                                                     | Rebalance partitioned regions.                                                                                                                             | online       |
+| [restore redundancy](command-pages/restore)                                                                                                                                     | Restore redundancy to partitioned regions and optionally reassign which members host the primary copies.                                                                                                                       | online       |
+| [status redundancy](command-pages/status#topic_status_redundancy)                                                                                                                                     | Display the redundancy status of partitioned regions.                                                                                                                             | online       |
+
+## Server Commands {#topic_8A341FF86958466E9E64CF06CD21FED9}
+## {#topic_8A341FF86958466E9E64CF06CD21FED9__table_ehj_n31_3l}
+| Command                                                                                                                                                                   | Description                                                                          | Availability    |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|-----------------|
+| [start server](command-pages/start#topic_3764EE2DB18B4AE4A625E0354471738A)                       | Start a @@product_name@@ cache server process.                     | online, offline |
+| [status server](command-pages/status#topic_E5DB49044978404D9D6B1971BF5D400D) | Display the status of the specified @@product_name@@ cache server. | online, offline |
+| [stop server](command-pages/stop#topic_723EE395A63A40D6819618AFC2902115)                                  | Stop a @@product_name@@ cache server.                              | online, offline |

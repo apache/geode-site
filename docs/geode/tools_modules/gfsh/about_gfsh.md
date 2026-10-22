@@ -1,0 +1,42 @@
+---
+title:  What You Can Do with gfsh
+sidebar_label: What You Can Do with gfsh
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+`gfsh` supports the administration, debugging, and deployment of @@product_name_long@@ processes and applications.
+
+With `gfsh`, you can:
+
+-   Start and stop @@product_name_long@@ processes, such as locators and cache servers
+-   Start and stop gateway sender and gateway receiver processes
+-   Deploy applications
+-   Create and destroy regions
+-   Execute functions
+-   Manage disk stores
+-   Import and export data
+-   Monitor @@product_name_long@@ processes
+-   Launch @@product_name_long@@ monitoring tools
+
+The `gfsh` command line interface lets developers spend less time configuring cache instance XML, properties, logs, and statistics. gfsh commands generate reports; capture cluster-wide statistics; and support the export of statistics, logs, and configurations. Like Spring Roo, gfsh features command completion (so you do not have to know the syntax), context-sensitive help, scripting, and the ability to invoke any commands from within an application by using a simple API. The gfsh interface uses JMX/RMI to communicate with @@product_name_long@@ processes.
+
+You can connect gfsh to a remote cluster using the HTTP protocol. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/gfsh_remote).
+
+By default, the cluster configuration service saves the configuration of your @@product_name_long@@ cluster as you create @@product_name_long@@ objects using gfsh. You can export this configuration and import it into another @@product_name_long@@ cluster. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist#concept_r22_hyw_bl).

@@ -1,0 +1,47 @@
+﻿---
+title:  Transactions
+sidebar_label: Transactions
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+ 
+This section describes  transactions.
+ offers an API for client applications that do
+transactional work. Geode 
+ implements optimistic transactions, 
+with the familiar `begin`, `commit`, and `rollback` methods
+that implement the same operations as in 
+relational database transactions methods.
+
+-   **[Adherence to ACID Promises](transactions_intro)**
+  
+    This section explains the ways in which Geode 's
+implementation of optimistic transactions provides ACID semantics.
+
+-   **[Code Examples](directed_example)**
+
+    An application-based transaction and a transaction embedded in
+    a function provide examples to model.
+
+-   **[Design Considerations](design_considerations)**
+
+    Designs that extend beyond the basics introduce other considerations.
+    This section identifies and discusses how transactions interact
+    with other aspects of the system. 
+

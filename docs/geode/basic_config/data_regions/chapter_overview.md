@@ -1,0 +1,53 @@
+﻿---
+title:  Data Regions
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+The region is the core building block of the @@product_name_long@@ cluster. All cached data is organized into data regions and you do all of your data puts, gets, and querying activities against them.
+
+-   **[Region Management](managing_data_regions)**
+
+    @@product_name_long@@ provides `gfsh` commands, APIs, and XML configuration models to support the configuration and management of data regions.
+
+-   **[Region Naming](region_naming)**
+
+    To be able to perform all available operations on your data regions,
+    follow these region naming guidelines.
+
+-   **[Region Shortcuts and Custom Named Region Attributes](region_shortcuts)**
+
+    @@product_name@@ provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
+
+-   **[Storing and Retrieving Region Shortcuts and Custom Named Region Attributes](store_retrieve_region_shortcuts)**
+
+    Use these examples to get started with @@product_name@@ region shortcuts.
+
+-   **[Managing Region Attributes](managing_region_attributes)**
+
+    Use region attributes to fine-tune the region configuration provided by the region shortcut settings.
+
+-   **[Creating Custom Attributes for Regions and Entries](creating_custom_attributes)**
+
+    Use custom attributes to store information related to your region or its entries in your cache. These attributes are only visible to the local application and are not distributed.
+
+-   **[Building a New Region with Existing Content](new_region_existing_data)**
+
+    A new region or cluster may need to be loaded with the data of an existing system. There are two approaches to accomplish this task. The approach used depends upon the organization of both the new and the existing cluster.
+
+

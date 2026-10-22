@@ -1,0 +1,85 @@
+---
+title: Creating Hash Indexes
+sidebar_label: Creating Hash Indexes
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+**Hash indexes are deprecated.**
+@@product_name@@ supports the creation of hash indexes for the purpose of performing equality-based queries.
+
+
+## Hash Index Performance {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_8A927DFB29364DA7856E7FE122FC1654}
+The performance of put operations and recovery time when using a hash index 
+will be worse than a range index.
+Queries are expected to be slower due to the implementation 
+of the hash index and the cost of recalculating the key on request.
+A hash index can improve the memory usage of the index.
+So, the trade-off of the hash index space savings must be weighed against the
+performance penalty it imposes.
+If memory usage is not a concern,
+a range index is recommended.
+
+Consider the memory usage when an index contains string fields.
+Copies of the strings are included in the index.
+With hash indexes, indexed expressions are canonicalized and stored in the index
+as pointers to the objects residing in the region,
+thereby using less memory.
+Tests achieved as high as a 30% reduction in memory footprint,
+but the savings depend on the keys and data being used.
+
+## Performance Considerations {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_2EF23A54378E44FFBF1BEB32E41ABD61}
+## Limitations {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_800401C53E5841269F389329B8A4CDF3}
+The following limitations must be considered when creating hash indexes:
+
+-   You can only use hash indexes with equals and not equals queries.
+-   Hash index maintenance will be slower than the other indexes due to synchronized add methods.
+-   Hash indexes cannot be maintained asynchronously. If you attempt to create a hash index on a region with asynchronous set as the maintenance mode, an exception will be thrown.
+-   You cannot use hash indexes for queries with multiple iterators or nested collections.
+-   Using a hash index will degrade put operation performance
+and recovery time substantially.
+If memory is not a concern, use a range index instead of a hash index.
+
+## Examples of Creating a Hash Index {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_CA2476E015D14DE7B522377C931A8492}
+**Hash indexes are deprecated.**
+
+**Using the Java API:**
+
+``` pre
+QueryService qs = cache.getQueryService();
+ qs.createHashIndex("myHashIndex", "mktValue", "/exampleRegion");
+```
+
+**Using gfsh:**
+
+``` pre
+gfsh> create index --name=myHashIndex --expression=mktValue --region=/exampleRegion
+  --type=hash
+```
+
+**Using cache.xml:**
+
+``` pre
+<region name=exampleRegion>
+ <region-attributes . . . >
+ </region-attributes>
+ <index name="myHashIndex" from-clause="/exampleRegion p" expression="p.mktValue" type="hash"/>
+ ...
+</region>
+```

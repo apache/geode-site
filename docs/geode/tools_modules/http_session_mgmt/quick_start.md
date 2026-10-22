@@ -1,0 +1,107 @@
+---
+title:  HTTP Session Management Quick Start
+sidebar_label: HTTP Session Management Quick Start
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+In this section you download, install, and set up the HTTP Session Management modules.
+
+Following the Apache Tomcat convention, this page assumes the CATALINA_HOME environment variable is set to the root directory of the "binary" Tomcat distribution.
+For example, if Apache Tomcat is installed in `/opt/apache-tomcat-10.1.30` then
+
+```
+CATALINA_HOME=/opt/apache-tomcat-10.1.30
+```
+
+## Quick Start Instructions {#quick_start__section_6A4A00B6DA404E10A5C29E5E31101445}
+1.  Download and install one of the application servers.
+
+    | Supported Application Server | Version | Download Location       |
+    |------------------------------|---------|-------------------------|
+    | Tomcat                       | 10.1+   | [Tomcat 10 Software Downloads](https://tomcat.apache.org/download-10.cgi)                                     |
+    | Tomcat                       | 11.x    | [Tomcat 11 Software Downloads](https://tomcat.apache.org/download-11.cgi)                                     |
+
+    **Note:** Support for Tomcat 7, 8, 9, and Pivotal tc Server has been discontinued. Tomcat 10.1+ requires Jakarta EE (jakarta.servlet.* namespace).
+
+    The generic HTTP Session Management Module for AppServers is implemented as a servlet filter and should work on any application server platform that supports the Java Servlet 6.0 specification (Jakarta EE).
+
+2.  The HTTP Session Management Modules installation .zip files are located in the `tools/Modules` directory of the product installation directory. Locate the .zip file for the HTTP Session Management Module that you wish to install. Unzip the appropriate HTTP Session Management Module into the specified directory for your application server:
+
+    | Supported Application Server | Version  | Module                                               | Target Location for Module       |
+    |------------------------------|----------|------------------------------------------------------|----------------------------------|
+    | Tomcat                       | 10.1, 11 | Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip       | `$CATALINA_HOME`                 |
+
+    **Note:** Support for Pivotal tc Server has been removed. Users should migrate to Tomcat 10.1 or later.
+
+3.  Complete the appropriate set up instructions for your application server described in the following sections:
+    -   [Additional Quick Start Instructions for Tomcat Module](quick_start#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB)
+    -   [Additional Instructions for AppServers Module](quick_start#quick_start__section_1587C3E55F06406EBD4AB13014A406D4)
+
+## Additional Quick Start Instructions for Tomcat Module {#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB}
+These steps provide a basic starting point for using the Tomcat module. For more configuration options, see [HTTP Session Management Module for Tomcat](session_mgmt_tomcat).
+
+1.  Modify Tomcat's `server.xml` and `context.xml` files. Configuration is slightly different depending on the topology you are setting up.
+
+    For example, in a peer-to-peer configuration using Tomcat 10.1+, you would add the following entry within the `<server>` element of server.xml:
+
+    ``` pre
+    <Listener className="org.apache.geode.modules.session.catalina.PeerToPeerCacheLifecycleListener"
+        locators="localhost[10334]" />
+    ```
+
+    and the following entry within the `<context>` tag in the context.xml file:
+
+    ``` pre
+    <Manager className="org.apache.geode.modules.session.catalina.Tomcat10DeltaSessionManager"/> 
+    ```
+
+    **Note:** For Tomcat 10.1+, use `Tomcat10DeltaSessionManager`. Support for Tomcat 7, 8, and 9 has been discontinued.
+
+    See [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module) for additional instructions.
+
+2.  Start the Tomcat application server.
+
+    ```
+    $CATALINA_HOME/bin/startup.sh
+    ```
+
+3. Confirm that Tomcat is running by opening a browser and navigating to `localhost:8080`. If you see the Tomcat home page, your installation was successful.
+
+    <img src="/images/Apache_Tomcat_Homepage.png"></img>
+    
+## Additional Instructions for AppServers Module {#quick_start__section_1587C3E55F06406EBD4AB13014A406D4}
+These steps provide a basic starting point for using the AppServers module with WebLogic, WebSphere or JBoss. For more configuration options, see [HTTP Session Management Module for AppServers](session_mgmt_weblogic).
+
+**Note:**
+
+-   The `modify_war` script relies upon a GEODE environment variable. Set the GEODE environment variable to the @@product_name@@ product directory; this is the parent directory of `bin`.
+-   The `modify_war` script, described below, relies on files within the distribution tree and should not be run outside of a complete distribution.
+-   The `modify_war` script is a `bash` script and does not run on Windows.
+
+To set up the AppServers module, perform the following steps:
+
+1.  Run the `modify_war` script against an existing `.war` or `.ear` file to integrate the necessary components. The example below will create a configuration suitable for a peer-to-peer @@product_name@@ system, placing the necessary libraries into `WEB-INF/lib` for wars and `lib` for ears and modifying any `web.xml` files:
+
+    ``` pre
+    $ bin/modify_war -w my-app.war -p gemfire.property.locators=localhost[10334] \
+                      -t peer-to-peer
+    ```
+
+2.  A new war file will be created called `session-my-app.war`. This file can now be deployed to the server.

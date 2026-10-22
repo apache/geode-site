@@ -1,0 +1,43 @@
+﻿---
+title:  Network Partitioning
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+--> Apache Geode architecture and management features help detect and resolve network partition problems.
+
+-   **[How Network Partitioning Management Works](how_network_partitioning_management_works)** Geode     handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
+
+-   **[Failure Detection and Membership Views](failure_detection)** Geode     uses failure detection to remove unresponsive members from membership views.
+
+-   **[Membership Coordinators, Lead Members and Member Weighting](membership_coordinators_lead_members_and_weighting)**
+
+    Network partition detection uses a designated membership coordinator and a weighting system that accounts for a lead member to determine whether a network partition has occurred.
+
+-   **[Network Partitioning Scenarios](network_partitioning_scenarios)**
+
+    This topic describes network partitioning scenarios and what happens to the partitioned sides of the cluster.
+
+-   **[Configure Apache Geode to Handle Network Partitioning](handling_network_partitioning)**
+
+    This section lists the configuration steps for network partition detection.
+
+-   **[Preventing Network Partitions](preventing_network_partitions)**
+
+    This section provides a short list of things you can do to prevent network partition from occurring.
+
+
+

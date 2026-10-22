@@ -1,0 +1,62 @@
+﻿---
+title:  Configure Data Eviction
+sidebar_label: Configure Data Eviction
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Configure a region's `eviction-attributes` settings to keep your region within a specified limit.
+
+Configure data eviction as follows. You do not need to perform these steps in the sequence shown.
+
+1.  Decide whether to evict based on:
+    -   Entry count (useful if your entry sizes are relatively uniform).
+    -   Total bytes used. In partitioned regions, this is set using `local-max-memory`. In non-partitioned regions, it is set in `eviction-attributes`.
+    -   Percentage of application heap used. This uses the @@product_name@@ resource manager. When the manager determines that eviction is required, the manager orders the eviction controller to start evicting from all regions where the eviction algorithm is set to `lru-heap-percentage`. Eviction continues until the manager calls a halt. @@product_name@@ evicts the least recently used entry hosted by the member for the region. See [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+
+2.  Decide what action to take when the limit is reached:
+    -   Locally destroy the entry.
+    -   Overflow the entry data to disk. See [Persistence and Overflow](../storing_data_on_disk/chapter_overview).
+
+3.  Decide the maximum amount of data to allow in the member for the eviction measurement indicated. This is the maximum for all storage for the region in the member. For partitioned regions, this is the total for all buckets stored in the member for the region, including any secondary buckets used for redundancy.
+4.  Decide whether to program a custom sizer for your region. If you are able to provide such a class, it might be faster than the standard sizing done by @@product_name@@. Your custom class must follow the guidelines for defining custom classes and, additionally, must implement `org.apache.geode.cache.util.ObjectSizer`. See [Requirements for Using Custom Classes in Data Caching](../../basic_config/data_entries_custom_classes/using_custom_classes).
+
+**Examples:**
+
+Set an LRU memory eviction threshold of 1000 MB. Use a custom class for measuring the size of each object in the region:
+
+```
+gfsh>create region --name=myRegion --type=REPLICATE --eviction-max-memory=1000 \
+--eviction-action=overflow-to-disk --eviction-object-sizer=com.myLib.MySizer
+```
+
+Create an eviction threshold on a partitioned region with a maximum entry count of 512:
+
+```
+gfsh>create region --name=myRegion --type=PARTITION --eviction-entry-count=512 \
+--eviction-action=overflow-to-disk 
+```
+
+To configure a partitioned region for heap LRU eviction, first configure the resource manager on server startup, then create a region with eviction enabled:
+
+```
+gfsh>start server --name=Server1 --eviction-heap-percentage=80
+...
+gfsh>create region --name=myRegion --type=PARTITION --eviction-action=overflow-to-disk
+```

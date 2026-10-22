@@ -1,0 +1,8 @@
+{
+  "label": "Configuring Single-Hop Client Access to Server-Partitioned Regions",
+  "position": 6,
+  "link": {
+    "type": "doc",
+    "id": "overview_how_pr_single_hop_works"
+  }
+}

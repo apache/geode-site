@@ -1,0 +1,8 @@
+{
+  "label": "Slow Receivers with TCP/IP",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "slow_receivers"
+  }
+}

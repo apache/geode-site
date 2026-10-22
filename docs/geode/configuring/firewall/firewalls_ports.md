@@ -1,0 +1,197 @@
+---
+title:  Firewalls and Ports
+sidebar_label: Firewalls and Ports
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Make sure your port settings are configured correctly for firewalls.
+## {#concept_5ED182BDBFFA4FAB89E3B81366EBC58E__section_F9C1D7419F954DC1A305C34714C8615C}
+There are several different port settings that need to be considered when using firewalls:
+
+-   Port that the cache server listens on. This is configurable using the `cache-server` element in cache.xml, on the CacheServer class in Java APIs, and as a command line option to the `gfsh start server` command.
+
+    By default, if not otherwise specified, @@product_name@@ clients and servers discover each other on a pre-defined port (**40404**) on the localhost.
+
+-   Locator port. @@product_name@@ clients can use the locator to automatically discover cache servers. The locator port is configurable as a command-line option to the `gfsh start locator` command. Locators are used in the peer-to-peer cache deployments to discover other processes. They can be used by clients to locate servers as an alternative to configuring clients with a collection of server addresses and ports.
+
+    By default, if not otherwise specified, @@product_name@@ locators use the default port **10334**.
+
+-   Since locators start up the cluster, locators must also have their ephemeral port range and TCP port accessible to other members through the firewall.
+-   For clients, you configure the client to connect to servers using the client's pool configuration. The client's pool configuration has two options: you can create a pool with either a list of server elements or a list of locator elements. For each element, you specify the host and port. The ports specified must be made accessible through your firewall.
+
+## **Limiting Ephemeral Ports for Peer-to-Peer Membership**
+
+By default, @@product_name@@ assigns *ephemeral* ports, that is, temporary ports assigned from a designated range, which can encompass a large number of possible ports. When a firewall is present, the ephemeral port range usually must be limited to a much smaller number, for example six. If you are configuring P2P communications through a firewall, you must also set the TCP port for each process and ensure that UDP traffic is allowed through the firewall.
+
+## **Properties for Firewall and Port Configuration**
+
+This table contains properties potentially involved in firewall behavior, with a brief description of each property.
+
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Configuration area</strong></th>
+<th><strong>Property or Setting</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">conserve-sockets</code></p></td>
+<td><p>Specifies whether sockets are shared by the system member's threads.</p></td>
+</tr>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">locators</code></p></td>
+<td><p>The list of locators used by system members. The list must be configured consistently for every member of the cluster.</p></td>
+</tr>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">mcast-address</code></p></td>
+<td><p>Address used to discover other members of the cluster. Only used if mcast-port is non-zero. This attribute must be consistent across the cluster.</p></td>
+</tr>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">mcast-port</code></p></td>
+<td><p>Port used, along with the mcast-address, for multicast communication with other members of the cluster. If zero, multicast is disabled for data distribution.</p></td>
+</tr>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">membership-port-range</code></p></td>
+<td><p>The range of ephemeral ports available for unicast UDP messaging and for TCP failure detection in the peer-to-peer cluster.</p></td>
+</tr>
+<tr>
+<td>peer-to-peer config</td>
+<td><p><code class="ph codeph">tcp-port</code></p></td>
+<td><p>The TCP port to listen on for cache communications.</p></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Configuration Area</th>
+<th><strong>Property or Setting</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cache server config</td>
+<td><p><code class="ph codeph">hostname-for-clients</code></p></td>
+<td><p>Hostname or IP address to pass to the client as the location where the server is listening.</p></td>
+</tr>
+<tr>
+<td>cache server config</td>
+<td><p><code class="ph codeph">max-connections</code></p></td>
+<td><p>Maximum number of client connections for the server. When the maximum is reached, the server refuses additional client connections.</p></td>
+</tr>
+<tr>
+<td>cache server config</td>
+<td><p><code class="ph codeph">port</code> (cache.xml) or <code class="ph codeph">--port</code> parameter to the <code class="ph codeph">gfsh start server</code> command</p></td>
+<td><p>Port that the server listens on for client communication.</p></td>
+</tr>
+</tbody>
+</table>
+
+## Default Port Configurations
+
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Port Name</strong></p></th>
+<th>Related Configuration Setting</th>
+<th><p><strong>Default Port</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Cache Server</p></td>
+<td><p><code class="ph codeph">port</code> (cache.xml)</p></td>
+<td>40404</td>
+</tr>
+<tr>
+<td><p>HTTP</p></td>
+<td><code class="ph codeph">http-service-port</code></td>
+<td>7070</td>
+</tr>
+<tr>
+<td><p>Locator</p></td>
+<td><code class="ph codeph">start-locator</code> (for embedded locators) or <code class="ph codeph">--port</code> parameter to the <code class="ph codeph">gfsh start locator</code> command.</td>
+<td><em>if not specified upon startup or in the start-locator property, uses default port 10334</em></td>
+</tr>
+<tr>
+<td><p>Membership Port Range</p></td>
+<td><code class="ph codeph">membership-port-range</code></td>
+<td>41000 to 61000</td>
+</tr>
+<tr>
+<td><p>Memcached Port</p></td>
+<td><code class="ph codeph">memcached-port</code></td>
+<td><em>not set</em></td>
+</tr>
+<tr>
+<td><p>Multicast</p></td>
+<td><code class="ph codeph">mcast-port</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><p>RMI</p></td>
+<td><code class="ph codeph">jmx-manager-port</code></td>
+<td>1099</td>
+</tr>
+<tr>
+<td><p>TCP</p></td>
+<td><code class="ph codeph">tcp-port</code></td>
+<td>ephemeral port</td>
+</tr>
+</tbody>
+</table>
+
+## **Properties for Firewall and Port Configuration in Multi-Site (WAN) Configurations**
+
+Each gateway receiver uses a single port to accept connections from gateway senders in other
+systems. The configuration of a gateway receiver specifies a range of possible port values
+to use. @@product_name@@ selects an available port from the specified range when the gateway
+receiver starts. Configure your firewall so that the full range of possible port values is
+accessible by gateway senders from across the WAN.
+
+| Configuration Area | Property or Setting | Definition |
+|--------------------|---------------------|------------|
+| multi-site (WAN) config for gateway sender | [hostname-for-senders](../../reference/cache/cache_xml#gateway-receiver) | Hostname or IP address of the gateway receiver used by gateway senders to connect. |
+| multi-site (WAN) config for locator | [remote-locators](../../reference/gemfire_properties#gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
+| multi-site (WAN) config for gateway receiver | [start-port](../../reference/cache/cache_xml#gateway-receiver) and [end-port](../../reference/cache/cache_xml#gateway-receiver) (cache.xml) or <code class="ph codeph">--start-port</code> and <code class="ph codeph">--end-port</code> parameters to the <code class=" ph codeph">gfsh start gateway receiver</code> command | Port range that the gateway receiver can use to listen for gateway sender communication. |

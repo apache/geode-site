@@ -1,0 +1,77 @@
+---
+title:  Cluster Configuration Files and Troubleshooting
+sidebar_label: Cluster Configuration Files and Troubleshooting
+sidebar_position: 6
+---
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+When you use the cluster configuration service in @@product_name@@,
+you can examine the generated configuration.
+The gfsh [export cluster-configuration](../../tools_modules/gfsh/command-pages/export#topic_mdv_jgz_ck)
+command outputs configured properties,
+the configuration on a per-group basis or for the
+entire cluster, and the list of deployed JAR files.
+
+If the output is written to either a ZIP file or an XML file,
+you can import this configuration to a new cluster.
+See [Exporting and Importing Cluster Configurations](export-import#concept_wft_dkq_34).
+
+Upon the deploy of a JAR file,
+the JAR file is added to a created directory called `cluster_config` within
+the locator's directory of files.
+Within `cluster_config` will be another directory named for the member group
+that has the configuration.
+For configurations that apply to all members of a cluster,
+the directory is named either `cluster`
+or the name specified when starting up the locator with
+the `--cluster-config-dir` option.
+
+
+<!-- -->
+
+## Troubleshooting Tips
+
+-   When you start a locator using `gfsh`, you should see the following message:
+
+    ``` pre
+    Cluster configuration service is up and running.
+    ```
+
+    If you do not see this message, there may be a problem with the cluster configuration service. Use the `status cluster-config-service` command to check the status of the cluster configuration.
+
+    -   If the command returns RUNNING, the cluster configuration is running normally.
+    -   If the command returns WAITING, run the `status locator` command. The output of this command returns the cause of the WAITING status.
+-  When using a `cache.xml` file for configuration,
+there is a specific order to the application of the configuration
+in these files.
+@@product_name@@ applies the cluster-wide configuration files first.
+Group-level configurations follow.
+Last will be the configuration in a member's own configuration files
+(`cache.xml` and `gemfire.properties` files).
+-   If a server start fails with the following exception: `ClusterConfigurationNotAvailableException`, the cluster configuration service may not be in the RUNNING state. Because the server requests the cluster configuration from the locator, which is not available, the `start server` command fails.
+-   You can determine what configurations a server received from a locator by examining the server's log file. See [Logging](../../managing/logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
+-   If a `start server` command specifies a cache.xml file that conflicts with the existing cluster configuration, the server startup may fail.
+-   If a `gfsh` command fails because the cluster configuration cannot be saved, the following message displays:
+
+    ``` pre
+    Failed to persist the configuration changes due to this command, 
+    Revert the command to maintain consistency. Please use "status cluster-config-service" 
+    to determine whether Cluster configuration service is RUNNING."
+    ```
+
+-   There are some types of configurations that cannot be made using `gfsh`. See [gfsh Limitations](gfsh_persist#concept_r22_hyw_bl__section_bn3_23p_y4).

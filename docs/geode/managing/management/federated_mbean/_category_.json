@@ -1,0 +1,8 @@
+{
+  "label": "Federated MBean Architecture",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "mbean_architecture"
+  }
+}

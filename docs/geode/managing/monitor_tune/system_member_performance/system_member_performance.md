@@ -1,0 +1,36 @@
+﻿---
+title:  System Member Performance
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You can modify some configuration parameters to improve system member performance.
+
+Before doing so, you should understand [Basic Configuration and Programming](../../developing/book_intro).
+
+-   **[Member Properties](system_member_performance_distributed_system_member)**
+
+    Several performance-related properties apply to a cache server or application that connects to the cluster.
+
+-   **[JVM Memory Settings and System Performance](system_member_performance_jvm_mem_settings)**
+
+    You configure JVM memory settings for the Java application by adding parameters to the java invocation. For the cache server, you add them to the command-line parameters for the gfsh `start server` command.
+
+-   **[Garbage Collection and System Performance](system_member_performance_garbage)**
+
+    If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVM’s garbage collection behavior.

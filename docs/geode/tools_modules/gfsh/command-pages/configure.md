@@ -1,0 +1,82 @@
+﻿---
+title: configure
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#concept_C2DCEE6743304549825C9B62E66DBADF}
+Configure Portable Data eXchange (PDX) for all the cache(s) in the cluster.
+
+## configure pdx {#topic_jdkdiqbgphqh}
+## {#topic_jdkdiqbgphqh__section_C27BE964CE554180A65968DBEBF50B23}
+Configures @@product_name@@'s Portable Data eXchange for all the cache(s) in the cluster
+and persists the pdx configuration in the locator with the cluster configuration service.
+
+For consistent results, PDX should be configured before any servers have started.
+A server that is running at the time PDX is configured will not adopt the new configuration until it has been restarted.
+
+**Availability:** Online.
+
+**Syntax:**
+
+``` pre
+configure pdx [--read-serialized=value] [--ignore-unread-fields=value]
+    [--disk-store(=value)?] [--auto-serializable-classes=value(,value)*]
+    [--portable-auto-serializable-classes=value(,value)*]
+```
+
+**Parameters, configure pdx:**
+
+| Name                                       | Description | Default |
+|--------------------------------------------|-------------|---------|
+| <span class="keyword parmname">&#8209;&#8209;read-serialized</span>                   | When true, PDX deserialization produces a PdxInstance instead of an instance of the domain class. | false   |
+| <span class="keyword parmname">&#8209;&#8209;ignore-unread-fields</span>               | Controls whether PDX ignores fields that were unread during deserialization. The default is to preserve unread fields by including their data during serialization. However, if you configure the cache to ignore unread fields, then their data will be lost during serialization. You should set this attribute to true only if you know this member will only be reading cache data. In this use case you do not need to pay the cost of preserving the unread fields, since you will never be reserializing PDX data. | false   |
+| <span class="keyword parmname">&#8209;&#8209;disk-store</span>              | Named disk store where the PDX type data will be stored. If specified without a value, then "DEFAULT" is used. | none    |
+| <span class="keyword parmname">&#8209;&#8209;auto-serializable-classes</span>          | Configures ReflectionBasedAutoSerializer as the PDX serializer for member classes. Specifies patterns to be matched against domain class names to determine whether they should be auto-serialized. Classes are not checked for portability to non-java languages (equivalent to `check-portability=false`). | none    |
+| <span class="keyword parmname">&#8209;&#8209;portable-auto-serializable-classes</span> | Configures ReflectionBasedAutoSerializer as the PDX serializer for member classes. Specifies patterns to be matched against domain class names to determine whether they should be serialized. Serialization done by the PDX autoserializer will throw an exception if the object of these classes are not portable to non-Java languages (equivalent to `check-portability=true`). | none    |
+
+**Example Commands:**
+
+``` pre
+gfsh>configure pdx --read-serialized=true
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>configure pdx --read-serialized=true
+persistent = false
+read-serialized = true
+ignore-unread-fields = false
+
+gfsh>configure pdx --disk-store=/home/username/server4/DEFAULT.drf
+persistent = true
+disk-store = /home/username/server4/DEFAULT.drf
+read-serialized = false
+ignore-unread-fields = false
+```
+
+**Error Messages:**
+
+```console
+Configure pdx failed because cluster configuration is disabled.
+```
+
+```console
+"Failed to persist the configuration changes due to this command, Revert the command to maintain consistency.
+Please use "status cluster-config-service" to determing whether Cluster configuration service is RUNNING."
+```

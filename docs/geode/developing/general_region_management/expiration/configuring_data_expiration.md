@@ -1,0 +1,100 @@
+﻿---
+title:  Configure Data Expiration
+sidebar_label: Configure Data Expiration
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Configure the type of expiration and the expiration action to use.
+
+-   Expiration actions require setting the region attribute of `statistics-enabled` to `true`. This can be done in the region element of a `cache.xml` file, the `gfsh` command line, or through the API.
+
+
+-   Set the expiration attributes by expiration type, with the max times and expiration actions. See the region attributes listings for `entry-time-to-live`, `entry-idle-time`, `region-time-to-live`, and `region-idle-time` in [&lt;region-attributes&gt;](../../reference/cache/cache_xml#region-attributes).
+
+The statistics used for expiration are available directly to the application through the `CacheStatistics` object returned by the `Region` and `Region.Entry` `getStatistics` methods. The `CacheStatistics` object also provides a method for resetting the statistics counters.
+
+**For partitioned regions:**
+
+ - On a partitioned region, expiration is supported only for the region's entries, not for the region itself. Region-wide expiration attributes, such as `region-time-to-live` and `region-idle-time` do not apply to the data items in partitioned regions.
+ - To ensure reliable read behavior when working with partitioned regions, use the `entry-time-to-live` attribute, not the `entry-idle-time` attribute.
+ - You cannot use `local-destroy` or `local-invalidate` expiration actions in partitioned regions.
+
+**Replicated regions example:**
+
+```
+// Setting standard expiration on an entry
+<region-attributes statistics-enabled="true"> 
+  <entry-idle-time> 
+    <expiration-attributes timeout="60" action="local-invalidate"/> 
+  </entry-idle-time> 
+</region-attributes> 
+```
+
+-   Override the region-wide settings for specific entries, if required by your application. To do this:
+    1.  Program a custom expiration class that implements `org.apache.geode.cache.CustomExpiry`. Example:
+
+        ``` pre
+        // Custom expiration class
+        // Use the key for a region entry to set entry-specific expiration timeouts of 
+        //   10 seconds for even-numbered keys with a DESTROY action on the expired entries
+        //   Leave the default region setting for all odd-numbered keys. 
+        public class MyClass implements CustomExpiry, Declarable 
+        { 
+            private static final ExpirationAttributes CUSTOM_EXPIRY = 
+                    new ExpirationAttributes(10, ExpirationAction.DESTROY); 
+            public ExpirationAttributes getExpiry(Entry entry) 
+            { 
+                int key = (Integer)entry.getKey(); 
+                return key % 2 == 0 ? CUSTOM_EXPIRY : null; 
+            }
+        }
+        ```
+    2.  Define the class inside the expiration attributes settings for the region. Example:
+
+
+        ``` pre
+        <!-- Set default entry idle timeout expiration for the region --> 
+        <!-- Pass entries to custom expiry class for expiration overrides -->
+        <region-attributes statistics-enabled="true"> 
+            <entry-idle-time> 
+                <expiration-attributes timeout="60"> 
+                    <custom-expiry> 
+                        <class-name>com.company.mypackage.MyClass</class-name> 
+                    </custom-expiry> 
+                </expiration-attributes> 
+            </entry-idle-time> 
+        </region-attributes>
+        ```
+
+    The gfsh equivalent of the above XML is:
+
+        gfsh> create region --name=region1 --type=REPLICATE --enable-statistics \
+        --entry-idle-time-expiration=60 --entry-idle-time-custom-expiry=com.company.mypackage.MyClass
+
+-   When the primary expires entries, it requests last-accessed statistics from the secondaries.  The
+primary adopts the most recent access time and reschedules the expiration, if warranted. This is
+done only for distributed expiration actions, and applies to both partitioned and replicated
+regions.
+
+You can also configure regions using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD).
+
+## Configuring the Number of Threads for Expiration
+
+You can use the `gemfire.EXPIRY_THREADS` system property to increase the number of threads that handle expiration. By default, one thread handles expiration, and it is possible for the thread to become overloaded when entries expire faster than the thread can expire them. If a single thread is handling too many expirations, it can result in an OOME. Set the gemfire.EXPIRY\_THREADS system property to the desired number when starting the cache server.

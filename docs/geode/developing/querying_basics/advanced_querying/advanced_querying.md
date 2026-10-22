@@ -1,0 +1,52 @@
+﻿---
+title:  Advanced Querying
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section includes advanced querying topics such as using query indexes, using query bind parameters, querying partitioned regions and query debugging.
+
+-   **[Performance Considerations](../querying_basics/performance_considerations)**
+
+    This topic covers considerations for improving query performance.
+
+-   **[Monitoring Low Memory When Querying](../querying_basics/monitor_queries_for_low_memory)**
+
+    The query monitoring feature prevents out-of-memory exceptions from occurring when you execute queries or create indexes.
+
+-   **[Timeouts for Long-Running Queries](../query_additional/query_timeout)**
+
+    Configure a timeout value for long running queries, such that they do
+not complete, and @@product_name@@ throws an exception when a 
+query runs for longer than the configured value.
+
+-   **[Using Query Bind Parameters](../query_additional/using_query_bind_parameters)**
+
+    Using query bind parameters in @@product_name@@ queries is similar to using prepared statements in SQL where parameters can be set during query execution. This allows you to build a query once and execute it multiple times by passing the query conditions during run time.
+
+-   **[Querying a Specific Member](../query_additional/querying-a-specific-member)**
+
+    A query may return different results depending on the member on which it is executed.
+
+-   **[Querying Partitioned Regions](../querying_basics/querying_partitioned_regions)**
+
+    @@product_name@@ allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a @@product_name@@ node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
+
+-   **[Query Debugging](../query_additional/query_debugging)**
+
+    You can debug a specific query at the query level by adding the `<trace>` keyword before the query string that you want to debug.

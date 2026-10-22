@@ -1,0 +1,34 @@
+---
+title: Behavior of Geode Cache Writers and Loaders Under JTA
+sidebar_label: Behavior of Geode Cache Writers and Loaders Under JTA
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+When @@product_name@@ participates in a global transactions, you can still have @@product_name@@ cache writers and cache loaders operating in the usual way.
+
+For example, in addition to the transactional connection to the database, the region could also have
+a cache writer and cache loader configured to exchange data with that same database. As long as the
+data source is transactional, which means that it can detect the transaction manager, the cache
+writer and cache loader participate in the transaction. If the JTA rolls back its transaction, the
+changes made by the cache loader and the cache writer are rolled back. For more on transactional
+data sources, see the discussion of XAPooledDataSource and ManagedDataSource in 
+[Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI).
+
+If you are using a @@product_name@@ cache or transaction listener with global transactions, be aware that the EntryEvent returned by a transaction has the @@product_name@@ transaction ID, not the JTA transaction ID.

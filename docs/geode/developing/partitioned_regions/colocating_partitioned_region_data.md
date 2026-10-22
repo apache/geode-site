@@ -1,0 +1,124 @@
+﻿---
+title:  Colocate Data from Different Partitioned Regions
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+By default, @@product_name@@ allocates the data locations for a partitioned region independent of the data locations for any other partitioned region. You can change this policy for any group of partitioned regions, so that cross-region, related data is all hosted by the same member.
+Colocation is required for some operations,
+and it increases performance for others by reducing the number of data
+accesses to entries that are hosted on other cluster members.
+## {#colocating_partitioned_region_data__section_131EC040055E48A6B35E981B5C845A65}
+Data colocation between partitioned regions generally improves the performance of data-intensive operations. You can reduce network hops for iterative operations on related data sets. Compute-heavy applications that are data-intensive can significantly increase overall throughput. For example, a query run on a patient's health records, insurance, and billing information is more efficient if all data is grouped in a single member. Similarly, a financial risk analytical application runs faster if all trades, risk sensitivities, and reference data associated with a single instrument are together.
+
+**Procedure**
+
+1.  Identify one region as the central region, with which data in the other regions is explicitly colocated. If you use persistence for any of the regions, you must persist the central region.
+    1.  Create the central region before you create the others, either in the `cache.xml` or your code. Regions in the XML are created before regions in the code, so if you create any of your colocated regions in the XML, you must create the central region in the XML before the others. @@product_name@@ will verify its existence when the others are created and return `IllegalStateException` if the central region is not there. Do not add any colocation specifications to this central region.
+    2.  For all other regions, in the region partition attributes, provide the central region's name in the `colocated-with` attribute. Use one of these methods:
+        -   XML:
+
+            ``` pre
+            <cache> 
+                <region name="trades"> 
+                    <region-attributes> 
+                        <partition-attributes>  
+                            ...
+                        <partition-attributes> 
+                    </region-attributes> 
+                </region> 
+                <region name="trade_history"> 
+                    <region-attributes> 
+                        <partition-attributes colocated-with="trades">   
+                            ...
+                        <partition-attributes> 
+                    </region-attributes> 
+                </region> 
+            </cache> 
+            ```
+        -   Java:
+
+            ``` pre
+            PartitionAttributes attrs = ...
+            Region trades = new RegionFactory().setPartitionAttributes(attrs)
+                .create("trades");
+            ...
+            attrs = new PartitionAttributesFactory().setColocatedWith(trades.getFullPath())
+                .create();
+            Region trade_history = new RegionFactory().setPartitionAttributes(attrs)
+                .create("trade_history");
+            ```
+        -   gfsh:
+
+            ``` pre
+            gfsh>create region --name="trades" type=PARTITION
+            gfsh> create region --name="trade_history" --colocated-with="trades"
+            ```
+
+2.  For each of the colocated regions, use the same values for these partition attributes related to bucket management:
+    -   `recovery-delay`
+    -   `redundant-copies`
+    -   `startup-recovery-delay`
+    -   `total-num-buckets`
+
+3.  If you custom partition your region data, specify the custom resolver for all colocated regions. This example uses the same partition resolver for both regions:
+    -   XML:
+
+        ``` pre
+        <cache> 
+            <region name="trades"> 
+                <region-attributes> 
+                    <partition-attributes>  
+                    <partition-resolver name="TradesPartitionResolver"> 
+                        <class-name>myPackage.TradesPartitionResolver
+                        </class-name>
+                    <partition-attributes> 
+                </region-attributes> 
+            </region> 
+            <region name="trade_history"> 
+                <region-attributes> 
+                    <partition-attributes colocated-with="trades">   
+                    <partition-resolver name="TradesPartitionResolver"> 
+                        <class-name>myPackage.TradesPartitionResolver
+                        </class-name>
+                    <partition-attributes> 
+                </region-attributes> 
+            </region> 
+        </cache> 
+        ```
+    -   Java:
+
+        ``` pre
+        PartitionResolver resolver = new TradesPartitionResolver();
+        PartitionAttributes attrs = 
+            new PartitionAttributesFactory()
+            .setPartitionResolver(resolver).create();
+        Region trades = new RegionFactory().setPartitionAttributes(attrs)
+            .create("trades");
+        attrs = new PartitionAttributesFactory()
+            .setColocatedWith(trades.getFullPath()).setPartitionResolver(resolver)
+            .create();
+        Region trade_history = new RegionFactory().setPartitionAttributes(attrs)
+            .create("trade_history");
+        ```
+    -   gfsh:
+
+        Specify a partition resolver as described in the configuration
+        section of [Custom-Partition Your Region Data](using_custom_partition_resolvers).
+
+4.  If you want to persist data in the colocated regions, persist the central region and then persist the other regions as needed. Use the same disk store for all of the colocated regions that you persist.

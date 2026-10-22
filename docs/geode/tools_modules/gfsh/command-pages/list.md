@@ -1,0 +1,572 @@
+﻿---
+title: list
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+
+List existing @@product_name@@ resources such as deployed applications, disk-stores, functions, members, servers, and regions.
+
+-   **[list async-event-queues](#topic_j22_kzk_2l)**
+
+    Display a list of async event queues for all members.
+
+-   **[list clients](#topic_ts1_qb1_dk)**
+
+    Display a list of connected clients.
+
+-   **[list deployed](#topic_59DF60DE71AD4097B281749425254BFF)**
+
+    Display a list of JARs that were deployed to members using the deploy command.
+
+-   **[list disk-stores](#topic_BC14AD57EA304FB3845766898D01BD04)**
+
+    List all available disk stores across the @@product_name@@ cluster
+
+-   **[list durable-cqs](#topic_66016A698C334F4EBA19B99F51B0204B)**
+
+    List durable client CQs associated with the specified durable client id.
+
+-   **[list functions](#topic_DCC7CCBBEF5942B783A8F2A4A5B2FABF)**
+
+    Display a list of registered functions. The default is to display functions for all members.
+
+-   **[list gateways](#topic_B1D89671C7B74074899C7D52F15849ED)**
+
+    Display the gateway senders and receivers for a member or members.
+
+-   **[list indexes](#topic_B3B51B6DEA484EE086C4F657EC9831F2)**
+
+    Display the list of indexes created for all members.
+
+-   **[list jndi-binding](#list_jndi-binding)**
+
+    List all JNDI bindings, active and configured.
+
+-   **[list lucene indexes](#list_lucene_indexes)**
+
+    List Lucene indexes created for all members.
+
+-   **[list members](#topic_5B5BFB2E5F314210858641BE3A689637)**
+
+    Display all or a subset of members.
+
+-   **[list regions](#topic_F0ECEFF26086474498598035DD83C588)**
+
+    Display regions of a member or members. If no parameter is specified, all regions in the cluster are listed.
+
+## list async-event-queues {#topic_j22_kzk_2l}
+Display a list of async event queues for all members.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list async-event-queues
+```
+
+**Example Commands:**
+
+``` pre
+list async-event-queues
+```
+
+## list clients {#topic_ts1_qb1_dk}
+Display a list of connected clients and the servers to which they connect.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list clients
+```
+
+**Example Commands:**
+
+``` pre
+list clients
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list clients
+
+ClientList
+
+          Client Name / ID           | Server Name / ID
+------------------------------------ | -----------------------------------------------------
+192.0.2.0(4987:loner):58922:7b3398cf | member=server2,port=53508;  member=server1,port=56806
+192.0.2.0(5065:loner):39906:a6f598cf | member=server2,port=53508;  member=server1,port=56806
+```
+
+## list deployed {#topic_59DF60DE71AD4097B281749425254BFF}
+Display a list of JARs that were deployed to members using the deploy command.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list deployed [--groups=value(,value)*]
+```
+
+**Parameters, list deployed:**
+
+| Name                                          | Description                                                                                                          |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) of members for which deployed JARs will be displayed. If not specified, JARs for all members are displayed. |
+
+
+**Example Commands:**
+
+``` pre
+list deployed
+list deployed --groups=Group2
+```
+
+**Sample Output:**
+
+``` pre
+gfsh> list deployed  --groups=Group2
+
+ Member   |     Deployed JAR     |                JAR Location
+--------- | -------------------- | ---------------------------------------------------
+datanode1 | group1_functions.jar | /usr/local/gemfire/deploy/vf.gf#group1_functions.jar#1
+datanode2 | group1_functions.jar | /usr/local/gemfire/deploy/vf.gf#group1_functions.jar#1
+```
+
+**Error Messages:**
+
+``` pre
+No JAR Files Found
+```
+
+## list disk-stores {#topic_BC14AD57EA304FB3845766898D01BD04}
+List all available disk stores across the @@product_name@@ cluster.
+
+The command also lists the configured disk directories and any Regions, Cache Servers, Gateways, PDX Serialization and Async Event Queues using Disk Stores to either overflow and/or persist information to disk. Use the `describe disk-store` command to see the details for a particular Disk Store.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list disk-stores
+```
+
+**Example Commands:**
+
+``` pre
+list disk-stores
+```
+
+**Sample Output:**
+
+``` pre
+gfsh> list disk-stores
+
+   Member Name   |                   Member Id               | Disk Store Name |            Disk Store ID
+  -------------- | ------------------------------------------| --------------- | ------------------------------------
+  consumerServer | 192.0.2.0(consumerServer:13825)<v5>:3545  | consumerData    | 4029af26-fd82-4997-bd6c-33382cdbb5e9
+  consumerServer | 192.0.2.0(consumerServer:13825)<v5>:3545  | observerData    | 7e0316ad-963c-49b0-9b01-8f59b8d9e29e
+  producerServer | 192.0.2.0(producerServer:13826)<v3>:53764 | producerData    | 4670e4eb-1c50-4465-b418-08ede3d5dbed
+```
+
+**Error Messages:**
+
+``` pre
+No Disk Stores Found
+```
+
+## list durable-cqs {#topic_66016A698C334F4EBA19B99F51B0204B}
+List durable client CQs associated with the specified durable client id.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list durable-cqs --durable-client-id=value
+ [--members=value(,value)*] [--groups=value(,value)*]
+```
+
+**Parameters, list durable-cqs:**
+
+| Name                                                       | Description                                                                                            |
+|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;durable-client-id </span> | *Required.* The ID used to identify the durable client.                                                |
+| <span class="keyword parmname">&#8209;&#8209;members</span>             | Name or Id of the member(s) for which the durable client is registered and durable CQs will be displayed. |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>              | Group(s) of members for which the durable client is registered and durable CQs will be displayed.         |
+
+
+**Example Commands**:
+
+``` pre
+list durable-cqs --durable-client-id=client1
+```
+
+**Sample Output**:
+
+``` pre
+gfsh>list durable-cqs --durable-client-id=client1
+member  | durable-cq-name
+------- | ---------------
+server3 | cq3
+        | cq1
+        | cq2
+server4 | cq3
+        | cq1
+```
+
+**Error Messages:**
+
+``` pre
+Unable to list durable-cqs for durable-client-id : "client1" due to following reasons.
+
+No client found with client-id : client1
+Occurred on members
+1.server4
+2.server1
+3.server3
+```
+
+## list functions {#topic_DCC7CCBBEF5942B783A8F2A4A5B2FABF}
+Display a list of registered functions. The default is to display functions for all members.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list functions [--matches=value] [--groups=value(,value)*]
+[--members=value(,value)*]
+```
+
+**Parameters, list functions:**
+
+| Name                                             | Description                                                                                                                                                                                     |
+|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;matches </span> | Pattern that the function ID must match in order to be included. Uses Java pattern matching rules, not UNIX. For example, to match any character any number of times use ".\*" rather than "\*". |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>    | Group(s) of members for which functions will be displayed. Use a comma separated list for multiple groups.                                                                                      |
+| <span class="keyword parmname">&#8209;&#8209;members </span>  | Name or ID of the member(s) for which functions will be displayed. Use a comma separated list for multiple members.                                                                             |
+
+
+**Example Commands:**
+
+``` pre
+list functions
+list functions --matches=reconcile.*
+```
+
+**Sample Output:**
+
+``` pre
+gfsh> list functions
+
+   Member   |          Function
+  --------- | --------------------------
+  camelot   | loadDataFromExternalSource
+  camelot   | reconcileWeeklyExpenses
+  excalibur | loadDataFromExternalSource
+  excalibur | reconcileDailyExpenses
+```
+
+Example of `list functions` with a "matches" filter:
+
+``` pre
+gfsh> list functions --matches=reconcile.*
+
+   Member   |        Function
+  --------- | -----------------------
+  camelot   | reconcileWeeklyExpenses
+  excalibur | reconcileDailyExpenses
+```
+
+**Error Messages:**
+
+``` pre
+No Functions Found
+```
+
+## list gateways {#topic_B1D89671C7B74074899C7D52F15849ED}
+Display the gateway senders and receivers for a member or members.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list gateways [--members=value(,value)*] [--groups=value(,value)*] [--senders-only | --receivers-only]
+```
+
+**Parameters, list gateways:**
+
+| Name                                           | Description                                                                                                                    |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Member(s) whose gateways senders and receiver display.                                                                         |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members for which Gateway Senders and Receivers will be displayed. Use a comma separated list for multiple groups. |
+| &#8209;&#8209;senders&#8209;only                                  | List only gateway senders. This parameter cannot be used together with `--receivers-only`                                                                                                     |
+| &#8209;&#8209;receivers&#8209;only                                | List only gateway receivers. This parameter cannot be used together with `--senders-only`.                                                                                                   |
+
+
+**Example Commands:**
+
+``` pre
+list gateways
+list gateways --senders-only
+list gateways --receivers-only
+```
+
+**Sample Output:**
+
+``` pre
+
+gfsh>list gateways
+
+GatewaySender Section
+
+GatewaySender Id |              Member         | Remote Cluster Id |  Type    | Status  | Queued Events | Receiver Location
+---------------- | --------------------------- | ----------------- | -------- | ------- | ------------- | -----------------
+ln               | mymac(ny-1:88641)<v2>:33491 | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)<v3>:29329 | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)<v4>:36808 | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)<v5>:52993 | 2                 | Parallel | Running | 0             | mymac:5324
+
+GatewayReceiver Section
+
+         Member             | Port | Sender Count | Senders Connected
+--------------------------- | ---- | ------------ | -----------------------------------------------------------------------------------------------------------------------
+mymac(ny-1:88641)<v2>:33491 | 5057 | 9            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675","mymac(ln-2:88662)<v3>:12796"]
+mymac(ny-2:88705)<v3>:29329 | 5082 | 4            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-3:88715)<v4>:36808 | 5371 | 4            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-4:88724)<v5>:52993 | 5247 | 3            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+
+```
+
+## list indexes {#topic_B3B51B6DEA484EE086C4F657EC9831F2}
+Display the list of indexes created for all members.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list indexes [--with-stats(=value)?]
+```
+
+**Parameters, list indexes:**
+
+| Name                                               | Description                                            | Default Value |
+|----------------------------------------------------|--------------------------------------------------------|---------------|
+| <span class="keyword parmname">&#8209;&#8209;with-stats</span> | Specifies whether statistics should also be displayed. | false         |
+
+
+**Example Commands:**
+
+``` pre
+list indexes
+list indexes --with-stats
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list indexes
+Member Name    |                   Member ID               | Region Path |   Name   | Type  | Indexed Expression | From Clause
+-------------- | ----------------------------------------- | ----------- | -------- | ----- | ------------------ | -----------
+consumerServer | 192.0.2.0(consumerServer:13873):6317      | /consumers  | cidIdx   | KEY   | id                 | /consumers
+consumerServer | 192.0.2.0(consumerServer:13873):6317      | /consumers  | cnameIdx | RANGE | name               | /consumers
+producerServer | 192.0.2.0(producerServer:13874):19198     | /producers  | pidIdx   | RANGE | id                 | /producers
+```
+
+Example of 'list indexes' with stats printed:
+
+``` pre
+gfsh>list indexes --with-stats
+
+Member Name  | Member ID | Region Path |   Name   | Type  | Indexed Expression | From Clause | Uses | Updates | Update Time | Keys | Values
+------------ | --------- | ----------- | -------- | ----- | ------------------ | ----------- | ---- | ------- | ----------- | ---- | ------
+cs...        | 192...    | /consumers  | cidIdx   | KEY   | id                 | /consumers  | 2512 | 0       | 0           | 5020 | 5020  
+cs...        | 192...    | /consumers  | cnameIdx | RANGE | name               | /consumers  | 0    | 5020    | 421224000   | 0    | 5020
+ps...        | 192...    | /producers  | pidIdx   | RANGE | id                 | /producers  | 0    | 5031    | 497872000   | 5031 | 5031
+```
+
+**Error Messages:**
+
+``` pre
+No Indexes Found
+```
+
+## list jndi-binding {#list_jndi-binding}
+List all JNDI bindings, active and configured.
+An active binding is one that is bound to the server's JNDI context
+and is also listed in the cluster configuration.
+A configured binding is one that is listed in the cluster configuration,
+but may not be active on the servers.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list jndi-binding
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list jndi-binding
+
+Configured JNDI bindings: 
+
+Group Name | JNDI Name | JDBC Driver Class
+---------- | --------- | ------------------------------------
+cluster    | jndi1     | org.apache.derby.jdbc.EmbeddedDriver
+
+Active JNDI bindings found on each member: 
+
+    Member      |        JNDI Name        | JDBC Driver Class
+--------------- | ----------------------- | ----------------------------------------------------
+land-gifted-gun | java:UserTransaction    | org.apache.geode.internal.jta.UserTransactionImpl
+land-gifted-gun | java:TransactionManager | org.apache.geode.internal.jta.TransactionManagerImpl
+```
+
+## list lucene indexes {#list_lucene_indexes}
+Display the list of Lucene indexes created for all members. The optional `--with-stats` qualifier shows activity on the indexes.
+
+See also [create lucene index](create#create_lucene_index), [describe lucene index](describe#describe_lucene_index), [destroy lucene index](destroy#destroy_lucene_index) and [search lucene](search#search_lucene).
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list lucene indexes [--with-stats(=value)]
+```
+
+**Parameters, list lucene indexes:**
+
+| Name                                               | Description                                            | Default Value |
+|----------------------------------------------------|--------------------------------------------------------|---------------|
+| <span class="keyword parmname">&#8209;&#8209;with&#8209;stats</span> | Specifies whether statistics should also be displayed. | false if not specified, true if specified         |
+
+
+**Example Commands:**
+
+``` pre
+list lucene indexes
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list lucene indexes --with-stats
+Index Name | Region Path |     Indexed Fields     | Field Analy.. | Status  | Query Executions | Updates | Commits | Documents
+---------- | ----------- | ---------------------- | ------------- | ------- | ---------------- | ------- | ------- | ---------
+testIndex  | /testRegion | [__REGION_VALUE_FIELD] | {__REGION_V.. | Defined | NA               | NA      | NA      | NA
+
+gfsh>list lucene indexes
+ Index Name   | Region Path |                           Indexed Fields                           | Field Analy.. | Status
+------------- | ----------- | ------------------------------------------------------------------ | ------------- | -----------
+analyzerIndex | /Person     | [revenue, address, name, email]                                    | {revenue=St.. | Initialized
+customerIndex | /Customer   | [symbol, revenue, SSN, name, email, address, __REGION_VALUE_FIELD] | {}            | Initialized
+pageIndex     | /Page       | [id, title, content]                                               | {}            | Initialized
+personIndex   | /Person     | [name, email, address, revenue]                                    | {}            | Initialized
+```
+
+## list members {#topic_5B5BFB2E5F314210858641BE3A689637}
+Display all or a subset of members.
+
+Within the output, the membership coordinator is listed.
+`<vN>` identifies which view the member currently has;
+`N` will be zero or a positive integer.
+`<ec>` indicates which members are eligible to be a membership
+coordinator.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+list members [--group=value]
+```
+
+**Parameters, list members:**
+
+| Name                                          | Description                                     |
+|-----------------------------------------------|-------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;group</span> | Group name for which members will be displayed. |
+
+
+**Example Commands:**
+
+``` pre
+list members
+list members --group=Group1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list members
+  Name       | Id
+------------ | -------------------------------------
+Coordinator: | 192.0.2.0(locator1:216:locator)<ec><v6>:33368
+locator1     | 192.0.2.0(locator1:216:locator)<ec><v6>:33368
+server1      | 192.0.2.0(server1:888)<v7>:10839
+server2      | 192.0.2.0(server2:3260)<v8>:16721
+```
+
+## list regions {#topic_F0ECEFF26086474498598035DD83C588}
+Display regions of a member or members. If no parameter is specified, all regions in the cluster are listed.
+
+**Syntax:**
+
+``` pre
+list regions [--groups=value(,value)*] [--members=value(,value)*]
+```
+
+**Parameters, list regions:**
+
+| Name                                            | Description                                                                 |
+|-------------------------------------------------|-----------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;groups</span>   | Group(s) of members for which regions will be displayed.                       |
+| <span class="keyword parmname">&#8209;&#8209;members </span> | Name or ID of the member(s) for which regions will be displayed. |
+
+
+**Example Commands:**
+
+``` pre
+list regions
+list regions --groups=G1
+list regions --members=member1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>list regions
+List of regions
+---------------
+region1
+region2
+```

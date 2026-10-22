@@ -1,0 +1,35 @@
+---
+title: JMX Manager Operations
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_36C918B4202D45F3AC225FFD23B11D7C}
+Any member can host an embedded JMX Manager, which provides a federated view of all MBeans for the cluster. The member can be configured to be a manager at startup or anytime during its life by invoking the appropriate API calls on the ManagementService.
+
+You need to have a JMX Manager started in your cluster in order to use @@product_name@@ management and monitoring tools such as [gfsh](../../../tools_modules/gfsh/chapter_overview) and [@@product_name@@ Pulse](../../../tools_modules/pulse/pulse-overview).
+
+To create MBeans, a Security Manager must be enabled. See [Enable Security with Property Definitions](../../../security/enable_security) for more information.
+
+**Note:**
+Each node that acts as the JMX Manager has additional memory requirements depending on the number of resources that it is managing and monitoring. Being a JMX Manager can increase the memory footprint of any process, including locator processes. See [Memory Requirements for Cached Data](../../../reference/topics/memory_requirements_for_cache_data#calculating_memory_requirements) for more information on calculating memory overhead on your @@product_name@@ processes.
+
+-   **[Starting a JMX Manager](jmx_manager_operations)**
+
+-   **[Configuring a JMX Manager](jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6)**
+
+-   **[Stopping a JMX Manager](jmx_manager_operations#topic_5B6DF783A14241399DC25C6EE8D0048A)**

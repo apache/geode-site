@@ -1,0 +1,59 @@
+﻿---
+title:  How Persistence and Overflow Work
+sidebar_label: How Persistence and Overflow Work
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+To use @@product_name@@ persistence and overflow, you should understand how they work with your data.
+## {#how_persist_overflow_work__section_jzl_wwb_pr}
+@@product_name@@ persists and overflows several types of data. You can persist or overflow the application data in your regions. In addition, @@product_name@@ persists and overflows messaging queues, to manage memory consumption and provide high availability.
+
+Persistent data outlives the member where the region resides and can be used to initialize the region at creation. Overflow acts only as an extension of the region in memory.
+
+The data is written to disk according to the configuration of @@product_name@@ disk stores. For any disk option, you can specify the name of the disk store to use or use the @@product_name@@ default disk store. See [Disk Storage](../../managing/disk_storage/chapter_overview).
+
+## How Data Is Persisted and Overflowed {#how_persist_overflow_work__section_78F2D1820B6C48859A0E5411CE360105}
+For persistence, the entry keys and values are copied to disk. For overflow, only the entry values are copied. Other data, such as statistics and user attributes, are retained in memory only.
+
+-   Data regions are overflowed to disk by least recently used (LRU) entries because those entries are deemed of least interest to the application and therefore less likely to be accessed.
+-   Server subscription queues overflow most recently used (MRU) entries. These are the messages that are at the end of the queue and so are last in line to be sent to the client.
+
+## Persistence {#how_persist_overflow_work__section_1A3AE288145749058880D98C699FE124}
+Persistence provides a disk backup of region entry data. The keys and values of all entries are saved to disk, like having a replica of the region on disk. Region entry operations such as put and destroy are carried out in memory and on disk.
+
+<img src="/images_svg/developing_persistence.svg" id="how_persist_overflow_work__image_B53E1A5A568D437692247A2FD99348A6" class="image" />
+
+When the member stops for any reason, the region data on disk remains. In partitioned regions, where data buckets are divided among members, this can result in some data only on disk and some on disk and in memory. The disk data can be used at member startup to populate the same region.
+
+## Overflow {#how_persist_overflow_work__section_55A7BBEB48574F649C40EB5D3E9CD0AC}
+Overflow limits region size in memory by moving the values of least recently used (LRU) entries to disk. Overflow basically uses disk as a swap space for entry values. If an entry is requested whose value is only on disk, the value is copied back up into memory, possibly causing the value of a different LRU entry to be moved to disk. As with persisted entries, overflowed entries are maintained on disk just as they are in memory.
+
+In this figure, the value of entry X has been moved to disk to make space in memory. The key for X remains in memory. From the distributed system perspective, the value on disk is as much a part of the region as the data in memory.
+
+<img src="/images_svg/developing_overflow.svg" id="how_persist_overflow_work__image_1F89C9FBACB54EDA844778EC60F61B8D" class="image" />
+
+## Persistence and Overflow Together {#how_persist_overflow_work__section_9CBEBC0B59554DB49CE4941435793C51}
+Used together, persistence and overflow keep all entry keys and values on disk and only the most active entry values in memory. The removal of an entry value from memory due to overflow has no effect on the disk copy as all entries are already on disk.
+
+<img src="/images_svg/developing_persistence_and_overflow.svg" id="how_persist_overflow_work__image_E40D9C2EA238406A991E954477C7EB78" class="image" />
+
+## Persistence and Multi-Site Configurations
+
+Multi-site gateway sender queues overflow most recently used (MRU) entries. These are the messages that are at the end of the queue and so are last in line to be sent to the remote site. You can also configure gateway sender queues to persist for high availability.

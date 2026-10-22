@@ -1,0 +1,167 @@
+﻿---
+title:  Creating Regions Dynamically
+sidebar_label: Creating Regions Dynamically
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You can dynamically create regions in your application code and automatically instantiate them on members of a cluster.
+
+Due to the number of options involved, most developers use functions to create regions dynamically in their applications, as described in this topic. Dynamic regions can also be created from the `gfsh` command line.
+
+For a complete discussion of using @@product_name@@ functions, see [Function Execution](../function_exec/chapter_overview). Functions use the `org.apache.geode.cache.execute.FunctionService` class.
+
+If your application does not require partitioned regions, you can use the `org.apache.geode.cache.DynamicRegionFactory` class to dynamically create regions, or
+you can create them using the `<dynamic-region-factory>` element in the cache.xml file that defines the region.
+(You can create partitioned regions dynamically, but you cannot use the `DynamicRegionFactory` class or the
+`<dynamic-region-factory>` element to do it.)
+
+**Note:** Use of the `DynamicRegionFactory` class (and the `<dynamic-region-factory>` element) are deprecated in favor of the `FunctionService` approach described here.
+
+In the following example, the `CreateRegionFunction` class defines a function invoked on a server by a client using the `onServer()` method of the `FunctionService` class. This function call initiates region creation by putting an entry into the region attributes metadata region. The entry key is the region name and the value is the set of region attributes used to create the region.
+
+``` pre
+#CreateRegionFunction.java
+
+import org.apache.geode.cache.Cache;
+import org.apache.geode.cache.DataPolicy;
+import org.apache.geode.cache.Declarable;
+import org.apache.geode.cache.Region;
+import org.apache.geode.cache.RegionFactory;
+import org.apache.geode.cache.Scope;
+
+import org.apache.geode.cache.configuration.RegionConfig;
+
+import org.apache.geode.cache.execute.Function;
+import org.apache.geode.cache.execute.FunctionContext;
+
+import java.util.Properties;
+
+public class CreateRegionFunction implements Function<RegionConfig>, Declarable {
+
+  private Region<String,RegionConfig> regionAttributesMetadataRegion;
+
+  private static final String REGION_ATTRIBUTES_METADATA_REGION = 
+                                                     "_regionAttributesMetadata";
+  
+  public enum Status {SUCCESSFUL, UNSUCCESSFUL, ALREADY_EXISTS}
+
+  public void execute(FunctionContext<RegionConfig> context) {
+    RegionConfig regionConfig = context.getArguments();
+
+    // Create or retrieve region
+    Status status = createOrRetrieveRegion(context.getCache(), regionConfig);
+
+    // Return status
+    context.getResultSender().lastResult(status);
+  }
+
+  private Status createOrRetrieveRegion(Cache cache, RegionConfig regionConfig) {
+    Status status = Status.SUCCESSFUL;
+    String regionName = regionConfig.getName();
+    Region<Object, Object> region = cache.getRegion(regionName);
+    if (region == null) {
+      // Put the attributes into the metadata region. The afterCreate call
+      // creates the region.
+      this.regionAttributesMetadataRegion.put(regionName, regionConfig);
+      
+      // Retrieve the region after creating it
+      region = cache.getRegion(regionName);
+      if (region == null) {
+        status = Status.UNSUCCESSFUL;
+      }
+    } else {
+      status = Status.ALREADY_EXISTS;
+    }
+    return status;
+  }
+  
+  private void initializeRegionAttributesMetadataRegion(Cache cache) {
+    this.regionAttributesMetadataRegion = 
+                              cache.getRegion(REGION_ATTRIBUTES_METADATA_REGION);
+    if (this.regionAttributesMetadataRegion == null) {
+      RegionFactory<String, RegionConfig> factory = cache.createRegionFactory();
+      factory.setDataPolicy(DataPolicy.REPLICATE);
+      factory.setScope(Scope.DISTRIBUTED_ACK);
+      factory.addCacheListener(new CreateRegionCacheListener());
+      this.regionAttributesMetadataRegion = 
+                               factory.create(REGION_ATTRIBUTES_METADATA_REGION);
+    }
+  }
+
+  public String getId() {
+    return getClass().getSimpleName();
+  }
+
+  public void initialize(Cache cache, Properties properties) {
+    initializeRegionAttributesMetadataRegion(cache);
+  }
+}
+```
+
+The `CreateRegionCacheListener` class is a cache listener that implements two methods, `afterCreate()` and `afterRegionCreate()`. The `afterCreate()` method creates the region. The `afterRegionCreate()` method causes each new server to create all the regions defined in the metadata region.
+
+``` pre
+#CreateRegionCacheListener.java
+
+import org.apache.geode.cache.Cache;
+import org.apache.geode.cache.Declarable;
+import org.apache.geode.cache.EntryEvent;
+import org.apache.geode.cache.Region;
+import org.apache.geode.cache.RegionEvent;
+import org.apache.geode.cache.RegionExistsException;
+
+import org.apache.geode.cache.configuration.RegionConfig;
+
+import org.apache.geode.cache.util.CacheListenerAdapter;
+
+import java.util.Map;
+
+public class CreateRegionCacheListener extends CacheListenerAdapter<String,RegionConfig> implements Declarable {
+
+  public void afterCreate(EntryEvent<String,RegionConfig> event) {
+    createRegion(event.getRegion().getCache(), event.getKey(), event.getNewValue());
+  }
+
+  public void afterRegionCreate(RegionEvent<String,RegionConfig> event) {
+    Cache cache = event.getRegion().getCache();
+    Region<String,RegionConfig> region = event.getRegion();
+    for (Map.Entry<String,RegionConfig> entry : region.entrySet()) {
+      createRegion(cache, entry.getKey(), entry.getValue());
+    }
+  }
+
+  private void createRegion(Cache cache, String regionName, RegionConfig regionConfig) {
+    if (cache.getLogger().fineEnabled()) {
+      cache.getLogger().fine("CreateRegionCacheListener creating region named=" + regionName + "; config: " + regionConfig);
+    }
+    Region<Object, Object> region = cache.getRegion(regionConfig.getName());
+    if (region == null) {
+      try {
+        region = cache.createRegionFactory(regionConfig.getType()).create(regionConfig.getName());
+        cache.getLogger().info("CreateRegionCacheListener created region=" + region);
+      } catch (RegionExistsException e) {
+        cache.getLogger().info("CreateRegionCacheListener region already exists region=" + region);
+      }
+    } else {
+      cache.getLogger().info("CreateRegionCacheListener region already exists region=" + region);
+    }
+  }
+}
+```

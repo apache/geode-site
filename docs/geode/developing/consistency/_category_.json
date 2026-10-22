@@ -1,0 +1,8 @@
+{
+  "label": "Consistency for Region Updates",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "region_entry_versions"
+  }
+}

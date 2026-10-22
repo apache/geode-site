@@ -1,0 +1,63 @@
+﻿---
+title:  remove
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Remove an entry from a region.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+remove --region=value [--key=value] [--all(=value)?] [--key-class=value]
+```
+## {#concept_D452C829146D434CB5069126D93944FD__table_lx4_ybg_2w}
+| Name                                               | Description                                                                 | Default Value                                   |
+|----------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;key</span>        | String or JSON text that will be used to create a key to retrieve a value . |                                                 |
+| <span class="keyword parmname">&#8209;&#8209;key&#8209;class </span> | Fully qualified class name of the key's type.                               | key constraint for the current region or String |
+| <span class="keyword parmname">&#8209;&#8209;region</span>     | *Required.* Region from which to remove the entry.                          |                                                 |
+| <span class="keyword parmname">&#8209;&#8209;all</span>        | A boolean value that, when true, clears the region by removing all entries. This option is not available for partitioned regions.  | false                                           |
+
+**Example Commands:**
+
+``` pre
+gfsh>remove --region=/region1 --key=('id': '133abg134')
+gfsh>remove --region=/region1 --key=('id': '133abg134') --key-class=data.ProfileKey 
+gfsh>remove --region=/region1 --all=true
+```
+
+**Error Messages:**
+
+``` pre
+"Region name is either empty or Null"
+
+"Key is either empty or Null"
+
+"Value is either empty or Null"
+
+"Region <{0}> not found in any of the members"
+
+"Region <{0}> Not Found"
+
+"Key is not present in the region"
+
+"Option --all is not supported on partitioned region"
+```

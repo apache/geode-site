@@ -1,0 +1,30 @@
+﻿---
+title:  Configuring High Availability for Partitioned Regions
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+By default, @@product_name_long@@ stores only a single copy of your partitioned region data among the region's data stores. You can configure @@product_name@@ to maintain redundant copies of your partitioned region data for high availability.
+
+-   **[Understanding High Availability for Partitioned Regions](how_pr_ha_works)**
+
+    With high availability, each member that hosts data for the partitioned region gets some primary copies and some redundant (secondary) copies.
+
+-   **[Configure High Availability for a Partitioned Region](configuring_ha_for_pr)**
+
+    Configure in-memory high availability for your partitioned region. Set other high-availability options, like redundancy zones and redundancy recovery strategies.

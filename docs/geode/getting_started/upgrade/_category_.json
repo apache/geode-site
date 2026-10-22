@@ -1,0 +1,8 @@
+{
+  "label": "Upgrading Apache Geode",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "getting_started/upgrade/upgrade_overview"
+  }
+}

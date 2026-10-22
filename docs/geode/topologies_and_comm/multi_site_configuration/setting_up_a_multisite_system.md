@@ -1,0 +1,434 @@
+﻿---
+title:  Configuring a Multi-site (WAN) System
+sidebar_label: Configuring a Multi-site (WAN) System
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Plan and configure your multi-site topology, and configure the regions that will be shared between systems.
+
+## Prerequisites {#setting_up_a_multisite_system__section_5DF2D8D199364E6C8B7F83382A134B5E}
+Before you start, you should understand how to configure membership and communication in peer-to-peer systems using locators. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system) and [Configuring Peer Communication](../p2p_configuration/setting_up_peer_communication).
+
+WAN deployments increase the messaging demands on a @@product_name@@ system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for @@product_name@@ members that participate in a WAN deployment. See [Configuring Sockets in Multi-Site (WAN) Deployments](../../managing/monitor_tune/sockets_and_gateways) and [Making Sure You Have Enough Sockets](../../managing/monitor_tune/socket_communication_have_enough_sockets).
+
+## Main Steps {#setting_up_a_multisite_system__section_86F9FE9D786D407FB438C56E43FC5DB1}
+Use the following steps to configure a multi-site system:
+
+1.  Plan the topology of your multi-site system. See [Multi-site (WAN) Topologies](multisite_topologies#multisite_topologies) for a description of different multi-site topologies.
+2.  Configure membership and communication for each cluster in your multi-site system. You must use locators for peer discovery in a WAN configuration. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system). Start each cluster using a unique `distributed-system-id` and identify remote clusters using `remote-locators`. For example:
+
+    ``` pre
+    mcast-port=0
+    locators=<locator1-address>[<port1>],<locator2-address>[<port2>]
+    distributed-system-id=1
+    remote-locators=<remote-locator-addr1>[<port1>],<remote-locator-addr2>[<port2>]
+    ```
+
+3.  Configure the gateway senders that you will use to distribute region events to remote systems. See [Configure Gateway Senders](setting_up_a_multisite_system#setting_up_a_multisite_system__section_1500299A8F9A4C2385680E337F5D3DEC).
+4.  Create the data regions that you want to participate in the multi-site system, specifying the gateway sender(s) that each region should use for WAN distribution. Configure the same regions in the target clusters to apply the distributed events. See [Create Data Regions for Multi-site Communication](setting_up_a_multisite_system#setting_up_a_multisite_system__section_E1DEDD0743D54831AFFBCCDC750F8879).
+5.  Configure gateway receivers in each @@product_name@@ cluster that will receive region events from another cluster. See [Configure Gateway Receivers](setting_up_a_multisite_system#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B).
+6.  Start cluster member processes in the correct order (locators first, followed by data nodes) to ensure efficient discovery of WAN resources. See [Starting Up and Shutting Down Your System](../../configuring/running/starting_up_shutting_down).
+7.  (Optional.) Deploy custom conflict resolvers to handle resolve potential conflicts that are detected when applying events from over a WAN. See [Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts#topic_E97BB68748F14987916CD1A50E4B4542).
+8.  (Optional.) Deploy WAN filters to determine which events are distributed over the WAN, or to modify events as they are distributed over the WAN. See [Filtering Events for Multi-Site (WAN) Distribution](../../developing/events/filtering_multisite_events#topic_E97BB68748F14987916CD1A50E4B4542).
+9.  (Optional.) Configure persistence, conflation, and/or dispatcher threads for gateway sender queues using the instructions in [Configuring Multi-Site (WAN) Event Queues](../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
+
+## Configure Gateway Senders {#setting_up_a_multisite_system__section_1500299A8F9A4C2385680E337F5D3DEC}
+Each gateway sender configuration includes:
+
+-   A unique ID for the gateway sender configuration.
+-   The distributed system ID of the remote site to which the sender propagates region events.
+-   A property that specifies whether the gateway sender is a serial gateway sender or a parallel gateway sender.
+-   Optional properties that configure the gateway sender queue. These queue properties determine features such the amount of memory used by the queue, whether the queue is persisted to disk, and how one or more gateway sender threads dispatch events from the queue.
+
+**Note:**
+To configure a gateway sender that uses gfsh to create the cache.xml configurations described below, as well as other options, see [create gateway-sender](../../tools_modules/gfsh/command-pages/create#topic_hg2_bjz_ck).
+
+See [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3) for more information about individual configuration properties.
+
+1.  For each @@product_name@@ system, choose the members that will host a gateway sender configuration and distribute region events to remote sites:
+    -   You must deploy a parallel gateway sender configuration on each @@product_name@@ member that hosts a region that uses the sender. Regions using the same parallel gateway sender ID must be colocated.
+    -   You may choose to deploy a serial gateway sender configuration on one or more @@product_name@@ members in order to provide high availability. However, only one instance of a given serial gateway sender configuration distributes region events at any given time.
+
+2.  Configure each gateway sender on a @@product_name@@ member using gfsh, `cache.xml` or Java API:
+    -   **gfsh configuration command**
+
+        ``` pre
+        gfsh>create gateway-sender --id="sender2" --parallel=true --remote-distributed-system-id="2"
+
+        gfsh>create gateway-sender --id="sender3" --parallel=true --remote-distributed-system-id="3"
+        ```
+    -   **cache.xml configuration**
+
+        These example `cache.xml` entries configure two parallel gateway senders to distribute region events to two remote @@product_name@@ clusters (clusters "2" and "3"):
+
+        ``` pre
+        <cache>
+          <gateway-sender id="sender2" parallel="true" 
+           remote-distributed-system-id="2"/> 
+          <gateway-sender id="sender3" parallel="true" 
+           remote-distributed-system-id="3"/> 
+           ... 
+        </cache>
+        ```
+    -   **Java configuration**
+
+        This example code shows how to configure a parallel gateway sender using the API:
+
+        ``` pre
+        // Create or obtain the cache
+        Cache cache = new CacheFactory().create();
+
+        // Configure and create the gateway sender
+        GatewaySenderFactory gateway = cache.createGatewaySenderFactory();
+        gateway.setParallel(true);
+        GatewaySender sender = gateway.create("sender2", "2");
+        sender.start();
+        ```
+
+3.  Depending on your applications, you may need to configure additional features in each gateway sender. Things you need to consider are:
+    -   The maximum amount of memory each gateway sender queue can use. When the queue exceeds the configured amount of memory, the contents of the queue overflow to disk. For example:
+
+        ``` pre
+        gfsh>create gateway-sender --id=sender2 --parallel=true --remote-distributed-system-id=2 --maximum-queue-memory=150
+        ```
+
+        In cache.xml:
+
+        ``` pre
+        <gateway-sender id="sender2" parallel="true"
+         remote-distributed-system-id="2" 
+         maximum-queue-memory="150"/> 
+        ```
+    -   Whether to enable disk persistence, and whether to use a named disk store for persistence or for overflowing queue events. See [Persisting an Event Queue](../../developing/events/configuring_highly_available_gateway_queues#configuring_highly_available_gateway_queues). For example:
+
+        ``` pre
+        gfsh>create gateway-sender --id=sender2 --parallel=true --remote-distributed-system-id=2 \
+        --maximum-queue-memory=150 --enable-persistence=true --disk-store-name=cluster2Store
+        ```
+
+        In cache.xml:
+
+        ``` pre
+        <gateway-sender id="sender2" parallel="true"
+         remote-distributed-system-id="2" 
+         enable-persistence="true" disk-store-name="cluster2Store"
+         maximum-queue-memory="150"/> 
+        ```
+    -   The number of dispatcher threads to use for processing events from each each gateway queue. The `dispatcher-threads` attribute of the gateway sender specifies the number of threads that process the queue (default of 5). For example:
+
+        ``` pre
+        gfsh>create gateway-sender --id=sender2 --parallel=true --remote-distributed-system-id=2 \
+        --dispatcher-threads=2 --order-policy=partition
+        ```
+
+        In cache.xml:
+
+        ``` pre
+        <gateway-sender id="sender2" parallel="false"
+         remote-distributed-system-id="2" 
+         dispatcher-threads="2" order-policy="partition"/>
+        ```
+
+        **Note:**
+        When multiple dispatcher threads are configured for a serial queue, each thread operates on its own copy of the gateway sender queue. Queue configuration attributes such as `maximum-queue-memory` are repeated for each dispatcher thread that you configure.
+
+        See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85).
+    -   For serial gateway senders (parallel=false) that use multiple `dispatcher-threads`, also configure the ordering policy to use for dispatching the events. See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85).
+    -   Determine whether you should conflate events in the queue. See [Conflating Events in a Queue](../../developing/events/conflate_multisite_gateway_queue#conflate_multisite_gateway_queue).
+
+
+**Note:**
+The gateway sender configuration for a specific sender `id` must be identical on each @@product_name@@ member that hosts the gateway sender.
+
+## Create Data Regions for Multi-site Communication {#setting_up_a_multisite_system__section_E1DEDD0743D54831AFFBCCDC750F8879}
+When using a multi-site configuration, you choose which data regions to share between sites. Because of the high cost of distributing data between disparate geographical locations, not all changes are passed between sites. 
+
+
+**Note these important restrictions on the regions:**
+
+- Replicated regions cannot use a parallel gateway sender. Use a serial gateway sender instead.
+
+- In addition to configuring regions with gateway senders to distribute events, you must configure the same regions in the target clusters to apply the distributed events. The region name in the receiving cluster must exactly match the region name in the sending cluster.
+
+- Regions using the same parallel gateway sender ID must be colocated.
+
+- If any gateway sender configured for the region has the `group-transaction-events` flag set to true, then the regions involved in transactions must all have the same gateway senders configured with this flag set to true. This requires careful configuration of regions with gateway senders according to the transactions expected in the system.
+
+    **Example**:
+    Assuming the following scenario:
+
+    - Gateway-senders:
+
+      - sender1: group-transaction-events=true
+      - sender2: group-transaction-events=true
+      - sender3: group-transaction-events=true
+      - sender4: group-transaction-events=false
+
+    - Regions:
+
+      - region1: gateway-sender-ids=sender1,sender2,sender4<br />
+          type: partition<br />
+          colocated-with: region2,region3
+      - region2: gateway-sender-ids=sender1,sender2<br />
+          type: partition<br />
+          colocated with: region1,region3
+      - region3: gateway-sender-ids=sender3<br />
+          type: partition<br />
+          colocated with: region1,region2
+      - region4: gateway-sender-ids=sender4<br />
+          type: replicated
+
+    - Events for the same transaction will be guaranteed to be sent in the same batch depending on the events involved in the transaction:
+
+      - For transactions containing events for region1 and region2, it will be guaranteed that events for those transactions will be delivered in the same batch by sender1 and sender2.
+      - For transactions containing events for region1, region2 and region3, it will NOT be guaranteed that events for those transactions will be delivered in the same batch .
+      - For transactions containing events for region3, it will be guaranteed that events for those transactions will be delivered in the same batch.
+      - For transactions containing events for region4, it will NOT be guaranteed that events for those transactions will be delivered in the same batch.
+
+After you define gateway senders, configure regions to use the gateway senders to distribute region events.
+
+-   **gfsh Configuration**
+
+    ``` pre
+    gfsh>create region --name=customer --gateway-sender-id=sender2,sender3
+    ```
+
+    or to modify an existing region:
+
+    ``` pre
+    gfsh>alter region --name=customer --gateway-sender-id=sender2,sender3
+    ```
+
+-   **cache.xml Configuration**
+
+    Use the `gateway-sender-ids` region attribute to add gateway senders to a region. To assign multiple gateway senders, use a comma-separated list. For example:
+
+    ``` pre
+    <region-attributes gateway-sender-ids="sender2,sender3">
+    </region-attributes>
+    ```
+
+-   **Java API Configuration**
+
+    This example shows adding two gateway senders (configured in the earlier example) to a partitioned region:
+
+    ``` pre
+    RegionFactory rf = 
+      cache.createRegionFactory(RegionShortcut.PARTITION);
+    rf.addCacheListener(new LoggingCacheListener());
+    rf.addGatewaySenderId("sender2");
+    rf.addGatewaySenderId("sender3");
+    custRegion = rf.create("customer");
+    ```
+
+    **Note:**
+    When using the Java API, you must configure a parallel gateway sender *before* you add its id to a region. This ensures that the sender distributes region events that were persisted before new cache operations take place. If the gateway sender id does not exist when you add it to a region, you receive an `IllegalStateException`.
+
+## Configure Gateway Receivers {#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B}
+Always configure a gateway receiver in each @@product_name@@ cluster that will receive and apply region events from another cluster.
+
+A gateway receiver configuration can be applied to multiple @@product_name@@ servers for load balancing and high availability. However, each @@product_name@@ member that hosts a gateway receiver must also define all of the regions for which the receiver may receive an event. If a gateway receiver receives an event for a region that the local member does not define, @@product_name@@ throws an exception. See [Create Data Regions for Multi-site Communication](setting_up_a_multisite_system#setting_up_a_multisite_system__section_E1DEDD0743D54831AFFBCCDC750F8879).
+
+**Note:**
+You can only host one gateway receiver per member.
+
+A gateway receiver configuration specifies a range of possible port numbers on which to listen. The @@product_name@@ server picks an unused port number from the specified range to use for the receiver process. You can use this functionality to easily deploy the same gateway receiver configuration to multiple members.
+
+You can optionally configure gateway receivers to provide a specific IP address or host name for gateway sender connections. If you configure hostname-for-senders, locators will use the provided host name or IP address when instructing gateway senders on how to connect to gateway receivers. If you provide "" or null as the value, by default the gateway receiver's bind-address will be sent to clients.
+
+In addition, you can configure gateway receivers to start automatically or, by setting `manual-start` to true, to require a manual start. 
+By default, gateway receivers start automatically.
+
+**Note:**
+To configure a gateway receiver, you can use gfsh, cache.xml or Java API configurations as described below. For more information on configuring gateway receivers in gfsh, see [create gateway-receiver](../../tools_modules/gfsh/command-pages/create#topic_a4x_pb1_dk).
+
+-   **gfsh configuration command**
+
+    ``` pre
+    gfsh>create gateway-receiver --start-port=1530 --end-port=1551 \
+        --hostname-for-senders=gateway1.mycompany.com
+    ```
+
+-   **cache.xml Configuration**
+
+    The following configuration defines a gateway receiver that listens on an unused port in the range from 1530 to 1550:
+
+    ``` pre
+    <cache>
+      <gateway-receiver start-port="1530" end-port="1551"
+                        hostname-for-senders="gateway1.mycompany.com" /> 
+       ... 
+    </cache>
+    ```
+
+-   **Java API Configuration**
+
+    ``` pre
+    // Create or obtain the cache
+    Cache cache = new CacheFactory().create();
+
+    // Configure and create the gateway receiver
+    GatewayReceiverFactory gateway = cache.createGatewayReceiverFactory();
+    gateway.setStartPort(1530);
+    gateway.setEndPort(1551);
+    gateway.setHostnameForSenders("gateway1.mycompany.com");
+    GatewayReceiver receiver = gateway.create();
+    ```
+
+    **Note:**
+    When using the Java API, you must create any region that might receive events from a remote site before you create the gateway receiver. Otherwise, batches of events could arrive from remote sites before the regions for those events have been created. If this occurs, the local site will throw exceptions because the receiving region does not yet exist. If you define regions in `cache.xml`, the correct startup order is handled automatically.
+
+After starting new gateway receivers, you can execute the [load-balance gateway-sender](../../tools_modules/gfsh/command-pages/load-balance) command in `gfsh` so that a specific gateway sender will be able to rebalance its connections and connect new remote gateway receivers. Invoking this command redistributes gateway sender connections more evenly among all the gateway receivers.
+
+Another option is to use the `GatewaySender.rebalance` Java API.
+
+As an example, assume the following scenario:
+
+1.  Create 1 receiver in site NY.
+2.  Create 4 senders in site LN.
+3.  Create 3 additional receivers in NY.
+
+You can then execute the following in gfsh to see the effects of rebalancing:
+
+``` pre
+gfsh -e "connect --locator=localhost[10331]" -e "list gateways"
+...
+(2) Executing - list gateways
+
+GatewaySender Section
+
+GatewaySender Id |              Member               | Remote Cluster Id |   Type   | Status  | Queued Events | Receiver Location
+---------------- | --------------------------------- | ----------------- | -------- | ------- | ------------- | -----------------
+ln               | mymac(ny-1:88641)<v2>:33491       | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)<v3>:29329       | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)<v4>:36808       | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)<v5>:52993       | 2                 | Parallel | Running | 0             | mymac:5324
+
+GatewayReceiver Section
+
+             Member               | Port | Sender Count | Senders Connected
+--------------------------------- | ---- | ------------ | --------------------------------------------------------------------------
+mymac(ny-1:88641)<v2>:33491       | 5057 | 24           | ["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-2:88662)<v3>:12796","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-2:88705)<v3>:29329       | 5082 | 0            | []
+mymac(ny-3:88715)<v4>:36808       | 5371 | 0            | []
+mymac(ny-4:88724)<v5>:52993       | 5247 | 0            | []
+```
+
+Execute the load-balance command:
+
+``` pre
+gfsh -e "connect --locator=localhost[10441]" -e "load-balance gateway-sender --id=ny"...
+
+(2) Executing - load-balance gateway-sender --id=ny
+
+             Member               | Result | Message
+--------------------------------- | ------ |--------------------------------------------------------------------------
+mymac(ln-1:88651)<v2>:48277       | OK     | GatewaySender ny is rebalanced on member mymac(ln-1:88651)<v2>:48277
+mymac(ln-4:88681)<v5>:42784       | OK     | GatewaySender ny is rebalanced on member mymac(ln-4:88681)<v5>:42784
+mymac(ln-3:88672)<v4>:43675       | OK     | GatewaySender ny is rebalanced on member mymac(ln-3:88672)<v4>:43675
+mymac(ln-2:88662)<v3>:12796       | OK     | GatewaySender ny is rebalanced on member mymac(ln-2:88662)<v3>:12796
+```
+
+Listing gateways in ny again shows the connections are spread much better among the receivers.
+
+``` pre
+gfsh -e "connect --locator=localhost[10331]" -e "list gateways"...
+
+(2) Executing - list gateways
+
+GatewaySender Section
+
+GatewaySender Id |              Member               | Remote Cluster Id |  Type    | Status  | Queued Events | Receiver Location
+---------------- | --------------------------------- |  ---------------- | -------- | ------- | ------------- | -----------------
+ln               | mymac(ny-1:88641)<v2>:33491       | 2                 | Parallel | Running | 0             | mymac:5037
+ln               | mymac(ny-2:88705)<v3>:29329       | 2                 | Parallel | Running | 0             | mymac:5064
+ln               | mymac(ny-3:88715)<v4>:36808       | 2                 | Parallel | Running | 0             | mymac:5132
+ln               | mymac(ny-4:88724)<v5>:52993       | 2                 | Parallel | Running | 0             | mymac:5324
+
+GatewayReceiver Section
+
+         Member                   | Port | Sender Count | Senders Connected
+--------------------------------- | ---- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------
+mymac(ny-1:88641)<v2>:33491       | 5057 | 9            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675","mymac(ln-2:88662)<v3>:12796"]
+mymac(ny-2:88705)<v3>:29329       | 5082 | 4            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-3:88715)<v4>:36808       | 5371 | 4            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-4:88724)<v5>:52993       | 5247 | 3            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-3:88672)<v4>:43675"]
+```
+
+Running the load balance command in site ln again produces even better balance.
+
+``` pre
+         Member                   | Port | Sender Count | Senders Connected
+--------------------------------- | ---- | ------------ |-------------------------------------------------------------------------------------------------------------------------------------------------
+mymac(ny-1:88641)<v2>:33491       | 5057 | 7            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-2:88662)<v3>:12796","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-2:88705)<v3>:29329       | 5082 | 3            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-3:88672)<v4>:43675","mymac(ln-2:88662)<v3>:12796"]
+mymac(ny-3:88715)<v4>:36808       | 5371 | 5            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-2:88662)<v3>:12796","mymac(ln-3:88672)<v4>:43675"]
+mymac(ny-4:88724)<v5>:52993       | 5247 | 6            |["mymac(ln-1:88651)<v2>:48277","mymac(ln-4:88681)<v5>:42784","mymac(ln-2:88662)<v3>:12796","mymac(ln-3:88672)<v4>:43675"]
+```
+
+## Configuring One IP Address and Port to Access All Gateway Receivers in a Site {#setting_up_a_multisite_system_one_ipaddr}
+You may have a WAN deployment in which you do not want to expose the IP address and port of every gateway receiver to other sites, but instead expose just one IP address and port for all gateway receivers. This way, the internal topology of the site is hidden to other sites. This case is quite common in cloud deployments, in which a reverse proxy/load balancer distributes incoming requests to the site (in this case, replication requests) among the available servers (in this case, gateway receivers).
+
+@@product_name@@ supports this configuration by means of a particular use of the `hostname-for-senders`, `start-port` and `end-port` parameters of the gateway receiver.
+
+In order to configure a WAN deployment that hides the gateway receivers behind the same IP address and port,
+
+- All the gateway receivers must have the same value for the `hostname-for-senders` parameter (the hostname or IP address to be used by clients to access them)
+- All gateway receivers must have the same value in the `start-port` and `end-port` parameters (the ports to be used by clients to access them).
+
+The following example shows a deployment in which all gateway receivers of a site are accessed via the "gateway1.mycompany.com" hostname and port "1971"; every gateway receiver in the site must be configured as follows:
+
+``` pre
+gfsh> create gateway-receiver --hostname-for-senders="gateway1.mycompany.com" --start-port=1971 --end-port=1971
+```
+
+The following output shows how the receiver side would look like after this configuration if four gateway receivers were configured:
+
+``` pre
+Cluster-ny gfsh>list gateways
+GatewayReceiver Section
+
+                    Member        | Port | Sender Count | Senders Connected
+----------------------------------| ---- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------
+192.168.1.20(ny1:21901)<v1>:41000 | 1971 | 1            | 192.168.0.13(ln4:22520)<v4>:41005
+192.168.2.20(ny2:22150)<v2>:41000 | 1971 | 2            | 192.168.0.13(ln2:22004)<v2>:41003, 192.168.0.13(ln3:22252)<v3>:41004
+192.168.3.20(ny3:22371)<v3>:41000 | 1971 | 2            | 192.168.0.13(ln3:22252)<v3>:41004, 192.168.0.13(ln2:22004)<v2>:41003
+192.168.4.20(ny4:22615)<v4>:41000 | 1971 | 3            | 192.168.0.13(ln4:22520)<v4>:41005, 192.168.0.13(ln1:21755)<v1>:41002, 192.168.0.13(ln1:21755)<v1>:41002
+```
+
+When the gateway senders on one site are started, they get the information about the gateway receivers of the remote site from the locator(s) running on the remote site. The remote locator provides a list of gateway receivers to send replication events to (one element per gateway receiver running in the site), with all of them listening on the same hostname and port. From the gateway sender's standpoint, it is as if only one gateway receiver is on the other side.
+
+The following output shows the gateways information at the sender side, in which it can be seen that there is only one IP address/hostname and port for the receiver location (gateway1.mycompany.com:1971), while the reality is that there are four gateway receivers on the other side.
+
+``` pre
+Cluster-ln gfsh>list gateways
+GatewaySender Section
+
+GatewaySender Id |                    Member         | Remote Cluster Id |   Type   |        Status         | Queued Events | Receiver Location
+---------------- | ----------------------------------| ----------------- | -------- | --------------------- | ------------- | ---------------------------
+ny               | 192.168.0.13(ln2:22004)<v2>:41003 | 2                 | Parallel | Running and Connected | 0             | gateway1.mycompany.com:1971
+ny               | 192.168.0.13(ln3:22252)<v3>:41004 | 2                 | Parallel | Running and Connected | 0             | gateway1.mycompany.com:1971
+ny               | 192.168.0.13(ln4:22520)<v4>:41005 | 2                 | Parallel | Running and Connected | 0             | gateway1.mycompany.com:1971
+ny               | 192.168.0.13(ln1:21755)<v1>:41002 | 2                 | Parallel | Running and Connected | 0             | gateway1.mycompany.com:1971
+
+```
+
+
+In order for the gateway senders to communicate with the remote gateway receivers, a reverse proxy/load balancer service must be in place in the deployment in order to receive the requests directed to the gateway receivers on the IP address and port configured, and to forward the requests to one of the gateway receivers on the remote site.

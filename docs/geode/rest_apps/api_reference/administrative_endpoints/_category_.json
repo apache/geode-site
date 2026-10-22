@@ -1,0 +1,8 @@
+{
+  "label": "Administrative Endpoints",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "rest_admin"
+  }
+}

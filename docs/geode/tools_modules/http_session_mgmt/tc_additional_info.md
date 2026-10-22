@@ -1,0 +1,55 @@
+---
+title:  General Information on HTTP Session Management
+sidebar_label: General Information on HTTP Session Management
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section provides information on sticky load balancers, session expiration, additional @@product_name@@ property changes, serialization and more.
+
+## Sticky Load Balancers {#tc_additional_info__section_78F53B3F4301466EA0E5DF277CF33A71}
+Typically, session replication will be used in conjunction with a load balancer enabled for sticky sessions. 
+Sessions should be unique across application servers. With Tomcat, this can be accomplished by setting a JVM route (`JVMRoute=value`). Refer to [SpringSource ERS](http://static.springsource.com/projects/ers/4.0/getting-started/htmlsingle/getting-started.html)
+as a possible [load balancing](http://static.springsource.com/projects/ers/4.0/getting-started/htmlsingle/getting-started.html#load-balancing) solution.
+
+## Session Expiration {#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4}
+To set the session expiration value, you must change the `session-timeout` value specified in your application server's `WEB-INF/web.xml` file. 
+This value will override the @@product_name@@ inactive interval, which is specified in Tomcat, for example, by `maxInactiveInterval` within `context.xml`.
+
+When a session expires, it gets removed from the application server and from all @@product_name@@ servers when running in client-server mode.
+
+## Making Additional @@product_name@@ Property Changes {#tc_additional_info__section_5CE5FF6F55DB462E8B2A336A0AF7515E}
+If you want to change additional @@product_name@@ property values, refer to instructions on manually changing property values as specified in the @@product_name@@ module documentation for Tomcat ([Changing the Default @@product_name@@ Configuration in the Tomcat Module](tomcat_changing_gf_default_cfg#tomcat_changing_gf_default_cfg)) and Application Servers ([Changing the Default @@product_name@@ Configuration in the AppServers Module](weblogic_changing_gf_default_cfg#weblogic_changing_gf_default_cfg)).
+
+## Module Version Information {#tc_additional_info__section_0013BDC875A44344B7B062F46AFA073C}
+To acquire @@product_name@@ module version information, look in the web server's log file for a message similar to:
+
+``` pre
+INFO: Initializing @@product_name@@ Modules
+Java version:   1.0.0 user1 041216 2016-11-12 11:18:37 -0700
+          javac @@min_java_version@@.0.@@min_java_update@@
+Native version: native code unavailable
+Source revision: 857bb75916640a066eb832b43b3c805f0dd7ed0b
+Source repository: develop
+Running on: /192.0.2.0, 8 cpu(s), x86_64 Mac OS X 10.11.4
+```
+
+## Object Serialization
+
+Objects managed by the HTTP Session Management Module must be serializable since the session's objects are serialized before being stored in the region.

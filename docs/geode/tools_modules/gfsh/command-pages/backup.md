@@ -1,0 +1,89 @@
+﻿---
+title:  backup disk-store
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_E74ED23CB60342538B2175C326E7D758}
+Back up persistent data from all members to the specified directory.
+
+The specified directory must exist on all members, but it can be a local directory on each machine. This command ensures that backup files are not corrupted by concurrent operations. Backing up a running system using the operating system copy command is not recommended.
+
+You can also use this command to perform an incremental backup. See [Creating Backups for System Recovery and Operational Management](../../../managing/disk_storage/backup_restore_disk_store#backup_restore_disk_store) for more information on incremental backup.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+backup disk-store --dir=value [--baseline-dir=value] [--include-disk-stores=value(,value)*]
+```
+## {#topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6}
+<table>
+<caption><span class="tablecap">Table 1. Backup Disk-Store Parameters</span></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="keyword parmname">&#8209;&#8209;dir</span></td>
+<td><em>Required.</em> Directory to which backup files are written.</td>
+</tr>
+<tr>
+<td><span class="keyword parmname">&#8209;&#8209;baseline-dir</span></td>
+<td>Directory that contains the baseline backup used for comparison during an incremental backup.
+<p>An incremental backup operation backs up any data that is not present in the directory specified in <span class="keyword parmname">&#8209;&#8209;baseline-dir</span>. If the member cannot find previously backed up data or if the previously backed up data is corrupt, the command performs a full backup on that member.</p></td>
+</tr>
+<tr>
+<td><span class="keyword parmname">&#8209;&#8209;include-disk-stores</span></td>
+<td>List of disk-stores to include in backup.
+<p>Selective backup of disk-stores listed in <span class="keyword parmname">&#8209;&#8209;include-disk-stores</span>. The specified disk-stores must exist in the system. If this parameter is not specified, all disk-stores are included in the backup.</p></td>
+</tr>
+</tbody>
+</table>
+
+<span class="tablecap">Table 1. Backup Disk-Store Parameters</span>
+
+**Example Commands:**
+
+``` pre
+backup disk-store --dir=data/backups
+
+backup disk-store --dir=data/backup/disk-store --baselineDir=data/backups/2012-09-24-17-08-50
+
+backup disk-store --dir=data/backups --include-disk-stores=data
+
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>backup disk-store --dir=data/backups
+The following disk stores were backed up successfully
+
+Member  |                 UUID                 |              Directory               | Host
+------- | ------------------------------------ | ------------------------------------ | ---------------
+server2 | a6bb11f0-0baa-45c9-b23e-64876d02a586 | c:\PivotalGemFire70\Latest\server2\. | 192.0.2.0
+server1 | 8dc365bd-c086-4af4-99d0-86b0b521aa04 | c:\PivotalGemFire70\Latest\server1\. | 192.0.2.0
+```

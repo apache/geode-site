@@ -1,0 +1,366 @@
+﻿---
+title:  System Failure and Recovery
+sidebar_label: System Failure and Recovery
+sidebar_position: 3
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section describes alerts for and appropriate responses to various kinds of system failures. It also helps you plan a strategy for data recovery.
+
+If a system member withdraws from the cluster involuntarily because the member, host, or network fails, the other members automatically adapt to the loss and continue to operate. The cluster does not experience any disturbance such as timeouts.
+
+## Planning for Data Recovery {#sys_failure__section_846B00118184487FB8F1E0CD1DC3A81B}
+In planning a strategy for data recovery, consider these factors:
+
+-   Whether the region is configured for data redundancy—partitioned regions only.
+-   The region’s role-loss policy configuration, which controls how the region behaves after a crash or system failure—distributed regions only.
+-   Whether the region is configured for persistence to disk.
+-   Whether the region is configured for LRU-based eviction.
+-   The extent of the failure, whether multiple members or a network outage is involved.
+-   Your application’s specific needs, such as the difficulty of replacing the data and the risk of running with inconsistent data for your application.
+-   When an alert is generated due to network partition or slow response, indicating that certain processes may, or will, fail.
+
+The rest of this section provides recovery instructions for various kinds system failures.
+
+## Network Partitioning, Slow Response, and Member Removal Alerts {#sys_failure__section_2C390F0783724048A6E12F7F369EB8DC}
+When a network partition detection or slow responses occur, these alerts are generated:
+
+-   Network Partitioning is Detected
+-   Member is Taking Too Long to Respond
+-   No Locators Can Be Found
+-   Warning Notifications Before Removal
+-   Member is Forced Out
+
+For information on configuring system members to help avoid a network partition configuration condition in the presence of a network failure or when members lose the ability to communicate to each other, refer to [Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
+
+### Network Partitioning Detected {#sys_failure__section_D52D902E665F4F038DA4B8298E3F8681}
+Alert:
+
+``` pre
+Membership coordinator id has declared that a network partition has occurred.
+```
+
+Description:
+
+This alert is issued when network partitioning occurs, followed by this alert on the individual member:
+
+Alert:
+
+``` pre
+Exiting due to possible network partition event due to loss of {0} cache processes: {1}
+```
+
+Response:
+
+Check the network connectivity and health of the listed cache processes.
+
+### Member Taking Too Long to Respond {#sys_failure__section_2C5E8A37733D4B31A12F22B9155796FD}
+Alert:
+
+``` pre
+15 sec have elapsed while waiting for replies: <ReplyProcessor21 6 waiting for 1 replies 
+from [ent(27130):60333/36743]> on ent(27134):60330/45855 whose current membership 
+list is: [[ent(27134):60330/45855, ent(27130):60333/36743]]
+```
+
+Description:
+
+Member ent(27130):60333/36743 is in danger of being forced out of the cluster because of a suspect-verification failure. This alert is issued at the warning level, after the ack-wait-threshold is reached.
+
+Response:
+
+The operator should examine the process to see if it is healthy. The process ID of the slow responder is 27130 on the machine named ent. The ports of the slow responder are 60333/36743. Look for the string, Starting distribution manager ent:60333/36743, and examine the process owning the log file containing this string.
+
+Alert:
+
+``` pre
+30 sec have elapsed while waiting for replies: <ReplyProcessor21 6 waiting for 1 replies 
+from [ent(27130):60333/36743]> on ent(27134):60330/45855 whose current membership 
+list is: [[ent(27134):60330/45855, ent(27130):60333/36743]]
+```
+
+Description:
+
+Member ent(27134) is in danger of being forced out of the cluster because of a suspect-verification failure. This alert is issued at the severe level, after the ack-wait-threshold is reached and after ack-severe-alert-threshold seconds have elapsed.
+
+Response:
+
+The operator should examine the process to see if it is healthy. The process ID of the slow responder is 27134 on the machine named ent. The ports of the slow responder are 60333/36743. Look for the string, Starting distribution manager ent:60333/36743, and examine the process owning the log file containing this string.
+
+Alert:
+
+``` pre
+15 sec have elapsed while waiting for replies: <DLockRequestProcessor 33636 waiting 
+for 1 replies from [ent(4592):33593/35174]> on ent(4592):33593/35174 whose current 
+membership list is: [[ent(4598):33610/37013, ent(4611):33599/60008, 
+ent(4592):33593/35174, ent(4600):33612/33183, ent(4593):33601/53393, ent(4605):33605/41831]]
+```
+
+Description:
+
+This alert is issued by partitioned regions and regions with global scope at the warning level, when the lock grantor has not responded to a lock request within the ack-wait-threshold and the ack-severe-alert-threshold.
+
+Response:
+
+None.
+
+Alert:
+
+``` pre
+30 sec have elapsed while waiting for replies: <DLockRequestProcessor 23604 waiting 
+for 1 replies from [ent(4592):33593/35174]> on ent(4598):33610/37013 whose current 
+membership list is: [[ent(4598):33610/37013, ent(4611):33599/60008, 
+ent(4592):33593/35174, ent(4600):33612/33183, ent(4593):33601/53393, ent(4605):33605/41831]]
+```
+
+Description:
+
+This alert is issued by partitioned regions and regions with global scope at the severe level, when the lock grantor has not responded to a lock request within the ack-wait-threshold and the ack-severe-alert-threshold.
+
+Response:
+
+None.
+
+Alert:
+
+``` pre
+30 sec have elapsed waiting for global region entry lock held by ent(4600):33612/33183
+```
+
+Description
+
+This alert is issued by regions with global scope at the severe level, when the lock holder has held the desired lock for ack-wait-threshold + ack-severe-alert-threshold seconds and may be unresponsive.
+
+Response:
+
+None.
+
+Alert:
+
+``` pre
+30 sec have elapsed waiting for partitioned region lock held by ent(4600):33612/33183
+```
+
+Description:
+
+This alert is issued by partitioned regions at the severe level, when the lock holder has held the desired lock for ack-wait-threshold + ack-severe-alert-threshold seconds and may be unresponsive.
+
+Response:
+
+None.
+
+### No Locators Can Be Found {#sys_failure__section_AF4F913C244044E7A541D89EC6BCB961}
+**Note:**
+It is likely that all processes using the locators will exit with the same message.
+
+Alert:
+
+``` pre
+Membership service failure: Channel closed: org.apache.geode.ForcedDisconnectException: 
+There are no processes eligible to be group membership coordinator 
+(last coordinator left view)
+```
+
+Description:
+
+Network partition detection is enabled, and there are locator problems.
+
+Response:
+
+The operator should examine the locator processes and logs, and restart the locators.
+
+Alert:
+
+``` pre
+Membership service failure: Channel closed: org.apache.geode.ForcedDisconnectException: 
+There are no processes eligible to be group membership coordinator 
+(all eligible coordinators are suspect)
+```
+
+Description:
+
+Network partition detection is enabled, and there are locator problems.
+
+Response:
+
+The operator should examine the locator processes and logs, and restart the locators.
+
+Alert:
+
+``` pre
+Membership service failure: Channel closed: org.apache.geode.ForcedDisconnectException: 
+Unable to contact any locators and network partition detection is enabled
+```
+
+Description:
+
+Network partition detection is enabled, and there are locator problems.
+
+Response:
+
+The operator should examine the locator processes and logs, and restart the locators.
+
+Alert:
+
+``` pre
+Membership service failure: Channel closed: org.apache.geode.ForcedDisconnectException: 
+Disconnected as a slow-receiver
+```
+
+Description:
+
+The member was not able to process messages fast enough and was forcibly disconnected by another process.
+
+Response:
+
+The operator should examine and restart the disconnected process.
+
+### Warning Notifications Before Removal {#sys_failure__section_77BDB0886A944F87BDA4C5408D9C2FC4}
+Alert:
+
+``` pre
+Membership: requesting removal of ent(10344):21344/24922 Disconnected as a slow-receiver
+```
+
+Description:
+
+This alert is generated only if the slow-receiver functionality is being used.
+
+Response:
+
+The operator should examine the locator processes and logs.
+
+Alert:
+
+``` pre
+Network partition detection is enabled and both membership coordinator and lead member 
+are on the same machine
+```
+
+Description:
+
+This alert is issued if both the membership coordinator and the lead member are on the same machine.
+
+Response:
+
+The operator can turn this off by setting the system property gemfire.disable-same-machine-warnings to true. However, it is best to run locator processes, which act as membership coordinators when network partition detection is enabled, on separate machines from cache processes.
+
+### Member Is Forced Out {#sys_failure__section_E777C6EC8DEC4FE692AC5863C4420238}
+Alert:
+
+``` pre
+Membership service failure: Channel closed: org.apache.geode.ForcedDisconnectException: 
+This member has been forced out of the Distributed System. Please consult GemFire logs to 
+find the reason.
+```
+
+Description:
+
+The process discovered that it was not in the cluster and cannot determine why it was
+removed. The membership coordinator removed the member after it failed to respond to an internal 
+are-you-alive message.
+
+Response:
+
+The operator should examine the locator processes and logs.
+
+### Disk Access Exceptions {#sys_failure__section_disk_access_exceptions}
+Alert:
+
+``` pre
+A DiskAccessException has occurred while writing to the disk for region <region-name>.
+The cache will be closed.  For Region: <region-name>: Failed writing key
+to <disk-store-name>
+```
+
+or
+
+``` pre
+A DiskAccessException has occurred while writing to the disk for region <region-name>.
+The cache will be closed.
+For DiskStore: <disk-store-name>: Could not schedule asynchronous write because
+the flusher thread had been terminated
+```
+
+Description:
+
+A write was prevented by an underlying disk issue, such as a full disk.
+
+The first alert form is reported when disk writes are synchronous (`disk-synchronous=true`),
+and the second form is reported when disk writes are asynchronous (`disk-synchronous=false`).
+
+In either case, the member shuts down when an operation attempts to update the disk store.
+
+Response:
+
+You must address the underlying disk issue and restart the server.
+See [Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors) for suggestions.
+
+
+## How Data is Recovered From Persistent Regions {#sys_failure__section_how_data_is_recovered}
+A persistent region is one whose contents (keys and values) can be restored from disk.  Upon
+restart, data recovery of a persistent region always recovers keys.  Under the default behavior, the
+region is regarded as ready for use when the keys have been recovered.
+
+The default behavior for restoring values depends on whether the region was configured with an LRU-based eviction algorithm:
+
+- If the region **was not** configured for LRU-based eviction, the values are loaded asynchronously
+  on a separate thread. The assumption here is that all of the stored values will fit into the space
+  allocated for the region.
+
+- If the region **was** configured for LRU-based eviction, the values are not loaded. Each value
+  will be retrieved only when requested. The assumption here is that the values resident in the
+  region plus any evicted values might exceed the space allocated for the region, possibly resulting
+  in an `OutOfMemoryException` during recovery. **Note:** Recovered values do not contain usage 
+  history&mdash;LRU history is reset at recovery time.
+
+This default behavior works well under most circumstances. For special cases, three Java system
+properties allow the developer to modify the recovery behavior for persistent regions:
+
+- `gemfire.disk.recoverValues`
+
+  Default = `true`, recover values for non-LRU regions. Enables the possibility of recovering values for LRU regions (with the setting of an additional property).
+  If `false`, recover only keys, do not recover values. The `false` setting disallows value recovery for LRU regions as well as non-LRU regions.
+
+  *How used:* When `true`, recovery of the values "warms up" the cache so data retrievals will find
+  their values in the cache, without causing time consuming disk accesses. When `false`, shortens
+  recovery time so the system becomes available for use sooner, but the first retrieval on each key
+  will require a disk read.
+
+- `gemfire.disk.recoverLruValues`
+
+  Default = `false`, do not recover values for a region configured with LRU-based eviction.
+  If `true`, recover all of the LRU region's values.
+  **Note:** `gemfire.disk.recoverValues` must also be `true` for this property to take effect.
+
+  *How used:* When `false`, shortens recovery time for an LRU-configured region by not loading
+  values. When `true`, restores data values to the cache. As stated above, LRU history is not
+  recoverable, and recovering values for a region configured with LRU-based eviction incurs some
+  risk of exceeding allocated memory.
+
+- `gemfire.disk.recoverValuesSync`
+
+  Default = `false`, recover values by an asynchronous background process. If `true`, values are
+  recovered synchronously, and recovery is not complete until all values have been retrieved. 
+  **Note:** `gemfire.disk.recoverValues` must also be `true` for this property to take effect.
+
+  *How used:* When `false`, allows the system to become available sooner, but some time must elapse
+  before all values have been read from disk into cache memory. Some key retrievals will require disk access, and some will not.
+  When `true`, prolongs restart time, but ensures that when available for use, the cache is fully
+  populated and data retrieval times will be optimal.

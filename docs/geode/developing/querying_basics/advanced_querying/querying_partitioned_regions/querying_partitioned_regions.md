@@ -1,0 +1,40 @@
+---
+title:  Querying Partitioned Regions
+sidebar_label: Querying Partitioned Regions
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name@@ allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a @@product_name@@ node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
+## {#querying_partitioned_regions__section_4C603563DEDC4303818FB8F894470457}
+The following list summarizes the querying functionality supported by @@product_name@@ for partitioned regions:
+
+-   **Ability to target specific nodes in a query**. If you know that a specific bucket contains the data that you want to query, you can use a function to ensure that your query only runs the specific node that holds the data. This can greatly improve query efficiency. The ability to query data on a specific node is only available if you are using functions and if the function is executed on one single region. In order to do this, you need to use `Query.execute(RegionFunctionContext context)`. See the [Java API](/org/apache/geode/cache/query/Query) and [Querying a Partitioned Region on a Single Node](../query_additional/query_on_a_single_node#concept_30B18A6507534993BD55C2C9E0544A97) for more details.
+-   **Ability to optimize partitioned region query performance using key indexes**. You can improve query performance on data that is partitioned by key or a field value by creating a key index and then executing the query using use `Query.execute(RegionFunctionContext context)` with the key or field value used as filter. See the [Java API](/org/apache/geode/cache/query/Query) and [Optimizing Queries on Data Partitioned by a Key or Field Value](../query_additional/partitioned_region_key_or_field_value#concept_3010014DFBC9479783B2B45982014454) for more details.
+-   **Ability to perform equi-join queries between partitioned regions and between partitioned regions and replicated regions**. Join queries between partitioned region and between partitioned regions and replicated regions are supported through the function service. In order to perform equi-join operations on partitioned regions or partitioned regions and replicated regions, the partitioned regions must be colocated, and you need to use the need to use `Query.execute(RegionFunctionContext context)`. See the [Java API](/org/apache/geode/cache/query/Query) and [Performing an Equi-Join Query on Partitioned Regions](../partitioned_regions/join_query_partitioned_regions#concept_B930D276F49541F282A2CFE639F107DD) for more details.
+
+-   **[Using ORDER BY on Partitioned Regions](../query_additional/order_by_on_partitioned_regions)**
+
+-   **[Querying a Partitioned Region on a Single Node](../query_additional/query_on_a_single_node)**
+
+-   **[Optimizing Queries on Data Partitioned by a Key or Field Value](../query_additional/partitioned_region_key_or_field_value)**
+
+-   **[Performing an Equi-Join Query on Partitioned Regions](../partitioned_regions/join_query_partitioned_regions)**
+
+-   **[Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions)**

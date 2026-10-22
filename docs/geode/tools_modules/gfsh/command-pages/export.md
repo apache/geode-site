@@ -1,0 +1,295 @@
+﻿---
+title: export
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#concept_B8A3E21674294C65AE9F9A60F37A284E}
+Export configurations, data, logs and stack-traces.
+
+-   **[export cluster-configuration](#topic_mdv_jgz_ck)**
+
+    Export a cluster configuration ZIP file that contains the `cache.xml` files, `gemfire.properties` files, and application JAR files needed to configure and operate a cluster.
+
+-   **[export config](#topic_C7C69306F93743459E65D46537F4A1EE)**
+
+    Export configuration properties for a member or members.
+
+-   **[export data](#topic_263B70069BFC4A7185F86B3272011734)**
+
+    Export user data from a region to a file.
+
+-   **[export logs](#topic_B80978CC659244AE91E2B8CE56EBDFE3)**
+
+    Export logs to a given directory.
+
+-   **[export offline-disk-store](#topic_sjg_bvt_gq)**
+
+    Export region data from an offline disk store into gemfire snapshot files.
+
+-   **[export stack-traces](#topic_195D27B8B2B64A4E84CF2256636D54BD)**
+
+    Export the stack trace for a member or members.
+
+## export cluster-configuration {#topic_mdv_jgz_ck}
+Exports a single XML file or a ZIP file with cluster configuration that contains the `cache.xml` files, `gemfire.properties` files, and application JAR files needed to configure and operate a cluster.
+
+When neither a file name nor a ZIP file name is specified,
+the cluster configuration is written to standard output.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+See [Overview of the Cluster Configuration Service](../../../configuring/gfsh_persist#concept_r22_hyw_bl).
+
+**Syntax:**
+
+``` pre
+export cluster-configuration [--group(=value)?] [--xml-file=value]
+ [--zip-file-name=value]
+```
+
+**Export Cluster-Configuration Parameters:**
+
+| Name                                                  | Description                                                                          | Default Value     |
+|-------------------------------------------------------|--------------------------------------------------------------------------------------|-------------------|
+| <span class="keyword parmname">&#8209;&#8209;group</span> | Export the configuration for the specified server group. When no group is specified, use the default `cluster` group. | Â                  |
+| <span class="keyword parmname">&#8209;&#8209;xml-file</span> | Filename to contain the exported cluster configuration. May also include an absolute or relative path. Only specify one of `--xml-file` or `--zip-file-name`. | Â                  |
+| <span class="keyword parmname">&#8209;&#8209;zip-file-name</span> | Filename of the ZIP file to contain the exported cluster configuration. May also include an absolute or relative path. Only specify one of `--xml-file` or `--zip-file-name`.| Â                  |
+
+**Example Commands:**
+
+``` pre
+gfsh>export cluster-configuration --zip-file-name=/group/shared-configs/devClusterConfig.zip
+gfsh>export cluster-configuration --zip-file-name=my-configs/myClusterConfig.zip
+gfsh>export cluster-configuration --zip-file-name=myClusterConfig.zip
+gfsh>export cluster-configuration --xml-file=Cluster3Config.xml
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>export cluster-configuration --zip-file-name=mySharedConfig.zip
+Downloading cluster configuration : /home/username/gemfire/mySharedConfig.zip
+```
+
+## export config {#topic_C7C69306F93743459E65D46537F4A1EE}
+Export configuration properties for a member or members.
+
+If you do not specify any parameters, all member configurations will be exported.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+export config [--members=value(,value)*] [--groups=value(,value)*]
+[--dir=value]
+```
+
+**Export Config Parameters:**
+
+| Name                                           | Description                                                          |
+|------------------------------------------------|----------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name/Id of the member(s) whose configuration will be exported.       |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members whose configuration will be exported.            |
+| <span class="keyword parmname">&#8209;&#8209;dir</span>    | Directory to which the exported configuration files will be written. |
+
+**Example Commands:**
+
+``` pre
+export config
+export config --members=member1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>export config --members=member1
+Downloading Cache XML file: c:\PivotalGemFire\Latest\.\member1-cache.xml
+Downloading properties file: c:\PivotalGemFire\Latest\.\member1-gf.properties
+```
+
+## export data {#topic_263B70069BFC4A7185F86B3272011734}
+
+Export user data from a region to a file or files.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+To export data from any region, replicated or partitioned, sequentially to a single file, use the `--file` option:
+
+``` pre
+export data --region=value --member=value --file=value
+```
+
+In this scenario, data from replicated and partitioned regions is exported sequentially to a single file on the specified member.
+
+In the case of partitioned regions, you can speed up the export process by using the `--parallel` option:
+
+``` pre
+export data  --parallel --region=value --member=value --dir=value
+```
+
+In this scenario, partitioned region data is exported simultaneously on all hosting nodes to directories local to those respective nodes.
+
+- Parallel export applies only to partitioned regions.
+
+- The `--file` and `--dir` options are mutually exclusive; `--file` can be used only for serial export, `--dir` can be used for both serial and parallel exports.
+
+**Export Data Parameters:**
+
+| Name                                           | Description                                                                                                                                     |
+|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;region</span> | *Required.* Region from which data is to be exported.                                                                                           |
+| <span class="keyword parmname">&#8209;&#8209;member</span> | *Required.* Name/Id of a member that hosts the region. In a serial export, all data is exported to the specified file on the host where the member is running. In a parallel export, data from a partitioned region partially hosted on this member is exported for each partition to files on the nodes that host those partitions. |
+| <span class="keyword parmname">&#8209;&#8209;file</span>   | File to which the exported data is to be written. The file must have an extension of `.gfd`. Cannot be specified at the same time as &#8209;&#8209;dir, cannot be used with &#8209;&#8209;parallel.|
+| <span class="keyword parmname">&#8209;&#8209;dir</span>   | Directory to which the exported data is to be written. Required if &#8209;&#8209;parallel is true. Cannot be specified at the same time as &#8209;&#8209;file.|
+| <span class="keyword parmname">&#8209;&#8209;parallel</span>   | Export local data on each node to a directory on that machine. Available for partitioned regions only.  |
+
+**Example Commands:**
+
+``` pre
+export data --region=region2 --file=region2_20121001.gfd --member=server2
+```
+
+**Sample Output:**
+
+``` pre
+ gfsh>export data --region=region2 --file=region2_20121001.gfd --member=server1
+Data succesfully exported from region : region2 to file : C:\PivotalGemFire\
+Latest\server1\region2_20121001.gfd on host : 192.0.2.0
+```
+
+## export logs {#topic_B80978CC659244AE91E2B8CE56EBDFE3}
+Export logs to a given directory.
+
+All files that have logs in the specified time range will be exported. If no time range is specified, all logs will be exported.
+
+The `--dir` parameter specifies a local directory to which log files will be written. This is used only when you are exporting logs using an http connection. If executed over http, the zip archive will be saved in the specified directory on the user's client machine. If not specified, logs are written to the location specified by the `user.dir` system property. When the command is executed over JMX, logs will be saved as `exportedLogs_xxx.zip` in the connected locator's working directory.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+export logs [--dir=value] [--groups=value(,value)*] [--members=value(,value)*] 
+[--log-level=value] [--only-log-level=value] [--merge-log=value] 
+[--start-time=value] [--end-time=value] [logs-only(=value)?] 
+[--stats-only(=value)?] [--file-size-limit(=value)?]
+```
+
+**Export Logs Parameters:**
+
+| Name                                                   | Description                                                                                                                | Default Value |
+|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| <span class="keyword parmname">&#8209;&#8209;dir</span>            | Local directory to which log files will be written when logs are exported using an http connection. Ignored when the command is executed over JMX.     | Â              | 
+| <span class="keyword parmname">&#8209;&#8209;groups</span>          | Group(s) of members whose log files will be exported.                                                                         | Â              |
+| <span class="keyword parmname">&#8209;&#8209;members</span>         | Name/ID of the member(s) whose log files will be exported.                                                            | Â              |
+| <span class="keyword parmname">&#8209;&#8209;log-level</span>      | Minimum level of log entries to export. Valid values are: `OFF`, `FATAL`, `ERROR`, `WARN`, `INFO`, `DEBUG`, `TRACE`, and `ALL`. | `INFO`        |
+| <span class="keyword parmname">&#8209;&#8209;only-log-level</span> | Whether to only include only entries that exactly match the <span class="keyword parmname">&#8209;&#8209;log-level</span> specified.  | false         |
+| <span class="keyword parmname">&#8209;&#8209;merge&#8209;log</span>      | Whether to merge logs after exporting to the target directory (deprecated).                                                             | false         |
+| <span class="keyword parmname">&#8209;&#8209;start-time</span>     | Log entries that occurred after this time will be exported. Format: `yyyy/MM/dd/HH/mm/ss/SSS/z` OR `yyyy/MM/dd`. When using the `yyyy/MM/dd/HH/mm/ss/SSS/z` format, the time zone, denoted `z`, should be specified as either a 3-letter time zone such as `PST` or as an offset to GMT/UTC such as `GMT+08:00`.                | no limit      |
+| <span class="keyword parmname">&#8209;&#8209;end-time</span>       | Log entries that occurred before this time will be exported. Format: `yyyy/MM/dd/HH/mm/ss/SSS/z` OR `yyyy/MM/dd`. When using the `yyyy/MM/dd/HH/mm/ss/SSS/z` format, the time zone, denoted `z`, should be specified as either a 3-letter time zone such as `PST` or as an offset to GMT/UTC such as `GMT+08:00`. An end time specified by only a date implements a time of `00:00`. This exports logs written up until `23:59:59.999` on the date prior to the one specified.             | no limit      |
+| <span class="keyword parmname">&#8209;&#8209;logs-only</span>       | Whether to export only logs (not statistics)               | If parameter not specified: false. If parameter specified without a value: true      |
+| <span class="keyword parmname">&#8209;&#8209;stats-only</span>       | Whether to export only statistics (not logs)               | If parameter not specified: false. If parameter specified without a value: true      |
+| <span class="keyword parmname">&#8209;&#8209;file-size-limit</span>       | Limits total unzipped size of the exported files. Specify 0 (zero) for no limit. Value is in megabytes by default or [k,m,g,t] may be specified.              | If parameter not specified: 100m. If parameter specified without a value: 0      |
+
+**Example commands, showing output:**
+
+``` pre
+gfsh>export logs --dir=data/logs
+Logs exported to the connected member's file system: /my-locator/data/logs/exportedLogs_1489513007261.zip
+```
+
+``` pre
+gfsh>export logs --start-time=2020/12/14/12/00/00/000/GMT-08:00 --end-time=2020/12/27 --dir=data/logs
+Start time parsed as 2020-12-14T12:00 PST
+End time parsed as 2020-12-27T00:00 PST
+Logs exported to the connected member's file system: /my-locator/data/logs/exportedLogs_1608165308676.zip
+```
+
+``` pre
+gfsh>export logs --dir=data/logs --file-size-limit=1k
+Estimated exported logs expanded file size = 95599, file-size-limit = 1024.
+To disable exported logs file size check use option "--file-size-limit=0".
+
+gfsh>export logs --dir=data/logs --file-size-limit=99k
+Logs exported to the connected member's file system: /my-locator/data/logs/exportedLogs_1489513007261.zip
+```
+
+
+## export offline-disk-store {#topic_sjg_bvt_gq}
+Export region data from an offline disk store into gemfire snapshot files.
+
+**Availability:** Online or offline.
+
+**Syntax:**
+
+``` pre
+export offline-disk-store --name=value --disk-dirs=value(,value)* --dir=value
+```
+
+**Export Offline-Disk-Store Parameters:**
+
+| Name                                              | Description                                        |
+|---------------------------------------------------|----------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>      | *Required.* Name of the disk store to be exported. |
+| <span class="keyword parmname">&#8209;&#8209;disk-dirs</span> | Directories which contain the disk store files.    |
+| <span class="keyword parmname">&#8209;&#8209;dir</span>       | Directory to export the snapshot files to.         |
+
+**Example Commands:**
+
+``` pre
+ export offline-disk-store --name= DiskStore1 \
+--disk-dirs=/home/username/gemfire/mydiskStore1Dir --dir=/home/username/gemfire/export
+```
+
+## export stack-traces {#topic_195D27B8B2B64A4E84CF2256636D54BD}
+Export the stack trace for one or more cluster members (locators and servers).
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+export stack-traces [--members=value(,value)*] [--groups=value(,value)*]
+[--file=value] [--abort-if-file-exists(=value)?]
+```
+
+**Export Stack-Traces Parameters:**
+
+| Name                                           | Description                                                     |
+|------------------------------------------------|-----------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name or ID of the member(s) whose stack traces will be exported.      |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members whose stack traces will be exported.          |
+| <span class="keyword parmname">&#8209;&#8209;file</span>    | File name to which the stack traces will be written. When not specified, the file name will be the string "stacktrace_" followed by the current time in milliseconds. |
+| <span class="keyword parmname">&#8209;&#8209;abort-if-file-exists</span>   | When true, abort the command if the file already exists in the locator's directory. If this option is not specified, the default value is false. |
+
+**Example Commands:**
+
+``` pre
+export stack-traces --file=stack.txt --abort-if-file-exists=true
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>export stack-traces
+stack-trace(s) exported to file: /data/stacktrace_1612316330340
+On host : cluster-locator-0.cluster-locator.system.svc.cluster.local
+```

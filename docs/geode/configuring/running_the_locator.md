@@ -1,0 +1,244 @@
+---
+title: Running Geode Locator Processes
+sidebar_label: Running Geode Locator Processes
+sidebar_position: 10
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+The locator is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use.
+## {#running_the_locator__section_E9C98E8756524552BEA9B0CA49A2069E}
+You can run locators as peer locators, server locators, or both:
+
+-   Peer locators give joining members connection information to members already running in the locator's cluster.
+-   Server locators give clients connection information to servers running in the locator's cluster. Server locators also monitor server load and send clients to the least-loaded servers.
+
+By default, locators run as peer and server locators.
+
+You can run the locator standalone or embedded within another @@product_name@@ process. Running your locators standalone provides the highest reliability and availability of the locator service as a whole.
+
+## Locator Configuration and Log Files {#running_the_locator__section_0733348268AF4D5F8851B999A6A36C53}
+Locator configuration and log files have the following properties:
+
+-   When you start a standalone locator using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone locator using the `LocatorLauncher` API, you must specify this JAR file inside the command used to launch the locator process. For more information on CLASSPATH settings in @@product_name@@, see [Setting Up the CLASSPATH](../getting_started/setup_classpath). You can modify the CLASSPATH by specifying the `--classpath` parameter.
+-   Locators are members of the cluster just like any other member. In terms of `mcast-port` and `locators` configuration, a locator should be configured in the same manner as a server. Therefore, if there are two other locators in the cluster, each locator should reference the other locators (just like a server member would). For example:
+
+    ``` pre
+    gfsh> start locator --name=locator1 --port=9009 --mcast-port=0 \
+    --locators='host1[9001],host2[9003]'
+    ```
+
+-   You can configure locators within the `gemfire.properties` file or by specifying start-up parameters on the command line. If you are specifying the locator's configuration in a properties file, locators require the same `gemfire.properties` settings as other members of the cluster and the same `gfsecurity.properties` settings if you are using a separate, restricted access security settings file.
+
+    For example, to configure both locators and a multicast port in `gemfire.properties:`
+
+    ``` pre
+    locators=host1[9001],host2[9003]
+    mcast-port=0
+    ```
+
+-   There is no cache configuration specific to locators.
+-   For logging output, the locator creates a log file in its current working directory. Log file output defaults to `locator_name.log` in the locator's working directory. If you restart a locator with a previously used locator name, the existing *locator\_name*.log file is automatically renamed for you (for example, `locator1-01-01.log` or `locator1-02-01.log`). You can modify the level of logging details in this file by specifying a level in the `--log-level` argument when starting up the locator.
+-   By default, a locator will start in a subdirectory (named after the locator) under the directory where `gfsh` is executed. This subdirectory is considered the current working directory. You can also specify a different working directory when starting the locator in `gfsh`.
+-   By default, a locator that has been shutdown and disconnected due to a network partition event or member unresponsiveness will restart itself and automatically try to reconnect to the existing cluster. When a locator is in the reconnecting state, it provides no discovery services for the cluster. See [Handling Forced Cache Disconnection Using Autoreconnect](../../managing/member-reconnect) for more details.
+
+## Locators and the Cluster Configuration Service {#running_the_locator__section_wst_ykb_rr}
+Locators use the cluster configuration service to save configurations that apply to all cluster members, or to members of a specified group. The configurations are saved in the Locator's directory and are propagated to all locators in a cluster. When you start servers using `gfsh`, the servers receive the group-level and cluster-level configurations from the locators.
+
+See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist).
+
+## Start the Locator {#running_the_locator__section_FF25228E30624E04ACA8784A2183D585}
+Use the following guidelines to start the locator:
+
+-   **Standalone locator**. Start a standalone locator in one of these ways:
+    -   Use the `gfsh` command-line utility. See [`gfsh`](../../tools_modules/gfsh/chapter_overview) for more information on using `gfsh`. For example:
+
+        ``` pre
+        gfsh>start locator --name=locator1
+
+        gfsh> start locator --name=locator2 --bind-address=192.0.2.0 --port=13489
+        ```
+
+    -   Start the locator using the `main` method in the `org.apache.geode.distributed.LocatorLauncher` class and the Java executable. Specifically, you use the `LocatorLauncher` class API to run an embedded Locator service in Java application processes that you have created. The directory where you execute the java command becomes the working directory for the locator process.
+
+    -   When starting up multiple locators, do not start them up in parallel (in other words, simultaneously). As a best practice, you should wait approximately 30 seconds for the first locator to complete startup before starting any other locators. To check the successful startup of a locator, check for locator log files. To view the uptime of a running locator, you can use the `gfsh status locator` command.
+
+-   **Embedded (colocated) locator**. Manage a colocated locator at member startup or through the APIs:
+    -   Use the `gemfire.properties` `start-locator` setting to start the locator automatically inside your @@product_name@@ member. See the [Reference](../../reference/book_intro#reference). The locator stops automatically when the member exits. The property has the following syntax:
+
+        ``` pre
+        #gemfire.properties
+        start-locator=[address]port[,server={true|false},peer={true|false}]
+        ```
+
+        Example:
+
+        ``` pre
+        #gemfire.properties
+        start-locator=13489
+        ```
+
+    -   Use `org.apache.geode.distributed.LocatorLauncher` API to start the locator inside your code. Use the `LocatorLauncher.Builder` class to construct an instance of the `LocatorLauncher`, and then use the `start()` method to start a Locator service embedded in your Java application process. The other methods in the `LocatorLauncher` class provide status information about the locator and allow you to stop the locator.
+
+        ``` pre
+        import org.apache.geode.distributed.LocatorLauncher;
+
+         public class MyEmbeddedLocator {
+
+            public static void main(String[] args){
+                LocatorLauncher locatorLauncher  = new LocatorLauncher.Builder()
+                  .setMemberName("locator1")
+                  .setPort(13489)
+                  .build();
+
+                  locatorLauncher.start();
+
+                  System.out.println("Locator successfully started");
+                }
+            }
+        ```
+
+        Here's another example that embeds the locator within an application, starts it and then checks the status of the locator before allowing other members to access it:
+
+        ``` pre
+        package example;
+
+        import ...
+
+        class MyApplication implements Runnable {
+
+          private final LocatorLauncher locatorLauncher;
+
+          public MyApplication(final String... args) {
+            validateArgs(args);
+
+            locatorLauncher = new LocatorLauncher.Builder()
+              .setMemberName(args[0])
+              .setPort(Integer.parseInt(args[1])
+              .setRedirectOutput(true)
+              .build();
+          }
+
+          protected void args(final String[] args) {
+            ...
+          }
+
+          public void run() {
+            ...
+
+            // start the Locator in-process
+            locatorLauncher.start();
+
+            // wait for Locator to start and be ready to accept member (client) connections
+            locatorLauncher.waitOnStatusResponse(30, 5, TimeUnit.SECONDS);
+
+            ...
+          }
+
+          public static void main(final String... args) {
+            new MyApplication(args).run();
+          }
+
+        }
+        ```
+
+        Then to execute the application, you would run:
+
+        ``` pre
+        /working/directory/of/MyApplication$ java \
+         -server -classpath "path/to/installation/lib/geode-dependencies.jar:/path/to/application/classes.jar" \
+         example.MyApplication Locator1 11235
+        ```
+
+        The directory where you execute the java command becomes the working directory for the locator process.
+
+## Check Locator Status {#running_the_locator__section_F58F229D5C7048E9915E0EC470F9A923}
+If you are connected to the cluster with `gfsh`, you can check the status of a running locator by providing the locator name. For example:
+
+``` pre
+gfsh>status locator --name=locator1
+```
+
+If you are not connected to a cluster, you can check the status of a local locator by providing the process ID, the Locator's host name and port, or the locator's current working directory. For example:
+
+``` pre
+gfsh>status locator --pid=2986
+```
+
+or
+
+``` pre
+gfsh>status locator --host=host1 --port=1035
+```
+
+or
+
+``` pre
+$ gfsh status locator --dir=<locator_working_directory>
+```
+
+where &lt;*locator\_working\_directory*&gt; corresponds to the local working directory where the locator is running.
+
+If successful, the command returns the following information (with the JVM arguments that were provided at startup):
+
+``` pre
+$ gfsh status locator --dir=locator1
+Locator in /home/user/locator1 on ubuntu.local[10334] as locator1 is currently online.
+Process ID: 2359
+Uptime: 17 minutes 3 seconds
+GemFire Version: 8.0.0
+Java Version: @@min_java_version@@.0.@@min_java_update@@
+Log File: /home/user/locator1/locator1.log
+JVM Arguments: -Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
+ -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
+Class-Path: /Users/username/apache_geode/lib/geode-dependencies.jar
+
+Cluster configuration service is up and running.
+```
+
+## Stop the Locator {#running_the_locator__section_0E4DDED6AB784B0CAFBAD538B227F487}
+If you are connected to the cluster with `gfsh`, you can stop a running locator by providing the locator name. For example:
+
+``` pre
+gfsh>stop locator --name=locator1
+```
+
+If you are not connected to a cluster, you can stop a local locator by specifying the locator's process ID or the locator's current working directory. For example:
+
+``` pre
+gfsh>stop locator --pid=2986
+```
+
+or
+
+``` pre
+gfsh>stop locator --dir=<locator_working_directory>
+```
+
+where &lt;*locator\_working\_directory*&gt; corresponds to the local working directory where the locator is running.
+
+## Locators and Multi-Site (WAN) Deployments
+
+If you use a multi-site (WAN) configuration, you can connect a locator to a remote site when starting the locator.
+
+To connect a new locator process to a remote locator in a WAN configuration, specify the following at startup:
+
+``` pre
+gfsh> start locator --name=locator1 --port=9009 --mcast-port=0 \
+--J='-Dgemfire.remote-locators=192.0.2.0[9009],198.51.100.0[9009]'
+```

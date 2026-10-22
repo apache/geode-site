@@ -1,0 +1,190 @@
+﻿---
+title:  Implement a Data Loader
+sidebar_label: Implement a Data Loader
+sidebar_position: 4
+---
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+To use a data loader:
+
+1. Implement the `org.apache.geode.cache.CacheLoader` interface.
+
+2. Configure and deploy the implementation.
+
+## Implement the CacheLoader Interface {#implementing_data_loaders__section_88076AF5EC184FE88AAF4C806A0CA9DF}
+For a get operation, if the key is not in the cache,
+the thread serving the get operation invokes the `CacheLoader.load` method.
+Implement `load` to return the value for the key,
+which will be placed into the region in addition to being
+returned to the caller.
+
+`org.apache.geode.cache.CacheLoader` inherits from `Declarable`,
+so implement the `Declarable.initialize` method if
+your `CacheLoader` implementation needs to be initialized
+with some arguments.
+Specify the required arguments either in your `cache.xml` file or in
+a gfsh `create region` or `alter region` command.
+Do not define the `Declarable.init()` method; it is deprecated.
+
+Here is an example implementation:
+
+``` pre
+public class SimpleCacheLoader implements CacheLoader {
+    public Object load(LoaderHelper helper) {
+        String key = (String) helper.getKey();
+
+        // Return an entry value created from the key, assuming that
+        // all keys are of the form "key1", "key2", "keyN"
+        return "LoadedValue" + key.substring(3);
+    }
+}
+```
+
+If you need to run `Region` API calls from your implementation,
+spawn separate threads for them.
+Do not make direct calls to `Region` methods from your `load` method,
+as it could cause the cache loader to block,
+hurting the performance of the cluster.
+
+## Configure and Deploy
+
+Use one of these three ways to configure and deploy the cache loader:
+
+**Option 1:** If configuring a cluster by defining a `cache.xml` file,
+deploy by adding the cache loader to the classpath when starting servers.
+
+Here is an example configuration within the `cache.xml` file
+that specifies the loader without arguments:
+
+``` pre
+<region-attributes>
+    <cache-loader>
+        <class-name>myLoader</class-name>
+    </cache-loader>
+</region-attributes>
+```
+Or, here is an example configuration within the `cache.xml` file
+that specifies the loader with an argument:
+
+``` pre
+<cache-loader>
+    <class-name>com.company.data.DatabaseLoader</class-name>
+    <parameter name="URL">
+        <string>jdbc:cloudscape:rmi:MyData</string>
+    </parameter>
+</cache-loader>
+```
+
+To deploy the JAR file,
+add the cache loader JAR file to the classpath when starting servers.
+For example:
+
+``` pre
+gfsh>start server --name=s2 --classpath=/var/data/lib/myLoader.jar
+```
+
+**Option 2:** 
+If deploying the JAR file at server startup,
+add the JAR file to the classpath and use gfsh to apply the
+configuration to the region.
+
+To deploy the JAR file,
+add the cache loader JAR file to the classpath when starting servers.
+For example:
+
+``` pre
+gfsh>start server --name=s2 --classpath=/var/data/lib/myLoader.jar
+```
+
+Use gfsh to apply the configuration of the `CacheLoader` implementation
+to the region with `gfsh create region` or `gfsh alter region`.
+Here is an example of region creation without arguments:
+
+``` pre
+gfsh>create region --name=r3 --cache-loader=com.example.appname.myCacheLoader
+```
+
+Here is an example of region creation with an argument:
+
+``` pre
+gfsh>create region --name=r3 \
+--cache-loader=com.example.appname.myCacheLoader{'URL':'jdbc:cloudscape:rmi:MyData'}
+```
+
+Here is an example of altering a region:
+
+``` pre
+gfsh>alter region --name=r3 --cache-loader=com.example.appname.myCacheLoader
+```
+
+**Option 3 applies to partitioned regions:** 
+If deploying the JAR file with the gfsh deploy command
+after servers have been started,
+use gfsh to apply the configuration to the region.
+
+After server creation use gfsh to deploy the JAR file to all the
+servers.
+For example:
+
+``` pre
+gfsh>deploy --jars=/var/data/lib/myLoader.jar
+```
+
+We do not generally use the gfsh deploy command when
+the servers host replicated regions,
+as detailed in [How Data Loaders Work](how_data_loaders_work).
+
+Use gfsh to apply the configuration of the `CacheLoader` implementation
+to the region with `gfsh create region` or `gfsh alter region`.
+Here is an example of region creation without arguments:
+
+``` pre
+gfsh>create region --name=r3 --cache-loader=com.example.appname.myCacheLoader
+```
+
+Here is an example of region creation with an argument:
+
+``` pre
+gfsh>create region --name=r3 \
+--cache-loader=com.example.appname.myCacheLoader{'URL':'jdbc:cloudscape:rmi:MyData'}
+```
+
+Here is an example of altering a region:
+
+``` pre
+gfsh>alter region --name=r3 --cache-loader=com.example.appname.myCacheLoader
+```
+
+## Implementing a Server or Peer with a Cache Loader
+
+Servers and peers with an embedded cache can
+configure a cache loader in only the members where it makes sense to do so.
+The design might, for example, assign the job of loading from a database
+to one or two members for a region hosted by many more members.
+This can be done to reduce the number of connections
+when the outside source is a database.
+
+Implement the `org.apache.geode.cache.CacheLoader` interface.
+Region creation configures the the cache loader as
+in this example:
+
+``` pre
+RegionFactory<String,Object> rf = cache.createRegionFactory(REPLICATE);
+rf.setCacheLoader(new QuoteLoader());
+quotes = rf.create("NASDAQ-Quotes");
+```

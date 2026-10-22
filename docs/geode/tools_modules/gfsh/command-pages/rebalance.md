@@ -1,0 +1,67 @@
+﻿---
+title:  rebalance
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Rebalance partitioned regions.
+
+The default is for all partitioned regions to be rebalanced.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+rebalance [--include-region=value(,value)*] 
+[--exclude-region=value(,value)*] [--time-out=value] [--simulate(=value)?]
+```
+## {#concept_213FDC5574474CE1AC28444DA202E05B__table_tqp_ccg_2w}
+| Name                                                    | Description                                                                                              | Default Value                        |
+|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------|--------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;include-region</span>  | Partitioned Region paths to be included for rebalance operation. Includes take precedence over excludes. | Â                                     |
+| <span class="keyword parmname">&#8209;&#8209;exclude-region </span> | Partitioned Region paths to be excluded for rebalance operation.                                         | Â                                     |
+| <span class="keyword parmname">&#8209;&#8209;time-out</span>        | Time to wait (in seconds) before GFSH returns to a prompt while rebalancing continues in the background. | -1 (wait for rebalancing to complete |
+| <span class="keyword parmname">&#8209;&#8209;simulate</span>        | Whether to only simulate rebalancing. The --time-out parameter is not available when simulating.         | false                                |
+
+<span class="tablecap">Table 1. Rebalance Parameters</span>
+
+**Example Commands:**
+
+``` pre
+rebalance --include-region=/region3 --simulate=true
+```
+
+**Sample Output:**
+
+``` pre
+                                       Rebalanced Stats                                         | Value
+----------------------------------------------------------------------------------------------- | -----
+Total bytes in all redundant bucket copies created during this rebalance                        | 0
+Total time (in milliseconds) spent creating redundant bucket copies during this rebalance       | 0
+Total number of redundant copies created during this rebalance                                  | 0
+Total bytes in buckets moved during this rebalance                                              | 0
+Total time (in milliseconds) spent moving buckets during this rebalance                         | 0
+Total number of buckets moved during this rebalance                                             | 0
+Total time (in milliseconds) spent switching the primary state of buckets during this rebalance | 0
+Total primaries transferred during this rebalance                                               | 0
+Total time (in milliseconds) for this rebalance                                                 | 0
+Total number of members in system on which rebalance is executed                                | 2
+
+ 
+```

@@ -1,0 +1,8 @@
+{
+  "label": "Firewall Considerations\n",
+  "position": 13,
+  "link": {
+    "type": "doc",
+    "id": "firewall_ports_config"
+  }
+}
