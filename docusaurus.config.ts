@@ -75,7 +75,7 @@ const config: Config = {
                   //     banner: 'none',
                   // },
               },
-              editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+              editUrl: `https://github.com/apache/${siteRepoName}/tree/master/`,
 
               beforeDefaultRemarkPlugins: [
                   [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
@@ -85,7 +85,7 @@ const config: Config = {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our posts',
           showReadingTime: true,
-          editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+          editUrl: `https://github.com/apache/${siteRepoName}/tree/master/`,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -101,7 +101,7 @@ const config: Config = {
                 path: 'docs/geode_native_cpp',
                 routeBasePath: 'docs/geode_native_cpp',
                 sidebarPath: require.resolve('./sidebars.geode_native_cpp.ts'),
-                editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+                editUrl: `https://github.com/apache/${siteRepoName}/tree/master/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
                 versions: {
@@ -125,7 +125,7 @@ const config: Config = {
                 path: 'docs/geode_native_dotnet',
                 routeBasePath: 'docs/geode_native_dotnet',
                 sidebarPath: require.resolve('./sidebars.geode_native_dotnet.ts'),
-                editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+                editUrl: `https://github.com/apache/${siteRepoName}/tree/master/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
                 disableVersioning: false,
