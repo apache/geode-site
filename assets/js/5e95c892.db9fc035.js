@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkgeode_site=globalThis.webpackChunkgeode_site||[]).push([[9647],{14853(e,s,r){r.r(s),r.d(s,{default:()=>o});r(92990);var a=r(13526),t=r(10119),u=r(39052),c=r(76341),i=r(88915),l=r(94686);function o(e){return(0,l.jsx)(u.e3,{className:(0,a.A)(t.G.wrapper.docsPages),children:(0,l.jsx)(i.A,{children:(0,c.v)(e.route.routes)})})}}}]);

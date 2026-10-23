@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://geode.apache.org/blog</id>
+    <title>Apache Geode Blog</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://geode.apache.org/blog"/>
+    <subtitle>Apache Geode Blog</subtitle>
+    <icon>https://geode.apache.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome Docusaurus]]></title>
+        <id>https://geode.apache.org/blog/2026/10/19/modernize-geode-site</id>
+        <link href="https://geode.apache.org/blog/2026/10/19/modernize-geode-site"/>
+        <updated>2026-10-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Modernizing Apache Geode Site.]]></summary>
+        <content type="html"><![CDATA[<p>Hello Apache Geode community! This website is currently under construction.
+We are working hard to modernize and improve the Apache Geode documentation.
+Stay tuned for updates!</p>]]></content>
+        <author>
+            <name>harmoncoffee</name>
+            <uri>https://github.com/harmoncoffee</uri>
+        </author>
+    </entry>
+</feed>

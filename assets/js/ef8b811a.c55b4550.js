@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkgeode_site=globalThis.webpackChunkgeode_site||[]).push([[38947],{56600(e){e.exports=JSON.parse('{"authors":[{"name":"harmoncoffee","title":"Patrick Harmon","url":"https://github.com/harmoncoffee","imageURL":"https://github.com/harmoncoffee.png","key":"harmoncoffee","page":null,"count":1}]}')}}]);

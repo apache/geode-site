@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Apache Geode Blog</title>
+        <link>https://geode.apache.org/blog</link>
+        <description>Apache Geode Blog</description>
+        <lastBuildDate>Mon, 19 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Welcome Docusaurus]]></title>
+            <link>https://geode.apache.org/blog/2026/10/19/modernize-geode-site</link>
+            <guid>https://geode.apache.org/blog/2026/10/19/modernize-geode-site</guid>
+            <pubDate>Mon, 19 Oct 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Modernizing Apache Geode Site.]]></description>
+            <content:encoded><![CDATA[<p>Hello Apache Geode community! This website is currently under construction.
+We are working hard to modernize and improve the Apache Geode documentation.
+Stay tuned for updates!</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
