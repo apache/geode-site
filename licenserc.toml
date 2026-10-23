@@ -26,6 +26,9 @@ excludes = [
   "**/*.md",
   "**/*.mdx",
 
+  # Third-party theme components (MIT License)
+  "src/theme/**",
+
   # Meta files
   "NOTICE",
   ".nojekyll",
