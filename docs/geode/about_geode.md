@@ -22,8 +22,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This documentation describes product concepts and provides complete setup instructions for Apache Geode . 
+This documentation describes product concepts and provides complete setup instructions for Apache Geode.
 Source files are available from the [Apache Geode Github repository](https://github.com/apache/geode/tree/develop/geode-docs) 
 and instructions on how to build this documentation are available in the [Geode project README file](https://github.com/apache/geode/blob/develop/geode-book/README.md).
 
-You can also find additional documentation about Geode on the [Apache Geode Wiki](https://cwiki.apache.org/confluence/display/GEODE/Index).~~~~
+You can also find additional documentation about Geode on the [Apache Geode Wiki](https://cwiki.apache.org/confluence/display/GEODE/Index).
