@@ -85,14 +85,10 @@ it is useful to use the JDK-included `jps` command to check running java process
     ```
 
 1.  On each machine in the cluster, install the new version of the software (alongside the older version of the software).
-
 1.  Redeploy your environment's configuration files to the new version installation. If you are using the cluster configuration service, one copy of the exported `.zip` configuration file is sufficient, as the first upgraded locator will propagate it to the other members.
 For XML configurations, you should have a copy of the saved configuration files for each data member.
-
 1. On each machine in the cluster, install any updated server code. Point all client applications to the new installation of @@product_name@@.
-
 1. Run the new version of `gfsh`.
-
 1. Start a locator and import the saved configuration. If you are using the cluster configuration service, use the same name and directory as the older version you stopped, and the new locator will access the old locator's cluster configuration without having to import it in a separate step:
 
     ```
@@ -105,5 +101,4 @@ For XML configurations, you should have a copy of the saved configuration files 
 were used when starting the system under the previous version of the software. (Here is where a system startup script comes in
 handy as a reference.) Interdependent data members may hang on startup waiting for each other. In this case, start servers in
 separate shells so they can communicate with one another to resolve dependencies.
-
 1. Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients).
