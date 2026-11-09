@@ -45,7 +45,7 @@ limitations under the License.
 
     A collection of tools and controls allow you to monitor and adjust Apache Geode performance.
 
--   **[Logging](logging/logging)**
+-   **[Logging](./logging/logging.md)**
 
     Comprehensive logging messages help you confirm system configuration and debug problems in configuration and code.
 

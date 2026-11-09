@@ -23,27 +23,27 @@ A query string is a fully formed OQL statement that can be passed to a query eng
 
 A query string follows the rules specified by the query language and grammar. It can include:
 
--   **Namescopes**. For example, the IMPORT statement. See [IMPORT Statement](the_import_statement).
--   **Path expressions**. For example, in the query `SELECT * FROM                                 /exampleRegion`,` /exampleRegion` is a path expression. See [FROM Clause]( the_from_clause.md#the_from_clause__section_FAEBC02C4E414F91B1CA8D33E11218AF).
--   **Attribute names**. For example, in the query `SELECT DISTINCT * FROM /exampleRegion p WHERE                             p.position1.secId = '1'`, we access the `secId` attribute of the Position object. See [WHERE Clause]( the_where_clause.md#the_where_clause).
--   **Method invocations**. For example, in the query `SELECT DISTINCT * FROM /exampleRegion p WHERE                             p.name.startsWith('Bo')`, we invoke the `startsWith` method on the Name object. See [WHERE Clause]( the_where_clause.md#the_where_clause).
--   **Operators**. For example, comparison operators (=,&lt;,&gt;,&lt;&gt;), unary operators (NOT), logical operators (AND, OR) and so on. See [Operators](../query_additional/operators#operators) for a complete list.
--   **Literals**. For example, boolean, date, time and so on. See [Supported Literals](../query_additional/literals) for a complete list.
--   **Query bind parameters**. For example, in the query `SELECT DISTINCT * FROM $1 p WHERE p.status =                             $2`, $1 and $2 are parameters that can be passed to the query during runtime. See [Using Query Bind Parameters](../query_additional/using_query_bind_parameters#concept_173E775FE46B47DF9D7D1E40680D34DF) for more details.
--   **Preset query functions**. For example, ELEMENT(expr) and IS\_DEFINED(expr). See [SELECT Statement]( the_select_statement#concept_85AE7D6B1E2941ED8BD2A8310A81753E) for other available functions.
--   **SELECT statements**. For example, in the example queries above `SELECT *` or `SELECT DISTINCT *`. See [SELECT Statement]( the_select_statement#concept_85AE7D6B1E2941ED8BD2A8310A81753E) for other available functions.
+-   **Namescopes**. For example, the IMPORT statement. See [IMPORT Statement](the_import_statement.md).
+-   **Path expressions**. For example, in the query `SELECT * FROM                                 /exampleRegion`,` /exampleRegion` is a path expression. See [FROM Clause](the_from_clause.md).
+-   **Attribute names**. For example, in the query `SELECT DISTINCT * FROM /exampleRegion p WHERE                             p.position1.secId = '1'`, we access the `secId` attribute of the Position object. See [WHERE Clause](the_where_clause.md).
+-   **Method invocations**. For example, in the query `SELECT DISTINCT * FROM /exampleRegion p WHERE                             p.name.startsWith('Bo')`, we invoke the `startsWith` method on the Name object. See [WHERE Clause](the_where_clause.md).
+-   **Operators**. For example, comparison operators (=,&lt;,&gt;,&lt;&gt;), unary operators (NOT), logical operators (AND, OR) and so on. See [Operators](../query_additional/operators.md) for a complete list.
+-   **Literals**. For example, boolean, date, time and so on. See [Supported Literals](../query_additional/literals.md) for a complete list.
+-   **Query bind parameters**. For example, in the query `SELECT DISTINCT * FROM $1 p WHERE p.status =                             $2`, $1 and $2 are parameters that can be passed to the query during runtime. See [Using Query Bind Parameters](../../advanced_querying/using_query_bind_parameters.md) for more details.
+-   **Preset query functions**. For example, ELEMENT(expr) and IS\_DEFINED(expr). See [SELECT Statement](the_select_statement.md) for other available functions.
+-   **SELECT statements**. For example, in the example queries above `SELECT *` or `SELECT DISTINCT *`. See [SELECT Statement](the_select_statement.md) for other available functions.
 -   **Comments**. OQL permits extra characters to accompany the query string without changing the string's definition. Form a multi-line comment by enclosing the comment body within `/*` and `*/` delimiters; OQL does not permit nested comments. A single line comment body is all the characters to the right of `--` (two hyphens) up to the end of the line.
 
 The components listed above can all be part of the query string, but none of the components are required. At a minimum, a query string contains an expression that can be evaluated against specified data.
 
 The following sections provide guidelines for the query language building blocks that are used when writing typical @@product_name@@ queries.
 
--   **[IMPORT Statement]( the_import_statement)**
+-   **[IMPORT Statement](the_import_statement.md)**
 
--   **[FROM Clause]( the_from_clause)**
+-   **[FROM Clause](the_from_clause.md)**
 
--   **[WHERE Clause]( the_where_clause)**
+-   **[WHERE Clause](the_where_clause.md)**
 
--   **[SELECT Statement]( the_select_statement)**
+-   **[SELECT Statement](the_select_statement.md)**
 
--   **[OQL Aggregate Functions]( aggregates)**
+-   **[OQL Aggregate Functions](aggregates.md)**

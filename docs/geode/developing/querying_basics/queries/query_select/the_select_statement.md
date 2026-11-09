@@ -62,7 +62,7 @@ TYPE Position WHERE portfolio.status = 'active'
 ```
 
 ## SELECT Statement Results {#concept_85AE7D6B1E2941ED8BD2A8310A81753E}
-The result of a SELECT statement is either UNDEFINED or is a Collection that implements the [SelectResults](/org/apache/geode/cache/query/SelectResults) interface.
+The result of a SELECT statement is either UNDEFINED or is a Collection that implements the [SelectResults](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/query/SelectResults.html) interface.
 
 The SelectResults returned from the SELECT statement is either:
 

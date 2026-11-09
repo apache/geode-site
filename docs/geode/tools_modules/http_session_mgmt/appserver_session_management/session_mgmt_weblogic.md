@@ -23,10 +23,10 @@ You implement session caching with the HTTP Session Management Module for AppSer
 
 You can use this HTTP module with a variety of application servers. Wrapping each request allows the interception of `getSession()` calls to be handled by @@product_name@@ instead of the native container. This approach is a generic solution, which is supported by any container that implements the Jakarta Servlet 6.0 specification (Jakarta EE 10).
 
--   **[Setting Up the HTTP Module for AppServers](../../tools_modules/http_session_mgmt/weblogic_setting_up_the_module)**
+-   **[Setting Up the HTTP Module for AppServers](./weblogic_setting_up_the_module)**
 
     To use the module, you need to modify your application's `web.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
--   **[Changing the Default @@product_name@@ Configuration in the AppServers Module](../../tools_modules/http_session_mgmt/weblogic_changing_gf_default_cfg)**
+-   **[Changing the Default @@product_name@@ Configuration in the AppServers Module](./weblogic_changing_gf_default_cfg)**
 
     By default, the AppServers module will run @@product_name@@ automatically with preconfigured settings. You can change these @@product_name@@ settings.

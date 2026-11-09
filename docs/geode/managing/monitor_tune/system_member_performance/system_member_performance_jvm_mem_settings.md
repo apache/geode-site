@@ -67,7 +67,7 @@ You configure JVM memory settings for the Java application by adding parameters 
     gfsh>start server --name=server-name --off-heap-memory-size=200G
     ```
 
-    See [Using Off-heap Memory](../heap_use/off_heap_management#managing-off-heap-memory) for additional considerations regarding this parameter.
+    See [Using Off-heap Memory](../../heap_use/off_heap_management#managing-off-heap-memory) for additional considerations regarding this parameter.
 
 -   Lock memory—On Linux systems, you can prevent heap and off-heap memory from being paged out by setting the `lock-memory` parameter to `true`. For example:
 
@@ -75,4 +75,4 @@ You configure JVM memory settings for the Java application by adding parameters 
     gfsh>start server --name=server-name --off-heap-memory-size=200G --lock-memory=true
     ```
 
-    See [Locking Memory](../heap_use/lock_memory) for additional considerations regarding this parameter.
+    See [Locking Memory](../../heap_use/lock_memory) for additional considerations regarding this parameter.

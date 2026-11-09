@@ -22,7 +22,7 @@ limitations under the License.
 You can deploy your @@product_name_long@@ configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
 
 **Note:**
-If you use the cluster configuration service to create and manage your @@product_name_long@@ cluster configuration, the procedures described in this section are not needed because @@product_name@@ automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist).
+If you use the cluster configuration service to create and manage your @@product_name_long@@ cluster configuration, the procedures described in this section are not needed because @@product_name@@ automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../gfsh_persist).
 
 You can use the procedures described in this section to distribute configurations that are member-specific, or for situations where you do not want to use the cluster configuration service.
 

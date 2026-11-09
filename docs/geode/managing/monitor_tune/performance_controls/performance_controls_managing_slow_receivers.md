@@ -23,7 +23,7 @@ limitations under the License.
 
 You have several options for handling slow members that receive data distribution. The slow receiver options control only to peer-to-peer communication between distributed regions using TCP/IP. This topic does not apply to client/server or multi-site communication, or to communication using the UDP unicast or IP multicast protocols.
 
-Most of the options for handling slow members are related to on-site configuration during system integration and tuning. For this information, see [Slow Receivers with TCP/IP](slow_receivers).
+Most of the options for handling slow members are related to on-site configuration during system integration and tuning. For this information, see [Slow Receivers with TCP/IP](../slow_receivers/slow_receivers.md).
 
 Slowing is more likely to occur when applications run many threads, send large messages (due to large entry values), or have a mix of region configurations.
 

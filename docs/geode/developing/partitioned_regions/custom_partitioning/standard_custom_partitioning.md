@@ -32,7 +32,7 @@ in a custom manner.
 **Note:**
 If you are both colocating region data and custom partitioning,
 all colocated regions must use the same custom partitioning mechanism.
-See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data#colocating_partitioned_region_data).
+See [Colocate Data from Different Partitioned Regions](../colocating_partitioned_region_data).
 
 To custom-partition your region data, follow two steps:
 

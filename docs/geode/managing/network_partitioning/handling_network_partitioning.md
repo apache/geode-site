@@ -61,4 +61,4 @@ The system uses a combination of member coordinators and system members, designa
     -   If the system has clients connecting to it, the clients' `cache.xml` pool `read-timeout` should be set to at least three times the `member-timeout` setting in the server's `gemfire.properties` file. The default pool `read-timeout` setting is 10000 milliseconds.
     -   You can adjust the default weights of members by specifying the system property `gemfire.member-weight` upon startup. For example, if you have some VMs that host a needed service, you could assign them a higher weight upon startup.
 
--   By default, members that are forced out of the cluster by a network partition event will automatically restart and attempt to reconnect. Data members will attempt to reinitialize the cache. See [Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect).
+-   By default, members that are forced out of the cluster by a network partition event will automatically restart and attempt to reconnect. Data members will attempt to reinitialize the cache. See [Handling Forced Cache Disconnection Using Autoreconnect](../troubleshooting/member-reconnect).

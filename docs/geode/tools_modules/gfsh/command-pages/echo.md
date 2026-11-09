@@ -23,7 +23,7 @@ Echo the given text, which may include system and user variables.
 
 The command can also echo gfsh environment properties (using '[set variable](set)' command) if variable name is pre-pended with '$' - like UNIX.
 
-See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a list of gfsh environment variables.
+See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables) for a list of gfsh environment variables.
 
 **Availability:** Online or offline.
 

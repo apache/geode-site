@@ -40,7 +40,7 @@ Since `gfsh` must connect to a JMX Manager member to run certain commands (namel
 -   `jmx-manager-password-file`
 -   `jmx-manager-access-file`
 
-You may also need to verify that the ports are available and open to client connections. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for details on these security properties.
+You may also need to verify that the ports are available and open to client connections. See [Configuring a JMX Manager](../../managing/management/jmx_manager/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for details on these security properties.
 
 ## Configuring gfsh Environment Variables {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C69A2711A7664A9091A5E634221053CB}
 In addition, you can set gfsh-specific preset SHELL variables by using the `set variable` command. For example, you can set `gfsh` to run in quiet mode.
@@ -50,7 +50,7 @@ User-configurable variables include:
 -   APP\_FETCH\_SIZE
 -   APP\_QUIET\_EXECUTION
 
-See [Useful gfsh Shell Variables](useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for more information.
+See [Useful gfsh Shell Variables](useful_gfsh_shell_variables) for more information.
 
 ## Configuring gfsh Session Logging {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_BE7FB8B355E748FA8BEFE75B2C3CB86E}
 By default, `gfsh` session logging is disabled. To enable gfsh logging, you must set the Java system property `-Dgfsh.log-level=desired_log_level` where *desired\_log \_level* is one of the following values: severe, warning, info, config, fine, finer, finest. For example, in Linux:
@@ -111,7 +111,7 @@ source <gemfire-install-directory>/bin/gfsh-completion.bash
 
 After running this command, you can use auto completion when running gfsh commands from the bash shell.
 
-See [Using Tab Completion](getting_started_gfsh#concept_45D28CC9710C4EAFB6EECFA0D651D439__p_sb2_ttx_n4).
+See [Using Tab Completion](getting_started_gfsh).
 
 ## Command History and gfsh.history {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_72323A45E0064FD2982663F7AC2A2E07}
 A history of commands that have been executed successfully is logged in `.gfsh.history` file in a `.gemfire` directory under the home directory of the user running gfsh. You can also export a history file by using the `history --file=your_file_name` command.

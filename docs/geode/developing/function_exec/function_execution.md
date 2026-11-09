@@ -46,7 +46,7 @@ Code the methods you need for the function. These steps do not have to be done i
 - If the function should be run with an authorization level other than
 the default of `DATA:WRITE`,
 implement an override of the `Function.getRequiredPermissions()` method.
-See [Authorization of Function Execution](../../security/implementing_authorization#AuthorizeFcnExecution) for details on this method.
+See [Authorization of Function Execution](../../security/authorization/implementing_authorization#AuthorizeFcnExecution) for details on this method.
 - Code the `execute` method to perform the work of the function.
     1.  Make `execute` thread safe to accommodate simultaneous invocations.
     2.  For high availability, code `execute` to accommodate multiple identical calls to the function. Use the `RegionFunctionContext` `isPossibleDuplicate` to determine whether the call may be a high-availability re-execution. This boolean is set to true on execution failure and is false otherwise.
@@ -59,7 +59,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
         -   For partitioned regions, the `PartitionRegionHelper` provides access to additional information and data for the region. For single regions, use `getLocalDataForContext`. For colocated regions, use `getLocalColocatedRegions`.
             **Note:**
             When you use `PartitionRegionHelper.getLocalDataForContext`, `putIfAbsent` may not return expected results if you are working on local data set instead of the region.
-    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. @@product_name@@ transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException) for more information.
+    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. @@product_name@@ transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/execute/FunctionException.html) for more information.
 
 Example function code:
 
@@ -125,7 +125,7 @@ To register a function by using `gfsh`:
 
 If another JAR file is deployed (either with the same JAR filename or another filename) with the same Function, the new implementation of the Function will be registered, overwriting the old one. If a JAR file is undeployed, any Functions that were auto-registered at the time of deployment will be unregistered. Since deploying a JAR file that has the same name multiple times results in the JAR being un-deployed and re-deployed, Functions in the JAR will be unregistered and re-registered each time this occurs. If a Function with the same ID is registered from multiple differently named JAR files, the Function will be unregistered if either of those JAR files is re-deployed or un-deployed.
 
-See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/deploying_application_jars#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
+See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/deploying_application_jars) for more details on deploying JAR files.
 
 ## Register the Function Programmatically {#function_execution__section_1D1056F843044F368FB76F47061FCD50}
 This section applies to functions that are invoked using the `Execution.execute(String functionId)` signature. When this method is invoked, the calling application sends the function ID to all members where the `Function.execute` is to be run. Receiving members use the ID to look up the function in the local `FunctionService`. In order to do the lookup, all of the receiving member must have previously registered the function with the function service.

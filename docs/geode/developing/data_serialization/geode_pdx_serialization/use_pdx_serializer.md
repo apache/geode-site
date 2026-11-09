@@ -78,7 +78,7 @@ The `PdxSerializer` `toData` and `fromData` methods differ from those for `PdxSe
         ```
 
     **Note:**
-    You cannot specify a custom `pdx-serializer` class using gfsh, however the `configure pdx` command automatically configures the <span class="keyword apiname">org.apache.geode.pdx.ReflectionBasedAutoSerializer</span> class. See [configure pdx](../../tools_modules/gfsh/command-pages/configure#topic_jdkdiqbgphqh).
+    You cannot specify a custom `pdx-serializer` class using gfsh, however the `configure pdx` command automatically configures the <span class="keyword apiname">org.apache.geode.pdx.ReflectionBasedAutoSerializer</span> class. See [configure pdx](../../../tools_modules/gfsh/command-pages/configure#topic_jdkdiqbgphqh).
 
 3.  Program `PdxSerializer.toData` to recognize, cast, and handle your domain object:
 

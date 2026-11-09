@@ -22,7 +22,7 @@ limitations under the License.
 Use the `cache.xml` file to set up general cache facilities and behavior and to create and initialize cached data regions. These sections document `cache.xml` requirements; provide hierarchical diagrams of cache.xml elements; and show the specific syntax needed to accomplish typical cache configuration tasks.
 
 **Note:**
-You can configure most elements of the `cache.xml` file and apply it to your entire cluster by using the [gfsh](../../tools_modules/gfsh/chapter_overview) and [cluster configuration service](../../configuring/gfsh_persist#using-cluster-config-svc). See [Cluster Configuration Service Overview](../../configuring/gfsh_persist) for more information.
+You can configure most elements of the `cache.xml` file and apply it to your entire cluster by using the [gfsh](../../tools_modules/gfsh/chapter_overview) and [cluster configuration service](../../configuring/gfsh_persist). See [Cluster Configuration Service Overview](../../configuring/gfsh_persist) for more information.
 
 -   **[`cache.xml` Quick Reference](elements_ref)**
 

@@ -37,7 +37,7 @@ To deploy the JAR file to a subset of members, use the `--groups` argument. For 
 gfsh> deploy --jars=group1_functions.jar --groups=MemberGroup1
 ```
 
-In the example it is assumed that you have already defined the member group that you want to use when starting up your members. See [Configuring and Running a Cluster](../chapter_overview#concept_lrh_gyq_s4) for more information on how to define member groups and add a member to a group.
+In the example it is assumed that you have already defined the member group that you want to use when starting up your members. See [Configuring and Running a Cluster](./chapter_overview) for more information on how to define member groups and add a member to a group.
 
 To deploy all the JAR files that are located in a specific directory to all members:
 
@@ -89,7 +89,7 @@ datanode1 | group1_functions.jar | /usr/local/gemfire/deploy/group1_functions.v1
 datanode2 | group1_functions.jar | /usr/local/gemfire/deploy/group1_functions.v1.jar
 ```
 
-For more information on `gfsh` usage, see [gfsh](../../tools_modules/gfsh/chapter_overview).
+For more information on `gfsh` usage, see [gfsh](../tools_modules/gfsh/chapter_overview.md).
 
 ## Deployment Location for JAR Files {#concept_4436C021FB934EC4A330D27BD026602C__section_D36E345C6E254D27B0F4B0C8711F5E6A}
 The system location where JAR files are written on each member is determined by the `deploy-working-dir` @@product_name@@ property configured for that member. For example, you could have the following configured in the `gemfire.properties` file for your member:

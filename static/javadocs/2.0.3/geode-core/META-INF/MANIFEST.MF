@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Created-By: jihwan
+Title: geode
+Version: 2.0.3
+Organization: Apache Software Foundation (ASF)
+Class-Path: HdrHistogram-2.2.2.jar shiro-crypto-core-3.0.0.jar commons-d
+ igester-2.1.jar jakarta.annotation-api-2.1.1.jar jackson-databind-2.21.
+ 6.jar commons-validator-1.7.jar spring-jcl-6.1.21.jar shiro-cache-3.0.0
+ .jar jakarta.transaction-api-2.0.1.jar jna-platform-5.11.0.jar micromet
+ er-core-1.16.7.jar shiro-lang-3.0.0.jar spring-core-6.1.21.jar bcprov-j
+ dk18on-1.85.jar snakeyaml-2.5.jar shiro-hashes-argon2-3.0.0.jar Latency
+ Utils-2.0.3.jar shiro-core-3.0.0.jar slf4j-api-2.0.18.jar jakarta.xml.b
+ ind-api-4.0.2.jar commons-io-2.19.0.jar jaxb-core-4.0.2.jar classgraph-
+ 4.8.147.jar jspecify-1.0.1.jar shiro-hashes-bcrypt-3.0.0.jar snappy-0.5
+ .jar spring-beans-6.1.21.jar istack-commons-runtime-4.1.1.jar commons-c
+ ollections-3.2.2.jar commons-beanutils-1.11.0.jar shiro-config-ogdl-3.0
+ .0.jar micrometer-commons-1.16.7.jar fastutil-8.5.8.jar swagger-annotat
+ ions-2.2.22.jar micrometer-observation-1.16.7.jar angus-activation-2.0.
+ 0.jar jackson-annotations-2.21.jar rmiio-2.1.2.jar jaxb-runtime-4.0.2.j
+ ar jopt-simple-5.0.4.jar jna-5.11.0.jar jgroups-3.6.20.Final.jar jakart
+ a.resource-api-2.1.0.jar txw2-4.0.2.jar commons-logging-1.3.5.jar jakar
+ ta.activation-api-2.1.3.jar shiro-crypto-cipher-3.0.0.jar shiro-crypto-
+ hash-3.0.0.jar shiro-config-core-3.0.0.jar commons-lang3-3.18.0.jar shi
+ ro-event-3.0.0.jar jackson-core-2.21.6.jar spring-aop-6.1.21.jar antlr-
+ 2.7.7.jar jackson-dataformat-yaml-2.21.6.jar log4j-api-2.25.5.jar
+Dependent-Modules: geode-logging-2.0.3 geode-membership-2.0.3 geode-unsa
+ fe-2.0.3 geode-tcp-server-2.0.3 geode-common-2.0.3 geode-serialization-
+ 2.0.3 geode-management-2.0.3 geode-deployment-legacy-2.0.3 geode-http-s
+ ervice-2.0.3 geode-gfsh-2.0.3
+Module-Name: geode-core
+

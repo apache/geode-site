@@ -23,7 +23,7 @@ limitations under the License.
 
 Configure @@product_name@@ to use only unique physical machines for redundant copies of partitioned region data.
 
-Understand how to set a member's `gemfire.properties` settings. See [Reference](../../reference/book_intro#reference).
+Understand how to set a member's `gemfire.properties` settings. See [Reference](../../../../reference/book_intro).
 
 Configure your members so @@product_name@@ always uses different physical machines for redundant copies of partitioned region data using the `gemfire.properties` setting `enforce-unique-host`. The default for this setting is false. 
 

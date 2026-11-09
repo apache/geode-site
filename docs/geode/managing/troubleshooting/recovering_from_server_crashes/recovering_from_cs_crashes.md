@@ -23,19 +23,19 @@ limitations under the License.
 
 In a client/server configuration, you first make the server available as a member of a cluster again, and then restart clients as quickly as possible. The client recovers its data from its servers through normal operation.
 ## {#rec_app_cs_crash__section_777D28109D6141929297F36681F83249}
-How well a client/server configuration recovers from application or cache server crashes depends on server availability and on client configuration. Typically, the servers are made highly available by running enough servers spread out on enough machines to ensure a minimum of coverage in case of network, machine, or server crashes. The clients are usually configured to connect to a primary and some number of secondary, or redundant, servers. The secondaries act as hot backups to the primary. For high availability of messaging in the case of client crashes, the clients may have durable connections to their servers. If this is the case, some or all of their data and data events remain in server memory and are automatically recovered, providing that you restart the clients within a configured timeout. See [Configuring Client/Server Event Messaging](../../developing/events/configure_client_server_event_messaging#receiving_events_from_servers) for information about durable messaging.
+How well a client/server configuration recovers from application or cache server crashes depends on server availability and on client configuration. Typically, the servers are made highly available by running enough servers spread out on enough machines to ensure a minimum of coverage in case of network, machine, or server crashes. The clients are usually configured to connect to a primary and some number of secondary, or redundant, servers. The secondaries act as hot backups to the primary. For high availability of messaging in the case of client crashes, the clients may have durable connections to their servers. If this is the case, some or all of their data and data events remain in server memory and are automatically recovered, providing that you restart the clients within a configured timeout. See [Configuring Client/Server Event Messaging](../../../developing/events/client_server_events/configure_client_server_event_messaging) for information about durable messaging.
 
 ## Recovering from Server Failure {#rec_app_cs_crash__section_2A598C85FAD44CDEA605646BF7BEE388}
 Recovery from server failure has two parts: the server recovers as a member of a cluster, then its clients recover its services.
 
-When servers fail, their own recovery is carried out as for any member of a cluster as described in [Recovering from Crashes with a Peer-to-Peer Configuration](recovering_from_p2p_crashes#rec_app_p2p_crash).
+When servers fail, their own recovery is carried out as for any member of a cluster as described in [Recovering from Crashes with a Peer-to-Peer Configuration](recovering_from_p2p_crashes).
 
 From the client’s perspective, if the system is configured for high availability, server failure goes undetected unless enough servers fail that the server-to-client ratio drops below a workable level. In any case, your first course of action is to get the servers back up as quickly as possible.
 
 To recover from server failure:
 
-1.  Recover the server and its data as described in [Recovering from Crashes with a Peer-to-Peer Configuration](recovering_from_p2p_crashes#rec_app_p2p_crash).
-2.  Once the server is available again, the locators (or client pools if you are using a static server list) automatically detect its presence and add it to the list of viable servers. It might take awhile for the clients to start using the recovered server. The time depends in part on how the clients are configured and how they are programmed. See [Client/Server Configuration](../../topologies_and_comm/cs_configuration/chapter_overview).
+1.  Recover the server and its data as described in [Recovering from Crashes with a Peer-to-Peer Configuration](recovering_from_p2p_crashes).
+2.  Once the server is available again, the locators (or client pools if you are using a static server list) automatically detect its presence and add it to the list of viable servers. It might take awhile for the clients to start using the recovered server. The time depends in part on how the clients are configured and how they are programmed. See [Client/Server Configuration](../../../topologies_and_comm/cs_configuration/chapter_overview).
 
 **If you need to start a server at a new host/port location**
 

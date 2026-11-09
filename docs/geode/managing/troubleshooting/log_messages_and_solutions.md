@@ -24,7 +24,7 @@ limitations under the License.
 This section provides explanations of @@product_name@@ Log  messages with potential resolutions.
 
 Depending on how your system is configured, log files can be found in a number of locations.
-See [Log File Locations](../../security/security-audit#topic_5B6DF783A14241399DC25C6EE8D0048A) and
+See [Log File Locations](../../security/security_detail_considerations/security-audit) and
 [Naming, Searching, and Creating Log Files](../logging/logging_whats_next) for more information.
 
 ## above heap eviction threshold {#aboveheapevictionthreshold}

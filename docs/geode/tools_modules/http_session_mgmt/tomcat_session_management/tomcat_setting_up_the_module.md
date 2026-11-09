@@ -23,7 +23,7 @@ limitations under the License.
 
 To use the @@product_name@@ HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
 
-Configuration is slightly different depending on the topology you are setting up: [peer-to-peer](#tomcat_setting_up_the_module_p2p) or [client/server](#tomcat_setting_up_the_module_cs). Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies#common_gemfire_topologies) for more information.
+Configuration is slightly different depending on the topology you are setting up: [peer-to-peer](#tomcat_setting_up_the_module_p2p) or [client/server](#tomcat_setting_up_the_module_cs). Refer to [Common Topologies for HTTP Session Management](../common_gemfire_topologies) for more information.
 
 ## Peer-to-Peer Setup {#tomcat_setting_up_the_module_p2p}
 <img src="/images_svg/http_module_p2p_with_locator.svg" id="tomcat_setting_up_the_module__image_bsm_2gf_sv" class="image" />

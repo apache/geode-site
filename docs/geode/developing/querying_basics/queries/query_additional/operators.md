@@ -42,8 +42,8 @@ Regarding equality and inequality operators:
 
 - The equality and inequality operators have lower precedence than the other comparison operators.
 - The equality and inequality operators can be used with null.
-- Inequality queries return results for which the search field is [UNDEFINED](literals#literals__section_undefined).
-- To perform equality or inequality comparisons with [UNDEFINED](literals#literals__section_undefined), use the IS\_DEFINED and IS\_UNDEFINED preset query functions instead of these comparison operators.
+- Inequality queries return results for which the search field is [UNDEFINED](literals).
+- To perform equality or inequality comparisons with [UNDEFINED](literals), use the IS\_DEFINED and IS\_UNDEFINED preset query functions instead of these comparison operators.
 
 ## Logical Operators {#operators__section_6A85A9DDA47E47009FDE1CC38D7BA66C}
 The logical operators AND and OR allow you to create more complex expressions by combining expressions to produce a boolean result. When you combine two conditional expressions using the AND operator, both conditions must evaluate to true for the entire expression to be true. When you combine two conditional expressions using the OR operator, the expression evaluates to true if either one or both of the conditions are true. You can create complex expressions by combining multiple simple conditional expressions with AND and OR operators. When expressions use AND and OR operators, AND has higher precedence than OR.

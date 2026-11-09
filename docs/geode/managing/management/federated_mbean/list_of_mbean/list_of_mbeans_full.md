@@ -32,7 +32,7 @@ The JMX Manager node includes all local beans listed under [Managed Node MBeans]
 Represents the @@product_name@@ Management layer for the hosting member. Controls the scope of management. This MBean provides `start` and `stop` methods to turn a managed node into a JMX Manager node or to stop a node from being a JMX Manager. For potential managers (`jmx-manager=true` and `jmx-manager-start=false`), this MBean is created when a Locator requests it.
 
 **Note:**
-You must configure the node to allow it to become a JMX Manager. See [Configuring a JMX Manager](jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for configuration information.
+You must configure the node to allow it to become a JMX Manager. See [Configuring a JMX Manager](../../jmx_manager/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for configuration information.
 
 **MBean Details**
 
@@ -50,7 +50,7 @@ System-wide aggregate MBean that provides a high-level view of the entire cluste
 
 The DistributedSystemMXBean provides APIs for performing cluster-wide operations such as backing up all members, shutting down all members or showing various cluster metrics.
 
-You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [@@product_name@@ JMX MBean Notifications](mbean_notifications) for more information.
+You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [@@product_name@@ JMX MBean Notifications](../notifications/mbean_notifications) for more information.
 
 This MBean also provides some MBean model navigation APIS. These APIs should be used to navigate through all the MBeans exposed by a @@product_name@@ System.
 
@@ -114,7 +114,7 @@ JMX Manager nodes will have managed node MBeans for themselves since they are al
 ## MemberMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4}
 Member's local view of its connection and cache. It is the primary gateway to manage a particular member. It exposes member level attributes and statistics. Some operations like `createCacheServer()` and `createManager()` will help to create some @@product_name@@ resources. Any JMX client can connect to the MBean server and start managing a @@product_name@@ Member by using this MBean.
 
-See [MemberMXBean Notifications](list_of_mbean_notifications#reference_czt_hq2_vj) for a list of notifications emitted by this MBean.
+See [MemberMXBean Notifications](../notifications/list_of_mbean_notifications#reference_czt_hq2_vj) for a list of notifications emitted by this MBean.
 
 **MBean Details**
 
@@ -130,7 +130,7 @@ See the `org.apache.geode.management.MemberMXBean` JavaDocs for information on a
 ## CacheServerMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_7287A7560650426E9B8249E2D87CE55F}
 Represents the @@product_name@@ CacheServer. Provides data and notifications about server, subscriptions, durable queues and indices.
 
-See [CacheServerMXBean Notifications](list_of_mbean_notifications#cacheservermxbean_notifications) for a list of notifications emitted by this MBean.
+See [CacheServerMXBean Notifications](../notifications/list_of_mbean_notifications#cacheservermxbean_notifications) for a list of notifications emitted by this MBean.
 
 **MBean Details**
 

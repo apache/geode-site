@@ -25,7 +25,7 @@ In a cluster with minimal contention to the concurrent threads reading or updati
 ## {#rebalancing_pr_data__section_D3649ADD28DB4FF78C47A3E428C80510}
 Rebalancing is a member operation. It affects all partitioned regions defined by the member, regardless of whether the member hosts data for the regions. The rebalancing operation performs two tasks:
 
-1.  If the configured partition region redundancy is not satisfied, rebalancing does what it can to recover redundancy. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr).
+1.  If the configured partition region redundancy is not satisfied, rebalancing does what it can to recover redundancy. See [Configure High Availability for a Partitioned Region](./configuring_ha_partitions/configuring_ha_availability/configuring_ha_for_pr).
 2.  Rebalancing moves the partitioned region data buckets between host members as needed to establish the most fair balance of data and behavior across the cluster.
 
 For efficiency, when starting multiple members, trigger the rebalance a single time, after you have added all members.
@@ -86,7 +86,7 @@ Partitioned region rebalancing:
 ## When to Rebalance a Partitioned Region {#rebalancing_pr_data__section_BE71EE52DE1A4275BC7854CA597797F4}
 You typically want to trigger rebalancing when capacity is increased or reduced through member startup, shut down or failure.
 
-You may also need to rebalance when you have uneven hashing of data. Uneven hashing can occur if your keys do not have a hash code method, which ensures uniform distribution, or if you use a `PartitionResolver` to colocate your partitioned region data (see [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data#colocating_partitioned_region_data)). In either case, some buckets may receive more data than others. Rebalancing can be used to even out the load between data stores by putting fewer buckets on members that are hosting large buckets.
+You may also need to rebalance when you have uneven hashing of data. Uneven hashing can occur if your keys do not have a hash code method, which ensures uniform distribution, or if you use a `PartitionResolver` to colocate your partitioned region data (see [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data)). In either case, some buckets may receive more data than others. Rebalancing can be used to even out the load between data stores by putting fewer buckets on members that are hosting large buckets.
 
 Rebalancing solely for the purpose of restoring lost redundancy, when redundancy is being used for high availability and the region has been configured to not automatically recover redundancy after a loss, is not necessary. Instead, the restore redundancy operation should be triggered. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy).
 

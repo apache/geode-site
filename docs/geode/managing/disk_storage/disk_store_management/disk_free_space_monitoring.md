@@ -54,4 +54,4 @@ You can obtain statistics on disk space usage and the performance of disk space 
 -   `volumeFreeSpaceChecks`
 -   `volumeFreeSpaceTime`
 
-See [Disk Space Usage (DiskDirStatistics)](../../reference/statistics_list#section_6C2BECC63A83456190B029DEDB8F4BE3).
+See [Disk Space Usage (DiskDirStatistics)](../../../reference/statistics_list#section_6C2BECC63A83456190B029DEDB8F4BE3).

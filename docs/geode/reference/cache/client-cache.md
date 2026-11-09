@@ -446,7 +446,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#cc-custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -518,7 +518,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#cc-rit-custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -588,7 +588,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#cc-ettl-custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -660,7 +660,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#cc-eit-custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -789,7 +789,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 
 ## &lt;jndi-bindings&gt; {#cc-jndi-bindings}
-Specifies the binding for a data-source used in transaction management. See [Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI).
+Specifies the binding for a data-source used in transaction management. See [Configuring Database Connections Using JNDI](../../developing/general_region_management/outside_data_sources/configuring_db_connections_using_JNDI).
 
 **Example:**
 
@@ -868,7 +868,7 @@ A configuration property of the datasource. Use the sub-elements to identify the
 </config-property>
 ```
 
-Configuration properties vary depending on the database vendor. See [Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI) for examples of different configuration property configurations.
+Configuration properties vary depending on the database vendor. See [Configuring Database Connections Using JNDI](../../developing/general_region_management/outside_data_sources/configuring_db_connections_using_JNDI) for examples of different configuration property configurations.
 
 ## &lt;config-property-name&gt; {#cc-config-property-name}
 The name of this datasource property.
@@ -953,7 +953,7 @@ Specifies a region attributes template that can be named (by `id`) and reference
 | `off-heap`                       | Stores values in off-heap memory (keys and map remain on heap). <br/><br/> **API:** `setOffHeap`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `false`              |
 
 ## &lt;index&gt; {#cc-index}
-Describes an index to be created on a region. The index node, if any, should all come immediately after the "region-attributes" node. The "name" attribute is a required field which identifies the name of the index. See [Working with Indexes](../../developing/query_index/query_index) for more information on indexes.
+Describes an index to be created on a region. The index node, if any, should all come immediately after the "region-attributes" node. The "name" attribute is a required field which identifies the name of the index. See [Working with Indexes](../../developing/querying_basics/query_index/query_index.md) for more information on indexes.
 
 **Default:**
 

@@ -27,7 +27,7 @@ For an in-depth look at how to use @@product_name_long@@ clients, see [Client/Se
 
 ## Installing @@product_name_long@@ {#client-intro-installing}
 You can download @@product_name_long@@ from the website, run a Docker image, or install with homebrew on OSX.
-See [How to Install Apache Geode](installation/install_standalone) for details.
+See [How to Install Apache Geode](./prerequisites/install_standalone) for details.
 
 ## Starting an @@product_name_long@@ Cluster {#client-intro-starting}
 For client tests and examples, start a simple cluster and create an example region.

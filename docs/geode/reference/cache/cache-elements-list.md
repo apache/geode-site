@@ -23,7 +23,7 @@ limitations under the License.
 
 This section shows the hierarchy of `<cache>` element sub-elements that you use to configure @@product_name@@ caches and servers.
 
-For details, see [&lt;cache&gt; Element Reference](cache_xml#cache_xml_cache).
+For details, see [&lt;cache&gt; Element Reference](cache_xml).
 
 ``` pre
 <cache>

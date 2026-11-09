@@ -23,7 +23,7 @@ limitations under the License.
 
 To use the module, you need to modify your application's `web.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
-Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies#common_gemfire_topologies) for more information. Modifying the war file can be done manually or with the `modify_war` script. To see the command line options for the `modify_war` script, invoke:
+Refer to [Common Topologies for HTTP Session Management](../common_gemfire_topologies) for more information. Modifying the war file can be done manually or with the `modify_war` script. To see the command line options for the `modify_war` script, invoke:
 
 ``` pre
 $ modify_war -h

@@ -22,14 +22,14 @@ limitations under the License.
 
 When you use the cluster configuration service in @@product_name@@,
 you can examine the generated configuration.
-The gfsh [export cluster-configuration](../../tools_modules/gfsh/command-pages/export#topic_mdv_jgz_ck)
+The gfsh [export cluster-configuration](../tools_modules/gfsh/command-pages/export#topic_mdv_jgz_ck)
 command outputs configured properties,
 the configuration on a per-group basis or for the
 entire cluster, and the list of deployed JAR files.
 
 If the output is written to either a ZIP file or an XML file,
 you can import this configuration to a new cluster.
-See [Exporting and Importing Cluster Configurations](export-import#concept_wft_dkq_34).
+See [Exporting and Importing Cluster Configurations](export-import).
 
 Upon the deploy of a JAR file,
 the JAR file is added to a created directory called `cluster_config` within
@@ -64,7 +64,7 @@ Group-level configurations follow.
 Last will be the configuration in a member's own configuration files
 (`cache.xml` and `gemfire.properties` files).
 -   If a server start fails with the following exception: `ClusterConfigurationNotAvailableException`, the cluster configuration service may not be in the RUNNING state. Because the server requests the cluster configuration from the locator, which is not available, the `start server` command fails.
--   You can determine what configurations a server received from a locator by examining the server's log file. See [Logging](../../managing/logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
+-   You can determine what configurations a server received from a locator by examining the server's log file. See [Logging](../managing/logging/logging.md).
 -   If a `start server` command specifies a cache.xml file that conflicts with the existing cluster configuration, the server startup may fail.
 -   If a `gfsh` command fails because the cluster configuration cannot be saved, the following message displays:
 

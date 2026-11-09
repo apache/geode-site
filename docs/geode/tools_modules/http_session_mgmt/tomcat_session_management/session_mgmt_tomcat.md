@@ -23,14 +23,14 @@ You set up and use the module by modifying Tomcat's `server.xml` and `context.xm
 
 **Note:** Geode only supports Tomcat 10.1 and later versions (Jakarta EE). Support for Tomcat 7, 8, 9, and Pivotal tc Server has been discontinued. For tc Server users, migration to Tomcat 10.1 or later is required.
 
--   **[Installing the HTTP Module for Tomcat](../../tools_modules/http_session_mgmt/tomcat_installing_the_module)**
+-   **[Installing the HTTP Module for Tomcat](./tomcat_installing_the_module)**
 
     This topic describes how to install the HTTP session management module for Tomcat.
 
--   **[Setting Up the HTTP Module for Tomcat](../../tools_modules/http_session_mgmt/tomcat_setting_up_the_module)**
+-   **[Setting Up the HTTP Module for Tomcat](./tomcat_setting_up_the_module)**
 
     To use the @@product_name@@ HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
 
--   **[Changing the Default @@product_name@@ Configuration in the Tomcat Module](../../tools_modules/http_session_mgmt/tomcat_changing_gf_default_cfg)**
+-   **[Changing the Default @@product_name@@ Configuration in the Tomcat Module](./tomcat_changing_gf_default_cfg)**
 
     By default, the Tomcat module will run @@product_name@@ automatically with pre-configured settings. You can change these @@product_name@@ settings.

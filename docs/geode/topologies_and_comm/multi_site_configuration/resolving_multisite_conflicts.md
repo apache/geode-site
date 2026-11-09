@@ -23,7 +23,7 @@ limitations under the License.
 
 You can optionally create a `GatewayConflictResolver` cache plug-in to decide whether a potentially conflicting event that was delivered from another site should be applied to the local cache.
 
-By default, all regions perform consistency checks when a member applies an update received either from another cluster member or from a remote cluster over the WAN. The default consistency checking for WAN events is described in [How Consistency Is Achieved in WAN Deployments](../distributed_regions/how_region_versioning_works_wan#topic_fpy_z3h_j5).
+By default, all regions perform consistency checks when a member applies an update received either from another cluster member or from a remote cluster over the WAN. The default consistency checking for WAN events is described in [How Consistency Is Achieved in WAN Deployments](../../developing/consistency/how_region_versioning_works_wan).
 
 You can override the default consistency checking behavior by writing and configuring a custom `GatewayConflictResolver`. The `GatewayConflictResolver` implementation can use the timestamp and distributed system ID included in a WAN update event to determine whether or not to apply the update. For example, you may decide that updates from a particular cluster should always "win" a conflict when the timestamp difference between updates is less than some fixed period of time.
 

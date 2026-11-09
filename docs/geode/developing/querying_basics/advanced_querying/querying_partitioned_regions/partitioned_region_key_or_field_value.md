@@ -25,7 +25,7 @@ You can improve query performance on data that is partitioned by key or a field 
 
 The following is an example how to optimize a query that will be run on data partitioned by region key value. In the following example, data is partitioned by the "orderId" field.
 
-1.  Create a key index on the orderId field. See [Creating Key Indexes](../query_index/creating_key_indexes#concept_09E29507AF0D42CF81D261B030D0B7C8) for more details.
+1.  Create a key index on the orderId field. See [Creating Key Indexes](../../query_index/creating_key_indexes) for more details.
 2.  Execute the query using the function service with orderId provided as the filter to the function context. For example:
 
     ``` pre

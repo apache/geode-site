@@ -23,4 +23,4 @@ limitations under the License.
 
 In addition to standard Java serialization, @@product_name@@ offers serialization options that give you higher performance and greater flexibility for data storage, transfers, and language types.
 
-Under *Developing with @@product_name_long@@*, see [Data Serialization](../../developing/data_serialization/chapter_overview#data_serialization).
+Under *Developing with @@product_name_long@@*, see [Data Serialization](../../../developing/data_serialization/chapter_overview.md).

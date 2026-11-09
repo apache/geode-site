@@ -25,13 +25,13 @@ Pulse provides a variety of different views to help you monitor @@product_name@@
 
 The following sections provide an overview of the main Pulse views:
 
--   [Cluster View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8)
--   [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF)
--   [Region View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D)
--   [Data Browser](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser)
--   [Alerts Widget](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_bfk_sc3_wn)
+-   [Cluster View](#cluster-view)
+-   [Member View](#member-view)
+-   [Region View](#region-view)
+-   [Data Browser](#data-browser)
+-   [Alerts Widget](#alerts-widget)
 
-# Cluster View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8}
+## Cluster View
 The cluster view is a high-level overview of the cluster. It is displayed immediately after you log into Pulse. Information displays around the perimeter of the cluster view show statistics such as memory usage, JVM pauses, and throughput. You can use the cluster view to drill down into details for individual members and regions in the cluster.
 
 <img src="/images/pulse_cluster_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_CC7B54903DF24030850E55965CDB6EC4" class="image imageleft" width="624" />
@@ -44,11 +44,11 @@ Use these basic controls while in Cluster view:
     For example, the following shows @@product_name@@ Members displayed in table view:
 
     <img src="/images/member_view_list.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_npw_sq3_wn" class="image" />
-    -   While in block view or table view, click the name of a @@product_name@@ member to display additional information in the [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF).
+    -   While in block view or table view, click the name of a @@product_name@@ member to display additional information in the [Member View](#member-view).
     -   Click Topology, Server Groups, or Redundancy Zones to filter the view based on all members in the topology, configured server groups, or configured redundancy zones.
     The following shows @@product_name@@ Regions displayed in table view:
     <img src="/images/pulse-region-detail.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_glp_1jr_54" class="image" />
-    -   While in block view or table view, click the name of a @@product_name@@ region to display additional information in the [Region View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D).
+    -   While in block view or table view, click the name of a @@product_name@@ region to display additional information in the [Region View](#region-view).
 
 3.  While in icon view, click a host machine icon to display the @@product_name@@ members on that machine.
 4.  In the Alerts pane, click the severity tabs to filter the message display by the level of severity.
@@ -86,7 +86,7 @@ The following table describes the data pieces displayed on the Cluster View scre
 | **Alerts View** | Displays cluster alerts. |
 
 
-# Member View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF}
+## Member View
 When you select an individual @@product_name@@ member in Cluster View, Pulse displays the regions available on that member, as well as member-specific information such as the configured listen ports.
 
 <img src="/images/pulse_member_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_EDBD3D333B2741DCAA5CB94719B507B7" class="image imageleft" width="624" />
@@ -95,8 +95,8 @@ Use these basic controls while in Member View:
 
 1.  Click the display icons to display regions using block view or table view.
 2.  Use the drop down menu to select a specific member or search for specific members by name.
-3.  Click **Cluster View** to return to Cluster View. See [Cluster View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8).
-4.  Click **Data Browser** to query region data. See [Data Browser](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser).
+3.  Click **Cluster View** to return to Cluster View. See [Cluster View](#cluster-view).
+4.  Click **Data Browser** to query region data. See [Data Browser](#data-browser).
 
 **Member View Screen Components**
 
@@ -125,7 +125,7 @@ The following table describes the data elements displayed on the Member View scr
 | **Disk Throughput** | Rate of disk writes on the member. |
 
 
-# Region View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D}
+## Region View
 The Pulse Region View provides a comprehensive overview of all regions in the cluster:
 
 <img src="/images/pulse_data_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_A533852E38654E79BE5628E938E170EB" class="image imageleft" width="624" />
@@ -134,11 +134,11 @@ Use these basic controls while in Region View:
 
 1.  Click the display icons to display all members that host the region using block view or table view.
 
-    (Click the name of a member to change to that member's [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF).)
+    (Click the name of a member to change to that member's [Member View](#member-view).)
 
 2.  Search for specific members that host the current region.
 3.  Hover over a member name to display information such as the region entry count, entry size, and throughput on that member.
-4.  Click [Cluster View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8) or [Data Browser](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser) to go to those screens.
+4.  Click [Cluster View](#cluster-view) or [Data Browser](#data-browser) to go to those screens.
 
 **Region View Screen Components**
 
@@ -152,8 +152,8 @@ The following table describes the data elements displayed on the Region View scr
 | **Region Detail** | Right pane shows region information: **Name**, **Region Path**, **Type** (REPLICATE, PARTITION, etc.), **Members** (hosting count), **Empty Nodes** (DataPolicy `EMPTY` or `LocalMaxMemory=0`), **Entry Count**, **Disk Usage** (persistent data), **Persistence** (whether data is persisted), **Memory Usage** (used/total and %), **Reads/Writes** (last 15 minutes, memory and disk). |
 
 
-# Data Browser {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser}
-The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of @@product_name@@ JMX MBeans](../../managing/management/list_of_mbeans#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
+## Data Browser
+The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of @@product_name@@ JMX MBeans](../../managing/management/federated_mbean/list_of_mbean/list_of_mbeans#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
 
 -   `QueryResultSetLimit` limits the number of rows that Data Browser queries return. 1000 rows are displayed by default.
 -   `QueryCollectionsDepth` limits the number of elements of a collection that Data Browser queries return. This attribute applies to query results contain collections such as Map, List, and so forth. The default value is 100 elements.
@@ -174,12 +174,12 @@ Use these basic controls while in Data Browser view:
 6.  Execute your query or clear the contents of the Query Editor.
 7.  View the current query results.
 8.  Export the query results to a text file.
-9.  Return to [Cluster View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8).
+9.  Return to [Cluster View](#cluster-view).
 
-# Alerts Widget {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_bfk_sc3_wn}
+## Alerts Widget
 The Alerts Widget appears in the right portion of the screen and displays a list of alerts.
 
-The alerts displayed for the cluster appear based on the alertLevel field set in the DistributedSystemMXBean. By default, log messages with the level of SEVERE are shown as alerts. You can modify the level by using the `DistributedMXBean.changeAlertLevel` method. See [System Alert Notifications](../../managing/management/notification_federation_and_alerts#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290) for more information.
+The alerts displayed for the cluster appear based on the alertLevel field set in the DistributedSystemMXBean. By default, log messages with the level of SEVERE are shown as alerts. You can modify the level by using the `DistributedMXBean.changeAlertLevel` method. See [System Alert Notifications](../../managing/management/federated_mbean/notifications/notification_federation_and_alerts#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290) for more information.
 
 <img src="/images/pulse_alerts_widget.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_jrc_smt_qn" class="image" />
 

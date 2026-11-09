@@ -37,4 +37,4 @@ When a gateway sender distributes an event to another @@product_name@@ site, it 
 
 You can override the default consistency checking for WAN events by installing a conflict resolver plug-in for the region. If a conflict resolver is installed, then any event that can potentially cause a conflict (any event that originated from a different distributed system ID than the ID that last modified the entry) is delivered to the conflict resolver. The resolver plug-in then makes the sole determination for which update to apply or keep.
 
-See "Implementing a GatewayConflictResolver" under [Resolving Conflicting Events](../events/resolving_multisite_conflicts#topic_E97BB68748F14987916CD1A50E4B4542) to configure a custom resolver.
+See "Implementing a GatewayConflictResolver" under [Resolving Conflicting Events](../../topologies_and_comm/multi_site_configuration/resolving_multisite_conflicts) to configure a custom resolver.

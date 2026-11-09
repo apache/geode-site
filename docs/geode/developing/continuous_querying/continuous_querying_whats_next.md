@@ -65,7 +65,7 @@ You manage your CQs from the client side. All calls are executed only for the ca
 ## Managing CQs and Durable Clients Using gfsh {#continuous_querying_whats_next__section_B274DA982AE6441288323A1D11B58786}
 Using the `gfsh` command-line utility, you can perform the following actions:
 
--   Close durable clients and durable client CQs. See [close](../../tools_modules/gfsh/command-pages/close#topic_27555B1929D7487D9158096BC065D372).
+-   Close durable clients and durable client CQs. See [close](../../tools_modules/gfsh/command-pages/close).
 -   List all durable CQs for a given durable client ID. See [list](../../tools_modules/gfsh/command-pages/list).
 -   Show the subscription event queue size for a given durable client ID. See [show subscription-queue-size](../../tools_modules/gfsh/command-pages/show#topic_395C96B500AD430CBF3D3C8886A4CD2E).
 

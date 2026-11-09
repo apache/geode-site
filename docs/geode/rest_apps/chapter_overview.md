@@ -38,7 +38,7 @@ automatically mapped to JSON, the user does not need to write a corresponding Em
 and also does not need to worry about related issues such as keeping the Employee object in the
 CLASSPATH.
 
-See [ Geode PDX Serialization](../developing/data_serialization/gemfire_pdx_serialization#gemfire_pdx_serialization) for more information on PDX serialization.
+See [ Geode PDX Serialization](../developing/data_serialization/geode_pdx_serialization/gemfire_pdx_serialization) for more information on PDX serialization.
 
 
 

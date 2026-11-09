@@ -26,7 +26,7 @@ Configure the type of expiration and the expiration action to use.
 -   Expiration actions require setting the region attribute of `statistics-enabled` to `true`. This can be done in the region element of a `cache.xml` file, the `gfsh` command line, or through the API.
 
 
--   Set the expiration attributes by expiration type, with the max times and expiration actions. See the region attributes listings for `entry-time-to-live`, `entry-idle-time`, `region-time-to-live`, and `region-idle-time` in [&lt;region-attributes&gt;](../../reference/cache/cache_xml#region-attributes).
+-   Set the expiration attributes by expiration type, with the max times and expiration actions. See the region attributes listings for `entry-time-to-live`, `entry-idle-time`, `region-time-to-live`, and `region-idle-time` in [&lt;region-attributes&gt;](../../../reference/cache/cache_xml#region-attributes).
 
 The statistics used for expiration are available directly to the application through the `CacheStatistics` object returned by the `Region` and `Region.Entry` `getStatistics` methods. The `CacheStatistics` object also provides a method for resetting the statistics counters.
 
@@ -93,7 +93,7 @@ primary adopts the most recent access time and reschedules the expiration, if wa
 done only for distributed expiration actions, and applies to both partitioned and replicated
 regions.
 
-You can also configure regions using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD).
+You can also configure regions using the gfsh command-line interface. See [Region Commands](../../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD).
 
 ## Configuring the Number of Threads for Expiration
 

@@ -25,7 +25,7 @@ You can connect `gfsh` via HTTP or HTTPS to a remote cluster and manage the clus
 
 To connect `gfsh` using the HTTP protocol to a remote cluster:
 
-1.  Launch `gfsh`. See [Starting gfsh](../../tools_modules/gfsh/starting_gfsh#concept_DB959734350B488BBFF91A120890FE61).
+1.  Launch `gfsh`. See [Starting gfsh](../tools_modules/gfsh/starting_gfsh).
 2.  When starting the remote cluster on the remote host, you can optionally specify `--http-bind-address` and `--http-service-port` as @@product_name@@ properties when starting up your JMX manager (server or locator). These properties can be then used in the URL used when connecting from your local system to the HTTP service in the remote cluster. For example:
 
     ``` pre
@@ -44,7 +44,7 @@ To connect `gfsh` using the HTTP protocol to a remote cluster:
     Successfully connected to: @@product_name@@ Manager's HTTP service @ http://myremotecluster.example.com:8080/geode/v1
     ```
 
-    See [connect](../../tools_modules/gfsh/command-pages/connect).
+    See [connect](../tools_modules/gfsh/command-pages/connect).
 
     `gfsh` is now connected to the remote system. Most `gfsh` commands will now execute on the remote system; however, there are exceptions. The following commands are executed on the local cluster:
       -   `alter disk-store`
@@ -72,7 +72,7 @@ To connect `gfsh` using the HTTP protocol to a remote cluster:
 To configure SSL for the remote connection (HTTPS), enable SSL for the `http` component
 in <span class="ph filepath">gemfire.properties</span> or <span class="ph
 filepath">gfsecurity-properties</span> or upon server startup. See
-[SSL](../../security/ssl_overview) for details on configuring SSL parameters. These
+[SSL](../security/ssl/ssl_overview) for details on configuring SSL parameters. These
 SSL parameters also apply to all HTTP services hosted on the configured JMX Manager, which can
 include the following:
 

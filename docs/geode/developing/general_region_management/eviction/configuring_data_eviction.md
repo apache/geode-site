@@ -28,14 +28,14 @@ Configure data eviction as follows. You do not need to perform these steps in th
 1.  Decide whether to evict based on:
     -   Entry count (useful if your entry sizes are relatively uniform).
     -   Total bytes used. In partitioned regions, this is set using `local-max-memory`. In non-partitioned regions, it is set in `eviction-attributes`.
-    -   Percentage of application heap used. This uses the @@product_name@@ resource manager. When the manager determines that eviction is required, the manager orders the eviction controller to start evicting from all regions where the eviction algorithm is set to `lru-heap-percentage`. Eviction continues until the manager calls a halt. @@product_name@@ evicts the least recently used entry hosted by the member for the region. See [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+    -   Percentage of application heap used. This uses the @@product_name@@ resource manager. When the manager determines that eviction is required, the manager orders the eviction controller to start evicting from all regions where the eviction algorithm is set to `lru-heap-percentage`. Eviction continues until the manager calls a halt. @@product_name@@ evicts the least recently used entry hosted by the member for the region. See [Managing Heap and Off-heap Memory](../../../managing/heap_use/heap_management).
 
 2.  Decide what action to take when the limit is reached:
     -   Locally destroy the entry.
     -   Overflow the entry data to disk. See [Persistence and Overflow](../storing_data_on_disk/chapter_overview).
 
 3.  Decide the maximum amount of data to allow in the member for the eviction measurement indicated. This is the maximum for all storage for the region in the member. For partitioned regions, this is the total for all buckets stored in the member for the region, including any secondary buckets used for redundancy.
-4.  Decide whether to program a custom sizer for your region. If you are able to provide such a class, it might be faster than the standard sizing done by @@product_name@@. Your custom class must follow the guidelines for defining custom classes and, additionally, must implement `org.apache.geode.cache.util.ObjectSizer`. See [Requirements for Using Custom Classes in Data Caching](../../basic_config/data_entries_custom_classes/using_custom_classes).
+4.  Decide whether to program a custom sizer for your region. If you are able to provide such a class, it might be faster than the standard sizing done by @@product_name@@. Your custom class must follow the guidelines for defining custom classes and, additionally, must implement `org.apache.geode.cache.util.ObjectSizer`. See [Requirements for Using Custom Classes in Data Caching](../../../basic_config/data_entries_custom_classes/using_custom_classes).
 
 **Examples:**
 

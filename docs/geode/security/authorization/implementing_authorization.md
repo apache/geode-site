@@ -280,7 +280,7 @@ The algorithm bases its decision
 on a look up of the permissions granted to the principal attempting
 the operation.
 - Define the `security-manager` property.
-See [Enable Security with Property Definitions](enable_security)
+See [Enable Security with Property Definitions](../enable_security)
 for details about this property.
 - Implement the  `authorize` method of the `SecurityManager` interface.
 - Define any extra resources that the implemented authorization algorithm
@@ -301,4 +301,4 @@ required of the entity that invokes an execution of the function.
 
 ### Authorization of Methods Invoked from Queries {#AuthorizeMethodsInQueries}
 Enabling the `SecurityManager` affects queries by restricting the methods that a running query may invoke.
-See [Method Invocations](../developing/querying_basics/query_select/the_where_clause.md#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) and [Method Invocation Authorizers](../security/method_invocation_authorizers) for details.
+See [Method Invocations](../../developing/querying_basics/queries/query_select/the_where_clause#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) and [Method Invocation Authorizers](./method_invocation_authorizers) for details.

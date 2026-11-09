@@ -29,8 +29,8 @@ Indexes can be created programmatically, by using the `gfsh` command line interf
 To create an index, use one of the following `QueryService` methods:
 
 -   `createIndex`. Creates the default type of index, a range index. Use this type of index if you will be writing queries that will be doing any kind of comparison operation besides an equality comparison.
--   `createKeyIndex`. Creates a key index. See [Creating Key Indexes](creating_key_indexes#concept_09E29507AF0D42CF81D261B030D0B7C8) for more information.
--   **Deprecated.** `createHashIndex`. Creates a hash index. See [Creating Hash Indexes](creating_hash_indexes#concept_5C7614F71F394C62ACA1BDC5684A7AC4) for more information.
+-   `createKeyIndex`. Creates a key index. See [Creating Key Indexes](creating_key_indexes) for more information.
+-   **Deprecated.** `createHashIndex`. Creates a hash index. See [Creating Hash Indexes](creating_hash_indexes) for more information.
 -   `createDefinedIndexes`. Creates multiple indexes that were previously defined using `defineIndex`. See [Creating Multiple Indexes at Once](create_multiple_indexes) for more information.
 
 The following sections provide examples of index creation:
@@ -42,7 +42,7 @@ gfsh> create index --name=myIndex --expression=status --region=/exampleRegion
 gfsh> create index --name=myKeyIndex --type=key --expression=id --region=/exampleRegion
 ```
 
-See [Index Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_688C66526B4649AFA51C0F72F34FA45E) for more examples.
+See [Index Commands](../../../tools_modules/gfsh/quick_ref_commands_by_area#topic_688C66526B4649AFA51C0F72F34FA45E) for more examples.
 
 **Using Java API:**
 

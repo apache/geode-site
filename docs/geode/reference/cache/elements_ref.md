@@ -111,6 +111,6 @@ To configure cache servers, clients, and WAN topologies, see the following secti
 
     -   [&lt;gateway-sender&gt;](cache_xml#gateway-sender)
     -   [&lt;gateway-receiver&gt;](cache_xml#gateway-receiver)
-    -   [&lt;async-event-queue&gt;](cache_xml#id_zrr_scq_rr)
+    -   [&lt;async-event-queue&gt;](cache_xml)
 
     The gateway sender and receiver APIs in <span class="keyword apiname">`org.apache.geode.cache.util`</span> provide corresponding getter and setter methods for these attributes.

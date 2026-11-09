@@ -25,7 +25,7 @@ You can make configuration adjustments to improve multicast and unicast UDP perf
 
 You can tune your @@product_name@@ UDP messaging to maximize throughput. There are two main tuning goals: to use the largest reasonable datagram packet sizes and to reduce retransmission rates. These actions reduce messaging overhead and overall traffic on your network while still getting your data where it needs to go. @@product_name@@ also provides statistics to help you decide when to change your UDP messaging settings.
 
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../developing/book_intro). See also the general communication tuning and multicast-specific tuning covered in [Socket Communication](socket_communication) and [Multicast Communication](multicast_communication#multicast).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../developing/book_intro). See also the general communication tuning and multicast-specific tuning covered in [Socket Communication](socket_communication) and [Multicast Communication](multicast_communication/multicast_communication.md).
 
 ## UDP Datagram Size {#udp_comm__section_4089ACC33AF34FA888BAE3CA3602A730}
 You can change the UDP datagram size with the @@product_name@@ property `udp-fragment-size`. This is the maximum packet size for transmission over UDP unicast or multicast sockets. When possible, smaller messages are combined into batches up to the size of this setting.

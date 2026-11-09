@@ -29,7 +29,7 @@ For replicated, distributed, and local regions, @@product_name@@ provides a stan
 Unlike other @@product_name@@ statistics, these region and entry statistics are not archived and cannot be charted.
 
 **Note:**
-Enabling these statistics requires extra memory per entry. See [Memory Requirements for Cached Data](../../reference/topics/memory_requirements_for_cache_data#calculating_memory_requirements).
+Enabling these statistics requires extra memory per entry. See [Memory Requirements for Cached Data](../../reference/memory_requirements_for_cache_data).
 
 These are the transient statistics gathered for all but partitioned regions:
 

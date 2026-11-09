@@ -190,7 +190,7 @@ Verify that the @@product_name@@ REST API service is up and running. To validate
 
 If you did not specify these properties upon server startup or in `gemfire.properties`, then use the
 default of localhost and port 7070. See [Using the Swagger UI to Browse REST
-APIs](using_swagger#concept_rlr_y3c_54) for more information.
+APIs](using_swagger) for more information.
 
 # Implementing Authentication {#setup_config_implementing_auth}
 To turn on integrated security, start your servers and locators with the security-manager property

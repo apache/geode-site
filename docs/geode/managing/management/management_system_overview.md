@@ -33,7 +33,7 @@ In this architecture every @@product_name@@ member is manageable. All @@product_
 ## Managed Node {#concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_1CF2B237C16F4095A609E62F0C7146C1}
 Each member of a cluster is a managed node. Any node that is not currently also acting as a JMX Manager node is referred to simply as a managed node. A managed node has the following resources so that it can answer JMX queries both locally and remotely:
 
--   Local MXBeans that represent the locally monitored components on the node. See [List of @@product_name@@ JMX MBeans](list_of_mbeans#topic_4BCF867697C3456D96066BAD7F39FC8B) for a list of possible MXBeans existing for the managed node.
+-   Local MXBeans that represent the locally monitored components on the node. See [List of @@product_name@@ JMX MBeans](./federated_mbean/list_of_mbean/list_of_mbeans#topic_4BCF867697C3456D96066BAD7F39FC8B) for a list of possible MXBeans existing for the managed node.
 -   Built-in platform MBeans.
 
 ## JMX Manager Node {#concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_8604838507194C8B86F1420FBA46894C}
@@ -41,7 +41,7 @@ A JMX Manager node is a member that can manage other @@product_name@@ members---
 
 To convert a managed node to a JMX Manager node, you configure the @@product_name@@ property `jmx-manager=true`, in the `gemfire.properties` file, and start the member as a JMX Manager node.
 
-You start the member as a JMX Manager node when you provide `--J=-Dgemfire.jmx-manager=true` as an argument to either the `start server` or `start locator` command. See [Starting a JMX Manager](jmx_manager_operations#topic_686158E9AFBD47518BE1B4BEB232C190) for more information.
+You start the member as a JMX Manager node when you provide `--J=-Dgemfire.jmx-manager=true` as an argument to either the `start server` or `start locator` command. See [Starting a JMX Manager](./jmx_manager/jmx_manager_operations#topic_686158E9AFBD47518BE1B4BEB232C190) for more information.
 
 The JMX Manager node has the following extra resources allocated so that it can answer JMX queries:
 
@@ -68,7 +68,7 @@ When a @@product_name@@ locator or server becomes a JMX Manager for the cluster,
 
 `gfsh` can only connect to a JMX Manager or to a locator. If connected to a locator, the locator provides the necessary connection information for the existing JMX Manager. If the locator detects a JMX Manager is not already running in the cluster, the locator makes itself a JMX Manager. gfsh cannot connect to other non-Manager or non-locator members.
 
-For information on how to configure the RMI registry and RMI connector, see [Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector#concept_BC793A7ACF9A4BD9A29C2DCC6894767D).
+For information on how to configure the RMI registry and RMI connector, see [Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector).
 
 ## Management APIs {#concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_A3F9E1594982480DA019CBA3E93CA895}
 @@product_name@@ management APIs represent the @@product_name@@ cluster to a JMX user. However, they do not provide functionality that is otherwise present in JMX. They only provide a gateway into various services exclusively offered by @@product_name@@ monitoring and management.
@@ -95,12 +95,12 @@ You can use the @@product_name@@ management APIs to accomplish the following tas
 
 See the JavaDocs for the `org.apache.geode.management` package for more details.
 
-You can also execute gfsh commands using the ManagementService API. See [Executing gfsh Commands through the Management API](gfsh_and_management_api#concept_451F0978285245E69C3E8DE795BD8635) and the JavaDocs for the `org.apache.geode.management.cli` package.
+You can also execute gfsh commands using the ManagementService API. See [Executing gfsh Commands through the Management API](gfsh_and_management_api) and the JavaDocs for the `org.apache.geode.management.cli` package.
 
 ## @@product_name@@ Management and Monitoring Tools {#concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_E69A93A6309E4747B52850D81FE1674E}
 This section lists the currently available tools for managing and monitoring @@product_name@@:
 
 -   **gfsh**. @@product_name_long@@ command-line interface that provides a simple & powerful command shell that supports the administration, debugging and deployment of @@product_name@@ applications. It features context sensitive help, scripting and the ability to invoke any commands from within the application using a simple API. See [gfsh](../../tools_modules/gfsh/chapter_overview).
 -   **@@product_name@@ Pulse**. Easy-to-use, browser-based dashboard for monitoring @@product_name@@ deployments. @@product_name@@ Pulse provides an integrated view of all @@product_name@@ members within a cluster. See [@@product_name@@ Pulse](../../tools_modules/pulse/pulse-overview).
--   **Pulse Data Browser**. This @@product_name@@ Pulse utility provides a graphical interface for performing OQL ad-hoc queries in a @@product_name@@ cluster. See [Data Browser](../../tools_modules/pulse/pulse-views#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser).
+-   **Pulse Data Browser**. This @@product_name@@ Pulse utility provides a graphical interface for performing OQL ad-hoc queries in a @@product_name@@ cluster. See [Data Browser](../../tools_modules/pulse/pulse-views).
 -   **Other Java Monitoring Tools such as JConsole and jvisualvm.** JConsole is a JMX-based management and monitoring tool provided in the Java 2 Platform that provides information on the performance and consumption of resources by Java applications. See [http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html). **Java VisualVM (jvisualvm)** is a profiling tool for analyzing your Java Virtual Machine. Java VisualVM is useful to Java application developers to troubleshoot applications and to monitor and improve the applications' performance. Java VisualVM can allow developers to generate and analyse heap dumps, track down memory leaks, perform and monitor garbage collection, and perform lightweight memory and CPU profiling. For more details on using jvisualvm, see [http://docs.oracle.com/javase/6/docs/technotes/tools/share/jvisualvm.html](http://docs.oracle.com/javase/6/docs/technotes/tools/share/jvisualvm.html).

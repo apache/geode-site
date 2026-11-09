@@ -33,7 +33,7 @@ As shown in [Gemcached Architecture](about_gemcached#concept_4C654CA7F6B34E4CA1B
 
 <img src="/images/Gemcached.png" id="concept_4C654CA7F6B34E4CA1B0318BC9644536__image_98B6222F29B940CD93381D03325C4455" class="image" />
 
-Memcached clients use the memcached API to read and write data that is stored in memcached servers; therefore, client-side @@product_name@@ features are not available to these clients. Gemcached servers, however, can use @@product_name@@'s server-side features and API. These features include the following. (For more detail, see [Advantages of Gemcached over Memcached](advantages#topic_849581E507544E63AF23793FBC47D778).)
+Memcached clients use the memcached API to read and write data that is stored in memcached servers; therefore, client-side @@product_name@@ features are not available to these clients. Gemcached servers, however, can use @@product_name@@'s server-side features and API. These features include the following. (For more detail, see [Advantages of Gemcached over Memcached](advantages).)
 
 -   Data consistency and scalability.
 -   High availability.

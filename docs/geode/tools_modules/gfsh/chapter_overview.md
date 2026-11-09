@@ -45,15 +45,11 @@ limitations under the License.
 
     Some `gfsh` commands allow JSON specifications within command-line options.
 
--   **[Tutorialâ€”Performing Common Tasks with gfsh](tour_of_gfsh)**
+-   **[Tutorial - Performing Common Tasks with gfsh](tour_of_gfsh)**
 
     This topic takes you through a typical sequence of tasks that you execute after starting `gfsh`.
 
--   **[Quick Reference of gfsh Commands by Functional Area](gfsh_quick_reference)**
-
-    This quick reference sorts all commands into functional areas.
-
--   **[gfsh Command Help](gfsh_command_index)**
+-   **[gfsh Command Help](./command-pages/gfsh_command_index)**
 
     This section provides help and usage information on all `gfsh` commands, listed alphabetically.
 

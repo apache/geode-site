@@ -103,7 +103,7 @@ com.mycompany.package.ApplicationWithEmbeddedCache
 ```
 
 **Note:**
-Another method for updating the CLASSPATH of a server process with your own applications is to use the `gfsh deploy` command. Deploying application JAR files will automatically update the CLASSPATH of all members that are targeted for deployment. See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/deploying_application_jars#concept_4436C021FB934EC4A330D27BD026602C) for more details.
+Another method for updating the CLASSPATH of a server process with your own applications is to use the `gfsh deploy` command. Deploying application JAR files will automatically update the CLASSPATH of all members that are targeted for deployment. See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/deploying_application_jars) for more details.
 
 For systems running an embedded HTTP or HTTPS service,
 setting a `GEODE_HOME` environment variable with a path to the 

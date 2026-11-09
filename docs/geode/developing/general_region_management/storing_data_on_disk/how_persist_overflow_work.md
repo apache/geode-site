@@ -27,7 +27,7 @@ To use @@product_name@@ persistence and overflow, you should understand how they
 
 Persistent data outlives the member where the region resides and can be used to initialize the region at creation. Overflow acts only as an extension of the region in memory.
 
-The data is written to disk according to the configuration of @@product_name@@ disk stores. For any disk option, you can specify the name of the disk store to use or use the @@product_name@@ default disk store. See [Disk Storage](../../managing/disk_storage/chapter_overview).
+The data is written to disk according to the configuration of @@product_name@@ disk stores. For any disk option, you can specify the name of the disk store to use or use the @@product_name@@ default disk store. See [Disk Storage](../../../managing/disk_storage/chapter_overview).
 
 ## How Data Is Persisted and Overflowed {#how_persist_overflow_work__section_78F2D1820B6C48859A0E5411CE360105}
 For persistence, the entry keys and values are copied to disk. For overflow, only the entry values are copied. Other data, such as statistics and user attributes, are retained in memory only.

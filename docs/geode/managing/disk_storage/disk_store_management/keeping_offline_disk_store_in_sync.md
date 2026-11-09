@@ -38,7 +38,7 @@ Be sure to apply the same `alter disk-store` command to each offline copy of the
 When your disk store is offline, you can keep the configuration for its regions up-to-date with your
 `cache.xml` and API settings. The disk store retains a subset of the region configuration
 attributes.  (For a list of the retained attributes, see [alter
-disk-store](../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB)).  If the configurations do not
+disk-store](../../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB)).  If the configurations do not
 match at startup, the `cache.xml` and API override any disk store settings and the disk store is
 automatically updated to match. So you do not need to modify your disk store to keep your cache
 configuration and disk store synchronized, but you will save startup time and memory if you do.

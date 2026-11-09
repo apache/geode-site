@@ -25,7 +25,7 @@ Plan the configuration and ongoing management of your distributed, replicated, a
 ## {#configure_distributed_region__section_11E9E1B3EB5845D9A4FB226A992B8D0D}
 Before you begin, understand [Basic Configuration and Programming](../../developing/book_intro).
 
-1.  Choose the region shortcut setting that most closely matches your region configuration. See **`org.apache.geode.cache.RegionShortcut`** or [Region Shortcuts](../../reference/region_shortcuts/chapter_overview_regionshortcuts#concept_ymp_rkz_4dffhdfhk). To create a replicated region, use one of the `REPLICATE` shortcut settings. To create a preloaded region, set your region `data-policy` to `preloaded`. This `cache.xml` declaration creates a replicated region:
+1.  Choose the region shortcut setting that most closely matches your region configuration. See **`org.apache.geode.cache.RegionShortcut`** or [Region Shortcuts](../../reference/region_shortcuts/chapter_overview_regionshortcuts). To create a replicated region, use one of the `REPLICATE` shortcut settings. To create a preloaded region, set your region `data-policy` to `preloaded`. This `cache.xml` declaration creates a replicated region:
 
     ``` pre
     <region-attributes refid="REPLICATE"> 
@@ -38,7 +38,7 @@ Before you begin, understand [Basic Configuration and Programming](../../develop
     gfsh>create region --name=regionA --type=REPLICATE
     ```
 
-    See [Region Types](../region_options/region_types#region_types).
+    See [Region Types](../region_options/region_types).
 
 2.  Choose the level of distribution for your region. The region shortcuts in `RegionShortcut` for distributed regions use `distributed-ack` scope. If you need a different scope, set the `region-attributes` `scope` to `distributed-no-ack` or `global`.
 

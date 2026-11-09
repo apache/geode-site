@@ -21,7 +21,7 @@ limitations under the License.
 
 You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your @@product_name@@ system.
 
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../developing/book_intro). See also the general communication tuning and UDP tuning covered in [Socket Communication](socket_communication) and [UDP Communication](udp_communication#udp_comm).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../../developing/book_intro.md). See also the general communication tuning and UDP tuning covered in [Socket Communication](../socket_communication/socket_communication.md) and [UDP Communication](../udp_communication).
 
 -   **[Provisioning Bandwidth for Multicast](multicast_communication_provisioning_bandwidth)**
 

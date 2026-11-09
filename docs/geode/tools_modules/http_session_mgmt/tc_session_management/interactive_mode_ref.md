@@ -27,7 +27,7 @@ This section describes each prompt when entering into interactive configuration 
   Please enter a value for 'geode-cs.cms.initiating.heap.percentage'. Default '50':
 ```
 
-The above properties allow you to fine-tune your JVM heap and garbage collector. For more information, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+The above properties allow you to fine-tune your JVM heap and garbage collector. For more information, refer to [Managing Heap and Off-heap Memory](../../../managing/heap_use/heap_management).
 
 ``` pre
   Please specify whether to enable a @@product_name@@ listener that logs session create, 
@@ -58,7 +58,7 @@ With the geode-cs template:
   Default 'PARTITION_REDUNDANT':
 ```
 
-The above property determines the ID of the attributes for the cache region; possible values include PARTITION, PARTITION\_REDUNDANT, PARTITION\_PERSISTENT, REPLICATE, REPLICATE\_PERSISTENT, and any other region shortcut that can be found in [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts). When using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.
+The above property determines the ID of the attributes for the cache region; possible values include PARTITION, PARTITION\_REDUNDANT, PARTITION\_PERSISTENT, REPLICATE, REPLICATE\_PERSISTENT, and any other region shortcut that can be found in [Region Shortcuts and Custom Named Region Attributes](../../../basic_config/data_regions/region_shortcuts). When using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.
 
 ``` pre
   Please enter the name of the @@product_name@@ region used to cache sessions. 
@@ -137,4 +137,4 @@ The above property determines the filename for the @@product_name@@ statistics f
   Default 'false':
 ```
 
-The above property determines whether statistics sampling should occur. See [Statistics](../../managing/statistics/chapter_overview) for more information.
+The above property determines whether statistics sampling should occur. See [Statistics](../../../managing/statistics/chapter_overview) for more information.

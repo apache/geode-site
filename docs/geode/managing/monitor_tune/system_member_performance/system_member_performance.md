@@ -21,7 +21,7 @@ limitations under the License.
 
 You can modify some configuration parameters to improve system member performance.
 
-Before doing so, you should understand [Basic Configuration and Programming](../../developing/book_intro).
+Before doing so, you should understand [Basic Configuration and Programming](../../../developing/book_intro).
 
 -   **[Member Properties](system_member_performance_distributed_system_member)**
 

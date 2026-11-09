@@ -23,17 +23,17 @@ Configure in-memory high availability for your partitioned region. Set other hig
 
 Here are the main steps for configuring high availability for a partitioned region. See later sections for details.
 
-1.  Set the number of redundant copies the system should maintain of the region data. See [Set the Number of Redundant Copies](set_pr_redundancy#set_pr_redundancy). 
-2.  (Optional) If you want to group your data store members into redundancy zones, configure them accordingly. See [Configure Redundancy Zones for Members](set_redundancy_zones#set_redundancy_zones). 
-3.  (Optional) If you want @@product_name@@ to only place redundant copies on different physical machines, configure for that. See [Set Enforce Unique Host](set_enforce_unique_host#set_pr_redundancy). 
+1.  Set the number of redundant copies the system should maintain of the region data. See [Set the Number of Redundant Copies](set_pr_redundancy). 
+2.  (Optional) If you want to group your data store members into redundancy zones, configure them accordingly. See [Configure Redundancy Zones for Members](set_redundancy_zones). 
+3.  (Optional) If you want @@product_name@@ to only place redundant copies on different physical machines, configure for that. See [Set Enforce Unique Host](set_enforce_unique_host). 
 4.  Decide how to manage redundancy recovery and change @@product_name@@'s default behavior as needed. 
-    - **After a member crashes**. If you want automatic redundancy recovery, change the configuration for that. See [Configure Member Crash Redundancy Recovery for a Partitioned Region](set_crash_redundancy_recovery#set_crash_redundancy_recovery). 
-    - **After a member joins**. If you do *not* want immediate, automatic redundancy recovery, change the configuration for that. See [Configure Member Join Redundancy Recovery for a Partitioned Region](set_join_redundancy_recovery#set_join_redundancy_recovery). 
+    - **After a member crashes**. If you want automatic redundancy recovery, change the configuration for that. See [Configure Member Crash Redundancy Recovery for a Partitioned Region](set_crash_redundancy_recovery). 
+    - **After a member joins**. If you do *not* want immediate, automatic redundancy recovery, change the configuration for that. See [Configure Member Join Redundancy Recovery for a Partitioned Region](set_join_redundancy_recovery). 
 
 5.  Decide how many buckets @@product_name@@ should attempt to recover in parallel when performing redundancy recovery. By default, the system recovers up to 8 buckets in parallel. Use the `gemfire.MAX_PARALLEL_BUCKET_RECOVERIES` system property to increase or decrease the maximum number of buckets to recover in parallel any time redundancy recovery is performed.
-6.  For all but fixed partitioned regions, review the points at which you kick off rebalancing. Redundancy recovery is done automatically at the start of any rebalancing. This is most important if you run with no automated recovery after member crashes or joins. See [Rebalancing Partitioned Region Data](rebalancing_pr_data#rebalancing_pr_data). 
+6.  For all but fixed partitioned regions, review the points at which you kick off rebalancing. Redundancy recovery is done automatically at the start of any rebalancing. This is most important if you run with no automated recovery after member crashes or joins. See [Rebalancing Partitioned Region Data](../../rebalancing_pr_data). 
 
-For all partitioned regions, redundancy can be restored without moving buckets between members using a restore redundancy operation. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy).
+For all partitioned regions, redundancy can be restored without moving buckets between members using a restore redundancy operation. See [Restoring Redundancy in Partitioned Regions](../../restoring_region_redundancy).
 
 During runtime, you can add capacity by adding new members for the region. For regions that do not use fixed partitioning, you can also kick off a rebalancing operation to spread the region buckets among all members.
 

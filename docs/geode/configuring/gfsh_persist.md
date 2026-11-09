@@ -49,7 +49,7 @@ The default behavior for `gfsh` is to create and save cluster configurations. Yo
 
 You can load existing configuration into
 the cluster by using the
-[`gfsh import cluster-configuration`](../../tools_modules/gfsh/command-pages/import#topic_vnv_grz_ck)
+[`gfsh import cluster-configuration`](../tools_modules/gfsh/command-pages/import)
 command after starting up a locator.
 
 Subsequently, any servers that you start with `gfsh` that have `--use-cluster-configuration` set to `true` will pick up the cluster configuration from the locator as well as any appropriate group-level configurations (for member groups they belong to). To disable the cluster configuration service on a server, you must start the server with the `--use-cluster-configuration` parameter set to `false`. By default, the parameter is set to true.

@@ -75,18 +75,18 @@ To perform a client to server query, use `org.apache.geode.cache.client.Pool.get
 
 Refer to the following JavaDocs for specific APIs:
 
--   [Query package](/org/apache/geode/cache/query/package-summary)
--   [QueryService](/org/apache/geode/cache/query/QueryService)
+-   [Query package](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/query/package-summary.html)
+-   [QueryService](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/query/QueryService.html)
 
 **Note:**
-You can also perform queries using the gfsh `query` command. See [query](../../tools_modules/gfsh/command-pages/query).
+You can also perform queries using the gfsh `query` command. See [query](../../../tools_modules/gfsh/command-pages/query).
 
 ## Next Steps {#quering-next-steps}
-- **[Building a Query String](what_is_a_query_string)**
+- **[Building a Query String](./query_select/what_is_a_query_string)**
 
 To build a query string, you combine supported keywords, expressions, and operators to create an expression that returns the information you require.
 
-- **[OQL Syntax and Semantics](../query_additional/query_language_features)**
+- **[OQL Syntax and Semantics](./query_additional/query_language_features)**
 
 This section covers the following querying language features.
 

@@ -38,7 +38,7 @@ Do not try to create backup files from a running system by using your operating 
 
 **Preparing to Make a Backup**
 
--   Consider compacting your disk store before making a backup. If auto-compaction is turned off, you may want to do a manual compaction to save on the quantity of data copied over the network by the backup. For more information on configuring a manual compaction, see [Manual Compaction](compacting_disk_stores#compacting_disk_stores__li_63CF8C35153D4173AADF7DC35FEC61F9).
+-   Consider compacting your disk store before making a backup. If auto-compaction is turned off, you may want to do a manual compaction to save on the quantity of data copied over the network by the backup. For more information on configuring a manual compaction, see [Manual Compaction](./disk_store_management/compacting_disk_stores).
 -   Take the backup when region operations are quiescent,
 to avoid the possibility of an inconsistency between region data and
 an asynchronous event queue (AEQ) or a WAN Gateway sender

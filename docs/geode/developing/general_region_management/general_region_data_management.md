@@ -21,18 +21,18 @@ limitations under the License.
 
 For all regions, you have options to control memory use, back up your data to disk, and discard stale data from your cache.
 
--   **[Persistence and Overflow](../developing/storing_data_on_disk/chapter_overview)**
+-   **[Persistence and Overflow](../../developing/general_region_management/storing_data_on_disk/chapter_overview.md)**
 
     You can persist data on disk for backup purposes and overflow it to disk to free up memory without completely removing the data from your cache.
 
--   **[Eviction](../developing/eviction/chapter_overview)**
+-   **[Eviction](../../developing/general_region_management/eviction/chapter_overview)**
 
     Use eviction to control data region size. Eviction actions are triggered by space-based thresholds.
 
--   **[Expiration](../developing/expiration/chapter_overview)**
+-   **[Expiration](../../developing/general_region_management/expiration/chapter_overview)**
 
     Use expiration to keep data current and to reduce region size by removing stale entries. Expiration actions are triggered by time-based thresholds.
 
--   **[Keeping the Cache in Sync with Outside Data Sources](../developing/outside_data_sources/sync_outside_data)**
+-   **[Keeping the Cache in Sync with Outside Data Sources](./outside_data_sources/sync_outside_data)**
 
     Keep your distributed cache in sync with an outside data source by programming and installing application plug-ins for your region.

@@ -25,7 +25,7 @@ By default @@product_name_long@@ uses TCP for communication between members of a
 ## {#setting_up_communication__section_34509F5B17A943D8BBF19A3497E32BAE}
 Before you begin, you should have already determined the address and port settings for multicast, including any bind addresses. See [Topology and Communication General Concepts](../topology_concepts/chapter_overview).
 
-See the [Reference](../../reference/book_intro#reference).
+See the [Reference](../../reference/book_intro).
 
 1.  **Configure general messaging to use TCP or UDP unicast**.
 

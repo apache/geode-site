@@ -45,7 +45,7 @@ If the above conditions are not fulfilled or under very high load traffic condit
 
 By default, potential WAN conflicts are resolved using a timestamp mechanism. You can optionally install a custom conflict resolver to apply custom logic when determining whether to apply a potentially conflicting update received over a WAN.
 
-[Consistency for Region Updates](../../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045) describes how Geode ensures consistency within a cluster, in client caches, and when applying updates over a WAN. [Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts#topic_E97BB68748F14987916CD1A50E4B4542) provides more details about implementing a custom conflict resolver for WAN updates.
+[Consistency for Region Updates](../../../developing/consistency/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045) describes how Geode ensures consistency within a cluster, in client caches, and when applying updates over a WAN. [Resolving Conflicting Events](../resolving_multisite_conflicts) provides more details about implementing a custom conflict resolver for WAN updates.
 
 ## Discovery for Multi-Site Systems {#topic_1742957C8D4B4F7590847EB8DB6CD4F7}
 Each Geode cluster in a WAN configuration uses locators to discover remote clusters as well as local members.
@@ -77,14 +77,14 @@ A *parallel gateway sender* distributes region events from each of the Geode ser
 
 Replicated regions cannot use a parallel gateway sender.
 
-Although parallel gateway senders provide the best throughput for WAN distribution, they provide less control for event ordering. Event ordering for the region as a whole is not preserved, because multiple Geode servers distribute the regions events at the same time. However, the ordering of events for a given partition can be preserved. See [Configuring Multi-Site (WAN) Event Queues](../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
+Although parallel gateway senders provide the best throughput for WAN distribution, they provide less control for event ordering. Event ordering for the region as a whole is not preserved, because multiple Geode servers distribute the regions events at the same time. However, the ordering of events for a given partition can be preserved. See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/client_server_events/multi_site/configure_multisite_event_messaging).
 
 ## Gateway Sender Queues {#topic_9AA37B43642D4DE19072CA3367C849BA__section_75F4588FEA404712963CE83FACB8ED1B}
 The queue that a gateway sender uses to distribute events to a remote site overflows to disk as needed, in order to prevent the Geode member from running out of memory. You can configure the maximum amount of memory that each queue uses, as well as the batch size and frequency for processing batches in the queue. You can also configure these queues to persist to disk, so that a gateway sender can pick up where it left off when its member shuts down and is later restarted.
 
 By default gateway sender queues use 5 threads to dispatch queued events. With a serial gateway sender, the single, logical queue that is hosted on a member is divided into multiple physical queues (5 by default) each with a dedicated dispatcher thread. You can configure whether the threads dispatch queued events by key, by thread, or in the same order in which events were added to the queue. For a parallel gateway sender, each logical queue that is hosted on a member is processed simultaneously by multiple threads.
 
-See [Configuring Multi-Site (WAN) Event Queues](../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
+See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/client_server_events/multi_site/configure_multisite_event_messaging).
 
 ## Timing of Connections {#GW_sender_connect}
 When a gateway sender is created, it tries once to connect to
@@ -126,6 +126,6 @@ Gateway senders use any available gateway receiver in the target cluster to send
 After you create a gateway receiver, you can configure the gateway receiver to start automatically or to require a manual start. 
 By default, the gateway receiver starts automatically (`manual-start` is set to false).
 
-After you create and start a new gateway receiver at one WAN site, you can execute the [load-balance gateway-sender](../../tools_modules/gfsh/command-pages/load-balance#concept_fn2_qls_5q) command in `gfsh` for existing remote gateway senders so that the new receiver can pick up connections to gateway senders at different sites. You invoke this command on the gateway senders to redistribute connections more evenly among all the gateway receivers. Another option is to use the `GatewaySender.rebalance` Java API.
+After you create and start a new gateway receiver at one WAN site, you can execute the [load-balance gateway-sender](../../../tools_modules/gfsh/command-pages/load-balance) command in `gfsh` for existing remote gateway senders so that the new receiver can pick up connections to gateway senders at different sites. You invoke this command on the gateway senders to redistribute connections more evenly among all the gateway receivers. Another option is to use the `GatewaySender.rebalance` Java API.
 
-See [Configure Gateway Receivers](../multi_site_configuration/setting_up_a_multisite_system#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B).
+See [Configure Gateway Receivers](../setting_up_a_multisite_system#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B).

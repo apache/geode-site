@@ -21,7 +21,7 @@ limitations under the License.
 
 A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
-See also [Data Regions](../basic_config/data_regions/chapter_overview#data_regions) for more information on working with regions.
+See also [Data Regions](../../../basic_config/data_regions/chapter_overview.md) for more information on working with regions.
 
 -   **[GET /geode/v1](get_regions)**
 

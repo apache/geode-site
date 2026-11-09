@@ -35,7 +35,7 @@ This value will override the @@product_name@@ inactive interval, which is specif
 When a session expires, it gets removed from the application server and from all @@product_name@@ servers when running in client-server mode.
 
 ## Making Additional @@product_name@@ Property Changes {#tc_additional_info__section_5CE5FF6F55DB462E8B2A336A0AF7515E}
-If you want to change additional @@product_name@@ property values, refer to instructions on manually changing property values as specified in the @@product_name@@ module documentation for Tomcat ([Changing the Default @@product_name@@ Configuration in the Tomcat Module](tomcat_changing_gf_default_cfg#tomcat_changing_gf_default_cfg)) and Application Servers ([Changing the Default @@product_name@@ Configuration in the AppServers Module](weblogic_changing_gf_default_cfg#weblogic_changing_gf_default_cfg)).
+If you want to change additional @@product_name@@ property values, refer to instructions on manually changing property values as specified in the @@product_name@@ module documentation for Tomcat ([Changing the Default @@product_name@@ Configuration in the Tomcat Module](./tomcat_session_management/tomcat_changing_gf_default_cfg)) and Application Servers ([Changing the Default @@product_name@@ Configuration in the AppServers Module](./appserver_session_management/weblogic_changing_gf_default_cfg)).
 
 ## Module Version Information {#tc_additional_info__section_0013BDC875A44344B7B062F46AFA073C}
 To acquire @@product_name@@ module version information, look in the web server's log file for a message similar to:

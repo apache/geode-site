@@ -34,7 +34,7 @@ Compact a disk store on all members with that disk store.
 
 This command uses the compaction threshold that each member has configured for its disk stores. The disk store must have the `allow-force-compaction` property set to `true`.
 
-See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/compacting_disk_stores) for more information.
+See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/disk_store_management/compacting_disk_stores) for more information.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -73,7 +73,7 @@ Compact an offline disk store.
 
 If the disk store is large, you may need to allocate additional memory to the process by using the `--J=-XmxNNNm` parameter.
 
-See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/compacting_disk_stores) for more information.
+See [Running Compaction on Disk Store Log Files](../../../managing/disk_storage/disk_store_management/compacting_disk_stores) for more information.
 
 **Note:**
 Do not perform offline compaction on the baseline directory of an incremental backup.

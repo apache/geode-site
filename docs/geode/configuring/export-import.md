@@ -30,7 +30,7 @@ The cluster configuration service saves the cluster configuration as you create 
 Issue the `gfsh` `export cluster-configuration` command to save the configuration data for your
 cluster in a ZIP archive. This ZIP file contains subdirectories for cluster-level configurations and a
 directory for each group specified in the cluster. The contents of these directories are described
-in [Cluster Configuration Files and Troubleshooting](gfsh_config_troubleshooting#concept_ylt_2cb_y4).
+in [Cluster Configuration Files and Troubleshooting](gfsh_config_troubleshooting).
 
 To export a cluster configuration, run the `gfsh` `export cluster-configuration` command while connected to a @@product_name@@ cluster. For example:
 
@@ -38,7 +38,7 @@ To export a cluster configuration, run the `gfsh` `export cluster-configuration`
 export cluster-configuration --zip-file-name=/home/username/configs/myClusterConfig.zip
 ```
 
-See [export cluster-configuration](../../tools_modules/gfsh/command-pages/export#topic_mdv_jgz_ck).
+See [export cluster-configuration](../tools_modules/gfsh/command-pages/export#topic_mdv_jgz_ck).
 
 **Note:**
 `gfsh` only saves cluster configuration values for configurations specified using `gfsh`. Configurations created by the management API are not saved with the cluster configurations.
@@ -66,4 +66,4 @@ To import a cluster configuration, start one or more locators and then run the `
 import cluster-configuration --zip-file-name=/home/username/configs/myClusterConfig.zip
 ```
 
-See [import cluster-configuration](../../tools_modules/gfsh/command-pages/import#import-cluster-config).
+See [import cluster-configuration](../tools_modules/gfsh/command-pages/import#import-cluster-config).

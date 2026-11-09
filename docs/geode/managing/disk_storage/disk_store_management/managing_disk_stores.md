@@ -21,7 +21,7 @@ limitations under the License.
 
 The `gfsh` command-line tool has a number of options for examining and managing your disk stores. The `gfsh` tool, the `cache.xml` file and the DiskStore APIs are your management tools for online and offline disk stores.
 
-See [Disk Store Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_1ACC91B493EE446E89EC7DBFBBAE00EA) for a list of available commands.
+See [Disk Store Commands](../../../tools_modules/gfsh/quick_ref_commands_by_area#topic_1ACC91B493EE446E89EC7DBFBBAE00EA) for a list of available commands.
 
 -   **[Disk Store Management Commands and Operations](managing_disk_stores_cmds)**
 

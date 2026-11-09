@@ -326,6 +326,6 @@ Region.close();
 The `Region.close` operation works like the `Region.localDestroyRegion` operation with these significant differences:
 
 -   The `close` method is called for every callback installed on the region.
--   No events are invoked. Of particular note, the entry events, `beforeDestroy` and `afterDestroy`, and the region events, `beforeRegionDestroy` and `afterRegionDestroy`, are not invoked. See [Events and Event Handling](../../developing/events/chapter_overview#implementing_event_handlers).
+-   No events are invoked. Of particular note, the entry events, `beforeDestroy` and `afterDestroy`, and the region events, `beforeRegionDestroy` and `afterRegionDestroy`, are not invoked. See [Events and Event Handling](../../developing/events/chapter_overview).
 -   If persistent, the region is removed from memory but its disk files are retained.
 -   If partitioned, the region is removed from the local cache. If the partitioned region is redundant, local data caching fails over to another cache. Otherwise, local data is lost.

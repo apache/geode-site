@@ -25,4 +25,4 @@ The more frequently a get fails to find a valid value in the first cache and has
 
 A common cause of misses is expiration or eviction of the entry. If you have a region’s entry expiration or eviction enabled, monitor the region and entry statistics.
 
-If you see a high ratio of misses to hits on the entries, consider increasing the expiration times or the maximum values for eviction, if possible. See [Eviction](../../developing/eviction/chapter_overview) for more information.
+If you see a high ratio of misses to hits on the entries, consider increasing the expiration times or the maximum values for eviction, if possible. See [Eviction](../../../developing/general_region_management/eviction/chapter_overview) for more information.

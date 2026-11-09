@@ -31,14 +31,14 @@ The @@product_name@@ server is used primarily for hosting long-lived data region
 ## Default Server Configuration and Log Files {#running_the_cacheserver__section_E15FB1B039CE4F6CB2E4B5618D7ECAA1}
 The `gfsh` utility uses a working directory for its configuration files and log files. These are the defaults and configuration options:
 
--   When you start a standalone server using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone server using the ServerLauncher API, you must specify this JAR file inside your command to launch the process. For more information on CLASSPATH settings in @@product_name@@, see [Setting Up the CLASSPATH](../../getting_started/setup_classpath).
+-   When you start a standalone server using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone server using the ServerLauncher API, you must specify this JAR file inside your command to launch the process. For more information on CLASSPATH settings in @@product_name@@, see [Setting Up the CLASSPATH](../getting_started/prerequisites/setup_classpath).
 -   Servers are configured like any other @@product_name@@ process, with `gemfire.properties` and shared cluster configuration files. It is not programmable except through application plug-ins. Typically, you provide the `gemfire.properties` file and the `gfsecurity.properties` file. You can also specify a `cache.xml` file in the cache server’s working directory.
--   By default, a new server started with `gfsh` receives its initial cache configuration from the cluster configuration service, assuming the locator is running the cluster configuration service. If you specify a group when starting the server, the server also receives configurations that apply to a group. The shared configuration consists of `cache.xml` files, `gemfire.properties` files, and deployed jar files. You can disable use of the cluster configuration service by specifying `--use-cluster-configuration=false` when starting the server using `gfsh`. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist#concept_r22_hyw_bl).
+-   By default, a new server started with `gfsh` receives its initial cache configuration from the cluster configuration service, assuming the locator is running the cluster configuration service. If you specify a group when starting the server, the server also receives configurations that apply to a group. The shared configuration consists of `cache.xml` files, `gemfire.properties` files, and deployed jar files. You can disable use of the cluster configuration service by specifying `--use-cluster-configuration=false` when starting the server using `gfsh`. See [Overview of the Cluster Configuration Service](./gfsh_persist).
 
 -   If you are using the Spring Framework, you can specify a Spring ApplicationContext XML file when starting up your server in `gfsh` by using the `--spring-xml-location` command-line option. This option allows you to bootstrap your @@product_name@@ server process with your Spring application's configuration. See [Spring documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/resources.html#resources-app-ctx) for more information on this file.
 -   For logging output, log file output defaults to `<server-name>.log` in the cache server's working directory. If you restart a server with the same server name, the existing log file is automatically renamed, for example, `server1-01-01.log` and `server1-02-01.log`. You can modify the level of logging details in this file by specifying a level in the `--log-level` argument when starting up the server.
 -   By default, the server will start in a subdirectory, named after the server's specified name, under the directory where `gfsh` is executed. This subdirectory is considered the current working directory. You can also specify a different working directory when starting the cache server in `gfsh`.
--   By default, a server process that has been shutdown and disconnected due to a network partition event or member unresponsiveness will restart itself and automatically try to reconnect to the existing cluster. See [Handling Forced Cache Disconnection Using Autoreconnect](../../managing/member-reconnect#concept_22EE6DDE677F4E8CAF5786E17B4183A9) for more details.
+-   By default, a server process that has been shutdown and disconnected due to a network partition event or member unresponsiveness will restart itself and automatically try to reconnect to the existing cluster. See [Handling Forced Cache Disconnection Using Autoreconnect](../managing/troubleshooting/member-reconnect) for more details.
 -   You can pass JVM parameters to the server's JVM by using the `--J=-Dproperty.name=value` upon server startup. These parameters can be Java properties or @@product_name@@ properties such as `gemfire.jmx-manager`. For example:
 
     ``` pre
@@ -49,7 +49,7 @@ The `gfsh` utility uses a working directory for its configuration files and log 
 -   We recommend that you do not use the `-XX:+UseCompressedStrings` and `-XX:+UseStringCache` JVM configuration properties when starting up servers. These JVM options can cause issues with data corruption and compatibility.
 
 ## Start the Server with gfsh {#running_the_cacheserver__section_07001480D33745139C3707EDF8166D86}
-See the [`gfsh start server`](../../tools_modules/gfsh/command-pages/start#topic_3764EE2DB18B4AE4A625E0354471738A) command reference page for syntax information.
+See the [`gfsh start server`](../tools_modules/gfsh/command-pages/start#topic_3764EE2DB18B4AE4A625E0354471738A) command reference page for syntax information.
 
 These example `gfsh start server` start commands specify a `cache.xml` file for cache configuration, and use different incoming client connection ports:
 
@@ -84,7 +84,7 @@ server startup,
 additional GC parameters are specified on your behalf.
 If you do not want additional default GC properties set,
 then use the `-Xms` & `-Xmx` JVM options to set just these parameters.
-See [Controlling Heap Use with the Resource Manager](../../managing/heap_use/heap_management#configuring_resource_manager) for more information.
+See [Controlling Heap Use with the Resource Manager](../managing/heap_use/heap_management) for more information.
 To start a server, providing JVM configuration settings:
 
 ``` pre

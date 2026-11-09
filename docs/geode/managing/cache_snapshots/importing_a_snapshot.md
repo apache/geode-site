@@ -74,5 +74,5 @@ gfsh>import data --region=region1 --file=region1_2012_10_10.gfd --member=server2
 
 The snapshot file must already reside on the specified member at the location specified in the `--file` argument before import.
 
-For more information on this command, see [import data](../../tools_modules/gfsh/command-pages/import#topic_jw2_2ld_2l).
+For more information on this command, see [import data](../../tools_modules/gfsh/command-pages/import).
 For an example of how to invoke this command with additional options, see [Export Example with Options](exporting_a_snapshot#export_example_with_options).

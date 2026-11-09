@@ -89,7 +89,7 @@ An externally coordinated JTA global transaction is run in the following manner:
 3.  After a successful `beforeCommit()`callback, JTA transaction manager asks other data sources to commit their transaction.
 4.  @@product_name@@ then gets a `afterCommit()` callback in which changes are applied to the cache and distributed to other members.
 
-You can disable JTA in any region that should not participate in JTA transactions. See [Turning Off JTA Transactions](turning_off_jta#concept_nw2_5gs_xk).
+You can disable JTA in any region that should not participate in JTA transactions. See [Turning Off JTA Transactions](turning_off_jta).
 
 ## How to Run a JTA Transaction Coordinated by an External Transaction Manager {#task_j3g_3mn_1l}
 Use the following procedure to run a @@product_name@@ global JTA transaction coordinated by an external JTA transaction manager.
@@ -100,7 +100,7 @@ Use the following procedure to run a @@product_name@@ global JTA transaction coo
     Configure @@product_name@@ for any necessary transactional behavior in the `cache.xml` file. For example, enable `copy-on-read` and specify a transaction listener, as needed. See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read).
 3.  
 
-    Make sure that JTA transactions are enabled for the regions that will participate in the transaction. See [Turning Off JTA Transactions](turning_off_jta#concept_nw2_5gs_xk) for details. 
+    Make sure that JTA transactions are enabled for the regions that will participate in the transaction. See [Turning Off JTA Transactions](turning_off_jta) for details. 
 4.  
 
      Start the transaction through the external container. 

@@ -25,7 +25,7 @@ Creating a key index is a good way to improve query performance when data is par
 
 The FROM clause for a primary key index must be just a region path. The indexed expression is an expression that, when applied to an entry value, produces the key. For example, if a region has Portfolios as the values and the keys are the id field of the Portfolios region, the indexed expression is id.
 
-You can then use the FunctionService (using the partitioned key as a filter passed to the function and as part of the query equality condition) to execute the query against the indexed data. See [Optimizing Queries on Data Partitioned by a Key or Field Value](../query_additional/partitioned_region_key_or_field_value#concept_3010014DFBC9479783B2B45982014454) for more details.
+You can then use the FunctionService (using the partitioned key as a filter passed to the function and as part of the query equality condition) to execute the query against the indexed data. See [Optimizing Queries on Data Partitioned by a Key or Field Value](../advanced_querying/querying_partitioned_regions/partitioned_region_key_or_field_value) for more details.
 
 There are two issues to note with key indexes:
 

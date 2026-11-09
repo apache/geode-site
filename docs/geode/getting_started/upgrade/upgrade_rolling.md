@@ -60,7 +60,7 @@ If you have `startup-recovery-delay` disabled (set to -1) for your partitioned r
 region after you restart each member.
 If rebalance occurs automatically, as it will if `startup-recovery-delay` is enabled (set to a value other than -1), make sure that the rebalance completes before you stop the next server.
 If you have `startup-recovery-delay` enabled and set to a high number, you may need to wait extra time until the region has recovered redundancy, because rebalance must complete before new servers are restarted.
-The partitioned region attribute `startup-recovery-delay` is described in [Configure Member Join Redundancy Recovery for a Partitioned Region](../../developing/partitioned_regions/set_join_redundancy_recovery).
+The partitioned region attribute `startup-recovery-delay` is described in [Configure Member Join Redundancy Recovery for a Partitioned Region](../../developing/partitioned_regions/configuring_ha_partitions/configuring_ha_availability/set_join_redundancy_recovery).
 
 **Checking component versions while upgrading**
 
@@ -89,7 +89,7 @@ The way in which your cluster configuration was created determines which command
     and restore that cluster configuration during the upgrade procedure.
 
   - If your system was configured with `gfsh` commands, relying on the underlying **cluster configuration service**, the configuration can be saved in one central location, then applied to all newly-upgraded members. See [Exporting and Importing Cluster Configurations](../../configuring/export-import).
-  - If your system was configured with **XML properties** specified through the Java API or configuration files, you must save the configuration for each member before you bring it down, then re-import it for that member's upgraded counterpart. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files).
+  - If your system was configured with **XML properties** specified through the Java API or configuration files, you must save the configuration for each member before you bring it down, then re-import it for that member's upgraded counterpart. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/deployingconfig/deploying_config_files).
 
 ## Rolling Upgrade Procedure {#rolling-upgrade-procedure}
 Begin by installing the new version of the software alongside the older version of the software on all hosts. You will need both versions of the software during the upgrade procedure.

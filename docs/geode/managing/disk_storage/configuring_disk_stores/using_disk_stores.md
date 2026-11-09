@@ -24,7 +24,7 @@ limitations under the License.
 You define disk stores in your cache, then you assign them to your regions and queues by setting the `disk-store-name` attribute in your region and queue configurations.
 
 **Note:**
-Besides the disk stores you specify, @@product_name_long@@ has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the application’s working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store#using_the_default_disk_store).
+Besides the disk stores you specify, @@product_name_long@@ has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the application’s working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store).
 
 -   [Design Your Disk Stores](using_disk_stores#defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5)
 -   [Create and Configure Your Disk Stores](using_disk_stores#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884)
@@ -32,7 +32,7 @@ Besides the disk stores you specify, @@product_name_long@@ has a default disk st
 -   [Configuring Disk Stores on Gateway Senders](using_disk_stores#defining_disk_stores__config-disk-store-gateway)
 
 ## Design Your Disk Stores {#defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5}
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../developing/book_intro).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../../developing/book_intro.md).
 
 1.  Work with your system designers and developers to plan for anticipated disk storage requirements in your testing and production caching systems. Take into account space and functional requirements.
     -   For efficiency, separate data that is only overflowed in separate disk stores from data that is persisted or persisted and overflowed. Regions can be overflowed, persisted, or both. Server subscription queues are only overflowed.
@@ -121,11 +121,11 @@ The following is the complete disk store cache.xml configuration example:
 ```
 
 **Note:**
-As an alternative to defining cache.xml on every server in the cluster-- if you have the cluster configuration service enabled, when you create a disk store in `gfsh`, you can share the disk store's configuration with the rest of cluster. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist).
+As an alternative to defining cache.xml on every server in the cluster-- if you have the cluster configuration service enabled, when you create a disk store in `gfsh`, you can share the disk store's configuration with the rest of cluster. See [Overview of the Cluster Configuration Service](../../../configuring/gfsh_persist).
 
 ## Modifying Disk Stores
 
-You can modify an offline disk store by using the [alter disk-store](../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB) command. If you are modifying the default disk store configuration, use "DEFAULT" as the disk-store name.
+You can modify an offline disk store by using the [alter disk-store](../../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB) command. If you are modifying the default disk store configuration, use "DEFAULT" as the disk-store name.
 
 ## Configuring Regions, Queues, and PDX Serialization to Use the Disk Stores {#defining_disk_stores__section_AFB254CA9C5A494A8E335352A6849C16}
 The following are examples of using already created and named disk stores for Regions, Queues, and PDX Serialization.

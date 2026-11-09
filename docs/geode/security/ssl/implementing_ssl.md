@@ -229,8 +229,8 @@ use. For information, see the [Oracle JSSE website](http://www.oracle.com/techne
 2.  Configure SSL as needed for each connection type:
 
     1.  Use locators for member discovery within the clusters and for client discovery of
-    servers. See [Configuring Peer-to-Peer Discovery](../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system) and
-    [Configuring a Client/Server System](../topologies_and_comm/cs_configuration/setting_up_a_client_server_system#setting_up_a_client_server_system).
+    servers. See [Configuring Peer-to-Peer Discovery](../../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system) and
+    [Configuring a Client/Server System](../../topologies_and_comm/cs_configuration/setting_up_a_client_server_system).
 
     2.  Configure SSL properties as necessary for different component types, using the properties
     described above. For example, to enable SSL for

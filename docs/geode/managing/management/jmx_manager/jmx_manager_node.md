@@ -26,7 +26,7 @@ You need to have a JMX Manager started in your cluster in order to use @@product
 To create MBeans, a Security Manager must be enabled. See [Enable Security with Property Definitions](../../../security/enable_security) for more information.
 
 **Note:**
-Each node that acts as the JMX Manager has additional memory requirements depending on the number of resources that it is managing and monitoring. Being a JMX Manager can increase the memory footprint of any process, including locator processes. See [Memory Requirements for Cached Data](../../../reference/topics/memory_requirements_for_cache_data#calculating_memory_requirements) for more information on calculating memory overhead on your @@product_name@@ processes.
+Each node that acts as the JMX Manager has additional memory requirements depending on the number of resources that it is managing and monitoring. Being a JMX Manager can increase the memory footprint of any process, including locator processes. See [Memory Requirements for Cached Data](../../../reference/memory_requirements_for_cache_data) for more information on calculating memory overhead on your @@product_name@@ processes.
 
 -   **[Starting a JMX Manager](jmx_manager_operations)**
 

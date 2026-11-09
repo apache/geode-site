@@ -40,13 +40,12 @@ const config: Config = {
 
   url: `https://${projectName.toLowerCase()}.apache.org/`,
   baseUrl: '/',
-
-  //   TODO @harmoncoffee fix after all broken doc links are fixed.
-    onBrokenLinks: 'warn',
+    // Force throwing errors on broken links and anchors
+    onBrokenLinks: 'throw',
 
     markdown: {
         hooks: {
-            onBrokenMarkdownLinks: 'warn',
+            onBrokenMarkdownLinks: 'throw',
         },
     },
 
@@ -187,6 +186,7 @@ const config: Config = {
                   { type: 'doc', docsPluginId: 'default', docId: 'about_geode', label: 'Geode' },
                   { type: 'doc', docsPluginId: 'geode_native_cpp', docId: 'about_geode', label: 'Geode Native (C++)' },
                   { type: 'doc', docsPluginId: 'geode_native_dotnet', docId: 'about_geode', label: 'Geode Native (.NET)' },
+                  { label: 'Javadocs', href: '/javadocs'},
               ],
           },
         {to: '/blog', label: 'Blog', position: 'right'},

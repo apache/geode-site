@@ -25,7 +25,7 @@ Determine the proper startup and shutdown procedures, and write your startup and
 
 Well-designed procedures for starting and stopping your system can speed startup and protect your data. The processes you need to start and stop include server and locator processes and your other @@product_name@@ applications, including clients. The procedures you use depend in part on your system’s configuration and the dependencies between your system processes.
 
-Use the following guidelines to create startup and shutdown procedures and scripts. Some of these instructions use [`gfsh`](../../tools_modules/gfsh/chapter_overview).
+Use the following guidelines to create startup and shutdown procedures and scripts. Some of these instructions use [`gfsh`](../tools_modules/gfsh/chapter_overview.md).
 
 ## Starting Up Your System {#starting_up_shutting_down__section_3D111558326D4A38BE48C17D44BB66DB}
 You should follow certain order guidelines when starting your @@product_name@@ system.
@@ -35,7 +35,7 @@ Start servers before you start their client applications. In each cluster, follo
 -   Start locators first. See [Running @@product_name@@ Locator Processes](running_the_locator) for examples of locator start up commands.
 -   Start cache servers before the rest of your processes unless the implementation requires that other processes be started ahead of them. See [Running @@product_name@@ Server Processes](running_the_cacheserver) for examples of server start up commands.
 -   If your cluster uses both persistent replicated and non-persistent replicated regions, you should start up all the persistent replicated members in parallel before starting the non-persistent regions. This way, persistent members will not delay their startup for other persistent members with later data.
--   For a system that includes persistent regions, see [Start Up and Shut Down with Disk Stores](../../managing/disk_storage/starting_system_with_disk_stores).
+-   For a system that includes persistent regions, see [Start Up and Shut Down with Disk Stores](../managing/disk_storage/starting_system_with_disk_stores).
 -   If you are running producer processes and consumer or event listener processes, start the consumers first. This ensures the consumers and listeners do not miss any notifications or updates.
 -   If you are starting up your locators and peer members all at once, you can use the `locator-wait-time` property (in seconds) upon process start up. This timeout allows peers to wait for the locators to finish starting up before attempting to join the cluster. 
 

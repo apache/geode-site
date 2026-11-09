@@ -29,6 +29,6 @@ data source is transactional, which means that it can detect the transaction man
 writer and cache loader participate in the transaction. If the JTA rolls back its transaction, the
 changes made by the cache loader and the cache writer are rolled back. For more on transactional
 data sources, see the discussion of XAPooledDataSource and ManagedDataSource in 
-[Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI).
+[Configuring Database Connections Using JNDI](../../developing/general_region_management/outside_data_sources/configuring_db_connections_using_JNDI).
 
 If you are using a @@product_name@@ cache or transaction listener with global transactions, be aware that the EntryEvent returned by a transaction has the @@product_name@@ transaction ID, not the JTA transaction ID.

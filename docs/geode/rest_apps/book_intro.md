@@ -48,7 +48,7 @@ This documentation covers the **v1** release of Geode REST APIs for developing a
 
     This section provides troubleshooting guidance and frequently asked questions about Geode Developer REST APIs.
 
--   **[ Apache Geode REST API Reference](rest_api_reference)**
+-   **[ Apache Geode REST API Reference](./api_reference/rest_api_reference)**
 
     This section summarizes all available Apache Geode REST API resources and endpoints.
 

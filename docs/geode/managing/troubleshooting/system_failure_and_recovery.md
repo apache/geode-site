@@ -47,7 +47,7 @@ When a network partition detection or slow responses occur, these alerts are gen
 -   Warning Notifications Before Removal
 -   Member is Forced Out
 
-For information on configuring system members to help avoid a network partition configuration condition in the presence of a network failure or when members lose the ability to communicate to each other, refer to [Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
+For information on configuring system members to help avoid a network partition configuration condition in the presence of a network failure or when members lose the ability to communicate to each other, refer to [Understanding and Recovering from Network Outages](recovering_from_network_outages).
 
 ### Network Partitioning Detected {#sys_failure__section_D52D902E665F4F038DA4B8298E3F8681}
 Alert:
