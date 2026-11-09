@@ -50,4 +50,4 @@ For applications, if you are using remote method invocation (RMI) Java APIs, you
 
 **Using Off-heap Memory**
 
-You can improve the performance of some applications by storing data values in off-heap memory. Certain objects, such as keys, must remain in the JVM heap. See [Managing Off-Heap Memory](../heap_use/off_heap_management) for more information.
+You can improve the performance of some applications by storing data values in off-heap memory. Certain objects, such as keys, must remain in the JVM heap. See [Managing Off-Heap Memory](../../heap_use/off_heap_management) for more information.

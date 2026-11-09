@@ -29,7 +29,7 @@ Network partitioning has a failure detection protocol that is not subject to han
 Failure detection processing is also initiated on a member if the `gemfire.properties` `ack-wait-threshold` elapses before receiving a response to a message, if a TCP/IP connection cannot be made to the member for peer-to-peer (P2P) messaging, and if no other traffic is detected from the member.
 
 **Note:**
-The TCP connection ping is not used for connection keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../monitor_tune/socket_tcp_keepalive#topic_jvc_pw3_34) for TCP keep alive configuration.
+The TCP connection ping is not used for connection keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../monitor_tune/socket_communication/socket_tcp_keepalive) for TCP keep alive configuration.
 
 If a new membership view is sent out that includes one or more failed members, the coordinator will log new quorum weight calculations. At any point, if quorum loss is detected due to unresponsive processes, the coordinator will also log a severe level message to identify the failed members:
 ``` pre

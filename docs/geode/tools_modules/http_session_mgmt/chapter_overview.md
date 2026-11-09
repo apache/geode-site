@@ -53,11 +53,11 @@ These modules are included with the Apache Geode product distribution, and insta
 
     Configure ObjectInputFilter (JEP 290) to protect against deserialization vulnerabilities and secure your session data.
 
--   **[HTTP Session Management Module for Tomcat](../http_session_mgmt/session_mgmt_tomcat)**
+-   **[HTTP Session Management Module for Tomcat](./tomcat_session_management/session_mgmt_tomcat)**
 
     You set up and use the module by modifying Tomcat's `server.xml` and `context.xml` files. Supports Tomcat 10.1 and later (Jakarta EE).
 
--   **[HTTP Session Management Module for AppServers](../http_session_mgmt/session_mgmt_weblogic)**
+-   **[HTTP Session Management Module for AppServers](./appserver_session_management/session_mgmt_weblogic)**
 
     You implement session caching with the HTTP Session Management Module for AppServers with a special filter, defined in the `web.xml`, which is configured to intercept and wrap all requests.
 

@@ -62,4 +62,4 @@ Data colocation requires the same data partitioning mechanism for all of the col
 
 You must use the same high availability settings across your colocated regions.
 
-See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data) for implementation and configuration details.
+See [Colocate Data from Different Partitioned Regions](../colocating_partitioned_region_data) for implementation and configuration details.

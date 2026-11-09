@@ -31,7 +31,7 @@ Here are the default settings:
 -   @@product_name@@ clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
 
 **Note:**
-On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
+On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](../tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
 
 ## Changing @@product_name@@ Distributed System Properties {#tomcat_changing_gf_default_cfg__section_changing_sys_props}
 @@product_name@@ system properties must be set by adding properties to Tomcat's `server.xml` file. When setting properties, use the following syntax:
@@ -67,7 +67,7 @@ The list of Tomcat's configurable `server.xml` system properties includes any of
 | statistic-archive-file                    | name of the @@product_name@@ statistics file                    | `gemfire_modules.gfs` |
 | statistic-sampling-enabled                | whether @@product_name@@ statistics sampling is enabled         | false                 |
 
-For more information on these properties, along with the full list of properties, see the [Reference](../../reference/book_intro#reference).
+For more information on these properties, along with the full list of properties, see the [Reference](../../../reference/book_intro).
 
 In addition to the standard @@product_name@@ system properties, the following cache-specific properties can also be configured with the `LifecycleListener`.
 
@@ -77,7 +77,7 @@ In addition to the standard @@product_name@@ system properties, the following ca
 | evictionHeapPercentage | percentage of heap at which session eviction begins                                             | 80.0         |
 | rebalance              | whether a rebalance of the cache should be done when the application server instance is started | false        |
 
-Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance and are therefore also handled by the `LifecycleListener`. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance and are therefore also handled by the `LifecycleListener`. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../../managing/heap_use/heap_management).
 
 ## Changing Cache Configuration Properties {#tomcat_changing_gf_default_cfg__section_changing_cache_config_props}
 To edit @@product_name@@ cache properties such as the name and the characteristics of the cache region, you add these properties to Tomcat's `context.xml` file. When adding properties, unless otherwise specified, use the following syntax:
@@ -145,7 +145,7 @@ ClientCache.createClientRegionFactory(CACHING_PROXY_HEAP_LRU);
 ```
 
 <dt>**regionAttributesId**</dt>
-<dd>Specifies the region shortcut. For more information see [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts); when using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.</dd>
+<dd>Specifies the region shortcut. For more information see [Region Shortcuts and Custom Named Region Attributes](../../../basic_config/data_regions/region_shortcuts); when using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.</dd>
 
 Default: REPLICATE for peer-to-peer, PARTITION\_REDUNDANT for client/server
 

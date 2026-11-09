@@ -158,7 +158,7 @@ JConsole automatically connects to a running JMX Manager node if one is availabl
 
 Note that you must have a JDK installed (not just a JRE) and the correct PATH and JAVA\_HOME environment variables set.
 
-See [Browsing @@product_name@@ MBeans through JConsole](../../../managing/management/mbeans_jconsole) for an example of using JConsole with the @@product_name@@ management and monitoring system.
+See [Browsing @@product_name@@ MBeans through JConsole](../../../managing/management/federated_mbean/mbeans_jconsole) for an example of using JConsole with the @@product_name@@ management and monitoring system.
 
 **Availability:** Online or offline.
 
@@ -252,7 +252,7 @@ The command creates a subdirectory and log file named after the locator. If the 
 
 In addition, if gfsh is not already connected to a JMX Manager, the gfsh console will automatically connect to the new embedded JMX Manager started by the new locator.
 
-**Note:** When both `--max-heap` and `--initial-heap` are specified during locator startup, additional GC parameters are specified internally by @@product_name@@'s Resource Manager. If you do not want the additional default GC properties set by the Resource Manager, then use the`-Xms` and `-Xmx` JVM options. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management#configuring_resource_manager) for more information.
+**Note:** When both `--max-heap` and `--initial-heap` are specified during locator startup, additional GC parameters are specified internally by @@product_name@@'s Resource Manager. If you do not want the additional default GC properties set by the Resource Manager, then use the`-Xms` and `-Xmx` JVM options. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management) for more information.
 
 **Note:** The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.
 
@@ -343,7 +343,7 @@ Launched Geode Pulse
 ## start server {#topic_3764EE2DB18B4AE4A625E0354471738A}
 Start a @@product_name@@ cache server process.
 
-**Note:** When both `--max-heap` and `--initial-heap` are specified during server startup, additional GC parameters are specified on your behalf. If you do not want the additional default GC properties set, then use the `-Xms` and `-Xmx` JVM options to set just these parameters. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management#configuring_resource_manager) for more information.
+**Note:** When both `--max-heap` and `--initial-heap` are specified during server startup, additional GC parameters are specified on your behalf. If you do not want the additional default GC properties set, then use the `-Xms` and `-Xmx` JVM options to set just these parameters. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management) for more information.
 
 **Note:** The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.
 

@@ -21,7 +21,7 @@ limitations under the License.
 
 This topic provides tuning suggestions of particular interest to developers, primarily programming techniques and cache configuration.
 
-Before you begin, you should understand @@product_name_long@@ [Basic Configuration and Programming](../../developing/book_intro).
+Before you begin, you should understand @@product_name_long@@ [Basic Configuration and Programming](../../../developing/book_intro.md).
 
 -   **[Data Serialization](performance_controls_data_serialization)**
 

@@ -44,7 +44,7 @@ Monitor and Manage @@product_name@@
 gfsh>
 ```
 
-See [Starting gfsh](starting_gfsh#concept_DB959734350B488BBFF91A120890FE61) for details.
+See [Starting gfsh](starting_gfsh) for details.
 
 **Step 2: Start up a locator.** Enter the following command:
 

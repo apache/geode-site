@@ -29,7 +29,7 @@ You can prevent disk file errors using the following techniques:
 
 -   If you are using ext4 file system, we recommend that you pre-allocate disk store files and disk store metadata files. Pre-allocation reserves disk space for these files and leaves the member in a healthy state when the disk store and regions are shut down, allowing you to restart the member once sufficient disk space has been made available. Pre-allocation is enabled by default.
 -   Configure critical usage thresholds (disk-usage-warning-percentage and disk-usage-critical-percentage) for the disk. By default, these are set to 90% for warning and 99% for errors that will shut down the cache.
--   Follow the recommendations in [Optimizing a System with Disk Stores](../disk_storage/optimize_availability_and_performance#optimize_avail_disk_store) for general disk management best practices.
+-   Follow the recommendations in [Optimizing a System with Disk Stores](../disk_storage/optimize_availability_and_performance) for general disk management best practices.
 
 When a disk write fails due to disk full conditions, the member is shutdown and removed from the cluster.
 
@@ -42,4 +42,4 @@ If a member of your cluster fails due to a disk full error condition, add or mak
 3.  Revoke the missing disk stores using the [revoke missing-disk-store](../../tools_modules/gfsh/command-pages/revoke) gfsh command.
 4.  Restart the member.
 
-See [Handling Missing Disk Stores](../disk_storage/handling_missing_disk_stores#handling_missing_disk_stores) for more information.
+See [Handling Missing Disk Stores](../disk_storage/disk_store_management/handling_missing_disk_stores) for more information.

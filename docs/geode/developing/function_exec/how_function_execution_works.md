@@ -27,8 +27,8 @@ You can execute data-independent functions or data-dependent functions in @@prod
 **For Data-independent Functions**
 
 -   **On a specific member or members:** Execute the function within a peer-to-peer cluster, specifying the member or members where you want to run the function by using `FunctionService` methods `onMember()` and `onMembers()`.
--   **On a specific server or set of servers:** If you are connected to a cluster as a client, you can execute the function on a server or servers configured for a specific connection pool, or on a server or servers connected to a given cache using the default connection pool. For data-independent functions on client/server architectures, a client invokes `FunctionService` methods `onServer()` or `onServers()`. (See [How Client/Server Connections Work](../../topologies_and_comm/topology_concepts/how_the_pool_manages_connections) for details regarding pool connections.)
--   **On member groups or on a single member within each member group:** You can organize members into logical member groups. (See [Configuring and Running a Cluster](../../configuring/chapter_overview#concept_lrh_gyq_s4) for more information about using member groups.) You can invoke a data independent function on all members in a specified member group or member groups, or execute the function on only one member of each specified member group.
+-   **On a specific server or set of servers:** If you are connected to a cluster as a client, you can execute the function on a server or servers configured for a specific connection pool, or on a server or servers connected to a given cache using the default connection pool. For data-independent functions on client/server architectures, a client invokes `FunctionService` methods `onServer()` or `onServers()`. (See [How Client/Server Connections Work](../../topologies_and_comm/cs_configuration/how_the_pool_manages_connections) for details regarding pool connections.)
+-   **On member groups or on a single member within each member group:** You can organize members into logical member groups. (See [Configuring and Running a Cluster](../../configuring/chapter_overview) for more information about using member groups.) You can invoke a data independent function on all members in a specified member group or member groups, or execute the function on only one member of each specified member group.
 
 **For Data-dependent Functions**
 
@@ -44,7 +44,7 @@ a check is made to see that that caller is authorized to execute
 the function.
 The required permissions for authorization are provided by
 the function's `Function.getRequiredPermissions()` method.
-See [Authorization of Function Execution](../../security/implementing_authorization#AuthorizeFcnExecution) for a discussion of this method.
+See [Authorization of Function Execution](../../security/authorization/implementing_authorization#AuthorizeFcnExecution) for a discussion of this method.
 2.  Given successful authorization,
 @@product_name@@ invokes the function on all members where it
 needs to run. The locations are determined by the `FunctionService` `on*`

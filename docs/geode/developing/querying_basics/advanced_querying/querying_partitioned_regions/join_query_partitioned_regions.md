@@ -23,7 +23,7 @@ limitations under the License.
 
 In order to perform equi-join operations on partitioned regions or partitioned regions and replicated regions, you need to use the `query.execute` method and supply it with a function execution context. You need to use @@product_name@@'s FunctionService executor because join operations are not yet directly supported for partitioned regions without providing a function execution context.
 
-See [Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions#concept_5353476380D44CC1A7F586E5AE1CE7E8) for more information on partitioned region query limitations.
+See [Partitioned Region Query Restrictions](./partitioned_region_query_restrictions) for more information on partitioned region query limitations.
 
 For example, let's say your equi-join query is the following:
 

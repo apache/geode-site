@@ -26,12 +26,12 @@ Plan and configure your multi-site topology, and configure the regions that will
 ## Prerequisites {#setting_up_a_multisite_system__section_5DF2D8D199364E6C8B7F83382A134B5E}
 Before you start, you should understand how to configure membership and communication in peer-to-peer systems using locators. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system) and [Configuring Peer Communication](../p2p_configuration/setting_up_peer_communication).
 
-WAN deployments increase the messaging demands on a @@product_name@@ system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for @@product_name@@ members that participate in a WAN deployment. See [Configuring Sockets in Multi-Site (WAN) Deployments](../../managing/monitor_tune/sockets_and_gateways) and [Making Sure You Have Enough Sockets](../../managing/monitor_tune/socket_communication_have_enough_sockets).
+WAN deployments increase the messaging demands on a @@product_name@@ system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for @@product_name@@ members that participate in a WAN deployment. See [Configuring Sockets in Multi-Site (WAN) Deployments](../../managing/monitor_tune/socket_communication/sockets_and_gateways) and [Making Sure You Have Enough Sockets](../../managing/monitor_tune/socket_communication/socket_communication_have_enough_sockets).
 
 ## Main Steps {#setting_up_a_multisite_system__section_86F9FE9D786D407FB438C56E43FC5DB1}
 Use the following steps to configure a multi-site system:
 
-1.  Plan the topology of your multi-site system. See [Multi-site (WAN) Topologies](multisite_topologies#multisite_topologies) for a description of different multi-site topologies.
+1.  Plan the topology of your multi-site system. See [Multi-site (WAN) Topologies](multisite_topologies) for a description of different multi-site topologies.
 2.  Configure membership and communication for each cluster in your multi-site system. You must use locators for peer discovery in a WAN configuration. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system). Start each cluster using a unique `distributed-system-id` and identify remote clusters using `remote-locators`. For example:
 
     ``` pre
@@ -44,10 +44,10 @@ Use the following steps to configure a multi-site system:
 3.  Configure the gateway senders that you will use to distribute region events to remote systems. See [Configure Gateway Senders](setting_up_a_multisite_system#setting_up_a_multisite_system__section_1500299A8F9A4C2385680E337F5D3DEC).
 4.  Create the data regions that you want to participate in the multi-site system, specifying the gateway sender(s) that each region should use for WAN distribution. Configure the same regions in the target clusters to apply the distributed events. See [Create Data Regions for Multi-site Communication](setting_up_a_multisite_system#setting_up_a_multisite_system__section_E1DEDD0743D54831AFFBCCDC750F8879).
 5.  Configure gateway receivers in each @@product_name@@ cluster that will receive region events from another cluster. See [Configure Gateway Receivers](setting_up_a_multisite_system#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B).
-6.  Start cluster member processes in the correct order (locators first, followed by data nodes) to ensure efficient discovery of WAN resources. See [Starting Up and Shutting Down Your System](../../configuring/running/starting_up_shutting_down).
-7.  (Optional.) Deploy custom conflict resolvers to handle resolve potential conflicts that are detected when applying events from over a WAN. See [Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts#topic_E97BB68748F14987916CD1A50E4B4542).
-8.  (Optional.) Deploy WAN filters to determine which events are distributed over the WAN, or to modify events as they are distributed over the WAN. See [Filtering Events for Multi-Site (WAN) Distribution](../../developing/events/filtering_multisite_events#topic_E97BB68748F14987916CD1A50E4B4542).
-9.  (Optional.) Configure persistence, conflation, and/or dispatcher threads for gateway sender queues using the instructions in [Configuring Multi-Site (WAN) Event Queues](../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
+6.  Start cluster member processes in the correct order (locators first, followed by data nodes) to ensure efficient discovery of WAN resources. See [Starting Up and Shutting Down Your System](../../configuring/starting_up_shutting_down).
+7.  (Optional.) Deploy custom conflict resolvers to handle resolve potential conflicts that are detected when applying events from over a WAN. See [Resolving Conflicting Events](./resolving_multisite_conflicts).
+8.  (Optional.) Deploy WAN filters to determine which events are distributed over the WAN, or to modify events as they are distributed over the WAN. See [Filtering Events for Multi-Site (WAN) Distribution](./filtering_multisite_events).
+9.  (Optional.) Configure persistence, conflation, and/or dispatcher threads for gateway sender queues using the instructions in [Configuring Multi-Site (WAN) Event Queues](../../developing/events/client_server_events/multi_site/configure_multisite_event_messaging).
 
 ## Configure Gateway Senders {#setting_up_a_multisite_system__section_1500299A8F9A4C2385680E337F5D3DEC}
 Each gateway sender configuration includes:
@@ -60,7 +60,7 @@ Each gateway sender configuration includes:
 **Note:**
 To configure a gateway sender that uses gfsh to create the cache.xml configurations described below, as well as other options, see [create gateway-sender](../../tools_modules/gfsh/command-pages/create#topic_hg2_bjz_ck).
 
-See [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3) for more information about individual configuration properties.
+See [WAN Configuration](../../reference/cache/elements_ref) for more information about individual configuration properties.
 
 1.  For each @@product_name@@ system, choose the members that will host a gateway sender configuration and distribute region events to remote sites:
     -   You must deploy a parallel gateway sender configuration on each @@product_name@@ member that hosts a region that uses the sender. Regions using the same parallel gateway sender ID must be colocated.
@@ -116,7 +116,7 @@ See [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD05649
          remote-distributed-system-id="2" 
          maximum-queue-memory="150"/> 
         ```
-    -   Whether to enable disk persistence, and whether to use a named disk store for persistence or for overflowing queue events. See [Persisting an Event Queue](../../developing/events/configuring_highly_available_gateway_queues#configuring_highly_available_gateway_queues). For example:
+    -   Whether to enable disk persistence, and whether to use a named disk store for persistence or for overflowing queue events. See [Persisting an Event Queue](../../developing/events/client_server_events/multi_site/configuring_highly_available_gateway_queues). For example:
 
         ``` pre
         gfsh>create gateway-sender --id=sender2 --parallel=true --remote-distributed-system-id=2 \
@@ -149,9 +149,9 @@ See [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD05649
         **Note:**
         When multiple dispatcher threads are configured for a serial queue, each thread operates on its own copy of the gateway sender queue. Queue configuration attributes such as `maximum-queue-memory` are repeated for each dispatcher thread that you configure.
 
-        See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85).
-    -   For serial gateway senders (parallel=false) that use multiple `dispatcher-threads`, also configure the ordering policy to use for dispatching the events. See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85).
-    -   Determine whether you should conflate events in the queue. See [Conflating Events in a Queue](../../developing/events/conflate_multisite_gateway_queue#conflate_multisite_gateway_queue).
+        See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/client_server_events/multi_site/configuring_gateway_concurrency_levels).
+    -   For serial gateway senders (parallel=false) that use multiple `dispatcher-threads`, also configure the ordering policy to use for dispatching the events. See [Configuring Dispatcher Threads and Order Policy for Event Distribution](../../developing/events/client_server_events/multi_site/configuring_gateway_concurrency_levels).
+    -   Determine whether you should conflate events in the queue. See [Conflating Events in a Queue](../../developing/events/client_server_events/multi_site/conflate_multisite_gateway_queue).
 
 
 **Note:**

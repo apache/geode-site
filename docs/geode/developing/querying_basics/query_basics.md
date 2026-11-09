@@ -43,7 +43,7 @@ SELECT DISTINCT * FROM /exampleRegion WHERE status = ‘active’
 
 An important characteristic of @@product_name@@ querying to note is that by default, @@product_name@@ queries on the values of a region and not on keys. To obtain keys from a region, you must use the keySet path expression on the queried region. For example, `/exampleRegion.keySet`.
 
-For those new to the @@product_name@@ querying, see also the [@@product_name@@ Querying FAQ and Examples](../../getting_started/querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E).
+For those new to the @@product_name@@ querying, see also the [@@product_name@@ Querying FAQ and Examples](./querying_quick_reference).
 
 ## Advantages of OQL
 

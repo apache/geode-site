@@ -22,12 +22,12 @@ limitations under the License.
 Need a quick introduction to @@product_name_long@@? Take this brief tour to try out basic features and functionality.
 
 ## Step 1: Install @@product_name_long@@
-See [How to Install](installation/install_standalone#concept_0129F6A1D0EB42C4A3D24861AF2C5425) for instructions.
+See [How to Install](../getting_started/prerequisites/install_standalone.md) for instructions.
 
 ## Step 2: Use gfsh to start a locator
 In a terminal window, use the `gfsh` command line interface to start up a locator. @@product_name_long@@ *gfsh* (pronounced "jee-fish") provides a single, intuitive command-line interface from which you can launch, manage, and monitor @@product_name_long@@ processes, data, and applications. See [gfsh](../tools_modules/gfsh/chapter_overview).
 
-The *locator* is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use. A locator, by default, starts up a JMX Manager, which is used for monitoring and managing a @@product_name@@ cluster. The cluster configuration service uses locators to persist and distribute cluster configurations to cluster members. See [Running @@product_name@@ Locator Processes](../configuring/running/running_the_locator) and [Overview of the Cluster Configuration Service](../configuring/cluster_config/gfsh_persist).
+The *locator* is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use. A locator, by default, starts up a JMX Manager, which is used for monitoring and managing a @@product_name@@ cluster. The cluster configuration service uses locators to persist and distribute cluster configurations to cluster members. See [Running @@product_name@@ Locator Processes](../configuring/running_the_locator.md) and [Overview of the Cluster Configuration Service](../configuring/gfsh_persist).
 
 1.  Create a scratch working directory (for example, `my_geode`) and change directories into it. `gfsh` saves locator and server working directories and log files in this location.
 2.  Start gfsh by typing `gfsh` at the command line (or `gfsh.bat` if you are using Windows).
@@ -82,7 +82,7 @@ The Pulse application now displays the locator you just started (locator1):
 <img src="/images/pulse_locator.png" id="topic_FE3F28ED18E145F787431EC87B676A76__image_ign_ff5_t4" class="image" />
 
 ## Step 4: Start a server
-A @@product_name@@ server is a process that runs as a long-lived, configurable member of a cluster. The @@product_name@@ server is used primarily for hosting long-lived data regions and for running standard @@product_name@@ processes such as the server in a client/server configuration. See [Running @@product_name@@ Server Processes](../configuring/running/running_the_cacheserver).
+A @@product_name@@ server is a process that runs as a long-lived, configurable member of a cluster. The @@product_name@@ server is used primarily for hosting long-lived data regions and for running standard @@product_name@@ processes such as the server in a client/server configuration. See [Running @@product_name@@ Server Processes](../configuring/running_the_cacheserver).
 
 Start the cache server:
 
@@ -97,7 +97,7 @@ If you run `start server` from gfsh without specifying the member name, gfsh wil
 Observe the changes (new member and server) in Pulse. Try expanding the distributed system icon to see the locator and cache server graphically.
 
 ## Step 5: Create a replicated, persistent region
-In this step you create a region with the `gfsh` command line utility. Regions are the core building blocks of the @@product_name@@ cluster and provide the means for organizing your data. The region you create for this exercise employs replication to replicate data across members of the cluster and utilizes persistence to save the data to disk. See [Data Regions](../basic_config/data_regions/chapter_overview#data_regions).
+In this step you create a region with the `gfsh` command line utility. Regions are the core building blocks of the @@product_name@@ cluster and provide the means for organizing your data. The region you create for this exercise employs replication to replicate data across members of the cluster and utilizes persistence to save the data to disk. See [Data Regions](../basic_config/data_regions/chapter_overview).
 
 1.  Create a replicated, persistent region:
 
@@ -229,13 +229,13 @@ In this step you create a region with the `gfsh` command line utility. Regions a
 
     See [Data Entries](../basic_config/data_entries_custom_classes/chapter_overview).
 
-    See [Data Regions](../basic_config/data_regions/chapter_overview#data_regions).
+    See [Data Regions](../basic_config/data_regions/chapter_overview).
 
 ## Step 7: Examine the effects of replication
 
 In this step, you start a second cache server. Because regionA is replicated, the data will be available on any server hosting the region.
 
-See [Data Regions](../basic_config/data_regions/chapter_overview#data_regions).
+See [Data Regions](../basic_config/data_regions/chapter_overview).
 
 1.  Start a second cache server:
 
@@ -509,6 +509,6 @@ To shut down your cluster, do the following:
 Here are some suggestions on what to explore next with @@product_name_long@@:
 
 - To ensure that your Geode instances are secure, see: [Security](../security/chapter_overview).
-- To get more practice using `gfsh`, see [Tutorial—Performing Common Tasks with gfsh](../tools_modules/gfsh/tour_of_gfsh#concept_0B7DE9DEC1524ED0897C144EE1B83A34).
-- To learn about the cluster configuration service, see [Tutorial—Creating and Using a Cluster Configuration](../configuring/cluster_config/persisting_configurations#task_bt3_z1v_dl).
+- To get more practice using `gfsh`, see [Tutorial—Performing Common Tasks with gfsh](../tools_modules/gfsh/tour_of_gfsh).
+- To learn about the cluster configuration service, see [Tutorial—Creating and Using a Cluster Configuration](../configuring/persisting_configurations).
 - Continue reading the next section to learn more about the components and concepts that were just introduced.

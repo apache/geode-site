@@ -31,7 +31,7 @@ In peer systems, for general messaging and region operations distribution, @@pro
 TCP (Transmission Control Protocol) provides reliable in-order delivery of the system messages. TCP is more appropriate than UDP if the data is partitioned, if the cluster is small, or if network loads are unpredictable. TCP is preferable to UDP unicast in smaller clusters because it implements more reliable communications at the operating system level than UDP and its performance can be substantially faster than UDP. As the size of the cluster increases, however, the relatively small overhead of UDP makes it the better choice. TCP adds new threads and sockets to every member, causing more overhead as the system grows.
 
 **Note:**
-Even when @@product_name@@ is configured to use UDP for messaging, @@product_name@@ uses a TCP connection when attempting to detect failed members. See [Failure Detection and Membership Views](../../managing/network_partitioning/failure_detection#concept_CFD13177F78C456095622151D6EE10EB) for more details. In addition, the TCP connection's ping is not used for keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../../managing/monitor_tune/socket_tcp_keepalive#topic_jvc_pw3_34) for TCP keep alive configuration.
+Even when @@product_name@@ is configured to use UDP for messaging, @@product_name@@ uses a TCP connection when attempting to detect failed members. See [Failure Detection and Membership Views](../../managing/network_partitioning/failure_detection) for more details. In addition, the TCP connection's ping is not used for keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../../managing/monitor_tune/socket_communication/socket_tcp_keepalive) for TCP keep alive configuration.
 
 ## UDP Unicast and Multicast {#how_communication_works__section_E2D56EE03B54435BA9F04B8550F00534}
 UDP (User Datagram Protocol) is a connectionless protocol which uses far fewer resources than TCP. Adding another process to the cluster incurs little overhead for UDP messaging. UDP on its own is not reliable however, and messages are restricted in size to 64k bytes or less, including overhead for message headers. Large messages must be fragmented and transmitted as multiple datagram messages. Consequently, UDP is slower than TCP in many cases and unusable in other cases if network traffic is unpredictable or heavily congested.
@@ -48,7 +48,7 @@ membership-port-range=1024-60000
 ```
 
 **Note:**
-In addition to UDP port configuration, the `membership-port-range` property defines the TCP port used for failure detection. See the [Reference](../../reference/book_intro#reference) for a description of the @@product_name@@ property.
+In addition to UDP port configuration, the `membership-port-range` property defines the TCP port used for failure detection. See the [Reference](../../reference/book_intro) for a description of the @@product_name@@ property.
 
 ## UDP Multicast {#how_communication_works__section_15F9EEDD65374F3E9D26C5A960D9D9D3}
 Your options for general messaging and for default region operations messaging is between TCP and UDP unicast. You can choose to replace the default with UDP multicast for operations distribution of some or all of your regions. For every region where you want to use multicast, you set an additional attribute on the region itself.

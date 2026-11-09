@@ -34,7 +34,7 @@ If the member succeeds in reconnecting to a known locator, the member rebuilds i
 
 If the member cannot connect to a known locator, the member will then check to see if it itself is a locator (or hosting an embedded locator process). If the member is a locator, then the member does a quorum-based reconnect; it will attempt to contact a quorum of the members that were in the membership view just before it became disconnected. If a quorum of members can be contacted, then startup of the cluster is allowed to begin. Since the reconnecting member does not know which members survived the network partition event, all members that are in a reconnecting state will keep their UDP unicast ports open and respond to ping requests.
 
-Membership quorum is determined using the same member weighting system used in network partition detection. See [Membership Coordinators, Lead Members and Member Weighting](network_partitioning/membership_coordinators_lead_members_and_weighting#concept_23C2606D59754106AFBFE17515DF4330).
+Membership quorum is determined using the same member weighting system used in network partition detection. See [Membership Coordinators, Lead Members and Member Weighting](../network_partitioning/membership_coordinators_lead_members_and_weighting).
 
 Note that when a locator is in the reconnecting state,
 it provides no discovery services for the cluster.

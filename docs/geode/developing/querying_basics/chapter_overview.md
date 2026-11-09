@@ -40,6 +40,6 @@ and methods.
 
     This section includes advanced querying topics such as using query indexes, using query bind parameters, querying partitioned regions and query debugging.
 
--   **[Working with Indexes](../../developing/querying_basics/query_index/query_index)**
+-   **[Working with Indexes](./query_index/query_index.md)**
 
     The Geode query engine supports indexing. An index can provide significant performance gains for query execution.

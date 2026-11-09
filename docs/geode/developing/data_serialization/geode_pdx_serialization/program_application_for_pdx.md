@@ -43,7 +43,7 @@ When fetching data in a cache with PDX serialized reads enabled, the safest appr
 ## {#program_application_for_pdx__section_03F8918B4CAD49CCA1823FAAE25D53A8}
 **Prerequisites**
 
--   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../..//book_intro#basic_config_management).
+-   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../book_intro).
 ## {#program_application_for_pdx__section_B3C7C7629DFD4483B32B27F84D64DFCF}
 **Procedure**
 

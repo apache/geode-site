@@ -237,7 +237,7 @@ gfsh>search lucene --name=customerIndex --region=Customer
 
 ## Queries {#lucene-index-query}
 ### Querying a Lucene Index: Gfsh Example {#gfsh-query-example}
-For details, see the [gfsh search lucene](gfsh/command-pages/search#search_lucene") command reference page.
+For details, see the [gfsh search lucene](gfsh/command-pages/search.md#search_lucene) command reference page.
 
 ``` pre
 gfsh>search lucene --name=indexName --region=/orders --queryString="Jones*"
@@ -272,7 +272,7 @@ java.lang.IllegalStateException: The parent region [/orders] in colocation chain
 ...
 ```
 ### Destroying a Lucene Index: Gfsh Example {#gfsh-destroy-example}
-For details, see the [gfsh destroy lucene index](gfsh/command-pages/destroy#destroy_lucene_index") command reference page.
+For details, see the [gfsh destroy lucene index](gfsh/command-pages/destroy.md#destroy_lucene_index) command reference page.
 
 The error message that results from an attempt to destroy a region
 prior to destroying its associated Lucene index
@@ -313,10 +313,10 @@ invoke callbacks will be similar to this code fragment:
 7. Alter the region to add the user-defined business logic callbacks.
 
 ## Additional Gfsh Commands {#addl-gfsh-api}
-See the [gfsh describe lucene index](gfsh/command-pages/describe#describe_lucene_index") command reference page for the command that prints details about
+See the [gfsh describe lucene index](gfsh/command-pages/describe.md#describe_lucene_index) command reference page for the command that prints details about
 a specific index.
 
-See the [gfsh list lucene index](gfsh/command-pages/list#list_lucene_index") command reference page
+See the [gfsh list lucene index](gfsh/command-pages/list.md) command reference page
 for the command that prints details about the 
 Lucene indexes created for all members.
 

@@ -44,8 +44,8 @@ For additional information on @@product_name@@ querying, see [Querying](chapter_
 To write and execute a query in @@product_name@@, you can use any of the following mechanisms. Sample query code follows.
 
 -   @@product_name@@ querying APIs
--   [gfsh](../tools_modules/gfsh/chapter_overview) command-line interface; in particular the [query](../tools_modules/gfsh/command-pages/query) command
--   REST API [query endpoints](../rest_apps/rest_queries#concept_mmg_d35_m4)
+-   [gfsh](../../tools_modules/gfsh/chapter_overview) command-line interface; in particular the [query](../../tools_modules/gfsh/command-pages/query) command
+-   REST API [query endpoints](../../rest_apps/api_reference/query_endpoints/rest_queries)
 
 **Sample @@product_name@@ Query Code (Java)**
 
@@ -88,7 +88,7 @@ class Position implements DataSerializable {
 
 **Basic WHERE Clause Examples**
 
-In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](queries/query_additional/literals#literals) for a complete list of literals supported in @@product_name@@ querying.
+In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](queries/query_additional/literals) for a complete list of literals supported in @@product_name@@ querying.
 
 1.  Select all active portfolios.
 
@@ -130,7 +130,7 @@ SELECT p.ID, p.status FROM /exampleRegion p WHERE p.ID > 0
 
 **Using the NOT Operator**
 
-See [Operators](queries/query_additional/operators#operators) for a complete list of supported operators.
+See [Operators](queries/query_additional/operators) for a complete list of supported operators.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion WHERE NOT (status = 'active') AND ID = 2
@@ -142,7 +142,7 @@ SELECT * FROM /exampleRegion WHERE NOT (ID IN SET(1,2))
 
 **Using the AND and OR Operators**
 
-See [Operators](queries/query_additional/operators#operators) for a complete list of supported operators.
+See [Operators](queries/query_additional/operators) for a complete list of supported operators.
 
 ``` pre
 SELECT * FROM /exampleRegion WHERE ID > 4 AND ID < 9
@@ -700,9 +700,9 @@ ELEMENT(SELECT DISTINCT * FROM /exampleRegion WHERE id = 'XYZ-1').status = 'acti
 ```
 
 ## Which APIs should I use to write my queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0}
-If you are querying a Java application's local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](/org/apache/geode/cache/query/QueryService).
+If you are querying a Java application's local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/query/QueryService.html).
 
-If you are writing a Java client to server query, use [org.apache.geode.cache.client.Pool.getQueryService](/org/apache/geode/cache/client/Pool).
+If you are writing a Java client to server query, use [org.apache.geode.cache.client.Pool.getQueryService](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/client/Pool.html).
 
 ## How do I invoke an object's method in a query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597}
 To use a method in a query, use the attribute name that maps to the public method you want to invoke. For example:
@@ -749,7 +749,7 @@ SelectResults results = (SelectResults) query.execute(params);
 
 If you use a query bind parameter in place of a region path in your path expression, the parameter value must reference a collection (and not a String such as the name of the region path.)
 
-See [Using Query Bind Parameters](queries/query_additional/using_query_bind_parameters#concept_173E775FE46B47DF9D7D1E40680D34DF) for more details.
+See [Using Query Bind Parameters](./advanced_querying/using_query_bind_parameters) for more details.
 
 ## When should I create indexes to use in my queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2}
 Determine whether your query’s performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
@@ -769,8 +769,6 @@ QueryService qs = cache.getQueryService();
  qs.createKeyIndex("myKeyIndex", "id", "exampleRegion");
 ```
 
-For more information on using this API, see the [JavaDocs](/index).
-
 **Sample XML**
 
 ``` pre
@@ -787,18 +785,18 @@ For more information on using this API, see the [JavaDocs](/index).
  <entry>
 ```
 
-For more details on indexes, see [Working with Indexes](queries/query_index/query_index).
+For more details on indexes, see [Working with Indexes](./query_index/query_index.md).
 
 ## Can I create indexes on overflow regions? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_30D8C9A5472E4768AB7A0D598C9A496E}
-You can create indexes on overflow regions, but you are subject to some limitations. For example, the data contained in the index itself cannot be overflowed to disk. See [Using Indexes with Overflow Regions](query_index/indexes_with_overflow_regions#concept_87BE7DB32C714EB0BF7532AF93569328) for more information.
+You can create indexes on overflow regions, but you are subject to some limitations. For example, the data contained in the index itself cannot be overflowed to disk. See [Using Indexes with Overflow Regions](query_index/indexes_with_overflow_regions) for more information.
 
 ## Can I query a partitioned region? Can I perform a join query on a partitioned region? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16}
 You can query partitioned regions, but there are some limitations. You cannot perform join queries on partitioned regions, however you can perform equi-join queries on colocated partitioned regions by executing a function on a local data set.
 
-For a full list of restrictions, see [Partitioned Region Query Restrictions](queries/query_additional/partitioned_region_query_restrictions#concept_5353476380D44CC1A7F586E5AE1CE7E8).
+For a full list of restrictions, see [Partitioned Region Query Restrictions](./advanced_querying/querying_partitioned_regions/partitioned_region_query_restrictions).
 
 ## How can I improve the performance of a partitioned region query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69}
-If you know the data you need to query, you can target particular nodes in your queries (thus reducing the number of servers the query needs to access) by executing the query with the FunctionService. See [Querying a Partitioned Region on a Single Node](queries/query_additional/query_on_a_single_node#concept_30B18A6507534993BD55C2C9E0544A97) for details. If you are querying data that has been partitioned by a key or specific field, you should first create a key index and then execute the query using the FunctionService with the key or field as a filter. See [Optimizing Queries on Data Partitioned by a Key or Field Value](queries/query_additional/partitioned_region_key_or_field_value#concept_3010014DFBC9479783B2B45982014454).
+If you know the data you need to query, you can target particular nodes in your queries (thus reducing the number of servers the query needs to access) by executing the query with the FunctionService. See [Querying a Partitioned Region on a Single Node](./advanced_querying/querying_partitioned_regions/query_on_a_single_node) for details. If you are querying data that has been partitioned by a key or specific field, you should first create a key index and then execute the query using the FunctionService with the key or field as a filter. See [Optimizing Queries on Data Partitioned by a Key or Field Value](./advanced_querying/querying_partitioned_regions/partitioned_region_key_or_field_value).
 
 ## Which query language elements are supported in @@product_name@@? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E}
 | Supported elements ||          |
@@ -815,7 +813,7 @@ If you know the data you need to query, you can target particular nodes in your 
 | IS_DEFINED| TRUE    | |
 | IS_UNDEFINED        | |
 
-For more information and examples on using each supported keyword, see [Supported Keywords](queries/query_additional/supported_keywords#reference_07214B0F8DC94659B0F2D68B67195BD8).
+For more information and examples on using each supported keyword, see [Supported Keywords](queries/query_additional/supported_keywords).
 
 ## How do I debug queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF}
 You can debug a specific query at the query level by adding the &lt;trace&gt; keyword before the query string that you want to debug. Here is an example:

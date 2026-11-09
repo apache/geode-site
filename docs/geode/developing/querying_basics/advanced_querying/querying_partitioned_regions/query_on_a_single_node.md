@@ -101,7 +101,7 @@ To direct a query to specific partitioned region node, you can execute the query
     }
     ```
 
-    You could use the `MyPartitionResolver` to store all keys with the same ID in the same bucket. This `PartitionResolver` has to be configured at the time of Partition Region creation either declaratively using xml OR using APIs. See [Configuring Partitioned Regions](../partitioned_regions/managing_partitioned_regions#configure_partitioned_regions) for more information.
+    You could use the `MyPartitionResolver` to store all keys with the same ID in the same bucket. This `PartitionResolver` has to be configured at the time of Partition Region creation either declaratively using xml OR using APIs. See [Configuring Partitioned Regions](../../../partitioned_regions/managing_partitioned_regions) for more information.
 
     ``` pre
     /** This resolver returns the value of the ID field in the key. With this resolver, 

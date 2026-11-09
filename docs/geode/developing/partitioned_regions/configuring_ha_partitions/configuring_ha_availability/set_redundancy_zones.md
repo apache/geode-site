@@ -23,7 +23,7 @@ limitations under the License.
 
 Group members into redundancy zones so @@product_name@@ will separate redundant data copies into different zones.
 
-Understand how to set a member's `gemfire.properties` settings. See [Reference](../../reference/book_intro#reference).
+Understand how to set a member's `gemfire.properties` settings. See [Reference](../../../../reference/book_intro).
 
 Group your partition region hosts into redundancy zones with the `gemfire.properties` setting `redundancy-zone`.
 

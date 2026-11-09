@@ -31,7 +31,7 @@ limitations under the License.
 JAR files to be in the classpath.
 Both of these JARs are distributed in the `<path-to-product>/lib` directory and included in the appropriate `*-dependencies.jar` convenience libraries.
 
-**AlertAppender** is the component that generates @@product_name@@ alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/notification_federation_and_alerts#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A) for more details.
+**AlertAppender** is the component that generates @@product_name@@ alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/federated_mbean/notifications/notification_federation_and_alerts) for more details.
 
 **LogWriterAppender** is the component that is configured by all the `log-*` @@product_name@@ properties such as `log-file`, `log-file-size-limit` and `log-disk-space-limit`.
 

@@ -30,7 +30,7 @@ An expected use case operates on two regions within a transaction.
 For performance purposes the
 @@product_name@@ transaction implementation requires that region entries
 of partitioned regions be colocated.
-See [Custom-Partitioning and Colocating Data](../partitioned_regions/overview_custom_partitioning_and_data_colocation) for details on how to colocate region entries.
+See [Custom-Partitioning and Colocating Data](../partitioned_regions/custom_partitioning/overview_custom_partitioning_and_data_colocation) for details on how to colocate region entries.
 
 
 ## Transaction within an Application

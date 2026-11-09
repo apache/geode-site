@@ -27,7 +27,7 @@ Swagger application JARs are included in the @@product_name@@ REST application W
 
 The following example demonstrates how to access the Swagger UI to browse the APIs.
 
-1.  Start a @@product_name@@ Locator and a Developer REST API-enabled server as described in [Setup and Configuration](setup_config#topic_e21_qc5_m4). 
+1.  Start a @@product_name@@ Locator and a Developer REST API-enabled server as described in [Setup and Configuration](setup_config). 
 Specify an `http-service-port` for the developer REST service, as the default port, 7070, is already taken by the locator. For example:
 
     ``` pre

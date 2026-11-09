@@ -309,6 +309,6 @@ The filter implementation uses Java's [JEP 290: Filter Incoming Serialization Da
 - [Java Serialization Security Best Practices](https://www.oracle.com/java/technologies/javase/seccodeguide.html#8)
 
 ## Related Topics {#related-topics}
-- [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module)
-- [Setting Up the HTTP Module for tc Server](tc_setting_up_the_module)
+- [Setting Up the HTTP Module for Tomcat](./tomcat_session_management/tomcat_setting_up_the_module)
+- [Setting Up the HTTP Module for tc Server](./tc_session_management/tc_setting_up_the_module)
 - [HTTP Session Management Quick Start](quick_start)

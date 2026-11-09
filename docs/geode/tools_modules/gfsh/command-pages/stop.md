@@ -88,7 +88,7 @@ pc13(2266)<v22>:4522 | OK     | GatewayReceiver is stopped on member pc13(2266)<
 Stop a gateway sender with a given id on a specified member or members of a specified member group.
 
 **CAUTION:**
-Use caution with the `stop gateway-sender` command (or equivalent `GatewaySender.stop()` API) on parallel gateway senders. Instead of stopping an individual parallel gateway sender on a member, we recommend shutting down the entire member to ensure that proper failover of partition region events to other gateway sender members. Using this command on an individual parallel gateway sender can occur in event loss. See [Stopping Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview#topic_9AA37B43642D4DE19072CA3367C849BA__section_aqm_2js_bq) for more details.
+Use caution with the `stop gateway-sender` command (or equivalent `GatewaySender.stop()` API) on parallel gateway senders. Instead of stopping an individual parallel gateway sender on a member, we recommend shutting down the entire member to ensure that proper failover of partition region events to other gateway sender members. Using this command on an individual parallel gateway sender can occur in event loss. See [Stopping Gateway Senders](../../../topologies_and_comm/multi_site_configuration/how_multi_site/multisite_overview#topic_9AA37B43642D4DE19072CA3367C849BA__section_aqm_2js_bq) for more details.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 

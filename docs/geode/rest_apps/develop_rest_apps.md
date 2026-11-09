@@ -46,7 +46,7 @@ You cannot create or delete the regions themselves with the REST APIs, but you c
 
 ## Listing Available Regions
 
-The main resource endpoint to the @@product_name@@ API is [GET /geode/v1](get_regions#topic_itv_mg5_m4). Use this endpoint to discover which regions are available in your cluster.
+The main resource endpoint to the @@product_name@@ API is [GET /geode/v1](./api_reference/region_endpoints/get_regions). Use this endpoint to discover which regions are available in your cluster.
 
 Example call:
 
@@ -105,7 +105,7 @@ Date: Sat, 18 Jan 2014 20:05:47 GMT
 Each region listed in the response includes the following region attributes:
 
 -   **name**. Name of the region.
--   **type**. Type of region. For example, REPLICATE, PARTITION, or EMPTY. See [Region Types](../developing/region_options/region_types#region_types) for more information.
+-   **type**. Type of region. For example, REPLICATE, PARTITION, or EMPTY. See [Region Types](../developing/region_options/region_types) for more information.
 -   **key-constraint**. If defined, the fully qualified class name of the key's type. Otherwise, null.
 -   **value-constraint**. If defined, the fully qualified class name of the value's type. Otherwise, null.
 

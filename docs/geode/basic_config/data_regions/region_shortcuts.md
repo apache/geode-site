@@ -64,7 +64,7 @@ You can select the most common region attributes settings from @@product_name@@â
 
 Shortcut attributes are a convenience only. They are just named attributes that @@product_name@@ has already stored for you. You can override their settings by storing new attributes with the same id as the predefined attributes.
 
-For a full list of all available region shortcuts, see [Region Shortcuts Quick Reference](../../reference/topics/region_shortcuts_table#reference_ufj_5kz_4k).
+For a full list of all available region shortcuts, see [Region Shortcuts Quick Reference](../../reference/region_shortcuts/region_shortcuts_table.md#reference_ufj_5kz_4k__section_6B142E06F22C4B0EACE7CA369F9C2618).
 
 The `org.apache.geode.cache.RegionShortcut` Javadocs give complete listings of the options.
 

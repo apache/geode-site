@@ -21,7 +21,7 @@ limitations under the License.
 
 In a multi-site (WAN) installation, @@product_name@@ uses gateway sender queues to distribute events for regions that are configured with a gateway sender. AsyncEventListeners also use an asynchronous event queue to distribute events for configured regions. This section describes additional options for configuring the event queues that are used by gateway senders or AsyncEventListener implementations.
 ## {#configure_multisite_event_messaging__section_1BBF77E166E84F7CA110385FD03D8453}
-Before you begin, set up your multi-site (WAN) installation or configure asynchronous event queues and AsyncEventListener implementations. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system#setting_up_a_multisite_system) or [Implementing an AsyncEventListener for Write-Behind Cache Event Handling](implementing_write_behind_event_handler#implementing_write_behind_cache_event_handling).
+Before you begin, set up your multi-site (WAN) installation or configure asynchronous event queues and AsyncEventListener implementations. See [Configuring a Multi-site (WAN) System](../../../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system) or [Implementing an AsyncEventListener for Write-Behind Cache Event Handling](../../event_handlers/implementing_write_behind_event_handler).
 
 -   **[Persisting an Event Queue](configuring_highly_available_gateway_queues)**
 

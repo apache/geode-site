@@ -25,8 +25,8 @@ limitations under the License.
 ## {#managing_output_files__section_F0CEA4299D274801B9AB700C074F178F}
 @@product_name@@ includes several types of optional output files as described below.
 
--   **Log Files**. Comprehensive logging messages to help you confirm system configuration and to debug problems in configuration and code. Configure log file behavior in the `gemfire.properties` file. See [Logging](../../managing/logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
+-   **Log Files**. Comprehensive logging messages to help you confirm system configuration and to debug problems in configuration and code. Configure log file behavior in the `gemfire.properties` file. See [Logging](../managing/logging/logging.md).
 
--   **Statistics Archive Files**. Standard statistics for caching and distribution activities, which you can archive on disk. Configure statistics collection and archival in the `gemfire.properties`, `archive-disk-space-limit` and `archive-file-size-limit`. See the [Reference](../../reference/book_intro#reference).
+-   **Statistics Archive Files**. Standard statistics for caching and distribution activities, which you can archive on disk. Configure statistics collection and archival in the `gemfire.properties`, `archive-disk-space-limit` and `archive-file-size-limit`. See the [Reference](../reference/book_intro.md).
 
--   **Disk Store Files**. Hold persistent and overflow data from the cache. You can configure regions to persist data to disk for backup purposes or overflow to disk to control memory use. The subscription queues that servers use to send events to clients can be overflowed to disk. Gateway sender queues overflow to disk automatically and can be persisted for high availability. Configure these through the `cache.xml`. See [Disk Storage](../../managing/disk_storage/chapter_overview).
+-   **Disk Store Files**. Hold persistent and overflow data from the cache. You can configure regions to persist data to disk for backup purposes or overflow to disk to control memory use. The subscription queues that servers use to send events to clients can be overflowed to disk. Gateway sender queues overflow to disk automatically and can be persisted for high availability. Configure these through the `cache.xml`. See [Disk Storage](../managing/disk_storage/chapter_overview.md).

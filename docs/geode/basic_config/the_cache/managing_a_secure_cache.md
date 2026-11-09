@@ -29,4 +29,4 @@ configuration and setup when the `SecurityManager` is enabled.
 See the section on  [Security](../../security/chapter_overview)
 for details.
 For authentication, see 
-[Implementing Authentication](../../security/implementing_authentication).
+[Implementing Authentication](../../security/authentication/implementing_authentication).

@@ -52,4 +52,4 @@ Keep the following in mind about partitioned regions:
 -   A partitioned region needs a cache loader in every region data store (`local-max-memory` &gt; 0).
 -   @@product_name@@ distributes the data buckets as evenly as possible across all members storing the partitioned region data, within the limits of any custom partitioning or data colocation that you use. The number of buckets allotted for the partitioned region determines the granularity of data storage and thus how evenly the data can be distributed. The number of buckets is a total for the entire region across the cluster.
 -   In rebalancing data for the region, @@product_name@@ moves buckets, but does not move data around inside the buckets.
--   You can query partitioned regions, but there are certain limitations. See [Querying Partitioned Regions](../querying_basics/querying_partitioned_regions#querying_partitioned_regions) for more information.
+-   You can query partitioned regions, but there are certain limitations. See [Querying Partitioned Regions](../querying_basics/advanced_querying/querying_partitioned_regions/querying_partitioned_regions.md) for more information.

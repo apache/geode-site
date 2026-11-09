@@ -39,7 +39,7 @@ Write-behind cache listeners are created by extending the `AsyncEventListener` i
     3.  Implement the handler's callback methods as needed by your application.
 
         **Note:**
-        Improperly programmed event handlers can block your distributed system. Cache events are synchronous. To modify your cache or perform distributed operations based on events, avoid blocking your system by following the guidelines in [How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache#writing_callbacks_that_modify_the_cache).
+        Improperly programmed event handlers can block your distributed system. Cache events are synchronous. To modify your cache or perform distributed operations based on events, avoid blocking your system by following the guidelines in [How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache).
 
         Example:
 

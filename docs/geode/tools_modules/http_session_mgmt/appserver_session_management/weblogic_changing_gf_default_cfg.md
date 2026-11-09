@@ -31,7 +31,7 @@ Here are the default settings:
 -   @@product_name@@ clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
 
 **Note:**
-On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
+On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](../tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
 
 However, you may want to change this default configuration. For example, you might want to change the region from replicated to partitioned. This section describes how to change these configuration values.
 
@@ -85,7 +85,7 @@ In addition to the standard @@product_name@@ system properties, the following ca
 | evictionHeapPercentage | Percentage of heap at which session eviction begins.                                             | 80.0         |
 | rebalance              | Whether a rebalance of the cache should be done when the application server instance is started. | false        |
 
-Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management#resource_manager).
+Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../../managing/heap_use/heap_management).
 
 **Note:**
 It is important to note that the @@product_name@@ cluster is a singleton within the entire application server JVM. As such it is important to ensure that different web applications, within the same container, set (or expect) the same cache configuration. When the application server starts, the first web application to start that uses @@product_name@@ Session Caching will determine the overall configuration of the cluster, since it will trigger the creation of the cluster.
@@ -144,7 +144,7 @@ ClientCache.createClientRegionFactory(CACHING_PROXY_HEAP_LRU)
 ```
 
 <dt>**region\_attributes\_id**</dt>
-<dd>Specifies the region shortcut; for more information refer to [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts); when using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.</dd>
+<dd>Specifies the region shortcut; for more information refer to [Region Shortcuts and Custom Named Region Attributes](../../../basic_config/data_regions/region_shortcuts); when using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.</dd>
 
 Default: REPLICATE for peer-to-peer, PARTITION\_REDUNDANT for client/server
 

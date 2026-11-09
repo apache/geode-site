@@ -94,7 +94,7 @@ Response:
     gfsh>start server --name=server_name --max-heap=1024m
     ```
 
-    For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings#sys_mem_perf).
+    For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance/system_member_performance_jvm_mem_settings).
 
 -   If this doesn’t work, try rebooting.
 
@@ -107,7 +107,7 @@ Response: Check these possible causes.
 -   Can not connect to locator (when using TCP for discovery).
     -   Check that the locators attribute in this process’s `gemfire.properties` has the correct IP address for the locator.
     -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
-    -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
+    -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview) for more information about using bind addresses.
 -   Wrong version of @@product_name@@ . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
 
 ## Member process seems to hang {#diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF}
@@ -217,13 +217,13 @@ longer online stored at these locations:
 created at timestamp 1270834766733 version 0]
 ```
 
-Response: Bring the missing member online, if possible. This restores the buckets to memory and you can work with them again. If the missing member cannot be brought back online, or the disk stores for the member are corrupt, you may need to revoke the member, which will allow the system to create the buckets in new members and resume operations with the entries. See [Handling Missing Disk Stores](../disk_storage/handling_missing_disk_stores#handling_missing_disk_stores).
+Response: Bring the missing member online, if possible. This restores the buckets to memory and you can work with them again. If the missing member cannot be brought back online, or the disk stores for the member are corrupt, you may need to revoke the member, which will allow the system to create the buckets in new members and resume operations with the entries. See [Handling Missing Disk Stores](../disk_storage/disk_store_management/handling_missing_disk_stores).
 
 ## Entries are not being evicted or expired as expected {#diagnosing_system_probs__section_A3BB709B754949C6981C431F1F8023D6}
 Check these possible causes.
 
 -   Transactions—Entries that are due to be expired may remain in the cache if they are involved in a transaction. Further, transactions never time out, so if a transaction hangs, the entries involved in the transaction will remain stuck in the cache. If you have a process with a hung transaction, you may need to end the process to remove the transaction. In your application programming, do not leave transactions open ended. Program all transactions to end with a commit or a rollback.
--   Partitioned regions—For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/eviction/chapter_overview) and [Expiration](../../developing/expiration/chapter_overview).
+-   Partitioned regions—For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/general_region_management/eviction/chapter_overview.md) and [Expiration](../../developing/general_region_management/expiration/chapter_overview).
 
 ## Cannot find the log file {#diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6}
 Operating without a log file can be a normal condition, so the process does not log a warning.
@@ -241,7 +241,7 @@ Response:
 The process may be hitting its virtual address space limits. The virtual address space has to be large enough to accommodate the heap, code, data, and dynamic link libraries (DLLs).
 
 -   If your application is out of memory frequently, you may want to profile it to determine the cause.
--   If you suspect your heap size is set too low, you can increase direct memory by resetting the maximum heap size, using -Xmx. For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings#sys_mem_perf).
+-   If you suspect your heap size is set too low, you can increase direct memory by resetting the maximum heap size, using -Xmx. For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance/system_member_performance_jvm_mem_settings).
 -   You may need to lower the thread stack size. The default thread stack size is quite large: 512kb on Sparc and 256kb on Intel for 1.3 and 1.4 32-bit JVMs, 1mb with the 64-bit Sparc 1.4 JVM; and 128k for 1.2 JVMs. If you have thousands of threads then you might be wasting a significant amount of stack space. If this is your problem, the error may be this:
 
     ``` pre
@@ -312,7 +312,7 @@ A client and server produces a SocketTimeoutException when it stops waiting for 
 
 Response:
 
-Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method.
+Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/cache/client-cache#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method.
 
 ## Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed {#diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F}
 A cluster member’s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The @@product_name@@ log file for the member shows a ForcedDisconnectException with the message
@@ -332,7 +332,7 @@ Suspect a network problem or a problem in the configuration of transport for mem
 Response:
 
 -   Check your network monitoring tools to see whether the network is down or flooded.
--   If you are using multi-homed hosts, make sure a bind address is set and consistent for all system members. For details about using bind addresses, see [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview#concept_7628F498DB534A2D8A99748F5DA5DC94).
+-   If you are using multi-homed hosts, make sure a bind address is set and consistent for all system members. For details about using bind addresses, see [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview).
 -   Check that all the applications and cache servers are using the same locator address.
 
 ## One part of the cluster cannot see another part {#diagnosing_system_probs__section_E31AFADE4A3A45C7A6EABB67697CFF33}
@@ -345,7 +345,7 @@ Response:
 -   Enable network partition detection.
 
 Also see
-[Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
+[Understanding and Recovering from Network Outages](recovering_from_network_outages).
 
 ## Data distribution has stopped, although member processes are running {#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2}
 Suspect a problem with the network, the locator, or the multicast configuration, depending on the transport your cluster is using.
@@ -376,7 +376,7 @@ This problem can occur in systems with a great number of distributed-no-ack oper
 
 Response:
 
-For information on alleviating this problem, see [Slow distributed-ack Messages](../monitor_tune/slow_messages#slow_mess).
+For information on alleviating this problem, see [Slow distributed-ack Messages](../monitor_tune/slow_messages).
 
 ## Slow system performance {#diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3}
 Slow system performance is sometimes caused by a buffer size that is too small for the objects being distributed.

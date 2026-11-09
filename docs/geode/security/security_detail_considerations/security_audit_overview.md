@@ -25,11 +25,11 @@ This section gathers discrete details in one convenient location to better help 
 
     @@product_name@@ processes use either UDP or TCP/IP ports to communicate with other processes or clients.
 
--   **[Resources That Must Be Protected](security-audit#topic_263072624B8D4CDBAD18B82E07AA44B6)**
+-   **[Resources That Must Be Protected](security-audit)**
 
     Certain @@product_name@@ configuration files should be readable and writeable *only* by the dedicated user who runs servers.
 
--   **[Log File Locations](security-audit#topic_5B6DF783A14241399DC25C6EE8D0048A)**
+-   **[Log File Locations](security-audit)**
 
     By default, the log files are located in the working directory used when you started the corresponding processes.
 

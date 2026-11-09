@@ -20,18 +20,18 @@ This section summarizes all available @@product_name_long@@ REST API resources a
 **Note:**
 This documentation covers the **v1** release of @@product_name@@ REST APIs for developing applications.
 
--   **[Region Endpoints](rest_regions)**
+-   **[Region Endpoints](./region_endpoints/rest_regions)**
 
     A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
--   **[Query Endpoints](rest_queries)**
+-   **[Query Endpoints](./query_endpoints/rest_queries)**
 
     @@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. Since @@product_name@@ regions are key-value stores, values can range from simple byte arrays to complex nested objects.
 
--   **[Function Endpoints](rest_functions)**
+-   **[Function Endpoints](./function_endpoints/rest_functions)**
 
     @@product_name@@ functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
 
--   **[Administrative Endpoints](rest_admin)**
+-   **[Administrative Endpoints](./administrative_endpoints/rest_admin)**
 
     Administrative endpoints provide management and monitoring functionality for the REST API interface.

@@ -101,6 +101,15 @@ export default function replaceDocVars(options: Options) {
             if (typeof node.value === 'string') {
                 node.value = applyReplacements(node.value, replacements);
             }
+            if (typeof node.url === 'string') {
+                node.url = applyReplacements(node.url, replacements);
+            }
+            if (typeof node.title === 'string') {
+                node.title = applyReplacements(node.title, replacements);
+            }
+            if (typeof node.alt === 'string') {
+                node.alt = applyReplacements(node.alt, replacements);
+            }
         });
     };
 }

@@ -28,7 +28,7 @@ If you run Pulse in embedded mode, the Pulse application runs on the JMX Manager
 If you host Pulse on a web application server (non-embedded mode) and you configure JMX authentication on the @@product_name@@ manager node, then the Pulse Web application must authenticate itself with the manager node when it starts. Specify the credentials of a valid JMX user account in the `pulse.properties` file, as described in [Hosting Pulse on a Web Application Server](pulse-hosted).
 
 **Note:**
-The credentials that you specify must have both read and write privileges in the JMX Manager node. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6).
+The credentials that you specify must have both read and write privileges in the JMX Manager node. See [Configuring a JMX Manager](../../managing/management/jmx_manager/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6).
 
 ## Configuring Pulse to use HTTPS {#pulse-auth-https}
 You can configure Pulse to use HTTPS in either embedded or non-embedded mode.
@@ -39,7 +39,7 @@ In embedded mode, @@product_name@@ uses an embedded Jetty server to host the
 Pulse Web application. To make the embedded server use HTTPS, you must
 enable the `http` SSL component in
 `gemfire.properties` or `gfsecurity.properties`.
-See [SSL](../../security/ssl_overview) for details on configuring these parameters.
+See [SSL](../../security/ssl/ssl_overview) for details on configuring these parameters.
 
 These SSL parameters apply to all HTTP services hosted on the JMX Manager, which includes the following:
 

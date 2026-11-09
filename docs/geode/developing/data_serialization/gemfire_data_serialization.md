@@ -49,4 +49,4 @@ In addition to speeding standard object serialization, you can use the `DataSeri
 ## Serializing Your Domain Object with DataSerializer {#gemfire_data_serialization__section_B21408E7090C41B08BF300146F87648B}
 You can also use `DataSerializer` to serialize domain objects. It serializes data in the same way as `DataSerializable` but allows you to serialize classes without modifying the domain class code.
 
-See the JavaDocs on [DataSerializable](/org/apache/geode/DataSerializable) and [DataSerializer](/org/apache/geode/DataSerializer) for more information.
+See the JavaDocs on [DataSerializable](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/DataSerializable.html) and [DataSerializer](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/DataSerializer.html) for more information.

@@ -29,7 +29,7 @@ You can use the gfsh [echo](echo) command to view the value of a variable. For e
 gfsh>echo --string=$*
 ```
 
-See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a description of preset environment variables.
+See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables) for a description of preset environment variables.
 
 **Availability:** Online or offline.
 

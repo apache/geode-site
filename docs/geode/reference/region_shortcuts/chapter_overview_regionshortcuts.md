@@ -52,6 +52,6 @@ If you change the cache.xml file that defines a region, you must restart the mem
 
 For more information about configuring regions, see [Region Management](../../basic_config/data_regions/managing_data_regions).
 
-For more information about using the various types of @@product_name@@ regions and when to use them, see [Region Types](../../developing/region_options/region_types#region_types).
+For more information about using the various types of @@product_name@@ regions and when to use them, see [Region Types](../../developing/region_options/region_types).
      
 For a quick reference listing all region shortcuts, see [Region Shortcuts Quick Reference](region_shortcuts_table).

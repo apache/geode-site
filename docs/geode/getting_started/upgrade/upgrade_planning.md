@@ -25,14 +25,14 @@ Before you upgrade your system, back it up.  Make backup copies of all existing 
 server-side code, configuration files, and data across the entire cluster.  To get a backup of the
 data that includes the most recent changes may require that traffic across the cluster is stopped
 before the backup is made.
-The discussion at [Creating Backups for System Recovery and Operational Management](../../managing/disk_storage/backup_restore_disk_store#backup_restore_disk_store)
+The discussion at [Creating Backups for System Recovery and Operational Management](../../managing/disk_storage/backup_restore_disk_store)
 explains the process, and the
 [backup disk-store](../../tools_modules/gfsh/command-pages/backup) command reference page describes
 how to use the `gfsh backup disk-store` command to make a backup.
 
 ## Guidelines for Upgrading {#guidelines-upgrading}
 -   Schedule your upgrade during a period of low user activity for your system and network.
--   Verify that the machines hosting the cluster members meet the [Host Machine Requirements](../system_requirements/host_machine) of the upgraded cluster.
+-   Verify that the machines hosting the cluster members meet the [Host Machine Requirements](../prerequisites/host_machine) of the upgraded cluster.
 -   **Important:** After all locators have been upgraded, *do not start or restart any processes* that use the older version of the software. The older process will either not be allowed to join the cluster or, if allowed to join, can potentially cause a deadlock.
 -   Verify that all members that you wish to upgrade are members of the same cluster.
 A list of cluster members will be output with the `gfsh` command:
@@ -48,7 +48,7 @@ A list of cluster members will be output with the `gfsh` command:
   configuration during the upgrade procedure.  There are two possibilites:
 
   - With `gfsh` commands, relying on the underlying **cluster configuration service** to record the configuration: see [Exporting and Importing Cluster Configurations](../../configuring/export-import).
-  - With **XML properties** specified through the Java API or configuration files: see [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files).
+  - With **XML properties** specified through the Java API or configuration files: see [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/deployingconfig/deploying_config_files).
 
 -   Do not modify region attributes or data, either via `gfsh` or `cache.xml` configuration, during the upgrade process.
 

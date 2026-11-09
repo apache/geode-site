@@ -25,7 +25,7 @@ Plan persistence and overflow for your data regions and configure them according
 ## {#storing_data_on_disk__section_E253562A46114CF0A4E47048D8143999}
 Use the following steps to configure your data regions for persistence and overflow:
 
-1.  Configure your disk stores as needed. See [Designing and Configuring Disk Stores](../../managing/disk_storage/using_disk_stores#defining_disk_stores). The cache disk store defines where and how the data is written to disk.
+1.  Configure your disk stores as needed. See [Designing and Configuring Disk Stores](../../../managing/disk_storage/configuring_disk_stores/using_disk_stores.md). The cache disk store defines where and how the data is written to disk.
 
     ``` pre
     <disk-store name="myPersistentStore" . . . >
@@ -67,7 +67,7 @@ of `local-max-memory`. Both `local-max-memory` and `lru-memory-size maximum` are
 When you start your members, overflow and persistence will be done automatically, with the disk stores and disk write behaviors.
 
 **Note:**
-You can also configure Regions and Disk Stores using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD) and [Disk Store Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_1ACC91B493EE446E89EC7DBFBBAE00EA).
+You can also configure Regions and Disk Stores using the gfsh command-line interface. See [Region Commands](../../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD) and [Disk Store Commands](../../../tools_modules/gfsh/quick_ref_commands_by_area#topic_1ACC91B493EE446E89EC7DBFBBAE00EA).
 ## {#storing_data_on_disk__section_0D825566F508444C98DFE57527962FED}
 | Related Topics                                                                        |
 |---------------------------------------------------------------------------------------|

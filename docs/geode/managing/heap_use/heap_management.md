@@ -30,7 +30,7 @@ The resource manager has two threshold settings, each expressed as a percentage 
 
   1.  **Eviction Threshold**. Above this, the manager orders evictions for all regions with `eviction-attributes` set to `lru-heap-percentage`. This prompts dedicated background evictions, independent of any application threads and it also tells all application threads adding data to the regions to evict at least as much data as they add. The JVM garbage collector removes the evicted data, reducing heap use. The evictions continue until the manager determines that heap use is again below the eviction threshold.
 
-    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/eviction/chapter_overview) for more detail regarding eviction policies.
+    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/general_region_management/eviction/chapter_overview) for more detail regarding eviction policies.
 
   2.  **Critical Threshold**. Above this, all activity that might add data to the cache is refused. This threshold is set above the eviction threshold and is intended to allow the eviction and GC work to catch up. This JVM, all other JVMs in the cluster, and all clients to the system receive `LowMemoryException` for operations that would add to this critical member's heap consumption. Activities that fetch or reduce data are allowed. For a list of refused operations, see the Javadocs for the `ResourceManager` method `setCriticalHeapPercentage`.
 
@@ -53,7 +53,7 @@ When the manager kicks off evictions:
 
 3.  Each thread iterates round-robin over its bucket/region list, evicting one LRU entry per bucket/region until the resource manager sends a signal to stop evicting.
 
-See also [Memory Requirements for Cached Data](../../reference/topics/memory_requirements_for_cache_data#calculating_memory_requirements).
+See also [Memory Requirements for Cached Data](../../reference/memory_requirements_for_cache_data).
 
 ## Controlling Heap Use with the Resource Manager {#configuring_resource_manager_controlling_heap_use}
 Resource manager behavior is closely tied to the triggering of Garbage Collection (GC) activities, the use of concurrent garbage collectors in the JVM, and the number of parallel GC threads used for concurrency.
@@ -81,11 +81,11 @@ The configuration terms used here are `cache.xml` elements and attributes, but y
 
 2.  Set the `resource-manager` `critical-heap-percentage` threshold. This should be as as close to 100 as possible while still low enough so the manager's response can prevent the member from hanging or getting `OutOfMemoryError`. The threshold is zero (no threshold) by default.
 
-    **Note:** When you set this threshold, it also enables a query monitoring feature that prevents most out-of-memory exceptions when executing queries or creating indexes. See [Monitoring Queries for Low Memory](../../developing/querying_basics/monitor_queries_for_low_memory#topic_685CED6DE7D0449DB8816E8ABC1A6E6F).
+    **Note:** When you set this threshold, it also enables a query monitoring feature that prevents most out-of-memory exceptions when executing queries or creating indexes. See [Monitoring Queries for Low Memory](../../developing/querying_basics/advanced_querying/monitor_queries_for_low_memory#topic_685CED6DE7D0449DB8816E8ABC1A6E6F).
 
 3.  Set the `resource-manager` `eviction-heap-percentage` threshold to a value lower than the critical threshold. This should be as high as possible while still low enough to prevent your member from reaching the critical threshold. The threshold is zero (no threshold) by default.
 
-4.  Decide which regions will participate in heap eviction and set their `eviction-attributes` to `lru-heap-percentage`. See [Eviction](../../developing/eviction/chapter_overview). The regions you configure for eviction should have enough data activity for the evictions to be useful and should contain data your application can afford to delete or offload to disk.
+4.  Decide which regions will participate in heap eviction and set their `eviction-attributes` to `lru-heap-percentage`. See [Eviction](../../developing/general_region_management/eviction/chapter_overview). The regions you configure for eviction should have enough data activity for the evictions to be useful and should contain data your application can afford to delete or offload to disk.
 ## {#configuring_resource_manager__section_5D88064B75C643B0849BBD4345A6671B}
 gfsh example:
 

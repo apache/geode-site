@@ -174,7 +174,7 @@ Complete these items to implement a custom method authorizer.
 
 ## Changing the Method Authorizer {#changing_method_authorizer}
 You can set the `MethodInvocationAuthorizer` to be used by the query engine through the `gfsh` command-line utility.
-In addition, you can modify the configured `MethodInvocationAuthorizer` while members are already running by using the [alter query-service](../tools_modules/gfsh/command-pages/alter#topic_alter_query_service) command.
+In addition, you can modify the configured `MethodInvocationAuthorizer` while members are already running by using the [alter query-service](../../tools_modules/gfsh/command-pages/alter#topic_alter_query_service) command.
 It is always advisable to make these changes during periods of low activity, though.
 
 The following constraints apply when the `MethodInvocationAuthorizer` used by the cluster is changed in runtime:

@@ -23,7 +23,7 @@ limitations under the License.
 
 The adjustments you make to tune your @@product_name@@ communication may run up against operating system limits. If this happens, check with your system administrator about adjusting the operating system settings.
 
-All of the settings discussed here are listed as `gemfire.properties` and `cache.xml` settings. They can also be configured through the API and some can be configured at the command line. Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../developing/book_intro).
+All of the settings discussed here are listed as `gemfire.properties` and `cache.xml` settings. They can also be configured through the API and some can be configured at the command line. Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../../developing/book_intro).
 
 -   **[Setting Socket Buffer Sizes](socket_communication_setting_socket_buffer_sizes)**
 

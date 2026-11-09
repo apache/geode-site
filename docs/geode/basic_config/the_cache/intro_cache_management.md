@@ -68,7 +68,7 @@ You use one format for peer and server caches and another for client caches.
 </client-cache>
 ```
 
-For more information on the `cache.xml` file, see [cache.xml](../../reference/cache/chapter_overview_cache_xml#cache_xml).
+For more information on the `cache.xml` file, see [cache.xml](../../reference/cache/chapter_overview_cache_xml).
 
 ## Create and Close a Cache {#concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_B113BC6921DA434C947D4326DDB4526E}
 Your system configuration and cache configuration are initialized when you start your member processes and create each member’s @@product_name@@ cache. If you are using the cluster configuration service, member processes can pick up its cache configuration from the cluster or group's current configuration. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist).
@@ -83,12 +83,12 @@ For all of your @@product_name@@ applications:
 1.  Create your `Cache`, for peer/server applications, or `ClientCache`, for client applications. This connects to the @@product_name@@ system you have configured and initializes any configured data regions. Use your cache instance to access your regions and perform your application work.
 2.  Close your cache when you are done. This frees up resources and disconnects your application from the cluster in an orderly manner.
 
-Follow the instructions in the subtopics under [Cache Management](chapter_overview#the_cache) to customize your cache creation and closure for your application needs. You may need to combine more than one of the sets of instructions. For example, to create a client cache in a system with security, you would follow the instructions for creating and closing a client cache and for creating and closing a cache in a secure system.
+Follow the instructions in the subtopics under [Cache Management](chapter_overview) to customize your cache creation and closure for your application needs. You may need to combine more than one of the sets of instructions. For example, to create a client cache in a system with security, you would follow the instructions for creating and closing a client cache and for creating and closing a cache in a secure system.
 
 ## Export and Import a Cache Snapshot {#concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_E8781B263D434F6A9104194AE7BE1647}
 To aid in the administration of cache data and speed the setup of new environments, you can export a snapshot of the entire cache (all regions) and then import the snapshot into a new cache. For example, you could take a snapshot of the production environment cache in order to import the cache's data into a testing environment.
 
-For more details on exporting and importing snapshots of a cache, see [Cache and Region Snapshots](../../managing/cache_snapshots/chapter_overview#concept_E6AC3E25404D4D7788F2D52D83EE3071).
+For more details on exporting and importing snapshots of a cache, see [Cache and Region Snapshots](../../managing/cache_snapshots/chapter_overview).
 
 ## Cache Management with gfsh and the Cluster Configuration Service
 

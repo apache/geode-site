@@ -70,4 +70,4 @@ or on Windows:
 prompt> gfsh start server --name=server1
 ```
 
-See [Creating and Running gfsh Command Scripts](command_scripting#concept_9B2F7550F16C4717831AD40A56922259) for more information.
+See [Creating and Running gfsh Command Scripts](command_scripting) for more information.

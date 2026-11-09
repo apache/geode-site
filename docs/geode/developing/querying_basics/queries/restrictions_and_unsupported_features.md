@@ -33,4 +33,4 @@ At a high level, @@product_name@@ does not support the following querying featur
 -   You cannot create an index on fields using Set/List types (Collection types) that are not comparable. The OQL index implementation expects fields to be Comparable. To workaround this, you can create a custom Collection type that implements Comparable.
 -   ORDER BY is only supported with DISTINCT queries.
 -   In the Geode model, attributes and methods are resolved at runtime during query execution. This means that OQL queries are not pre-validated for references to nonexistent methods and attributes.
-In addition, there are some specific limitations on partitioned region querying. See [Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions#concept_5353476380D44CC1A7F586E5AE1CE7E8).
+In addition, there are some specific limitations on partitioned region querying. See [Partitioned Region Query Restrictions](../advanced_querying/querying_partitioned_regions/partitioned_region_query_restrictions).

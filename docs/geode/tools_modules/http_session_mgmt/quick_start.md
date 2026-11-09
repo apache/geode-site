@@ -55,7 +55,7 @@ CATALINA_HOME=/opt/apache-tomcat-10.1.30
     -   [Additional Instructions for AppServers Module](quick_start#quick_start__section_1587C3E55F06406EBD4AB13014A406D4)
 
 ## Additional Quick Start Instructions for Tomcat Module {#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB}
-These steps provide a basic starting point for using the Tomcat module. For more configuration options, see [HTTP Session Management Module for Tomcat](session_mgmt_tomcat).
+These steps provide a basic starting point for using the Tomcat module. For more configuration options, see [HTTP Session Management Module for Tomcat](./tomcat_session_management/session_mgmt_tomcat).
 
 1.  Modify Tomcat's `server.xml` and `context.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
@@ -74,7 +74,7 @@ These steps provide a basic starting point for using the Tomcat module. For more
 
     **Note:** For Tomcat 10.1+, use `Tomcat10DeltaSessionManager`. Support for Tomcat 7, 8, and 9 has been discontinued.
 
-    See [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module) for additional instructions.
+    See [Setting Up the HTTP Module for Tomcat](./tomcat_session_management/tomcat_setting_up_the_module) for additional instructions.
 
 2.  Start the Tomcat application server.
 
@@ -87,7 +87,7 @@ These steps provide a basic starting point for using the Tomcat module. For more
     <img src="/images/Apache_Tomcat_Homepage.png"></img>
     
 ## Additional Instructions for AppServers Module {#quick_start__section_1587C3E55F06406EBD4AB13014A406D4}
-These steps provide a basic starting point for using the AppServers module with WebLogic, WebSphere or JBoss. For more configuration options, see [HTTP Session Management Module for AppServers](session_mgmt_weblogic).
+These steps provide a basic starting point for using the AppServers module with WebLogic, WebSphere or JBoss. For more configuration options, see [HTTP Session Management Module for AppServers](./appserver_session_management/session_mgmt_weblogic).
 
 **Note:**
 

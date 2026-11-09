@@ -193,5 +193,5 @@ accessible by gateway senders from across the WAN.
 | Configuration Area | Property or Setting | Definition |
 |--------------------|---------------------|------------|
 | multi-site (WAN) config for gateway sender | [hostname-for-senders](../../reference/cache/cache_xml#gateway-receiver) | Hostname or IP address of the gateway receiver used by gateway senders to connect. |
-| multi-site (WAN) config for locator | [remote-locators](../../reference/gemfire_properties#gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
+| multi-site (WAN) config for locator | [remote-locators](../../reference/gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
 | multi-site (WAN) config for gateway receiver | [start-port](../../reference/cache/cache_xml#gateway-receiver) and [end-port](../../reference/cache/cache_xml#gateway-receiver) (cache.xml) or <code class="ph codeph">--start-port</code> and <code class="ph codeph">--end-port</code> parameters to the <code class=" ph codeph">gfsh start gateway receiver</code> command | Port range that the gateway receiver can use to listen for gateway sender communication. |

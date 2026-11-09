@@ -186,7 +186,7 @@ Specifies a region or disk store's disk directory.
 ```
 
 ## &lt;gateway-sender&gt; {#gateway-sender}
-Configures a gateway sender to distribute region events to another @@product_name@@ site. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system#setting_up_a_multisite_system).
+Configures a gateway sender to distribute region events to another @@product_name@@ site. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system).
 
 **API:** `GatewaySender`
 
@@ -291,7 +291,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 ```
 
 ## &lt;gateway-receiver&gt; {#gateway-receiver}
-Configures a gateway receiver to receive and apply region events that were distributed from another @@product_name@@ site. You can only specify one gateway receiver on a member. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system#setting_up_a_multisite_system).
+Configures a gateway receiver to receive and apply region events that were distributed from another @@product_name@@ site. You can only specify one gateway receiver on a member. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system).
 
 **API:** `GatewayReceiverFactory`, `GatewayTransportFilter`
 
@@ -385,7 +385,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 ```
 
 ## &lt;gateway-conflict-resolver&gt; {#gateway-conflict-resolver}
-An event-handler plug-in that is called in order to determine whether a potentially conflicting WAN update should be applied to the local cache. A GatewayConflictResolver is invoked if the current value in a cache entry was established by a different cluster (with a different distributed-system-id) than an event that is attempting to modify the entry. It is not invoked if the event has the same distributed system ID as the event that last changed the entry. See [Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts#topic_E97BB68748F14987916CD1A50E4B4542)
+An event-handler plug-in that is called in order to determine whether a potentially conflicting WAN update should be applied to the local cache. A GatewayConflictResolver is invoked if the current value in a cache entry was established by a different cluster (with a different distributed-system-id) than an event that is attempting to modify the entry. It is not invoked if the event has the same distributed system ID as the event that last changed the entry. See [Resolving Conflicting Events](../../topologies_and_comm/multi_site_configuration/resolving_multisite_conflicts)
 
 Specify the Java class for the gateway conflict resolver plug-in and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](#class-name_parameter).
 
@@ -870,7 +870,7 @@ Specifies a region attributes template that can be named (by `id`) and reference
 | `scope` | Determines how updates are distributed to other caches where the region/entry exist. Also affects remote invocation for some event handlers and whether region entry versions are used for consistent updates across replicated regions.<br/><br/>> **Note:** Many common options are available via region shortcuts in `RegionShortcut` and `ClientRegionShortcut`.<br/><br/>> **Note:** Server regions that are not partitioned must be replicated with `distributed-ack` or `global` scope. Shortcuts for `REPLICATE` use `distributed-ack` scope.<br/><br/>**Scope values:**<br/><br/>- `local` — No distribution; region visible only to threads in the member.<br/>- `distributed-no-ack` — Distributes events with no acknowledgment required.<br/>- `distributed-ack` — Distributes events with acknowledgment required; uses entry versions for consistent updates across members.<br/>- `global` — Distributes events with global locking to ensure consistency.<br/><br/>**API:** `setScope`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes scope="distributed-ack"><br/></region-attributes><br/>``` | `distributed-no-ack` |
 | `statistics-enabled` | Whether to gather region statistics. Must be `true` to use expiration. Statistics are kept in `org.apache.geode.cache.CacheStatistics` and available via `Region.getStatistics` and `Region.Entry.getStatistics`.<br/><br/>**API:** `setStatisticsEnabled`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes statistics-enabled="true"><br/></region-attributes><br/>``` | `false` |
 | `cloning-enabled` | How `fromDelta` applies deltas locally. When `true`, updates apply to a clone and the clone is stored. When `false`, the value is modified in place.<br/><br/>**API:** `setCloningEnabled`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes cloning-enabled="true"><br/></region-attributes><br/>``` | `false` |
-| `concurrency-checks-enabled` | Whether members perform checks to handle concurrent or out-of-order updates consistently for distributed regions. See [Consistency for Region Updates](../../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).<br/><br/>> **Note:** Client-cache applications may disable concurrency checking to see all events. Servers can keep checks enabled while still passing all events to the client. This ensures the client sees all events but does not prevent the client cache from becoming out-of-sync. <br/><br/>**API:** `setConcurrencyChecksEnabled`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes concurrency-checks-enabled="true"><br/></region-attributes><br/>``` | `true` |
+| `concurrency-checks-enabled` | Whether members perform checks to handle concurrent or out-of-order updates consistently for distributed regions. See [Consistency for Region Updates](../../developing/consistency/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).<br/><br/>> **Note:** Client-cache applications may disable concurrency checking to see all events. Servers can keep checks enabled while still passing all events to the client. This ensures the client sees all events but does not prevent the client cache from becoming out-of-sync. <br/><br/>**API:** `setConcurrencyChecksEnabled`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes concurrency-checks-enabled="true"><br/></region-attributes><br/>``` | `true` |
 | `off-heap` | Stores entry values off-heap (including region entries and queue entries). Heap is still used for keys and the `ConcurrentHashMap`.<br/><br/>**API:** `setOffHeap`<br/><br/>**Example:**<br/><br/>```xml<br/><region-attributes off-heap="true"><br/></region-attributes><br/>``` | `false` |
 
 ## &lt;key-constraint&gt; {#key-constraint}
@@ -960,7 +960,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -1032,7 +1032,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#region-idle-time_custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -1109,7 +1109,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#entry-time-to-live_custom_expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -1188,7 +1188,7 @@ Within the `entry-time-to-live` or `entry-idle-time` element, this element speci
 ```
 
 ## &lt;custom-expiry&gt; {#entry-idle-time_custom-expiry}
-Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/expiration/configuring_data_expiration) for an example.
+Specifies the custom class that implements `org.apache.geode.cache.CustomExpiry`. You define this class in order to override the region-wide settings for specific entries. See [Configure Data Expiration](../../developing/general_region_management/expiration/configuring_data_expiration) for an example.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements.
 
@@ -1588,7 +1588,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 
 ## &lt;jndi-bindings&gt; {#jndi-bindings}
-Specifies the binding for a data-source used in transaction management. See [Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI).
+Specifies the binding for a data-source used in transaction management. See [Configuring Database Connections Using JNDI](../../developing/general_region_management/outside_data_sources/configuring_db_connections_using_JNDI).
 
 **Example:**
 
@@ -1690,7 +1690,7 @@ A configuration property of the datasource. Use the sub-elements to identify the
 </config-property>
 ```
 
-Configuration properties vary depending on the database vendor. See [Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI) for examples of different configuration property configurations.
+Configuration properties vary depending on the database vendor. See [Configuring Database Connections Using JNDI](../../developing/general_region_management/outside_data_sources/configuring_db_connections_using_JNDI) for examples of different configuration property configurations.
 
 ## &lt;config-property-name&gt; {#config-property-name}
 The name of this datasource property.
@@ -1741,7 +1741,7 @@ See [&lt;region-attributes&gt;](#region-attributes) for a complete listing of re
 
 
 ## &lt;index&gt; {#index}
-Describes an index to be created on a region. The index node, if any, should all come immediately after the "region-attributes" node. The "name" attribute is a required field which identifies the name of the index. See [Working with Indexes](../../developing/query_index/query_index) for more information on indexes.
+Describes an index to be created on a region. The index node, if any, should all come immediately after the "region-attributes" node. The "name" attribute is a required field which identifies the name of the index. See [Working with Indexes](../../developing/querying_basics/query_index/query_index.md) for more information on indexes.
 
 **Default:**
 

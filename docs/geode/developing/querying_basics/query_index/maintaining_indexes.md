@@ -26,7 +26,7 @@ Indexes are automatically kept current with the region data they reference. The 
 ## Index Maintenance Behavior {#concept_98ED3F38919A490B9AE2553568455C35__section_FF1945F2AAFA4B158067CEE967410616}
 Asynchronous index maintenance batches up multiple updates to the same region key. The default mode is synchronous, since this provides the greatest consistency with region data.
 
-See [RegionFactory.setIndexMaintenanceSynchronous](/org/apache/geode/cache/RegionFactory).
+See [RegionFactory.setIndexMaintenanceSynchronous](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/cache/RegionFactory.html).
 
 This declarative index creation sets the maintenance mode to asynchronous:
 

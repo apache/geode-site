@@ -145,7 +145,7 @@ Unless otherwise indicated, these settings only affect activities within this cl
 | `validate-serializable-objects`                        | If `true`, blocks deserialization of non-internal classes not allowed by `serializable-object-filter` (throws `IncompatibleClassException`). Requires JDK 8u121+; older servers/clients will fail on startup.                                                                                                                                                                                                                                                   | S, C                                 | `false`                                     |
 
 
--   **[Using Non-ASCII Strings in  Property Files](../topics/non-ascii_strings_in_config_files)**
+-   **[Using Non-ASCII Strings in  Property Files](./non-ascii_strings_in_config_files)**
 
     You can specify Unicode (non-ASCII) characters in Apache Geode property files by using a `\uXXXX` escape sequence.
 

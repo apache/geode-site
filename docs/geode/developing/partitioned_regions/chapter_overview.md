@@ -35,15 +35,15 @@ In addition to basic region management, partitioned regions include options for 
 
     Decide how many buckets to assign to your partitioned region and set the configuration accordingly.
 
--   **[Custom-Partitioning and Colocating Data](overview_custom_partitioning_and_data_colocation)**
+-   **[Custom-Partitioning and Colocating Data](./custom_partitioning/overview_custom_partitioning_and_data_colocation)**
 
     You can customize how Apache Geode groups your partitioned region data with custom partitioning and data colocation.
 
--   **[Configuring High Availability for Partitioned Regions](overview_how_pr_ha_works)**
+-   **[Configuring High Availability for Partitioned Regions](./configuring_ha_partitions/overview_how_pr_ha_works)**
 
     By default, Apache Geode stores only a single copy of your partitioned region data among the region's data stores. You can configure Geode to maintain redundant copies of your partitioned region data for high availability.
 
--   **[Configuring Single-Hop Client Access to Server-Partitioned Regions](overview_how_pr_single_hop_works)**
+-   **[Configuring Single-Hop Client Access to Server-Partitioned Regions](./configuring_single_hop/overview_how_pr_single_hop_works)**
 
     Single-hop data access enables the client pool to track where a partitioned region's data is hosted in the servers. To access a single entry, the client directly contacts the server that hosts the key, in a single hop.
 

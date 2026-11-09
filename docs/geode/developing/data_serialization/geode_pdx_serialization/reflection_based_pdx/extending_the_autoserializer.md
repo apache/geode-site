@@ -44,7 +44,7 @@ You can customize the specific behaviors in `ReflectionBasedAutoSerializer` by o
 
 These methods are only called the first time the `ReflectionBasedAutoSerializer` sees a new class. The results will be remembered and used the next time the same class is seen.
 
-For details on these methods and their default behaviors, see the JavaDocs on [ReflectionBasedAutoSerializer](/org/apache/geode/pdx/ReflectionBasedAutoSerializer) for details.
+For details on these methods and their default behaviors, see the JavaDocs on [ReflectionBasedAutoSerializer](pathname:///javadocs/@@javadoc_version@@/geode-core/org/apache/geode/pdx/ReflectionBasedAutoSerializer.html) for details.
 
 ## Example of Optimizing Autoserialization of BigInteger and BigDecimal Types {#concept_9E020566EE794A81A48A90BA798EC279__section_7C4CC39FD82A48A9B5F8376522078192}
 This section provides an example of extending the `ReflectionBasedAutoSerializer` to optimize the automatic serialization of BigInteger and BigDecimal types.

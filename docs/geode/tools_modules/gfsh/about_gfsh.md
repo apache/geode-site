@@ -39,4 +39,4 @@ The `gfsh` command line interface lets developers spend less time configuring ca
 
 You can connect gfsh to a remote cluster using the HTTP protocol. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/gfsh_remote).
 
-By default, the cluster configuration service saves the configuration of your @@product_name_long@@ cluster as you create @@product_name_long@@ objects using gfsh. You can export this configuration and import it into another @@product_name_long@@ cluster. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist#concept_r22_hyw_bl).
+By default, the cluster configuration service saves the configuration of your @@product_name_long@@ cluster as you create @@product_name_long@@ objects using gfsh. You can export this configuration and import it into another @@product_name_long@@ cluster. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist).

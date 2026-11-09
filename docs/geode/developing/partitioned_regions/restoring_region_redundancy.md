@@ -22,7 +22,7 @@ limitations under the License.
 -->
 Restoring redundancy is a member operation. It affects all partitioned regions defined by the member, regardless of whether the member hosts data for the regions.
 
-Restoring redundancy creates new redundant copies of buckets on members hosting the region and by default reassigns which members host the primary buckets to give better load balancing. It does not move buckets from one member to another. The reassignment of primary hosts can be prevented using the appropriate flags, as described below. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr) for further detail on redundancy.
+Restoring redundancy creates new redundant copies of buckets on members hosting the region and by default reassigns which members host the primary buckets to give better load balancing. It does not move buckets from one member to another. The reassignment of primary hosts can be prevented using the appropriate flags, as described below. See [Configure High Availability for a Partitioned Region](./configuring_ha_partitions/configuring_ha_availability/configuring_ha_for_pr) for further detail on redundancy.
 
 For efficiency, when starting multiple members, trigger the restore redundancy a single time, after you have added all members.
 

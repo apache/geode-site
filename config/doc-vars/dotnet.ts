@@ -17,6 +17,11 @@
  * under the License.
  */
 
+import { getLatestJavadocVersion } from './utils';
+
+const javadocVersion115 = getLatestJavadocVersion('1.15', '1.15.5');
+const javadocVersion20 = getLatestJavadocVersion('2.0', '2.0.3');
+
 const dotnetVars   = {
     current: {
         min_java_version: '8',
@@ -24,6 +29,8 @@ const dotnetVars   = {
         product_version: '1.15',
         product_version_old_minor: '1.14',
         product_version_geode: '1.15',
+        javadoc_version: javadocVersion115,
+        product_javadoc_version: javadocVersion115,
     },
     '1.15': {
         min_java_version: '8',
@@ -31,6 +38,17 @@ const dotnetVars   = {
         product_version: '1.15',
         product_version_old_minor: '1.14',
         product_version_geode: '1.15',
+        javadoc_version: javadocVersion115,
+        product_javadoc_version: javadocVersion115,
+    },
+    '2.0': {
+        min_java_version: '11',
+        min_java_update: '0',
+        product_version: '2.0',
+        product_version_old_minor: '1.15',
+        product_version_geode: '2.0',
+        javadoc_version: javadocVersion20,
+        product_javadoc_version: javadocVersion20,
     },
 };
 

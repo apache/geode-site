@@ -31,7 +31,7 @@ Here are the default @@product_name@@ settings:
 -   @@product_name@@ clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
 
 **Note:**
-On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
+On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](../tc_additional_info#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
 
 To change this default configuration, use the `--interactive` command line argument when creating the tc Server instance. Choose the appropriate command for the chosen topology and platform.
 
@@ -91,6 +91,6 @@ Then on the cache server side, reference the modified region attributes template
 <region name="gemfire_modules_sessions" refid="MY_SESSIONS"/>
 ```
 
--   **[Interactive Configuration Reference for the tc Server Module](../../tools_modules/http_session_mgmt/interactive_mode_ref)**
+-   **[Interactive Configuration Reference for the tc Server Module](./interactive_mode_ref)**
 
     This section describes each prompt when entering into interactive configuration mode of the @@product_name@@ HTTP Session Management Module for tc Server.

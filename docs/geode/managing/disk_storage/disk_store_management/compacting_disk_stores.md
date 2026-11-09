@@ -40,7 +40,7 @@ offline disk stores.
 
 For the online disk store, the current operation log is not available for
 compaction, no matter how much garbage it contains. You can use `DiskStore.forceRoll` to close the current oplog, making it eligible for compaction.
-See [Disk Store Operation Logs](operation_logs) for details.
+See [Disk Store Operation Logs](../operation_logs) for details.
 
 Offline compaction runs essentially in the same way, but without the incoming cache operations. Also, because there is no currently open log, the compaction creates a new one to get started.
 
@@ -57,7 +57,7 @@ Old log files become eligible for online compaction when their live data (non-ga
             myCache.findDiskStore("myDiskStore").forceCompaction();
             ```
 
-        -   Using `gfsh`, compact a disk store with the [compact disk-store](../../tools_modules/gfsh/command-pages/compact#topic_F113C95C076F424E9AA8AC4F1F6324CC) command. Examples:
+        -   Using `gfsh`, compact a disk store with the [compact disk-store](../../../tools_modules/gfsh/command-pages/compact#topic_F113C95C076F424E9AA8AC4F1F6324CC) command. Examples:
 
             ``` pre
             gfsh>compact disk-store --name=Disk1
@@ -71,7 +71,7 @@ Old log files become eligible for online compaction when their live data (non-ga
 ## Run Offline Compaction {#compacting_disk_stores__section_25BDB098E9584EAA9BC6582597544726}
 Offline compaction is a manual process. All log files are compacted as much as possible, regardless of how much garbage they hold. Offline compaction creates new log files for the compacted log records.
 
-Using `gfsh`, compact individual offline disk stores with the [compact offline-disk-store](../../tools_modules/gfsh/command-pages/compact#topic_9CCFCB2FA2154E16BD775439C8ABC8FB) command:
+Using `gfsh`, compact individual offline disk stores with the [compact offline-disk-store](../../../tools_modules/gfsh/command-pages/compact#topic_9CCFCB2FA2154E16BD775439C8ABC8FB) command:
 
 ``` pre
 gfsh>compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2

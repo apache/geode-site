@@ -100,7 +100,7 @@ To use PdxInstances in querying, ensure that PDX serialization reads are enabled
 gfsh>configure pdx --read-serialized=true
 ```
 
-See [configure pdx](../../tools_modules/gfsh/command-pages/configure#topic_jdkdiqbgphqh) for more information.
+See [configure pdx](../../../../tools_modules/gfsh/command-pages/configure#topic_jdkdiqbgphqh) for more information.
 
 In cache.xml, set the following:
 
@@ -135,7 +135,7 @@ The statement below returns all portfolios from the /exampleRegion and /exampleR
 SELECT * FROM /exampleRegion portfolio1, /exampleRegion2 portfolio2 WHERE portfolio1.status = portfolio2.status
 ```
 
-To create indexes for region joins you create single-region indexes for both sides of the join condition. These are used during query execution for the join condition. Partitioned regions do not support region joins. For more information on indexes, see [Working with Indexes](../query_index/query_index).
+To create indexes for region joins you create single-region indexes for both sides of the join condition. These are used during query execution for the join condition. Partitioned regions do not support region joins. For more information on indexes, see [Working with Indexes](../../query_index/query_index.md).
 
 **Examples:**
 
@@ -236,12 +236,12 @@ When a `null` argument is used, if the query processor cannot determine the prop
 
 **Methods calls with the `SecurityManager` enabled**
 
-When the `SecurityManager` is enabled, by default @@product_name@@ throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../security/method_invocation_authorizers#restrictedMethodAuthorizer), is invoked.
+When the `SecurityManager` is enabled, by default @@product_name@@ throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../../../security/authorization/method_invocation_authorizers#restrictedMethodAuthorizer), is invoked.
 
-In order to further customize this authorization check, see [Changing the Method Authorizer](../../security/method_invocation_authorizers#changing_method_authorizer).
+In order to further customize this authorization check, see [Changing the Method Authorizer](../../../../security/authorization/method_invocation_authorizers#changing_method_authorizer).
 
 In the past you could use the system property `gemfire.QueryService.allowUntrustedMethodInvocation` to disable the check altogether, but this approach is deprecated and will be removed in future releases;
-you need to configure the [UnrestrictedMethodAuthorizer](../../security/method_invocation_authorizers#unrestrictedMethodAuthorizer) instead.
+you need to configure the [UnrestrictedMethodAuthorizer](../../../../security/authorization/method_invocation_authorizers#unrestrictedMethodAuthorizer) instead.
 
 ## Enum Objects {#the_where_clause__section_59E7D64746AE495D942F2F09EF7DB9B5}
 To write a query based on the value of an Enum object field, you must use the `toString` method of the enum object or use a query bind parameter.

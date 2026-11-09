@@ -44,7 +44,7 @@ You can configure your consumer members so their messages are queued separately 
 The specifications for handling slow receipt primarily affect how your members manage distribution for regions with distributed-no-ack scope, where distribution is asynchronous, but the specifications can affect other distributed scopes as well. If no regions have distributed-no-ack scope, the mechanism is unlikely to kick in at all. When slow receipt handling does kick in, however, it affects all distribution between the producer and that consumer, regardless of scope.
 
 **Note:**
-These slow receiver options are disabled in systems using SSL. See [SSL](../../security/ssl_overview).
+These slow receiver options are disabled in systems using SSL. See [SSL](../../../security/ssl/ssl_overview).
 
 Each consumer member determines how its own slow behavior is to be handled by its producers. The settings are specified as distributed system connection properties. This section describes the settings and lists the associated properties.
 
@@ -69,7 +69,7 @@ When a process disconnects after receiving a request to do so by a producer, it 
 
 -   Disconnect forced by producer because we were too slow.
 
-These messages only appear in your logs if logging is enabled and the log level is set to a level that includes warning (which it does by default). See [Logging](../logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
+These messages only appear in your logs if logging is enabled and the log level is set to a level that includes warning (which it does by default). See [Logging](../../logging/logging.md).
 
 If your consumer is unable to receive even high priority messages, only the producer’s warnings will appear in the logs. If you see only producer warnings, you can restart the consumer process. Otherwise, the @@product_name@@ failure detection code will eventually cause the member to leave the cluster on its own.
 

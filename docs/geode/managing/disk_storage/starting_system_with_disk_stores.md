@@ -89,10 +89,10 @@ To start a system with disk stores:
     exit $STATUS;
     ```
 
-2.  **Respond to blocked members**. When a member blocks waiting for more recent data from another member, the member waits indefinitely rather than coming online with stale data. Check for missing disk stores with the `gfsh show                             missing-disk-stores` command. See [Handling Missing Disk Stores](handling_missing_disk_stores#handling_missing_disk_stores).
-    -   If no disk stores are missing, the cache initialization must be slow for some other reason. Check the information on member hangs in [Diagnosing System Problems](../troubleshooting/diagnosing_system_probs#diagnosing_system_probs).
+2.  **Respond to blocked members**. When a member blocks waiting for more recent data from another member, the member waits indefinitely rather than coming online with stale data. Check for missing disk stores with the `gfsh show                             missing-disk-stores` command. See [Handling Missing Disk Stores](./disk_store_management/handling_missing_disk_stores).
+    -   If no disk stores are missing, the cache initialization must be slow for some other reason. Check the information on member hangs in [Diagnosing System Problems](../troubleshooting/diagnosing_system_probs).
     -   If disk stores are missing that you think should be there:
-        -   Make sure you have started the member. Check the logs for any failure messages. See [Logging](../logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
+        -   Make sure you have started the member. Check the logs for any failure messages. See [Logging](../logging/logging.md).
         -   Make sure your disk store files are accessible. If you have moved your member or disk store files, you must update your disk store configuration to match.
     -   If disk stores are missing that you know are lost, because you have deleted them or their files are otherwise unavailable, revoke them so the startup can continue.
 

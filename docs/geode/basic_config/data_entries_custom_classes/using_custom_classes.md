@@ -35,12 +35,12 @@ Data is sent between clients and servers in serialized form and the server store
 -   Entry values in regions that the server persists to disk
 -   Entry values the server accesses for any reason other than access using a `PdxInstance` or transfer of the full entry value to a client
 
-For information on `PdxInstance`s, see [Data Serialization](../../developing/data_serialization/chapter_overview#data_serialization).
+For information on `PdxInstance`s, see [Data Serialization](../../developing/data_serialization/chapter_overview).
 
 ## Data Serialization {#using_custom_classes__section_57EB5D02C06947B4BDE75A49286D581D}
 @@product_name@@ serializes data entry keys and values for distribution, so all data that @@product_name@@ moves out of the local cache for any reason must be serializable. Additionally, partitioned regions store data in serialized form. Almost every configuration requires serialization.
 
-For information on the requirements and options for data serialization, see [Data Serialization](../../developing/data_serialization/chapter_overview#data_serialization).
+For information on the requirements and options for data serialization, see [Data Serialization](../../developing/data_serialization/chapter_overview).
 
 ## Classes Used as Keys {#using_custom_classes__section_CE776B94EDCB4D269A71C3C9CFEDD5FD}
 The region uses hashing on keys. If you define a custom class to use as a key, for the class, override:

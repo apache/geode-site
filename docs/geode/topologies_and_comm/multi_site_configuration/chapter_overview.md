@@ -21,7 +21,7 @@ limitations under the License.
 
 Use the multi-site configuration to scale horizontally between disparate, loosely-coupled clusters. A wide-area network (WAN) is the main use case for the multi-site topology.
 
--   **[How Multi-site (WAN) Systems Work](../topology_concepts/how_multisite_systems_work)**
+-   **[How Multi-site (WAN) Systems Work](./how_multi_site/how_multisite_systems_work)**
 
     The Apache Geode multi-site implementation connects disparate clusters. The systems act as one when they are coupled, and they act as independent systems when communication between sites fails. The coupling is tolerant of weak or slow links between cluster sites. A wide-area network (WAN) is the main use case for the multi-site topology.
 
@@ -33,11 +33,11 @@ Use the multi-site configuration to scale horizontally between disparate, loosel
 
     Plan and configure your multi-site topology, and configure the regions that will be shared between systems.
 
--   **[Filtering Events for Multi-Site (WAN) Distribution](../../developing/events/filtering_multisite_events)**
+-   **[Filtering Events for Multi-Site (WAN) Distribution](./filtering_multisite_events)**
 
     You can optionally create gateway sender and/or gateway receiver filters to control which events are queued and distributed to a remote site, or to modify the data stream that is transmitted between Geode sites.
 
--   **[Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts)**
+-   **[Resolving Conflicting Events](./resolving_multisite_conflicts)**
 
     You can optionally create a `GatewayConflictResolver` cache plug-in to decide whether a potentially conflicting event that was delivered from another site should be applied to the local cache.
 

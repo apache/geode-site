@@ -24,7 +24,7 @@ Use the `gfsh` command-line utility to configure your @@product_name_long@@ clus
 Use `gfsh` to configure regions, disk stores, members, and other @@product_name@@ objects.
 You can also use `gfsh` to start and stop locators, servers, and @@product_name@@ monitoring tools. As you execute these commands, the cluster configuration service persists the configuration. When new members join the cluster, the service distributes the configuration to the new members.
 
-`gfsh` is the recommended means of configuring and managing your @@product_name_long@@ cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/cache/chapter_overview_cache_xml#cache_xml) and the [Reference](../reference/book_intro#reference) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing @@product_name_long@@](../managing/book_intro#managing_gemfire_intro).
+`gfsh` is the recommended means of configuring and managing your @@product_name_long@@ cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/cache/chapter_overview_cache_xml) and the [Reference](../reference/book_intro) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing @@product_name_long@@](../managing/book_intro).
 
 -   **[Overview of the Cluster Configuration Service](./gfsh_persist)**
 

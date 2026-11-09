@@ -259,7 +259,7 @@ In order for running members to adopt the alteration, they must be stopped and r
 
 The alter runtime command does not apply to locators.
 
-For more information on these configuration properties, see [cache.xml](../../../reference/cache/chapter_overview_cache_xml#cache_xml) and configuration parameter reference.
+For more information on these configuration properties, see [cache.xml](../../../reference/cache/chapter_overview_cache_xml) and configuration parameter reference.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 

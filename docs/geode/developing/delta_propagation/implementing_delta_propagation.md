@@ -25,8 +25,8 @@ By default, delta propagation is enabled in your cluster. When enabled, delta pr
 ## {#implementing_delta_propagation__section_877AC61D691C44078A782683F90D169B}
 Use the following procedure to implement delta propagation in your cluster.
 
-1.  Study your object types and expected application behavior to determine which regions can benefit from using delta propagation. Delta propagation does not improve performance for all data and data modification scenarios. See [When to Avoid Delta Propagation](when_to_use_delta_prop#when_to_use_delta_prop).
-2.  For each region where you are using delta propagation, choose whether to enable cloning using the delta propagation property `cloning-enabled`. Cloning is disabled by default. See [Delta Propagation Properties](delta_propagation_properties#delta_propagation_properties).
+1.  Study your object types and expected application behavior to determine which regions can benefit from using delta propagation. Delta propagation does not improve performance for all data and data modification scenarios. See [When to Avoid Delta Propagation](when_to_use_delta_prop).
+2.  For each region where you are using delta propagation, choose whether to enable cloning using the delta propagation property `cloning-enabled`. Cloning is disabled by default. See [Delta Propagation Properties](delta_propagation_properties).
 3.  If you do not enable cloning, review all associated listener code for dependencies on `EntryEvent.getOldValue`. Without cloning, @@product_name@@ modifies the entry in place and so loses its reference to the old value. For delta events, the `EntryEvent` methods `getOldValue` and `getNewValue` both return the new value.
 4.  For every class where you want delta propagation, implement `org.apache.geode.Delta` and update your methods to support delta propagation. Exactly how you do this depends on your application and object needs, but these steps describe the basic approach:
     1.  If the class is a plain old Java object (POJO), wrap it for this implementation and update your code to work with the wrapper class.

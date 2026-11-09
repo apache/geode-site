@@ -33,7 +33,7 @@ With Apache Geode disk stores, you can persist data to disk as a backup to your 
 
     At creation, each operation log is initialized at the disk store's `max-oplog-size`, with the size divided between the `crf` and `drf` files. When the oplog is closed, Apache Geode shrinks the files to the space used in each file.
 
--   **[Configuring Disk Stores](overview_using_disk_stores)**
+-   **[Configuring Disk Stores](./configuring_disk_stores/overview_using_disk_stores)**
 
     In addition to the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
 
@@ -45,7 +45,7 @@ With Apache Geode disk stores, you can persist data to disk as a backup to your 
 
     This section describes what happens during startup and shutdown and provides procedures for those operations.
 
--   **[Disk Store Management](managing_disk_stores)**
+-   **[Disk Store Management](./disk_store_management/managing_disk_stores)**
 
     The `gfsh` command-line tool has a number of options for examining and managing your disk stores. The `gfsh` tool, the `cache.xml` file and the DiskStore APIs are your management tools for online and offline disk stores.
 

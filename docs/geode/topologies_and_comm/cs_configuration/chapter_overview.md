@@ -25,9 +25,9 @@ In the client/server architecture, a relatively small server farm manages the ca
 
     In the most common client/server topology, a farm of cache servers provides caching services to many clients. Cache servers have a homogeneous data store in data regions that are replicated or partitioned across the server farm.
 
--   **[How Server Discovery Works](../topology_concepts/how_server_discovery_works)** Apache Geode locators provide reliable and flexible server discovery services for your clients. You can use all servers for all client requests, or group servers according to function, with the locators directing each client request to the right group of servers.
+-   **[How Server Discovery Works](./how_server_discovery_works)** Apache Geode locators provide reliable and flexible server discovery services for your clients. You can use all servers for all client requests, or group servers according to function, with the locators directing each client request to the right group of servers.
 
--   **[How Client/Server Connections Work](../topology_concepts/how_the_pool_manages_connections)**
+-   **[How Client/Server Connections Work](./how_the_pool_manages_connections)**
 
     The server pools in your Apache Geode client processes manage all client connection requests to the server tier. To make the best use of the pool functionality, you should understand how the pool manages the server connections.
 

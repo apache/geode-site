@@ -25,10 +25,10 @@ Configure your server and client processes and data regions to run your client/s
 
 **Prerequisites**
 
--   Configure your server system using locators for member discovery. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system) and [Managing a Peer or Server Cache](../../basic_config/the_cache/managing_a_peer_server_cache#creating_and_closing_a_peer_cache).
--   Configure your clients as standalone applications. See [Managing a Client Cache](../../basic_config/the_cache/managing_a_client_cache#managing_a_client_cache).
--   Be familiar with cache region configuration. See [Data Regions](../../basic_config/data_regions/chapter_overview#data_regions).
--   Be familiar with server and client configuration properties. See [cache.xml](../../reference/cache/chapter_overview_cache_xml#cache_xml).
+-   Configure your server system using locators for member discovery. See [Configuring Peer-to-Peer Discovery](../p2p_configuration/setting_up_a_p2p_system) and [Managing a Peer or Server Cache](../../basic_config/the_cache/managing_a_peer_server_cache).
+-   Configure your clients as standalone applications. See [Managing a Client Cache](../../basic_config/the_cache/managing_a_client_cache).
+-   Be familiar with cache region configuration. See [Data Regions](../../basic_config/data_regions/chapter_overview).
+-   Be familiar with server and client configuration properties. See [cache.xml](../../reference/cache/chapter_overview_cache_xml).
 
 **Procedure**
 
@@ -101,4 +101,4 @@ When you start the server and client systems, the client regions will use the se
 
 **What to do next**
 
-Configure your clients to use the cache and to subscribe to events from the servers as needed by your application. See [Configuring Client/Server Event Messaging](../../developing/events/configure_client_server_event_messaging#receiving_events_from_servers).
+Configure your clients to use the cache and to subscribe to events from the servers as needed by your application. See [Configuring Client/Server Event Messaging](../../developing/events/client_server_events/configure_client_server_event_messaging).

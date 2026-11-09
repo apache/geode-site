@@ -21,16 +21,16 @@ limitations under the License.
 
 This section describes how to set up and use the HTTP session management module with tc Server templates.
 
-If you would prefer to manually change the `server.xml` and `context.xml` files rather than use tc Server templates, refer to [HTTP Session Management Module for Tomcat](session_mgmt_tomcat).
+If you would prefer to manually change the `server.xml` and `context.xml` files rather than use tc Server templates, refer to [HTTP Session Management Module for Tomcat](../tomcat_session_management/session_mgmt_tomcat).
 
--   **[Installing the HTTP Module for tc Server](../../tools_modules/http_session_mgmt/tc_installing_the_module)**
+-   **[Installing the HTTP Module for tc Server](./tc_installing_the_module)**
 
     This topic describes how to install the HTTP session management module with tc Server templates.
 
--   **[Setting Up the HTTP Module for tc Server](../../tools_modules/http_session_mgmt/tc_setting_up_the_module)**
+-   **[Setting Up the HTTP Module for tc Server](./tc_setting_up_the_module)**
 
     To set up the HTTP Module for tc Server, start a tc Server instance with the appropriate tc Server template based on your preferred topology.
 
--   **[Changing the Default @@product_name@@ Configuration in the tc Server Module](../../tools_modules/http_session_mgmt/tc_changing_gf_default_cfg)**
+-   **[Changing the Default @@product_name@@ Configuration in the tc Server Module](./tc_changing_gf_default_cfg)**
 
     By default, the tc Server HTTP module will run @@product_name@@ automatically with pre-configured settings. You can change these @@product_name@@ settings.

@@ -31,7 +31,7 @@ limitations under the License.
 
     To use PDX serialization, you can configure and use @@product_name@@'s reflection-based autoserializer, or you can program the serialization of your objects by using the PDX interfaces and classes.
 
--   **[Using Automatic Reflection-Based PDX Serialization](auto_serialization)**
+-   **[Using Automatic Reflection-Based PDX Serialization](./reflection_based_pdx/auto_serialization)**
 
     You can configure your cache to automatically serialize and deserialize domain objects without having to add any extra code to them.
 

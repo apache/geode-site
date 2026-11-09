@@ -23,7 +23,7 @@ Back up persistent data from all members to the specified directory.
 
 The specified directory must exist on all members, but it can be a local directory on each machine. This command ensures that backup files are not corrupted by concurrent operations. Backing up a running system using the operating system copy command is not recommended.
 
-You can also use this command to perform an incremental backup. See [Creating Backups for System Recovery and Operational Management](../../../managing/disk_storage/backup_restore_disk_store#backup_restore_disk_store) for more information on incremental backup.
+You can also use this command to perform an incremental backup. See [Creating Backups for System Recovery and Operational Management](../../../managing/disk_storage/backup_restore_disk_store) for more information on incremental backup.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 

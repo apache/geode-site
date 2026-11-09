@@ -53,7 +53,7 @@ the cluster configuration is written to standard output.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
-See [Overview of the Cluster Configuration Service](../../../configuring/gfsh_persist#concept_r22_hyw_bl).
+See [Overview of the Cluster Configuration Service](../../../configuring/gfsh_persist).
 
 **Syntax:**
 

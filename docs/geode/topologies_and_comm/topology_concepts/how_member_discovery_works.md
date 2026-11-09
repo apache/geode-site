@@ -55,4 +55,4 @@ In a multi-site (WAN) configuration, a @@product_name@@ cluster uses locators to
 
 When a locator starts up, it contacts each remote locator to exchange information about the available locators and gateway receiver configurations in the remote cluster. In addition to sharing information about its own cluster, a locator shares information that it has obtained from all other connected clusters. Each time a new locator starts up or an existing locator shuts down, the changed information is broadcast to other connected @@product_name@@ clusters across the WAN.
 
-See [Discovery for Multi-Site Systems](multisite_overview#topic_1742957C8D4B4F7590847EB8DB6CD4F7) for more information.
+See [Discovery for Multi-Site Systems](../multi_site_configuration/how_multi_site/multisite_overview#topic_1742957C8D4B4F7590847EB8DB6CD4F7) for more information.

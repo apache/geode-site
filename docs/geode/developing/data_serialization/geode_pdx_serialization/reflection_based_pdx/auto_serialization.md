@@ -23,7 +23,7 @@ You can configure your cache to automatically serialize and deserialize domain o
 ## {#auto_serialization__section_E2B7719D3C1545808CC21E0FDBD2D610}
 You can automatically serialize and deserialize domain objects without coding a `PdxSerializer` class. You do this by registering your domain objects with a custom `PdxSerializer` called `ReflectionBasedAutoSerializer` that uses Java reflection to infer which fields to serialize.
 
-You can also extend the ReflectionBasedAutoSerializer to customize its behavior. For example, you could add optimized serialization support for BigInteger and BigDecimal types. See [Extending the ReflectionBasedAutoSerializer](extending_the_autoserializer#concept_9E020566EE794A81A48A90BA798EC279) for details.
+You can also extend the ReflectionBasedAutoSerializer to customize its behavior. For example, you could add optimized serialization support for BigInteger and BigDecimal types. See [Extending the ReflectionBasedAutoSerializer](extending_the_autoserializer) for details.
 
 **Note:**
 Your custom PDX autoserializable classes cannot use the `org.apache.geode` package. If they do, the classes will be ignored by the PDX auto serializer.
@@ -50,7 +50,7 @@ In your application where you manage data from the cache, provide the following 
         gfsh>configure pdx --auto-serializable-classes=com\.company\.domain\..*
         ```
 
-        By using gfsh, this configuration can propagated across the cluster through the [Cluster Configuration Service](../../configuring/gfsh_persist).
+        By using gfsh, this configuration can propagated across the cluster through the [Cluster Configuration Service](../../../../configuring/gfsh_persist).
 
     2.  Alternately, in `cache.xml`:
 
@@ -82,8 +82,8 @@ In your application where you manage data from the cache, provide the following 
         ```
 
 3.  Customize the behavior of the `ReflectionBasedAutoSerializer` using one of the following mechanisms:
-    -   By using a class pattern string to specify the classes to auto-serialize and customize how the classes are serialized. Class pattern strings can be specified in the API by passing strings to the `ReflectionBasedAutoSerializer` constructor or by specifying them in cache.xml. See [Customizing Serialization with Class Pattern Strings](autoserialization_with_class_pattern_strings#concept_9B67BBE94B414B7EA63BD7E8D61D0312) for details.
-    -   By creating a subclass of `ReflectionBasedAutoSerializer` and overriding specific methods. See [Extending the ReflectionBasedAutoSerializer](extending_the_autoserializer#concept_9E020566EE794A81A48A90BA798EC279) for details.
+    -   By using a class pattern string to specify the classes to auto-serialize and customize how the classes are serialized. Class pattern strings can be specified in the API by passing strings to the `ReflectionBasedAutoSerializer` constructor or by specifying them in cache.xml. See [Customizing Serialization with Class Pattern Strings](autoserialization_with_class_pattern_strings) for details.
+    -   By creating a subclass of `ReflectionBasedAutoSerializer` and overriding specific methods. See [Extending the ReflectionBasedAutoSerializer](extending_the_autoserializer) for details.
 
 4.  If desired, configure the `ReflectionBasedAutoSerializer` to check the portability of the objects it is passed before it tries to autoserialize them. When this flag is set to true, the `ReflectionBasedAutoSerializer` will throw a `NonPortableClassException` error when trying to autoserialize a non-portable object. To set this, use the following configuration:
     -   In gfsh, use the following command:
@@ -92,7 +92,7 @@ In your application where you manage data from the cache, provide the following 
         gfsh>configure pdx --portable-auto-serializable-classes=com\.company\.domain\..*
         ```
 
-        By using gfsh, this configuration can propagated across the cluster through the [Cluster Configuration Service](../../configuring/gfsh_persist).
+        By using gfsh, this configuration can propagated across the cluster through the [Cluster Configuration Service](../../../../configuring/gfsh_persist).
     -   In cache.xml:
 
         ``` pre

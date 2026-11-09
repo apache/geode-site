@@ -31,11 +31,11 @@ limitations under the License.
 
     @@product_name@@'s management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and @@product_name@@ Management Service APIs.
 
--   **[JMX Manager Operations](jmx_manager_node#topic_36C918B4202D45F3AC225FFD23B11D7C)**
+-   **[JMX Manager Operations](./jmx_manager/jmx_manager_node#topic_36C918B4202D45F3AC225FFD23B11D7C)**
 
     Any member can host an embedded JMX Manager, which provides a federated view of all MBeans for the cluster. The member can be configured to be a manager at startup or anytime during its life by invoking the appropriate API calls on the ManagementService.
 
--   **[Federated MBean Architecture](mbean_architecture)**
+-   **[Federated MBean Architecture](./federated_mbean/mbean_architecture)**
 
     @@product_name@@ uses MBeans to manage and monitor different parts of @@product_name@@. @@product_name@@'s federated MBean architecture is scalable and allows you to have a single-agent view of a @@product_name@@ cluster.
 

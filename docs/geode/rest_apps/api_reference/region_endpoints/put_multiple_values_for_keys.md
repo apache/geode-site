@@ -31,7 +31,7 @@ http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/{reg
 
 ## Parameters
 
-See [PUT /geode/v1/region/key?op=REPLACE](put_replace_data#topic_itv_mg5_m4) and [PUT /geode/v1/region/key?op=CAS](put_update_cas_data#topic_itv_mg5_m4).
+See [PUT /geode/v1/region/key?op=REPLACE](put_replace_data) and [PUT /geode/v1/region/key?op=CAS](put_update_cas_data).
 
 ## Example Request
 

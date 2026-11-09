@@ -71,7 +71,7 @@ For more on this topic, see [Configuring a Multi-site (WAN) System](../../../top
 ## create async-event-queue {#topic_ryz_pb1_dk}
 Creates an asynchronous event queue for batching events before they are delivered by a gateway sender.
 
-See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
+See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/client_server_events/multi_site/configure_multisite_event_messaging).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -378,7 +378,7 @@ this `gfsh` command exits with an exit code indicating success.
 Outputs a tabular format status of each member's gateway receiver,
 independent of the success or failure of the creation.
 
-See [Gateway Receivers](../../../topologies_and_comm/topology_concepts/multisite_overview).
+See [Gateway Receivers](../../../topologies_and_comm/multi_site_configuration/how_multi_site/multisite_overview).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -427,7 +427,7 @@ server1 | GatewayReceiver created on member "server1" and will listen on the por
 ## create gateway-sender {#topic_hg2_bjz_ck}
 Creates a gateway sender on one or more members of a cluster.
 
-See [Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview).
+See [Gateway Senders](../../../topologies_and_comm/multi_site_configuration/how_multi_site/multisite_overview).
 
 **Note:**
 The gateway sender configuration for a specific sender `id` must be identical on each @@product_name@@ member that hosts the gateway sender.
@@ -496,7 +496,7 @@ Create an index that can be used when executing queries.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
-See [Working with Indexes](../../../developing/query_index/query_index).
+See [Working with Indexes](../../../developing/querying_basics/query_index/query_index.md).
 
 **Syntax:**
 
