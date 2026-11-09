@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Organization: Apache Software Foundation (ASF)
+Dependent-Modules: geode-logging-1.15.5 geode-membership-1.15.5 geode-
+ unsafe-1.15.5 geode-tcp-server-1.15.5 geode-common-1.15.5 geode-seria
+ lization-1.15.5 geode-management-1.15.5 geode-deployment-legacy-1.15.
+ 5 geode-http-service-1.15.5
+Module-Name: geode-core
+Class-Path: HdrHistogram-2.2.2.jar shiro-cache-1.13.0.jar rmiio-2.1.2.
+ jar commons-digester-2.1.jar shiro-crypto-hash-1.13.0.jar slf4j-api-1
+ .7.36.jar jna-platform-5.11.0.jar micrometer-core-1.16.7.jar shiro-co
+ re-1.13.0.jar jopt-simple-5.0.4.jar javax.activation-api-1.2.0.jar jn
+ a-5.11.0.jar shiro-event-1.13.0.jar istack-commons-runtime-4.0.1.jar 
+ LatencyUtils-2.0.3.jar javax.resource-api-1.7.1.jar commons-logging-1
+ .3.5.jar jaxb-api-2.3.1.jar jaxb-impl-2.3.2.jar shiro-lang-1.13.0.jar
+  shiro-crypto-cipher-1.13.0.jar shiro-config-ogdl-1.13.0.jar jspecify
+ -1.0.1.jar snappy-0.5.jar commons-collections-3.2.2.jar commons-beanu
+ tils-1.11.0.jar micrometer-commons-1.16.7.jar javax.transaction-api-1
+ .3.jar shiro-config-core-1.13.0.jar swagger-annotations-2.2.0.jar ant
+ lr-2.7.7.jar shiro-crypto-core-1.13.0.jar micrometer-observation-1.16
+ .7.jar classgraph-4.8.146.jar
+Title: geode
+Version: 1.15.5
+Created-By: jihwan
+

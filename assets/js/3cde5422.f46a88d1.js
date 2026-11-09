@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkgeode_site=globalThis.webpackChunkgeode_site||[]).push([[54291],{24650(e,a,i){i.r(a),i.d(a,{default:()=>d});var t=i(92990),c=i(88915),s=i(94686);function d(){return(0,t.useEffect)(()=>{window.location.replace("/javadocs/index.html")},[]),(0,s.jsx)(c.A,{title:"Javadocs",children:(0,s.jsx)("p",{children:"Redirecting to Javadocs..."})})}}}]);
