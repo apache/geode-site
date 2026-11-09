@@ -18,13 +18,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-## {#topic_FE3F28ED18E145F787431EC87B676A76}
+
 Need a quick introduction to @@product_name_long@@? Take this brief tour to try out basic features and functionality.
 
-## Step 1: Install @@product_name_long@@ {#topic_FE3F28ED18E145F787431EC87B676A76__section_ECE5170BAD9B454E875F13BEB5762DDD}
+## Step 1: Install @@product_name_long@@
 See [How to Install](installation/install_standalone#concept_0129F6A1D0EB42C4A3D24861AF2C5425) for instructions.
 
-## Step 2: Use gfsh to start a locator {#topic_FE3F28ED18E145F787431EC87B676A76__section_582F8CBBD99D42F1A55C07591E2E9E9E}
+## Step 2: Use gfsh to start a locator
 In a terminal window, use the `gfsh` command line interface to start up a locator. @@product_name_long@@ *gfsh* (pronounced "jee-fish") provides a single, intuitive command-line interface from which you can launch, manage, and monitor @@product_name_long@@ processes, data, and applications. See [gfsh](../tools_modules/gfsh/chapter_overview).
 
 The *locator* is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use. A locator, by default, starts up a JMX Manager, which is used for monitoring and managing a @@product_name@@ cluster. The cluster configuration service uses locators to persist and distribute cluster configurations to cluster members. See [Running @@product_name@@ Locator Processes](../configuring/running/running_the_locator) and [Overview of the Cluster Configuration Service](../configuring/cluster_config/gfsh_persist).
@@ -68,7 +68,7 @@ The *locator* is a @@product_name@@ process that tells new, connecting members w
 
 If you run `start locator` from gfsh without specifying the member name, gfsh will automatically pick a random member name. This is useful for automation.
 
-## Step 3: Start Pulse {#topic_FE3F28ED18E145F787431EC87B676A76__section_02C79BFFB5334E78A5856AE1EB1F1F84}
+## Step 3: Start Pulse
 Start up the browser-based Pulse monitoring tool. Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of @@product_name@@ clusters, members, and regions. See [@@product_name@@ Pulse](../tools_modules/pulse/pulse-overview).
 
 ``` pre
@@ -81,7 +81,7 @@ The Pulse application now displays the locator you just started (locator1):
 
 <img src="/images/pulse_locator.png" id="topic_FE3F28ED18E145F787431EC87B676A76__image_ign_ff5_t4" class="image" />
 
-## Step 4: Start a server {#topic_FE3F28ED18E145F787431EC87B676A76__section_C617BC1C70EB41B8BCA3691D6E3C891A}
+## Step 4: Start a server
 A @@product_name@@ server is a process that runs as a long-lived, configurable member of a cluster. The @@product_name@@ server is used primarily for hosting long-lived data regions and for running standard @@product_name@@ processes such as the server in a client/server configuration. See [Running @@product_name@@ Server Processes](../configuring/running/running_the_cacheserver).
 
 Start the cache server:
@@ -96,7 +96,7 @@ If you run `start server` from gfsh without specifying the member name, gfsh wil
 
 Observe the changes (new member and server) in Pulse. Try expanding the distributed system icon to see the locator and cache server graphically.
 
-## Step 5: Create a replicated, persistent region {#topic_FE3F28ED18E145F787431EC87B676A76__section_3EA12E44B8394C6A9302DF4D14888AF4}
+## Step 5: Create a replicated, persistent region
 In this step you create a region with the `gfsh` command line utility. Regions are the core building blocks of the @@product_name@@ cluster and provide the means for organizing your data. The region you create for this exercise employs replication to replicate data across members of the cluster and utilizes persistence to save the data to disk. See [Data Regions](../basic_config/data_regions/chapter_overview#data_regions).
 
 1.  Create a replicated, persistent region:
@@ -480,7 +480,7 @@ In this step you restart the cache servers in parallel. Because the data is pers
     NEXT_STEP_NAME : END
     ```
 
-## Step 9: Shut down the system including your locators {#topic_FE3F28ED18E145F787431EC87B676A76__section_E417BEEC172B4E96A92A61DC7601E572}
+## Step 9: Shut down the system including your locators
 To shut down your cluster, do the following:
 
 1.  In the current `gfsh` session, stop the cluster:
@@ -505,7 +505,7 @@ To shut down your cluster, do the following:
 
 3.  Type `exit` to quit the gfsh shell.
 
-## Step 10: What to do next... {#topic_FE3F28ED18E145F787431EC87B676A76__section_C8694C6BB07E4430A73DDD72ABB473F1}
+## Step 10: What to do next...
 Here are some suggestions on what to explore next with @@product_name_long@@:
 
 - To ensure that your Geode instances are secure, see: [Security](../security/chapter_overview).

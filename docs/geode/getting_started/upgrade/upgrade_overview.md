@@ -38,19 +38,7 @@ See [Planning an Upgrade](upgrade_planning) to choose the upgrade scenario that 
 you will need to accomplish the upgrade. Then select the appropriate upgrade procedure for more detailed instructions that fit your specific needs.
 
 ## Upgrade Details {#upgrade_details}
--   **[Planning an Upgrade](upgrade_planning)**
-
-    This section discusses the upgrade paths for various @@product_name_long@@
-    versions, and it lists information you need to know before you begin
-    the upgrade process.
-
--   **[Rolling Upgrade](upgrade_rolling)**
-
-    A rolling upgrade allows you to keep your existing cluster running while you upgrade your members gradually.
-
--   **[Offline Upgrade](upgrade_offline)**
-
-    An offline upgrade can handle the widest variety of software versions and cluster configurations, but requires shutting down the entire
-    system for at least a short time.
-
--   **[Upgrading Clients](upgrade_clients)**
+-   **[Planning an Upgrade](upgrade_planning)**: This section discusses the upgrade paths for various @@product_name_long@@ versions, and it lists information you need to know before you begin the upgrade process.
+- **[Rolling Upgrade](upgrade_rolling)**: A rolling upgrade allows you to keep your existing cluster running while you upgrade your members gradually.
+- **[Offline Upgrade](upgrade_offline)**: An offline upgrade can handle the widest variety of software versions and cluster configurations, but requires shutting down the entire system for at least a short time.
+- **[Upgrading Clients](upgrade_clients)**

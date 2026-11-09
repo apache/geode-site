@@ -21,26 +21,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A tutorial demonstrates features, and a main features section describes key functionality.
+A `tutorial` demonstrates features, and a `main features` section describes key functionality.
 
--   **[About Apache Geode ](geode_overview)** Apache Geode     is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
-
--   **[Main Features of Apache Geode ](product_intro)**
-
-    This section summarizes the main features and key functionality of Apache Geode .
-
--   **[Prerequisites and Installation Instructions](prerequisites/prereq_and_install)**
-
-    Each host of Apache Geode that meets a small set of prerequisites may follow the provided installation instructions.
-
--   **[Upgrading Apache Geode ](upgrade/upgrade_overview)**
-
--   **[ Apache Geode in 15 Minutes or Less](15_minute_quickstart_gfsh)**
-
-    Need a quick introduction to Apache Geode ? Take this brief tour to try out basic features and functionality.
-
--   **[Introduction to Geode Clients](intro_to_clients)**
-
-    Basic starting points for a variety of  clients.
+- **[About Apache Geode](geode_overview)**: Apache Geode is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
+- **[Main Features of Apache Geode](product_intro)**: This section summarizes the main features and key functionality of Apache Geode.
+- **[Prerequisites and Installation Instructions](prerequisites/prereq_and_install)**: Each host of Apache Geode that meets a small set of prerequisites may follow the provided installation instructions.
+- **[Upgrading Apache Geode](upgrade/upgrade_overview)**
+- **[ Apache Geode in 15 Minutes or Less](15_minute_quickstart_gfsh)**: Need a quick introduction to Apache Geode ? Take this brief tour to try out basic features and functionality.
+- **[Introduction to Geode Clients](intro_to_clients)**: Basic starting points for a variety of clients.
 
 

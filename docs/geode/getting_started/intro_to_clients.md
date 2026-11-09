@@ -200,7 +200,6 @@ To begin using the @@product_name_long@@ Native Clients, you must first build th
 You can download the @@product_name_long@@ Native Source code here
 `https://geode.apache.org/releases`, then refer to the `BUILDING.md` file in the source release to compile the libraries.
 
-
 ### @@product_name_long@@ Native .NET Client {#client-intro-native-dotnet}
 **Put, Get and Remove with @@product_name_long@@ Native .NET Client (C#)**
 
@@ -321,8 +320,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-**Additional Resources**
-
+## Additional Resources
 - [Apache Geode Native Client Examples GitHub Repo](https://github.com/apache/geode-native/tree/develop/examples)
 - [Apache Geode Native C++ Client Documentation](https://geode.apache.org/docs/)
 - [Apache Geode Native Client C++ API Reference](https://geode.apache.org/releases/latest/cppdocs/hierarchy.html)
