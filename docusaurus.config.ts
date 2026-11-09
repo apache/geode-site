@@ -186,7 +186,7 @@ const config: Config = {
                   { type: 'doc', docsPluginId: 'default', docId: 'about_geode', label: 'Geode' },
                   { type: 'doc', docsPluginId: 'geode_native_cpp', docId: 'about_geode', label: 'Geode Native (C++)' },
                   { type: 'doc', docsPluginId: 'geode_native_dotnet', docId: 'about_geode', label: 'Geode Native (.NET)' },
-                  { label: 'Javadocs', href: '/javadocs'},
+                  { label: 'Javadocs', to: 'pathname:///javadocs/index.html'},
               ],
           },
         {to: '/blog', label: 'Blog', position: 'right'},
