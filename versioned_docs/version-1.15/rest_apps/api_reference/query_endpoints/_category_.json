@@ -1,0 +1,8 @@
+{
+  "label": "Query Endpoints",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "rest_queries"
+  }
+}

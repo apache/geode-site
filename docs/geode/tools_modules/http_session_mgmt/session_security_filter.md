@@ -29,16 +29,16 @@ Apache Geode HTTP Session Management uses Java serialization to store session at
 - **Application-Level Security**: Each web application defines its own security policy
 - **Zero-Downtime Configuration**: Changes take effect on WAR deployment, no cluster restart required
 - **Defense in Depth**: Explicit allowlist prevents gadget chain attacks
-- **Backward Compatible**: Existing applications continue to work without configuration
+- **Backward Compatibility**: Existing applications continue to work without configuration
 
 ## Security Warning {#security-warning}
+**Always configure a deserialization filter for production deployments.**
 **Without a configured filter, session deserialization has NO restrictions.** Any serializable class can be deserialized, leaving your application vulnerable to:
 
 - Remote Code Execution (RCE)
 - Denial of Service (DoS)  
 - Arbitrary object instantiation attacks
 
-**Always configure a deserialization filter for production deployments.**
 
 ## Basic Configuration {#basic-config}
 ### Step 1: Add Filter Pattern to web.xml
@@ -63,7 +63,7 @@ Add a context parameter to your application's `web.xml`:
 
 ### Step 2: Deploy WAR File
 
-Deploy or redeploy your WAR file to the application server. The filter takes effect immediately—no cluster restart required.
+Deploy or redeploy your WAR file to the application server. The filter takes effect immediately, and no cluster restart is required.
 
 ## Pattern Syntax {#pattern-syntax}
 The filter pattern follows [JEP 290](https://openjdk.org/jeps/290) syntax:
@@ -72,7 +72,7 @@ The filter pattern follows [JEP 290](https://openjdk.org/jeps/290) syntax:
 |---------|---------|
 | `com.myapp.**` | Allow all classes in `com.myapp` package and subpackages |
 | `com.myapp.model.User` | Allow specific class only |
-| `java.lang.**` | Allow all classes in `java.lang` package |
+| `java.lang.**; java.util.**; java.time.**` | Allow essential Java packages |
 | `!com.dangerous.**` | Explicitly reject package (takes precedence) |
 | `!*` | Reject everything else (default deny) |
 
@@ -213,10 +213,10 @@ java.time.**;
 
 After configuring the filter:
 
-1. Test all session operations (create, read, update, delete)
-2. Verify session attributes deserialize correctly
-3. Test session failover scenarios
-4. Monitor logs for `ObjectInputFilter` rejections
+1. Test all session operations (create, read, update, delete).
+2. Verify that the session attributes deserialize correctly.
+3. Test session failover scenarios.
+4. Monitor logs for `ObjectInputFilter` rejections.
 
 ## Troubleshooting {#troubleshooting}
 ### ClassNotFoundException or Deserialization Failures
@@ -234,9 +234,9 @@ After configuring the filter:
 </param-value>
 ```
 
-### Filter Not Taking Effect
+### Filter Not Working
 
-**Symptom:** Filter pattern changes don't apply
+**Symptom:** Filter pattern changes are not applied
 
 **Solution:**
 
@@ -285,14 +285,12 @@ After configuring the filter:
 ### Backward Compatibility
 
 **Without Filter Configuration:**
-- Sessions continue to work as before
-- No breaking changes
-- No security protection (vulnerable)
+
+Sessions continue to work as they did prior. There are no breaking changes. There is no security protection (vulnerable).
 
 **With Filter Configuration:**
-- Explicit security policy enforced
-- Only allowed classes can be deserialized
-- Protected against deserialization attacks
+
+Explicit security policy is enforced. Only allowed classes can be deserialized. You are protected against deserialization attacks.
 
 ## Security Reference {#security-reference}
 ### JEP 290

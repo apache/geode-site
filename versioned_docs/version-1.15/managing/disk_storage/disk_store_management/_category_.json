@@ -1,0 +1,8 @@
+{
+  "label": "Disk Store Management",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "managing_disk_stores"
+  }
+}

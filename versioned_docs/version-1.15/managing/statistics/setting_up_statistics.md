@@ -1,0 +1,163 @@
+﻿---
+title:  Configuring and Using Statistics
+sidebar_label: Configuring and Using Statistics
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You can configure statistics and statistics archiving in several ways.
+
+## Configure Cluster or Server Statistics {#setting_up_statistics__section_215BB4074BD64834BAADA87BE84C34DE}
+In this procedure it is assumed that you understand [Basic Configuration and Programming](../../developing/book_intro).
+
+Execute the following commands to modify the cluster's configuration and enable cluster or server statistics.
+
+``` pre
+gfsh>start locator --name=l1 --enable-cluster-configuration=true
+gfsh>alter runtime --enable-statistics=true -–statistic-archive-file=myStatisticsArchiveFile.gfs
+```
+
+Note that setting `statistic-archive-file` to `/dev/null` still calculates statistics, but they are not archived to a file.
+
+You can also configure sample rate and the filename of your statistic archive files. See [alter runtime](../../tools_modules/gfsh/command-pages/alter#topic_7E6B7E1B972D4F418CB45354D1089C2B) for more command options.
+
+Alternately, if you are not using the cluster configuration service, configure `gemfire.properties` for the statistics monitoring and archiving that you need:
+
+1.  Enable statistics gathering for the cluster. This is required for all other statistics activities:
+
+    ``` pre
+    statistic-sampling-enabled=true
+    statistic-archive-file=myStatisticsArchiveFile.gfs
+    ```
+
+    **Note:**
+    Statistics sampling at the default sample rate (1000 milliseconds) does not impact system performance and is recommended in production environments for troubleshooting.
+
+2.  Change the statistics sample rate as needed. Example:
+
+    ``` pre
+    statistic-sampling-enabled=true
+    statistic-archive-file=myStatisticsArchiveFile.gfs
+    statistic-sample-rate=2000
+    ```
+
+3.  To archive the statistics to disk, enable that and set any file or disk space limits that you need. Example:
+
+    ``` pre
+    statistic-sampling-enabled=true
+    statistic-archive-file=myStatisticsArchiveFile.gfs
+    archive-file-size-limit=100
+    archive-disk-space-limit=1000
+    ```
+
+4.  If you need time-based statistics, enable that. Time-based statistics require statistics sampling and archiving. This setting also enables Micrometer meters of type timer. Example:
+
+    ``` pre
+    statistic-sampling-enabled=true
+    statistic-archive-file=myStatisticsArchiveFile.gfs
+    enable-time-statistics=true
+    ```
+
+If these statistics are on, you are able to access archived statistics through the `gfsh show metrics` command.
+
+
+## Configure Transient Region and Entry Statistics {#setting_up_statistics__section_region_level}
+Enable transient region and entry statistics gathering on the regions where you need them. This configuration is distinct from the enabling of cluster or server statistics.
+
+**gfsh example:**
+
+``` pre
+gfsh>create region --name=myRegion --type=REPLICATE --enable-statistics=true
+```
+
+**cache.xml example:**
+
+``` pre
+<region name="myRegion" refid="REPLICATE">
+<region-attributes statistics-enabled="true">
+</region-attributes>
+</region>
+```
+
+**API example:**
+
+**Note:**
+Region and entry statistics are not archived and can be accessed only through the API. As needed, retrieve region and entry statistics through the `getStatistics` methods of the `Region` and `Region.Entry` objects. Example:
+
+``` pre
+out.println("Current Region:\n\t" + this.currRegion.getName());
+RegionAttributes attrs = this.currRegion.getAttributes();
+  if (attrs.getStatisticsEnabled()) {
+      CacheStatistics stats = this.currRegion.getStatistics();
+      out.println("Stats:\n\tHitCount is " + stats.getHitCount() +
+          "\n\tMissCount is " + stats.getMissCount() +
+          "\n\tLastAccessedTime is " + stats.getLastAccessedTime() +
+          "\n\tLastModifiedTime is " + stats.getLastModifiedTime());
+  }
+```
+
+## Configure Custom Statistics {#setting_up_statistics__section_custom_level}
+Create and manage any custom statistics that you need through `cache.xml` and the API.
+
+**cache/cluster.xml example:**
+
+``` pre
+// Create custom statistics
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE statistics PUBLIC
+    "-//Example Systems, Inc.//Example Statistics Type//EN"
+    "http://www.example.com/dtd/statisticsType.dtd">
+  <statistics>
+    <type name="StatSampler">
+      <description>Stats on the statistic sampler.</description>
+      <stat name="sampleCount" storage="int" counter="true">
+	<description>Total number of samples taken by this sampler.</description>
+	<unit>samples</unit>
+      </stat>
+      <stat name="sampleTime" storage="long" counter="true">
+	<description>Total amount of time spent taking samples.</description>
+	<unit>milliseconds</unit>
+      </stat>
+    </type>
+</statistics>
+```
+
+**API example:**
+
+``` pre
+// Update custom stats through the API
+this.samplerStats.incInt(this.sampleCountId, 1);
+this.samplerStats.incLong(this.sampleTimeId, nanosSpentWorking / 1000000);
+```
+
+
+## Controlling the Size of Archive Files {#setting_up_statistics__section_D511BB61B27A44749E2012B066A5C906}
+You can specify limits on the archive files for statistics using the gfsh `alter runtime` command. These are the areas of control:
+
+-   **Archive File Growth Rate**.
+    -   The `--statistic-sample-rate` parameter controls how often samples are taken, which affects the speed at which the archive file grows.
+    -   The `--statistic-archive-file` parameter controls whether the statistics files are compressed. If you give the file name a `.gz` suffix, it is compressed, thereby taking up less disk space.
+-   **Maximum Size of a Single Archive File**. If the value of the `--archive-file-size-limit` is greater than zero, a new archive is started when the size of the current archive exceeds the limit. Only one archive can be active at a time.
+    **Note:**
+    If you modify the value of `--archive-file-size-limit` while the cluster is running, the new value does not take effect until the current archive becomes inactive (that is, when a new archive is started).
+
+-   **Maximum Size of All Archive Files**. The `--archive-disk-space-limit` parameter controls the maximum size of all inactive archive files combined. By default, the limit is set to 0, meaning that archive space is unlimited. Whenever an archive becomes inactive or when the archive file is renamed, the combined size of the inactive files is calculated. If the size exceeds the `--archive-disk-space-limit`, the inactive archive with the oldest modification time is deleted. This continues until the combined size is less than the limit. If `--archive-disk-space-limit` is less than or equal to `--archive-file-size-limit`, when the active archive is made inactive due to its size, it is immediately deleted.
+
+**Note:**
+    If you modify the value of `--archive-disk-space-limit` while the cluster is running, the new value does not take effect until the current archive becomes inactive.

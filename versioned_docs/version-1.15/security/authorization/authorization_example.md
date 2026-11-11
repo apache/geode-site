@@ -1,0 +1,90 @@
+﻿---
+title:  Authorization Example
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+## Disclaimer {#overview}
+The security implementation of every installation is unique. These examples are provided for illustrative purposes only and must not be used in a production environment.
+
+The examples demonstrate the basics for implementing both user authorization (`SecurityManager.authorize`) and method invocation authorization (`MethodInvocationAuthorizer.authorize`) during query executions.
+The remainder of the examples may be found within the @@product_name_long@@ source code under the `geode-core/src/main/java/org/apache/geode/examples/security` directory.
+
+## User Authorization Example {#user_authorization_example}
+This example assumes that a set of users, a set of roles that a user might take on within the system, and a mapping of users to their roles are described in a JSON format file.
+The roles define a set of authorized resource permissions granted for users in those roles.
+Code not shown here parses the file to compose a data structure with the information on roles and users.
+The `authorize` callback denies permission for any operation that does not have a principal representing the identity of the operation's requester.
+Given the principal, the method iterates through the data structure searching for the necessary permissions for the principal.
+When the necessary permission is found, authorization is granted by returning the value `true`.
+If the permission is not found in the data structure, then the method returns `false`, denying authorization of the operation.
+
+``` pre
+public boolean authorize(final Object principal, final ResourcePermission context) {
+    if (principal == null) return false;
+
+    User user = this.userNameToUser.get(principal.toString());
+    if (user == null) return false; // this user is not authorized to do anything
+
+    // check if the user has this permission defined in the context
+    for (Role role : this.userNameToUser.get(user.name).roles) {
+        for (Permission permitted : role.permissions) {
+            if (permitted.implies(context)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+```
+
+## Method Invocation Authorization Example {#method_authorization_example}
+This example assumes that the entire domain model is deployed to the cluster and that the user is allowed to modify these classes.
+The `authorize` callback denies access to methods that have been permanently forbidden by the [RestrictedMethodAuthorizer](method_invocation_authorizers#restrictedMethodAuthorizer) and returns `false` right away.
+When the method is not permanently forbidden, the implementation checks whether the method has been annotated with a custom annotation. When the necessary annotation is found, authorization is granted by returning the value `true`.
+If the annotation is not found, then the method returns `false`, denying the invocation of the method during the query execution.
+
+``` pre
+public boolean authorize(Method method, Object target) {
+    // Check if forbidden by default.
+    if (defaultAuthorizer.isPermanentlyForbiddenMethod(method, target)) {
+        return false;
+    }
+
+    // Check if annotation is present
+    return method.isAnnotationPresent(Authorized.class);
+  }
+```
+
+## Token with Expiry Authorization Example {#token_with_expiry_authorization_example}
+This example assumes that the system is using an expirable token that needs to be checked for expiry
+before resource permissions are verified.
+
+``` pre
+public boolean authorize(final Object tokenUser, final ResourcePermission context)
+      throws AuthenticationExpiredException {
+    // Check expiry
+    if (this.tokenHasExpired(tokenUser)) {
+        throw new AuthenticationExpiredException("SampleSecurityManager: token has expired");
+    }
+
+    // Check permissions
+    return this.tokenHasRequiredPermissions(tokenUser, context);
+  }
+```

@@ -5,6 +5,7 @@
 /build
 
 .idea
+*.iml
 **/.gradle/**
 
 # Generated files

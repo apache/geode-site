@@ -1,0 +1,63 @@
+﻿---
+title:  Performance Tuning and Configuration
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+A collection of tools and controls allow you to monitor and adjust Apache Geode performance.
+
+-   **[Disabling TCP SYN Cookies](disabling_tcp_syn_cookies)**
+
+    This is a must-do for Linux systems.
+
+-   **[Improving Performance on vSphere](performance_on_vsphere)**
+
+    This topic provides guidelines for tuning vSphere virtualized environments that host Apache Geode deployments.
+
+-   **[Performance Controls](performance_controls)**
+
+    This topic provides tuning suggestions of particular interest to developers, primarily programming techniques and cache configuration.
+
+-   **[System Member Performance](system_member_performance)**
+
+    You can modify some configuration parameters to improve system member performance.
+
+-   **[Slow Receivers with TCP/IP](slow_receivers)**
+
+    You have several options for preventing situations that can cause slow receivers of data distributions. The slow receiver options control only peer-to-peer communication using TCP/IP. This discussion does not apply to client/server or multi-site communication, or to communication using the UDP unicast or multicast protocols.
+
+-   **[Slow distributed-ack Messages](slow_messages)**
+
+    In systems with distributed-ack regions, a sudden large number of distributed-no-ack operations can cause distributed-ack operations to take a long time to complete.
+
+-   **[Socket Communication](socket_communication)** Geode     processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
+
+-   **[UDP Communication](udp_communication)**
+
+    You can make configuration adjustments to improve multicast and unicast UDP performance of peer-to-peer communication.
+
+-   **[Multicast Communication](multicast_communication)**
+
+    You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your Geode system.
+
+-   **[Maintaining Cache Consistency](cache_consistency)**
+
+    Maintaining data consistency between caches in a distributed Geode system is vital for ensuring its functional integrity and preventing data loss.
+
+
+

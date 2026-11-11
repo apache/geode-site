@@ -1,0 +1,67 @@
+---
+title:  GET /geode/v1/functions
+sidebar_label: GET /geode/v1/functions
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+List all registered @@product_name@@ functions in the cluster.
+
+## Resource URL
+
+``` pre
+http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/functions
+```
+
+## Parameters
+
+None.
+
+## Example Request
+
+``` pre
+GET /geode/v1/functions
+Accept: application/json
+```
+
+## Example Success Response
+
+``` pre
+Response Payload: application/json
+
+200 OK
+Content-Length: <#-of-bytes>
+Content-Type: application/json
+Location: https://localhost:8080/geode/v1/functions
+
+{
+    "functions": [
+        "AddFreeItemToOrders",
+        "GetRegions",
+        "GetDeliveredOrders"
+    ]
+}
+```
+
+## Error Codes
+
+| Status Code               | Description                                                                                                                      |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| 404 NOT FOUND             | Returned if no functions are found in the cluster.                                                                               |
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

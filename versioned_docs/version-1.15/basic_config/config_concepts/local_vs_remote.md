@@ -1,0 +1,28 @@
+---
+title:  Local and Remote Membership and Caching
+sidebar_label: Local and Remote Membership and Caching
+sidebar_position: 4
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+For many @@product_name_long@@ discussions, you need to understand the difference between local and remote membership and caching.
+## {#local_vs_remote_member_and_cache__section_5535DC4C94494B6A9B106DA39F63A439}
+Discussions of @@product_name@@ membership and caching activities often differentiate between local and remote. Local caching always refers to the central member under discussion, if there is one such obvious member, and remote refers to other members. If there is no clear, single local member, the discussion assigns names to the members to differentiate. Operations, data, configuration, and so forth that are "local to member Q" are running or resident inside the member Q process. Operations, data, configuration, and so on, that are "remote to member Q" are running or resident inside some other member.
+
+The local cache is the cache belonging to the local member. All other caches are remote, whether in other members of the same cluster or in different clusters.

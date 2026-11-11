@@ -1,0 +1,342 @@
+﻿---
+title: destroy
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+Delete or unregister functions, remove indexes, disk stores and regions.
+
+-   **[destroy async-event-queue](#topic_destroy-async-event-queue)**
+
+    Destroy an asynchronous event queue.
+
+-   **[destroy disk-store](#topic_yfr_l2z_ck)**
+
+    Delete a disk store and all files on disk used by the disk store.
+
+-   **[destroy function](#topic_E48C2DF809054C12A162026D8A2139BB)**
+
+    Destroy or unregister a function.
+
+-   **[destroy gateway-receiver](#destroy-gr)**
+
+    Destroy a gateway receiver.
+
+-   **[destroy gateway-sender](#destroy-gs)**
+
+    Destroy a gateway sender.
+
+-   **[destroy index](#topic_D00219CCD6F64C1582A0802AC5CDF3F3)**
+
+    Destroy or remove the specified index.
+
+-   **[destroy jndi-binding](#destroy_jndi-binding)**
+
+    Destroy the specified JNDI binding.
+
+-   **[destroy lucene index](#destroy_lucene_index)**
+
+    Destroy or remove the specified Lucene index.
+
+-   **[destroy region](#topic_BEDACECF4599407794ACBC0E56B30F65)**
+
+    Destroy or remove a region.
+
+## destroy async-event-queue {#topic_destroy-async-event-queue}
+Destroy an asynchronous event queue.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy async-event-queue --id=value [--groups=value(,value)*] [--if-exists=value]
+```
+
+**Parameters, destroy async-event-queue:**
+
+| Name                                          | Description                                                                                       |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>  | *Required.* ID of the async event queue to be deleted.                                          |
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) of members on which the async event queue will be destroyed. If no group is specified, the queue is destroyed on all members. |
+| &#8209;&#8209;if&#8209;exists | If the specified async event queue does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label "Skipping: ". Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+
+**Example Commands:**
+
+``` pre
+destroy async-event-queue --id=myAsyncEventQueue
+```
+
+## destroy disk-store {#topic_yfr_l2z_ck}
+Delete a disk store and all files on disk used by the disk store. Data for closed regions that previously used this disk store are lost.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy disk-store --name=value [--groups=value(,value)*] [--if-exists=value]
+```
+
+**Parameters, destroy disk-store:**
+
+| Name                                          | Description                                                                                                                          |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>  | *Required.* Name of the disk store to be deleted.                                                                                    |
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) of members on which the disk store will be destroyed. If no group is specified, the disk store is destroyed on all members. |
+| &#8209;&#8209;if&#8209;exists | If the specified disk store does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label "Skipping: ". Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+
+**Example Commands:**
+
+``` pre
+destroy disk-store --name=store1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>destroy disk-store --name=store1
+Member  | Result
+------- | -------
+server1 | Success
+```
+
+## destroy function {#topic_E48C2DF809054C12A162026D8A2139BB}
+Destroy or unregister a function.
+
+The default is for the function to be unregistered from all members.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy function --id=value [--groups=value(,value)*] [--member=value]
+```
+
+**Parameters, destroy function:**
+
+| Name                                           | Description                                                                                |
+|------------------------------------------------|--------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* Unique function identifier. Use the `list functions` command to obtain the ID. |
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | One or more groups of members from which this function will be unregistered.               |
+| <span class="keyword parmname">&#8209;&#8209;member</span> | Name or ID of the member from which this function will be unregistered.                    |
+
+
+**Example Commands:**
+
+``` pre
+(1) destroy function --id=InterestCalculations
+(2) destroy function --id=InterestCalculations --member=server1
+(3) destroy function --id=InterestCalculations --group=Group1
+```
+## destroy gateway-receiver {#destroy-gr}
+Destroy the gateway receiver on one or more members.
+Since there can be only one gateway receiver per member,
+specifying the member specifies which gateway receiver to destroy.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy gateway-receiver [--group=value(,value)*]
+  [--member=value(,value)*] [--if-exists(=value)?]
+```
+
+**Parameters, destroy gateway-receiver:**
+
+| Name                                           | Description                                                                                |
+|------------------------------------------------|--------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;group</span> | One or more groups of members on which the gateway receiver will be destroyed.       |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name or ID of each member on which the gateway receiver will be destroyed.   |
+| &#8209;&#8209;if&#8209;exists | If this option is true and the gateway receiver does not exist, gfsh responds with a message prefixed with the label "Skipping: ". If this option is false and the gateway receiver does not exist, an error message is output. Default (if this option is not specified): false. Default (if this option is specified without a value): true.     |
+
+**Example Commands:**
+
+``` pre
+destroy gateway-receiver --member=server1,server2
+```
+
+## destroy gateway-sender {#destroy-gs}
+Destroy a gateway sender that is no longer used by a region.
+
+The default is for the gateway sender to be destroyed on all members.
+
+No region may be attached to the gateway sender to be destroyed.
+If a region is still attached, the system issues an error message
+similar to:
+
+``` pre
+ERROR: The GatewaySender ParallelGatewaySender{id=ln,remoteDsId=2,isRunning =false}
+could not be destroyed as it is still used by region(s).
+```
+Remove the gateway sender from the region with a command
+similar to:
+
+``` pre
+gfsh>alter region --name=regionA --gateway-sender-id=""
+```
+**Note:** Do not reuse the removed parallel gateway-sender in the new region unless that region
+is colocated with the previously attached region, as that will lead to data replication issues.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy gateway-sender --id=value [--groups=value(,value)*]
+  [--members=value(,value)*] [--if-exists=value]
+```
+
+**Parameters, destroy gateway-sender:**
+
+| Name                                           | Description                                                                                |
+|------------------------------------------------|--------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* Unique gateway sender identifier. Use the `list gateways` command to obtain the ID. |
+| <span class="keyword parmname">&#8209;&#8209;groups</span> | One or more groups of members from which this gateway sender will be destroyed.       |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name or ID of the member(s) from which this gateway sender will be destroyed.   |
+| &#8209;&#8209;if&#8209;exists | If the specified gateway sender does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label "Skipping: ". Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+**Example Commands:**
+
+``` pre
+destroy gateway-sender --id=SiteASender
+```
+
+## destroy index {#topic_D00219CCD6F64C1582A0802AC5CDF3F3}
+Destroy or remove the specified index.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy index [--name=value] [--region=value] [--members=value(,value)*]
+[--groups=value(,value)*] [--if-exists=value]
+```
+
+**Note:**
+You must specify at least one of the parameter options. If you enter `destroy index` without any parameters, the command will ask you to specify at least one option.
+
+**Parameters, destroy index:**
+
+| Name                                           | Description                                                                  |
+|------------------------------------------------|------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span>   | Name of the index to be removed.                                            |
+| &#8209;&#8209;members | Id of the member(s) on which index is to be removed.                            |
+| <span class="keyword parmname">&#8209;&#8209;region</span> | Name of the region from which an index or all indexes are to be destroyed. |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | The index will be removed on all the members in the group(s).           |
+| &#8209;&#8209;if&#8209;exists | If the specified index does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label "Skipping: ". Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+
+**Example Commands:**
+
+``` pre
+destroy index --members=server2
+destroy index --name=MyKeyIndex
+```
+
+## destroy jndi-binding {#destroy_jndi-binding}
+Destroy a specified JNDI binding that holds the configuration for
+an XA data source.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy jndi-binding --name=value [--if-exists=value]
+```
+
+**Parameters, destroy jndi-binding:**
+
+| Name                                         | Description                                            |
+|----------------------------------------------|--------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span> | *Required.* Name of the JNDI binding to be destroyed. |
+| &#8209;&#8209;if&#8209;exists | Skip the destroy operation when the specified JNDI binding does not exist. Without this option, an error results from the specification of a JNDI binding that does not exist. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+**Example Command:**
+
+``` pre
+destroy jndi-binding --name=jndi1
+```
+
+## destroy lucene index {#destroy_lucene_index}
+Destroy or remove the specified Lucene index.
+
+See also [create lucene index](create#create_lucene_index), [describe lucene index](describe#describe_lucene_index), [list lucene indexes](list#list_lucene_indexes) and [search lucene](search#search_lucene).
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy lucene index --region=value [--name=value]
+```
+
+**Parameters, destroy lucene index:**
+
+| Name                                           | Description                                                                  |
+|------------------------------------------------|------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;region</span> | *Required.* Name of the region from which indexes are to be removed. If no `--name` option is specified, all indexes associated with the region are destroyed.|
+| <span class="keyword parmname">&#8209;&#8209;name</span>   | Name of the index to be removed.                                            |
+
+
+**Example Commands:**
+
+``` pre
+destroy lucene index --region=region1
+destroy lucene index --region=region1 --name=MyKeyIndex
+```
+
+## destroy region {#topic_BEDACECF4599407794ACBC0E56B30F65}
+Destroy or remove a region.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+destroy region --name=value [--if-exists=value]
+```
+
+**Parameters, destroy region:**
+
+| Name                                         | Description                                            |
+|----------------------------------------------|--------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span> | *Required.* Name and path of the region to be removed. |
+| &#8209;&#8209;if&#8209;exists | If the specified region does not exist, gfsh responds with a message to that effect. If this parameter is true, the response is prefixed with the label "Skipping: ". Useful for scripted tests. Default (if the parameter is not specified): false. Default (if the parameter is specified without value): true.     |
+
+
+**Example Commands:**
+
+``` pre
+destroy region --name=region4
+destroy region --name=/region1/subregion1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>destroy region --name=region1
+"region1"  destroyed successfully.
+```

@@ -1,0 +1,119 @@
+﻿---
+title: import
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You can import an exported cluster configuration to create a new cluster or import data into a region.
+
+-   **[import cluster-configuration](#import-cluster-config)**
+
+    Import a cluster configuration.
+
+-   **[import data](#import-data)**
+
+    Import user data from a file to a region.
+
+## import cluster-configuration {#import-cluster-config}
+Imports a previously exported cluster configuration from a ZIP file or an XML file. This command is useful when spinning up a new cluster.
+
+- In a given cluster, only one locator needs to perform the import. 
+That locator shares the imported configuration with all other connected locators in the cluster.
+- Locators share the imported configuration with data members (servers) when the servers start, or if the servers have been recently started,
+have no regions defined in them, and have been given no other configuration changes since they started.
+
+To import a cluster configuration, start one or more locators and then run the `gfsh` `import cluster-configuration` command.
+
+**Availability:** Online. You must be connected in `gfsh` to a locator to use this command.
+
+**Syntax:**
+
+``` pre
+import cluster-configuration [--action=value] [--group(=value)?]
+ [--xml-file=value] [--zip-file-name=value]
+```
+
+**Import Cluster-Configuration Parameters:**
+
+| Name                                                  | Description                                                                                     |
+|-------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;action</span> | When the value is `APPLY` (the default), the configuration is applied to the running servers that have no configuration. If any servers already have configuration, the command fails. When the value is `STAGE`, the configuration is overwritten and will be used during future server creation; the configuration of currently running servers is not changed. |                   |
+| <span class="keyword parmname">&#8209;&#8209;group</span> | Do the import for the specified server group. When no group is specified, the `cluster` is implied. |                  |
+| <span class="keyword parmname">&#8209;&#8209;xml-file</span> | Filename from which to import the cluster configuration. May also include an absolute or relative path. Only specify one of `--xml-file` or `--zip-file-name`. |                   |
+| <span class="keyword parmname">&#8209;&#8209;zip-file-name</span> | Name of the ZIP file containing the cluster configuration artifacts to be imported.  Only specify one of `--xml-file` or `--zip-file-name`. |      |
+
+**Example Commands:**
+
+``` pre
+gfsh>import cluster-configuration --zip-file-name=/home/username/myClusterConfig.zip
+gfsh>import cluster-configuration --xml-file=configs/Cluster3Config.xml
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>import cluster-configuration --zip-file-name=/home/username/myClusterConfig.zip
+Cluster configuration successfully imported
+```
+
+## import data {#import-data}
+Import user data from a file or files to a region.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+If the data was exported sequentially to a single file, use the serial form of the `import` command to import the data:
+
+``` pre
+import data --region=value --file=value --member=value [--invoke-callbacks=value]
+```
+
+In this scenario, data from replicated and partitioned regions is imported sequentially from a single file on the specified member.
+
+See [export data](export#topic_263B70069BFC4A7185F86B3272011734) for an explanation of the difference between serial and parallel data exports.
+
+If the data was exported from a partitioned region in parallel format, use the `--parallel` option to import the data:
+
+``` pre
+import data --parallel --region=value --member=value --dir=value
+  [--invoke-callbacks=value]
+```
+
+In this scenario, partitioned region data is imported simultaneously on all hosting nodes from directories local to those respective nodes.
+
+- Parallel import applies only to partitioned regions exported in parallel mode.
+
+- The `--file` and `--dir` options are mutually exclusive; `--file` can be used only for serial import, `--dir` can be used for both serial and parallel imports.
+
+
+**Import Data Parameters:**
+
+| Name                                           | Description                                                                                                                                                                                                                      | Default Value |
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----|
+| <span class="keyword parmname">&#8209;&#8209;region</span> | *Required.* Region into which data will be imported. | |
+| <span class="keyword parmname">&#8209;&#8209;member</span> | *Required.* Name/ID of a member that hosts the region. In a serial import, all data is imported from the specified file on the host where the member is running.  In a parallel import, data from a partitioned region partially hosted on this member is imported for each partition from files on the nodes that host those partitions. | |
+| <span class="keyword parmname">&#8209;&#8209;file </span>  | File from which the imported data will be read. The file must have an extension of `.gfd` and must be on the file system of the member (or accessible to that member via NFS) that is being targeted for the import. Cannot be specified at the same time as &#8209;&#8209;dir, cannot be used with &#8209;&#8209;parallel. | |
+| <span class="keyword parmname">&#8209;&#8209;dir</span>   | Directory from which the data is to be imported. Required if &#8209;&#8209;parallel is true. Cannot be specified at the same time as &#8209;&#8209;file. If a given node has no data file in the specified directory, the import operation is silently skipped for that node. | |
+| <span class="keyword parmname">&#8209;&#8209;invoke&#8209;callbacks</span> | Boolean value that, when true, invokes callbacks during the data import. |  false |
+
+**Example Commands:**
+
+``` pre
+import data --region=region2 --file=/mnt5/region2_20121001.gfd --member=server1
+```

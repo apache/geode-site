@@ -25,9 +25,9 @@ limitations under the License.
 
 @@product_name@@ uses [Apache Log4j 2](http://logging.apache.org/log4j/2.x/) API and Core libraries as the basis for its logging system. Log4j 2 API is a popular and powerful front-end logging API used by all the @@product_name@@ classes to generate log statements. Log4j 2 Core is a backend implementation for logging; you can route any of the front-end logging API libraries to log to this backend. @@product_name@@ uses the Core backend to run three custom Log4j 2 Appenders: **GeodeConsole**, **GeodeLogWriter**, and **GeodeAlert**.
 
-@@product_name@@ has been tested with Log4j 2.25.3.
+@@product_name@@ has been tested with Log4j 2.25.4.
 @@product_name@@ requires the 
-`log4j-api-2.25.3.jar` and `log4j-core-2.25.3.jar`
+`log4j-api-2.25.4.jar` and `log4j-core-2.25.4.jar`
 JAR files to be in the classpath.
 Both of these JARs are distributed in the `<path-to-product>/lib` directory and included in the appropriate `*-dependencies.jar` convenience libraries.
 

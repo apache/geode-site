@@ -1,0 +1,98 @@
+﻿---
+title:  Exporting Cache and Region Snapshots
+sidebar_label: Exporting Cache and Region Snapshots
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+To save @@product_name@@ cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
+
+If an error occurs during export, the export halts and the snapshot operation is canceled. Typical errors that halt an export include scenarios such as full disk, problems with file permissions, and network partitioning.
+
+## Exporting Cache Snapshots {#concept_D1A4D9677F4146078F65C73BF436C19D__section_98B33450FD95450EAC027384EE82E00C}
+When you export an entire cache, it exports all regions in the cache as individual snapshot files into a directory. If no directory is specified, the default is the current directory. A snapshot file is created for each region, and the export operation automatically names each snapshot filename using the following convention:
+
+`snapshot-<region>[-<subregion>]*`
+
+When the export operation writes the snapshot filename, it replaces each forward slash ('/') in the region path with a dash ('-').
+
+**Using Java API:**
+
+``` pre
+File mySnapshotDir = ...
+Cache cache = ...
+
+cache.getSnapshotService().save(mySnapshotDir, SnapshotFormat.GEMFIRE);
+```
+
+Optionally, you can set a filter on the snapshot entries during the export. See [Filtering Entries During Import or Export](filtering_snapshot_entries) for an example.
+
+## Exporting a Region Snapshot {#concept_D1A4D9677F4146078F65C73BF436C19D__section_30C1BBB41C194825A46E49E5756369D6}
+You can also export a specific region using the API or gfsh commands below.
+
+**Note:**
+In the case of non-persistent regions, the snapshot that you export contains both in-cache entries and entries that overflow to disk.
+
+**Java API:**
+
+``` pre
+File mySnapshot = ...
+Region<String, MyObject> region = ... 
+
+region.getSnapshotService().save(mySnapshot, SnapshotFormat.GEMFIRE);
+```
+
+**gfsh:**
+
+Open a gfsh prompt. After connecting to a @@product_name@@ cluster, at the prompt type:
+
+``` pre
+gfsh>export data --region=Region --file=FileName.gfd --member=MemberName
+```
+
+where *Region* corresponds to the name of the region that you want to export, *FileName* (must end in .gfd) corresponds to the name of the export file and *MemberName* corresponds to a member that hosts the region. For example:
+
+``` pre
+gfsh>export data --region=region1 --file=region1_2012_10_10.gfd --member=server1
+```
+
+The snapshot file will be written on the remote member at the location specified by the `--file` argument. For example, in the example command above, the `region1_2012_10_10.gfd` file will be written in the working directory of `server1`. For more information on this command, see [export data](../../tools_modules/gfsh/command-pages/export#topic_263B70069BFC4A7185F86B3272011734).
+
+### Export Example with Options {#export_example_with_options}
+These examples show how to include the `parallel` option for exporting partitioned regions. 
+Note that the `parallel` option takes a directory rather than a file; see [export data](../../tools_modules/gfsh/command-pages/export#topic_263B70069BFC4A7185F86B3272011734) for details.
+
+**Java API:**
+
+``` pre
+File mySnapshotDir = ...
+Region<String, MyObject> region = ... 
+
+SnapshotOptions<Integer, MyObject> options = 
+ region.getSnapshotServive.createOptions().setParallelMode(true);
+region.getSnapshotService().save(mySnapshotDir, SnapshotFormat.GEMFIRE, options);
+```
+
+**gfsh:**
+
+The Java API example, above, accomplishes the same purpose as the following gfsh command:
+
+``` pre
+gfsh>export data --parallel --region=region1 --dir=region1_2012_10_10 --member=server1
+```

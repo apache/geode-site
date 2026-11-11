@@ -1,0 +1,48 @@
+﻿---
+title:  Cache Management
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+The @@product_name@@ cache is the entry point to @@product_name@@ caching management. @@product_name@@ provides different APIs and XML configuration models to support the behaviors of different members.
+
+-   **[Introduction to Cache Management](intro_cache_management)**
+
+    The cache provides in-memory storage and management for your data.
+
+-   **[Managing a Peer or Server Cache](managing_a_peer_server_cache)**
+
+    You start your peer or server cache using a combination of XML declarations and API calls. Close the cache when you are done.
+
+-   **[Managing a Client Cache](managing_a_client_cache)**
+
+    You have several options for client cache configuration. Start your client cache using a combination of XML declarations and API calls. Close the client cache when you are done.
+
+-   **[Managing a Cache in a Secure System](managing_a_secure_cache)**
+
+    When you create your cache in a secure system, you provide credentials to the connection process for authentication by already-running, secure members. Clients connect to secure servers. Peers are authenticated by secure locators or peer members.
+
+-   **[Managing RegionServices for Multiple Secure Users](managing_a_multiuser_cache)**
+
+    In a secure system, you can create clients with multiple, secure connections to the servers from each client. The most common use case is a @@product_name@@ client embedded in an application server that supports data requests from many users. Each user may be authorized to access a subset of data on the servers. For example, customer users may be allowed to see and update only their own orders and shipments.
+
+-   **[Launching an Application after Initializing the Cache](setting_cache_initializer)**
+
+    You can specify a callback application that is launched after the cache initialization.
+
+

@@ -1,0 +1,134 @@
+---
+title: Cluster Management Service
+sidebar_label: Cluster Management Service
+sidebar_position: 14
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+**Note:** This feature is experimental and is subject to change in future releases of @@product_name_long@@.
+
+The cluster management service enables you to change the configuration of
+the cluster using a REST interface,
+and have these changes replicated to all the applicable servers
+and persisted within the cluster configuration service.
+
+This REST interface differs from gfsh commands in:
+
+- The REST interface allows for a more programmable access.
+
+- Changes to all members of the cluster are applied in a consistent manner.
+
+- REST interface changes may be invoked from a server via a function
+or from any client application.
+
+- You can configure the cluster without having any servers running.
+Having a locator running is sufficient.
+
+- Not all gfsh commands and options are available with this REST interface.
+
+Currently, @@product_name@@ provides a Java client to interact with
+the REST interface.
+There is also a Golang client that interacts with the REST interface.
+
+The cluster management service REST API adheres to standard REST semantics,
+so users can use POST, PATCH, DELETE, and GET to create,
+update, delete, and read, respectively.
+
+See the versioned documentation at [Cluster Management Service REST API](https://cwiki.apache.org/confluence/display/GEODE/Cluster+Management+Service+Rest+API) for more details.
+This version of @@product_name@@ uses the @@product_version_geode@@ Management REST API.
+
+## Cluster Management Configuration
+
+Locators started by gfsh support the cluster management service REST API.
+
+Three property settings must be in effect to enable the cluster management REST API. These are in effect, by default, for gfsh-initiated locators.
+
+- `http-service-port` must be set to a non-zero value. If set to zero,
+no HTTP service is available for the locator. The default HTTP service port is 7070.
+
+- `enable-cluster-configuration` must be set to true.
+When set to false, all of the cluster management service REST API calls return errors.
+
+- `enable-management-rest-service` must be set to true.
+When set to false, the cluster management REST service does not start.
+
+By default, cluster management REST service logging occurs at the debug level.
+To increase logging to the info level,
+set the system property `-Dgeode.management.request.logging=true`
+when you start up locators.
+
+## Authentication and Authorization
+
+Secure your cluster management service REST API
+by implementing the `SecurityManager` interface.
+When the interface is implemented,
+API requests require credentials.
+
+Credentials can take the form of a username/password pair or a valid bearer token.
+By default, the cluster management service expects credentials in the form of 
+a username and password, as in the example:
+
+```
+curl --user username:password http://example.com/management/regions
+```
+
+When the `security-auth-token-enabled-components` property is set to 
+`all` or `management`,
+the cluster management service expects credentials in the form of a valid bearer token.
+For example:
+
+```
+curl -H "Authorization: Bearer Y6bXlwYXNzdzByZAo" http://example.com/management/regions
+```
+
+## Java API
+
+The Java client allows you to use the REST interface API in
+your Java application.
+To use the API:
+
+- Include `geode-management.jar` in your application's classpath.
+
+- Use the `ClusterManagementServiceBuilder` class to build a
+`ClusterManagementService` object,
+using the various methods available on the builder to set
+the connection configuration.
+
+Example:
+
+```
+ClusterManagementService cmsClient = new ClusterManagementServiceBuilder()
+        .setHost("localhost")
+        .setPort("7070")
+        .build();
+Region regionConfig = new Region();
+ClusterManagementListResult<Region, RuntimeRegionInfo> list = cmsClient.list(region);
+```
+
+## Golang Command Line Interface
+
+A Golang client that interacts with this service is available at
+[https://github.com/gemfire/tanzu-gemfire-management-cf-plugin](https://github.com/gemfire/tanzu-gemfire-management-cf-plugin).
+
+After download, you can use it to interact with any running cluster.
+For example:
+
+```
+$ ./gemfire http://localhost:7070 list regions
+```
