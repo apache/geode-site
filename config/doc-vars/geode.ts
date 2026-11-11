@@ -24,7 +24,7 @@ const javadocVersion20 = getLatestJavadocVersion('2.0', '2.0.3');
 
 const geodeVars = {
     current: {
-        min_java_version: '11',
+        min_java_version: '17',
         min_java_update: '0',
         product_version: '2.0',
         product_version_old_minor: '1.15',
