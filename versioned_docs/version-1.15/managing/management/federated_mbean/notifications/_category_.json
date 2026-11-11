@@ -1,0 +1,8 @@
+{
+  "label": "Geode JMX MBean Notifications",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "mbean_notifications"
+  }
+}

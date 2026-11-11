@@ -1,0 +1,51 @@
+---
+title:  Host Machine Requirements
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Host machines must meet a set of requirements for @@product_name_long@@.
+## {#system_requirements__section_1E1F206FBC8B4A898A449E0699907A7A}
+Each machine that will run @@product_name_long@@ must meet the following requirements:
+
+-   Java SE Development Kit @@min_java_version@@ with update @@min_java_update@@ or a more recent version @@min_java_version@@ update.  The same versions are supported with OpenJDK.
+-   A system clock set to the correct time and a time synchronization service such as Network Time Protocol (NTP). Correct time stamps permit the following activities:
+    -   Logs that are useful for troubleshooting. Synchronized time stamps ensure that log messages from different hosts can be merged to reproduce an accurate chronological history of a distributed run.
+    -   Aggregate product-level and application-level time statistics. 
+    -   Accurate monitoring of the Geode system with scripts and other tools that read the system statistics and log files.
+-   The host name and host files are properly configured for the machine. The host name and host file configuration can affect `gfsh` and Pulse functionality.
+-   Disable TCP SYN cookies. Most default Linux installations use SYN cookies to protect the 
+system against malicious attacks that flood TCP SYN packets, but this feature 
+is not compatible with stable and busy @@product_name@@ clusters. 
+Security implementations should instead seek to prevent attacks by placing @@product_name@@ 
+server clusters behind advanced firewall protection.
+
+    To disable SYN cookies permanently:
+    1. Edit the `/etc/sysctl.conf` file to include the following line:
+
+        ``` pre
+        net.ipv4.tcp_syncookies = 0
+        ```
+        Setting this value to zero disables SYN cookies.
+    2. Reload `sysctl.conf`:
+
+        ``` pre
+        sysctl -p
+        ```
+
+    See [Disabling TCP SYN Cookies](../../managing/monitor_tune/disabling_tcp_syn_cookies) for details.

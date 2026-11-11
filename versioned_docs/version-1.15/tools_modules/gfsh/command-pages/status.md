@@ -1,0 +1,293 @@
+﻿---
+title: status
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_7BCB054803CF48FE8688394C5C39000A}
+Check the status of the cluster configuration service and @@product_name@@ member processes, including locators, gateway receivers, gateway senders, and servers.
+
+-   **[status cluster-config-service](#topic_ts1_qb1_dk2)**
+
+    Displays the status of the cluster configuration service.
+
+-   **[status gateway-receiver](#topic_B0F45DC2D5F64FB1A2F738206BC6539E)**
+
+    Display the status of the specified gateway receiver.
+
+-   **[status gateway-sender](#topic_6F539877F0564F05AF264A9E704EC842)**
+
+    Display the status of the specified gateway sender.
+
+-   **[status locator](#topic_E96D0EFA513C4CD79B833FCCDD69C832)**
+
+    Displays the status of the specified locator.
+
+-   **[status redundancy](#topic_status_redundancy)**
+
+    Displays the redundancy status of partitioned regions.
+
+-   **[status server](#topic_E5DB49044978404D9D6B1971BF5D400D)**
+
+    Display the status of the specified @@product_name@@ cache server.
+
+## status cluster-config-service {#topic_ts1_qb1_dk2}
+Displays the status of the cluster configuration service.
+
+Displays the status of cluster configuration service on all the locators where <span class="keyword parmname">enable-cluster-configuration</span> is set to `true`.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+status cluster-config-service
+```
+
+**Example Commands:**
+
+``` pre
+status cluster-config-service
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>status cluster-config-service
+Status of shared configuration on locators
+
+  Name   | Status
+-------- | -------
+locator8 | RUNNING
+```
+
+## status gateway-receiver {#topic_B0F45DC2D5F64FB1A2F738206BC6539E}
+Display the status of the specified gateway receiver.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+status gateway-receiver [--groups=value(,value)*] [--members=value(,value)*]
+```
+## {#topic_B0F45DC2D5F64FB1A2F738206BC6539E__table_mb3_p3f_2w}
+| Name                                           | Description                                                     |
+|------------------------------------------------|-----------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of Gateway Receivers for which to display status.      |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name or ID of the Gateway Receiver(s) for which to display status. |
+
+<span class="tablecap">Table 1. Status Gateway-Receiver Parameters</span>
+
+**Example Commands:**
+
+``` pre
+status gateway-receiver --groups=LN-Group1
+status gateway-receiver --members=server1
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>status gateway-receiver
+Member               | Port  | Status
+---------------------| ------| -------
+pc13(8151)<v2>:26518 | 26837 | Running
+pc13(8175)<v4>:53787 | 23753 | Running
+pc13(8164)<v3>:24081 | 25457 | Running
+
+Member                       | Error
+-----------------------------| ---------------------------------------------------
+pc13(Manager:8124)<v1>:52410 | GatewayReceiver is not available or already stopped
+pc13(8130):8180              | GatewayReceiver is not available or already stopped
+
+
+gfsh>status gateway-receiver --members=pc13(8151)<v2>:50130
+Member               | Port  |  Status
+-------------------- | ----- | --------
+pc13(8151)<v2>:50130 | 28592 | Running
+
+gfsh>status gateway-receiver --group=RG1
+Member                 | Port  | Status
+-----------------------| ------| -------
+pc13(8151)<v2>:19450   | 27815 | Running
+pc13(8175)<v4>:14139   | 27066 | Running
+pc13(8164)<v3>:45150   | 29897 | Running
+```
+
+## status gateway-sender {#topic_6F539877F0564F05AF264A9E704EC842}
+Display the status of the specified gateway sender.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+status gateway-sender --id=value [--groups=value(,value)*]
+[--members=value(,value)*]
+```
+## {#topic_6F539877F0564F05AF264A9E704EC842__table_xc2_s3f_2w}
+| Name                                             | Description                                                                                               |
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id </span>     | *Required.* ID of the Gateway Sender.                                                                     |
+| <span class="keyword parmname">&#8209;&#8209;groups </span>   | Group(s) of Gateway Senders for which to display status. Comma separated list for multiple member groups. |
+| <span class="keyword parmname">&#8209;&#8209;members </span> | Name/ID of the Gateway Sender(s) for which to display status.                                                |
+
+<span class="tablecap">Table 2. Status Gateway-Sender Parameters</span>
+
+**Example Commands:**
+
+``` pre
+status gateway-receiver receiver1-LN --groups=LN-Group1;
+```
+
+**Sample Output:**
+
+``` pre
+gfsh>status gateway-sender --id=ln_Serial
+Member                 |  Type  | Runtime Policy | Status
+-----------------------| -------| -------------- | -----------
+ pc13(8175)<v4>:21449  | Serial | Secondary      | Not Running
+ pc13(8151)<v2>:40761  | Serial | Secondary      | Not Running
+ pc13(8164)<v3>:33476  | Serial | Secondary      | Not Running
+
+Member                         | Error
+------------------------------ | ------------------------------
+ pc13(8130):2365               | GatewaySender is not available
+ pc13(Manager:8124)<v1>:43821  | GatewaySender is not available
+
+gfsh>status gateway-sender --id=ln_Serial --members=pc13(8151)<v2>:7411
+Member               |  Type  | Runtime Policy | Status
+-------------------  | ------ | -------------- | -----------
+ pc13(8151)<v2>:7411 | Serial | Secondary      | Not Running
+
+gfsh>status gateway-sender --id=ln_Serial --members=pc13(8151)<v2>:7411
+Member               |  Type  | Runtime Policy | Status
+------------------- -| ------ | -------------- | -------
+ pc13(8151)<v2>:7411 | Serial | Primary        | Running
+
+gfsh>status gateway-sender --id=ln_Serial --groups=Serial_Sender
+==>
+Member                 |  Type  | Runtime Policy | Status
+---------------------- | -------| -------------- | -----------
+ pc13(8151)<v2>:44396  | Serial | Secondary      | Not Running
+ pc13(8164)<v3>:29475  | Serial | Secondary      | Not Running
+Member                 | Error
+---------------------- | ------------------------------
+ pc13(8186)<v5>:45840  | GatewaySender is not available
+```
+
+## status locator {#topic_E96D0EFA513C4CD79B833FCCDD69C832}
+Displays the status of the specified locator.
+
+The status will be one of the following:
+
+-   started
+-   online
+-   offline
+-   not responding
+
+**Availability:** Online or offline. If you want to obtain the status of a locator while you are offline, use the `--dir` option.
+
+**Syntax:**
+
+``` pre
+status locator [--name=value] [--host=value] [--port=value] [--dir=value] [--security-properties-file=value]
+```
+## {#topic_E96D0EFA513C4CD79B833FCCDD69C832__table_s44_w3f_2w}
+| Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                    | Default Value     |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span> | Name/ID of the locator for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/gfsh_remote). |                   |
+| <span class="keyword parmname">&#8209;&#8209;host</span> | Hostname or IP address on which the Locator is running.                                                                                                                                                                                                                                                                                                                                                                        |                   |
+| <span class="keyword parmname">&#8209;&#8209;port</span> | Port on which the locator is listening.                                                                                                                                                                                                                                                                                                                                                                                        | 10334             |
+| <span class="keyword parmname">&#8209;&#8209;dir</span>  | Directory in which the locator was started.                                                                                                                                                                                                                                                                                                                                                                                    | current directory |
+| <span class="keyword parmname">&#8209;&#8209;security&#8209;properties&#8209;file</span>  | The properties file for configuring SSL to connect to the SSL-enabled Locator. The file's path can be absolute or relative to the gfsh directory.                                                                                                                                                                                                                                                                                                                                                                                    | current directory |
+
+<span class="tablecap">Table 3. Status Locator Parameters</span>
+
+**Example Commands:**
+
+``` pre
+status locator
+status locator --name=locator1
+```
+
+## status redundancy {#topic_status_redundancy}
+Display the redundancy status of partitioned regions.
+
+The default is to display the status of all partitioned regions.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+status redundancy [--include-region=value(,value)*] [--exclude-region=value(,value)*]
+```
+
+| Name | Description |
+|------|-------------|
+| &#8209;&#8209;include&#8209;region | Partitioned Region paths to be included in redundancy status output. Includes take precedence over excludes. |
+| &#8209;&#8209;exclude&#8209;region | Partitioned Region paths to be excluded in redundancy status output. |
+
+**Example Commands:**
+
+``` pre
+status redundancy
+status redundancy --include-region=/region3,/region2 --exclude-region=/region1
+```
+
+**Sample Output:**
+
+``` pre
+status redundancy --include-region=/region3,/region2 --exclude-region=/region1
+
+Number of regions with zero redundant copies = 0
+Number of regions with partially satisfied redundancy = 1
+Number of regions with fully satisfied redundancy = 1
+
+Redundancy is partially satisfied for regions:
+  region3 redundancy status: NOT_SATISFIED. Desired redundancy is 2 and actual redundancy is 1.
+
+Redundancy is fully satisfied for regions:
+  region2 redundancy status: SATISFIED. Desired redundancy is 1 and actual redundancy is 1.
+```
+
+## status server {#topic_E5DB49044978404D9D6B1971BF5D400D}
+Display the status of the specified @@product_name@@ cache server.
+
+**Availability:** Online or offline. If you want to obtain the status of a server while you are offline, use the `--dir` option.
+
+**Syntax:**
+
+``` pre
+status server [--name=value] [--dir=value]
+```
+## {#topic_E5DB49044978404D9D6B1971BF5D400D__table_zvn_z3f_2w}
+| Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Default Value     |
+|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| <span class="keyword parmname">&#8209;&#8209;name</span> | Name or ID of the Cache Server for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/gfsh_remote). |                   |
+| <span class="keyword parmname">&#8209;&#8209;dir </span> | Directory in which the @@product_name@@ Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
+
+<span class="tablecap">Table 4. Status Server Parameters</span>
+
+**Example Commands:**
+
+``` pre
+status server
+status server --name=server1
+```

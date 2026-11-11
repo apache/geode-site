@@ -1,0 +1,39 @@
+﻿---
+title:  Region Data Storage and Distribution
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+The Apache Geode data storage and distribution models put your data in the right place at the right time. You should understand all the options for data storage in Geode before you configure your data regions.
+
+-   **[Storage and Distribution Options](storage_distribution_options)** Geode     provides several models for data storage and distribution, including partitioned or replicated regions as well as distributed or non-distributed regions (local cache storage).
+
+-   **[Region Types](region_types)**
+
+    Region types define region behavior within a single cluster. You have various options for region data storage and distribution.
+
+-   **[Region Data Stores and Data Accessors](data_hosts_and_accessors)**
+
+    Understand the difference between members that store data for a region and members that act only as data accessors to the region.
+
+-   **[Creating Regions Dynamically](dynamic_region_creation)**
+
+    You can dynamically create regions in your application code and automatically instantiate them on members of a cluster.
+
+
+

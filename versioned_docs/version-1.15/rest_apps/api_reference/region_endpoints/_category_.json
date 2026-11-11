@@ -1,0 +1,8 @@
+{
+  "label": "Region Endpoints",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "rest_regions"
+  }
+}

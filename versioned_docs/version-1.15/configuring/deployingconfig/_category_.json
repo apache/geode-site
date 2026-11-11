@@ -1,0 +1,8 @@
+{
+  "label": "Deploying Configuration Files without the Cluster Configuration Service",
+  "position": 8,
+  "link": {
+    "type": "doc",
+    "id": "deploying_config_files"
+  }
+}

@@ -1,0 +1,63 @@
+---
+title:  Troubleshooting and System Recovery
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section provides strategies for handling common errors and failure situations.
+
+-   **[Producing Artifacts for Troubleshooting](producing_troubleshooting_artifacts)**
+
+    There are several types of files that are critical for troubleshooting.
+
+-   **[Diagnosing System Problems](diagnosing_system_probs)**
+
+    This section provides possible causes and suggested responses for system problems.
+
+-   **[System Failure and Recovery](system_failure_and_recovery)**
+
+    This section describes alerts for and appropriate responses to various kinds of system failures. It also helps you plan a strategy for data recovery.
+
+-   **[Handling Forced Cache Disconnection Using Autoreconnect](member-reconnect)**
+
+    A Geode member may be forcibly disconnected from a cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to function.
+
+-   **[Recovering from Application and Cache Server Crashes](recovering_from_server_crashes/recovering_from_app_crashes)**
+
+    When the application or cache server crashes, its local cache is lost, and any resources it owned (for example, distributed locks) are released. The member must recreate its local cache upon restart.
+
+-   **[Recovering from Machine Crashes](recovering_from_machine_crashes)**
+
+    When a machine crashes because of a shutdown, power loss, hardware failure, or operating system failure, all of its applications and cache servers and their local caches are lost.
+
+-   **[Recovering from ConflictingPersistentDataExceptions](recovering_conflicting_data_exceptions)**
+
+    A `ConflictingPersistentDataException` while starting up persistent members indicates that you have multiple copies of some persistent data, and Geode cannot determine which copy to use.
+
+-   **[Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors)**
+
+    It is important to monitor the disk usage of Geode members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, which may result in data loss.
+
+-   **[Understanding and Recovering from Network Outages](recovering_from_network_outages)**
+
+    The safest response to a network outage is to restart all the processes and bring up a fresh data set.
+
+-   **[Log Messages and Solutions](log_messages_and_solutions)**
+
+    This section provides strategies for responding to a variety of system log messages.
+

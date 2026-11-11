@@ -1,0 +1,78 @@
+﻿---
+title:  resume
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_resume_command}
+Modify an existing @@product_name@@ resource.
+
+-   **[resume async-event-queue-dispatcher](#topic_resume_async_event_queue_dispatcher)**
+
+    Resume dispatching of events from the queue to the listener(s) for a specified asynchronous event queue which is currently in a paused state.
+
+-   **[resume gateway-sender](#topic_resume_gateway_sender)**
+
+    Resume specified gateway sender that is currently in a paused state.
+
+## resume async-event-queue-dispatcher {#topic_resume_async_event_queue_dispatcher}
+Resume dispatching of events on a specified asynchronous event queue which is currently in a paused state.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+resume async-event-queue-dispatcher --id=value [--groups=value(,value)*]
+[--members=value(,value)*]
+```
+## {#concept_resume_async_event_queue_dispatcher__table_rwp_vbg_2w}
+| Name                                           | Description                                                  |
+|------------------------------------------------|--------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the Asynchronous Event Queue.          |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members on which to resume event dispatching for this queue.   |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name/Id of the member(s) on which to resume event dispatching for this queue. |
+
+**Example Commands:**
+
+``` pre
+resume async-event-queue-dispatcher --id=AEQ1 --groups=Group1
+```
+
+## resume gateway-sender {#topic_resume_gateway_sender}
+Resume a gateway sender which is currently in a paused sate.
+
+**Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
+
+**Syntax:**
+
+``` pre
+resume gateway-sender --id=value [--groups=value(,value)*] 
+[--members=value(,value)*]
+```
+## {#concept_8B0532D13CF34E0CB04ACC3F14F1E4A2__table_rwp_vbg_2w}
+| Name                                           | Description                                                  |
+|------------------------------------------------|--------------------------------------------------------------|
+| <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the Gateway Sender.                        |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members on which to resume the Gateway Sender.   |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name/Id of the member(s) on which to resume the Gateway Sender. |
+
+**Example Commands:**
+
+``` pre
+resume gateway-sender --id=sender1-LN --groups=LN-Group1
+```

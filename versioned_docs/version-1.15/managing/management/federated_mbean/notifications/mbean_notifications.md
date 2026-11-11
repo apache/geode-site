@@ -1,0 +1,30 @@
+﻿
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<a id="topic_czt_hq2_vk"></a> Apache Geode 
+
+
+@@product_name_long@@ MBeans emit notifications when specific events occur or if an alert is raised in the @@product_name@@ system. Using standard JMX APIs, users can add notification handlers to listen for these events.
+
+-   **[Notification Federation](notification_federation_and_alerts)**
+
+    All notifications emitted from managed nodes are federated to all JMX Managers in the system.
+
+-   **[List of JMX MBean Notifications](list_of_mbean_notifications)**
+
+    This topic lists all available JMX notifications emitted by @@product_name@@ MBeans.

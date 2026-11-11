@@ -1,0 +1,42 @@
+﻿---
+title:  Logging
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Comprehensive logging messages help you confirm system configuration and debug problems in configuration and code.
+
+-   **[How @@product_name@@ Logging Works](how_logging_works)**
+
+    @@product_name_long@@ uses Apache Log4j 2 as the basis for its logging system.
+
+-   **[Understanding Log Messages and Their Categories](logging_categories)**
+
+    System logging messages typically pertain to startup; logging management; connection and system membership; distribution; or cache, region, and entry management.
+
+-   **[Naming, Searching, and Creating Log Files](logging_whats_next)**
+
+    The best way to manage and understand the logs is to have each member log to its own files.
+
+-   **[Set Up Logging](setting_up_logging)**
+
+    You configure logging in a member's `gemfire.properties` or at startup with `gfsh`.
+
+-   **[Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2)**
+
+    Basic @@product_name@@ logging configuration is configured via the gemfire.properties file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.

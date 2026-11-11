@@ -1,0 +1,8 @@
+{
+  "label": "Authentication",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "authentication_overview"
+  }
+}

@@ -42,3 +42,13 @@ The SSL implementation ensures that only the applications identified by you can 
 -   **[SSL Sample Implementation](ssl_example)**
 
     A simple example demonstrates the configuration and startup of @@product_name@@ system components with SSL.
+
+-   **[Mitigating Public CA Client Authentication EKU Changes](public_ca_client_auth_eku_mitigations.md)**
+
+    Provides guidance for deployments affected by public Certificate Authorities removing or restricting the Client Authentication EKU from publicly-issued certificates. Covers three mitigation strategies:
+
+  -   **[Internal / Enterprise CA for mTLS](ssl_internal_ca_mtls.md)** — Operate an internal or enterprise CA to issue client certificates. Removes reliance on public CA EKU policies entirely.
+
+  -   **[Server-only TLS with Alternative Client Authentication](ssl_server_only_tls_alt_auth.md)** — Retain TLS transport encryption and authenticate clients at the application layer using @@product_name@@'s `AuthInitialize` and `SecurityManager` framework instead of client certificates.
+
+  -   **[Hybrid: Public-CA Server Certs with Private-CA Client Certs](ssl_hybrid_public_server_private_client.md)** — Keep server certificates from a public CA while issuing client certificates from an internal CA, preserving external trust for server endpoints while maintaining control over client identity.

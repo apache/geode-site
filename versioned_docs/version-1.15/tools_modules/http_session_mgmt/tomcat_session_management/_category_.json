@@ -1,0 +1,8 @@
+{
+  "label": "HTTP Session Management Module for Tomcat",
+  "position": 8,
+  "link": {
+    "type": "doc",
+    "id": "session_mgmt_tomcat"
+  }
+}

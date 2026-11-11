@@ -1,0 +1,45 @@
+﻿
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+@@product_name@@ Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of @@product_name@@ clusters, members, and regions.
+
+Use Pulse to examine total memory, CPU, and disk space used by members, uptime statistics, client connections, WAN connections, and critical notifications. Pulse communicates with a @@product_name@@ JMX manager to provide a complete view of your @@product_name@@ deployment. You can drill down from a high-level cluster view to examine individual members and even regions within a member, to filter the type of information and level of detail.
+
+By default, @@product_name@@ Pulse runs in an embedded container within a @@product_name@@ JMX manager node. You can optionally deploy Pulse to a Web application server of your choice, so that the tool runs independently of your @@product_name@@ clusters. Hosting Pulse on an application server also enables you to use SSL for accessing the application.
+
+-   **[Pulse System Requirements](pulse-requirements)**
+
+    Verify that your system meets the installation and runtime requirements for GemFire Pulse.
+
+
+-   **[Running Pulse in Embedded Mode (Quick Start)](pulse-embedded)**
+
+    Use Pulse in embedded mode to monitor a @@product_name@@ deployment directly from a @@product_name@@ JMX Manager. By default, the embedded Pulse application connects to the local JMX Manager that hosts the Pulse application. Optionally, configure Pulse to connect to a @@product_name@@ system of your choice.
+
+-   **[Hosting Pulse on a Web Application Server](pulse-hosted)**
+
+    Host Pulse on a dedicated Web application server to make the Pulse application available at a consistent address, or to use SSL for accessing the Pulse application. When you host Pulse in this way, you also configure Pulse to connect to a specific locator or JMX Manager node for monitoring.
+
+-   **[Configuring Pulse Authentication](pulse-auth)**
+
+    Pulse requires all users to authenticate themselves before they can use the Pulse Web application. If you have configured JMX authentication on the @@product_name@@ JMX Manager node, the Pulse Web application itself may also need to authenticate itself to the @@product_name@@ JMX Manager node on startup.
+
+-   **[Using Pulse Views](pulse-views)**
+
+    Pulse provides a variety of different views to help you monitor @@product_name@@ clusters, members, and regions.

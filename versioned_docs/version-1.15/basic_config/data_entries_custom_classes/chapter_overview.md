@@ -1,0 +1,36 @@
+﻿---
+title:  Data Entries
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow @@product_name_long@@ requirements for data storage and distribution.
+
+-   **[Managing Data Entries](managing_data_entries)**
+
+    Program your applications to create, modify, and manage your cached data entries.
+
+-   **[Copy on Read Behavior](copy_on_read)**
+
+    Set the copy-on-read region attribute to cause operations that get data to make a copy of the data, instead of returning a reference to the data.
+
+-   **[Requirements for Using Custom Classes in Data Caching](using_custom_classes)**
+
+    Follow these guidelines to use custom domain classes for your cached entry keys and values.
+
+

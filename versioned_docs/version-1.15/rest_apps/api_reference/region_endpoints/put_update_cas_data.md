@@ -1,0 +1,147 @@
+---
+title:  PUT /geode/v1/{region}/{key}?op=CAS
+sidebar_label: PUT /geode/v1/{region}/{key}?op=CAS
+sidebar_position: 11
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Update (compare-and-set) value having key with a new value if and only if the "@old" value sent matches the current value having key in region.
+
+## Resource URL
+
+``` pre
+http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/{region}/{key}?op=CAS
+http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/{region}/{key1},{key2},...{keyN}?op=CAS
+```
+
+## Parameters
+| Parameter | Description | Example Values |
+|---|---|---|
+| `op` | URL parameter. When you specify `CAS` for this parameter, data is only updated if the `@old` value specified in the request body matches the existing value in the region. | `CAS` |
+| `@type` | Specified in the request body for both the old and new value. Use this to declare the domain object type of the entry's value. | `com.mycompany.ObjectName` |
+| `@old` | Compare this value to the existing value in the region. | ```json<br/>{<br/>  "@type": "org.apache.geode.web.rest.domain.Order",<br/>  "purchaseOrderNo": 1121,<br/>  "customerId": 1012,<br/>  "description": "Order for XYZ Corp",<br/>  "orderDate": "02/10/2014",<br/>  "deliveryDate": "02/20/2014",<br/>  "contact": "Jelly Bean",<br/>  "email": "jelly.bean@example.com",<br/>  "phone": "01-2048096",<br/>  "items": [<br/>    {<br/>      "itemNo": 1,<br/>      "description": "Product-100",<br/>      "quantity": 12,<br/>      "unitPrice": 5,<br/>      "totalPrice": 60<br/>    }<br/>  ],<br/>  "totalPrice": 225<br/>}<br/>``` |
+| `@new` | If `@old` value matches the existing value, use this value to replace the existing value. | ```json<br/>{<br/>  "@type": "org.apache.geode.web.rest.domain.Order",<br/>  "purchaseOrderNo": 1121,<br/>  "customerId": 1013,<br/>  "description": "Order for New Corp",<br/>  "orderDate": "02/10/2014",<br/>  "deliveryDate": "02/25/2014",<br/>  "contact": "Vanilla Bean",<br/>  "email": "vanilla.bean@example.com",<br/>  "phone": "01-2048096",<br/>  "items": [<br/>    {<br/>      "itemNo": 12345,<br/>      "description": "part 123",<br/>      "quantity": 12,<br/>      "unitPrice": 29.99,<br/>      "totalPrice": 149.95<br/>    }<br/>  ],<br/>  "totalPrice": 149.95<br/>}<br/>``` |
+
+
+## Example Request
+
+``` pre
+Request Payload: application/json
+
+PUT /geode/v1/orders/2?op=CAS
+
+Accept: application/json
+Content-Type: application/json
+{
+    "@old": {
+         "@type":  "org.apache.geode.web.rest.domain.Order",
+         "purchaseOrderNo": 1121,
+         "customerId": 1012,
+         "description":  "Order for  XYZ Corp",
+         "orderDate":  "02/10/2014",
+         "deliveryDate":  "02/20/2014",
+         "contact":  "Jelly Bean",
+         "email":  "jelly.bean@example.com",
+         "phone":  "01-2048096",
+         "items": [
+            {
+                 "itemNo": 1,
+                 "description":  "Product-100",
+                 "quantity": 12,
+                 "unitPrice": 5,
+                 "totalPrice": 60
+            }
+        ],
+         "totalPrice": 225
+    },
+     "@new ": {
+         "@type":  "org.apache.geode.web.rest.domain.Order",
+         "purchaseOrderNo": 1121,
+         "customerId": 1013,
+         "description":  "Order for  New Corp",
+         "orderDate":  "02/10/2014",
+         "deliveryDate":  "02/25/2014",
+         "contact":  "Vanilla Bean",
+         "email":  "vanillabean@example.com",
+         "phone":  "01-2048096",
+         "items": [
+            {
+                 "itemNo": 12345,
+                 "description":  "part 123",
+                 "quantity": 12,
+                 "unitPrice": 29.99,
+                 "totalPrice": 149.95
+            }
+        ],
+         "totalPrice": 149.95
+    }
+}
+```
+
+## Example Success Response
+
+``` pre
+Response Payload: null
+
+200 OK
+```
+
+## Error Codes
+
+| Status Code               | Description                                                                                                                      |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| 400 BAD REQUEST           | Returned if the supplied key is not present in the region.                                                                       |
+| 404 NOT FOUND             | Returned if the region is not found.                                                                                             |
+| 409 CONFLICT              | Returned if the provided @old value of the key does not match the current value of the key.                                      |
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |
+
+## Example Error Response
+
+``` pre
+Response-payload: application/json
+
+409 Conflict
+Content-Type: application/json
+{
+     "purchaseOrderNo": 1121,
+     "customerId": 1012,
+     "description":  "Order for  XYZ Corp",
+     "orderDate":  "02/10/2014",
+     "deliveryDate":  "02/20/2014",
+     "contact":  "Jelly Bean",
+     "email":  "jelly.bean@example.com",
+     "phone":  "01-2048096",
+     "items": [
+        {
+             "itemNo": 1,
+             "description":  "Product-100",
+             "quantity": 12,
+             "unitPrice": 5,
+             "totalPrice": 60
+        }
+    ],
+     "totalPrice": 225
+}
+```
+
+## Implementation Notes
+
+If the "@old" value sent by the client in the HTTP request, along with the "@new" value, does not match the existing value having key in region, then a 409 - CONFLICT error is returned indicating the mismatch in expected state. The "@old" and current value must match in order for the key to be assigned the "@new" value.
+
+If a "CONFLICT" occurs, it is a simple matter for the client to issue a HTTP GET request for the Key (GET /geode/v1/orders/222) to get a updated copy of the value. CAS is similar to optimistic locking (as opposed to optimistic locking assuming the value will change between the time a client requests a value and subsequently updates the value) in that it assumes the client's state is up-to-date when the client tries to update, but if not then fail, hence the 409 - CONFLICT.

@@ -1,0 +1,48 @@
+---
+title: Monitoring Low Memory When Querying
+sidebar_label: Monitoring Low Memory When Querying
+sidebar_position: 2
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_685CED6DE7D0449DB8816E8ABC1A6E6F}
+The query monitoring feature prevents out-of-memory exceptions from occurring when you execute queries or create indexes.
+
+You enable this feature when you set 
+a `critical-heap-percentage` attribute for the resource-manager element
+in the `cache.xml` file or by using the
+`cache.getResourceManager().setCriticalHeapPercentage(float heapPercentage)`
+API. When this feature is enabled and
+heap memory usage exceeds
+the threshold due to running a query or creating an index,
+the resource manager throws an exception
+and cancels the running query or index creation.
+
+You can explicitly disable this feature by setting the system property `gemfire.cache.DISABLE_QUERY_MONITOR_FOR_LOW_MEMORY` to true.
+
+When system memory is low,
+as determined by the critical heap percentage threshold defined in 
+the `cache.xml` file or in the getResourceManager API,
+queries will throw a `QueryExecutionLowMemoryException`.
+Any indexes that are in the process of being created will throw
+an `InvalidIndexException` with the message indicating the reason.
+
+## Partitioned Region Queries and Low Memory {#topic_685CED6DE7D0449DB8816E8ABC1A6E6F__section_2E9DEEC9D9C94D038543DDE03BC60B20}
+Partitioned region queries are likely causes for out-of-memory exceptions. If query monitoring is enabled, partitioned region queries drop or ignore results that are being gathered by other servers if the executing server is low in memory.
+
+Query-monitoring does not address a scenario in which a low-level collection is expanded while the partitioned region query is gathering results. For example, if a row is added and then causes a Java level collection or array to expand, it is possible to then encounter an out-of-memory exception. This scenario is rare and is only possible if the collection size itself expands before a low memory condition is met and then expands beyond the remaining available memory. As a workaround, in the event that you encounter this situation, you may be able to tune the system by additionally lowering the `critical-heap-percentage`.

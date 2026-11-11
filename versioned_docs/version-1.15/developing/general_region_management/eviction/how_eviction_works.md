@@ -1,0 +1,57 @@
+﻿---
+title:  How Eviction Works
+sidebar_label: How Eviction Works
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Eviction keeps a region's resource use under a specified level by removing least recently used (LRU) entries to make way for new entries. You can choose whether expired entries are overflowed to disk or destroyed. See [Persistence and Overflow](../storing_data_on_disk/chapter_overview).
+
+Eviction is triggered when a size-based threshold is exceeded. A region's eviction threshold can be based on:
+
+- entry count
+- absolute memory usage
+- percentage of available heap
+
+These eviction algorithms are mutually exclusive; only one can be in effect for a given region.
+
+When @@product_name@@ determines that adding or updating an entry would take the region over the specified level, it overflows or removes enough older entries to make room. For entry count eviction, this means a one-to-one trade of an older entry for the newer one. For the memory settings, the number of older entries that need to be removed to make space depends on the sizes of the older and newer entries.
+
+For efficiency, the selection of items for removal is not strictly LRU, but does choose eviction candidates from among the region's oldest entries.
+As a result, eviction may leave older entries for the region in the local data store.
+
+## Eviction Actions
+
+@@product_name_long@@ provides the following eviction actions:
+
+- **local destroy** - Removes the entry from the local cache, but does not distribute the removal operation to remote
+members.  This action can be applied to an entry in a partitioned region, but is not recommended
+if redundancy is enabled (redundant-copies > 0), as it introduces inconsistencies between the
+redundant buckets.  When applied to an entry in a replicated region, @@product_name@@ silently changes
+the region type to "preloaded" to accommodate the local modification.
+
+- **overflow to disk** - The entry's value is overflowed to disk and set to null in memory. The
+entry's key is retained in the cache. This is the only eviction action fully supported
+for partitioned regions.
+
+## Eviction in Partitioned Regions {#how_eviction_works__section_69E2AA453EDE4E088D1C3332C071AFE1}
+In partitioned regions, @@product_name@@ removes the oldest entry it can find *in the bucket where the new entry operation is being performed*. @@product_name@@ maintains LRU entry information on a bucket-by-bucket basis, as the cost of maintaining information across the partitioned region would slow the system's performance.
+
+-   For memory and entry count eviction, LRU eviction is done in the bucket where the new entry operation is being performed until the overall size of the combined buckets in the member has dropped enough to perform the operation without going over the limit.
+-   For heap eviction, each partitioned region bucket is treated as if it were a separate region, with each eviction action only considering the LRU for the bucket, and not the partitioned region as a whole.

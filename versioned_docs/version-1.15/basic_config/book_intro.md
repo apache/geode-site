@@ -1,0 +1,40 @@
+﻿---
+title:  Basic Configuration and Programming
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+*Basic Configuration and Programming* describes how to configure cluster and cache properties for your @@product_name_long@@ installation. For your applications, it provides guidance for writing code to manage your cache and cluster connection, data regions, and data entries, including custom classes.
+
+-   **[Cluster and Cache Configuration](config_concepts/chapter_overview)**
+
+    To work with your @@product_name_long@@ applications, you use a combination of configuration files and application code.
+
+-   **[Cache Management](the_cache/chapter_overview)**
+
+    The @@product_name@@ cache is the entry point to @@product_name@@ caching management. @@product_name@@ provides different APIs and XML configuration models to support the behaviors of different members.
+
+-   **[Data Regions](data_regions/chapter_overview)**
+
+    The region is the core building block of the @@product_name_long@@ cluster. All cached data is organized into data regions and you do all of your data puts, gets, and querying activities against them.
+
+-   **[Data Entries](data_entries_custom_classes/chapter_overview)**
+
+    The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow @@product_name_long@@ requirements for data storage and distribution.
+
+

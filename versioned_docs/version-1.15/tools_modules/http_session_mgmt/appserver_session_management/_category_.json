@@ -1,0 +1,8 @@
+{
+  "label": "HTTP Session Management Module for AppServers",
+  "position": 9,
+  "link": {
+    "type": "doc",
+    "id": "session_mgmt_weblogic"
+  }
+}

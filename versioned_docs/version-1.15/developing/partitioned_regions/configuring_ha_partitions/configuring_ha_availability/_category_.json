@@ -1,0 +1,8 @@
+{
+  "label": "Configure High Availability for a Partitioned Region",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "configuring_ha_for_pr"
+  }
+}

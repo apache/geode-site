@@ -1,0 +1,129 @@
+---
+title:  How to Install
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Build from source or use the TAR distribution to install @@product_name_long@@ on every physical and virtual machine that will run @@product_name_long@@.
+
+## Build from Source on Unix
+
+1.  Set the JAVA\_HOME environment variable.
+
+    ``` pre
+    JAVA_HOME=/usr/java/jdk-@@min_java_version@@.0.@@min_java_update@@
+    export JAVA_HOME
+    ```
+
+2.  Download the project source from the Releases page found at [http://geode.apache.org](http://geode.apache.org/), and unpack the source code.
+3.  Within the directory containing the unpacked source code, build without tests:
+
+    ``` pre
+    $ ./gradlew build -Dskip.tests=true
+    ```
+
+    Or, build with the tests:
+
+    ``` pre
+    $ ./gradlew build 
+    ```
+
+4.  Verify the installation by invoking `gfsh` to print version information and exit. On Linux/Unix platforms, the version will be similar to:
+
+    ``` pre
+    $ cd geode-assembly/build/install/apache-geode
+    $ bin/gfsh version
+    v1.1.0
+    ```
+
+## Build from Source on Windows
+
+1.  Set the JAVA\_HOME environment variable. For example:
+
+    ``` pre
+    $ set JAVA_HOME="C:\Program Files\Java\jdk-@@min_java_version@@.0.@@min_java_update@@" 
+    ```
+
+2.  Install Gradle, version 2.3 or a more recent version.
+3.  Download the project source from the Releases page found at [http://geode.apache.org](http://geode.apache.org/), and unpack the source code.
+4.  Within the folder containing the unpacked source code, build without the tests:
+
+    ``` pre
+    $ gradle build -Dskip.tests=true
+    ```
+
+    Or, build with the tests:
+
+    ``` pre
+    $ gradle build
+    ```
+
+5.  Verify the installation by invoking `gfsh` to print version information and exit.
+
+    ``` pre
+    $ cd geode-assembly\build\install\apache-geode\bin
+    $ gfsh.bat version
+    v1.1.0
+    ```
+
+## Install Binaries from .tgz File {#concept_0129F6A1D0EB42C4A3D24861AF2C5425__section_D3326496B2BB47A7AB0CFC1A5E266842}
+1.  Download the .tgz file from the Releases page found at [http://geode.apache.org](http://geode.apache.org/).
+2.  Expand the .tgz file, where `path_to_product` is an absolute path, and the file name will vary due to the version number:
+
+    ``` pre
+    $ tar -zxvf apache-geode-1.1.0.tgz -C path_to_product
+    ```
+
+3.  Set the JAVA\_HOME environment variable. On Linux/Unix platforms:
+
+    ``` pre
+    JAVA_HOME=/usr/java/jdk-@@min_java_version@@.0.@@min_java_update@@
+    export JAVA_HOME
+    ```
+
+    On Windows platforms:
+
+    ``` pre
+    set JAVA_HOME="C:\Program Files\Java\jdk-@@min_java_version@@.0.@@min_java_update@@"
+    ```
+
+4.  Add the @@product_name@@ scripts to your PATH environment variable. On Linux/Unix platforms:
+
+    ``` pre
+    PATH=$PATH:$JAVA_HOME/bin:path_to_product/bin
+    export PATH
+    ```
+
+    On Windows platforms:
+
+    ``` pre
+    set PATH=%PATH%;%JAVA_HOME%\bin;path_to_product\bin 
+    ```
+
+5.  To verify the installation, type `gfsh version` at the command line and note that the output lists the installed version of @@product_name@@. For example:
+
+    ``` pre
+    $ gfsh version
+    v1.1.0
+    ```
+
+    For more detailed version information such as the date of the build, build number and JDK version being used, invoke:
+
+    ``` pre
+    $ gfsh version --full
+    ```

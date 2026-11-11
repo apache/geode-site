@@ -1,0 +1,8 @@
+{
+  "label": "Keeping the Cache in Sync with Outside Data Sources",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "sync_outside_data"
+  }
+}

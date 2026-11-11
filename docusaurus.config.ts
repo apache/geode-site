@@ -65,14 +65,16 @@ const config: Config = {
               path: 'docs/geode',
               routeBasePath: 'docs/geode',
               sidebarPath: require.resolve('./sidebars.geode.ts'),
+              lastVersion: 'current',
               versions: {
                   current: {
-                      label: 'Apache Geode 1.15.x (Current Version)',
+                      label: 'Apache Geode 2.0.x (Current)',
                       banner: 'none',
                   },
-                  // '1.15': {
-                  //     banner: 'none',
-                  // },
+                  '1.15': {
+                      label: 'Apache Geode 1.15.x',
+                      banner: 'none',
+                  },
               },
               editUrl: `https://github.com/apache/${siteRepoName}/tree/master/`,
 

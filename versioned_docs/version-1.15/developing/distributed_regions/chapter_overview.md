@@ -1,0 +1,46 @@
+﻿---
+title:  Distributed and Replicated Regions
+sidebar_label: Distributed and Replicated Regions
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+In addition to basic region management, distributed and replicated regions include options for things like push and pull distribution models, global locking, and region entry versions to ensure consistency across @@product_name@@ members.
+
+-   **[How Distribution Works](how_distribution_works)**
+
+    To use distributed and replicated regions, you should understand how they work and your options for managing them.
+
+-   **[Options for Region Distribution](choosing_level_of_dist)**
+
+    You can use distribution with and without acknowledgment, or global locking for your region distribution. Regions that are configured for distribution with acknowledgment can also be configured to resolve concurrent updates consistently across all @@product_name@@ members that host the region.
+
+-   **[How Replication and Preloading Work](how_replication_works)**
+
+    To work with replicated and preloaded regions, you should understand how their data is initialized and maintained in the cache.
+
+-   **[Configure Distributed, Replicated, and Preloaded Regions](managing_distributed_regions)**
+
+    Plan the configuration and ongoing management of your distributed, replicated, and preloaded regions, and configure the regions.
+
+-   **[Locking in Global Regions](locking_in_global_regions)**
+
+    In global regions, the system locks entries and the region during updates. You can also explicitly lock the region and its entries as needed by your application. Locking includes system settings that help you optimize performance and locking behavior between your members.
+
+

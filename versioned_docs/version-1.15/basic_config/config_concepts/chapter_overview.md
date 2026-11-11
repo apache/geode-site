@@ -1,0 +1,40 @@
+﻿---
+title:  Cluster and Cache Configuration
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+To work with your @@product_name_long@@ applications, you use a combination of configuration files and application code.
+
+-   **[Cluster Members](distributed_system_member_configuration)**
+
+    Cluster members are programs that connect to a @@product_name@@ cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
+
+-   **[Setting Properties](setting_distributed_properties)**
+
+    @@product_name@@ provides a default cluster configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your cluster configuration.
+
+-   **[Options for Configuring the Cache and Data Regions](setting_cache_properties)**
+
+    To populate your @@product_name_long@@ cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
+
+-   **[Local and Remote Membership and Caching](local_vs_remote)**
+
+    For many @@product_name_long@@ discussions, you need to understand the difference between local and remote membership and caching.
+
+

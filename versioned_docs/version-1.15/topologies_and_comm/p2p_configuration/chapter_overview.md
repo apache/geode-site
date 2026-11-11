@@ -1,0 +1,37 @@
+﻿---
+title:  Peer-to-Peer Configuration
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Use peer-to-peer configuration to set member discovery and communication within a single cluster.
+
+-   **[Configuring Peer-to-Peer Discovery](setting_up_a_p2p_system)**
+
+    Peer members discover each other using one or more locators.
+
+-   **[Configuring Peer Communication](setting_up_peer_communication)**
+
+    By default Apache Geode uses TCP for communication between members of a single cluster. You can modify this at the member and region levels.
+
+-   **[Organizing Peers into Logical Member Groups](configuring_peer_member_groups)**
+
+    In a peer-to-peer configuration, you can organize members into logical member groups and use those groups to associate specific data or assign tasks to a pre-defined set of members.
+
+
+

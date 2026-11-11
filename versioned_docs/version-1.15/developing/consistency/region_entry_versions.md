@@ -1,0 +1,46 @@
+﻿---
+title: Consistency for Region Updates
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+## {#topic_CF2798D3E12647F182C2CEC4A46E2045}
+@@product_name@@ ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including @@product_name@@ members that distribute region events.
+
+-   **[Consistency Checking by Region Type](how_region_versioning_works#topic_7A4B6C6169BD4B1ABD356294F744D236)**
+
+    @@product_name@@ performs different consistency checks depending on the type of region you have configured.
+
+-   **[Configuring Consistency Checking](how_region_versioning_works#topic_B64891585E7F4358A633C792F10FA23E)**
+
+    @@product_name@@ enables consistency checking by default. You cannot disable consistency checking for persistent regions. For all other regions, you can explicitly enable or disable consistency checking by setting the `concurrency-checks-enabled` region attribute in `cache.xml` to "true" or "false."
+
+-   **[Overhead for Consistency Checks](how_region_versioning_works#topic_0BDACA590B2C4974AC9C450397FE70B2)**
+
+    Consistency checking requires additional overhead for storing and distributing version and timestamp information, as well as for maintaining destroyed entries for a period of time to meet consistency requirements.
+
+-   **[How Consistency Checking Works for Replicated Regions](how_region_versioning_works#topic_C5B74CCDD909403C815639339AA03758)**
+
+    Each region stores version and timestamp information for use in conflict detection. @@product_name@@ members use the recorded information to detect and resolve conflicts consistently before applying a distributed update.
+
+-   **[How Destroy and Clear Operations Are Resolved](how_region_versioning_works#topic_321B05044B6641FCAEFABBF5066BD399)**
+
+    When consistency checking is enabled for a region, a @@product_name@@ member does not immediately remove an entry from the region when an application destroys the entry. Instead, the member retains the entry with its current version stamp for a period of time in order to detect possible conflicts with operations that have occurred. The retained entry is referred to as a *tombstone*. @@product_name@@ retains tombstones for partitioned regions and non-replicated regions as well as for replicated regions, in order to provide consistency.
+
+-   **[Transactions with Consistent Regions](how_region_versioning_works#topic_32ACFA5542C74F3583ECD30467F352B0)**
+
+    A transaction that modifies a region having consistency checking enabled generates all necessary version information for region updates when the transaction commits.

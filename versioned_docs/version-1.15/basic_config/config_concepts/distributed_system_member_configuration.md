@@ -1,0 +1,55 @@
+---
+title:  Cluster Members
+sidebar_label: Cluster Members
+sidebar_position: 1
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Cluster members are programs that connect to a @@product_name@@ cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
+
+## Member Overview {#distributed_system_member_configuration__section_326B2609B67E4FBE9BF2074C3B211E50}
+Cluster members (or simply "members") connect to the @@product_name@@ cluster when they create the @@product_name@@ data cache. The members' cluster is configured through @@product_name@@ properties. See [gemfire.properties and gfsecurity.properties (@@product_name@@ Properties)](../../reference/gemfire_properties). @@product_name@@ properties specify all necessary information for member startup, initialization, and communication.
+
+**Note:**
+You cannot change a member's properties while the member is connected to the cluster.
+
+Use the properties to define:
+
+-   How to find and communicate with other members
+-   How to perform logging and statistics activities
+-   Which persistent configuration or `cache.xml` file to use for cache and data region initialization
+-   Other options, including event conflation, how to handle network loss, and security settings
+
+## Membership and System Topologies {#distributed_system_member_configuration__section_E755E9E4A31149C980561D617A99A002}
+Every @@product_name@@ process is a member of a cluster, even if the cluster is defined as standalone, with just one member. You can run an individual cluster in isolation or you can combine clusters for vertical and horizontal scaling. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview).
+
+-   **Peer-to-Peer Clusters**. Members that define the same member discovery properties belong to the same cluster and are peers to one another.
+-   **Client/Server Installations**. The client/server topology uses relationships that you configure between members of multiple clusters. You configure some or all of the peers in one cluster to act as cache servers to clients connecting from outside the cluster. Each server can host many client processes, managing cache access for all in an efficient, vertically hierarchical cache configuration. You configure the client applications to connect to the servers, using a client cache configuration. Clients run as members of standalone @@product_name@@ clusters, with no peers, so all data updates and requests go to the servers.
+
+## Multi-site Installations
+
+The multi-site topology uses relationships that you configure between members of multiple clusters. Through this configuration, you loosely couple two or more clusters for automated data distribution. This is usually done for sites at geographically separate locations. You configure a subset of peers in each cluster site with gateway senders and/or gateway receivers to manage events that are distributed between the sites.
+
+In the context of a single cluster, unless otherwise specified, "remote member" refers to
+another member of the same cluster. In client/server and multi-site installations, "remote"
+generally refers to members in other clusters. For example, all servers are "remote" to the
+clients that connect to them. Each client runs standalone, with connections only to the server tier,
+so all servers and their other clients are "remote" to the individual client. All gateway receivers
+are "remote" to the gateway senders that connect to them from other clusters, and to those
+gateway senders' peers.

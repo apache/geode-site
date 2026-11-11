@@ -1,0 +1,36 @@
+﻿---
+title:  Authorization
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+Cluster and cache operations can be restricted, intercepted and
+modifed, or completely blocked based on configured access rights set for
+the various cluster components. 
+
+-   **[Implementing Authorization](implementing_authorization)**
+
+    To use authorization for client/server systems, your client connections must be authenticated by their servers.
+
+-   **[Method Invocation Authorizers](method_invocation_authorizers)**
+
+    Authorizers used during query execution, how to configure them and how to implement your own.
+
+-   **[Authorization Examples](authorization_example)**
+
+    This topic discusses the authorization examples provided in the product under `geode-core/src/main/java/org/apache/geode/examples/security`.

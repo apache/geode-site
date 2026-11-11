@@ -24,17 +24,17 @@ const javadocVersion20 = getLatestJavadocVersion('2.0', '2.0.3');
 
 const geodeVars = {
     current: {
-        min_java_version: '8',
-        min_java_update: '121',
-        product_version: '1.15',
-        product_version_old_minor: '1.14',
-        product_version_geode: '1.15',
-        product_version_nodot: '115',
+        min_java_version: '11',
+        min_java_update: '0',
+        product_version: '2.0',
+        product_version_old_minor: '1.15',
+        product_version_geode: '2.0',
+        product_version_nodot: '20',
         product_name_long: 'Apache Geode',
         product_name: 'Geode',
         product_name_lowercase: 'geode',
-        javadoc_version: javadocVersion115,
-        product_javadoc_version: javadocVersion115,
+        javadoc_version: javadocVersion20,
+        product_javadoc_version: javadocVersion20,
     },
     '1.15': {
         min_java_version: '8',

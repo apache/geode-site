@@ -1,0 +1,38 @@
+﻿---
+title: Fine-Tuning Your Client/Server Configuration
+sidebar_label: Fine-Tuning Your Client/Server Configuration
+sidebar_position: 7
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+You can fine-tune your client/server system with server load-balancing. For example, you can configure how often the servers check their load with the cache server `load-poll-interval` property, or configure your own server load metrics by implementing the `org.apache.geode.cache.server` package.
+
+## How Server Load Conditioning Works {#client_server_whats_next__section_64AD4CBC253B4C309E3D592D0CED2A6B}
+When the client pool requests connection information from the server locator, the locator returns the least-loaded server for the connection type. The pool uses this "best server" response to open new connections and to condition (rebalance) its existing pool connections.
+
+-   The locator tracks server availability and load according to information that the servers provide. Each server probes its load metrics periodically and, when it detects a change, sends new information to the locator. This information consists of current load levels and estimates of how much load would be added for each additional connection. The locator compares the load information from its servers to determine which servers can best handle more connections.
+-   You can configure how often the servers check their load with the cache server’s `load-poll-interval`. You might want to set it lower if you find your server loads fluctuating too much during normal operation. The lower you set it, however, the more overhead your load balancing will use.
+-   Between updates from the servers, the locators estimate which server is the least loaded by using the server estimates for the cost of additional connections. For example, if the current pool connection load for a server’s connections is 0.4 and each additional connection would add 0.1 to its load, the locator can estimate that adding two new pool connections will take the server’s pool connection load to 0.6.
+-   Locators do not share connection information among themselves. These estimates provide rough guidance to the individual locators for the periods between updates from the servers.
+
+@@product_name@@ provides a default utility that probes the server and its resource usage to give load information to the locators. The default probe returns the following load metrics:
+-   The pool connection load is the number of connections to the server divided by the server’s `max-connections` setting. This means that servers with a lower `max-connections` setting receives fewer connections than servers with a higher setting. The load is a number between 0 and 1, where 0 means there are no connections, and 1 means the server is at `max-connections`. The load estimate for each additional pool connection is 1/`max-connections`.
+-   The subscription connection load is the number of subscription queues hosted by this server. The load estimate for each additional subscription connection is 1.
+
+To use your own server load metrics instead of the default, implement the `ServerLoadProbe` or `ServerLoadProbeAdapter` and related interfaces and classes in the `org.apache.geode.cache.server` package. The load for each server is weighed relative to the loads reported by other servers in the system.
